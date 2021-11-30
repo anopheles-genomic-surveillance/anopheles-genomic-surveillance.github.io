@@ -1,0 +1,43 @@
+title: PAMCA genomics training 2022
+author: PAMCA
+copyright: "2022"
+logo: logo.png
+execute:
+  execute_notebooks: "off"
+repository:
+  url: https://github.com/pamcafrica/genomics-training-2022
+  path_to_book: docs
+  branch: main
+launch_buttons:
+  notebook_interface: "jupyterlab"
+  colab_url: "https://colab.research.google.com"
+  binderhub_url: ""  # support colab only
+html:
+  use_repository_button : true
+  use_issues_button: true
+  extra_footer: |
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  comments:
+    utterances:
+      repo: "pamcafrica/genomics-training-2022"
+      issue-term: "pathname"
+      label: "comment"
+      theme: "github-light" 
+bibtex_bibfiles:
+  - refs.bib
+sphinx:
+  config:
+    bibtex_reference_style: label
+    bibtex_default_style: unsrt
+    myst_enable_extensions:
+    - substitution
+    - dollarmath
+    myst_substitutions:
+      # species
+      gamb: "*An. gambiae*"
+      colu: "*An. coluzzii*"
+      arab: "*An. arabiensis*"
+      mela: "*An. melas*"
+      meru: "*An. merus*"
+      quad: "*An. quadriannulatus*"
+      fune: "*An. funestus*"

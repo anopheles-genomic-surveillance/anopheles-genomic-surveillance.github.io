@@ -1,0 +1,6 @@
+format: jb-book
+root: home
+parts:
+  - caption: Workshop 1
+    chapters:
+    - file: workshop-1/intro
