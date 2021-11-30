@@ -1,12 +1,10 @@
 name: deploy-docs
 
-# Only run this when the main branch changes
 on:
   push:
     branches:
-    - main
+    - master
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
