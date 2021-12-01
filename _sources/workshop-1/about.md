@@ -1,5 +1,7 @@
 # About workshop 1
 
+## Topic
+
 This training workshop introduces the use of genomic data to analyse the prevalence of mutations in the gene targeted by pyrethroid insecticides. This gene is named *Vgsc* and encodes a protein known as the voltage-gated sodium channel (VGSC), which is part of the mosquito's nervous system. Mutations in this gene can affect the way that pyrethroid insecticides bind to this protein, reducing their efficacy and causing a form of insecticide resistance known as pyrethroid target-site resistance. Pyrethroid insecticides are the primary ingredient in all insecticide-treated bednets currently used for malaria control, so identifying and tracking mutations in the *Vgsc* gene is an important surveillance activity.
 
 ## Dates and registration
