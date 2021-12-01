@@ -1,0 +1,11 @@
+malariagen_data
+scikit-allel
+matplotlib
+bokeh
+plotly
+jupyterlab
+pandas
+numpy
+zarr
+dask
+xarray

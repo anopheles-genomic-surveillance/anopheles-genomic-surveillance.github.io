@@ -1,10 +1,10 @@
-title: Genomic Surveillance of Malaria Vectors
+title: Genomic surveillance of <i>Anopheles</i> mosquitoes
 author: PAMCA and MalariaGEN
 copyright: "2022"
 execute:
   execute_notebooks: "off"
 repository:
-  url: https://github.com/vector-genomic-surveillance/vector-genomic-surveillance.github.io
+  url: https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io
   path_to_book: docs
   branch: master
 launch_buttons:
@@ -18,7 +18,7 @@ html:
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
   comments:
     utterances:
-      repo: "vector-genomic-surveillance/vector-genomic-surveillance.github.io"
+      repo: "anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
       issue-term: "pathname"
       label: "comment"
       theme: "github-light" 
@@ -31,12 +31,4 @@ sphinx:
     myst_enable_extensions:
     - substitution
     - dollarmath
-    myst_substitutions:
-      # species
-      gamb: "*An. gambiae*"
-      colu: "*An. coluzzii*"
-      arab: "*An. arabiensis*"
-      mela: "*An. melas*"
-      meru: "*An. merus*"
-      quad: "*An. quadriannulatus*"
-      fune: "*An. funestus*"
+    - colon_fence
