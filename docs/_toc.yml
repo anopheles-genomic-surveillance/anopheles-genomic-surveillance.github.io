@@ -3,4 +3,4 @@ root: home
 parts:
   - caption: Workshop 1
     chapters:
-    - file: workshop-1/intro
+    - file: workshop-1/about
