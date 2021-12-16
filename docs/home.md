@@ -1,4 +1,4 @@
 # Home
 
-Welcome to this training course on genomic surveillance of malaria vectors.
+Welcome to this training course on data analysis for genomic surveillance of African malaria vectors.
 
