@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Module 1 - Interactive computing with Google Colaboratory &#8212; Data analysis for genomic surveillance of African malaria vectors</title>
+    <title>Module 1 - Interactive cloud computing with Google Colaboratory &#8212; Data analysis for genomic surveillance of African malaria vectors</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Module 1 - Interactive computing with Google Colaboratory
+   Module 1 - Interactive cloud computing with Google Colaboratory
   </a>
  </li>
  <li class="toctree-l1">
@@ -234,18 +234,156 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning outcomes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#todo">
-   @@TODO
+  <a class="reference internal nav-link" href="#what-is-colab">
+   What is Colab?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feedback">
-   Feedback
+  <a class="reference internal nav-link" href="#what-is-a-notebook">
+   What is a notebook?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-cells">
+   Code cells
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-a-code-cell">
+     Executing a code cell
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cell-output">
+     Cell output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspecting-a-variable">
+     Inspecting a variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-cells">
+   Text cells
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-text">
+     Formatting text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-lists">
+     Creating lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-section-headings">
+     Creating section headings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-images">
+     Adding images
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-moving-and-deleting-cells">
+   Adding, moving and deleting cells
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-basics">
+   Coding basics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math">
+     Math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     For loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-and-calling-functions">
+     Defining and calling functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-python-packages">
+   Importing Python packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-operating-system-commands">
+   Running operating system commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-python-packages">
+   Installing Python packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-dataframes">
+   Viewing dataframes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-plots">
+   Creating plots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     Matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotly">
+     Plotly
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bokeh">
+     Bokeh
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-help-documentation-docstrings">
+   Accessing help documentation (docstrings)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-help-and-code-examples-on-the-web">
+   Finding help and code examples on the Web
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sharing-notebooks-via-google-drive">
+   Sharing notebooks via Google Drive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercises">
+   Practical exercises
   </a>
  </li>
 </ul>
@@ -259,22 +397,1242 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-1-interactive-computing-with-google-colaboratory">
-<h1>Module 1 - Interactive computing with Google Colaboratory<a class="headerlink" href="#module-1-interactive-computing-with-google-colaboratory" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+  <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 1</strong></em></p>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="module-1-interactive-cloud-computing-with-google-colaboratory">
+<h1>Module 1 - Interactive cloud computing with Google Colaboratory<a class="headerlink" href="#module-1-interactive-cloud-computing-with-google-colaboratory" title="Permalink to this headline">¶</a></h1>
+<p><strong>Subject: Tools &amp; Technology</strong></p>
+<p>This first technology module introduces Google Colaboratory (a.k.a. Colab), an interactive cloud computing service for data analysis, which we will be using for practical exercises throughout the course.</p>
+<div class="section" id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<p>After completing this module, you will be able to:</p>
 <ul class="simple">
-<li><p>Understand how to create and run notebooks using Google Colaboratory</p></li>
-<li><p>Understand the different types of content that can be included within a notebook and how to create them</p></li>
-<li><p>Know how to share Colab notebooks via Google Drive</p></li>
+<li><p>Explain what a notebook is</p></li>
+<li><p>Access Colab and use it to create and run notebooks</p></li>
+<li><p>Edit notebooks and create code and text cells</p></li>
+<li><p>Import and install packages</p></li>
+<li><p>Share Colab notebooks via Google Drive</p></li>
 </ul>
 </div>
-<div class="section" id="todo">
-<h2>&#64;&#64;TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-colab">
+<h2>What is Colab?<a class="headerlink" href="#what-is-colab" title="Permalink to this headline">¶</a></h2>
+<p>Colab is an interactive cloud computing service provided for free by Google. To access Colab, visit the following address in your Web browser:</p>
+<ul class="simple">
+<li><p>https://colab.research.google.com</p></li>
+</ul>
+<p>To access Colab you will need a Google account. If you don’t already have one, <a class="reference external" href="https://accounts.google.com/SignUp">create an account</a> and then log in.</p>
+<p>Colab allows you to write and execute code using your Web browser. There are two important features of Colab that are very useful for data analysis:</p>
+<ul class="simple">
+<li><p><strong>Interactive notebooks</strong> - You can explore and analyse data one step at a time, by writing small pieces of code, running them, inspecting the results, and then writing further code.</p></li>
+<li><p><strong>Cloud computing</strong> - You can get access to computers hosted by Google and use them to run your code, without having to install any software or download any data onto your own computer.</p></li>
+</ul>
 </div>
-<div class="section" id="feedback">
-<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
-<p>&#64;&#64;TODO how to submit feedback</p>
+<div class="section" id="what-is-a-notebook">
+<h2>What is a notebook?<a class="headerlink" href="#what-is-a-notebook" title="Permalink to this headline">¶</a></h2>
+<p>A notebook is an interactive, editable document that you can use to:</p>
+<ul class="simple">
+<li><p>Write and execute code</p></li>
+<li><p>Create plots, tables, written text and other types of content</p></li>
+</ul>
+<p>A notebook is built up from <strong>cells</strong>. There are two main types of cells in a notebook: <strong>code cells</strong> and <strong>text cells</strong>.</p>
+</div>
+<div class="section" id="code-cells">
+<h2>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">¶</a></h2>
+<p>A code cell contains <a class="reference external" href="https://www.python.org/">Python code</a>. To add a code cell to your notebook, click the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Code</span></code></strong> button at the top of the notebook.</p>
+<p>Below is an example code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="executing-a-code-cell">
+<h3>Executing a code cell<a class="headerlink" href="#executing-a-code-cell" title="Permalink to this headline">¶</a></h3>
+<p>To execute a code cell, click on the <strong>play icon</strong> next to the cell. You can also type <strong>Shift+Enter</strong>, which will run the cell and move the focus to the next cell.</p>
+</div>
+<div class="section" id="cell-output">
+<h3>Cell output<a class="headerlink" href="#cell-output" title="Permalink to this headline">¶</a></h3>
+<p>The code cell above uses the built-in <code class="docutils literal notranslate"><span class="pre">print</span></code> function, which prints the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code> as output. If a code cell generates some output when it is run, the output is displayed below the cell.</p>
+<p>Cells do not always have output. For example, the code cell below declares a variable named <code class="docutils literal notranslate"><span class="pre">foo</span></code> and assigns the integer value <code class="docutils literal notranslate"><span class="pre">42</span></code>, but does not create an output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inspecting-a-variable">
+<h3>Inspecting a variable<a class="headerlink" href="#inspecting-a-variable" title="Permalink to this headline">¶</a></h3>
+<p>If you have declared a variable, such as <code class="docutils literal notranslate"><span class="pre">foo</span></code> in the code cell above, and you want to inspect its value, you can do this by writing a code cell where the variable is written on the last line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Running this code cell will print the value of the variable as the cell output. Let’s try modifying this variable, and inspecting it again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">foo</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43
+</pre></div>
+</div>
+</div>
+</div>
+<p>It can also sometimes be useful to use the built-in <code class="docutils literal notranslate"><span class="pre">type()</span></code> function inspect what type of object has been assigned to a variable, e.g.:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="text-cells">
+<h2>Text cells<a class="headerlink" href="#text-cells" title="Permalink to this headline">¶</a></h2>
+<p>As well as code cells, you can also create text cells, which create text that you write, and can use different types of text formatting such as bold, italic, indented lists, hyperlinks and mathematical equations.</p>
+<p>To add a text cell to your notebook, click the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Text</span></code></strong> button at the top of the notebook.</p>
+<p>To edit an existing text cell in a notebook, <strong>double click</strong> on the cell.</p>
+<div class="section" id="formatting-text">
+<h3>Formatting text<a class="headerlink" href="#formatting-text" title="Permalink to this headline">¶</a></h3>
+<p>Text cells can be formatted using a special syntax called <strong>markdown</strong>.</p>
+<p>Here is a quick summary of some useful markdown syntax for formatting text:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Markdown syntax</p></th>
+<th class="head"><p>Preview</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**bold</span> <span class="pre">text**</span></code></p></td>
+<td><p><strong>bold text</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*italicized</span> <span class="pre">text*</span></code></p></td>
+<td><p><em>italicized text</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">`monospace</span> <span class="pre">text`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Monospace</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[A</span> <span class="pre">link](https://en.wikipedia.org/wiki/Anopheles_gambiae)</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Anopheles_gambiae">A link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="creating-lists">
+<h3>Creating lists<a class="headerlink" href="#creating-lists" title="Permalink to this headline">¶</a></h3>
+<p>Unordered lists can be created by putting each list item on a new line, starting with the <code class="docutils literal notranslate"><span class="pre">*</span></code> character, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">A</span> <span class="nb">list</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">Another</span> <span class="nb">list</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">Yet</span> <span class="n">another</span> <span class="nb">list</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>Ordered lists can be created by starting each list item with <code class="docutils literal notranslate"><span class="pre">1.</span></code>, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">First</span> <span class="n">item</span>
+<span class="mf">1.</span> <span class="n">Second</span> <span class="n">item</span>
+<span class="mf">1.</span> <span class="n">Third</span> <span class="n">item</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-section-headings">
+<h3>Creating section headings<a class="headerlink" href="#creating-section-headings" title="Permalink to this headline">¶</a></h3>
+<p>To create a section heading within a notebook, begin a line of text with the <code class="docutils literal notranslate"><span class="pre">#</span></code> character. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a section heading</span>
+</pre></div>
+</div>
+<p>To create a sub-section heading, begin a line of text with <code class="docutils literal notranslate"><span class="pre">##</span></code>, E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## This is a sub-section heading</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-images">
+<h3>Adding images<a class="headerlink" href="#adding-images" title="Permalink to this headline">¶</a></h3>
+<p>You can include an image in a notebook, if the image is published on the Web and you know it’s address. E.g., the markdown syntax below includes an image of an <em>Anopheles gambiae</em> mosquito available from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:AnophelesGambiaemosquito.jpg">wikipedia</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![Anopheles gambiae](https://upload.wikimedia.org/wikipedia/commons/0/0a/AnophelesGambiaemosquito.jpg)
+</pre></div>
+</div>
+<p>Here is the image as it will appear in the notebook:</p>
+<p><img alt="Anopheles gambiae" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/AnophelesGambiaemosquito.jpg" /></p>
+</div>
+</div>
+<div class="section" id="adding-moving-and-deleting-cells">
+<h2>Adding, moving and deleting cells<a class="headerlink" href="#adding-moving-and-deleting-cells" title="Permalink to this headline">¶</a></h2>
+<p>A new cell can be added by using the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Code</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Text</span></code></strong> at the top of the notebook, or that show when you hover between cells.</p>
+<p>Cells can be moved within the notebook by clicking on the <strong>up and down arrows</strong> in the cell toolbar.</p>
+<p>A cell can be deleted by clicking the <strong>dustbin icon</strong> within the cell toolbar.</p>
+</div>
+<div class="section" id="coding-basics">
+<h2>Coding basics<a class="headerlink" href="#coding-basics" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="section" id="math">
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="for-loops">
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-and-calling-functions">
+<h3>Defining and calling functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Mario Coluzzi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Mario Coluzzi!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="importing-python-packages">
+<h2>Importing Python packages<a class="headerlink" href="#importing-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO standard library packages; pre-installed third-party packages; standard abbreviations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([18, 49, 10, 45, 82, 32, 36, 55, 81, 79])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-operating-system-commands">
+<h2>Running operating system commands<a class="headerlink" href="#running-operating-system-commands" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ls -lh
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 4.0K
+drwxr-xr-x 1 root root 4.0K Dec  3 14:33 sample_data
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-python-packages">
+<h2>Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-19-a18d6481fc9b&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">malariagen_data</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;malariagen_data&#39;
+
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NOTE</span>: If your import is failing due to a missing package, you can
+<span class="n">manually</span> <span class="n">install</span> <span class="n">dependencies</span> <span class="n">using</span> <span class="n">either</span> <span class="o">!</span>pip or !apt.
+
+<span class="n">To</span> <span class="n">view</span> <span class="n">examples</span> <span class="n">of</span> <span class="n">installing</span> <span class="n">some</span> <span class="n">common</span> <span class="n">dependencies</span><span class="p">,</span> <span class="n">click</span> <span class="n">the</span>
+<span class="s2">&quot;Open Examples&quot;</span> <span class="n">button</span> <span class="n">below</span><span class="o">.</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install -q malariagen_data
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |████████████████████████████████| 146 kB 7.7 MB/s 
+     |████████████████████████████████| 5.7 MB 22.1 MB/s 
+     |████████████████████████████████| 132 kB 57.6 MB/s 
+     |████████████████████████████████| 2.3 MB 32.4 MB/s 
+     |████████████████████████████████| 1.1 MB 52.1 MB/s 
+     |████████████████████████████████| 271 kB 44.9 MB/s 
+     |████████████████████████████████| 160 kB 50.8 MB/s 
+     |████████████████████████████████| 192 kB 59.9 MB/s 
+     |████████████████████████████████| 6.2 MB 25.3 MB/s 
+?25h  Building wheel for asciitree (setup.py) ... ?25l?25hdone
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">(</span><span class="s2">&quot;gs://vo_agam_release&quot;</span><span class="p">)</span>
+<span class="n">ag3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;malariagen_data.ag3.Ag3 at 0x7f7621967890&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-dataframes">
+<h2>Viewing dataframes<a class="headerlink" href="#viewing-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df_samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d1dc255f-63f3-4db5-a765-9c048683e363">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>partner_sample_id</th>
+      <th>contributor</th>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th>month</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>sex_call</th>
+      <th>sample_set</th>
+      <th>release</th>
+      <th>aim_fraction_colu</th>
+      <th>aim_fraction_arab</th>
+      <th>species_gambcolu_arabiensis</th>
+      <th>species_gambiae_coluzzii</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR0047-C</td>
+      <td>LUA047</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.945</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR0049-C</td>
+      <td>LUA049</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.933</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR0051-C</td>
+      <td>LUA051</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.937</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR0061-C</td>
+      <td>LUA061</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.938</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR0078-C</td>
+      <td>LUA078</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.926</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2779</th>
+      <td>AC0295-C</td>
+      <td>K92</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.026</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2780</th>
+      <td>AC0296-C</td>
+      <td>K93</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.003</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2781</th>
+      <td>AC0297-C</td>
+      <td>K94</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.026</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2782</th>
+      <td>AC0298-C</td>
+      <td>K95</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2783</th>
+      <td>AC0299-C</td>
+      <td>K96</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+  </tbody>
+</table>
+<p>2784 rows × 17 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d1dc255f-63f3-4db5-a765-9c048683e363')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d1dc255f-63f3-4db5-a765-9c048683e363 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d1dc255f-63f3-4db5-a765-9c048683e363');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</div>
+<div class="section" id="creating-plots">
+<h2>Creating plots<a class="headerlink" href="#creating-plots" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20, 12, 15, ..., 13, 17, 16])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matplotlib">
+<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h3>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s2">&quot;retina&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;The binomial distribution&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/colab_48_0.png" src="../_images/colab_48_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plotly">
+<h3>Plotly<a class="headerlink" href="#plotly" title="Permalink to this headline">¶</a></h3>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;The binomial distribution&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">400</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+            <div id="f6740720-0a1b-4a63-9276-4f035463ae9c" class="plotly-graph-div" style="height:400px; width:600px;"></div>
+            <script type="text/javascript">
+
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+
+                if (document.getElementById("f6740720-0a1b-4a63-9276-4f035463ae9c")) {
+                    Plotly.newPlot(
+                        'f6740720-0a1b-4a63-9276-4f035463ae9c',
+                        [{"alignmentgroup": "True", "bingroup": "x", "hoverlabel": {"namelength": 0}, "hovertemplate": "x=%{x}<br>count=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "v", "showlegend": false, "type": "histogram", "x": [20, 12, 15, 15, 16, 14, 15, 14, 17, 11, 14, 15, 8, 15, 10, 16, 12, 12, 10, 20, 16, 13, 14, 16, 15, 17, 18, 14, 11, 15, 10, 13, 16, 13, 16, 13, 15, 11, 18, 19, 14, 15, 17, 17, 14, 14, 15, 15, 18, 16, 15, 13, 18, 16, 13, 18, 9, 16, 10, 18, 16, 13, 14, 15, 15, 20, 13, 15, 14, 14, 14, 15, 19, 13, 12, 16, 15, 16, 15, 16, 17, 14, 17, 14, 16, 15, 15, 13, 15, 16, 18, 17, 18, 14, 15, 11, 20, 19, 15, 16, 15, 14, 15, 14, 15, 16, 14, 17, 20, 17, 14, 17, 9, 15, 18, 11, 17, 14, 20, 12, 20, 19, 17, 16, 19, 18, 12, 15, 15, 16, 10, 16, 12, 14, 16, 18, 14, 20, 14, 14, 16, 14, 19, 12, 7, 17, 18, 18, 20, 19, 12, 16, 13, 14, 18, 10, 18, 15, 15, 13, 17, 18, 18, 14, 16, 18, 18, 20, 17, 18, 15, 15, 17, 16, 19, 13, 18, 16, 14, 20, 19, 10, 17, 15, 14, 14, 20, 19, 16, 17, 17, 20, 14, 15, 13, 15, 14, 15, 16, 17, 16, 14, 13, 12, 19, 16, 16, 15, 17, 14, 15, 12, 19, 16, 19, 13, 12, 13, 16, 14, 19, 14, 13, 11, 12, 17, 17, 13, 17, 12, 18, 16, 19, 15, 18, 18, 12, 14, 15, 15, 17, 17, 12, 14, 16, 15, 14, 22, 14, 17, 17, 18, 15, 17, 16, 15, 17, 17, 12, 20, 12, 13, 19, 17, 9, 17, 12, 16, 17, 11, 17, 14, 16, 17, 9, 15, 17, 15, 19, 12, 15, 10, 11, 10, 13, 14, 17, 10, 12, 19, 10, 13, 14, 20, 14, 14, 19, 14, 17, 15, 13, 18, 19, 9, 14, 16, 17, 13, 16, 20, 17, 17, 17, 17, 15, 12, 11, 12, 15, 18, 13, 12, 15, 13, 19, 14, 18, 14, 19, 14, 15, 15, 15, 17, 16, 19, 17, 16, 19, 13, 20, 15, 16, 14, 15, 11, 16, 13, 9, 19, 14, 13, 18, 15, 15, 11, 15, 17, 15, 16, 15, 13, 17, 17, 12, 14, 13, 16, 11, 9, 17, 13, 16, 17, 17, 19, 16, 16, 11, 13, 18, 13, 14, 16, 14, 17, 15, 17, 14, 16, 20, 18, 11, 15, 14, 15, 16, 18, 18, 14, 16, 12, 14, 17, 14, 17, 15, 16, 7, 20, 13, 16, 15, 17, 12, 17, 18, 10, 20, 8, 16, 12, 18, 15, 14, 16, 13, 12, 17, 10, 19, 9, 19, 17, 12, 18, 13, 15, 19, 10, 13, 17, 16, 15, 16, 12, 12, 11, 9, 15, 11, 13, 13, 17, 18, 15, 16, 17, 13, 12, 15, 10, 17, 13, 8, 17, 20, 16, 10, 9, 12, 15, 12, 16, 16, 13, 14, 12, 19, 16, 14, 14, 8, 14, 11, 14, 15, 13, 17, 14, 13, 14, 14, 15, 12, 14, 13, 16, 18, 10, 13, 13, 11, 22, 13, 16, 17, 13, 17, 18, 14, 15, 17, 14, 14, 14, 21, 16, 14, 16, 19, 14, 12, 13, 16, 18, 17, 11, 19, 12, 13, 14, 14, 13, 18, 17, 13, 18, 14, 15, 17, 14, 13, 16, 17, 13, 16, 17, 15, 14, 17, 14, 18, 13, 17, 15, 13, 15, 13, 15, 17, 17, 16, 18, 10, 16, 14, 15, 17, 15, 19, 14, 12, 17, 11, 20, 13, 13, 9, 15, 11, 13, 12, 13, 15, 15, 13, 14, 14, 14, 16, 12, 16, 14, 18, 18, 16, 15, 17, 14, 10, 17, 15, 13, 18, 11, 16, 19, 12, 10, 16, 19, 14, 12, 18, 17, 14, 15, 17, 16, 15, 16, 19, 14, 17, 15, 10, 10, 17, 17, 14, 14, 19, 16, 11, 13, 19, 15, 14, 15, 15, 20, 15, 16, 15, 16, 16, 12, 18, 18, 16, 15, 17, 22, 15, 15, 19, 12, 10, 13, 16, 16, 17, 13, 11, 14, 17, 16, 18, 13, 16, 20, 10, 14, 16, 11, 16, 15, 19, 15, 15, 16, 15, 15, 20, 11, 13, 22, 12, 15, 9, 12, 15, 15, 12, 14, 16, 17, 9, 13, 16, 14, 18, 16, 14, 15, 17, 16, 13, 21, 12, 11, 20, 13, 12, 16, 15, 15, 15, 14, 13, 12, 15, 16, 12, 16, 13, 14, 15, 15, 20, 12, 11, 16, 13, 13, 10, 14, 15, 16, 14, 8, 19, 15, 14, 14, 18, 14, 14, 15, 14, 17, 13, 19, 17, 16, 14, 17, 14, 17, 16, 16, 17, 13, 11, 14, 17, 15, 22, 13, 16, 10, 16, 15, 18, 15, 20, 17, 13, 17, 7, 15, 16, 12, 12, 11, 12, 13, 13, 18, 15, 13, 15, 15, 14, 16, 13, 12, 16, 19, 10, 18, 15, 14, 18, 16, 9, 18, 17, 9, 14, 15, 13, 13, 13, 14, 12, 15, 12, 15, 11, 15, 16, 13, 16, 15, 18, 11, 22, 12, 20, 15, 18, 22, 17, 13, 11, 14, 15, 16, 16, 9, 18, 11, 15, 12, 14, 15, 17, 11, 17, 17, 14, 17, 17, 13, 13, 17, 7, 12, 21, 19, 16, 16, 15, 15, 18, 12, 15, 12, 19, 18, 18, 13, 12, 14, 15, 19, 15, 15, 17, 16, 10, 15, 16, 16, 17, 19, 15, 16, 18, 16, 16, 19, 19, 18, 15, 14, 14, 16, 19, 13, 16, 15, 17, 13, 16, 19, 13, 15, 13, 14, 16, 18, 15, 14, 16, 16, 17, 16, 15, 17, 17, 17, 15, 14, 15, 17, 12, 14, 19, 12, 10, 15, 15, 15, 11, 19, 19, 8, 16, 21, 17, 14, 13, 17, 19, 15, 16, 16, 12, 11, 17, 13, 19, 12, 14, 21, 15, 13, 17, 13, 12, 17, 11, 6, 14, 17, 15, 15, 18, 19, 13, 15, 11, 16, 19, 15, 12, 13, 15, 17, 18, 14, 16, 13, 15, 15, 17, 14, 13, 16, 17, 18, 14, 15, 11, 18, 10, 16, 18, 17, 13, 14, 14, 18, 16, 13, 12, 16, 13, 14, 15, 19, 16, 19, 16, 17, 16, 14, 16, 15, 16, 15, 10, 15, 9, 15, 13, 16, 16, 13, 17, 13, 12, 13, 14, 16, 14, 10, 12, 10, 17, 12, 15, 14, 13, 18, 17, 13, 13, 12, 18, 18, 16, 13, 17, 15, 14, 17, 16, 15, 12, 15, 17, 16, 19, 16, 13, 17, 14, 17, 15, 12, 17, 17, 16, 15, 14, 13, 14, 15, 15, 11, 18, 14, 15, 12, 16, 10, 17, 21, 8, 16, 17, 17, 15, 16, 8, 16, 16, 14, 17, 10, 13, 13, 13, 20, 20, 16, 15, 15, 9, 14, 19, 20, 16, 15, 10, 15, 11, 17, 18, 18, 14, 19, 16, 17, 16, 15, 16, 16, 17, 16, 17, 15, 13, 15, 19, 12, 12, 17, 10, 15, 17, 18, 14, 18, 14, 19, 12, 13, 11, 13, 11, 18, 15, 15, 13, 19, 12, 12, 16, 18, 16, 14, 15, 13, 15, 12, 13, 13, 17, 16, 14, 15, 18, 16, 11, 15, 16, 14, 14, 9, 16, 10, 11, 12, 12, 13, 15, 14, 11, 17, 12, 16, 16, 14, 12, 16, 18, 11, 16, 18, 14, 11, 15, 15, 16, 15, 14, 18, 14, 13, 15, 15, 18, 16, 11, 20, 21, 14, 17, 16, 13, 16, 15, 14, 16, 16, 19, 10, 17, 17, 15, 9, 14, 19, 12, 18, 14, 9, 14, 15, 14, 15, 15, 13, 16, 10, 15, 14, 11, 20, 13, 20, 20, 13, 13, 16, 14, 12, 22, 13, 15, 16, 10, 18, 15, 13, 18, 19, 14, 14, 17, 17, 16, 14, 12, 14, 12, 14, 15, 17, 15, 16, 11, 16, 13, 19, 15, 18, 11, 15, 17, 12, 16, 17, 14, 16, 15, 12, 11, 16, 19, 13, 17, 15, 15, 13, 11, 14, 16, 14, 15, 16, 11, 13, 15, 14, 15, 14, 18, 14, 17, 15, 21, 13, 15, 13, 15, 13, 13, 12, 16, 12, 18, 15, 13, 15, 15, 13, 13, 17, 14, 14, 10, 16, 15, 14, 14, 11, 12, 17, 16, 15, 14, 14, 15, 14, 19, 16, 14, 17, 14, 18, 12, 14, 15, 14, 12, 15, 15, 15, 12, 15, 16, 19, 14, 15, 19, 19, 17, 16, 15, 14, 14, 13, 12, 13, 18, 17, 14, 12, 14, 12, 20, 14, 17, 13, 13, 16, 19, 19, 16, 22, 17, 14, 12, 14, 17, 16, 14, 17, 16, 14, 12, 17, 14, 19, 14, 14, 15, 19, 12, 16, 17, 16, 17, 15, 16, 16, 18, 14, 19, 18, 17, 22, 18, 16, 8, 17, 14, 12, 16, 15, 17, 17, 20, 13, 18, 21, 12, 18, 15, 15, 18, 14, 7, 13, 10, 13, 13, 18, 11, 12, 14, 16, 11, 12, 17, 17, 14, 18, 14, 16, 15, 17, 15, 13, 15, 13, 14, 14, 15, 19, 17, 11, 17, 16, 15, 15, 14, 14, 16, 11, 16, 16, 17, 15, 15, 15, 15, 17, 17, 15, 15, 16, 15, 16, 14, 16, 16, 17, 9, 15, 15, 12, 19, 9, 17, 15, 19, 14, 12, 17, 17, 19, 17, 16, 20, 14, 11, 11, 14, 13, 20, 15, 12, 13, 14, 14, 18, 11, 22, 12, 14, 12, 13, 16, 17, 16, 12, 13, 12, 13, 15, 20, 9, 14, 17, 15, 11, 16, 18, 14, 15, 11, 13, 8, 13, 17, 16, 18, 20, 14, 22, 15, 14, 17, 21, 13, 19, 12, 15, 17, 11, 18, 14, 16, 17, 13, 13, 18, 16, 16, 17, 17, 12, 17, 17, 13, 16, 14, 13, 17, 14, 13, 14, 15, 18, 15, 14, 14, 9, 15, 9, 14, 17, 15, 10, 14, 18, 16, 16, 17, 13, 13, 17, 13, 14, 16, 18, 19, 13, 18, 15, 14, 14, 23, 12, 20, 18, 15, 17, 10, 18, 18, 18, 16, 14, 15, 14, 12, 17, 13, 13, 14, 14, 16, 16, 14, 17, 14, 19, 14, 16, 13, 17, 16, 18, 18, 9, 14, 16, 15, 16, 14, 16, 16, 14, 15, 13, 17, 14, 13, 14, 15, 13, 18, 16, 11, 14, 18, 14, 19, 11, 12, 12, 14, 13, 13, 16, 14, 13, 12, 19, 16, 13, 14, 16, 14, 17, 13, 11, 14, 13, 13, 13, 14, 14, 14, 20, 10, 18, 13, 16, 14, 17, 17, 12, 17, 21, 18, 15, 14, 15, 11, 16, 20, 13, 12, 18, 19, 13, 13, 18, 14, 14, 16, 15, 13, 15, 10, 15, 15, 18, 10, 15, 17, 14, 16, 16, 17, 20, 14, 21, 16, 18, 15, 15, 11, 15, 15, 18, 18, 12, 13, 18, 15, 16, 15, 16, 17, 15, 13, 15, 14, 17, 12, 14, 15, 15, 18, 22, 14, 18, 10, 20, 18, 16, 17, 13, 10, 15, 17, 11, 16, 14, 12, 17, 13, 14, 14, 14, 13, 15, 13, 15, 17, 13, 8, 14, 14, 18, 16, 12, 15, 18, 17, 15, 13, 11, 20, 14, 14, 13, 12, 14, 20, 12, 12, 16, 15, 13, 17, 14, 14, 16, 14, 17, 16, 12, 20, 10, 19, 15, 12, 14, 20, 15, 8, 10, 15, 11, 15, 15, 18, 15, 18, 18, 12, 17, 17, 13, 15, 16, 19, 13, 11, 15, 13, 14, 18, 18, 7, 14, 17, 17, 18, 14, 20, 17, 12, 16, 18, 14, 11, 15, 13, 19, 22, 21, 15, 14, 9, 14, 13, 9, 17, 20, 18, 18, 11, 17, 14, 16, 13, 10, 13, 13, 17, 15, 21, 17, 14, 16, 12, 20, 16, 21, 19, 20, 19, 16, 18, 16, 15, 17, 16, 17, 15, 14, 16, 19, 17, 14, 14, 16, 13, 15, 14, 17, 14, 13, 15, 12, 11, 13, 14, 15, 15, 14, 13, 19, 15, 16, 14, 18, 21, 11, 14, 12, 16, 15, 13, 13, 17, 17, 10, 15, 13, 12, 14, 13, 19, 14, 19, 13, 11, 15, 18, 21, 14, 15, 14, 9, 17, 19, 18, 16, 18, 15, 15, 13, 16, 12, 15, 17, 12, 14, 16, 17, 16, 15, 14, 14, 14, 15, 16, 16, 15, 10, 15, 14, 17, 18, 15, 16, 14, 19, 19, 11, 15, 17, 22, 14, 15, 14, 17, 12, 13, 14, 22, 8, 15, 18, 17, 19, 14, 17, 20, 21, 16, 17, 17, 13, 13, 15, 15, 14, 16, 15, 16, 16, 13, 21, 13, 17, 14, 13, 16, 12, 14, 18, 13, 17, 15, 16, 17, 17, 13, 12, 11, 14, 15, 19, 19, 12, 14, 18, 19, 15, 15, 18, 11, 20, 13, 14, 13, 15, 16, 18, 17, 22, 16, 19, 14, 13, 16, 16, 16, 17, 13, 16, 13, 14, 17, 15, 18, 10, 17, 20, 17, 12, 15, 16, 13, 19, 14, 14, 13, 20, 21, 16, 15, 14, 15, 12, 14, 16, 10, 17, 16, 14, 15, 16, 18, 17, 19, 18, 16, 15, 14, 19, 15, 16, 10, 17, 20, 14, 13, 13, 14, 16, 14, 14, 17, 16, 24, 21, 17, 16, 12, 20, 16, 9, 17, 12, 14, 18, 12, 16, 11, 13, 13, 15, 15, 10, 17, 15, 14, 12, 18, 19, 15, 11, 12, 15, 18, 18, 15, 9, 12, 17, 15, 17, 19, 13, 11, 14, 19, 20, 14, 15, 13, 16, 17, 13, 20, 14, 11, 16, 19, 14, 12, 15, 13, 11, 15, 12, 13, 14, 18, 12, 20, 19, 18, 13, 13, 18, 14, 17, 14, 14, 12, 14, 15, 18, 12, 23, 18, 18, 18, 11, 15, 16, 16, 22, 21, 14, 13, 17, 17, 15, 15, 13, 11, 17, 13, 14, 14, 17, 18, 14, 16, 19, 11, 16, 17, 14, 17, 21, 15, 17, 15, 16, 17, 19, 13, 12, 17, 14, 19, 13, 11, 16, 20, 19, 17, 11, 12, 15, 13, 13, 18, 15, 12, 15, 19, 17, 12, 13, 20, 16, 13, 18, 17, 11, 19, 10, 15, 14, 14, 9, 13, 16, 19, 15, 17, 19, 13, 19, 16, 11, 11, 19, 14, 12, 15, 13, 13, 14, 14, 15, 18, 16, 12, 15, 17, 13, 18, 19, 12, 16, 14, 12, 19, 15, 16, 13, 16, 17, 17, 14, 9, 13, 14, 17, 13, 17, 15, 14, 13, 11, 14, 20, 19, 14, 15, 14, 17, 17, 20, 16, 14, 16, 15, 15, 13, 17, 19, 20, 13, 19, 16, 15, 15, 16, 16, 17, 13, 13, 12, 16, 19, 16, 15, 20, 17, 15, 10, 15, 15, 14, 17, 18, 14, 19, 11, 15, 14, 17, 12, 17, 15, 14, 14, 13, 14, 18, 16, 14, 14, 14, 20, 12, 16, 19, 13, 17, 19, 17, 9, 17, 14, 9, 15, 17, 14, 15, 15, 15, 19, 18, 17, 18, 19, 15, 14, 14, 16, 17, 12, 17, 15, 11, 13, 10, 15, 15, 12, 17, 12, 19, 16, 18, 12, 15, 14, 14, 20, 12, 21, 12, 13, 15, 14, 18, 16, 16, 23, 15, 15, 15, 17, 11, 12, 13, 16, 16, 21, 17, 18, 15, 16, 14, 13, 16, 16, 15, 17, 17, 20, 11, 14, 10, 12, 16, 17, 16, 15, 18, 18, 14, 19, 16, 14, 11, 17, 14, 11, 15, 14, 19, 18, 20, 12, 10, 17, 14, 11, 15, 12, 12, 11, 13, 17, 14, 19, 16, 16, 13, 15, 16, 15, 14, 17, 15, 17, 10, 12, 9, 17, 14, 19, 15, 15, 10, 17, 14, 14, 13, 17, 16, 16, 12, 17, 12, 17, 19, 10, 16, 12, 14, 15, 18, 14, 16, 15, 15, 17, 15, 17, 17, 16, 14, 18, 10, 19, 17, 13, 19, 20, 14, 17, 20, 17, 13, 19, 14, 18, 16, 14, 18, 19, 16, 14, 15, 14, 14, 14, 17, 20, 15, 18, 16, 11, 14, 14, 17, 18, 13, 12, 15, 19, 15, 15, 17, 11, 14, 13, 10, 15, 16, 14, 17, 15, 14, 17, 11, 15, 14, 14, 16, 14, 15, 11, 16, 18, 20, 12, 11, 15, 16, 15, 16, 15, 13, 16, 16, 15, 16, 17, 17, 15, 17, 12, 14, 17, 18, 16, 20, 19, 15, 16, 12, 16, 15, 19, 12, 17, 10, 14, 11, 17, 19, 8, 11, 15, 13, 16, 16, 12, 14, 16, 17, 19, 13, 17, 17, 18, 19, 15, 19, 14, 14, 9, 14, 14, 20, 17, 17, 13, 11, 12, 17, 12, 10, 13, 12, 13, 20, 20, 13, 15, 12, 11, 14, 19, 11, 14, 12, 16, 14, 17, 17, 15, 18, 13, 14, 13, 13, 13, 15, 17, 20, 17, 16, 17, 17, 21, 15, 17, 14, 13, 16, 14, 20, 15, 14, 15, 19, 18, 18, 18, 17, 13, 14, 16, 13, 17, 16, 12, 15, 16, 16, 12, 16, 17, 19, 14, 10, 13, 15, 16, 20, 14, 14, 15, 14, 19, 17, 16, 12, 14, 16, 13, 16, 12, 18, 7, 10, 11, 17, 13, 12, 11, 16, 14, 15, 14, 12, 12, 13, 16, 12, 17, 12, 11, 12, 16, 14, 12, 17, 12, 10, 13, 7, 16, 13, 16, 16, 11, 18, 10, 14, 16, 13, 12, 18, 15, 12, 19, 14, 15, 17, 16, 16, 16, 14, 17, 17, 22, 18, 18, 12, 21, 12, 19, 21, 19, 15, 13, 17, 12, 18, 12, 12, 16, 14, 9, 15, 19, 17, 16, 15, 20, 13, 12, 18, 15, 17, 21, 14, 17, 15, 14, 21, 16, 14, 19, 17, 18, 10, 13, 13, 16, 17, 14, 8, 12, 15, 21, 14, 13, 8, 13, 14, 16, 16, 17, 17, 15, 13, 16, 14, 15, 18, 16, 20, 18, 17, 13, 13, 14, 14, 17, 16, 18, 11, 17, 21, 19, 16, 15, 15, 19, 19, 15, 17, 17, 22, 16, 16, 16, 9, 16, 7, 15, 15, 16, 21, 16, 19, 16, 14, 17, 16, 16, 16, 18, 14, 16, 19, 18, 15, 18, 14, 15, 12, 14, 19, 13, 18, 16, 15, 14, 17, 12, 13, 14, 15, 16, 14, 15, 12, 14, 11, 12, 17, 11, 14, 14, 11, 13, 15, 22, 18, 9, 14, 20, 15, 18, 19, 18, 16, 13, 10, 11, 18, 15, 20, 17, 11, 21, 16, 14, 14, 12, 14, 17, 15, 22, 17, 15, 12, 16, 17, 13, 14, 14, 19, 17, 13, 13, 15, 12, 13, 14, 14, 13, 15, 14, 17, 11, 17, 16, 13, 18, 14, 15, 17, 15, 14, 13, 15, 16, 11, 15, 15, 13, 14, 14, 16, 14, 18, 14, 13, 11, 15, 15, 11, 15, 13, 11, 10, 14, 10, 17, 17, 9, 12, 12, 17, 17, 14, 18, 12, 16, 15, 14, 17, 11, 20, 14, 15, 17, 12, 16, 12, 16, 13, 18, 12, 15, 16, 14, 19, 12, 21, 20, 10, 12, 20, 20, 14, 14, 19, 15, 10, 14, 15, 18, 14, 10, 13, 18, 14, 16, 13, 16, 15, 18, 15, 12, 18, 14, 13, 17, 18, 12, 13, 14, 18, 14, 13, 16, 15, 11, 17, 13, 15, 12, 16, 14, 16, 14, 16, 15, 11, 17, 17, 10, 16, 14, 14, 22, 14, 15, 13, 16, 14, 11, 13, 23, 19, 12, 18, 14, 13, 16, 16, 15, 19, 17, 14, 15, 18, 14, 14, 15, 15, 10, 13, 16, 20, 17, 13, 13, 11, 18, 16, 12, 16, 18, 14, 17, 19, 16, 12, 15, 13, 10, 19, 20, 19, 12, 11, 14, 15, 18, 18, 17, 17, 12, 12, 13, 17, 16, 19, 15, 16, 14, 17, 13, 14, 18, 16, 19, 18, 9, 13, 12, 11, 13, 13, 18, 16, 12, 17, 10, 16, 9, 18, 14, 11, 15, 18, 15, 14, 14, 22, 16, 17, 18, 20, 21, 12, 14, 21, 12, 19, 16, 14, 15, 12, 17, 20, 16, 15, 16, 13, 11, 18, 11, 16, 17, 13, 16, 16, 16, 15, 11, 14, 15, 14, 16, 17, 14, 12, 12, 15, 17, 16, 20, 12, 15, 13, 12, 19, 17, 13, 12, 20, 14, 13, 15, 17, 17, 14, 16, 14, 14, 14, 19, 14, 21, 18, 14, 11, 18, 13, 20, 19, 19, 17, 15, 13, 15, 15, 13, 14, 15, 19, 14, 13, 12, 15, 12, 14, 19, 19, 15, 13, 16, 15, 15, 13, 17, 13, 15, 17, 14, 16, 17, 16, 17, 16, 18, 11, 16, 14, 17, 16, 17, 21, 13, 15, 15, 16, 14, 14, 19, 13, 12, 11, 13, 16, 14, 13, 14, 15, 19, 14, 18, 18, 17, 15, 17, 18, 16, 13, 12, 15, 17, 13, 15, 13, 18, 11, 16, 14, 17, 11, 18, 16, 15, 12, 12, 15, 15, 16, 16, 16, 14, 17, 16, 16, 12, 12, 17, 17, 14, 14, 12, 13, 7, 17, 16, 10, 16, 17, 12, 16, 9, 12, 20, 11, 12, 14, 18, 19, 14, 15, 15, 17, 17, 18, 15, 10, 12, 17, 16, 17, 11, 17, 16, 11, 15, 17, 15, 13, 13, 15, 10, 15, 9, 16, 13, 10, 14, 20, 18, 13, 15, 15, 13, 17, 14, 14, 15, 16, 14, 9, 10, 12, 19, 18, 10, 21, 14, 16, 19, 13, 14, 11, 10, 16, 13, 18, 12, 15, 11, 13, 14, 16, 14, 15, 17, 13, 15, 17, 15, 19, 24, 12, 11, 18, 13, 15, 15, 12, 9, 16, 19, 18, 15, 14, 15, 13, 17, 15, 15, 14, 13, 9, 9, 14, 16, 14, 13, 16, 14, 16, 11, 17, 14, 18, 17, 8, 17, 20, 14, 13, 15, 12, 14, 14, 13, 15, 18, 14, 19, 16, 20, 16, 14, 17, 18, 17, 15, 13, 15, 16, 13, 13, 13, 15, 17, 16, 19, 17, 16, 16, 19, 21, 15, 15, 12, 13, 17, 17, 13, 18, 16, 13, 11, 12, 15, 17, 10, 11, 13, 11, 15, 20, 17, 17, 17, 16, 17, 11, 17, 15, 14, 17, 23, 21, 18, 19, 15, 15, 19, 17, 14, 14, 18, 18, 18, 15, 13, 14, 15, 16, 20, 14, 14, 10, 9, 14, 9, 16, 12, 14, 12, 17, 15, 22, 15, 20, 16, 12, 11, 18, 11, 17, 15, 17, 8, 11, 13, 13, 15, 10, 17, 16, 13, 15, 17, 13, 15, 16, 17, 18, 19, 14, 16, 17, 17, 10, 17, 17, 13, 18, 14, 16, 14, 13, 13, 18, 14, 15, 14, 15, 20, 13, 16, 12, 15, 12, 14, 16, 13, 13, 17, 15, 13, 13, 15, 13, 18, 13, 14, 17, 11, 17, 14, 15, 17, 18, 22, 14, 12, 17, 20, 16, 16, 18, 12, 13, 16, 17, 17, 16, 17, 15, 15, 16, 18, 19, 19, 15, 12, 17, 18, 16, 12, 19, 17, 14, 17, 11, 17, 20, 15, 19, 16, 12, 16, 17, 9, 14, 16, 20, 13, 16, 15, 10, 12, 16, 16, 14, 8, 14, 17, 18, 19, 16, 19, 14, 18, 17, 18, 16, 15, 16, 14, 16, 15, 12, 15, 13, 15, 13, 16, 15, 12, 19, 15, 17, 18, 19, 11, 20, 14, 9, 19, 16, 14, 19, 15, 17, 14, 16, 14, 17, 16, 15, 18, 15, 19, 18, 19, 13, 15, 15, 14, 13, 20, 15, 20, 11, 15, 15, 16, 17, 15, 7, 17, 15, 16, 18, 16, 17, 17, 19, 16, 19, 15, 12, 16, 19, 16, 12, 13, 20, 13, 18, 14, 15, 13, 17, 14, 19, 15, 20, 15, 15, 16, 15, 17, 15, 21, 14, 16, 13, 13, 16, 14, 20, 15, 14, 16, 20, 13, 13, 16, 17, 17, 13, 20, 19, 15, 17, 16, 18, 16, 12, 15, 16, 13, 14, 18, 11, 13, 11, 10, 14, 19, 16, 18, 14, 11, 17, 14, 17, 12, 16, 17, 13, 13, 14, 20, 24, 21, 16, 15, 15, 10, 15, 13, 12, 16, 17, 17, 14, 15, 16, 16, 12, 9, 12, 14, 16, 17, 16, 16, 13, 14, 15, 15, 10, 14, 17, 11, 17, 16, 14, 11, 18, 17, 11, 16, 14, 11, 19, 16, 13, 17, 15, 18, 15, 16, 12, 17, 13, 13, 16, 19, 15, 17, 15, 14, 11, 14, 14, 14, 16, 15, 13, 14, 19, 17, 13, 17, 16, 12, 16, 16, 14, 18, 17, 16, 14, 16, 11, 19, 16, 19, 14, 17, 19, 16, 16, 14, 13, 13, 16, 14, 13, 18, 17, 14, 10, 21, 17, 17, 18, 13, 11, 11, 19, 22, 15, 16, 14, 19, 20, 11, 14, 14, 16, 23, 14, 12, 15, 12, 11, 14, 14, 17, 23, 14, 14, 14, 22, 12, 15, 18, 15, 14, 15, 17, 13, 14, 16, 20, 15, 17, 16, 13, 16, 13, 19, 15, 15, 17, 11, 18, 18, 16, 15, 16, 12, 13, 14, 15, 13, 11, 18, 17, 21, 14, 16, 15, 16, 18, 18, 10, 14, 14, 16, 14, 16, 14, 18, 17, 14, 15, 15, 15, 15, 15, 15, 12, 18, 18, 20, 18, 19, 18, 13, 15, 12, 13, 15, 18, 12, 13, 16, 15, 12, 10, 22, 16, 16, 12, 12, 16, 15, 15, 14, 8, 18, 14, 12, 8, 14, 14, 10, 19, 17, 15, 18, 18, 12, 15, 14, 18, 15, 15, 14, 21, 13, 14, 11, 10, 10, 18, 21, 13, 15, 10, 16, 13, 9, 14, 13, 14, 19, 20, 16, 11, 19, 18, 17, 17, 17, 13, 16, 17, 14, 15, 16, 11, 17, 18, 13, 18, 11, 16, 16, 14, 14, 9, 11, 13, 13, 12, 13, 16, 13, 13, 16, 14, 12, 21, 15, 14, 15, 19, 17, 17, 14, 8, 13, 11, 18, 15, 15, 16, 14, 9, 13, 13, 13, 12, 15, 16, 13, 12, 19, 18, 18, 13, 17, 14, 12, 11, 14, 18, 10, 16, 17, 17, 18, 13, 11, 14, 18, 13, 17, 17, 20, 17, 14, 18, 12, 15, 14, 16, 18, 17, 14, 15, 14, 21, 17, 19, 17, 15, 15, 12, 14, 20, 17, 15, 21, 12, 16, 15, 18, 16, 17, 13, 19, 15, 14, 11, 17, 15, 17, 19, 19, 17, 21, 10, 22, 18, 13, 16, 12, 13, 17, 19, 15, 12, 16, 11, 15, 18, 16, 16, 12, 11, 15, 16, 13, 17, 9, 13, 16, 9, 13, 11, 20, 16, 17, 18, 17, 14, 14, 16, 9, 10, 15, 19, 17, 12, 15, 13, 16, 15, 16, 10, 15, 14, 18, 17, 15, 13, 18, 17, 14, 17, 19, 16, 14, 17, 14, 17, 12, 14, 19, 11, 14, 16, 17, 17, 16, 20, 21, 16, 17, 14, 16, 12, 14, 12, 16, 13, 19, 17, 16, 11, 17, 11, 12, 14, 13, 17, 11, 17, 19, 17, 17, 15, 10, 14, 12, 18, 18, 14, 16, 13, 23, 19, 16, 17, 16, 21, 13, 14, 14, 16, 13, 10, 13, 12, 16, 11, 19, 13, 15, 15, 13, 13, 20, 15, 17, 19, 16, 18, 14, 16, 15, 17, 15, 12, 13, 14, 15, 11, 12, 17, 17, 13, 15, 17, 10, 20, 15, 18, 16, 12, 13, 15, 13, 18, 15, 17, 20, 15, 10, 15, 12, 14, 12, 15, 17, 13, 14, 19, 16, 17, 15, 16, 15, 16, 16, 16, 19, 17, 13, 13, 14, 17, 9, 17, 11, 15, 14, 14, 16, 16, 17, 14, 14, 17, 16, 17, 19, 13, 18, 13, 13, 13, 17, 18, 13, 20, 15, 16, 17, 11, 17, 13, 12, 15, 14, 13, 17, 20, 13, 12, 17, 15, 10, 14, 13, 13, 16, 14, 13, 13, 10, 9, 16, 18, 18, 17, 20, 19, 11, 17, 15, 11, 15, 18, 15, 16, 16, 15, 12, 16, 14, 12, 14, 17, 19, 14, 14, 14, 14, 16, 16, 13, 20, 17, 15, 20, 20, 10, 11, 19, 9, 14, 16, 13, 18, 14, 12, 17, 12, 9, 15, 19, 20, 13, 14, 12, 14, 15, 20, 12, 20, 17, 16, 11, 14, 16, 17, 11, 11, 18, 14, 15, 16, 17, 12, 18, 15, 13, 18, 13, 18, 15, 16, 12, 18, 9, 15, 12, 18, 12, 13, 18, 12, 15, 20, 14, 14, 10, 17, 14, 18, 17, 14, 16, 15, 20, 13, 9, 13, 17, 12, 15, 16, 16, 11, 17, 19, 18, 13, 16, 13, 13, 14, 17, 15, 12, 17, 18, 12, 12, 11, 14, 15, 14, 13, 18, 13, 14, 13, 12, 17, 17, 17, 17, 12, 16, 13, 14, 16, 16, 14, 22, 16, 15, 15, 16, 18, 12, 9, 16, 13, 12, 13, 11, 12, 12, 14, 13, 20, 14, 15, 21, 13, 16, 11, 15, 11, 12, 10, 16, 16, 16, 14, 9, 13, 14, 11, 18, 16, 15, 18, 16, 17, 12, 13, 17, 15, 16, 14, 19, 19, 19, 10, 12, 15, 14, 15, 11, 14, 14, 19, 12, 16, 17, 15, 12, 16, 13, 11, 14, 14, 15, 17, 20, 16, 13, 21, 13, 14, 17, 16, 11, 19, 16, 10, 19, 15, 14, 17, 15, 14, 15, 17, 14, 11, 13, 17, 17, 15, 19, 15, 16, 10, 12, 19, 16, 16, 19, 13, 15, 11, 10, 14, 14, 15, 16, 11, 21, 14, 19, 19, 17, 13, 15, 15, 15, 14, 15, 11, 16, 15, 15, 21, 16, 18, 13, 20, 14, 15, 14, 14, 13, 14, 13, 15, 11, 15, 14, 15, 14, 16, 14, 16, 15, 22, 14, 13, 16, 15, 14, 15, 20, 17, 13, 18, 9, 14, 12, 11, 13, 13, 15, 15, 16, 13, 16, 15, 12, 20, 15, 15, 14, 18, 19, 14, 15, 16, 13, 11, 18, 17, 14, 13, 15, 16, 15, 11, 12, 7, 18, 18, 16, 13, 19, 15, 16, 18, 14, 18, 18, 15, 13, 17, 13, 16, 16, 13, 18, 16, 14, 14, 13, 16, 10, 18, 13, 15, 17, 13, 13, 15, 15, 14, 15, 16, 19, 15, 10, 9, 16, 9, 12, 15, 13, 15, 15, 15, 14, 13, 14, 17, 16, 16, 13, 16, 12, 14, 13, 12, 16, 7, 19, 17, 14, 18, 13, 17, 16, 17, 20, 15, 12, 17, 15, 14, 16, 12, 12, 16, 16, 10, 13, 12, 10, 14, 18, 15, 15, 13, 12, 12, 15, 14, 13, 12, 16, 17, 14, 13, 13, 15, 13, 18, 13, 14, 11, 18, 15, 12, 16, 15, 8, 23, 19, 16, 11, 18, 16, 17, 14, 14, 15, 15, 16, 16, 14, 17, 17, 13, 16, 18, 13, 15, 17, 19, 20, 15, 15, 14, 15, 14, 14, 15, 17, 14, 13, 11, 12, 17, 17, 18, 10, 12, 14, 17, 16, 19, 15, 12, 14, 16, 10, 11, 14, 16, 16, 15, 13, 13, 18, 17, 16, 14, 15, 13, 19, 13, 20, 12, 15, 14, 17, 13, 16, 10, 14, 12, 16, 17, 15, 20, 15, 14, 22, 21, 14, 15, 13, 15, 14, 14, 16, 19, 13, 15, 14, 14, 17, 13, 16, 18, 19, 20, 13, 11, 12, 10, 11, 15, 18, 13, 14, 19, 17, 14, 21, 12, 12, 13, 12, 14, 15, 11, 17, 13, 13, 20, 19, 16, 14, 19, 13, 14, 16, 18, 21, 14, 16, 17, 19, 17, 19, 11, 15, 16, 15, 20, 17, 13, 15, 16, 16, 12, 16, 16, 21, 12, 19, 13, 12, 17, 16, 12, 14, 10, 16, 14, 18, 13, 12, 9, 17, 14, 11, 14, 11, 15, 14, 23, 11, 15, 15, 10, 15, 18, 19, 14, 11, 11, 20, 14, 14, 15, 14, 11, 15, 18, 10, 14, 17, 15, 14, 12, 15, 12, 16, 17, 13, 12, 16, 16, 15, 15, 13, 14, 11, 12, 14, 16, 14, 19, 11, 20, 14, 18, 13, 15, 9, 14, 13, 13, 17, 18, 16, 15, 15, 16, 14, 17, 14, 6, 12, 18, 15, 22, 9, 12, 15, 12, 11, 20, 15, 16, 13, 16, 17, 15, 17, 15, 21, 15, 13, 14, 14, 13, 15, 19, 16, 17, 14, 15, 9, 14, 18, 18, 15, 10, 18, 10, 12, 15, 15, 14, 12, 17, 11, 16, 16, 17, 15, 13, 10, 16, 15, 17, 16, 13, 14, 18, 13, 13, 17, 16, 18, 13, 14, 14, 18, 16, 12, 17, 16, 17, 17, 11, 19, 20, 17, 10, 9, 14, 16, 15, 18, 17, 14, 17, 17, 12, 16, 12, 8, 14, 15, 17, 17, 19, 17, 16, 9, 13, 17, 14, 19, 21, 13, 15, 16, 17, 17, 18, 16, 16, 9, 16, 17, 11, 12, 23, 15, 17, 13, 14, 16, 15, 17, 14, 17, 15, 12, 19, 16, 18, 16, 12, 15, 13, 16, 11, 15, 16, 15, 12, 14, 15, 11, 16, 19, 17, 18, 14, 18, 14, 22, 18, 12, 14, 17, 15, 15, 17, 17, 16, 15, 17, 12, 15, 9, 10, 16, 15, 13, 14, 15, 15, 15, 18, 11, 18, 17, 19, 18, 16, 15, 18, 13, 18, 13, 12, 17, 10, 11, 15, 17, 15, 16, 12, 15, 11, 15, 10, 16, 13, 15, 14, 16, 15, 18, 16, 15, 13, 18, 14, 21, 13, 15, 14, 14, 16, 12, 17, 12, 14, 8, 16, 12, 17, 12, 16, 14, 16, 11, 17, 13, 16, 16, 13, 17, 16, 15, 16, 20, 15, 15, 21, 15, 17, 14, 13, 14, 14, 13, 17, 14, 13, 17, 16, 13, 13, 16, 19, 19, 14, 17, 16, 16, 15, 12, 19, 15, 19, 15, 16, 19, 19, 16, 20, 17, 16, 17, 12, 18, 16, 20, 13, 14, 16, 16, 14, 14, 16, 12, 13, 15, 13, 13, 17, 16, 17, 17, 15, 15, 17, 15, 16, 13, 8, 16, 17, 15, 17, 18, 14, 16, 17, 14, 16, 12, 13, 14, 12, 13, 12, 13, 16, 15, 10, 12, 18, 13, 18, 20, 14, 12, 15, 19, 14, 13, 20, 14, 13, 13, 17, 18, 17, 16, 15, 18, 15, 14, 13, 13, 17, 13, 17, 14, 12, 17, 15, 17, 17, 18, 16, 16, 16, 12, 16, 11, 15, 9, 14, 17, 18, 10, 14, 14, 15, 13, 11, 20, 18, 15, 13, 13, 15, 18, 14, 18, 17, 16, 12, 12, 19, 15, 12, 13, 13, 18, 16, 13, 14, 16, 14, 13, 14, 13, 14, 16, 13, 17, 17, 15, 14, 17, 8, 16, 13, 10, 17, 17, 17, 20, 16, 15, 15, 19, 14, 17, 12, 14, 12, 14, 12, 17, 15, 16, 13, 16, 12, 11, 15, 14, 15, 17, 19, 13, 16, 15, 15, 14, 15, 13, 14, 17, 17, 15, 18, 20, 14, 18, 10, 14, 15, 19, 16, 13, 17, 10, 12, 22, 13, 13, 10, 12, 20, 11, 10, 14, 10, 17, 15, 11, 13, 19, 16, 15, 17, 15, 17, 9, 9, 17, 14, 10, 13, 18, 14, 16, 16, 16, 14, 16, 19, 15, 15, 15, 16, 13, 13, 21, 13, 15, 16, 11, 14, 13, 14, 19, 12, 15, 12, 15, 14, 17, 16, 17, 16, 10, 13, 11, 13, 15, 14, 17, 16, 11, 18, 19, 13, 12, 16, 8, 14, 14, 18, 12, 14, 15, 14, 22, 13, 14, 18, 13, 14, 15, 15, 16, 16, 15, 16, 11, 16, 23, 17, 14, 15, 17, 12, 14, 14, 16, 17, 14, 17, 13, 16, 13, 14, 15, 14, 20, 10, 13, 15, 14, 15, 16, 15, 15, 15, 12, 14, 15, 12, 14, 15, 17, 13, 16, 12, 20, 16, 14, 15, 20, 14, 17, 15, 14, 15, 5, 14, 24, 15, 9, 15, 16, 15, 21, 19, 16, 10, 12, 14, 13, 19, 15, 12, 13, 18, 12, 10, 19, 9, 17, 19, 10, 15, 16, 18, 18, 13, 13, 13, 10, 12, 15, 13, 14, 16, 13, 20, 15, 12, 15, 15, 15, 15, 14, 16, 23, 12, 18, 15, 14, 18, 15, 16, 18, 13, 18, 18, 12, 14, 13, 18, 18, 14, 15, 17, 17, 12, 18, 13, 16, 14, 19, 14, 14, 15, 16, 16, 15, 13, 17, 17, 15, 14, 17, 12, 13, 16, 18, 17, 19, 11, 17, 12, 15, 19, 14, 20, 18, 17, 19, 11, 13, 13, 16, 15, 12, 17, 13, 14, 14, 11, 11, 17, 16, 18, 16, 15, 12, 18, 16, 14, 19, 15, 11, 14, 16, 14, 12, 14, 17, 15, 15, 15, 14, 11, 15, 12, 11, 16, 14, 11, 14, 9, 15, 13, 20, 17, 14, 12, 15, 14, 13, 12, 14, 13, 20, 15, 18, 22, 20, 21, 16, 12, 15, 13, 11, 16, 16, 11, 12, 13, 11, 15, 15, 13, 17, 17, 14, 16, 12, 15, 16, 16, 15, 13, 15, 17, 17, 13, 14, 14, 12, 14, 12, 13, 13, 15, 12, 13, 12, 13, 18, 15, 16, 14, 20, 21, 15, 17, 19, 13, 15, 14, 15, 16, 12, 18, 13, 19, 8, 21, 14, 15, 15, 18, 18, 15, 15, 11, 13, 16, 21, 18, 14, 16, 14, 20, 17, 11, 17, 12, 17, 13, 17, 16, 18, 11, 18, 15, 13, 15, 13, 12, 13, 11, 13, 16, 13, 15, 16, 12, 13, 15, 16, 15, 17, 14, 12, 12, 19, 18, 16, 13, 12, 12, 16, 13, 15, 13, 18, 22, 11, 19, 17, 16, 19, 13, 15, 13, 17, 15, 14, 16, 14, 12, 15, 20, 11, 19, 15, 15, 13, 15, 6, 13, 18, 12, 14, 18, 10, 16, 15, 13, 13, 19, 13, 10, 16, 17, 12, 17, 11, 15, 12, 12, 18, 16, 19, 19, 13, 14, 12, 15, 18, 15, 17, 10, 18, 14, 20, 14, 15, 13, 18, 13, 16, 15, 14, 14, 15, 14, 14, 15, 17, 11, 17, 15, 21, 18, 14, 15, 9, 14, 17, 16, 18, 16, 16, 18, 12, 14, 11, 10, 14, 14, 12, 14, 16, 16, 20, 12, 14, 12, 14, 16, 13, 15, 16, 12, 17, 18, 18, 16, 12, 18, 12, 12, 16, 18, 19, 15, 10, 14, 17, 18, 13, 17, 14, 18, 17, 15, 14, 19, 19, 20, 12, 15, 15, 15, 18, 16, 16, 11, 18, 10, 17, 17, 13, 10, 15, 21, 19, 15, 16, 18, 11, 11, 17, 11, 15, 12, 19, 12, 17, 13, 15, 16, 16, 17, 13, 19, 16, 12, 17, 17, 16, 18, 9, 15, 12, 16, 17, 15, 16, 19, 12, 19, 19, 17, 15, 12, 13, 16, 15, 16, 14, 17, 17, 23, 18, 13, 12, 17, 19, 16, 12, 16, 18, 15, 20, 15, 21, 16, 21, 16, 14, 19, 17, 15, 14, 16, 14, 11, 16, 19, 15, 16, 17, 13, 14, 13, 19, 14, 14, 13, 14, 15, 13, 16, 13, 15, 19, 15, 18, 17, 13, 16, 18, 13, 15, 13, 13, 12, 10, 16, 13, 17, 14, 18, 12, 14, 12, 20, 15, 14, 11, 17, 21, 15, 16, 16, 15, 18, 16, 17, 17, 16, 14, 13, 16, 13, 18, 16, 14, 17, 14, 19, 12, 17, 17, 12, 16, 17, 18, 9, 15, 13, 18, 16, 12, 16, 11, 13, 16, 13, 12, 14, 16, 12, 15, 17, 13, 17, 8, 10, 13, 16, 17, 12, 18, 16, 18, 13, 17, 19, 19, 11, 16, 14, 14, 19, 19, 17, 18, 18, 18, 14, 8, 13, 15, 11, 15, 10, 13, 22, 19, 10, 13, 15, 14, 17, 15, 19, 16, 17, 16, 13, 14, 16, 18, 13, 15, 13, 16, 17, 9, 14, 14, 11, 11, 14, 15, 14, 18, 12, 10, 17, 18, 15, 14, 14, 14, 14, 12, 17, 9, 18, 13, 11, 9, 17, 16, 14, 15, 11, 10, 19, 20, 21, 17, 16, 17, 19, 21, 12, 12, 14, 11, 10, 11, 16, 14, 12, 11, 19, 14, 12, 15, 17, 16, 11, 9, 13, 13, 14, 18, 15, 14, 16, 15, 20, 13, 12, 14, 16, 14, 11, 11, 15, 17, 15, 15, 14, 14, 14, 13, 12, 18, 17, 18, 13, 14, 12, 14, 12, 19, 16, 13, 19, 17, 18, 18, 12, 14, 17, 10, 13, 16, 19, 13, 14, 12, 19, 16, 13, 18, 16, 16, 13, 18, 18, 18, 16, 11, 13, 13, 18, 16, 12, 17, 13, 18, 17, 22, 13, 11, 16, 13, 14, 13, 11, 17, 17, 14, 12, 16, 15, 17, 12, 17, 19, 13, 17, 14, 13, 15, 17, 19, 16, 9, 10, 18, 17, 17, 16, 15, 16, 17, 14, 14, 16, 14, 12, 18, 12, 16, 15, 14, 19, 12, 19, 9, 15, 13, 13, 15, 20, 14, 16, 15, 16, 9, 17, 12, 8, 14, 13, 23, 17, 14, 19, 19, 14, 11, 19, 13, 15, 14, 14, 16, 14, 16, 12, 12, 19, 16, 17, 10, 13, 15, 12, 13, 14, 16, 13, 11, 21, 15, 15, 12, 17, 15, 17, 18, 14, 16, 14, 10, 15, 21, 16, 15, 16, 10, 19, 18, 21, 10, 19, 12, 16, 11, 16, 10, 16, 15, 13, 13, 16, 17, 11, 13, 10, 13, 17, 13, 14, 18, 17, 18, 15, 16, 7, 12, 13, 15, 17, 19, 15, 15, 17, 14, 19, 20, 21, 16, 12, 18, 17, 11, 12, 15, 13, 14, 13, 17, 17, 10, 18, 16, 12, 15, 16, 18, 13, 14, 11, 13, 13, 15, 18, 16, 16, 14, 16, 16, 16, 15, 17, 18, 13, 12, 17, 14, 13, 17, 12, 17, 16, 14, 15, 16, 14, 9, 13, 16, 13, 18, 10, 11, 17, 13, 17, 11, 15, 16, 19, 12, 12, 14, 19, 17, 16, 16, 14, 12, 15, 14, 19, 16, 19, 16, 15, 17, 12, 20, 11, 14, 13, 20, 10, 15, 17, 10, 11, 13, 18, 22, 12, 13, 16, 13, 13, 9, 15, 16, 17, 19, 21, 14, 18, 14, 20, 15, 18, 12, 13, 16, 15, 10, 15, 16, 10, 17, 19, 14, 18, 16, 20, 12, 16, 19, 15, 15, 15, 18, 17, 9, 13, 14, 17, 14, 15, 19, 19, 12, 17, 13, 19, 14, 21, 15, 12, 19, 12, 10, 15, 21, 15, 14, 14, 12, 18, 18, 18, 13, 14, 17, 19, 14, 12, 18, 15, 19, 15, 15, 20, 12, 19, 15, 15, 11, 17, 14, 16, 17, 15, 9, 16, 14, 9, 14, 17, 19, 17, 9, 14, 18, 11, 12, 10, 8, 15, 12, 10, 18, 10, 10, 14, 13, 17, 12, 17, 16, 11, 14, 14, 13, 11, 17, 17, 11, 17, 17, 14, 15, 18, 16, 16, 16, 10, 10, 14, 10, 15, 16, 12, 15, 13, 15, 16, 19, 17, 16, 15, 16, 19, 15, 14, 18, 15, 19, 18, 11, 14, 17, 17, 17, 17, 13, 13, 16, 22, 11, 14, 11, 13, 14, 16, 17, 18, 12, 13, 12, 13, 14, 13, 10, 15, 16, 20, 14, 13, 14, 17, 17, 13, 14, 12, 16, 18, 14, 18, 18, 17, 14, 20, 15, 15, 16, 14, 11, 15, 16, 15, 12, 15, 13, 11, 15, 14, 18, 16, 13, 17, 14, 15, 16, 16, 15, 17, 19, 17, 14, 20, 20, 16, 16, 18, 16, 15, 17, 13, 16, 17, 14, 10, 19, 17, 16, 19, 14, 15, 14, 12, 14, 10, 19, 17, 14, 15, 19, 13, 17, 14, 18, 16, 15, 15, 17, 16, 11, 15, 14, 11, 14, 11, 13, 15, 12, 11, 13, 15, 11, 12, 16, 16, 19, 16, 18, 10, 16, 19, 17, 14, 9, 17, 14, 14, 13, 17, 15, 15, 15, 16, 10, 16, 11, 11, 14, 10, 16, 15, 15, 17, 14, 12, 17, 14, 16, 14, 12, 17, 15, 24, 10, 19, 18, 14, 17, 19, 12, 14, 16, 20, 20, 19, 14, 22, 10, 11, 14, 13, 17, 13, 14, 14, 13, 14, 18, 14, 15, 15, 17, 13, 17, 12, 18, 18, 21, 17, 16, 15, 15, 15, 16, 14, 16, 15, 11, 14, 14, 14, 16, 12, 12, 16, 18, 13, 15, 13, 11, 16, 16, 14, 15, 13, 18, 20, 15, 13, 14, 16, 15, 17, 15, 13, 11, 12, 21, 15, 16, 18, 12, 14, 16, 17, 12, 20, 9, 14, 15, 18, 14, 15, 16, 16, 13, 15, 17, 12, 15, 11, 12, 12, 15, 17, 12, 14, 21, 12, 13, 14, 11, 15, 18, 17, 20, 12, 18, 10, 17, 10, 17, 12, 10, 10, 16, 13, 15, 15, 16, 18, 14, 17, 16, 19, 14, 16, 18, 14, 13, 14, 17, 10, 14, 17, 13, 14, 18, 11, 20, 11, 13, 10, 13, 14, 19, 15, 15, 16, 13, 15, 17, 17, 16, 18, 12, 9, 16, 13, 14, 20, 14, 13, 14, 11, 12, 14, 13, 15, 17, 16, 13, 17, 14, 13, 13, 18, 14, 11, 18, 15, 18, 21, 19, 12, 19, 15, 18, 16, 17, 14, 13, 16, 17, 18, 11, 11, 11, 16, 16, 12, 13, 11, 12, 13, 18, 14, 14, 16, 15, 13, 22, 18, 19, 13, 13, 18, 17, 17, 13, 16, 20, 14, 17, 16, 12, 18, 18, 16, 22, 13, 16, 13, 17, 13, 16, 18, 13, 13, 22, 18, 13, 17, 11, 10, 21, 17, 16, 14, 12, 16, 13, 18, 18, 13, 18, 16, 15, 13, 18, 20, 13, 19, 18, 20, 19, 13, 15, 17, 9, 15, 13, 15, 16, 14, 17, 15, 18, 8, 16, 17, 18, 10, 13, 14, 13, 15, 14, 17, 20, 18, 16, 16, 17, 17, 12, 16, 18, 17, 12, 15, 14, 17, 11, 17, 18, 17, 15, 11, 16, 10, 16, 15, 15, 12, 12, 16, 20, 17, 16, 14, 14, 19, 10, 16, 16, 18, 18, 16, 13, 17, 17, 16, 12, 11, 14, 18, 18, 19, 16, 14, 17, 14, 13, 11, 16, 17, 13, 16, 12, 12, 16, 18, 21, 19, 19, 14, 14, 15, 20, 14, 10, 18, 15, 11, 11, 13, 19, 13, 10, 15, 19, 15, 12, 20, 12, 14, 11, 14, 21, 12, 16, 19, 17, 11, 12, 16, 18, 15, 16, 18, 18, 9, 15, 14, 16, 14, 12, 18, 15, 14, 19, 14, 13, 12, 16, 14, 10, 14, 15, 13, 13, 15, 17, 14, 12, 17, 12, 12, 17, 14, 16, 18, 14, 15, 16, 14, 13, 13, 16, 15, 11, 17, 9, 15, 13, 23, 16, 18, 15, 12, 15, 12, 19, 16, 20, 15, 16, 15, 23, 20, 13, 14, 18, 12, 16, 15, 10, 13, 17, 17, 11, 10, 17, 14, 17, 14, 7, 12, 16, 10, 13, 15, 14, 21, 13, 18, 22, 18, 17, 16, 17, 19, 11, 13, 9, 15, 14, 15, 13, 18, 16, 16, 14, 17, 15, 19, 12, 9, 18, 15, 13, 14, 16, 13, 18, 14, 11, 14, 16, 15, 16, 12, 16, 12, 15, 9, 10, 14, 15, 16, 14, 11, 18, 16, 12, 17, 16, 13, 17, 17, 17, 18, 18, 14, 19, 14, 19, 18, 11, 12, 13, 17, 12, 19, 14, 16, 19, 15, 17, 18, 16, 19, 13, 16, 14, 18, 16, 17, 15, 16, 15, 11, 20, 12, 13, 14, 16, 16, 15, 15, 10, 17, 17, 14, 19, 19, 14, 18, 12, 12, 16, 18, 16, 18, 13, 12, 19, 13, 16, 14, 18, 15, 11, 15, 16, 16, 19, 15, 13, 18, 18, 17, 17, 16, 19, 12, 19, 15, 12, 15, 12, 13, 14, 16, 11, 18, 15, 11, 10, 12, 17, 18, 14, 15, 9, 12, 21, 13, 12, 15, 12, 19, 15, 14, 16, 15, 13, 13, 12, 16, 12, 15, 18, 17, 17, 17, 17, 14, 11, 15, 14, 17, 12, 17, 16, 9, 12, 15, 15, 17, 14, 15, 16, 13, 16, 10, 20, 13, 13, 15, 11, 17, 17, 19, 13, 14, 14, 14, 15, 17, 13, 12, 11, 17, 11, 13, 16, 16, 13, 13, 16, 11, 14, 20, 14, 15, 14, 11, 17, 13, 17, 18, 13, 18, 11, 15, 12, 13, 16, 18, 9, 8, 14, 15, 18, 15, 18, 14, 12, 13, 16, 19, 16, 16, 14, 16, 24, 16, 14, 18, 18, 13, 15, 16, 19, 19, 21, 19, 14, 19, 15, 15, 22, 15, 18, 13, 15, 12, 18, 16, 18, 10, 18, 13, 15, 14, 18, 17, 13, 15, 17, 12, 12, 20, 14, 14, 16, 18, 14, 19, 20, 16, 15, 18, 13, 13, 17, 13, 17, 20, 20, 18, 14, 15, 17, 17, 15, 15, 11, 14, 15, 15, 13, 19, 17, 15, 14, 12, 15, 14, 16, 13, 14, 16, 12, 15, 12, 10, 13, 12, 14, 16, 17, 11, 16, 16, 14, 15, 13, 18, 12, 12, 13, 16, 14, 17, 17, 16, 15, 17, 18, 18, 15, 13, 14, 17, 15, 16, 13, 14, 13, 14, 15, 15, 12, 17, 16, 14, 16, 17, 17, 15, 16, 11, 11, 18, 10, 13, 19, 17, 18, 14, 20, 11, 15, 18, 19, 15, 16, 16, 17, 16, 19, 13, 15, 12, 18, 17, 13, 12, 17, 19, 14, 14, 10, 15, 15, 17, 10, 13, 18, 13, 17, 16, 16, 16, 17, 12, 14, 12, 12, 13, 11, 15, 13, 14, 16, 14, 14, 15, 9, 18, 18, 14, 13, 17, 16, 15, 14, 17, 19, 18, 12, 17, 15, 21, 16, 16, 16, 13, 9, 10, 17, 12, 19, 17, 17, 15, 19, 14, 12, 16, 16, 14, 15, 10, 12, 17, 18, 15, 16, 14, 18, 10, 19, 13, 11, 16, 16, 12, 13, 12, 15, 17, 16, 14, 9, 13, 15, 13, 17, 16, 17, 17, 22, 13, 14, 20, 8, 16, 13, 13, 20, 20, 21, 16, 14, 17, 15, 18, 11, 17, 15, 14, 15, 20, 19, 16, 19, 17, 14, 13, 13, 13, 16, 18, 9, 18, 13, 12, 15, 20, 11, 18, 13, 11, 19, 14, 19, 13, 19, 15, 11, 18, 10, 15, 15, 18, 17, 16, 14, 13, 13, 17, 14, 16, 18, 16, 14, 17, 16, 16, 18, 16, 16, 17, 17, 16, 16, 18, 13, 12, 18, 12, 17, 11, 13, 18, 17, 14, 18, 13, 15, 17, 16, 14, 13, 16, 13, 13, 16, 15, 14, 22, 10, 16, 13, 16, 13, 16, 17, 15, 14, 17, 11, 18, 19, 11, 18, 21, 14, 12, 11, 15, 14, 16, 15, 17, 18, 11, 17, 11, 11, 15, 16, 14, 13, 21, 19, 16, 11, 11, 17, 17, 19, 18, 17, 18, 16, 13, 16, 14, 16, 13, 11, 15, 16, 14, 15, 8, 16, 14, 19, 14, 18, 9, 21, 13, 16, 16, 15, 14, 17, 15, 13, 16, 16, 14, 20, 17, 12, 12, 15, 14, 14, 18, 13, 14, 15, 13, 16, 14, 15, 17, 15, 14, 16, 9, 15, 15, 11, 16, 17, 16, 14, 15, 17, 17, 13, 19, 14, 12, 16, 14, 14, 17, 12, 16, 18, 19, 13, 16, 18, 13, 17, 13, 18, 16, 12, 13, 18, 15, 15, 13, 17, 18, 16, 19, 13, 15, 16, 14, 15, 20, 10, 13, 10, 15, 18, 15, 17, 20, 17, 14, 11, 15, 13, 16, 13, 16, 13, 13, 12, 15, 16, 8, 19, 16, 11, 17, 13, 15, 16, 16, 16, 18, 9, 20, 13, 16, 13, 18, 10, 16, 14, 12, 13, 13, 18, 15, 13, 14, 14, 18, 11, 16, 16, 16, 13, 13, 15, 14, 12, 13, 12, 11, 14, 21, 17, 18, 15, 21, 12, 11, 18, 18, 13, 18, 18, 15, 11, 20, 13, 14, 17, 15, 17, 16, 16, 15, 13, 13, 15, 18, 18, 13, 18, 12, 13, 14, 13, 15, 14, 17, 8, 20, 16, 14, 12, 15, 14, 17, 16, 14, 15, 16, 14, 11, 15, 15, 12, 15, 13, 7, 14, 14, 13, 17, 18, 13, 9, 15, 18, 12, 12, 16, 13, 13, 15, 13, 15, 15, 12, 15, 16, 14, 8, 15, 14, 14, 13, 15, 18, 17, 17, 16, 13, 14, 14, 10, 15, 13, 10, 12, 18, 18, 11, 19, 14, 18, 15, 18, 19, 20, 14, 16, 19, 12, 15, 18, 16, 16, 16, 18, 15, 13, 10, 11, 18, 15, 10, 19, 14, 12, 15, 17, 18, 15, 16, 20, 15, 13, 12, 12, 16, 11, 15, 15, 17, 17, 18, 7, 16, 19, 17, 14, 17, 17, 15, 14, 11, 18, 15, 14, 21, 21, 14, 17, 17, 16, 10, 16, 16, 13, 12, 14, 15, 21, 14, 14, 18, 12, 13, 13, 13, 16, 13, 13, 17, 20, 14, 17, 19, 18, 18, 10, 18, 16, 10, 17, 17, 11, 16, 15, 23, 16, 17, 15, 15, 15, 15, 10, 15, 17, 13, 14, 12, 13, 14, 15, 16, 16, 15, 18, 15, 13, 9, 17, 10, 13, 11, 11, 15, 14, 18, 15, 17, 16, 12, 18, 10, 12, 15, 16, 14, 18, 14, 11, 20, 16, 16, 15, 13, 14, 11, 18, 12, 13, 15, 14, 13, 18, 17, 18, 13, 15, 13, 14, 20, 15, 13, 15, 17, 18, 19, 16, 19, 15, 12, 14, 18, 14, 14, 22, 12, 15, 15, 17, 13, 19, 17, 16, 15, 16, 16, 10, 14, 18, 13, 20, 13, 18, 20, 17, 16, 14, 16, 12, 12, 12, 17, 17, 14, 18, 15, 18, 17, 19, 16, 17, 18, 17, 11, 11, 16, 14, 13, 14, 13, 10, 18, 17, 20, 16, 17, 17, 17, 15, 14, 18, 18, 10, 13, 13, 16, 20, 12, 18, 14, 20, 15, 19, 14, 19, 14, 17, 11, 14, 15, 17, 14, 12, 13, 14, 21, 13, 13, 17, 14, 15, 12, 6, 12, 15, 18, 14, 17, 17, 16, 13, 13, 16, 16, 18, 13, 15, 14, 14, 14, 17, 15, 16, 17, 18, 13, 12, 11, 13, 13, 12, 17, 19, 11, 11, 15, 16, 15, 13, 18, 16, 16, 13, 18, 19, 16, 15, 19, 15, 14, 15, 13, 17, 11, 12, 15, 24, 19, 19, 13, 14, 14, 18, 16, 15, 18, 17, 12, 15, 17, 15, 19, 17, 17, 16, 16, 13, 14, 15, 11, 18, 14, 19, 16, 14, 17, 13, 16, 13, 13, 15, 13, 21, 15, 13, 16, 18, 16, 15, 16, 15, 16, 19, 18, 13, 17, 16, 18, 12, 16, 17, 14, 18, 16, 12, 17, 16, 14, 16, 16, 13, 16, 17, 15, 14, 18, 19, 16, 13, 16, 16, 12, 17, 14, 14, 17, 16, 16, 15, 14, 21, 7, 16, 16, 17, 17, 15, 15, 12, 10, 14, 10, 17, 14, 12, 8, 13, 19, 12, 13, 16, 17, 16, 16, 13, 14, 16, 18, 16, 15, 7, 16, 17, 10, 12, 14, 17, 13, 9, 15, 16, 10, 8, 15, 15, 18, 18, 15, 20, 9, 19, 20, 13, 13, 17, 15, 15, 16, 10, 14, 19, 13, 18, 12, 18, 17, 13, 10, 11, 14, 15, 14, 14, 14, 17, 16, 15, 16, 14, 18, 15, 16, 15, 17, 13, 17, 13, 9, 13, 13, 13, 10, 16, 23, 18, 13, 15, 15, 17, 10, 14, 11, 11, 16, 13, 13, 11, 17, 17, 17, 14, 15, 20, 12, 18, 18, 14, 14, 14, 10, 15, 18, 15, 16, 18, 19, 17, 16, 15, 14, 19, 16, 14, 15, 12, 17, 15, 14, 11, 12, 15, 17, 16, 15, 14, 14, 13, 19, 14, 15, 16, 12, 10, 12, 14, 15, 18, 15, 14, 14, 16, 16, 15, 13, 15, 13, 9, 11, 17, 12, 10, 18, 20, 16, 15, 19, 17, 14, 19, 14, 15, 15, 14, 17, 16, 13, 19, 13, 15, 15, 16, 14, 11, 16, 17, 18, 13, 21, 11, 15, 19, 16, 15, 13, 15, 14, 14, 17, 16, 13, 9, 16, 15, 12, 14, 13, 14, 15, 20, 18, 15, 19, 19, 17, 19, 13, 20, 16, 18, 11, 13, 12, 15, 11, 11, 18, 14, 14, 14, 13, 9, 13, 15, 14, 20, 17, 12, 18, 14, 14, 13, 12, 18, 17, 19, 10, 17, 13, 23, 13, 13, 21, 12, 14, 16, 10, 15, 19, 9, 14, 18, 19, 15, 15, 12, 9, 17, 15, 15, 15, 15, 17, 15, 10, 11, 10, 14, 10, 9, 18, 15, 16, 11, 15, 12, 11, 14, 16, 14, 13, 14, 14, 18, 19, 15, 14, 15, 13, 10, 13, 18, 11, 17, 16, 19, 20, 17, 19, 18, 17, 13, 15, 14, 19, 19, 19, 18, 13, 13, 14, 17, 12, 17, 14, 16, 15, 14, 14, 15, 17, 14, 12, 10, 17, 13, 13, 17, 14, 9, 20, 6, 16, 14, 14, 16, 13, 13, 14, 18, 12, 10, 13, 14, 14, 14, 14, 10, 11, 13, 13, 13, 13, 13, 18, 13, 16, 14, 14, 14, 19, 15, 15, 16, 11, 13, 13, 13, 13, 12, 19, 17, 17, 15, 16, 17, 18, 12, 9, 14, 14, 11, 15, 13, 13, 13, 15, 15, 12, 18, 17, 19, 11, 21, 14, 13, 15, 13, 15, 12, 15, 16, 12, 11, 15, 14, 15, 15, 13, 19, 14, 15, 19, 16, 20, 18, 17, 17, 18, 19, 16, 14, 16, 15, 15, 14, 16, 13, 14, 11, 14, 12, 15, 14, 17, 14, 21, 14, 14, 12, 13, 20, 22, 13, 11, 12, 11, 12, 14, 13, 13, 14, 20, 12, 15, 15, 13, 16, 15, 16, 11, 16, 19, 21, 18, 12, 17, 17, 18, 14, 18, 17, 13, 18, 22, 14, 14, 19, 7, 13, 13, 15, 18, 20, 14, 13, 15, 18, 14, 12, 12, 15, 11, 13, 14, 10, 14, 15, 13, 19, 11, 11, 16, 14, 17, 16, 18, 14, 15, 18, 19, 13, 19, 18, 15, 17, 16, 16, 20, 14, 11, 13, 14, 14, 16, 17, 15, 8, 17, 9, 10, 14, 14, 14, 13, 16, 14, 15, 19, 15, 11, 19, 15, 15, 13, 16, 13, 15, 18, 18, 13, 17, 16, 17, 18, 14, 12, 16, 14, 12, 16, 14, 18, 18, 17, 14, 19, 16, 13, 12, 11, 15, 14, 14, 14, 11, 10, 15, 14, 15, 15, 16, 15, 14, 18, 13, 14, 13, 12, 18, 17, 14, 14, 14, 15, 12, 16, 14, 14, 20, 13, 11, 19, 10, 19, 16, 15, 15, 18, 16, 19, 14, 16, 15, 13, 16, 16, 14, 16, 14, 15, 13, 17, 16, 16, 13, 21, 13, 19, 13, 15, 15, 15, 19, 14, 13, 17, 15, 12, 16, 13, 18, 14, 15, 12, 16, 15, 12, 20, 11, 16, 11, 16, 14, 12, 15, 11, 15, 19, 13, 15, 9, 17, 15, 16, 18, 14, 13, 10, 13, 10, 15, 17, 12, 20, 19, 13, 13, 15, 16, 17, 11, 14, 15, 17, 14, 18, 17, 16, 17, 11, 11, 14, 18, 11, 10, 15, 14, 17, 15, 18, 13, 12, 14, 19, 14, 15, 10, 19, 15, 18, 12, 17, 17, 13, 16, 13, 20, 12, 20, 15, 12, 16, 19, 14, 14, 13, 18, 23, 14, 18, 15, 10, 12, 14, 16, 16, 17, 13, 20, 18, 15, 15, 11, 18, 15, 16, 14, 14, 12, 20, 10, 21, 15, 14, 17, 13, 18, 13, 15, 11, 14, 12, 15, 15, 12, 20, 13, 8, 16, 18, 15, 11, 17, 12, 16, 11, 13, 17, 13, 13, 13, 18, 12, 15, 17, 14, 10, 12, 10, 17, 10, 14, 17, 15, 16, 11, 16, 17, 13, 15, 19, 12, 20, 14, 11, 16, 10, 12, 18, 16, 15, 17, 14, 11, 9, 14, 12, 11, 16, 12, 10, 14, 16, 18, 14, 16, 14, 17, 16, 14, 11, 14, 16, 18, 14, 16, 13, 21, 15, 15, 14, 13, 16, 14, 17, 16, 15, 19, 19, 16, 19, 10, 18, 13, 13, 10, 14, 17, 14, 13, 10, 12, 10, 12, 17, 10, 14, 16, 16, 18, 19, 17, 15, 11, 16, 18, 16, 12, 14, 13, 13, 14, 16, 18, 12, 13, 20, 14, 9, 11, 18, 15, 8, 14, 12, 15, 15, 21, 16, 13, 16, 15, 17, 16, 10, 12, 15, 16, 18, 16, 16, 19, 12, 15, 17, 14, 13, 15, 14, 10, 19, 14, 12, 15, 12, 18, 17, 14, 14, 17, 17, 11, 21, 14, 17, 14, 13, 13, 13, 14, 19, 11, 20, 16, 15, 17, 14, 16, 22, 15, 16, 13, 13, 14, 13, 16, 9, 16, 17, 15, 11, 12, 18, 18, 16, 15, 16, 13, 23, 14, 16, 18, 15, 13, 17, 16], "xaxis": "x", "yaxis": "y"}],
+                        {"barmode": "relative", "height": 400, "legend": {"tracegroupgap": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "The binomial distribution"}, "width": 600, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "x"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "count"}}},
+                        {"responsive": true}
+                    ).then(function(){
+
+var gd = document.getElementById('f6740720-0a1b-4a63-9276-4f035463ae9c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+
+            </script>
+        </div>
+</body>
+</html></div></div>
+</div>
+</div>
+<div class="section" id="bokeh">
+<h3>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this headline">¶</a></h3>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">output_notebook</span>
+<span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;The binomial distribution&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  var JS_MIME_TYPE = 'application/javascript';
+  var HTML_MIME_TYPE = 'text/html';
+  var EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  var CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    var script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    var cell = handle.cell;
+
+    var id = cell.output_area._bokeh_element_id;
+    var server_id = cell.output_area._bokeh_server_id;
+    // Clean up Bokeh references
+    if (id != null && id in Bokeh.index) {
+      Bokeh.index[id].model.document.clear();
+      delete Bokeh.index[id];
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      var cmd = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd, {
+        iopub: {
+          output: function(msg) {
+            var id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
+          }
+        }
+      });
+      // Destroy server and session
+      var cmd = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    var output_area = handle.output_area;
+    var output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      var bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      var script_attrs = bk_div.children[0].attributes;
+      for (var i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      var toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+
+  
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  var NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    var el = document.getElementById(null);
+    if (el != null) {
+      el.textContent = "BokehJS is loading...";
+    }
+    if (root.Bokeh !== undefined) {
+      if (el != null) {
+        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    const hashes = {"https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js": "dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.3.min.js": "8x57I4YuIfu8XyZfFo0XVr2WAT8EK4rh/uDe3wF7YuW2FNUSNEpJbsPaB1nJ2fz2", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js": "3QTqdz9LyAm2i0sG5XTePsHec3UHWwVsrOL68SYRoAXsafvfAyqtQ+h440+qIBhS"};
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      if (url in hashes) {
+        element.crossOrigin = "anonymous";
+        element.integrity = "sha384-" + hashes[url];
+      }
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.3.min.js"];
+  var css_urls = [];
+  
+
+  var inline_js = [
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {
+    
+    
+    }
+  ];
+
+  function run_inline_js() {
+    
+    if (root.Bokeh !== undefined || force === true) {
+      
+    for (var i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      var cell = $(document.getElementById(null)).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><div class="output text_html">
+
+
+
+
+
+<div class="bk-root" id="f1cdc3e0-d20a-475d-94a7-d2ad66cf5a9e" data-root-id="1100"></div>
+</div><script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    
+  var docs_json = {"71690e1f-4696-4212-b0a2-d4dd3695716b":{"defs":[],"roots":{"references":[{"attributes":{"below":[{"id":"1111"}],"center":[{"id":"1114"},{"id":"1118"}],"height":400,"left":[{"id":"1115"}],"renderers":[{"id":"1136"}],"title":{"id":"1101"},"toolbar":{"id":"1126"},"x_range":{"id":"1103"},"x_scale":{"id":"1107"},"y_range":{"id":"1105"},"y_scale":{"id":"1109"}},"id":"1100","subtype":"Figure","type":"Plot"},{"attributes":{"formatter":{"id":"1151"},"major_label_policy":{"id":"1150"},"ticker":{"id":"1112"}},"id":"1111","type":"LinearAxis"},{"attributes":{"data":{"left":{"__ndarray__":"AAAAAAAAFECamZmZmZkbQJqZmZmZmSFAZmZmZmZmJUAzMzMzMzMpQAAAAAAAAC1AZmZmZmZmMEDMzMzMzEwyQDMzMzMzMzRAmZmZmZkZNkA=","dtype":"float64","order":"little","shape":[10]},"right":{"__ndarray__":"mpmZmZmZG0CamZmZmZkhQGZmZmZmZiVAMzMzMzMzKUAAAAAAAAAtQGZmZmZmZjBAzMzMzMxMMkAzMzMzMzM0QJmZmZmZGTZAAAAAAAAAOEA=","dtype":"float64","order":"little","shape":[10]},"top":[6,65,429,1226,2570,2782,1928,791,174,29]},"selected":{"id":"1156"},"selection_policy":{"id":"1157"}},"id":"1133","type":"ColumnDataSource"},{"attributes":{},"id":"1112","type":"BasicTicker"},{"attributes":{"axis":{"id":"1111"},"ticker":null},"id":"1114","type":"Grid"},{"attributes":{"bottom":{"value":0},"fill_color":{"value":"#1f77b4"},"left":{"field":"left"},"line_color":{"value":"#1f77b4"},"right":{"field":"right"},"top":{"field":"top"}},"id":"1134","type":"Quad"},{"attributes":{"active_multi":null,"tools":[{"id":"1119"},{"id":"1120"},{"id":"1121"},{"id":"1122"},{"id":"1123"},{"id":"1124"}]},"id":"1126","type":"Toolbar"},{"attributes":{"data_source":{"id":"1133"},"glyph":{"id":"1134"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1135"},"view":{"id":"1137"}},"id":"1136","type":"GlyphRenderer"},{"attributes":{},"id":"1157","type":"UnionRenderers"},{"attributes":{"axis":{"id":"1115"},"dimension":1,"ticker":null},"id":"1118","type":"Grid"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1125","type":"BoxAnnotation"},{"attributes":{},"id":"1116","type":"BasicTicker"},{"attributes":{},"id":"1154","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"1133"}},"id":"1137","type":"CDSView"},{"attributes":{},"id":"1119","type":"PanTool"},{"attributes":{"formatter":{"id":"1154"},"major_label_policy":{"id":"1153"},"ticker":{"id":"1116"}},"id":"1115","type":"LinearAxis"},{"attributes":{},"id":"1105","type":"DataRange1d"},{"attributes":{},"id":"1120","type":"WheelZoomTool"},{"attributes":{},"id":"1156","type":"Selection"},{"attributes":{"overlay":{"id":"1125"}},"id":"1121","type":"BoxZoomTool"},{"attributes":{},"id":"1122","type":"SaveTool"},{"attributes":{},"id":"1123","type":"ResetTool"},{"attributes":{"text":"The binomial distribution"},"id":"1101","type":"Title"},{"attributes":{"bottom":{"value":0},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"left":{"field":"left"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"right"},"top":{"field":"top"}},"id":"1135","type":"Quad"},{"attributes":{},"id":"1103","type":"DataRange1d"},{"attributes":{},"id":"1124","type":"HelpTool"},{"attributes":{},"id":"1151","type":"BasicTickFormatter"},{"attributes":{},"id":"1153","type":"AllLabels"},{"attributes":{},"id":"1107","type":"LinearScale"},{"attributes":{},"id":"1109","type":"LinearScale"},{"attributes":{},"id":"1150","type":"AllLabels"}],"root_ids":["1100"]},"title":"Bokeh Application","version":"2.3.3"}};
+  var render_items = [{"docid":"71690e1f-4696-4212-b0a2-d4dd3695716b","root_ids":["1100"],"roots":{"1100":"f1cdc3e0-d20a-475d-94a7-d2ad66cf5a9e"}}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);</script></div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-help-documentation-docstrings">
+<h2>Accessing help documentation (docstrings)<a class="headerlink" href="#accessing-help-documentation-docstrings" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>np.random.binomial?
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-help-and-code-examples-on-the-web">
+<h2>Finding help and code examples on the Web<a class="headerlink" href="#finding-help-and-code-examples-on-the-web" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+</div>
+<div class="section" id="sharing-notebooks-via-google-drive">
+<h2>Sharing notebooks via Google Drive<a class="headerlink" href="#sharing-notebooks-via-google-drive" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+</div>
+<div class="section" id="practical-exercises">
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Go to https://colab.research.google.com and create a new notebook.</p></li>
+<li><p>Add a code cell, type some Python code, and run (execute) the cell.</p></li>
+<li><p>Add a text cell and type some text, using markdown to format the text, e.g., bold, italic, hyperlinks, etc.</p></li>
+<li><p>Practice adding, deleting and moving cells within the notebook.</p></li>
+<li><p>Import a package (e.g., <code class="docutils literal notranslate"><span class="pre">numpy</span></code>) and call a function from that package (e.g., <code class="docutils literal notranslate"><span class="pre">numpy.random.randint()</span></code>). Hint: use <code class="docutils literal notranslate"><span class="pre">?</span></code> to display the function parameters if you can’t remember them.</p></li>
+<li><p>Add a code cell which creates a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Inspect the dataframe using the colab interactive tables feature. Hint: you can search the web for pandas code examples, and copy-paste the code into your notebook.</p></li>
+<li><p>Add a code cell which creates a matplotlib plot. Hint: try the <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">matplotlib examples gallery</a> for some code examples to try.</p></li>
+<li><p>Add a code cell which creates a plotly plot. Hint: try the <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">plotly express docs</a> for some code examples to try.</p></li>
+<li><p>Add a code cell which creates a bokeh plot. Hint: try the <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/gallery.html#standalone-examples">bokeh gallery</a> for some code examples to try.</p></li>
+<li><p>When you’ve had enough, create a link to your notebook, and share it with someone. If you’re attending a training workshop, paste the link into the workshop slack channel.</p></li>
+</ol>
 </div>
 </div>
 
