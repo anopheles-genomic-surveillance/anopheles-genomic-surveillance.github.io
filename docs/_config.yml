@@ -1,8 +1,16 @@
 title: Training course in data analysis for genomic surveillance of African malaria vectors
 author: MalariaGEN and PAMCA
 copyright: "2022"
+only_build_toc_files: true
 execute:
-  execute_notebooks: "off"
+  # N.B., execution is needed to get some notebooks to render properly,
+  # e.g., notebooks using ipyleaflet to create maps. If there are some
+  # notebooks which take too long to run, they can be excluded from 
+  # execution. See https://jupyterbook.org/content/execute.html#exclude-files-from-execution
+  # for configuration syntax.
+  execute_notebooks: "auto"
+  timeout: 100
+  allow_errors: true
 repository:
   url: https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io
   path_to_book: docs
@@ -10,7 +18,7 @@ repository:
 launch_buttons:
   notebook_interface: "jupyterlab"
   colab_url: "https://colab.research.google.com"
-  binderhub_url: ""  # support colab only
+  binderhub_url: ""  # disable binderhub, support colab only
 html:
   use_repository_button : true
   use_issues_button: true

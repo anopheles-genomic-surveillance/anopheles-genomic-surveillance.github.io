@@ -5,6 +5,6 @@ parts:
     chapters:
     - file: workshop-1/about
     - file: workshop-1/colab
-    - file: workshop-1/malariagen-data
+    - file: workshop-1/sample-metadata
     - file: workshop-1/genome
     - file: workshop-1/vgsc-snps
