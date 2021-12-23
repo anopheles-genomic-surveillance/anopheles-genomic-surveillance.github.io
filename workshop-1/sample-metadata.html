@@ -1,0 +1,1722 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 2 - Accessing sample metadata &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Module 3 - Navigating the Anopheles gambiae genome" href="genome.html" />
+    <link rel="prev" title="Module 1 - Interactive cloud computing with Google Colaboratory" href="colab.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../home.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About workshop 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="colab.html">
+   Module 1 - Interactive cloud computing with Google Colaboratory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 2 - Accessing sample metadata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genome.html">
+   Module 3 - Navigating the
+   <em>
+    Anopheles gambiae
+   </em>
+   genome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vgsc-snps.html">
+   Module 4 - Analysing SNPs in the
+   <em>
+    Vgsc
+   </em>
+   gene
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/workshop-1/sample-metadata.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/sample-metadata.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/sample-metadata.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-malariagen-vector-observatory">
+   What is the MalariaGEN Vector Observatory?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-data-are-available">
+   What data are available?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-are-the-data-stored">
+   Where are the data stored?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-ag3-data-resource">
+   Accessing the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Ag3
+    </span>
+   </code>
+   data resource
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-sample-metadata">
+   Loading sample metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#querying-sample-metadata">
+   Querying sample metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarising-sample-metadata-with-pivot-tables">
+   Summarising sample metadata with pivot tables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-maps-of-sampling-locations">
+   Plotting maps of sampling locations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-other-data-via-the-ag3-api">
+   Accessing other data via the Ag3 API
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercises">
+   Practical exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-study">
+   Further study
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 1</strong></em></p>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="module-2-accessing-sample-metadata">
+<h1>Module 2 - Accessing sample metadata<a class="headerlink" href="#module-2-accessing-sample-metadata" title="Permalink to this headline">¶</a></h1>
+<p><strong>Subject: Data</strong></p>
+<p>This first data module provides an introduction to accessing data relating to whole-genome sequencing of <em>Anopheles gambiae</em> mosquitoes provided by the MalariaGEN Vector Observatory.</p>
+<div class="section" id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Explain what types of data are provided the MalariaGEN Vector Observatory and where the data are stored</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package to access MalariaGEN data in Google Cloud</p></li>
+<li><p>Explore the MalariaGEN <code class="docutils literal notranslate"><span class="pre">Ag3</span></code> data resource and summarise the mosquito samples for which genomic data are available</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-the-malariagen-vector-observatory">
+<h2>What is the MalariaGEN Vector Observatory?<a class="headerlink" href="#what-is-the-malariagen-vector-observatory" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+</div>
+<div class="section" id="what-data-are-available">
+<h2>What data are available?<a class="headerlink" href="#what-data-are-available" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<ul class="simple">
+<li><p>Sample metadata</p></li>
+<li><p>Genome variation data</p>
+<ul>
+<li><p>Single nucleotide polymorphism (SNP) calls</p></li>
+<li><p>Copy number variant (CNV) calls</p></li>
+<li><p>Phased haplotypes</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="where-are-the-data-stored">
+<h2>Where are the data stored?<a class="headerlink" href="#where-are-the-data-stored" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+</div>
+<div class="section" id="accessing-the-ag3-data-resource">
+<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">Ag3</span></code> data resource<a class="headerlink" href="#accessing-the-ag3-data-resource" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -q malariagen_data
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">(</span><span class="s2">&quot;gs://vo_agam_release&quot;</span><span class="p">)</span>
+<span class="n">ag3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;malariagen_data.ag3.Ag3 at 0x7fc21dd84850&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-sample-metadata">
+<h2>Loading sample metadata<a class="headerlink" href="#loading-sample-metadata" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()</span>
+<span class="n">df_samples</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>partner_sample_id</th>
+      <th>contributor</th>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th>month</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>sex_call</th>
+      <th>sample_set</th>
+      <th>release</th>
+      <th>aim_fraction_colu</th>
+      <th>aim_fraction_arab</th>
+      <th>species_gambcolu_arabiensis</th>
+      <th>species_gambiae_coluzzii</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR0047-C</td>
+      <td>LUA047</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.945</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR0049-C</td>
+      <td>LUA049</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.933</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR0051-C</td>
+      <td>LUA051</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.937</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR0061-C</td>
+      <td>LUA061</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.938</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR0078-C</td>
+      <td>LUA078</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>AG1000G-AO</td>
+      <td>v3</td>
+      <td>0.926</td>
+      <td>0.001</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2779</th>
+      <td>AC0295-C</td>
+      <td>K92</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.026</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2780</th>
+      <td>AC0296-C</td>
+      <td>K93</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.003</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2781</th>
+      <td>AC0297-C</td>
+      <td>K94</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.026</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2782</th>
+      <td>AC0298-C</td>
+      <td>K95</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>2783</th>
+      <td>AC0299-C</td>
+      <td>K96</td>
+      <td>Martin Donnelly</td>
+      <td>Uganda</td>
+      <td>Kihihi</td>
+      <td>2012</td>
+      <td>11</td>
+      <td>-0.751</td>
+      <td>29.701</td>
+      <td>F</td>
+      <td>AG1000G-UG</td>
+      <td>v3</td>
+      <td>0.029</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+  </tbody>
+</table>
+<p>2784 rows × 17 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="querying-sample-metadata">
+<h2>Querying sample metadata<a class="headerlink" href="#querying-sample-metadata" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>partner_sample_id</th>
+      <th>contributor</th>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th>month</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>sex_call</th>
+      <th>sample_set</th>
+      <th>release</th>
+      <th>aim_fraction_colu</th>
+      <th>aim_fraction_arab</th>
+      <th>species_gambcolu_arabiensis</th>
+      <th>species_gambiae_coluzzii</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>81</th>
+      <td>AB0085-Cx</td>
+      <td>BF2-4</td>
+      <td>Austin Burt</td>
+      <td>Burkina Faso</td>
+      <td>Pala</td>
+      <td>2012</td>
+      <td>7</td>
+      <td>11.150</td>
+      <td>-4.235</td>
+      <td>F</td>
+      <td>AG1000G-BF-A</td>
+      <td>v3</td>
+      <td>0.024</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>AB0086-Cx</td>
+      <td>BF2-6</td>
+      <td>Austin Burt</td>
+      <td>Burkina Faso</td>
+      <td>Pala</td>
+      <td>2012</td>
+      <td>7</td>
+      <td>11.150</td>
+      <td>-4.235</td>
+      <td>F</td>
+      <td>AG1000G-BF-A</td>
+      <td>v3</td>
+      <td>0.038</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>AB0087-C</td>
+      <td>BF3-3</td>
+      <td>Austin Burt</td>
+      <td>Burkina Faso</td>
+      <td>Bana</td>
+      <td>2012</td>
+      <td>7</td>
+      <td>11.233</td>
+      <td>-4.472</td>
+      <td>F</td>
+      <td>AG1000G-BF-A</td>
+      <td>v3</td>
+      <td>0.982</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>AB0088-C</td>
+      <td>BF3-5</td>
+      <td>Austin Burt</td>
+      <td>Burkina Faso</td>
+      <td>Bana</td>
+      <td>2012</td>
+      <td>7</td>
+      <td>11.233</td>
+      <td>-4.472</td>
+      <td>F</td>
+      <td>AG1000G-BF-A</td>
+      <td>v3</td>
+      <td>0.990</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>AB0089-Cx</td>
+      <td>BF3-8</td>
+      <td>Austin Burt</td>
+      <td>Burkina Faso</td>
+      <td>Bana</td>
+      <td>2012</td>
+      <td>7</td>
+      <td>11.233</td>
+      <td>-4.472</td>
+      <td>F</td>
+      <td>AG1000G-BF-A</td>
+      <td>v3</td>
+      <td>0.975</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>coluzzii</td>
+      <td>coluzzii</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>AB0314-C</td>
+      <td>6775</td>
+      <td>Nora Besansky</td>
+      <td>Burkina Faso</td>
+      <td>Monomtenga</td>
+      <td>2004</td>
+      <td>8</td>
+      <td>12.060</td>
+      <td>-1.170</td>
+      <td>F</td>
+      <td>AG1000G-BF-C</td>
+      <td>v3</td>
+      <td>0.028</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>AB0315-C</td>
+      <td>6777</td>
+      <td>Nora Besansky</td>
+      <td>Burkina Faso</td>
+      <td>Monomtenga</td>
+      <td>2004</td>
+      <td>8</td>
+      <td>12.060</td>
+      <td>-1.170</td>
+      <td>F</td>
+      <td>AG1000G-BF-C</td>
+      <td>v3</td>
+      <td>0.021</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>AB0316-C</td>
+      <td>6779</td>
+      <td>Nora Besansky</td>
+      <td>Burkina Faso</td>
+      <td>Monomtenga</td>
+      <td>2004</td>
+      <td>8</td>
+      <td>12.060</td>
+      <td>-1.170</td>
+      <td>F</td>
+      <td>AG1000G-BF-C</td>
+      <td>v3</td>
+      <td>0.031</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>AB0318-C</td>
+      <td>5072</td>
+      <td>Nora Besansky</td>
+      <td>Burkina Faso</td>
+      <td>Monomtenga</td>
+      <td>2004</td>
+      <td>7</td>
+      <td>12.060</td>
+      <td>-1.170</td>
+      <td>F</td>
+      <td>AG1000G-BF-C</td>
+      <td>v3</td>
+      <td>0.032</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>AB0325-C</td>
+      <td>1403</td>
+      <td>Nora Besansky</td>
+      <td>Burkina Faso</td>
+      <td>Monomtenga</td>
+      <td>2004</td>
+      <td>6</td>
+      <td>12.060</td>
+      <td>-1.170</td>
+      <td>F</td>
+      <td>AG1000G-BF-C</td>
+      <td>v3</td>
+      <td>0.019</td>
+      <td>0.002</td>
+      <td>gamb_colu</td>
+      <td>gambiae</td>
+      <td>gambiae</td>
+    </tr>
+  </tbody>
+</table>
+<p>296 rows × 17 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="summarising-sample-metadata-with-pivot-tables">
+<h2>Summarising sample metadata with pivot tables<a class="headerlink" href="#summarising-sample-metadata-with-pivot-tables" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_country_year_species</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_samples</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">pivot_country_year_species</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>arabiensis</th>
+      <th>coluzzii</th>
+      <th>gambiae</th>
+      <th>intermediate_arabiensis_gambiae</th>
+      <th>intermediate_gambiae_coluzzii</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Angola</th>
+      <th>2009</th>
+      <td>0</td>
+      <td>81</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Burkina Faso</th>
+      <th>2004</th>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0</td>
+      <td>82</td>
+      <td>98</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>3</td>
+      <td>53</td>
+      <td>46</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Cameroon</th>
+      <th>2005</th>
+      <td>0</td>
+      <td>7</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>0</td>
+      <td>0</td>
+      <td>303</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>2</td>
+      <td>19</td>
+      <td>23</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Central African Republic</th>
+      <th>1993</th>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>0</td>
+      <td>13</td>
+      <td>53</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Cote d'Ivoire</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Democratic Republic of the Congo</th>
+      <th>2015</th>
+      <td>0</td>
+      <td>0</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Equatorial Guinea</th>
+      <th>2002</th>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Gabon</th>
+      <th>2000</th>
+      <td>0</td>
+      <td>0</td>
+      <td>69</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Gambia, The</th>
+      <th>2011</th>
+      <td>0</td>
+      <td>5</td>
+      <td>58</td>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0</td>
+      <td>164</td>
+      <td>11</td>
+      <td>0</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>Ghana</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>64</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Guinea</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>11</td>
+      <td>123</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Guinea-Bissau</th>
+      <th>2010</th>
+      <td>0</td>
+      <td>0</td>
+      <td>29</td>
+      <td>0</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Kenya</th>
+      <th>2000</th>
+      <td>0</td>
+      <td>0</td>
+      <td>19</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>10</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <th>2015</th>
+      <td>41</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Mali</th>
+      <th>2004</th>
+      <td>2</td>
+      <td>36</td>
+      <td>33</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0</td>
+      <td>28</td>
+      <td>65</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0</td>
+      <td>27</td>
+      <td>33</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Mayotte</th>
+      <th>2011</th>
+      <td>0</td>
+      <td>0</td>
+      <td>23</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Mozambique</th>
+      <th>2003</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0</td>
+      <td>0</td>
+      <td>71</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Tanzania</th>
+      <th>2012</th>
+      <td>87</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>1</td>
+      <td>0</td>
+      <td>36</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>137</td>
+      <td>0</td>
+      <td>32</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Uganda</th>
+      <th>2012</th>
+      <td>82</td>
+      <td>0</td>
+      <td>207</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_location_year_species_bf</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_samples</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">pivot_location_year_species_bf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>species</th>
+      <th>arabiensis</th>
+      <th>coluzzii</th>
+      <th>gambiae</th>
+      <th>intermediate_gambiae_coluzzii</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="7" valign="top">Burkina Faso</th>
+      <th rowspan="2" valign="top">Bana</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>42</td>
+      <td>22</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>1</td>
+      <td>47</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Monomtenga</th>
+      <th>2004</th>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Pala</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>11</td>
+      <td>48</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>2</td>
+      <td>0</td>
+      <td>16</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Souroukoudinga</th>
+      <th>2012</th>
+      <td>0</td>
+      <td>29</td>
+      <td>28</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0</td>
+      <td>6</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plotting-maps-of-sampling-locations">
+<h2>Plotting maps of sampling locations<a class="headerlink" href="#plotting-maps-of-sampling-locations" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -q ipyleaflet
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyleaflet</span> <span class="kn">import</span> <span class="n">Map</span><span class="p">,</span> <span class="n">Marker</span><span class="p">,</span> <span class="n">basemaps</span><span class="p">,</span> <span class="n">ScaleControl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a map</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span>
+    <span class="n">basemap</span><span class="o">=</span><span class="n">basemaps</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span> 
+    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># display the map</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "a736ad3eb0e848a2a6ad534bfb18698d"}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a dataframe of sampling locations and sample sizes</span>
+<span class="n">pivot_location_species</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_samples</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># inspect the dataframe of locations</span>
+<span class="n">pivot_location_species</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>species</th>
+      <th>arabiensis</th>
+      <th>coluzzii</th>
+      <th>gambiae</th>
+      <th>intermediate_arabiensis_gambiae</th>
+      <th>intermediate_gambiae_coluzzii</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>location</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Angola</th>
+      <th>Luanda</th>
+      <th>-8.884</th>
+      <th>13.302</th>
+      <td>0</td>
+      <td>81</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">Burkina Faso</th>
+      <th>Bana</th>
+      <th>11.233</th>
+      <th>-4.472</th>
+      <td>1</td>
+      <td>89</td>
+      <td>37</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Monomtenga</th>
+      <th>12.060</th>
+      <th>-1.170</th>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Pala</th>
+      <th>11.150</th>
+      <th>-4.235</th>
+      <td>2</td>
+      <td>11</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Souroukoudinga</th>
+      <th>11.235</th>
+      <th>-4.535</th>
+      <td>0</td>
+      <td>35</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Tanzania</th>
+      <th>Muheza</th>
+      <th>-4.940</th>
+      <th>38.948</th>
+      <td>1</td>
+      <td>0</td>
+      <td>36</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Muleba</th>
+      <th>-1.962</th>
+      <th>31.651</th>
+      <td>137</td>
+      <td>0</td>
+      <td>32</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Tarime</th>
+      <th>-1.431</th>
+      <th>34.199</th>
+      <td>47</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Uganda</th>
+      <th>Kihihi</th>
+      <th>-0.751</th>
+      <th>29.701</th>
+      <td>1</td>
+      <td>0</td>
+      <td>95</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Nagongera</th>
+      <th>0.770</th>
+      <th>34.026</th>
+      <td>81</td>
+      <td>0</td>
+      <td>112</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>126 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a map</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span>
+    <span class="n">basemap</span><span class="o">=</span><span class="n">basemaps</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span> 
+    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># add markers for sampling locations</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pivot_location_species</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">location</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">gambiae</span><span class="si">}</span><span class="s2"> gambiae, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">coluzzii</span><span class="si">}</span><span class="s2"> coluzzii, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">arabiensis</span><span class="si">}</span><span class="s2"> arabiensis&quot;</span>
+    <span class="p">)</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="p">),</span> 
+        <span class="n">draggable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
+
+<span class="c1"># add a scale bar</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ScaleControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">))</span>
+
+<span class="c1"># display the map</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5a4314b1ef304f63b8da215d5a9a6c1f"}
+</script></div>
+</div>
+</div>
+<div class="section" id="accessing-other-data-via-the-ag3-api">
+<h2>Accessing other data via the Ag3 API<a class="headerlink" href="#accessing-other-data-via-the-ag3-api" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO API documentation</p>
+</div>
+<div class="section" id="practical-exercises">
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+<ul class="simple">
+<li><p>Plot a map of sampling locations, changing the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> parameter to show a different background map. Hint: see the <a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/api_reference/basemaps.html">ipyleaflet basemaps documentation</a> for a list of available options.</p></li>
+</ul>
+</div>
+<div class="section" id="further-study">
+<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
+<p>&#64;&#64;TODO</p>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"c9dea8c0a7544d6b96b425f6464d2c4c": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "2cd0bfdc47ad469082cb9c850351182f": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "8a7d692289b2449996ab014ff2734b96": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "OpenStreetMap.Mapnik", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "e079c94495e24a30aabcdd0c33d3c997": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1887a00c98fb4cbd81097efb9a17e565": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "a736ad3eb0e848a2a6ad534bfb18698d": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [0, 20], "close_popup_on_click": true, "controls": ["IPY_MODEL_a91e3d63334e4e1a9d6eadc5baf0dd30", "IPY_MODEL_d8f43b80c75b4ad2842e8df5ef3b47a6"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_c9dea8c0a7544d6b96b425f6464d2c4c", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_2cd0bfdc47ad469082cb9c850351182f", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_8a7d692289b2449996ab014ff2734b96"], "layout": "IPY_MODEL_e079c94495e24a30aabcdd0c33d3c997", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "2021-12-22", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "prefer_canvas", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "prefer_canvas": false, "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_1887a00c98fb4cbd81097efb9a17e565", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 3.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "a91e3d63334e4e1a9d6eadc5baf0dd30": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "d8f43b80c75b4ad2842e8df5ef3b47a6": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "d55a3222211a4e37a7a232a03f44e5d1": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "c674800531d84f9cba37628812253982": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "e2c930a4fae249b7bd257cc6446f20fd": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors", "base": true, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 19, "min_native_zoom": 0, "min_zoom": 1, "name": "OpenStreetMap.Mapnik", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", "visible": true}}, "5bd64316dc184fbc9bf810810b7aec9d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "65f4e023e45b4ee7a65143cc7bd5fb1e": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "5a4314b1ef304f63b8da215d5a9a6c1f": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [0, 20], "close_popup_on_click": true, "controls": ["IPY_MODEL_9062c6459c5d4dc6887004457a2be2c3", "IPY_MODEL_6bf972a3c73b4701b872a00e1d83c36a", "IPY_MODEL_926c61f80eec48f9addc3a7259ca05cd"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_d55a3222211a4e37a7a232a03f44e5d1", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_c674800531d84f9cba37628812253982", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_e2c930a4fae249b7bd257cc6446f20fd", "IPY_MODEL_0c345c9ba05041c2983ff3f6c3c0837a", "IPY_MODEL_55f2ba8b14a545599a580fc41c043e72", "IPY_MODEL_87139012b3754daebc9b853636dcf846", "IPY_MODEL_6af49ad2164b4475b8e449707627308b", "IPY_MODEL_d15b798ecd37466698b1918693c0cf31", "IPY_MODEL_7826c01cbc7f40cb9ca12ce9f5e9ca07", "IPY_MODEL_2e7f8af22e2b4db885f89cd73d0df6ed", "IPY_MODEL_dc65134518ab4de1a32f485a77fdd529", "IPY_MODEL_6c992491a67442c4ab4ec89f3efd3ba4", "IPY_MODEL_5e6e479a9a5e4f3cb4b5bd797215a836", "IPY_MODEL_21d73a82b88b4b53b9d8fe5d3194b900", "IPY_MODEL_0969436ec12746b39f5c4d5a92d85832", "IPY_MODEL_c09da7452cb54dd68880a5662f06546e", "IPY_MODEL_6b74226d7aa84ef5a75842e3e2083302", "IPY_MODEL_cdd6e5d52cc14701b73f376e98eb59a0", "IPY_MODEL_e6d8ea87ed954981aae147a5eea8b7c3", "IPY_MODEL_b7dad3abb0ce4b1ea429140332b1603e", "IPY_MODEL_47ec696775d04a3a9d9d73e51b40b155", "IPY_MODEL_6d1704dcc1794529bd8d0ecd397a4fa3", "IPY_MODEL_bb013ad64ea04f48a4dab0c229122553", "IPY_MODEL_535c8486d1164e129da5a7cc4fd3495b", "IPY_MODEL_95ca2e8709234d99a0ce19171e05edac", "IPY_MODEL_99db6efefa4747419af5e7f92f7d9d13", "IPY_MODEL_a54014d4b5fb47c08bb181fe78087f8e", "IPY_MODEL_65c948bb8c084c80a1a1f875826fb06a", "IPY_MODEL_98e649d141d14adcb13bd18271316d83", "IPY_MODEL_8c7e0f13f10c416d9cb567e92f92d8d8", "IPY_MODEL_253f17f623244bcba81e62193271823f", "IPY_MODEL_681866aed3df45f89e5c257f0b66d1e2", "IPY_MODEL_b6c5b7cfbe4a4c6c9dd5ea099b8b59cf", "IPY_MODEL_43370b2422b247fa81f2cf3f1aec73cc", "IPY_MODEL_15e427d4541648fc8f23042981c13d2d", "IPY_MODEL_3eb7b87d9d9a44f2aec2461ded9961a4", "IPY_MODEL_aebd713c52f8430ab60111e4bc4a2193", "IPY_MODEL_ed90cff826534cd99589bd3f79e02808", "IPY_MODEL_1171519ca33d4e05918fdc5d8e80be12", "IPY_MODEL_215a15cc634b4d0ea8704311b6ff8fcd", "IPY_MODEL_60618a8afecf4a07a70522251b102b74", "IPY_MODEL_ac074d1c871d416d9f041f99ff5031f2", "IPY_MODEL_c68656c628fc473591099fff19668af5", "IPY_MODEL_b35e20667bea44e28cd98c747fd705a8", "IPY_MODEL_578faa0668ea493fa7e2f9ac512de9a4", "IPY_MODEL_e727f16f2d474a78aae67f4777da18c6", "IPY_MODEL_538e7ecd4297436d92df3e57dc7f288e", "IPY_MODEL_804ff71a22aa4b15ab91e3aedac711f4", "IPY_MODEL_169df5ff8fa94318ad45aed32a4c3e33", "IPY_MODEL_d8fa42e9e7f542559651a5d409f39837", "IPY_MODEL_5e040c17148a46d0a73f21c451d81139", "IPY_MODEL_67e8b63038c84cbcb58e64ad57cb14ef", "IPY_MODEL_6851c0f84b544816be8b258474f177e4", "IPY_MODEL_81251cf2b6374e6fac0e4c8e0b900b66", "IPY_MODEL_63ea6ad0ffbe4389b903dedc2ac18e74", "IPY_MODEL_a052ca4946b041469a48a0203d033ed5", "IPY_MODEL_4a34760490364590b04542c0b41ff2ca", "IPY_MODEL_5d5027b1a22445a48d414bde38172bd5", "IPY_MODEL_56beda2ee1bd42ccb56acbeac7d2fb15", "IPY_MODEL_7f2e920291dd4b22a047c5e4b80a277c", "IPY_MODEL_8320b5647dd44454bcb48b2bd409e786", "IPY_MODEL_05aa79060116454189bc9e6b4953adff", "IPY_MODEL_5079b53d6a9644dcaf34cdb0c95690a8", "IPY_MODEL_d3d9453064df4e298af6237ed8e1d464", "IPY_MODEL_6d83bcaffad349e4a5cafcea132b2129", "IPY_MODEL_ee2ff799b37e45f28451919687b71bdb", "IPY_MODEL_00f1a8dc41d94241a0a2d4855b1ffdef", "IPY_MODEL_e5c235c5c7224e01896ae2e36faa7d06", "IPY_MODEL_355cc849069b47a88017efb7d6f75272", "IPY_MODEL_fa204c2c4f0a464bbcd6357aeb4f84ec", "IPY_MODEL_754ebd1845e44185be257fcd085e0e71", "IPY_MODEL_643a88da7d7f4b3cbf8ccd688936212a", "IPY_MODEL_351e2005ad634df2b2c10bf1074ababe", "IPY_MODEL_a0d410e6f3f340c5b06a0bc880652a01", "IPY_MODEL_241f35371a8449a7b8196e073be1439e", "IPY_MODEL_85d3655d42c6411f8d71d33cd211d710", "IPY_MODEL_2e6dfde824a7435bb655ba6b10934229", "IPY_MODEL_8a28e405a95a4a458f3ec85bdce8ac83", "IPY_MODEL_da39c2e73a494a8ba081bc2322a2422d", "IPY_MODEL_4025541371574dbcacf0c93ce0ed8697", "IPY_MODEL_3e83a0fe0b2a439bb8e50f6055bc6420", "IPY_MODEL_40135f1e7f344388892b75b2777b4f92", "IPY_MODEL_0c05a942607c4962a6ea112ddd4310d2", "IPY_MODEL_9637d857a00a49a9b56882cf6ff88e7f", "IPY_MODEL_755f631f434f46449b570c3b58acf814", "IPY_MODEL_fe5c55f3667a480391ddb98b4ec9e181", "IPY_MODEL_16869fabec014b46bf50cb5dded97537", "IPY_MODEL_97f4d6b0167e4755bff2eb04a8271289", "IPY_MODEL_b607d2f0b7e847959a609d73937c1cf5", "IPY_MODEL_81684779148844ba83b1f89f4adc4963", "IPY_MODEL_3fc0d59bf7a34de0a81f609818ea56fb", "IPY_MODEL_1f06de7399b441dfa85e530de875ff68", "IPY_MODEL_ffa37ec1788b46c0b31b6ece0b54114e", "IPY_MODEL_069aa9463d59459daec46adff3e26d75", "IPY_MODEL_018efc83e5534221809ce02b30e11576", "IPY_MODEL_ef88d958c24a48aa9d83a250feff08bf", "IPY_MODEL_565d477a87dd44c3b8c687eea720a06a", "IPY_MODEL_843bcc7ee3294bb49a15eb0e972fc538", "IPY_MODEL_2de28856861d42b389e220e8ff55454c", "IPY_MODEL_c8e517fe76bd4f0f95a6e8d33d809103", "IPY_MODEL_652507770a6c4c60839c1a67f0ce6f9b", "IPY_MODEL_11a626386da1489c9675615c4950dba9", "IPY_MODEL_d28471c3d2d44d8f9942f94c42debb15", "IPY_MODEL_4797c7e87f34489c986134d7b790d9a2", "IPY_MODEL_7de7141073bd4c9ab32cbc910e31dfdd", "IPY_MODEL_f84af77cca6c41759a8cd278cce623ed", "IPY_MODEL_d6e8910028d84c31b9004c2c060859de", "IPY_MODEL_6db9b5558b9040ddb750060be396fb0e", "IPY_MODEL_9f5919ace46242a78b37f98353ca9a04", "IPY_MODEL_0ebf3b2819de4d279375e24f304829cc", "IPY_MODEL_74cc34edd3ef423c9eedc6dc6c6fd2fe", "IPY_MODEL_9edca66a2dfe49a1800cb0b27009cdbd", "IPY_MODEL_a3efe6dfd7f146b4ae59caa6b94a4121", "IPY_MODEL_9c7de4b80a0341fd84352f9fddb753ca", "IPY_MODEL_be1cb7cc3d0e4cb6b910d952d263636e", "IPY_MODEL_5290d307678a480e90057dff52b35656", "IPY_MODEL_056526d8b896463696f3f928cc1968e4", "IPY_MODEL_eae8e651ec0a4db1959fac77d6d867b2", "IPY_MODEL_a627aebbf1404a2c98afc401a7d45483", "IPY_MODEL_0e0f18ea1eb9454c82955df059d37a5d", "IPY_MODEL_2cc55dd3fd204032853971a6bb13f5d9", "IPY_MODEL_fadf33b49a9540ac9ee26ed5a6748a92", "IPY_MODEL_0e3dc17b5dfa459c8a8afd03a4536a76", "IPY_MODEL_4fa55804052142c49b11f8fa322d3f20", "IPY_MODEL_62fe695899994feb87c5e3c9bcf34fd0", "IPY_MODEL_875274871bb840adbb8e16bdb4acc956", "IPY_MODEL_d321938792a8457898f5b04e6b6035a3", "IPY_MODEL_92ba531d6d994a89996407f5cfa757e9", "IPY_MODEL_fd0c0826ed4748a69dc44b0425325452"], "layout": "IPY_MODEL_5bd64316dc184fbc9bf810810b7aec9d", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "2021-12-22", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "prefer_canvas", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "prefer_canvas": false, "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_65f4e023e45b4ee7a65143cc7bd5fb1e", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 3.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "9062c6459c5d4dc6887004457a2be2c3": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "6bf972a3c73b4701b872a00e1d83c36a": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "0c345c9ba05041c2983ff3f6c3c0837a": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-8.884, 13.302], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Luanda, Angola (-8.884, 13.302)\n0 gambiae, 81 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "55f2ba8b14a545599a580fc41c043e72": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.233, -4.472], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bana, Burkina Faso (11.233, -4.472)\n37 gambiae, 89 coluzzii, 1 arabiensis", "visible": true, "z_index_offset": 0}}, "87139012b3754daebc9b853636dcf846": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.06, -1.17], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Monomtenga, Burkina Faso (12.060, -1.170)\n13 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6af49ad2164b4475b8e449707627308b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.15, -4.235], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Pala, Burkina Faso (11.150, -4.235)\n64 gambiae, 11 coluzzii, 2 arabiensis", "visible": true, "z_index_offset": 0}}, "d15b798ecd37466698b1918693c0cf31": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.235, -4.535], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Souroukoudinga, Burkina Faso (11.235, -4.535)\n43 gambiae, 35 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "7826c01cbc7f40cb9ca12ce9f5e9ca07": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [2.367, 9.983], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Afan-Essokye, Cameroon (2.367, 9.983)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "2e7f8af22e2b4db885f89cd73d0df6ed": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.805, 11.507], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Ahala, Cameroon (3.805, 11.507)\n4 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "dc65134518ab4de1a32f485a77fdd529": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.369, 11.519], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Avebe, Cameroon (3.369, 11.519)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6c992491a67442c4ab4ec89f3efd3ba4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.66, 13.529], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Badankali, Cameroon (8.660, 13.529)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "5e6e479a9a5e4f3cb4b5bd797215a836": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.211, 14.188], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Badjawa, Cameroon (10.211, 14.188)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "21d73a82b88b4b53b9d8fe5d3194b900": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.513, 13.603], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Balda Bouri, Cameroon (8.513, 13.603)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "0969436ec12746b39f5c4d5a92d85832": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.479, 10.457], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bamendi, Cameroon (5.479, 10.457)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "c09da7452cb54dd68880a5662f06546e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.199, 13.641], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Banda, Cameroon (8.199, 13.641)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6b74226d7aa84ef5a75842e3e2083302": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.751, 13.111], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Beka Goto, Cameroon (6.751, 13.111)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "cdd6e5d52cc14701b73f376e98eb59a0": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.399, 13.551], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bini, Cameroon (7.399, 13.551)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "e6d8ea87ed954981aae147a5eea8b7c3": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.997, 13.133], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Birsok, Cameroon (6.997, 13.133)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "b7dad3abb0ce4b1ea429140332b1603e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [2.367, 9.817], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Campo, Cameroon (2.367, 9.817)\n0 gambiae, 2 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "47ec696775d04a3a9d9d73e51b40b155": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.801, 13.52], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Carrefour Nari, Cameroon (8.801, 13.520)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6d1704dcc1794529bd8d0ecd397a4fa3": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.534, 13.53], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Carrefour Poli, Cameroon (8.534, 13.530)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "bb013ad64ea04f48a4dab0c229122553": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.777, 13.844], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Daiguene, Cameroon (4.777, 13.844)\n96 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "535c8486d1164e129da5a7cc4fd3495b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.394, 13.714], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Djaba, Cameroon (8.394, 13.714)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "95ca2e8709234d99a0ce19171e05edac": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.579, 13.516], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Djamboutou, Cameroon (8.579, 13.516)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "99db6efefa4747419af5e7f92f7d9d13": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.82, 13.581], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Djet, Cameroon (7.820, 13.581)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "a54014d4b5fb47c08bb181fe78087f8e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.438, 13.594], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Dolla, Cameroon (9.438, 13.594)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "65c948bb8c084c80a1a1f875826fb06a": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [2.949, 9.927], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Domb\u00e9, Cameroon (2.949, 9.927)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "98e649d141d14adcb13bd18271316d83": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.055, 9.721], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Douala, Cameroon (4.055, 9.721)\n0 gambiae, 2 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "8c7e0f13f10c416d9cb567e92f92d8d8": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.425, 14.242], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Doulougou, Cameroon (10.425, 14.242)\n4 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "253f17f623244bcba81e62193271823f": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.87, 11.539], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Essos, Cameroon (3.870, 11.539)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "681866aed3df45f89e5c257f0b66d1e2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [2.817, 10.934], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Foulassi I, Cameroon (2.817, 10.934)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "b6c5b7cfbe4a4c6c9dd5ea099b8b59cf": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.354, 13.578], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gada Mabanga, Cameroon (7.354, 13.578)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "43370b2422b247fa81f2cf3f1aec73cc": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.747, 14.442], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gado Badzere, Cameroon (5.747, 14.442)\n73 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "15e427d4541648fc8f23042981c13d2d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.522, 14.265], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gakle, Cameroon (10.522, 14.265)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "3eb7b87d9d9a44f2aec2461ded9961a4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.098, 13.599], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gamba, Cameroon (8.098, 13.599)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "aebd713c52f8430ab60111e4bc4a2193": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.525, 13.564], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gouna, Cameroon (8.525, 13.564)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "ed90cff826534cd99589bd3f79e02808": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.476, 13.644], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Guijiba, Cameroon (8.476, 13.644)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "1171519ca33d4e05918fdc5d8e80be12": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.783, 13.547], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Harr, Cameroon (7.783, 13.547)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "215a15cc634b4d0ea8704311b6ff8fcd": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.05, 14.149], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Karba, Cameroon (10.050, 14.149)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "60618a8afecf4a07a70522251b102b74": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.256, 14.217], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Laf, Cameroon (10.256, 14.217)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "ac074d1c871d416d9f041f99ff5031f2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.049, 13.656], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Lagdo, Cameroon (9.049, 13.656)\n0 gambiae, 1 coluzzii, 2 arabiensis", "visible": true, "z_index_offset": 0}}, "c68656c628fc473591099fff19668af5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.119, 13.506], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Lainde Mbana, Cameroon (9.119, 13.506)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "b35e20667bea44e28cd98c747fd705a8": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.981, 13.533], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Lamoudan, Cameroon (8.981, 13.533)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "578faa0668ea493fa7e2f9ac512de9a4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.107, 13.209], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Lougga Tapadi, Cameroon (7.107, 13.209)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "e727f16f2d474a78aae67f4777da18c6": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.495, 14.255], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Lougol, Cameroon (10.495, 14.255)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "538e7ecd4297436d92df3e57dc7f288e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.915, 13.132], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mabarangal'L, Cameroon (6.915, 13.132)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "804ff71a22aa4b15ab91e3aedac711f4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.774, 13.893], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Makabay (Djarengo), Cameroon (9.774, 13.893)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "169df5ff8fa94318ad45aed32a4c3e33": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.658, 14.29], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mambang, Cameroon (10.658, 14.290)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "d8fa42e9e7f542559651a5d409f39837": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.88, 11.11], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Manchoutvi, Cameroon (5.880, 11.110)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "5e040c17148a46d0a73f21c451d81139": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.726, 10.868], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Manda, Cameroon (5.726, 10.868)\n11 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "67e8b63038c84cbcb58e64ad57cb14ef": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.484, 10.593], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mangoum, Cameroon (5.484, 10.593)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6851c0f84b544816be8b258474f177e4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.188, 14.143], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Massila, Cameroon (10.188, 14.143)\n6 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "81251cf2b6374e6fac0e4c8e0b900b66": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.335, 13.462], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mawara, Cameroon (7.335, 13.462)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "63ea6ad0ffbe4389b903dedc2ac18e74": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.722, 13.54], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mayo Boki, Cameroon (8.722, 13.540)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "a052ca4946b041469a48a0203d033ed5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.764, 13.905], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mayo Dafan, Cameroon (9.764, 13.905)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "4a34760490364590b04542c0b41ff2ca": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.3, 13.554], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mayo Djarani, Cameroon (7.300, 13.554)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "5d5027b1a22445a48d414bde38172bd5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.513, 13.823], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mayo Lebride, Cameroon (9.513, 13.823)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "56beda2ee1bd42ccb56acbeac7d2fb15": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.341, 13.558], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mayos, Cameroon (4.341, 13.558)\n110 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "7f2e920291dd4b22a047c5e4b80a277c": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.516, 11.5], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mbalmayo, Cameroon (3.516, 11.500)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "8320b5647dd44454bcb48b2bd409e786": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.726, 10.868], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mfelap, Cameroon (5.726, 10.868)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "05aa79060116454189bc9e6b4953adff": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.097, 11.141], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mgbandji, Cameroon (6.097, 11.141)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "5079b53d6a9644dcaf34cdb0c95690a8": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.102, 14.193], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Morongo, Cameroon (10.102, 14.193)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "d3d9453064df4e298af6237ed8e1d464": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.3, 14.254], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Moulva, Cameroon (10.300, 14.254)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "6d83bcaffad349e4a5cafcea132b2129": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.368, 14.228], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mounda, Cameroon (10.368, 14.228)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "ee2ff799b37e45f28451919687b71bdb": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.342, 14.236], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Moussourtouk, Cameroon (10.342, 14.236)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "00f1a8dc41d94241a0a2d4855b1ffdef": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.902, 13.607], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Ngaouya Nga, Cameroon (7.902, 13.607)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "e5c235c5c7224e01896ae2e36faa7d06": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.972, 11.516], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Nkolondom, Cameroon (3.972, 11.516)\n5 gambiae, 5 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "355cc849069b47a88017efb7d6f75272": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [2.855, 10.056], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Nlozok, Cameroon (2.855, 10.056)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "fa204c2c4f0a464bbcd6357aeb4f84ec": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.166, 11.535], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Obala, Cameroon (4.166, 11.535)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "754ebd1845e44185be257fcd085e0e71": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.332, 11.632], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Otibili, Cameroon (4.332, 11.632)\n4 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "643a88da7d7f4b3cbf8ccd688936212a": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.462, 14.228], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Palama, Cameroon (10.462, 14.228)\n1 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "351e2005ad634df2b2c10bf1074ababe": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.765, 13.95], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Rompo, Cameroon (9.765, 13.950)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "a0d410e6f3f340c5b06a0bc880652a01": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.424, 13.56], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Secamde, Cameroon (9.424, 13.560)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "241f35371a8449a7b8196e073be1439e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.784, 13.864], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Sorawel, Cameroon (9.784, 13.864)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "85d3655d42c6411f8d71d33cd211d710": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.703, 13.859], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "S\u00e9bor\u00e9, Cameroon (9.703, 13.859)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "2e6dfde824a7435bb655ba6b10934229": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.708, 14.212], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tch\u00e9r\u00e9, Cameroon (10.708, 14.212)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "8a28e405a95a4a458f3ec85bdce8ac83": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.806, 13.174], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tekel, Cameroon (6.806, 13.174)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "da39c2e73a494a8ba081bc2322a2422d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.469, 12.629], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tibati, Cameroon (6.469, 12.629)\n2 gambiae, 2 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "4025541371574dbcacf0c93ce0ed8697": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [7.323, 13.4], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Toumbouroum, Cameroon (7.323, 13.400)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "3e83a0fe0b2a439bb8e50f6055bc6420": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.888, 13.503], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Wouro Andre, Cameroon (8.888, 13.503)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "40135f1e7f344388892b75b2777b4f92": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.88, 11.506], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Yaounde, Cameroon (3.880, 11.506)\n0 gambiae, 7 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "0c05a942607c4962a6ea112ddd4310d2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.747, 14.442], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Zembe Borongo, Cameroon (5.747, 14.442)\n24 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "9637d857a00a49a9b56882cf6ff88e7f": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.367, 18.583], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bangui, Central African Republic (4.367, 18.583)\n55 gambiae, 18 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "755f631f434f46449b570c3b58acf814": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.898, -4.823], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tiassale, Cote d'Ivoire (5.898, -4.823)\n0 gambiae, 80 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "fe5c55f3667a480391ddb98b4ec9e181": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.283, 21.017], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Gbadolite, Democratic Republic of the Congo (4.283, 21.017)\n76 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "16869fabec014b46bf50cb5dded97537": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [3.7, 8.7], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bioko, Equatorial Guinea (3.700, 8.700)\n10 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "97f4d6b0167e4755bff2eb04a8271289": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [0.384, 9.455], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Libreville, Gabon (0.384, 9.455)\n69 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "b607d2f0b7e847959a609d73937c1cf5": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.55, -15.617], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Kalataba, Gambia, The (13.550, -15.617)\n0 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "81684779148844ba83b1f89f4adc4963": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.55, -15.9], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Njabakunda, Gambia, The (13.550, -15.900)\n58 gambiae, 5 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "3fc0d59bf7a34de0a81f609818ea56fb": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.583, -15.9], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Sare Samba Sowe, Gambia, The (13.583, -15.900)\n9 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "1f06de7399b441dfa85e530de875ff68": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.417, -16.033], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tankular, Gambia, The (13.417, -16.033)\n0 gambiae, 14 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "ffa37ec1788b46c0b31b6ece0b54114e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.567, -14.917], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Wali Kunda, Gambia, The (13.567, -14.917)\n2 gambiae, 148 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "069aa9463d59459daec46adff3e26d75": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [6.094, -0.261], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Koforidua, Ghana (6.094, -0.261)\n23 gambiae, 1 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "018efc83e5534221809ce02b30e11576": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.668, -0.219], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Madina, Ghana (5.668, -0.219)\n13 gambiae, 14 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "ef88d958c24a48aa9d83a250feff08bf": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [4.912, -1.774], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Takoradi, Ghana (4.912, -1.774)\n0 gambiae, 24 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "565d477a87dd44c3b8c687eea720a06a": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [5.609, -1.549], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Twifo Praso, Ghana (5.609, -1.549)\n0 gambiae, 25 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "843bcc7ee3294bb49a15eb0e972fc538": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [9.28, -10.03], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Koraboh, Guinea (9.280, -10.030)\n60 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "2de28856861d42b389e220e8ff55454c": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [8.48, -9.53], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Koundara, Guinea (8.480, -9.530)\n63 gambiae, 11 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "c8e517fe76bd4f0f95a6e8d33d809103": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.891, -15.582], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Antula, Guinea-Bissau (11.891, -15.582)\n15 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "652507770a6c4c60839c1a67f0ce6f9b": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.272, -14.222], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Leibala, Guinea-Bissau (12.272, -14.222)\n8 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "11a626386da1489c9675615c4950dba9": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.957, -15.649], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Safim, Guinea-Bissau (11.957, -15.649)\n6 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "d28471c3d2d44d8f9942f94c42debb15": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-3.511, 39.909], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Kilifi, Kenya (-3.511, 39.909)\n28 gambiae, 0 coluzzii, 13 arabiensis", "visible": true, "z_index_offset": 0}}, "4797c7e87f34489c986134d7b790d9a2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-15.933, 34.755], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Chikhwawa, Malawi (-15.933, 34.755)\n0 gambiae, 0 coluzzii, 41 arabiensis", "visible": true, "z_index_offset": 0}}, "7de7141073bd4c9ab32cbc910e31dfdd": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.2, -8.2], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bancoumana, Mali (12.200, -8.200)\n9 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "f84af77cca6c41759a8cd278cce623ed": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.21, -5.9], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Douna, Mali (13.210, -5.900)\n0 gambiae, 19 coluzzii, 1 arabiensis", "visible": true, "z_index_offset": 0}}, "d6e8910028d84c31b9004c2c060859de": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [13.2, -6.13], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Fanzana, Mali (13.200, -6.130)\n1 gambiae, 6 coluzzii, 1 arabiensis", "visible": true, "z_index_offset": 0}}, "6db9b5558b9040ddb750060be396fb0e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.89, -8.15], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Kababougou, Mali (12.890, -8.150)\n28 gambiae, 12 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "9f5919ace46242a78b37f98353ca9a04": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.88, -8.45], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Kela, Mali (11.880, -8.450)\n23 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "0ebf3b2819de4d279375e24f304829cc": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.69, -7.87], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Moribobougou, Mali (12.690, -7.870)\n0 gambiae, 7 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "74cc34edd3ef423c9eedc6dc6c6fd2fe": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.68, -7.84], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "N'Gabakoro, Mali (12.680, -7.840)\n0 gambiae, 4 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "9edca66a2dfe49a1800cb0b27009cdbd": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.9, -8.16], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Ouassorola, Mali (12.900, -8.160)\n4 gambiae, 9 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "a3efe6dfd7f146b4ae59caa6b94a4121": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [11.47, -8.33], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Takan, Mali (11.470, -8.330)\n5 gambiae, 26 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "9c7de4b80a0341fd84352f9fddb753ca": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [12.81, -8.08], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tieneguebougou, Mali (12.810, -8.080)\n1 gambiae, 6 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "be1cb7cc3d0e4cb6b910d952d263636e": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [10.83, -7.81], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Toumani Oulena, Mali (10.830, -7.810)\n60 gambiae, 2 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "5290d307678a480e90057dff52b35656": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.738, 45.142], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Bouyouni, Mayotte (-12.738, 45.142)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "056526d8b896463696f3f928cc1968e4": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.779, 45.143], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Combani, Mayotte (-12.779, 45.143)\n6 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "eae8e651ec0a4db1959fac77d6d867b2": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.797, 45.122], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Karihani Lake, Mayotte (-12.797, 45.122)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "a627aebbf1404a2c98afc401a7d45483": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.857, 45.155], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mont Benara, Mayotte (-12.857, 45.155)\n2 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "0e0f18ea1eb9454c82955df059d37a5d": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.703, 45.081], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mtsamboro Forest Reserve, Mayotte (-12.703, 45.081)\n1 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "2cc55dd3fd204032853971a6bb13f5d9": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.991, 45.156], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Mtsanga Charifou, Mayotte (-12.991, 45.156)\n7 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "fadf33b49a9540ac9ee26ed5a6748a92": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-12.852, 45.104], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Sada, Mayotte (-12.852, 45.104)\n3 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "0e3dc17b5dfa459c8a8afd03a4536a76": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-23.716, 35.299], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Furvela, Mozambique (-23.716, 35.299)\n74 gambiae, 0 coluzzii, 0 arabiensis", "visible": true, "z_index_offset": 0}}, "4fa55804052142c49b11f8fa322d3f20": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-3.482, 37.308], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Moshi, Tanzania (-3.482, 37.308)\n0 gambiae, 0 coluzzii, 40 arabiensis", "visible": true, "z_index_offset": 0}}, "62fe695899994feb87c5e3c9bcf34fd0": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-4.94, 38.948], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Muheza, Tanzania (-4.940, 38.948)\n36 gambiae, 0 coluzzii, 1 arabiensis", "visible": true, "z_index_offset": 0}}, "875274871bb840adbb8e16bdb4acc956": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-1.962, 31.651], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Muleba, Tanzania (-1.962, 31.651)\n32 gambiae, 0 coluzzii, 137 arabiensis", "visible": true, "z_index_offset": 0}}, "d321938792a8457898f5b04e6b6035a3": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-1.431, 34.199], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Tarime, Tanzania (-1.431, 34.199)\n0 gambiae, 0 coluzzii, 47 arabiensis", "visible": true, "z_index_offset": 0}}, "92ba531d6d994a89996407f5cfa757e9": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [-0.751, 29.701], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Kihihi, Uganda (-0.751, 29.701)\n95 gambiae, 0 coluzzii, 1 arabiensis", "visible": true, "z_index_offset": 0}}, "fd0c0826ed4748a69dc44b0425325452": {"model_name": "LeafletMarkerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletMarkerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletMarkerView", "alt": "", "base": false, "bottom": false, "draggable": false, "icon": null, "keyboard": true, "location": [0.77, 34.026], "name": "", "opacity": 1.0, "options": ["alt", "draggable", "keyboard", "rise_offset", "rise_on_hover", "rotation_angle", "rotation_origin", "title", "z_index_offset"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rise_offset": 250, "rise_on_hover": false, "rotation_angle": 0.0, "rotation_origin": "", "title": "Nagongera, Uganda (0.770, 34.026)\n112 gambiae, 0 coluzzii, 81 arabiensis", "visible": true, "z_index_offset": 0}}, "926c61f80eec48f9addc3a7259ca05cd": {"model_name": "LeafletScaleControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.15.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.15.0", "_model_name": "LeafletScaleControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.15.0", "_view_name": "LeafletScaleControlView", "imperial": true, "max_width": 100, "metric": true, "options": ["imperial", "max_width", "metric", "position", "update_when_idle"], "position": "bottomleft", "update_when_idle": false}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./workshop-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="colab.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Module 1 - Interactive cloud computing with Google Colaboratory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="genome.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 3 - Navigating the <em>Anopheles gambiae</em> genome</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By MalariaGEN and PAMCA<br/>
+        
+            &copy; Copyright 2022.<br/>
+          <div class="extra_footer">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
