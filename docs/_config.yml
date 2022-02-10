@@ -10,7 +10,7 @@ execute:
   # for configuration syntax.
   execute_notebooks: "auto"
   timeout: 100
-  allow_errors: true
+  allow_errors: false
 repository:
   url: https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io
   path_to_book: docs
