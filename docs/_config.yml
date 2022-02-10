@@ -11,6 +11,11 @@ execute:
   execute_notebooks: "auto"
   timeout: 100
   allow_errors: false
+  exclude_patterns:
+    - 'workshop-1/module-1*'
+    # need to execute module 2 as ipyleaflet maps don't render otherwise
+    - 'workshop-1/module-3*'
+    - 'workshop-1/module-4*'
 repository:
   url: https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io
   path_to_book: docs
