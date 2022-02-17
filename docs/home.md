@@ -79,11 +79,6 @@ Other topics we may cover in future workshops include:
 
 ## Prerequisites
 
-This is a hands-on training course involving the analysis of real genetic data. To follow this workshop you will need to have some prior experience of data analysis using a programming language such as Python, R, Julia, Matlab or Stata. The practical exercises in this workshop will use the Python programming language, and some prior experience of Python will be advantageous, but is not required.
+This is a hands-on training course involving the analysis of real genetic data. To follow this course you will need to have some prior experience of data analysis using a programming language such as Python, R, Julia, Matlab or Stata. The practical exercises in each workshop will use the Python programming language, and some prior experience of Python will be advantageous, but is not required.
 
-During the practical sessions in this workshop we will use [Google Colaboratory](https://colab.research.google.com/) (a.k.a. Colab), which is an interactive cloud computing service provided for free by Google. In order to use Colab you will need to have a Google user account. If you do not already have a Google user account, please make sure to create one before the workshop.
-
-
-## Contact and questions
-
-If you have any questions about this training course, please contact info@malariagen.net. 
+During the practical sessions in each workshop we will use [Google Colaboratory](https://colab.research.google.com/) (a.k.a. Colab), which is an interactive cloud computing service provided for free by Google. In order to use Colab you will need to have a Google user account. If you do not already have a Google user account, please make sure to create one before you start the course.
