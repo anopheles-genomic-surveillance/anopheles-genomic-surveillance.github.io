@@ -3,19 +3,12 @@ author: MalariaGEN and PAMCA
 copyright: "2022"
 only_build_toc_files: true
 execute:
-  # N.B., execution is needed to get some notebooks to render properly,
-  # e.g., notebooks using ipyleaflet to create maps. If there are some
-  # notebooks which take too long to run, they can be excluded from 
-  # execution. See https://jupyterbook.org/content/execute.html#exclude-files-from-execution
-  # for configuration syntax.
-  execute_notebooks: "auto"
-  timeout: 100
-  allow_errors: false
-  exclude_patterns:
-    - 'workshop-1/module-1*'
-    # need to execute module 2 as ipyleaflet maps don't render otherwise
-    - 'workshop-1/module-3*'
-    - 'workshop-1/module-4*'
+  # N.B., any notebooks with ipyleaflet maps or ipywidgets need to be
+  # opened in classic notebook interface, clear widget state,
+  # be run, and then save widget state. Otherwise maps and widgets
+  # won't appear in the rendered book. See also
+  # https://ipywidgets.readthedocs.io/en/latest/embedding.html
+  execute_notebooks: "off"
 repository:
   url: https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io
   path_to_book: docs
