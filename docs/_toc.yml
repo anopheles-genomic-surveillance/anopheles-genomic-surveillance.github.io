@@ -11,3 +11,4 @@ parts:
   - caption: Workshop 2
     chapters:
     - file: workshop-2/about
+    - file: workshop-2/module-1-pandas
