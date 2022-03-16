@@ -1,0 +1,3950 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1 - Introduction to pandas DataFrames &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Workshop 2 - Metabolic insecticide resistance" href="about.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../home.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/about.html">
+   Workshop 1 - Pyrethroid target-site resistance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-1-colab.html">
+   Module 1 - Interactive cloud computing with Google Colaboratory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">
+   Module 2 - Accessing and exploring
+   <em>
+    Anopheles
+   </em>
+   genomic data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-3-genome.html">
+   Module 3 - Navigating the
+   <em>
+    Anopheles gambiae
+   </em>
+   reference genome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">
+   Module 4 - Analysing SNPs in the
+   <em>
+    Vgsc
+   </em>
+   gene
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Workshop 2 - Metabolic insecticide resistance
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 1 - Introduction to pandas DataFrames
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/workshop-2/module-1-pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-1-pandas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-1-pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframes">
+   pandas DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-sample-metadata">
+     Example: sample metadata
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-genome-annotations">
+   Example: genome annotations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-snp-allele-frequencies">
+     Example: SNP allele frequencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-variable-naming-styles">
+     Aside: variable naming styles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-reading-from-a-csv-file">
+     Example: reading from a CSV file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-creating-a-dataframe-from-scratch">
+     Example: creating a DataFrame from scratch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-a-dataframe">
+   Structure of a DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counting-rows-and-columns">
+   Counting rows and columns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-columns">
+   Accessing columns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-column-names">
+     Accessing column names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-a-single-column">
+     Accessing a single column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#investigating-data-in-a-column">
+     Investigating data in a column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-multiple-columns">
+     Accessing multiple columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-rows">
+   Accessing rows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-a-single-row">
+     Accessing a single row
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-multiple-rows">
+     Accessing multiple rows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexes">
+   Indexes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#queries">
+   Queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-output">
+   Input/output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topics-not-covered-here">
+   Topics not covered here
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further reading
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Module 1 - Introduction to pandas DataFrames</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframes">
+   pandas DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-sample-metadata">
+     Example: sample metadata
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-genome-annotations">
+   Example: genome annotations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-snp-allele-frequencies">
+     Example: SNP allele frequencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-variable-naming-styles">
+     Aside: variable naming styles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-reading-from-a-csv-file">
+     Example: reading from a CSV file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-creating-a-dataframe-from-scratch">
+     Example: creating a DataFrame from scratch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-a-dataframe">
+   Structure of a DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counting-rows-and-columns">
+   Counting rows and columns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-columns">
+   Accessing columns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-column-names">
+     Accessing column names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-a-single-column">
+     Accessing a single column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#investigating-data-in-a-column">
+     Investigating data in a column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-multiple-columns">
+     Accessing multiple columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-rows">
+   Accessing rows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-a-single-row">
+     Accessing a single row
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-multiple-rows">
+     Accessing multiple rows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexes">
+   Indexes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#queries">
+   Queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-output">
+   Input/output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topics-not-covered-here">
+   Topics not covered here
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further reading
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 2</strong></em></p>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="module-1-introduction-to-pandas-dataframes">
+<h1>Module 1 - Introduction to pandas DataFrames<a class="headerlink" href="#module-1-introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
+<p><strong>Theme: Tools &amp; Technology</strong></p>
+<p>In this module we’re going to take a closer look at a Python package called <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, which is an essential part of our data analysis toolkit. We use pandas whenever we need to store, manipulate or analyse tables of data, also known as DataFrames. In this module we’ll focus on using pandas to analyse genomic data, but it can be used to analyse any kind of data, so it’s a very useful tool to have at your fingertips.</p>
+<div class="section" id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>After this module you will be able to:</p>
+<ul class="simple">
+<li><p>Explain what a pandas DataFrame is</p></li>
+<li><p>Access columns and rows from a DataFrame</p></li>
+<li><p>Use indexes and queries</p></li>
+<li><p>Write a DataFrame to a file</p></li>
+</ul>
+<p>Please note that this module will cover only a small part of the features that pandas provides - see the links at then end of this notebook if you’d like to go further.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Let’s install the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package so we have easy access to some genomic data to demonstrate with. Pandas is already installed on colab.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install -q malariagen_data
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now import the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> packages. Note that by convention we use <code class="docutils literal notranslate"><span class="pre">pd</span></code> as an abbreviation for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set up access to the MalariaGEN Ag3.0 data resource.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
+<span class="n">ag3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<table class="malariagen-ag3">
+    <thead>
+        <tr>
+            <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
+        </tr>
+        <tr><td colspan="2" style="text-align: left">
+            Please note that data are subject to terms of use,
+            for more information see <a href="https://www.malariagen.net/data">
+            the MalariaGEN website</a> or contact data@malariagen.net.
+            See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
+        </td></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th style="text-align: left">
+                Storage URL
+            </th>
+            <td>gs://vo_agam_release/</td>
+        </tr>
+        <tr>
+            <th style="text-align: left">
+                Data releases available
+            </th>
+            <td>3.0</td>
+        </tr>
+        <tr>
+            <th style="text-align: left">
+                Cohorts analysis
+            </th>
+            <td>20211101</td>
+        </tr>
+        <tr>
+            <th style="text-align: left">
+                Species analysis
+            </th>
+            <td>aim_20200422</td>
+        </tr>
+        <tr>
+            <th style="text-align: left">
+                Site filters analysis
+            </th>
+            <td>dt_20200416</td>
+        </tr>
+        <tr>
+            <th style="text-align: left">
+                Software version
+            </th>
+            <td>3.0.0</td>
+        </tr>
+    </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="pandas-dataframes">
+<h2>pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>We use the pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class whenever we want to store and analyse data that can be structured as a table with rows and columns. Let’s take a look at some examples of DataFrames that we met in the <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/about.html">first workshop</a> of this training course.</p>
+<div class="section" id="example-sample-metadata">
+<h3>Example: sample metadata<a class="headerlink" href="#example-sample-metadata" title="Permalink to this headline">¶</a></h3>
+<p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#sample-metadata">sample_metadata()</a> function. This function returns a DataFrame of sample metadata. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check what type of object we have received.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df_samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the data in the DataFrame by running a code cell containing just the name of the variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f0b65bc5-7d7b-496d-8909-00d0671d0ba1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>partner_sample_id</th>
+      <th>contributor</th>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th>month</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>sex_call</th>
+      <th>...</th>
+      <th>aim_species</th>
+      <th>country_iso</th>
+      <th>admin1_name</th>
+      <th>admin1_iso</th>
+      <th>admin2_name</th>
+      <th>taxon</th>
+      <th>cohort_admin1_year</th>
+      <th>cohort_admin1_month</th>
+      <th>cohort_admin2_year</th>
+      <th>cohort_admin2_month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR0047-C</td>
+      <td>LUA047</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>...</td>
+      <td>coluzzii</td>
+      <td>AGO</td>
+      <td>Luanda</td>
+      <td>AO-LUA</td>
+      <td>Luanda</td>
+      <td>coluzzii</td>
+      <td>AO-LUA_colu_2009</td>
+      <td>AO-LUA_colu_2009_04</td>
+      <td>AO-LUA_Luanda_colu_2009</td>
+      <td>AO-LUA_Luanda_colu_2009_04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR0049-C</td>
+      <td>LUA049</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>...</td>
+      <td>coluzzii</td>
+      <td>AGO</td>
+      <td>Luanda</td>
+      <td>AO-LUA</td>
+      <td>Luanda</td>
+      <td>coluzzii</td>
+      <td>AO-LUA_colu_2009</td>
+      <td>AO-LUA_colu_2009_04</td>
+      <td>AO-LUA_Luanda_colu_2009</td>
+      <td>AO-LUA_Luanda_colu_2009_04</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR0051-C</td>
+      <td>LUA051</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>...</td>
+      <td>coluzzii</td>
+      <td>AGO</td>
+      <td>Luanda</td>
+      <td>AO-LUA</td>
+      <td>Luanda</td>
+      <td>coluzzii</td>
+      <td>AO-LUA_colu_2009</td>
+      <td>AO-LUA_colu_2009_04</td>
+      <td>AO-LUA_Luanda_colu_2009</td>
+      <td>AO-LUA_Luanda_colu_2009_04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR0061-C</td>
+      <td>LUA061</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>...</td>
+      <td>coluzzii</td>
+      <td>AGO</td>
+      <td>Luanda</td>
+      <td>AO-LUA</td>
+      <td>Luanda</td>
+      <td>coluzzii</td>
+      <td>AO-LUA_colu_2009</td>
+      <td>AO-LUA_colu_2009_04</td>
+      <td>AO-LUA_Luanda_colu_2009</td>
+      <td>AO-LUA_Luanda_colu_2009_04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR0078-C</td>
+      <td>LUA078</td>
+      <td>Joao Pinto</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>2009</td>
+      <td>4</td>
+      <td>-8.884</td>
+      <td>13.302</td>
+      <td>F</td>
+      <td>...</td>
+      <td>coluzzii</td>
+      <td>AGO</td>
+      <td>Luanda</td>
+      <td>AO-LUA</td>
+      <td>Luanda</td>
+      <td>coluzzii</td>
+      <td>AO-LUA_colu_2009</td>
+      <td>AO-LUA_colu_2009_04</td>
+      <td>AO-LUA_Luanda_colu_2009</td>
+      <td>AO-LUA_Luanda_colu_2009_04</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3076</th>
+      <td>AD0494-C</td>
+      <td>80-2-o-16</td>
+      <td>Martin Donnelly</td>
+      <td>Lab Cross</td>
+      <td>LSTM</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>53.409</td>
+      <td>-2.969</td>
+      <td>F</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3077</th>
+      <td>AD0495-C</td>
+      <td>80-2-o-17</td>
+      <td>Martin Donnelly</td>
+      <td>Lab Cross</td>
+      <td>LSTM</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>53.409</td>
+      <td>-2.969</td>
+      <td>M</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3078</th>
+      <td>AD0496-C</td>
+      <td>80-2-o-18</td>
+      <td>Martin Donnelly</td>
+      <td>Lab Cross</td>
+      <td>LSTM</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>53.409</td>
+      <td>-2.969</td>
+      <td>M</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3079</th>
+      <td>AD0497-C</td>
+      <td>80-2-o-19</td>
+      <td>Martin Donnelly</td>
+      <td>Lab Cross</td>
+      <td>LSTM</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>53.409</td>
+      <td>-2.969</td>
+      <td>F</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3080</th>
+      <td>AD0498-C</td>
+      <td>80-2-o-20</td>
+      <td>Martin Donnelly</td>
+      <td>Lab Cross</td>
+      <td>LSTM</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>53.409</td>
+      <td>-2.969</td>
+      <td>M</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3081 rows × 26 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f0b65bc5-7d7b-496d-8909-00d0671d0ba1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f0b65bc5-7d7b-496d-8909-00d0671d0ba1 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f0b65bc5-7d7b-496d-8909-00d0671d0ba1');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>There are 3,081 rows and 26 columns in this DataFrame. Each row provides data about a single mosquito DNA sample that has been sequenced by MalariaGEN. The columns provide data about those mosquitoes, such as the country and year in which the mosquito was originally collected.</p>
+<p>Note that the representation of the DataFrame above only shows some of the data - there are too many rows and columns to show all at once. The ellipsis character (“…”) shows where some data have been hidden.</p>
+</div>
+</div>
+<div class="section" id="example-genome-annotations">
+<h2>Example: genome annotations<a class="headerlink" href="#example-genome-annotations" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">workshop 1, module 3</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#geneset">geneset()</a> function. This function returns a DataFrame of genome annotations. Let’s call the function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_geneset</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">geneset</span><span class="p">()</span>
+<span class="n">df_geneset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-54ca5f8a-9d2b-4ad9-ac25-f36144104078">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Name</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2L</td>
+      <td>VectorBase</td>
+      <td>chromosome</td>
+      <td>1</td>
+      <td>49364325</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2L</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2L</td>
+      <td>VectorBase</td>
+      <td>gene</td>
+      <td>157348</td>
+      <td>186936</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>AGAP004677</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>methylenetetrahydrofolate dehydrogenase(NAD ) ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2L</td>
+      <td>VectorBase</td>
+      <td>mRNA</td>
+      <td>157348</td>
+      <td>181305</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>AGAP004677-RA</td>
+      <td>AGAP004677</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2L</td>
+      <td>VectorBase</td>
+      <td>three_prime_UTR</td>
+      <td>157348</td>
+      <td>157495</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AGAP004677-RA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2L</td>
+      <td>VectorBase</td>
+      <td>exon</td>
+      <td>157348</td>
+      <td>157623</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AGAP004677-RA</td>
+      <td>AGAP004677-RB-E4</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>196140</th>
+      <td>Y_unplaced</td>
+      <td>VectorBase</td>
+      <td>five_prime_UTR</td>
+      <td>47932</td>
+      <td>48111</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AGAP029375-RA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>196141</th>
+      <td>Y_unplaced</td>
+      <td>VectorBase</td>
+      <td>exon</td>
+      <td>47932</td>
+      <td>48138</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AGAP029375-RA</td>
+      <td>AGAP029375-RA-E2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>196142</th>
+      <td>Y_unplaced</td>
+      <td>VectorBase</td>
+      <td>CDS</td>
+      <td>48112</td>
+      <td>48138</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>0.0</td>
+      <td>AGAP029375-PA</td>
+      <td>AGAP029375-RA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>196143</th>
+      <td>Y_unplaced</td>
+      <td>VectorBase</td>
+      <td>exon</td>
+      <td>48301</td>
+      <td>48385</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AGAP029375-RA</td>
+      <td>AGAP029375-RA-E3</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>196144</th>
+      <td>Y_unplaced</td>
+      <td>VectorBase</td>
+      <td>CDS</td>
+      <td>48301</td>
+      <td>48385</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>0.0</td>
+      <td>AGAP029375-PA</td>
+      <td>AGAP029375-RA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>196145 rows × 12 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-54ca5f8a-9d2b-4ad9-ac25-f36144104078')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-54ca5f8a-9d2b-4ad9-ac25-f36144104078 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-54ca5f8a-9d2b-4ad9-ac25-f36144104078');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>There are 196,145 rows and 12 columns in this DataFrame. Each row provides data about an annotated feature on the <em>Anopheles gambiae</em> AgamP4 reference genome, such as a gene. The columns provide data about those features, such as the contig (chromosome arm) on which the feature occurs, and the start and end coordinates.</p>
+<div class="section" id="example-snp-allele-frequencies">
+<h3>Example: SNP allele frequencies<a class="headerlink" href="#example-snp-allele-frequencies" title="Permalink to this headline">¶</a></h3>
+<p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>, we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#snp-allele-frequencies">snp_allele_frequencies()</a> function. This function returns a DataFrame of single nucleotide polymorphisms (SNPs) together with their allele frequencies in different mosquito cohorts. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snp_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+    <span class="n">transcript</span><span class="o">=</span><span class="s2">&quot;AGAP004707-RD&quot;</span><span class="p">,</span> 
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">],</span> 
+<span class="p">)</span>
+<span class="n">snp_freqs_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c63e4822-5d67-41ec-ac56-6548795edc6a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>pass_gamb_colu_arab</th>
+      <th>pass_gamb_colu</th>
+      <th>pass_arab</th>
+      <th>frq_BF-07_gamb_2004</th>
+      <th>frq_BF-09_colu_2012</th>
+      <th>frq_BF-09_colu_2014</th>
+      <th>frq_BF-09_gamb_2012</th>
+      <th>frq_BF-09_gamb_2014</th>
+      <th>max_af</th>
+      <th>transcript</th>
+      <th>effect</th>
+      <th>impact</th>
+      <th>ref_codon</th>
+      <th>alt_codon</th>
+      <th>aa_pos</th>
+      <th>ref_aa</th>
+      <th>alt_aa</th>
+      <th>label</th>
+    </tr>
+    <tr>
+      <th>contig</th>
+      <th>position</th>
+      <th>ref_allele</th>
+      <th>alt_allele</th>
+      <th>aa_change</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="11" valign="top">2L</th>
+      <th>2358252</th>
+      <th>C</th>
+      <th>T</th>
+      <th>A32V</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.000000</td>
+      <td>0.006098</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.006098</td>
+      <td>AGAP004707-RD</td>
+      <td>NON_SYNONYMOUS_CODING</td>
+      <td>MODERATE</td>
+      <td>gCa</td>
+      <td>gTa</td>
+      <td>32.0</td>
+      <td>A</td>
+      <td>V</td>
+      <td>2L:2,358,252 C&gt;T (A32V)</td>
+    </tr>
+    <tr>
+      <th>2358328</th>
+      <th>T</th>
+      <th>C</th>
+      <th>NaN</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.000000</td>
+      <td>0.006098</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.006098</td>
+      <td>AGAP004707-RD</td>
+      <td>INTRONIC</td>
+      <td>MODIFIER</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2L:2,358,328 T&gt;C</td>
+    </tr>
+    <tr>
+      <th>2358441</th>
+      <th>A</th>
+      <th>T</th>
+      <th>NaN</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.038462</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.038462</td>
+      <td>AGAP004707-RD</td>
+      <td>INTRONIC</td>
+      <td>MODIFIER</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2L:2,358,441 A&gt;T</td>
+    </tr>
+    <tr>
+      <th>2358468</th>
+      <th>A</th>
+      <th>C</th>
+      <th>NaN</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.269231</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.269231</td>
+      <td>AGAP004707-RD</td>
+      <td>INTRONIC</td>
+      <td>MODIFIER</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2L:2,358,468 A&gt;C</td>
+    </tr>
+    <tr>
+      <th>2358581</th>
+      <th>T</th>
+      <th>A</th>
+      <th>NaN</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.192308</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.192308</td>
+      <td>AGAP004707-RD</td>
+      <td>INTRONIC</td>
+      <td>MODIFIER</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2L:2,358,581 T&gt;A</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2431424</th>
+      <th>G</th>
+      <th>T</th>
+      <th>G2055V</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.005102</td>
+      <td>0.0</td>
+      <td>0.005102</td>
+      <td>AGAP004707-RD</td>
+      <td>NON_SYNONYMOUS_CODING</td>
+      <td>MODERATE</td>
+      <td>gGc</td>
+      <td>gTc</td>
+      <td>2055.0</td>
+      <td>G</td>
+      <td>V</td>
+      <td>2L:2,431,424 G&gt;T (G2055V)</td>
+    </tr>
+    <tr>
+      <th>2431518</th>
+      <th>C</th>
+      <th>A</th>
+      <th>A2086A</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.038462</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.038462</td>
+      <td>AGAP004707-RD</td>
+      <td>SYNONYMOUS_CODING</td>
+      <td>LOW</td>
+      <td>gcC</td>
+      <td>gcA</td>
+      <td>2086.0</td>
+      <td>A</td>
+      <td>A</td>
+      <td>2L:2,431,518 C&gt;A (A2086A)</td>
+    </tr>
+    <tr>
+      <th>2431527</th>
+      <th>G</th>
+      <th>C</th>
+      <th>V2089V</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.038462</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.038462</td>
+      <td>AGAP004707-RD</td>
+      <td>SYNONYMOUS_CODING</td>
+      <td>LOW</td>
+      <td>gtG</td>
+      <td>gtC</td>
+      <td>2089.0</td>
+      <td>V</td>
+      <td>V</td>
+      <td>2L:2,431,527 G&gt;C (V2089V)</td>
+    </tr>
+    <tr>
+      <th>2431569</th>
+      <th>C</th>
+      <th>A</th>
+      <th>V2103V</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.038462</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.038462</td>
+      <td>AGAP004707-RD</td>
+      <td>SYNONYMOUS_CODING</td>
+      <td>LOW</td>
+      <td>gtC</td>
+      <td>gtA</td>
+      <td>2103.0</td>
+      <td>V</td>
+      <td>V</td>
+      <td>2L:2,431,569 C&gt;A (V2103V)</td>
+    </tr>
+    <tr>
+      <th>2431613</th>
+      <th>T</th>
+      <th>C</th>
+      <th>V2118A</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.005102</td>
+      <td>0.0</td>
+      <td>0.005102</td>
+      <td>AGAP004707-RD</td>
+      <td>NON_SYNONYMOUS_CODING</td>
+      <td>MODERATE</td>
+      <td>gTc</td>
+      <td>gCc</td>
+      <td>2118.0</td>
+      <td>V</td>
+      <td>A</td>
+      <td>2L:2,431,613 T&gt;C (V2118A)</td>
+    </tr>
+  </tbody>
+</table>
+<p>9659 rows × 18 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c63e4822-5d67-41ec-ac56-6548795edc6a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c63e4822-5d67-41ec-ac56-6548795edc6a button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c63e4822-5d67-41ec-ac56-6548795edc6a');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>There are 9,659 rows and 18 columns in this DataFrame. Each row provides data about a SNP. The columns provide data about those SNPs, such as their effect, and the alternate allele frequency in a particular cohort of mosquitoes, e.g., the column named “frq_BF-09_colu_2012” provides the frequency in <em>Anopheles coluzzii</em> mosquitoes collected in the BF-09 (Hauts-Bassins) administrative region of Burkina Faso in 2012.</p>
+</div>
+<div class="section" id="aside-variable-naming-styles">
+<h3>Aside: variable naming styles<a class="headerlink" href="#aside-variable-naming-styles" title="Permalink to this headline">¶</a></h3>
+<p>You may have noticed that in the examples above, whenever we assigned a DataFrame to a variable, the name of the variable either started with the prefix “df_” or ended with the suffix “_df”. Here “df” stands for DataFrame, and is used just as a helpful reminder that the value of the variable is a pandas DataFrame. Using a prefix of suffix on the variable name like this is entirely optional and is up to your own coding style. You can name these variables whatever you like. Different instructors in this course prefer different styles, and you will see different styles being used in different modules.</p>
+</div>
+<div class="section" id="example-reading-from-a-csv-file">
+<h3>Example: reading from a CSV file<a class="headerlink" href="#example-reading-from-a-csv-file" title="Permalink to this headline">¶</a></h3>
+<p>You can also create a pandas DataFrame by reading data from a file, such as a comma-separated value (CSV) file, or an Excel workbook file. Let’s use the pandas <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv()</a> function to read data from a CSV file containing data from a US census that colab provides as example data for you to play with.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;sample_data/california_housing_train.csv&quot;</span><span class="p">)</span>
+<span class="n">df_housing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-ae86b327-7764-4e67-bee9-74026521976f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-114.31</td>
+      <td>34.19</td>
+      <td>15.0</td>
+      <td>5612.0</td>
+      <td>1283.0</td>
+      <td>1015.0</td>
+      <td>472.0</td>
+      <td>1.4936</td>
+      <td>66900.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-114.47</td>
+      <td>34.40</td>
+      <td>19.0</td>
+      <td>7650.0</td>
+      <td>1901.0</td>
+      <td>1129.0</td>
+      <td>463.0</td>
+      <td>1.8200</td>
+      <td>80100.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-114.56</td>
+      <td>33.69</td>
+      <td>17.0</td>
+      <td>720.0</td>
+      <td>174.0</td>
+      <td>333.0</td>
+      <td>117.0</td>
+      <td>1.6509</td>
+      <td>85700.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-114.57</td>
+      <td>33.64</td>
+      <td>14.0</td>
+      <td>1501.0</td>
+      <td>337.0</td>
+      <td>515.0</td>
+      <td>226.0</td>
+      <td>3.1917</td>
+      <td>73400.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-114.57</td>
+      <td>33.57</td>
+      <td>20.0</td>
+      <td>1454.0</td>
+      <td>326.0</td>
+      <td>624.0</td>
+      <td>262.0</td>
+      <td>1.9250</td>
+      <td>65500.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16995</th>
+      <td>-124.26</td>
+      <td>40.58</td>
+      <td>52.0</td>
+      <td>2217.0</td>
+      <td>394.0</td>
+      <td>907.0</td>
+      <td>369.0</td>
+      <td>2.3571</td>
+      <td>111400.0</td>
+    </tr>
+    <tr>
+      <th>16996</th>
+      <td>-124.27</td>
+      <td>40.69</td>
+      <td>36.0</td>
+      <td>2349.0</td>
+      <td>528.0</td>
+      <td>1194.0</td>
+      <td>465.0</td>
+      <td>2.5179</td>
+      <td>79000.0</td>
+    </tr>
+    <tr>
+      <th>16997</th>
+      <td>-124.30</td>
+      <td>41.84</td>
+      <td>17.0</td>
+      <td>2677.0</td>
+      <td>531.0</td>
+      <td>1244.0</td>
+      <td>456.0</td>
+      <td>3.0313</td>
+      <td>103600.0</td>
+    </tr>
+    <tr>
+      <th>16998</th>
+      <td>-124.30</td>
+      <td>41.80</td>
+      <td>19.0</td>
+      <td>2672.0</td>
+      <td>552.0</td>
+      <td>1298.0</td>
+      <td>478.0</td>
+      <td>1.9797</td>
+      <td>85800.0</td>
+    </tr>
+    <tr>
+      <th>16999</th>
+      <td>-124.35</td>
+      <td>40.54</td>
+      <td>52.0</td>
+      <td>1820.0</td>
+      <td>300.0</td>
+      <td>806.0</td>
+      <td>270.0</td>
+      <td>3.0147</td>
+      <td>94600.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>17000 rows × 9 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ae86b327-7764-4e67-bee9-74026521976f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-ae86b327-7764-4e67-bee9-74026521976f button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-ae86b327-7764-4e67-bee9-74026521976f');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>This DataFrame has 17,000 rows and 9 columns. Each row provides data about a block of housing. The columns provide data about the houses within a block, such as the total number of bedrooms and the number of households.</p>
+<p>Note that you can upload your own files to Colab if you want to read in and analyse some of your own data with pandas.</p>
+</div>
+<div class="section" id="example-creating-a-dataframe-from-scratch">
+<h3>Example: creating a DataFrame from scratch<a class="headerlink" href="#example-creating-a-dataframe-from-scratch" title="Permalink to this headline">¶</a></h3>
+<p>You can also create a DataFrame by providing the data within your code. To demonstrate this, let’s create a DataFrame with data about characters in a famous science fiction book called The Hitchhiker’s Guide to the Galaxy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Arthur Dent&quot;</span><span class="p">,</span> <span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">,</span> <span class="s2">&quot;Ford Prefect&quot;</span><span class="p">,</span> <span class="s2">&quot;Zaphod Beeblebrox&quot;</span><span class="p">,</span> <span class="s2">&quot;Marvin the Paranoid Android&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;robot&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s2">&quot;number_of_heads&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;intelligence&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5_000_000</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">df_hitchhikers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-63dfe9ed-54ad-4618-aa33-b745f1bf0734">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>male</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>female</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>1</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>2</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>None</td>
+      <td>1</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-63dfe9ed-54ad-4618-aa33-b745f1bf0734')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-63dfe9ed-54ad-4618-aa33-b745f1bf0734 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-63dfe9ed-54ad-4618-aa33-b745f1bf0734');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>This DataFrame has 5 rows and 5 columns. Each row provides data about a fictional character in the book. The columns provide data about each character, such as their name, taxon and number of heads (some alien species can have more than one).</p>
+</div>
+</div>
+<div class="section" id="structure-of-a-dataframe">
+<h2>Structure of a DataFrame<a class="headerlink" href="#structure-of-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Hopefully this will already be obvious from the examples above, but a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe">pandas DataFrame</a> is a data structure that is organised into <strong>rows</strong> and <strong>columns</strong>. Each DataFrame also has an <strong>index</strong>, which is a special column (or set of columns) that is shown in bold at the left of a DataFrame, and which we’ll look at in more detail later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">frameborder</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width:100%;height:556px;&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://viewer.diagrams.net/?nav=1&amp;title=workshop-2-module-1-dataframe.drawio#Uhttps%3A</span><span class="si">%2F%2F</span><span class="s2">drive.google.com</span><span class="si">%2F</span><span class="s2">uc</span><span class="si">%3F</span><span class="s2">id%3D1znvxOlvX2zO2dDx_BdgD7Pzztt1xS6JT</span><span class="si">%26e</span><span class="s2">xport%3Ddownload&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe frameborder="0" style="width:100%;height:556px;" src="https://viewer.diagrams.net/?nav=1&title=workshop-2-module-1-dataframe.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1znvxOlvX2zO2dDx_BdgD7Pzztt1xS6JT%26export%3Ddownload"></iframe></div></div>
+</div>
+</div>
+<div class="section" id="counting-rows-and-columns">
+<h2>Counting rows and columns<a class="headerlink" href="#counting-rows-and-columns" title="Permalink to this headline">¶</a></h2>
+<p>If a DataFrame is large, you may find it useful to know how many rows and columns it contains. The representation of a DataFrame shows at the bottom how many rows and columns are present in the DataFrame, but you can also use the built-in <code class="docutils literal notranslate"><span class="pre">len()</span></code> function if you want to access the number of rows or columns in your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="p">)</span>
+<span class="n">num_rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">num_cols</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Practice exercise:</strong></p>
+<ul class="simple">
+<li><p>Count the number of rows and columns in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+</div>
+<div class="section" id="accessing-columns">
+<h2>Accessing columns<a class="headerlink" href="#accessing-columns" title="Permalink to this headline">¶</a></h2>
+<p>Often you will have a DataFrame with many columns, and you many only need to work with data from a smaller number of columns, or just a single column. Accessing one or more columns from a DataFrame can be done using the square bracket syntax after the name of a DataFrame variable. Let’s see how this works.</p>
+<div class="section" id="accessing-column-names">
+<h3>Accessing column names<a class="headerlink" href="#accessing-column-names" title="Permalink to this headline">¶</a></h3>
+<p>First, let’s access the names of all the columns in a DataFrame, to see what columns are available. You can do this by accessing the <code class="docutils literal notranslate"><span class="pre">columns</span></code> property of a DataFrame. For simplicity, let’s also convert the result to a Python list, using the built-in <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">col_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;name&#39;, &#39;taxon&#39;, &#39;gender&#39;, &#39;number_of_heads&#39;, &#39;intelligence&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be useful especially if you have a lot of columns in a DataFrame.</p>
+<p><strong>Practice exercise</strong>:</p>
+<ul class="simple">
+<li><p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+</div>
+<div class="section" id="accessing-a-single-column">
+<h3>Accessing a single column<a class="headerlink" href="#accessing-a-single-column" title="Permalink to this headline">¶</a></h3>
+<p>To access a single column, give the column name as a string inside square brackets. Let’s access the “name” column from the DataFrame of book characters, and assign the result to a new variable <code class="docutils literal notranslate"><span class="pre">character_name</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you access a single column or row from a DataFrame, pandas returns a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/dsintro.html#series">Series</a> object to you. Pandas uses the Series class to hold data either from a single column or a single row, i.e., a one-dimensional sequence of data values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">character_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also inspect the data in the column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                    Arthur Dent
+1                Tricia McMillan
+2                   Ford Prefect
+3              Zaphod Beeblebrox
+4    Marvin the Paranoid Android
+Name: name, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="investigating-data-in-a-column">
+<h3>Investigating data in a column<a class="headerlink" href="#investigating-data-in-a-column" title="Permalink to this headline">¶</a></h3>
+<p>The pandas Series class has some useful functions for investigating the data in a DataFrame.</p>
+<p>E.g., let’s access the “taxon” column and use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> functions to get a summary of the categorical data in the column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_taxon</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">]</span>
+<span class="n">character_taxon</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>human           2
+betelgeusian    2
+robot           1
+Name: taxon, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The pandas Series class also has a <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function which can be useful for investigating numerical data. Let’s use it with the <code class="docutils literal notranslate"><span class="pre">number_of_heads</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_heads</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<span class="n">character_heads</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    5.000000
+mean     1.200000
+std      0.447214
+min      1.000000
+25%      1.000000
+50%      1.000000
+75%      1.000000
+max      2.000000
+Name: number_of_heads, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The characters in our DataFrame have at least (min) 1 and at most (max) 2 heads. The mean number of heads is 1.2, but of course this a bit silly, because number of heads is not a continuous variable.</p>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Access the “country” column from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of mosquito samples from each country.</p></li>
+<li><p>Access the “type” column from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of genome annotations of different types.</p></li>
+<li><p>Access the “effect” column from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of SNPs with different effects.</p></li>
+</ul>
+</div>
+<div class="section" id="accessing-multiple-columns">
+<h3>Accessing multiple columns<a class="headerlink" href="#accessing-multiple-columns" title="Permalink to this headline">¶</a></h3>
+<p>To access multiple columns, provide the column names as a list of strings. Let’s access the “name”, “taxon” and “number_of_heads” columns from the DataFrame of book characters, and assign the resulting DataFrame to a new variable <code class="docutils literal notranslate"><span class="pre">df_hh</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="n">selected_cols</span><span class="p">]</span>
+<span class="n">df_hh</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c640366c-7d27-4fdb-a6f8-9672e3ac534b">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>number_of_heads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c640366c-7d27-4fdb-a6f8-9672e3ac534b')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c640366c-7d27-4fdb-a6f8-9672e3ac534b button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c640366c-7d27-4fdb-a6f8-9672e3ac534b');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>You can also put the list of columns directly inside the square brackets, which would give the same result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]]</span>
+<span class="n">df_hh</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-4fe0f08f-c1bf-476b-bfd0-b211ee6922f4">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>number_of_heads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4fe0f08f-c1bf-476b-bfd0-b211ee6922f4')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-4fe0f08f-c1bf-476b-bfd0-b211ee6922f4 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-4fe0f08f-c1bf-476b-bfd0-b211ee6922f4');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Create a new DataFrame containing only the “sample_id”, “country” and “year” columns from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+<li><p>Create a new DataFrame containing only the “ID”, “contig”, “start” and “end” columns from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame.</p></li>
+<li><p>Create a new DataFrame containing only the frequency columns from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame (hint: the names of these columns all begin with “frq_”).</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="accessing-rows">
+<h2>Accessing rows<a class="headerlink" href="#accessing-rows" title="Permalink to this headline">¶</a></h2>
+<p>Now we’ve seen how to access columns, let’s see how to access rows. To access rows by their position within a DataFrame, we can use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> property.</p>
+<div class="section" id="accessing-a-single-row">
+<h3>Accessing a single row<a class="headerlink" href="#accessing-a-single-row" title="Permalink to this headline">¶</a></h3>
+<p>To access a single row, we use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> property, then provide the row number as an integer inside square brackets, remembering that numbering starts from 0 in Python. For example, access the first row of our DataFrame of book characters, and assign the result to a variable <code class="docutils literal notranslate"><span class="pre">first_row</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When accessing a single row, pandas returns a Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">first_row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the data in the row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name               Arthur Dent
+taxon                    human
+gender                    male
+number_of_heads              1
+intelligence               100
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Access specific data values within the row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Arthur Dent&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Access the 81st row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame. What country did this mosquito sample come from? (Remember: numbering starts from 0 in Python.)</p></li>
+<li><p>Access the 73,287th row in the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame. What type of annotation is this? What is its Name?</p></li>
+</ul>
+</div>
+<div class="section" id="accessing-multiple-rows">
+<h3>Accessing multiple rows<a class="headerlink" href="#accessing-multiple-rows" title="Permalink to this headline">¶</a></h3>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to access multiple rows,from some start position to some end position. To do this we provide two integers separated by a colon (“:”) which is called a slice.</p>
+<p>As well as remembering that numbering starts from zero, we also have to remember that slices include the start position but do not include the stop position. E.g., to access the first two rows, provide the start and stop positions 0 and 2. This returns a new DataFrame with just the selected rows within the slice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_two_rows</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">first_two_rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-a5ee379d-17c8-403c-821d-2ddbf1467677">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>male</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>female</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a5ee379d-17c8-403c-821d-2ddbf1467677')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-a5ee379d-17c8-403c-821d-2ddbf1467677 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-a5ee379d-17c8-403c-821d-2ddbf1467677');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indexes">
+<h2>Indexes<a class="headerlink" href="#indexes" title="Permalink to this headline">¶</a></h2>
+<p>Every pandas DataFrame has an index, which is a special column (or set of columns) which can be used to access rows quickly and conveniently. In particular, indexes can be used to assign a label to every row, and then use that label to locate and access matching rows.</p>
+<p>For example, when working with our DataFrame of book characters, we might want to access rows using the name of the character. To do this, we can set the “name” column as the index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_indexed</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">df_hitchhikers_indexed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-e7a2025d-8ea3-4f66-affe-789f376fcd52">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Arthur Dent</th>
+      <td>human</td>
+      <td>male</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>Tricia McMillan</th>
+      <td>human</td>
+      <td>female</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>Ford Prefect</th>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>1</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>Zaphod Beeblebrox</th>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>2</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>Marvin the Paranoid Android</th>
+      <td>robot</td>
+      <td>None</td>
+      <td>1</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e7a2025d-8ea3-4f66-affe-789f376fcd52')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-e7a2025d-8ea3-4f66-affe-789f376fcd52 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-e7a2025d-8ea3-4f66-affe-789f376fcd52');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>The DataFrame <code class="docutils literal notranslate"><span class="pre">df_hitchhikers_indexed</span></code> has the same data as before, but notice that the “name” column has moved to the left and is shown in bold. This shows us that the “name” column is now being used as the DataFrame index.</p>
+<p>Now that we’ve set a useful index, we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property to locate rows with a particular name. E.g., locate the row where the character’s name is “Tricia McMillan”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This indexing action locates a single row, and so pandas returns a Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">trillian</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the row of data we located.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taxon               human
+gender             female
+number_of_heads         1
+intelligence          180
+Name: Tricia McMillan, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s also useful to know that you can always reset the index back to the default, using the <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> function. The default is to index the DataFrame with integers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_reset</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_hitchhikers_reset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-df9cfb28-ba4a-4530-befc-3241709d696d">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>male</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>female</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>1</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>2</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>None</td>
+      <td>1</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-df9cfb28-ba4a-4530-befc-3241709d696d')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-df9cfb28-ba4a-4530-befc-3241709d696d button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-df9cfb28-ba4a-4530-befc-3241709d696d');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Set the “sample_id” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, then locate the row with sample identifier “BK0055-C”. Where was this mosquito collected?</p></li>
+<li><p>Set the “ID” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, then locate the row with identifier “AGAP000818”. What is the name of this gene?</p></li>
+</ul>
+</div>
+<div class="section" id="queries">
+<h2>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">¶</a></h2>
+<p>DataFrames also provide a <code class="docutils literal notranslate"><span class="pre">query()</span></code> function, which can be used to select rows matching some condition or combination of conditions. The <code class="docutils literal notranslate"><span class="pre">query()</span></code> function accepts a string containing a query expression.</p>
+<p>Let’s query the book characters DataFrame to select only rows where the value of the “taxon” column is “human”. To match a value we use the “==” operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon == &#39;human&#39;&quot;</span><span class="p">)</span>
+<span class="n">df_human_hitchhikers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-4ab71afc-20cd-4bb4-97ad-33a7268bc446">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arthur Dent</td>
+      <td>human</td>
+      <td>male</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tricia McMillan</td>
+      <td>human</td>
+      <td>female</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4ab71afc-20cd-4bb4-97ad-33a7268bc446')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-4ab71afc-20cd-4bb4-97ad-33a7268bc446 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-4ab71afc-20cd-4bb4-97ad-33a7268bc446');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Let’s do the opposite, selecting only rows where the value of the “taxon” column is not “human”, using the “!=” operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon != &#39;human&#39;&quot;</span><span class="p">)</span>
+<span class="n">df_non_human_hitchhikers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-45cdc9af-711a-4a8c-a13f-a95a7352057c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>1</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>2</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>None</td>
+      <td>1</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-45cdc9af-711a-4a8c-a13f-a95a7352057c')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-45cdc9af-711a-4a8c-a13f-a95a7352057c button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-45cdc9af-711a-4a8c-a13f-a95a7352057c');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Let’s query a numerical field using the “&gt;” greater than operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_multi_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;number_of_heads &gt; 1&quot;</span><span class="p">)</span>
+<span class="n">df_multi_headed_hitchhikers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d2c4ba26-3b8f-4c32-a8ad-78d8c40a2f90">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>Zaphod Beeblebrox</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>2</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d2c4ba26-3b8f-4c32-a8ad-78d8c40a2f90')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d2c4ba26-3b8f-4c32-a8ad-78d8c40a2f90 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d2c4ba26-3b8f-4c32-a8ad-78d8c40a2f90');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>A query expression can combine conditions on multiple columns using “and” and “or”. E.g., find rows where the value of the “taxon” column is “human” and the value of the “number_of_heads” column is 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_one_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s2">&quot;taxon != &#39;human&#39; and number_of_heads == 1&quot;</span>
+<span class="p">)</span>
+<span class="n">df_non_human_one_headed_hitchhikers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-e83d544d-91ba-4f87-8762-96c2a6b7e23f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>taxon</th>
+      <th>gender</th>
+      <th>number_of_heads</th>
+      <th>intelligence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>Ford Prefect</td>
+      <td>betelgeusian</td>
+      <td>male</td>
+      <td>1</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marvin the Paranoid Android</td>
+      <td>robot</td>
+      <td>None</td>
+      <td>1</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e83d544d-91ba-4f87-8762-96c2a6b7e23f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-e83d544d-91ba-4f87-8762-96c2a6b7e23f button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-e83d544d-91ba-4f87-8762-96c2a6b7e23f');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso.</p></li>
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso in 2014.</p></li>
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select Anopheles coluzzii mosquitoes collected in Burkina Faso in 2014 (hint: <code class="docutils literal notranslate"><span class="pre">taxon</span> <span class="pre">==</span> <span class="pre">'coluzzii'</span></code>).</p></li>
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence (hint: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence and which occur above 5% frequency in at least one cohort (hint: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
+</ul>
+</div>
+<div class="section" id="input-output">
+<h2>Input/output<a class="headerlink" href="#input-output" title="Permalink to this headline">¶</a></h2>
+<p>We saw at the beginning of this module how to read in data from a file. Let’s look finally at how to write data out to a file.</p>
+<p>To write a DataFrame out to a CSV file, use the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html">to_csv()</a> function. E.g., let’s write out the book characters DataFrame to a CSV file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;hitchhikers.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can download this file to your local computer by opening the file browser tab to the left in colab.</p>
+<p>There are several other file formats you can write to. E.g., you could write to an Excel file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hitchhikers.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Any of the DataFrames we created in this module could be written out in the same way. E.g., we could write a DataFrame that we obtained by querying the book characters for only humans.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hh_human.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Practice exercises:</strong></p>
+<ul class="simple">
+<li><p>Write the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame out to an Excel file.</p></li>
+<li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select only mosquitoes from Burkina Faso, then write the resulting DataFrame out to a CSV file.</p></li>
+</ul>
+</div>
+<div class="section" id="topics-not-covered-here">
+<h2>Topics not covered here<a class="headerlink" href="#topics-not-covered-here" title="Permalink to this headline">¶</a></h2>
+<p>Please note that this module has only covered a few of the many features that pandas supports. Here are a few of the features that we have not covered, but which you might like to learn more about through other online tutorials.</p>
+<ul class="simple">
+<li><p>Grouping and aggregation</p></li>
+<li><p>Pivot tables</p></li>
+<li><p>Joining and merging</p></li>
+<li><p>Concatenating</p></li>
+<li><p>Advanced indexing (MultiIndex; Boolean indexing; …)</p></li>
+<li><p>Modifying data</p></li>
+<li><p>Apply</p></li>
+<li><p>Missing data</p></li>
+<li><p>Time series</p></li>
+<li><p>Plotting</p></li>
+</ul>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>Here are a few links to online resources providing further information about pandas.</p>
+<p>&#64;&#64;TODO</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./workshop-2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="about.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workshop 2 - Metabolic insecticide resistance</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By MalariaGEN and PAMCA<br/>
+    
+        &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
