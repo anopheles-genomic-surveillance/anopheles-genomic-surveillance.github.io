@@ -1,2 +1,2 @@
 jupyter-book==0.12.2
-malariagen_data==2.2.0
+malariagen_data==3.0.0

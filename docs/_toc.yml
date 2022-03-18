@@ -12,3 +12,4 @@ parts:
     chapters:
     - file: workshop-2/about
     - file: workshop-2/module-1-pandas
+    - file: workshop-2/module-4-cnv-frequencies
