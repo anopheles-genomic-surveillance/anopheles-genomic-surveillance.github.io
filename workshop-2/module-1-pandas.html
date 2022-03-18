@@ -264,6 +264,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
@@ -410,6 +427,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
@@ -561,12 +595,33 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Please note that this module will cover only a small part of the features that pandas provides - see the links at then end of this notebook if you’d like to go further.</p>
 </div>
+<div class="section" id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/iIYftkvS0eM&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/iIYftkvS0eM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon.</p>
+</div>
+</div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>Let’s install the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package so we have easy access to some genomic data to demonstrate with. Pandas is already installed on colab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install -q malariagen_data
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -q malariagen_data
 </pre></div>
 </div>
 </div>
@@ -574,7 +629,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now import the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> packages. Note that by convention we use <code class="docutils literal notranslate"><span class="pre">pd</span></code> as an abbreviation for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -583,7 +638,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Set up access to the MalariaGEN Ag3.0 data resource.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
 <span class="n">ag3</span>
 </pre></div>
 </div>
@@ -652,7 +707,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#sample-metadata">sample_metadata()</a> function. This function returns a DataFrame of sample metadata. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +715,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Check what type of object we have received.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df_samples</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df_samples</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,7 +728,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Inspect the data in the DataFrame by running a code cell containing just the name of the variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span>
 </pre></div>
 </div>
 </div>
@@ -1077,7 +1132,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">workshop 1, module 3</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#geneset">geneset()</a> function. This function returns a DataFrame of genome annotations. Let’s call the function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_geneset</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">geneset</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_geneset</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">geneset</span><span class="p">()</span>
 <span class="n">df_geneset</span>
 </pre></div>
 </div>
@@ -1371,7 +1426,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>, we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#snp-allele-frequencies">snp_allele_frequencies()</a> function. This function returns a DataFrame of single nucleotide polymorphisms (SNPs) together with their allele frequencies in different mosquito cohorts. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snp_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
     <span class="n">transcript</span><span class="o">=</span><span class="s2">&quot;AGAP004707-RD&quot;</span><span class="p">,</span> 
     <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span> 
     <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">],</span> 
@@ -1809,7 +1864,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>You can also create a pandas DataFrame by reading data from a file, such as a comma-separated value (CSV) file, or an Excel workbook file. Let’s use the pandas <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv()</a> function to read data from a CSV file containing data from a US census that colab provides as example data for you to play with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;sample_data/california_housing_train.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;sample_data/california_housing_train.csv&quot;</span><span class="p">)</span>
 <span class="n">df_housing</span>
 </pre></div>
 </div>
@@ -2069,7 +2124,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>You can also create a DataFrame by providing the data within your code. To demonstrate this, let’s create a DataFrame with data about characters in a famous science fiction book called The Hitchhiker’s Guide to the Galaxy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Arthur Dent&quot;</span><span class="p">,</span> <span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">,</span> <span class="s2">&quot;Ford Prefect&quot;</span><span class="p">,</span> <span class="s2">&quot;Zaphod Beeblebrox&quot;</span><span class="p">,</span> <span class="s2">&quot;Marvin the Paranoid Android&quot;</span><span class="p">],</span>
     <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;robot&quot;</span><span class="p">],</span>
     <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
@@ -2238,8 +2293,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Hopefully this will already be obvious from the examples above, but a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe">pandas DataFrame</a> is a data structure that is organised into <strong>rows</strong> and <strong>columns</strong>. Each DataFrame also has an <strong>index</strong>, which is a special column (or set of columns) that is shown in bold at the left of a DataFrame, and which we’ll look at in more detail later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">html</span>
-<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">frameborder</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width:100%;height:556px;&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://viewer.diagrams.net/?nav=1&amp;title=workshop-2-module-1-dataframe.drawio#Uhttps%3A</span><span class="si">%2F%2F</span><span class="s2">drive.google.com</span><span class="si">%2F</span><span class="s2">uc</span><span class="si">%3F</span><span class="s2">id%3D1znvxOlvX2zO2dDx_BdgD7Pzztt1xS6JT</span><span class="si">%26e</span><span class="s2">xport%3Ddownload&quot;</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:100%;height:556px;&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://viewer.diagrams.net/?nav=1&amp;title=workshop-2-module-1-dataframe.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1znvxOlvX2zO2dDx_BdgD7Pzztt1xS6JT%26export%3Ddownload&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -2252,7 +2307,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>If a DataFrame is large, you may find it useful to know how many rows and columns it contains. The representation of a DataFrame shows at the bottom how many rows and columns are present in the DataFrame, but you can also use the built-in <code class="docutils literal notranslate"><span class="pre">len()</span></code> function if you want to access the number of rows or columns in your code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="p">)</span>
 <span class="n">num_rows</span>
 </pre></div>
 </div>
@@ -2265,7 +2320,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">num_cols</span>
 </pre></div>
 </div>
@@ -2289,7 +2344,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>First, let’s access the names of all the columns in a DataFrame, to see what columns are available. You can do this by accessing the <code class="docutils literal notranslate"><span class="pre">columns</span></code> property of a DataFrame. For simplicity, let’s also convert the result to a Python list, using the built-in <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">col_names</span>
 </pre></div>
 </div>
@@ -2301,9 +2356,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>This can be useful especially if you have a lot of columns in a DataFrame.</p>
-<p><strong>Practice exercise</strong>:</p>
+<p><strong>Practice exercises:</strong></p>
 <ul class="simple">
 <li><p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-a-single-column">
@@ -2311,7 +2370,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To access a single column, give the column name as a string inside square brackets. Let’s access the “name” column from the DataFrame of book characters, and assign the result to a new variable <code class="docutils literal notranslate"><span class="pre">character_name</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2319,7 +2378,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>When you access a single column or row from a DataFrame, pandas returns a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/dsintro.html#series">Series</a> object to you. Pandas uses the Series class to hold data either from a single column or a single row, i.e., a one-dimensional sequence of data values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">character_name</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">character_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2332,7 +2391,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>We can also inspect the data in the column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span>
 </pre></div>
 </div>
 </div>
@@ -2354,7 +2413,7 @@ Name: name, dtype: object
 <p>E.g., let’s access the “taxon” column and use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> functions to get a summary of the categorical data in the column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_taxon</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_taxon</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">]</span>
 <span class="n">character_taxon</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2371,7 +2430,7 @@ Name: taxon, dtype: int64
 <p>The pandas Series class also has a <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function which can be useful for investigating numerical data. Let’s use it with the <code class="docutils literal notranslate"><span class="pre">number_of_heads</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">character_heads</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_heads</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
 <span class="n">character_heads</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2397,13 +2456,17 @@ Name: number_of_heads, dtype: float64
 <li><p>Access the “type” column from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of genome annotations of different types.</p></li>
 <li><p>Access the “effect” column from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of SNPs with different effects.</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 <div class="section" id="accessing-multiple-columns">
 <h3>Accessing multiple columns<a class="headerlink" href="#accessing-multiple-columns" title="Permalink to this headline">¶</a></h3>
 <p>To access multiple columns, provide the column names as a list of strings. Let’s access the “name”, “taxon” and “number_of_heads” columns from the DataFrame of book characters, and assign the resulting DataFrame to a new variable <code class="docutils literal notranslate"><span class="pre">df_hh</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
 <span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="n">selected_cols</span><span class="p">]</span>
 <span class="n">df_hh</span>
 </pre></div>
@@ -2550,7 +2613,7 @@ Name: number_of_heads, dtype: float64
 <p>You can also put the list of columns directly inside the square brackets, which would give the same result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]]</span>
 <span class="n">df_hh</span>
 </pre></div>
 </div>
@@ -2699,6 +2762,10 @@ Name: number_of_heads, dtype: float64
 <li><p>Create a new DataFrame containing only the “ID”, “contig”, “start” and “end” columns from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame.</p></li>
 <li><p>Create a new DataFrame containing only the frequency columns from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame (hint: the names of these columns all begin with “frq_”).</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="accessing-rows">
@@ -2709,7 +2776,7 @@ Name: number_of_heads, dtype: float64
 <p>To access a single row, we use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> property, then provide the row number as an integer inside square brackets, remembering that numbering starts from 0 in Python. For example, access the first row of our DataFrame of book characters, and assign the result to a variable <code class="docutils literal notranslate"><span class="pre">first_row</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2717,7 +2784,7 @@ Name: number_of_heads, dtype: float64
 <p>When accessing a single row, pandas returns a Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">first_row</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">first_row</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2730,7 +2797,7 @@ Name: number_of_heads, dtype: float64
 <p>Inspect the data in the row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span>
 </pre></div>
 </div>
 </div>
@@ -2748,7 +2815,7 @@ Name: 0, dtype: object
 <p>Access specific data values within the row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2760,7 +2827,7 @@ Name: 0, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2775,6 +2842,10 @@ Name: 0, dtype: object
 <li><p>Access the 81st row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame. What country did this mosquito sample come from? (Remember: numbering starts from 0 in Python.)</p></li>
 <li><p>Access the 73,287th row in the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame. What type of annotation is this? What is its Name?</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 <div class="section" id="accessing-multiple-rows">
 <h3>Accessing multiple rows<a class="headerlink" href="#accessing-multiple-rows" title="Permalink to this headline">¶</a></h3>
@@ -2782,7 +2853,7 @@ Name: 0, dtype: object
 <p>As well as remembering that numbering starts from zero, we also have to remember that slices include the start position but do not include the stop position. E.g., to access the first two rows, provide the start and stop positions 0 and 2. This returns a new DataFrame with just the selected rows within the slice.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_two_rows</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_two_rows</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">first_two_rows</span>
 </pre></div>
 </div>
@@ -2917,6 +2988,10 @@ Name: 0, dtype: object
 <ul class="simple">
 <li><p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="indexes">
@@ -2925,7 +3000,7 @@ Name: 0, dtype: object
 <p>For example, when working with our DataFrame of book characters, we might want to access rows using the name of the character. To do this, we can set the “name” column as the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_indexed</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_indexed</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
 <span class="n">df_hitchhikers_indexed</span>
 </pre></div>
 </div>
@@ -3085,7 +3160,7 @@ Name: 0, dtype: object
 <p>Now that we’ve set a useful index, we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property to locate rows with a particular name. E.g., locate the row where the character’s name is “Tricia McMillan”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3093,7 +3168,7 @@ Name: 0, dtype: object
 <p>This indexing action locates a single row, and so pandas returns a Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">trillian</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">trillian</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3106,7 +3181,7 @@ Name: 0, dtype: object
 <p>Inspect the row of data we located.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span>
 </pre></div>
 </div>
 </div>
@@ -3123,7 +3198,7 @@ Name: Tricia McMillan, dtype: object
 <p>It’s also useful to know that you can always reset the index back to the default, using the <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> function. The default is to index the DataFrame with integers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_reset</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_reset</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">df_hitchhikers_reset</span>
 </pre></div>
 </div>
@@ -3283,6 +3358,10 @@ Name: Tricia McMillan, dtype: object
 <li><p>Set the “sample_id” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, then locate the row with sample identifier “BK0055-C”. Where was this mosquito collected?</p></li>
 <li><p>Set the “ID” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, then locate the row with identifier “AGAP000818”. What is the name of this gene?</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 <div class="section" id="queries">
 <h2>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">¶</a></h2>
@@ -3290,7 +3369,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s query the book characters DataFrame to select only rows where the value of the “taxon” column is “human”. To match a value we use the “==” operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon == &#39;human&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon == &#39;human&#39;&quot;</span><span class="p">)</span>
 <span class="n">df_human_hitchhikers</span>
 </pre></div>
 </div>
@@ -3424,7 +3503,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s do the opposite, selecting only rows where the value of the “taxon” column is not “human”, using the “!=” operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon != &#39;human&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon != &#39;human&#39;&quot;</span><span class="p">)</span>
 <span class="n">df_non_human_hitchhikers</span>
 </pre></div>
 </div>
@@ -3566,7 +3645,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s query a numerical field using the “&gt;” greater than operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_multi_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;number_of_heads &gt; 1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_multi_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;number_of_heads &gt; 1&quot;</span><span class="p">)</span>
 <span class="n">df_multi_headed_hitchhikers</span>
 </pre></div>
 </div>
@@ -3692,7 +3771,7 @@ Name: Tricia McMillan, dtype: object
 <p>A query expression can combine conditions on multiple columns using “and” and “or”. E.g., find rows where the value of the “taxon” column is “human” and the value of the “number_of_heads” column is 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_one_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_one_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
     <span class="s2">&quot;taxon != &#39;human&#39; and number_of_heads == 1&quot;</span>
 <span class="p">)</span>
 <span class="n">df_non_human_one_headed_hitchhikers</span>
@@ -3833,6 +3912,10 @@ Name: Tricia McMillan, dtype: object
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence (hint: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence and which occur above 5% frequency in at least one cohort (hint: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
 </ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
+</ul>
 </div>
 <div class="section" id="input-output">
 <h2>Input/output<a class="headerlink" href="#input-output" title="Permalink to this headline">¶</a></h2>
@@ -3840,7 +3923,7 @@ Name: Tricia McMillan, dtype: object
 <p>To write a DataFrame out to a CSV file, use the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html">to_csv()</a> function. E.g., let’s write out the book characters DataFrame to a CSV file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;hitchhikers.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;hitchhikers.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3849,7 +3932,7 @@ Name: Tricia McMillan, dtype: object
 <p>There are several other file formats you can write to. E.g., you could write to an Excel file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hitchhikers.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hitchhikers.xlsx&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3857,7 +3940,7 @@ Name: Tricia McMillan, dtype: object
 <p>Any of the DataFrames we created in this module could be written out in the same way. E.g., we could write a DataFrame that we obtained by querying the book characters for only humans.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hh_human.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hh_human.xlsx&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3866,6 +3949,10 @@ Name: Tricia McMillan, dtype: object
 <ul class="simple">
 <li><p>Write the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame out to an Excel file.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select only mosquitoes from Burkina Faso, then write the resulting DataFrame out to a CSV file.</p></li>
+</ul>
+<p><strong>Exercices appliqués:</strong></p>
+<ul class="simple">
+<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="topics-not-covered-here">
@@ -3887,6 +3974,7 @@ Name: Tricia McMillan, dtype: object
 <div class="section" id="further-reading">
 <h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <p>Here are a few links to online resources providing further information about pandas.</p>
+<p>&#64;&#64;TODO</p>
 </div>
 </div>
 
