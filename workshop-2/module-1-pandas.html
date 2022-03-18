@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 4 - Analysing CNV frequencies at metabolic resistance genes" href="module-4-cnv-frequencies.html" />
-    <link rel="prev" title="Workshop 2 - Metabolic insecticide resistance" href="about.html" />
+    <link rel="prev" title="Workshop 2 - Metabolic insecticide resistance and copy number variation" href="about.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="about.html">
-   Workshop 2 - Metabolic insecticide resistance
+   Workshop 2 - Metabolic insecticide resistance and copy number variation
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -2338,7 +2338,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>Practice exercise:</strong></p>
+<p><strong>Exercise 1</strong></p>
 <ul class="simple">
 <li><p>Count the number of rows and columns in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
 </ul>
@@ -2363,14 +2363,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>This can be useful especially if you have a lot of columns in a DataFrame.</p>
-<p><strong>Practice exercises:</strong></p>
-<ul class="simple">
-<li><p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
-</ul>
+<p><strong>Exercise 2</strong></p>
+<p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p>
 </div>
 <div class="section" id="accessing-a-single-column">
 <h3>Accessing a single column<a class="headerlink" href="#accessing-a-single-column" title="Permalink to this headline">¶</a></h3>
@@ -2457,15 +2451,11 @@ Name: number_of_heads, dtype: float64
 </div>
 </div>
 <p>The characters in our DataFrame have at least (min) 1 and at most (max) 2 heads. The mean number of heads is 1.2, but of course this a bit silly, because number of heads is not a continuous variable.</p>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 3</strong></p>
 <ul class="simple">
 <li><p>Access the “country” column from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of mosquito samples from each country.</p></li>
 <li><p>Access the “type” column from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of genome annotations of different types.</p></li>
 <li><p>Access the “effect” column from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of SNPs with different effects.</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-multiple-columns">
@@ -2763,15 +2753,11 @@ Name: number_of_heads, dtype: float64
   </div>
 </div></div>
 </div>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 4</strong></p>
 <ul class="simple">
 <li><p>Create a new DataFrame containing only the “sample_id”, “country” and “year” columns from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
 <li><p>Create a new DataFrame containing only the “ID”, “contig”, “start” and “end” columns from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame.</p></li>
 <li><p>Create a new DataFrame containing only the frequency columns from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame (hint: the names of these columns all begin with “frq_”).</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 </div>
@@ -2844,14 +2830,10 @@ Name: 0, dtype: object
 </div>
 </div>
 </div>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 5</strong></p>
 <ul class="simple">
 <li><p>Access the 81st row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame. What country did this mosquito sample come from? (Remember: numbering starts from 0 in Python.)</p></li>
 <li><p>Access the 73,287th row in the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame. What type of annotation is this? What is its Name?</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-multiple-rows">
@@ -2991,14 +2973,8 @@ Name: 0, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Practice exercises:</strong></p>
-<ul class="simple">
-<li><p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
-</ul>
+<p><strong>Exercise 6</strong></p>
+<p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p>
 </div>
 </div>
 <div class="section" id="indexes">
@@ -3360,14 +3336,10 @@ Name: Tricia McMillan, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 7</strong></p>
 <ul class="simple">
 <li><p>Set the “sample_id” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, then locate the row with sample identifier “BK0055-C”. Where was this mosquito collected?</p></li>
 <li><p>Set the “ID” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, then locate the row with identifier “AGAP000818”. What is the name of this gene?</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="queries">
@@ -3911,17 +3883,13 @@ Name: Tricia McMillan, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 8</strong></p>
 <ul class="simple">
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso in 2014.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select Anopheles coluzzii mosquitoes collected in Burkina Faso in 2014 (hint: <code class="docutils literal notranslate"><span class="pre">taxon</span> <span class="pre">==</span> <span class="pre">'coluzzii'</span></code>).</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence (hint: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence and which occur above 5% frequency in at least one cohort (hint: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="input-output">
@@ -3952,14 +3920,10 @@ Name: Tricia McMillan, dtype: object
 </div>
 </div>
 </div>
-<p><strong>Practice exercises:</strong></p>
+<p><strong>Exercise 9</strong></p>
 <ul class="simple">
 <li><p>Write the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame out to an Excel file.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select only mosquitoes from Burkina Faso, then write the resulting DataFrame out to a CSV file.</p></li>
-</ul>
-<p><strong>Exercices appliqués:</strong></p>
-<ul class="simple">
-<li><p>&#64;&#64;TODO</p></li>
 </ul>
 </div>
 <div class="section" id="topics-not-covered-here">
@@ -3970,18 +3934,24 @@ Name: Tricia McMillan, dtype: object
 <li><p>Pivot tables</p></li>
 <li><p>Joining and merging</p></li>
 <li><p>Concatenating</p></li>
-<li><p>Advanced indexing (MultiIndex; Boolean indexing; …)</p></li>
+<li><p>Advanced indexing (multi-level indexes; Boolean indexing; …)</p></li>
 <li><p>Modifying data</p></li>
 <li><p>Apply</p></li>
 <li><p>Missing data</p></li>
 <li><p>Time series</p></li>
 <li><p>Plotting</p></li>
+<li><p>Text</p></li>
+<li><p>…</p></li>
 </ul>
 </div>
 <div class="section" id="further-reading">
 <h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
-<p>Here are a few links to online resources providing further information about pandas.</p>
-<p>&#64;&#64;TODO</p>
+<p>Here are a few links to online resources providing further information about pandas for new users.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">pandas getting started</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">pandas user guide</a> (in particular see <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a>)</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">pandas community tutorials</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -4014,7 +3984,7 @@ Name: Tricia McMillan, dtype: object
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop 2 - Metabolic insecticide resistance</p>
+            <p class="prev-next-title">Workshop 2 - Metabolic insecticide resistance and copy number variation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="module-4-cnv-frequencies.html" title="next page">
