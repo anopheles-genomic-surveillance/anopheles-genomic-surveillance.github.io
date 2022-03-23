@@ -346,8 +346,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -450,8 +450,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -503,7 +503,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="francais">
 <h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/OzwIukNbu4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="setup">
@@ -2006,12 +2010,14 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 <p>We can see clearly now that amplifications appear to be at high frequency within <em>An. coluzzii</em> but not <em>An. gambiae</em> cohorts, and the amplifications appear to be highest for the <em>Cyp6aa1</em> gene.</p>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Exercise 1 (English)</strong></p>
 <p>Recall that there are several other cytochrome P450 (<em>Cyp</em>) genes and gene clusters associated with insecticide resistance in the genome, so let’s make a new region query to look at some other <em>Cyp</em> genes of interest and visualise them as heatmaps.</p>
 <p>First, have a look at the <em>Cyp9k1</em> gene on the X chromosome (15,240,000-15,250,000).</p>
 <p>Hint: <code class="docutils literal notranslate"><span class="pre">cyp9k1_region</span> <span class="pre">=</span> <span class="pre">&quot;X:15,240,000-15,250,000&quot;</span></code></p>
-<p><strong>Exercice 1</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 1 (Français)</strong></p>
+<p>Il y a d’autres gènes cytochrome P450 (Cyp) et groupes de gènes associés à la réistance aux insecticides dans le génome, utilisons donc une autre requête pour obtenir une région contenant d’autres gènes <em>Cyp</em> et les visualiser sous forme de heatmap.</p>
+<p>D’abord, regardons le gène <em>Cyp9k1</em> sur le chromosome X (15,240,000-15,250,000).</p>
+<p>Indice: <code class="docutils literal notranslate"><span class="pre">cyp9k1_region</span> <span class="pre">=</span> <span class="pre">&quot;X:15,240,000-15,250,000&quot;</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cyp9k1_region = ???</span>
@@ -2029,11 +2035,12 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<p><strong>Exercise 2</strong></p>
+<p><strong>Exercise 2 (English)</strong></p>
 <p>Next, try the <em>Cyp6mz</em> region.</p>
 <p>Hint: <code class="docutils literal notranslate"><span class="pre">cyp6mz_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:6,924,000-6,980,000&quot;</span></code></p>
-<p><strong>Exercice 2</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 2 (Français)</strong></p>
+<p>Essayons ensuite la région de <em>Cyp6mz</em>.</p>
+<p>Indice: <code class="docutils literal notranslate"><span class="pre">cyp6mz_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:6,924,000-6,980,000&quot;</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cyp6mz_region = ???</span>
@@ -2051,11 +2058,12 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<p><strong>Exercise 3</strong></p>
-<p>Let’s also have a look at the Gste gene cluster on chromosome arm 3R.  What patterns can you see?</p>
+<p><strong>Exercise 3 (English)</strong></p>
+<p>Let’s also have a look at the <em>Gste</em> gene cluster on chromosome arm 3R.  What patterns can you see?</p>
 <p>Hint: <code class="docutils literal notranslate"><span class="pre">gste_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:28,590,000-28,610,000&quot;</span></code></p>
-<p><strong>Exercice 3</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 3 (Français)</strong></p>
+<p>Regardons aussi le groupe de gènes <em>Gste</em> sur le bras de chromosome 3R. Quel motif observez-vous?</p>
+<p>Indice: <code class="docutils literal notranslate"><span class="pre">gste_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:28,590,000-28,610,000&quot;</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gste_region = ???</span>
@@ -2518,11 +2526,12 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 <p>We can see CNV frequencies appear to differ between geographical locations drastically. For example, Cote D’Ivoire has the highest frequencies across the most genes in the cluster (“CI-LG_colu_2012”), but the collection from the same year in neighbouring Ghana (“GH-AA_colu_2012”) has no evidence for CNVs at this locus.</p>
-<p><strong>Exercise 4</strong></p>
+<p><strong>Exercise 4 (English)</strong></p>
 <p>Look at the same <em>Cypaa/p</em> locus, but this time at only <em>An. gambiae</em>.  What patterns can you see in the results?</p>
 <p>Hint: change <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> taxon to “gambiae”.</p>
-<p><strong>Exercice 4</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 4 (Français)</strong></p>
+<p>Observer le même locus <em>Cypaa/p</em>, mais cette fois seulement pour <em>An. gambiae</em>. Quels motifs pouvez-vous observer dans ces résultats?</p>
+<p>Indice: remplacer le taxon dans <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> par “gambiae”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_query = ???</span>
@@ -3062,11 +3071,12 @@ if (outputEl) {{
 <p>In this plot we have data from two Burkina Faso admin 1 regions, BF-09 (Haut-Bassins) and BF-07 (Centre-Sud). In BF-09 we have data from 2012 and 2014, and so we have the beginning of a time series. In BF-07 we have data only from 2004, so just a single point in time.</p>
 <p>There are 3 sub-plots, faceted by taxon and area to allow for comparison. The error bars in the plots show 95% confidence intervals for the frequency estimates.</p>
 <p>We only have two times points in this time series, so we cannot draw strong conclusions. However, future sample sets will contain more time series data.</p>
-<p><strong>Exercise 5</strong></p>
-<p>Plot a CNV frequency time-series for <em>gste</em>.</p>
+<p><strong>Exercise 5 (English)</strong></p>
+<p>Plot a CNV frequency time-series for <em>Gste</em>.</p>
 <p>Hint: <code class="docutils literal notranslate"><span class="pre">gste_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:28,590,000-28,610,000&quot;</span></code></p>
-<p><strong>Exercice 5</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 5 (Français)</strong></p>
+<p>Afficher la série temporelle des CNVs pour <em>Gste</em>.</p>
+<p>Indice: <code class="docutils literal notranslate"><span class="pre">gste_region</span> <span class="pre">=</span> <span class="pre">&quot;3R:28,590,000-28,610,000&quot;</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  ??? = ???</span>
@@ -3879,19 +3889,20 @@ Attributes:
 </script></div>
 </div>
 <p>The drop down menus allow selection of variant, taxon and time period. Gene cnv frequencies are then plotted on the map where samples were collected. The opacity of the marker shows relative frequency, but actual values can be accessed by clicking on the marker.</p>
-<p><strong>Exercise 6</strong></p>
+<p><strong>Exercise 6 (English)</strong></p>
 <p>Using the interactive map we have just created - what is the frequency of <em>Cyp6aa1</em> amplifications in <em>An. gambiae</em> from Uganda area UG-E in 2012?</p>
 <p>What is the frequency of <em>Cyp6p3</em> amplifications in <em>An. coluzzii</em> from Cote D’Ivoire area CI-LG in 2012?</p>
-<p><strong>Exercice 6</strong></p>
-<p>&#64;&#64;TODO</p>
+<p><strong>Exercice 6 (Français)</strong></p>
+<p>En utilisant la carte interactive que nous venons de créer, quelle est la fréquence de l’amplification de <em>Cyp6aa1</em> chez les <em>An. gambiae</em> venant de la région de l’Ouganda UG-E en 2012?</p>
+<p>Quelle est la fréquence de l’amplification de <em>Cyp6p3</em> chez les <em>An. coluzzii</em> venant de la région CI-LG de la Côte D’Ivoire en 2012?</p>
 </div>
 <div class="section" id="well-done">
 <h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">¶</a></h2>
 <p>In this module we have learnt how to analyse CNVs in genes that are associated with metabolic insecticide resistance in the <em>Anopheles gambiae</em> complex.</p>
 <p>We have computed the frequency of copy number variation in genes of interest, and learnt different ways to compare these frequencies between mosquitoes from different time points, geographical locations and species.</p>
 </div>
-<div class="section" id="practical-exercises">
-<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Open this notebook in Google Colab and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing, and try the practical exercises along the way.</p>
@@ -3900,7 +3911,9 @@ Attributes:
 </div>
 <div class="section" id="id2">
 <h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>&#64;&#64;TODO</p>
+<p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Pendant que vous exécutez le notebook, cellule par cellule, pensez à ce que chaque cellule fait et essayez de faire les exercices quand vous les rencontrez.</p>
+<p>Essayez de faire les exercices mais ne vous inquiétez pas si vous n’avez pas le temps de tout faire pendant la séance appliquée et n’hésitez pas à demander aux enseignants assistants si vous avez besoin d’aide parce que vous êtes bloqués.</p>
+<p>Indice: Pour ouvrir le notebook dans Google Colab, cliquer sur l’icône de fusée au sommet de cette page puis choisissez “Colab” dans le menu déroulant.</p>
 </div>
 </div>
 </div>

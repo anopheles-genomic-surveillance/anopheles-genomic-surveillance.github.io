@@ -316,13 +316,11 @@ const thebe_selector_output = ".output, .cell_output"
      Example: sample metadata
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-genome-annotations">
-   Example: genome annotations
-  </a>
-  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-genome-annotations">
+     Example: genome annotations
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-snp-allele-frequencies">
      Example: SNP allele frequencies
@@ -481,13 +479,11 @@ const thebe_selector_output = ".output, .cell_output"
      Example: sample metadata
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-genome-annotations">
-   Example: genome annotations
-  </a>
-  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-genome-annotations">
+     Example: genome annotations
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-snp-allele-frequencies">
      Example: SNP allele frequencies
@@ -620,13 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="english">
 <h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/iIYftkvS0eM&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/iIYftkvS0eM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
@@ -634,13 +624,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="francais">
 <h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/6ycnU50kzZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>Let’s install the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package so we have easy access to some genomic data to demonstrate with. Pandas is already installed on colab.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -q malariagen_data
 </pre></div>
@@ -1147,9 +1141,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>There are 3,081 rows and 26 columns in this DataFrame. Each row provides data about a single mosquito DNA sample that has been sequenced by MalariaGEN. The columns provide data about those mosquitoes, such as the country and year in which the mosquito was originally collected.</p>
 <p>Note that the representation of the DataFrame above only shows some of the data - there are too many rows and columns to show all at once. The ellipsis character (“…”) shows where some data have been hidden.</p>
 </div>
-</div>
 <div class="section" id="example-genome-annotations">
-<h2>Example: genome annotations<a class="headerlink" href="#example-genome-annotations" title="Permalink to this headline">¶</a></h2>
+<h3>Example: genome annotations<a class="headerlink" href="#example-genome-annotations" title="Permalink to this headline">¶</a></h3>
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">workshop 1, module 3</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#geneset">geneset()</a> function. This function returns a DataFrame of genome annotations. Let’s call the function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1442,6 +1435,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>There are 196,145 rows and 12 columns in this DataFrame. Each row provides data about an annotated feature on the <em>Anopheles gambiae</em> AgamP4 reference genome, such as a gene. The columns provide data about those features, such as the contig (chromosome arm) on which the feature occurs, and the start and end coordinates.</p>
+</div>
 <div class="section" id="example-snp-allele-frequencies">
 <h3>Example: SNP allele frequencies<a class="headerlink" href="#example-snp-allele-frequencies" title="Permalink to this headline">¶</a></h3>
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>, we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#snp-allele-frequencies">snp_allele_frequencies()</a> function. This function returns a DataFrame of single nucleotide polymorphisms (SNPs) together with their allele frequencies in different mosquito cohorts. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code>.</p>
@@ -1878,7 +1872,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aside-variable-naming-styles">
 <h3>Aside: variable naming styles<a class="headerlink" href="#aside-variable-naming-styles" title="Permalink to this headline">¶</a></h3>
-<p>You may have noticed that in the examples above, whenever we assigned a DataFrame to a variable, the name of the variable either started with the prefix “df_” or ended with the suffix “_df”. Here “df” stands for DataFrame, and is used just as a helpful reminder that the value of the variable is a pandas DataFrame. Using a prefix of suffix on the variable name like this is entirely optional and is up to your own coding style. You can name these variables whatever you like. Different instructors in this course prefer different styles, and you will see different styles being used in different modules.</p>
+<p>You may have noticed that in the examples above, whenever we assigned a DataFrame to a variable, the name of the variable either started with the prefix “<code class="docutils literal notranslate"><span class="pre">df_</span></code>” or ended with the suffix “<code class="docutils literal notranslate"><span class="pre">_df</span></code>”. Here “df” stands for DataFrame, and is used just as a helpful reminder that the value of the variable is a pandas DataFrame. Using a prefix of suffix on the variable name like this is entirely optional and is up to your own coding style. You can name these variables whatever you like. Different instructors in this course prefer different styles, and you will see different styles being used in different modules.</p>
 </div>
 <div class="section" id="example-reading-from-a-csv-file">
 <h3>Example: reading from a CSV file<a class="headerlink" href="#example-reading-from-a-csv-file" title="Permalink to this headline">¶</a></h3>
@@ -2352,9 +2346,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Exercise 1 (English)</strong></p>
 <ul class="simple">
 <li><p>Count the number of rows and columns in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+<p><strong>Exercice 1 (Français)</strong></p>
+<ul class="simple">
+<li><p>Compter le nombre de lignes et de colonnes du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-columns">
@@ -2377,8 +2375,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>This can be useful especially if you have a lot of columns in a DataFrame.</p>
-<p><strong>Exercise 2</strong></p>
-<p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p>
+<p><strong>Exercise 2 (English)</strong></p>
+<ul class="simple">
+<li><p>Access the column names of the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+<p><strong>Exercice 2 (Français)</strong></p>
+<ul class="simple">
+<li><p>Afficher les noms des colonnes du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
+</ul>
 </div>
 <div class="section" id="accessing-a-single-column">
 <h3>Accessing a single column<a class="headerlink" href="#accessing-a-single-column" title="Permalink to this headline">¶</a></h3>
@@ -2465,11 +2469,17 @@ Name: number_of_heads, dtype: float64
 </div>
 </div>
 <p>The characters in our DataFrame have at least (min) 1 and at most (max) 2 heads. The mean number of heads is 1.2, but of course this a bit silly, because number of heads is not a continuous variable.</p>
-<p><strong>Exercise 3</strong></p>
+<p><strong>Exercise 3 (English)</strong></p>
 <ul class="simple">
 <li><p>Access the “country” column from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of mosquito samples from each country.</p></li>
 <li><p>Access the “type” column from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of genome annotations of different types.</p></li>
 <li><p>Access the “effect” column from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame, and then use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> function to show the number of SNPs with different effects.</p></li>
+</ul>
+<p><strong>Exercice 3 (Français)</strong></p>
+<ul class="simple">
+<li><p>Obtenir la colonne “country” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> et utiliser la fonction <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> pour afficher le nombre de moustiques capturés dans chaque pays.</p></li>
+<li><p>Obtenir la colonne “type” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> et utiliser la fonction <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> pour afficher le nombre d’annotations du génome de chaque type.</p></li>
+<li><p>Obtenir la colonne “effect” du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> et utiliser la fonction <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> pour afficher le nombre de SNPs pour chaque effet possible.</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-multiple-columns">
@@ -2767,11 +2777,17 @@ Name: number_of_heads, dtype: float64
   </div>
 </div></div>
 </div>
-<p><strong>Exercise 4</strong></p>
+<p><strong>Exercise 4 (English)</strong></p>
 <ul class="simple">
 <li><p>Create a new DataFrame containing only the “sample_id”, “country” and “year” columns from the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
 <li><p>Create a new DataFrame containing only the “ID”, “contig”, “start” and “end” columns from the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame.</p></li>
 <li><p>Create a new DataFrame containing only the frequency columns from the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame (hint: the names of these columns all begin with “frq_”).</p></li>
+</ul>
+<p><strong>Exercice 4 (Français)</strong></p>
+<ul class="simple">
+<li><p>Créer un nouveau DataFrame contenant seulement les colonnes “sample_id”, “country” et “year” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
+<li><p>Créer un nouveau DataFrame contenant seulement les colonnes “ID”, “contig”, “start” et “end” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p></li>
+<li><p>Créer un nouveau DataFrame contenant seulement les colonnes contenant les fréquences du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> (Indice: les noms de ces colonnes commencent tous par “frq_”).</p></li>
 </ul>
 </div>
 </div>
@@ -2844,10 +2860,15 @@ Name: 0, dtype: object
 </div>
 </div>
 </div>
-<p><strong>Exercise 5</strong></p>
+<p><strong>Exercise 5 (English)</strong></p>
 <ul class="simple">
 <li><p>Access the 81st row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame. What country did this mosquito sample come from? (Remember: numbering starts from 0 in Python.)</p></li>
 <li><p>Access the 73,287th row in the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame. What type of annotation is this? What is its Name?</p></li>
+</ul>
+<p><strong>Exercice 5 (Français)</strong></p>
+<ul class="simple">
+<li><p>Obtenir la 81ème ligne du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>. De quel pays est issu ce moustique? (Indice: les indices commencent à 0 en Python)</p></li>
+<li><p>Obtenir la 73 287ème ligne du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>. De quel type d’annotation s’agit-il? Quel est son nom?</p></li>
 </ul>
 </div>
 <div class="section" id="accessing-multiple-rows">
@@ -2987,8 +3008,14 @@ Name: 0, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Exercise 6</strong></p>
-<p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p>
+<p><strong>Exercise 6 (English)</strong></p>
+<ul class="simple">
+<li><p>Access rows starting from the 6th row up to and including the 10th row in the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame.</p></li>
+</ul>
+<p><strong>Exercice 6 (Français)</strong></p>
+<ul class="simple">
+<li><p>Obtenir toutes les lignes entre la 6ème et la 10ème (incluses) du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="indexes">
@@ -3350,10 +3377,15 @@ Name: Tricia McMillan, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Exercise 7</strong></p>
+<p><strong>Exercise 7 (English)</strong></p>
 <ul class="simple">
 <li><p>Set the “sample_id” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame, then locate the row with sample identifier “BK0055-C”. Where was this mosquito collected?</p></li>
 <li><p>Set the “ID” column as the index on the <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> DataFrame, then locate the row with identifier “AGAP000818”. What is the name of this gene?</p></li>
+</ul>
+<p><strong>Exercice 7 (Français)</strong></p>
+<ul class="simple">
+<li><p>Faire de la colonne “sample_id” l’index du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> et ensuite trouver la ligne avec comme identificant d’échantillon “BK0055-C”. D’où est issu ce moustique?</p></li>
+<li><p>Faire de la colonne “ID” l’index du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> et ensuite trouver la ligne avec comme identifiant “AGAP000818”. Quel est le nom de ce gène?</p></li>
 </ul>
 </div>
 <div class="section" id="queries">
@@ -3897,13 +3929,21 @@ Name: Tricia McMillan, dtype: object
   </div>
 </div></div>
 </div>
-<p><strong>Exercise 8</strong></p>
+<p><strong>Exercise 8 (English)</strong></p>
 <ul class="simple">
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select mosquitoes collected in Burkina Faso in 2014.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select Anopheles coluzzii mosquitoes collected in Burkina Faso in 2014 (hint: <code class="docutils literal notranslate"><span class="pre">taxon</span> <span class="pre">==</span> <span class="pre">'coluzzii'</span></code>).</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence (hint: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> DataFrame to select SNPs which change the protein sequence and which occur above 5% frequency in at least one cohort (hint: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
+</ul>
+<p><strong>Exercice 8 (Français)</strong></p>
+<ul class="simple">
+<li><p>Sélectionner parmi les moustiques du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> ceux qui ont été capturés au Burkina Faso.</p></li>
+<li><p>Sélectionner parmi les moustiques du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> ceux qui ont été capturés au Burkina Faso en 2014.</p></li>
+<li><p>Sélectionner parmi les moustiques du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> les Anophèles coluzzii qui ont été capturés au Burkina Faso en 2014. (Indice: <code class="docutils literal notranslate"><span class="pre">taxon</span> <span class="pre">==</span> <span class="pre">'coluzzii'</span></code>).</p></li>
+<li><p>Sélectionner parmi les SNPs du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> ceux qui modifient la séquence d’une protéine (Indice: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
+<li><p>Sélectionner parmi les SNPs du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> ceux qui modifient la séquence d’une protéine et apparaissent avec une fréquence supérieure à 5% dans au moins une cohorte (Indice: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
 </ul>
 </div>
 <div class="section" id="input-output">
@@ -3934,10 +3974,15 @@ Name: Tricia McMillan, dtype: object
 </div>
 </div>
 </div>
-<p><strong>Exercise 9</strong></p>
+<p><strong>Exercise 9 (English)</strong></p>
 <ul class="simple">
 <li><p>Write the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame out to an Excel file.</p></li>
 <li><p>Query the <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> DataFrame to select only mosquitoes from Burkina Faso, then write the resulting DataFrame out to a CSV file.</p></li>
+</ul>
+<p><strong>Exercice 9 (Français)</strong></p>
+<ul class="simple">
+<li><p>Enregistrer le DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> sous forme de fichier Excel.</p></li>
+<li><p>Sélectionner parmi les moustiques du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> ceux provenant du Burkina Faso et enregistrer le DataFrame ainsi créé sous forme de fichier CSV.</p></li>
 </ul>
 </div>
 <div class="section" id="topics-not-covered-here">
