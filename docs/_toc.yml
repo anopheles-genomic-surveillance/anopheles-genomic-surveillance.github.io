@@ -15,3 +15,10 @@ parts:
     - file: workshop-2/module-2-metabolic-ir
     - file: workshop-2/module-3-cnv-calling
     - file: workshop-2/module-4-cnv-frequencies
+  - caption: Workshop 3
+    chapters:
+    - file: workshop-3/about
+    - file: workshop-3/module-1-plotly
+    - file: workshop-3/module-2-population-structure
+    - file: workshop-3/module-3-snps
+    - file: workshop-3/module-4-pca
