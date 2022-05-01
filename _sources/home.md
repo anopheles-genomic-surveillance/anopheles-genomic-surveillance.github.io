@@ -10,6 +10,19 @@ Welcome to this training course on data analysis for genomic surveillance of Afr
 
 **This course is under active development, it will be updated frequently and parts of the material may be work in progress.**
 
+## Workshop programme
+
+The course will consist of a series of workshops. The workshop programme is as follows:
+
+* {doc}`workshop-1/about`
+* {doc}`workshop-2/about`
+* {doc}`workshop-3/about`
+* Workshop 4 - Cryptic species (planned)
+* Workshop 5 - Genetic diversity (planned)
+* Workshop 6 - Detecting genes under recent positive selection (planned)
+* Workshop 7 - Gene flow and the spread of insecticide resistance (planned)
+* Workshop 8 - Presenting a genomic surveillance report (planned)
+
 ## Context and motivation
 
 The main motivation for this course, and for the ongoing work by MalariaGEN and PAMCA to develop capacity for *Anopheles* genomics, comes from the current situation in malaria control in Africa. This situation is well described in the [WHO World Malaria Report 2021](https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2021) and in the [WHO Global Technical Strategy for Malaria 2016-2030](https://www.who.int/publications/i/item/9789240031357), but here are some key highlights.
@@ -55,26 +68,6 @@ At the end of this course, you will be able to:
 1. Perform a range of analyses of *Anopheles* genomic data that are relevant to malaria vector surveillance.
 1. Generate plots, tables and statistics that can be used in a surveillance report.
 1. Interpret your results and explain to others what they mean.
-1. Identify where more data are needed to achieve surveillance goals.
-1. Design a vector genomic surveillance strategy for a region or country.
-
-
-## Workshop programme
-
-The course will consist of a series of workshops. The topics for the first three workshops are as follows:
-
-* {doc}`workshop-1/about`
-* {doc}`workshop-2/about`
-* Workshop 3 - Population structure and cryptic taxa (planned)
-
-Other topics we may cover in future workshops include:
-
-* Quantifying genetic diversity
-* Detecting new forms of insecticide resistance
-* Detecting gene flow and the spread of resistance
-* Variation in gene drive targets
-* Constructing a genomic surveillance report
-* Designing a vector genomic surveillance strategy
 
 
 ## Prerequisites

@@ -176,6 +176,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-3/about.html">
+   Workshop 3 - Population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-3/module-1-plotly.html">
+   Module 1 - Plotting with Plotly Express
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-3/module-2-population-structure.html">
+   Module 2 - Introduction to population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-3/module-3-snps.html">
+   Module 3 - Genome-wide SNP data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-3/module-4-pca.html">
+   Module 4 - Principal components analysis (PCA)
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -263,6 +295,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workshop-programme">
+   Workshop programme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#context-and-motivation">
    Context and motivation
   </a>
@@ -302,11 +339,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#workshop-programme">
-   Workshop programme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -335,6 +367,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workshop-programme">
+   Workshop programme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#context-and-motivation">
    Context and motivation
   </a>
@@ -377,11 +414,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#workshop-programme">
-   Workshop programme
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
   </a>
@@ -402,6 +434,20 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h1>
 <p>Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by <a class="reference external" href="https://www.malariagen.net">MalariaGEN</a> and <a class="reference external" href="https://www.pamca.org">PAMCA</a>.</p>
 <p><strong>This course is under active development, it will be updated frequently and parts of the material may be work in progress.</strong></p>
+<div class="section" id="workshop-programme">
+<h2>Workshop programme<a class="headerlink" href="#workshop-programme" title="Permalink to this headline">¶</a></h2>
+<p>The course will consist of a series of workshops. The workshop programme is as follows:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="workshop-1/about.html"><span class="doc">Workshop 1 - Pyrethroid target-site resistance</span></a></p></li>
+<li><p><a class="reference internal" href="workshop-2/about.html"><span class="doc">Workshop 2 - Metabolic insecticide resistance and copy number variation</span></a></p></li>
+<li><p><a class="reference internal" href="workshop-3/about.html"><span class="doc">Workshop 3 - Population structure</span></a></p></li>
+<li><p>Workshop 4 - Cryptic species (planned)</p></li>
+<li><p>Workshop 5 - Genetic diversity (planned)</p></li>
+<li><p>Workshop 6 - Detecting genes under recent positive selection (planned)</p></li>
+<li><p>Workshop 7 - Gene flow and the spread of insecticide resistance (planned)</p></li>
+<li><p>Workshop 8 - Presenting a genomic surveillance report (planned)</p></li>
+</ul>
+</div>
 <div class="section" id="context-and-motivation">
 <h2>Context and motivation<a class="headerlink" href="#context-and-motivation" title="Permalink to this headline">¶</a></h2>
 <p>The main motivation for this course, and for the ongoing work by MalariaGEN and PAMCA to develop capacity for <em>Anopheles</em> genomics, comes from the current situation in malaria control in Africa. This situation is well described in the <a class="reference external" href="https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2021">WHO World Malaria Report 2021</a> and in the <a class="reference external" href="https://www.who.int/publications/i/item/9789240031357">WHO Global Technical Strategy for Malaria 2016-2030</a>, but here are some key highlights.</p>
@@ -441,32 +487,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Perform a range of analyses of <em>Anopheles</em> genomic data that are relevant to malaria vector surveillance.</p></li>
 <li><p>Generate plots, tables and statistics that can be used in a surveillance report.</p></li>
 <li><p>Interpret your results and explain to others what they mean.</p></li>
-<li><p>Identify where more data are needed to achieve surveillance goals.</p></li>
-<li><p>Design a vector genomic surveillance strategy for a region or country.</p></li>
 </ol>
-</div>
-<div class="section" id="workshop-programme">
-<h2>Workshop programme<a class="headerlink" href="#workshop-programme" title="Permalink to this headline">¶</a></h2>
-<p>The course will consist of a series of workshops. The topics for the first three workshops are as follows:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="workshop-1/about.html"><span class="doc">Workshop 1 - Pyrethroid target-site resistance</span></a></p></li>
-<li><p><a class="reference internal" href="workshop-2/about.html"><span class="doc">Workshop 2 - Metabolic insecticide resistance and copy number variation</span></a></p></li>
-<li><p>Workshop 3 - Population structure and cryptic taxa (planned)</p></li>
-</ul>
-<p>Other topics we may cover in future workshops include:</p>
-<ul class="simple">
-<li><p>Quantifying genetic diversity</p></li>
-<li><p>Detecting new forms of insecticide resistance</p></li>
-<li><p>Detecting gene flow and the spread of resistance</p></li>
-<li><p>Variation in gene drive targets</p></li>
-<li><p>Constructing a genomic surveillance report</p></li>
-<li><p>Designing a vector genomic surveillance strategy</p></li>
-</ul>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>This is a hands-on training course involving the analysis of real genetic data. To follow this course you will need to have some prior experience of data analysis using a programming language such as Python, R, Julia, Matlab or Stata. The practical exercises in each workshop will use the Python programming language, and some prior experience of Python will be advantageous, but is not required.</p>
 <p>During the practical sessions in each workshop we will use <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> (a.k.a. Colab), which is an interactive cloud computing service provided for free by Google. In order to use Colab you will need to have a Google user account. If you do not already have a Google user account, please make sure to create one before you start the course.</p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
