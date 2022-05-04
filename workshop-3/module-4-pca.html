@@ -577,7 +577,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="francais">
 <h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/1wVtQmcjFa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="recap-what-is-population-structure">
@@ -1436,8 +1440,10 @@ if (outputEl) {{
 </div>
 <p>By colouring the points according to taxon we can now see that PC1 is pulling apart samples according to whether they are <em>Anopheles gambiae</em> or <em>coluzzii</em>, which is what we might expect of samples collected in the same place at a similar time but that are <strong>reproductively isolated</strong> as they are different species.</p>
 <p>These plotly plots are interactive, if we hover over a sample’s point we can see a lot of useful metadata (compare this to the simple plotly express plot we made earlier).</p>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Exercise 1 (English)</strong></p>
 <p>Run the same analysis on the Central African republic sample set, but this time look at the “2L” chromosome arm region instead of “3L”. Keep all the other parameters the same. Is the PC1 <em>vs.</em> PC2 scatter plot different when we look at “2L”? If so, what might be causing this?</p>
+<p><strong>Exercice 1 (Français)</strong></p>
+<p>Exécuter la même analyse de l’ensemble d’échantillons de la République Centrafricaine mais regarder cette fois le bras de chromosome “2L” au lieu de “3L”. Garder tous les autres parametres identiques. Est-ce que le diagramme à nuage de points entre PC1 et PC2 ressemble à celui au-dessus? Si non, quelle peut-être la raison?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># region_ex1 = &quot;2L&quot;</span>
@@ -1722,8 +1728,10 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p><strong>Exercise 2</strong></p>
+<p><strong>Exercise 2 (English)</strong></p>
 <p>Run a PCA on <em>An. gambiae</em> from Uganda. Is there population structure here? It might be useful to colour the plot points by location, how would we do that?</p>
+<p><strong>Exercice 2 (Français)</strong></p>
+<p>Exécuter la PCA pour les <em>An. gambiae</em> venant de l’Uganda. Y a-t-il de la structure de population? Il peut être utile de colorer les points en fonction du lieu de capture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_query_ex2 = (???)</span>
