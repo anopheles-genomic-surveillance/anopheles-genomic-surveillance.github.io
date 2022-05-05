@@ -415,6 +415,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-study">
+   Further study
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-arabiensis">
+     Geographical population structure in
+     <em>
+      An. arabiensis
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-coluzzii">
+     Geographical population structure in
+     <em>
+      An. coluzzii
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-gambiae">
+     Geographical population structure in
+     <em>
+      An. gambiae
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -536,6 +567,37 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
      Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-study">
+   Further study
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-arabiensis">
+     Geographical population structure in
+     <em>
+      An. arabiensis
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-coluzzii">
+     Geographical population structure in
+     <em>
+      An. coluzzii
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure-in-an-gambiae">
+     Geographical population structure in
+     <em>
+      An. gambiae
+     </em>
     </a>
    </li>
   </ul>
@@ -1771,6 +1833,59 @@ if (outputEl) {{
 <p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Pendant que vous exécutez le notebook, cellule par cellule, pensez à ce que chaque cellule fait et essayez de faire les exercices quand vous les rencontrez.</p>
 <p>Essayez de faire les exercices mais ne vous inquiétez pas si vous n’avez pas le temps de tout faire pendant la séance appliquée et n’hésitez pas à demander aux enseignants assistants si vous avez besoin d’aide parce que vous êtes bloqués.</p>
 <p>Indice: Pour ouvrir le notebook dans Google Colab, cliquer sur l’icône de fusée au sommet de cette page puis choisissez “Colab” dans le menu déroulant.</p>
+</div>
+</div>
+<div class="section" id="further-study">
+<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
+<p>If you’d like to continue with PCA and investigating population structure in the <em>Anopheles gambiae</em> complex, here are some suggestions for further analyses to run.</p>
+<p>Investigate geographical population structure within each of the three main taxa represented in the Ag3.0 data release: <em>An. arabiensis</em>, <em>An. coluzzii</em> and <em>An. gambiae</em>.</p>
+<div class="section" id="geographical-population-structure-in-an-arabiensis">
+<h3>Geographical population structure in <em>An. arabiensis</em><a class="headerlink" href="#geographical-population-structure-in-an-arabiensis" title="Permalink to this headline">¶</a></h3>
+<p>Below is a code example which runs a PCA on all <em>An. arabiensis</em> samples in the Ag3.0 data release. This will take a few minutes to run. Uncomment this code and try running it for yourself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pca_df_arab, evr_arab = ag3.pca(</span>
+<span class="c1">#     region=&quot;3L:15,000,000-41,000,000&quot;, </span>
+<span class="c1">#     n_snps=100_000, </span>
+<span class="c1">#     sample_sets=&quot;3.0&quot;,</span>
+<span class="c1">#     sample_query=&quot;taxon == &#39;arabiensis&#39;&quot;</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uncomment and run the code cells below to plot the explained variance, and then visualise the first three principal components using a 3D scatter plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_pca_variance(evr_arab)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_pca_coords_3d(</span>
+<span class="c1">#     pca_df_arab,</span>
+<span class="c1">#     color=&quot;country&quot;,</span>
+<span class="c1">#     title=&quot;PCA - An. arabiensis&quot;,</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How many distinct populations do you think there are?</p>
+</div>
+<div class="section" id="geographical-population-structure-in-an-coluzzii">
+<h3>Geographical population structure in <em>An. coluzzii</em><a class="headerlink" href="#geographical-population-structure-in-an-coluzzii" title="Permalink to this headline">¶</a></h3>
+<p>Adapt the code examples given above to run a PCA on all <em>An. coluzzii</em> samples in the Ag3.0 data release and then plot the results.</p>
+<p>Try plotting more than just the first three principal components.</p>
+<p>How many distinct populations do you think there are?</p>
+</div>
+<div class="section" id="geographical-population-structure-in-an-gambiae">
+<h3>Geographical population structure in <em>An. gambiae</em><a class="headerlink" href="#geographical-population-structure-in-an-gambiae" title="Permalink to this headline">¶</a></h3>
+<p>Now adapt the code examples given above to run a PCA on all <em>An. gambiae</em> samples in the Ag3.0 data release and then plot the results.</p>
+<p>Again, try plotting more than just the first three principal components.</p>
+<p>How many distinct populations do you think there are?</p>
 </div>
 </div>
 </div>
