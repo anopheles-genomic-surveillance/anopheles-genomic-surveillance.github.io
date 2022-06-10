@@ -25,3 +25,4 @@ parts:
   - caption: Workshop 4
     chapters:
     - file: workshop-4/about
+    - file: workshop-4/module-1-numpy
