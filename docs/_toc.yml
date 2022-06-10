@@ -22,3 +22,6 @@ parts:
     - file: workshop-3/module-2-population-structure
     - file: workshop-3/module-3-snps
     - file: workshop-3/module-4-pca
+  - caption: Workshop 4
+    chapters:
+    - file: workshop-4/about
