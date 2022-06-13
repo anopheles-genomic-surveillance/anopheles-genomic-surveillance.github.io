@@ -27,4 +27,5 @@ parts:
     - file: workshop-4/about
     - file: workshop-4/module-1-numpy
     - file: workshop-4/module-2-cryptic-species
+    - file: workshop-4/module-3-aims
     - file: workshop-4/module-4-taxon-analysis
