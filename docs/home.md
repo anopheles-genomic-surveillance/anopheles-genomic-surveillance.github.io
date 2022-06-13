@@ -17,11 +17,11 @@ The course will consist of a series of workshops. The workshop programme is as f
 * {doc}`workshop-1/about`
 * {doc}`workshop-2/about`
 * {doc}`workshop-3/about`
-* Workshop 4 - Cryptic species (planned)
+* {doc}`workshop-4/about`
 * Workshop 5 - Genetic diversity (planned)
 * Workshop 6 - Detecting genes under recent positive selection (planned)
 * Workshop 7 - Gene flow and the spread of insecticide resistance (planned)
-* Workshop 8 - Presenting a genomic surveillance report (planned)
+* Workshop 8 - Creating a genomic surveillance report (planned)
 
 ## Context and motivation
 

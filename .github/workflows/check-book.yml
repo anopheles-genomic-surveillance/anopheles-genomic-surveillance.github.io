@@ -17,7 +17,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements-deploy.txt
+        pip install -r requirements.txt
 
     - name: Build the book
       run: |
