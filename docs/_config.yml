@@ -29,5 +29,6 @@ sphinx:
     # don't use dollarmath - https://github.com/executablebooks/jupyter-book/issues/1528
     # - dollarmath
     - colon_fence
+    - linkify
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
