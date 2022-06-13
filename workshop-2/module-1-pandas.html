@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Module 1 - Introduction to pandas DataFrames &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 2 - The genetic basis of metabolic resistance to insecticides in Anopheles mosquitoes" href="module-2-metabolic-ir.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -90,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -209,108 +224,243 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshop-2/module-1-pandas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-1-pandas.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-1-pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-1-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-1-pandas.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-2/module-1-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
@@ -456,12 +606,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Module 1 - Introduction to pandas DataFrames</h1>
@@ -623,18 +772,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="https://anopheles-genomic-surveillance.github.io/_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 2</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="module-1-introduction-to-pandas-dataframes">
-<h1>Module 1 - Introduction to pandas DataFrames<a class="headerlink" href="#module-1-introduction-to-pandas-dataframes" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="module-1-introduction-to-pandas-dataframes">
+<h1>Module 1 - Introduction to pandas DataFrames<a class="headerlink" href="#module-1-introduction-to-pandas-dataframes" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Tools &amp; Technology</strong></p>
 <p>In this module we’re going to take a closer look at a Python package called <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, which is an essential part of our data analysis toolkit. We use pandas whenever we need to store, manipulate or analyse tables of data, also known as DataFrames. In this module we’ll focus on using pandas to analyse genomic data, but it can be used to analyse any kind of data, so it’s a very useful tool to have at your fingertips.</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>After this module you will be able to:</p>
 <ul class="simple">
 <li><p>Explain what a DataFrame is</p></li>
@@ -643,28 +793,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Write a DataFrame to a file</p></li>
 </ul>
 <p>Please note that this module will cover only a small part of the features that pandas provides - see the links at then end of this notebook if you’d like to go further.</p>
-</div>
-<div class="section" id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/iIYftkvS0eM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/6ycnU50kzZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>Let’s install the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package so we have easy access to some genomic data to demonstrate with. Pandas is already installed on colab.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -745,12 +895,12 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div>
 </div>
-</div>
-<div class="section" id="pandas-dataframes">
-<h2>pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pandas-dataframes">
+<h2>pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this headline">#</a></h2>
 <p>We use the pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class whenever we want to store and analyse data that can be structured as a table with rows and columns. Let’s take a look at some examples of DataFrames that we met in the <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/about.html">first workshop</a> of this training course.</p>
-<div class="section" id="example-sample-metadata">
-<h3>Example: sample metadata<a class="headerlink" href="#example-sample-metadata" title="Permalink to this headline">¶</a></h3>
+<section id="example-sample-metadata">
+<h3>Example: sample metadata<a class="headerlink" href="#example-sample-metadata" title="Permalink to this headline">#</a></h3>
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#sample-metadata">sample_metadata()</a> function. This function returns a DataFrame of sample metadata. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1171,10 +1321,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>There are 3,081 rows and 26 columns in this DataFrame. Each row provides data about a single mosquito DNA sample that has been sequenced by MalariaGEN. The columns provide data about those mosquitoes, such as the country and year in which the mosquito was originally collected.</p>
-<p>Note that the representation of the DataFrame above only shows some of the data - there are too many rows and columns to show all at once. The ellipsis character (“…”) shows where some data have been hidden.</p>
-</div>
-<div class="section" id="example-genome-annotations">
-<h3>Example: genome annotations<a class="headerlink" href="#example-genome-annotations" title="Permalink to this headline">¶</a></h3>
+<p>Note that the representation of the DataFrame above only shows some of the data - there are too many rows and columns to show all at once. The ellipsis character (”…”) shows where some data have been hidden.</p>
+</section>
+<section id="example-genome-annotations">
+<h3>Example: genome annotations<a class="headerlink" href="#example-genome-annotations" title="Permalink to this headline">#</a></h3>
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">workshop 1, module 3</a> we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#geneset">geneset()</a> function. This function returns a DataFrame of genome annotations. Let’s call the function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1467,9 +1617,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>There are 196,145 rows and 12 columns in this DataFrame. Each row provides data about an annotated feature on the <em>Anopheles gambiae</em> AgamP4 reference genome, such as a gene. The columns provide data about those features, such as the contig (chromosome arm) on which the feature occurs, and the start and end coordinates.</p>
-</div>
-<div class="section" id="example-snp-allele-frequencies">
-<h3>Example: SNP allele frequencies<a class="headerlink" href="#example-snp-allele-frequencies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-snp-allele-frequencies">
+<h3>Example: SNP allele frequencies<a class="headerlink" href="#example-snp-allele-frequencies" title="Permalink to this headline">#</a></h3>
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>, we encountered the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#snp-allele-frequencies">snp_allele_frequencies()</a> function. This function returns a DataFrame of single nucleotide polymorphisms (SNPs) together with their allele frequencies in different mosquito cohorts. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1901,13 +2051,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>There are 9,659 rows and 18 columns in this DataFrame. Each row provides data about a SNP. The columns provide data about those SNPs, such as their effect, and the alternate allele frequency in a particular cohort of mosquitoes, e.g., the column named “frq_BF-09_colu_2012” provides the frequency in <em>Anopheles coluzzii</em> mosquitoes collected in the BF-09 (Hauts-Bassins) administrative region of Burkina Faso in 2012.</p>
-</div>
-<div class="section" id="aside-variable-naming-styles">
-<h3>Aside: variable naming styles<a class="headerlink" href="#aside-variable-naming-styles" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="aside-variable-naming-styles">
+<h3>Aside: variable naming styles<a class="headerlink" href="#aside-variable-naming-styles" title="Permalink to this headline">#</a></h3>
 <p>You may have noticed that in the examples above, whenever we assigned a DataFrame to a variable, the name of the variable either started with the prefix “<code class="docutils literal notranslate"><span class="pre">df_</span></code>” or ended with the suffix “<code class="docutils literal notranslate"><span class="pre">_df</span></code>”. Here “df” stands for DataFrame, and is used just as a helpful reminder that the value of the variable is a pandas DataFrame. Using a prefix of suffix on the variable name like this is entirely optional and is up to your own coding style. You can name these variables whatever you like. Different instructors in this course prefer different styles, and you will see different styles being used in different modules.</p>
-</div>
-<div class="section" id="example-reading-from-a-csv-file">
-<h3>Example: reading from a CSV file<a class="headerlink" href="#example-reading-from-a-csv-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-reading-from-a-csv-file">
+<h3>Example: reading from a CSV file<a class="headerlink" href="#example-reading-from-a-csv-file" title="Permalink to this headline">#</a></h3>
 <p>You can also create a pandas DataFrame by reading data from a file, such as a comma-separated value (CSV) file, or an Excel workbook file. Let’s use the pandas <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv()</a> function to read data from a CSV file containing data from a US census that colab provides as example data for you to play with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2165,9 +2315,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>This DataFrame has 17,000 rows and 9 columns. Each row provides data about a block of housing. The columns provide data about the houses within a block, such as the total number of bedrooms and the number of households.</p>
 <p>Note that you can upload your own files to Colab if you want to read in and analyse some of your own data with pandas.</p>
-</div>
-<div class="section" id="example-creating-a-dataframe-from-scratch">
-<h3>Example: creating a DataFrame from scratch<a class="headerlink" href="#example-creating-a-dataframe-from-scratch" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-creating-a-dataframe-from-scratch">
+<h3>Example: creating a DataFrame from scratch<a class="headerlink" href="#example-creating-a-dataframe-from-scratch" title="Permalink to this headline">#</a></h3>
 <p>You can also create a DataFrame by providing the data within your code. To demonstrate this, let’s create a DataFrame with data about characters in a famous science fiction book called The Hitchhiker’s Guide to the Galaxy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2333,10 +2483,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>This DataFrame has 5 rows and 5 columns. Each row provides data about a fictional character in the book. The columns provide data about each character, such as their name, taxon and number of heads (some alien species can have more than one).</p>
-</div>
-</div>
-<div class="section" id="structure-of-a-dataframe">
-<h2>Structure of a DataFrame<a class="headerlink" href="#structure-of-a-dataframe" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="structure-of-a-dataframe">
+<h2>Structure of a DataFrame<a class="headerlink" href="#structure-of-a-dataframe" title="Permalink to this headline">#</a></h2>
 <p>Hopefully this will already be obvious from the examples above, but a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe">pandas DataFrame</a> is a data structure that is organised into <strong>rows</strong> and <strong>columns</strong>. Each DataFrame also has an <strong>index</strong>, which is a special column (or set of columns) that is shown in bold at the left of a DataFrame, and which we’ll look at in more detail later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2348,9 +2498,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe frameborder="0" style="width:100%;height:556px;" src="https://viewer.diagrams.net/?nav=1&title=workshop-2-module-1-dataframe.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1znvxOlvX2zO2dDx_BdgD7Pzztt1xS6JT%26export%3Ddownload"></iframe></div></div>
 </div>
-</div>
-<div class="section" id="counting-rows-and-columns">
-<h2>Counting rows and columns<a class="headerlink" href="#counting-rows-and-columns" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="counting-rows-and-columns">
+<h2>Counting rows and columns<a class="headerlink" href="#counting-rows-and-columns" title="Permalink to this headline">#</a></h2>
 <p>If a DataFrame is large, you may find it useful to know how many rows and columns it contains. The representation of a DataFrame shows at the bottom how many rows and columns are present in the DataFrame, but you can also use the built-in <code class="docutils literal notranslate"><span class="pre">len()</span></code> function if you want to access the number of rows or columns in your code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2386,12 +2536,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Compter le nombre de lignes et de colonnes du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="accessing-columns">
-<h2>Accessing columns<a class="headerlink" href="#accessing-columns" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-columns">
+<h2>Accessing columns<a class="headerlink" href="#accessing-columns" title="Permalink to this headline">#</a></h2>
 <p>Often you will have a DataFrame with many columns, and you many only need to work with data from a smaller number of columns, or just a single column. Accessing one or more columns from a DataFrame can be done using the square bracket syntax after the name of a DataFrame variable. Let’s see how this works.</p>
-<div class="section" id="accessing-column-names">
-<h3>Accessing column names<a class="headerlink" href="#accessing-column-names" title="Permalink to this headline">¶</a></h3>
+<section id="accessing-column-names">
+<h3>Accessing column names<a class="headerlink" href="#accessing-column-names" title="Permalink to this headline">#</a></h3>
 <p>First, let’s access the names of all the columns in a DataFrame, to see what columns are available. You can do this by accessing the <code class="docutils literal notranslate"><span class="pre">columns</span></code> property of a DataFrame. For simplicity, let’s also convert the result to a Python list, using the built-in <code class="docutils literal notranslate"><span class="pre">list()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2415,9 +2565,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Afficher les noms des colonnes du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="accessing-a-single-column">
-<h3>Accessing a single column<a class="headerlink" href="#accessing-a-single-column" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessing-a-single-column">
+<h3>Accessing a single column<a class="headerlink" href="#accessing-a-single-column" title="Permalink to this headline">#</a></h3>
 <p>To access a single column, give the column name as a string inside square brackets. Let’s access the “name” column from the DataFrame of book characters, and assign the result to a new variable <code class="docutils literal notranslate"><span class="pre">character_name</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2457,9 +2607,9 @@ Name: name, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="investigating-data-in-a-column">
-<h3>Investigating data in a column<a class="headerlink" href="#investigating-data-in-a-column" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="investigating-data-in-a-column">
+<h3>Investigating data in a column<a class="headerlink" href="#investigating-data-in-a-column" title="Permalink to this headline">#</a></h3>
 <p>The pandas Series class has some useful functions for investigating the data in a DataFrame.</p>
 <p>E.g., let’s access the “taxon” column and use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> functions to get a summary of the categorical data in the column.</p>
 <div class="cell docutils container">
@@ -2513,9 +2663,9 @@ Name: number_of_heads, dtype: float64
 <li><p>Obtenir la colonne “type” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> et utiliser la fonction <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> pour afficher le nombre d’annotations du génome de chaque type.</p></li>
 <li><p>Obtenir la colonne “effect” du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> et utiliser la fonction <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> pour afficher le nombre de SNPs pour chaque effet possible.</p></li>
 </ul>
-</div>
-<div class="section" id="accessing-multiple-columns">
-<h3>Accessing multiple columns<a class="headerlink" href="#accessing-multiple-columns" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessing-multiple-columns">
+<h3>Accessing multiple columns<a class="headerlink" href="#accessing-multiple-columns" title="Permalink to this headline">#</a></h3>
 <p>To access multiple columns, provide the column names as a list of strings. Let’s access the “name”, “taxon” and “number_of_heads” columns from the DataFrame of book characters, and assign the resulting DataFrame to a new variable <code class="docutils literal notranslate"><span class="pre">df_hh</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2821,13 +2971,13 @@ Name: number_of_heads, dtype: float64
 <li><p>Créer un nouveau DataFrame contenant seulement les colonnes “ID”, “contig”, “start” et “end” du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>.</p></li>
 <li><p>Créer un nouveau DataFrame contenant seulement les colonnes contenant les fréquences du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> (Indice: les noms de ces colonnes commencent tous par “frq_”).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="accessing-rows">
-<h2>Accessing rows<a class="headerlink" href="#accessing-rows" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="accessing-rows">
+<h2>Accessing rows<a class="headerlink" href="#accessing-rows" title="Permalink to this headline">#</a></h2>
 <p>Now we’ve seen how to access columns, let’s see how to access rows. To access rows by their position within a DataFrame, we can use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> property.</p>
-<div class="section" id="accessing-a-single-row">
-<h3>Accessing a single row<a class="headerlink" href="#accessing-a-single-row" title="Permalink to this headline">¶</a></h3>
+<section id="accessing-a-single-row">
+<h3>Accessing a single row<a class="headerlink" href="#accessing-a-single-row" title="Permalink to this headline">#</a></h3>
 <p>To access a single row, we use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> property, then provide the row number as an integer inside square brackets, remembering that numbering starts from 0 in Python. For example, access the first row of our DataFrame of book characters, and assign the result to a variable <code class="docutils literal notranslate"><span class="pre">first_row</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2902,9 +3052,9 @@ Name: 0, dtype: object
 <li><p>Obtenir la 81ème ligne du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>. De quel pays est issu ce moustique? (Indice: les indices commencent à 0 en Python)</p></li>
 <li><p>Obtenir la 73 287ème ligne du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code>. De quel type d’annotation s’agit-il? Quel est son nom?</p></li>
 </ul>
-</div>
-<div class="section" id="accessing-multiple-rows">
-<h3>Accessing multiple rows<a class="headerlink" href="#accessing-multiple-rows" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessing-multiple-rows">
+<h3>Accessing multiple rows<a class="headerlink" href="#accessing-multiple-rows" title="Permalink to this headline">#</a></h3>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> to access multiple rows,from some start position to some end position. To do this we provide two integers separated by a colon (“:”) which is called a slice.</p>
 <p>As well as remembering that numbering starts from zero, we also have to remember that slices include the start position but do not include the stop position. E.g., to access the first two rows, provide the start and stop positions 0 and 2. This returns a new DataFrame with just the selected rows within the slice.</p>
 <div class="cell docutils container">
@@ -3048,10 +3198,10 @@ Name: 0, dtype: object
 <ul class="simple">
 <li><p>Obtenir toutes les lignes entre la 6ème et la 10ème (incluses) du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="indexes">
-<h2>Indexes<a class="headerlink" href="#indexes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="indexes">
+<h2>Indexes<a class="headerlink" href="#indexes" title="Permalink to this headline">#</a></h2>
 <p>Every pandas DataFrame has an index, which is a special column (or set of columns) which can be used to access rows quickly and conveniently. In particular, indexes can be used to assign a label to every row, and then use that label to locate and access matching rows.</p>
 <p>For example, when working with our DataFrame of book characters, we might want to access rows using the name of the character. To do this, we can set the “name” column as the index.</p>
 <div class="cell docutils container">
@@ -3419,9 +3569,9 @@ Name: Tricia McMillan, dtype: object
 <li><p>Faire de la colonne “sample_id” l’index du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> et ensuite trouver la ligne avec comme identificant d’échantillon “BK0055-C”. D’où est issu ce moustique?</p></li>
 <li><p>Faire de la colonne “ID” l’index du DataFrame <code class="docutils literal notranslate"><span class="pre">df_geneset</span></code> et ensuite trouver la ligne avec comme identifiant “AGAP000818”. Quel est le nom de ce gène?</p></li>
 </ul>
-</div>
-<div class="section" id="queries">
-<h2>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="queries">
+<h2>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">#</a></h2>
 <p>DataFrames also provide a <code class="docutils literal notranslate"><span class="pre">query()</span></code> function, which can be used to select rows matching some condition or combination of conditions. The <code class="docutils literal notranslate"><span class="pre">query()</span></code> function accepts a string containing a query expression.</p>
 <p>Let’s query the book characters DataFrame to select only rows where the value of the “taxon” column is “human”. To match a value we use the “==” operator.</p>
 <div class="cell docutils container">
@@ -3977,9 +4127,9 @@ Name: Tricia McMillan, dtype: object
 <li><p>Sélectionner parmi les SNPs du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> ceux qui modifient la séquence d’une protéine (Indice: <code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">==</span> <span class="pre">'NON_SYNONYMOUS_CODING'</span></code>).</p></li>
 <li><p>Sélectionner parmi les SNPs du DataFrame <code class="docutils literal notranslate"><span class="pre">snp_freqs_df</span></code> ceux qui modifient la séquence d’une protéine et apparaissent avec une fréquence supérieure à 5% dans au moins une cohorte (Indice: <code class="docutils literal notranslate"><span class="pre">max_af</span> <span class="pre">&gt;</span> <span class="pre">0.05</span></code>).</p></li>
 </ul>
-</div>
-<div class="section" id="input-output">
-<h2>Input/output<a class="headerlink" href="#input-output" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="input-output">
+<h2>Input/output<a class="headerlink" href="#input-output" title="Permalink to this headline">#</a></h2>
 <p>We saw at the beginning of this module how to read in data from a file. Let’s look finally at how to write data out to a file.</p>
 <p>To write a DataFrame out to a CSV file, use the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html">to_csv()</a> function. E.g., let’s write out the book characters DataFrame to a CSV file.</p>
 <div class="cell docutils container">
@@ -4016,9 +4166,9 @@ Name: Tricia McMillan, dtype: object
 <li><p>Enregistrer le DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> sous forme de fichier Excel.</p></li>
 <li><p>Sélectionner parmi les moustiques du DataFrame <code class="docutils literal notranslate"><span class="pre">df_samples</span></code> ceux provenant du Burkina Faso et enregistrer le DataFrame ainsi créé sous forme de fichier CSV.</p></li>
 </ul>
-</div>
-<div class="section" id="topics-not-covered-here">
-<h2>Topics not covered here<a class="headerlink" href="#topics-not-covered-here" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="topics-not-covered-here">
+<h2>Topics not covered here<a class="headerlink" href="#topics-not-covered-here" title="Permalink to this headline">#</a></h2>
 <p>Please note that this module has only covered a few of the many features that pandas supports. Here are a few of the features that we have not covered, but which you might like to learn more about through other online tutorials.</p>
 <ul class="simple">
 <li><p>Grouping and aggregation</p></li>
@@ -4034,17 +4184,17 @@ Name: Tricia McMillan, dtype: object
 <li><p>Text</p></li>
 <li><p>…</p></li>
 </ul>
-</div>
-<div class="section" id="further-reading">
-<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h2>
 <p>Here are a few links to online resources providing further information about pandas for new users.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">pandas getting started</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">pandas user guide</a> (in particular see <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a>)</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">pandas community tutorials</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -4068,9 +4218,11 @@ Name: Tricia McMillan, dtype: object
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="about.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -4086,28 +4238,32 @@ Name: Tricia McMillan, dtype: object
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

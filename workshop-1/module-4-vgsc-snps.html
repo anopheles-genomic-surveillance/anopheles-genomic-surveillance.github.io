@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Module 4 - Analysing SNPs in the Vgsc gene &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Workshop 2 - Metabolic insecticide resistance and copy number variation" href="../workshop-2/about.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -90,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -209,108 +224,243 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshop-1/module-4-vgsc-snps.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-4-vgsc-snps.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-4-vgsc-snps.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-4-vgsc-snps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-4-vgsc-snps.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-1/module-4-vgsc-snps.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
@@ -411,12 +561,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Module 4 - Analysing SNPs in the Vgsc gene</h1>
@@ -533,46 +682,47 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 1</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="module-4-analysing-snps-in-the-vgsc-gene">
-<h1>Module 4 - Analysing SNPs in the <em>Vgsc</em> gene<a class="headerlink" href="#module-4-analysing-snps-in-the-vgsc-gene" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="module-4-analysing-snps-in-the-vgsc-gene">
+<h1>Module 4 - Analysing SNPs in the <em>Vgsc</em> gene<a class="headerlink" href="#module-4-analysing-snps-in-the-vgsc-gene" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Analysis</strong></p>
 <p>In this module we’re going to perform an analysis to discover single nucleotide polymorphisms (SNPs) in the voltage-gated sodium channel gene (<em>Vgsc</em>), which encodes the binding target for pyrethroid insecticides.</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>At the end of this module you will be able to:</p>
 <ul class="simple">
 <li><p>Discover mutations (SNPs) that could potentially cause pyrethroid target-site resistance.</p></li>
 <li><p>Compute SNP allele frequencies, i.e., how common are they in different mosquito cohorts?</p></li>
 <li><p>Perform analyses to compare SNP allele frequences between mosquitoes from different species, geographical locations and dates of collection.</p></li>
 </ul>
-</div>
-<div class="section" id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/i57txc-N0bM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/C9gVQTB2yLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="discovering-snps-in-the-vgsc-gene-and-computing-snp-allele-frequencies">
-<h2>Discovering SNPs in the <em>Vgsc</em> gene and computing SNP allele frequencies<a class="headerlink" href="#discovering-snps-in-the-vgsc-gene-and-computing-snp-allele-frequencies" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="discovering-snps-in-the-vgsc-gene-and-computing-snp-allele-frequencies">
+<h2>Discovering SNPs in the <em>Vgsc</em> gene and computing SNP allele frequencies<a class="headerlink" href="#discovering-snps-in-the-vgsc-gene-and-computing-snp-allele-frequencies" title="Permalink to this headline">#</a></h2>
 <p>First, let’s set up the <a class="reference external" href="https://github.com/malariagen/malariagen-data-python"><code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code></a> package to access MalariaGEN data in the cloud.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -1200,9 +1350,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>The output from this function is a pandas DataFrame, where each row provides information about a SNP in the <em>Vgsc</em> gene.</p>
 <p>Before we go further, to improve our understanding of what these data, let’s look at some background.</p>
-</div>
-<div class="section" id="grouping-samples-into-cohorts">
-<h2>Grouping samples into cohorts<a class="headerlink" href="#grouping-samples-into-cohorts" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="grouping-samples-into-cohorts">
+<h2>Grouping samples into cohorts<a class="headerlink" href="#grouping-samples-into-cohorts" title="Permalink to this headline">#</a></h2>
 <p>The MalariaGEN Ag3.0 data resource contain mosquito samples collected across large spatial and temporal scales, and from different mosquito species. When we want to run population genetic analyses on datasets like these, the data must be divided into biologically relevant <strong>cohorts</strong>, where a cohort is simply a group of samples we want to analyse together.</p>
 <p>To help define cohorts and analyse these data, we have added some metadata for each sample about its time and place of collection and its species:</p>
 <ul class="simple">
@@ -1256,9 +1406,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The third part refers to the species, and in this example is either “gamb” meaning <em>Anopheles gambiae</em> or “colu” meaning <em>Anopheles coluzzii</em>.</p>
 <p>The final part is the year of collection, which in this example ie either 2004, 2012 or 2014.</p>
 <p>Thus, e.g., “frq_BF-09_gamb_2012” means the frequency of the allele within the cohort of <em>Anopheles gambiae</em> mosquitoes from the BF-09 (Haut-Bassins) region collected in 2012.</p>
-</div>
-<div class="section" id="single-nucleotide-polymorphisms-snps">
-<h2>Single nucleotide polymorphisms (SNPs)<a class="headerlink" href="#single-nucleotide-polymorphisms-snps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="single-nucleotide-polymorphisms-snps">
+<h2>Single nucleotide polymorphisms (SNPs)<a class="headerlink" href="#single-nucleotide-polymorphisms-snps" title="Permalink to this headline">#</a></h2>
 <p>In the last module we learnt about reference genomes and gene annotations. Now one of the cool things we can do once we have an <em>Anopheles gambiae</em> reference genome, is sequence the genomes of wild mosquitoes and compare them to the reference genome. By aligning an individual’s sequencing reads to the reference, we can call its <strong>genotype</strong>.</p>
 <p>The genotype is derived from how similar the individual is to the reference genome at each <strong>nucleotide position</strong>.</p>
 <p>Where a nucleotide matches the reference genome, it will be called a <strong>reference allele</strong>, where “allele” is just a term for any kind of genetic variant. Where a nucleotide differs from the reference genome, it will be called an <strong>alternative allele</strong>.</p>
@@ -1368,9 +1518,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>209001 rows × 0 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="snp-effects-some-snps-may-be-more-interesting-than-others">
-<h2>SNP effects - some SNPs may be more interesting than others<a class="headerlink" href="#snp-effects-some-snps-may-be-more-interesting-than-others" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="snp-effects-some-snps-may-be-more-interesting-than-others">
+<h2>SNP effects - some SNPs may be more interesting than others<a class="headerlink" href="#snp-effects-some-snps-may-be-more-interesting-than-others" title="Permalink to this headline">#</a></h2>
 <p>SNPs can have different effects depending on what the nucleotide change is and where in the genome it occurs.</p>
 <p>In this analysis, we are interested in SNPs that affect protein structure, specifically those which will change the voltage-gated sodium-channel and could affect protein function and therefore insecticide resistance phenotype, so we need to look within the coding sequences (CDS) of the <em>Vgsc</em> gene.</p>
 <p>However, not all SNPs which fall in CDSs cause protein changes, because the genetic code has some redundancy, meaning that different nucleotide sequences can encode the same amino acid. If a SNP in a CDS does change the amino acid, it is called a <strong>non-synonymous</strong> (NS) or <strong>missense</strong> SNP, and if the SNP does not change the amino acid, it is called a <strong>synonymous</strong> SNP.</p>
@@ -1584,9 +1734,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="snp-allele-frequencies">
-<h2>SNP allele frequencies<a class="headerlink" href="#snp-allele-frequencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="snp-allele-frequencies">
+<h2>SNP allele frequencies<a class="headerlink" href="#snp-allele-frequencies" title="Permalink to this headline">#</a></h2>
 <p>Identifying the presence or absence of SNPs in wild caught mosquitoes is interesting, but the real value in generating SNP genotypes from large spatiotemporal collections of mosquitoes comes from the ability to see how groups of samples (cohorts) differ between geographical locations, species, and over time.</p>
 <p>One way to compare SNP differences between cohorts is to calculate and compare <strong>SNP allele frequencies</strong> at each position in the genome by dividing the number of times each SNP allele is found in the cohort by the total number of individuals present in the cohort (multiplied by 2 because each individual mosquito is diploid and so carries two genome copies).</p>
 <div class="cell tag_remove-input docutils container">
@@ -1850,9 +2000,9 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="visualising-snp-allele-frequencies-via-heatmaps">
-<h2>Visualising SNP allele frequencies via heatmaps<a class="headerlink" href="#visualising-snp-allele-frequencies-via-heatmaps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="visualising-snp-allele-frequencies-via-heatmaps">
+<h2>Visualising SNP allele frequencies via heatmaps<a class="headerlink" href="#visualising-snp-allele-frequencies-via-heatmaps" title="Permalink to this headline">#</a></h2>
 <p>To make our SNP allele frequencies DataFrame easier to interpret, we can filter it down to just non-synonymous SNPs that are at frequency above 5% in at least one of our cohorts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2356,9 +2506,9 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-</div>
-<div class="section" id="amino-acid-substitution-frequencies">
-<h2>Amino acid substitution frequencies<a class="headerlink" href="#amino-acid-substitution-frequencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="amino-acid-substitution-frequencies">
+<h2>Amino acid substitution frequencies<a class="headerlink" href="#amino-acid-substitution-frequencies" title="Permalink to this headline">#</a></h2>
 <p>You might have noticed that there are two rows with <code class="docutils literal notranslate"><span class="pre">V402L</span></code> in our previous heatmap plot. This is because in Burkina Faso, we find two different alternative alleles at the same genomic position, both causing the same amino acid substitution (valine to leucine).</p>
 <p>If we are just interested in amino acid change frequencies, for example, when looking at potential insecticide resistance conferring mutations, we might want to combine the frequencies of the two alleles which cause V402L. In this case, we can use the <code class="docutils literal notranslate"><span class="pre">aa_allele_frequencies()</span></code> function in exactly the same way as we used <code class="docutils literal notranslate"><span class="pre">snp_allele_frequencies()</span></code>.</p>
 <div class="cell docutils container">
@@ -3002,9 +3152,9 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 <p>From this new heatmap it’s clear that there are two SNPs causing a V402L substitution, and the combined frequency of these is identical to that of the I1527T substitution in the <em>An. coluzzii</em> cohorts. This is a strong indication that these two mutations are strongly associated and may be working together to confer a selective advantage via insecticide resistance.</p>
-</div>
-<div class="section" id="using-sample-queries">
-<h2>Using sample queries<a class="headerlink" href="#using-sample-queries" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-sample-queries">
+<h2>Using sample queries<a class="headerlink" href="#using-sample-queries" title="Permalink to this headline">#</a></h2>
 <p>In some cases you may want to analyse data across a number of different sample sets, but select only samples from a single country or species. In this case there is a useful <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter available with the functions <code class="docutils literal notranslate"><span class="pre">snp_allele_frequencies()</span></code> and <code class="docutils literal notranslate"><span class="pre">aa_allele_frequencies()</span></code>. The <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter accepts a pandas query string, which will be applied to the sample metadata to select samples to use in the analysis.</p>
 <p>Let’s see it in action by computing amino acid allele frequencies for all <em>An. arabiensis</em> samples in the Ag3.0 data resource.</p>
 <div class="cell docutils container">
@@ -3047,9 +3197,9 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-</div>
-<div class="section" id="plotting-snp-frequency-time-series">
-<h2>Plotting SNP frequency time series<a class="headerlink" href="#plotting-snp-frequency-time-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-snp-frequency-time-series">
+<h2>Plotting SNP frequency time series<a class="headerlink" href="#plotting-snp-frequency-time-series" title="Permalink to this headline">#</a></h2>
 <p>For surveillance it can be very informative to observice changes in allele frequencies over time for a given sampling location and species. Alleles under selection due to insecticide resistance will increase in frequency over time, and plotting the frequency data as a time series can help to see this. The <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package includes a function <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#plot-frequencies-time-series"><code class="docutils literal notranslate"><span class="pre">plot_frequencies_time_series()</span></code></a> for plotting frequency time series. These are a little more advanced to use, but we’ll illustrate them below.</p>
 <p>N.B., in the Ag3.0 data resource there is only one country where we have data from multiple time points, which is Burkina Faso. However, data in future releases will contain a number of time series, and so it’s useful to illustrate this functionality now.</p>
 <p>First we need to compute the SNP allele frequencies in our gene of interest. To obtain the necessary data for time series plotting, we use a slightly different function for computing the frequencies. Don’t worry too much about this for the moment, we will revisit later in the course.</p>
@@ -3566,9 +3716,9 @@ if (outputEl) {{
 <p>In this plot we have data from two regions, BF-09 (Haut-Bassins) and BF-07 (Centre-Sud). In BF-09 we have data from 2012 and 2014, and so we have the beginning of a time series. In BF-07 we have data only from 2004, so just a single point in time.</p>
 <p>There are 3 sub-plots, faceted by taxon and area to allow for comparison. The error bars in the plots show 95% confidence intervals for the frequency estimates. In BF-09 where we have data from 2012 and 2014, it looks like all SNP frequencies were similar between 2012 and 2014 in both <em>An. gambiae</em> and <em>An. coluzzii</em>, with some known insecticide resistance alleles such as L995F already at fixation or very high frequency.</p>
 <p>It’s interesting to note that in BF-07 region in 2004 there were no SNPs above 8% frequency, including the L995F SNP. This suggests that L995F rose in frequency in Burkina Faso between 2004 and 2012, although we cannot draw strong conclusions here because we have data from different regions.</p>
-</div>
-<div class="section" id="plotting-snp-frequency-maps">
-<h2>Plotting SNP frequency maps<a class="headerlink" href="#plotting-snp-frequency-maps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-snp-frequency-maps">
+<h2>Plotting SNP frequency maps<a class="headerlink" href="#plotting-snp-frequency-maps" title="Permalink to this headline">#</a></h2>
 <p>Another analysis we can perform is to make geographical comparisons, by plotting SNP frequencies on a map. We can do this via functions in the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package. Let’s demonstrate, using all data in the Ag3.0 resource.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4304,15 +4454,15 @@ Attributes:
 </script></div>
 </div>
 <p>N.B., you will need to run this notebook for yourself in colab in order for the interactive map to work.</p>
-</div>
-<div class="section" id="well-done">
-<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="well-done">
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
 <p>In this module we have learnt how to analyse SNP mutations in the target of pyrethroid insecticides, the voltage-gated sodium-channel. We have calculated the allele frequencies of the SNPs in cohorts of mosquitoes and learnt how to filter and plot them for ease of interpretation.</p>
-</div>
-<div class="section" id="practical-exercises">
-<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="practical-exercises">
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Open this notebook in Google Colab and run it for yourself from top to bottom. Hint: click the rocket icon at the top of the page, then select “Colab” from the drop-down menu.</p></li>
 <li><p>Looking at the heatmap output (either amino acid or SNP), can you spot a relationship between the <code class="docutils literal notranslate"><span class="pre">V402L</span></code> and <code class="docutils literal notranslate"><span class="pre">L995F</span></code> frequencies? If so, what is it?</p></li>
@@ -4324,9 +4474,9 @@ Attributes:
 <li><p>Is the same relationship between <code class="docutils literal notranslate"><span class="pre">V402L</span></code> and <code class="docutils literal notranslate"><span class="pre">L995F</span></code> frequencies present in Ghana? What might be an evolutionary interpretation of this relationship?</p></li>
 </ol>
 <p><strong>When you’ve had enough, create a link to your notebook, and share it with someone. If you’re attending a training workshop, paste the link into the workshop slack channel.</strong></p>
-</div>
-<div class="section" id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-4-vgsc-snps.ipynb">Ouvrir ce notebook dans Google Colab</a> et l’exécuter vous-même du début à la fin. Indice: cliquer sur l’icône fusée (<i class="fas fa-rocket"></i>) et sélectionner “Colab” dans le menu déroulant.</p></li>
 <li><p>En regardant la heatmap (soit pour les SNPs soit pour les amino acides), pouvez vous détecter la relation entre les fréquences de <code class="docutils literal notranslate"><span class="pre">V402L</span></code> et <code class="docutils literal notranslate"><span class="pre">L995F</span></code>? Si oui, quelle est elle?</p></li>
@@ -4338,9 +4488,9 @@ Attributes:
 <li><p>Est-ce que la même relation entre les fréquences de <code class="docutils literal notranslate"><span class="pre">V402L</span></code> et <code class="docutils literal notranslate"><span class="pre">L995F</span></code> présente au Ghana? Quelle pourrait être l’interprétation en terme d’évolution de cette relation?</p></li>
 </ol>
 <p><strong>Quand vous en aurez assez, créer un lien vers votre notebook et partager le avec quelqu’un. Si vous participez au workshop d’entraînement, copier le lien dans le canal slack du workshop.</strong></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
@@ -4370,9 +4520,11 @@ Attributes:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="module-3-genome.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -4388,28 +4540,32 @@ Attributes:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

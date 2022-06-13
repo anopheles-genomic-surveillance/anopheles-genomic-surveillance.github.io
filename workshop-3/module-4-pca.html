@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Module 4 - Detecting population structure using PCA &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,9 +54,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Workshop 4 - Cryptic species" href="../workshop-4/about.html" />
     <link rel="prev" title="Module 3 - Genome-wide SNP data" href="module-3-snps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -65,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -89,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -208,108 +224,243 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshop-3/module-4-pca.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-3/module-4-pca.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-3/module-4-pca.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-3/module-4-pca.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-3/module-4-pca.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-3/module-4-pca.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
@@ -448,12 +599,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Module 4 - Detecting population structure using PCA</h1>
@@ -608,46 +758,47 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="https://anopheles-genomic-surveillance.github.io/_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 3</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="module-4-detecting-population-structure-using-pca">
-<h1>Module 4 - Detecting population structure using PCA<a class="headerlink" href="#module-4-detecting-population-structure-using-pca" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="module-4-detecting-population-structure-using-pca">
+<h1>Module 4 - Detecting population structure using PCA<a class="headerlink" href="#module-4-detecting-population-structure-using-pca" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Analysis</strong></p>
 <p>In this module we’re going to investigate population structure by running principal components analysis (PCA) using genetic variation data from Ag3.0. We will use functions in the malariagen_data python package to run and plot PCAs, then learn how interpret the results to discover taxonomic and geographic structure in mosquito populations.</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>At the end of this module you will be able to:</p>
 <ul class="simple">
 <li><p>Compute principal component analyses across different mosquito cohorts.</p></li>
 <li><p>Plot variance and principal components and interpret results.</p></li>
 <li><p>Discover taxonomic and geographic population structure.</p></li>
 </ul>
-</div>
-<div class="section" id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/_uMwVLw0fpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/1wVtQmcjFa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="recap-what-is-population-structure">
-<h2>Recap: what is population structure?<a class="headerlink" href="#recap-what-is-population-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="recap-what-is-population-structure">
+<h2>Recap: what is population structure?<a class="headerlink" href="#recap-what-is-population-structure" title="Permalink to this headline">#</a></h2>
 <p>In Ag3.0 there are 2,784 wild-caught mosquitoes collected from 19 countries in sub-Saharan Africa. This includes mosquitoes from three known species within the <em>Anopheles gambiae</em> species complex. When we have a cohort of mosquitoes from different species and/or geographical locations, we would expect that not all mosquitoes are equally closely related to each other. These non-random patterns of relatedness are known as population structure.</p>
 <p>For example, we might expect that any two mosquitoes from the same species will be more closely related than two mosquitoes from different species. This will hopefully be intuitively obvious, because mosquitoes will prefer to mate with individuals of the same species, even if they live alongside mosquitoes from other species and can hybridise. This is also known as <strong>reproductive isolation</strong> and it may be caused by different drivers, <em>e.g.</em>, <strong>behavioural</strong> differences leading to a lower likelihood of mating.</p>
 <p><img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-3/behavioural-isolation.png"></img></p>
@@ -657,9 +808,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>For example, the <em>Anopheles gambiae</em> species complex continues to be unravelled, and there may be cryptic species that we were not previously aware of (e.g., see <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/26846876/">Crawford et al. 2016</a> and <a class="reference external" href="https://doi.org/10.1111/mec.15756">Tennessen et al. 2020</a>). We will return to this topic with an entire workshop about discovering cryptic species.</p>
 <p>Also, recent studies have suggested that some malaria mosquitoes may engage in long-distance migration (<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/31578527/">Huestis et al. 2019</a>), challenging the previous view that mosquitoes generally don’t travel more than a few kilometres in their lifetimes (<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/9439109/">Service 1997</a>). But we still don’t know to what extent long-distance migration occurs, or whether the rate or range of migration varies between geographical regions and/or mosquito species. We would also like to learn more about how ecological and landscape variation affects the movement and interbreeding of mosquito populations in different regions of Africa.</p>
 <p>In short, we would like to investigate population structure, and we can use genetic variation data to do that. There are various methods for analysing population structure, but this module will focus on just one of these methods, principal components analysis (PCA). PCA is attractive because it is model-free, meaning that you don’t need to specify any model of population structure before-hand, you can just run PCA and start exploring the results. On the other hand, interpreting PCA requires some care, which we’ll expand on a little below. If you’re interested in reading more deeply about using PCA for investigating population structure, <a class="reference external" href="https://doi.org/10.1371/journal.pgen.0020190">Patterson et al. (2006)</a>, <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3989108/">Novembre and Stephens (2008)</a> and <a class="reference external" href="https://doi.org/10.1371/journal.pgen.1000686">McVean (2009)</a> are all great resources.</p>
-</div>
-<div class="section" id="recap-what-is-pca">
-<h2>Recap: what is PCA?<a class="headerlink" href="#recap-what-is-pca" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="recap-what-is-pca">
+<h2>Recap: what is PCA?<a class="headerlink" href="#recap-what-is-pca" title="Permalink to this headline">#</a></h2>
 <p>In this workshop we’ve seen some examples of PCA being used to identify genetic structure in a group of samples and we’ve heard why being able to detect structure is useful for genomic surveillance and vector control, but what is a PCA actually doing to our data.</p>
 <p>Fundamentally, PCA is a method for reducing the dimensions of a dataset to help make interpreting the data easier. A very simple example of what we mean by dimensions, one which we wouldn’t need PCA for, is a dataset in which each sample has two dimensions “weight” and “height”. With two dimensions we might be able to detect a relationship between them by looking at a scatter plot of the data, but what if a dataset had many more dimensions?</p>
 <p><img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-3/heightweight2.gif"></img></p>
@@ -667,9 +818,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>PC1, the first principal component, is the axis which describes the most variance in our data. All samples receive a single value for PC1 which describes their position along this axis. PC2 is the axis which describes the next most variance, and so on. A dataset with 100,000 dimensions can generate 100,000 principal components, but as much of the variance is explained (reduced) to the first few PCs we only need these to look for relationships. In our case, these relationships are population structure.</p>
 <p><img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-3/PCA1-smaller-smaller.gif"></img></p>
 <p>For a deeper dive into how PCA works, <a class="reference external" href="http://www.billconnelly.net/?p=697">Bill Connelly’s blog post</a> is excellent.</p>
-</div>
-<div class="section" id="behind-the-scenes-of-the-ag3-pca-function">
-<h2>Behind the scenes of the <code class="docutils literal notranslate"><span class="pre">ag3.pca()</span></code> function<a class="headerlink" href="#behind-the-scenes-of-the-ag3-pca-function" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="behind-the-scenes-of-the-ag3-pca-function">
+<h2>Behind the scenes of the <code class="docutils literal notranslate"><span class="pre">ag3.pca()</span></code> function<a class="headerlink" href="#behind-the-scenes-of-the-ag3-pca-function" title="Permalink to this headline">#</a></h2>
 <p>Here’s what’s happening behind the scenes when we run the <code class="docutils literal notranslate"><span class="pre">ag3.pca()</span></code> function…</p>
 <ol class="simple">
 <li><p>Access the genotypes that we would like to run the analysis on from Google Cloud Storage - which <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code>, which <code class="docutils literal notranslate"><span class="pre">region</span></code> of the genome, and apply any <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> included in the parameters (we will look at this functionality a bit later).</p></li>
@@ -677,9 +828,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Thin the allele count - With <code class="docutils literal notranslate"><span class="pre">ag3.pca()</span></code> we can run a PCA analysis on entire chromosome arms, which contain millions of genomic positions. However, we can get strong signals of structure by using just a subset our segregating sites, plus if we used all the sites would make our analysis very slow. The <code class="docutils literal notranslate"><span class="pre">n_snps</span></code>  parameter is used to ‘thin’ our SNPs. we find that around 100,000 SNPs is more than enough for analysis of population structure.</p></li>
 <li><p>Run the PCA!</p></li>
 </ol>
-</div>
-<div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>Now that we have covered some of the theoretical background for population structure analyses using PCA, let’s install and import the python packages we will need for our analyses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -697,8 +848,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="saving-pca-results">
-<h3>Saving PCA results<a class="headerlink" href="#saving-pca-results" title="Permalink to this headline">¶</a></h3>
+<section id="saving-pca-results">
+<h3>Saving PCA results<a class="headerlink" href="#saving-pca-results" title="Permalink to this headline">#</a></h3>
 <p>Some PCA runs may take a while to complete, particularly if you’re running this code on a service with modest computational resources such as Google Colab, because genotype calls from tens of millions of SNPs may need to be scanned to identify and extract the data for PCA. The run time will depend on the number of samples included in the analysis, but may take 20 mins or more for larger analyses.</p>
 <p>To avoid having to rerun these analyses, we’ll save the results so we can come back to them later. In Google Colab, you can save results to your Google Drive, which will mean you don’t lose results even if you leave the notebook and come back several days later.</p>
 <p>When mounting your Google Drive you will need to follow the authorization instructions.</p>
@@ -1083,10 +1234,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>The output of <code class="docutils literal notranslate"><span class="pre">ag3</span></code> shows us the “Client location”. This is where our Google Colab virtual machine is running on the cloud. As the data we would like to analyse is located in the US, it is worth checking that our notebook is running there too. If not, click “Runtime &gt; Disconnect and delete runtime” from the menu, then re-run the notebook and check again.</p>
-</div>
-</div>
-<div class="section" id="analysis-central-african-republic">
-<h2>Analysis: Central African Republic<a class="headerlink" href="#analysis-central-african-republic" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="analysis-central-african-republic">
+<h2>Analysis: Central African Republic<a class="headerlink" href="#analysis-central-african-republic" title="Permalink to this headline">#</a></h2>
 <p>Now we’ve set up our environment and understand a bit more about PCA, we should run an analysis.</p>
 <p>As discussed earlier, there a multiple steps involved in running a PCA analysis, but for convenience, we have combined these into a <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> function called <code class="docutils literal notranslate"><span class="pre">ag3.pca()</span></code>. Before we start, let’s have a quick look at the documention using “<code class="docutils literal notranslate"><span class="pre">?</span></code>”</p>
 <div class="cell docutils container">
@@ -1124,9 +1275,9 @@ const thebe_selector_output = ".output, .cell_output"
 {"model_id": "730b9380655f4c0ea878b0c5e778fcfa", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-</div>
-<div class="section" id="plotting-principal-components">
-<h2>Plotting principal components<a class="headerlink" href="#plotting-principal-components" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-principal-components">
+<h2>Plotting principal components<a class="headerlink" href="#plotting-principal-components" title="Permalink to this headline">#</a></h2>
 <p>Let’s have a look at the <code class="docutils literal notranslate"><span class="pre">pca_df</span></code> output. It’s a Pandas DataFrame with one row per sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1527,9 +1678,9 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotting-explained-variance">
-<h2>Plotting explained variance<a class="headerlink" href="#plotting-explained-variance" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-explained-variance">
+<h2>Plotting explained variance<a class="headerlink" href="#plotting-explained-variance" title="Permalink to this headline">#</a></h2>
 <p>Let’s now have a look at the <code class="docutils literal notranslate"><span class="pre">evr</span></code> output. We can see that this is an array of 20 floats (numbers with decimal points). These are the percentage of variance in the dataset explained by each of our 20 principal components.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1584,9 +1735,9 @@ if (outputEl) {{
 </div>
 <p>The first principal component explains around 2.5% of the variance, whereas all of the subsequent principal components explain around 1.5% of the variance. The <strong>absolute magnitude of these values is less important</strong> as this will change depending of what dataset we analyse. What is more important, however, is the fact that PC1 relatively explains much more variance than all the subsequent PCs. In other words, there is a big step down from PC1 to PC2, then the variance explained flattens off. This is a good indication that PC1 is capturing some real structure in the data, and the rest of the PCs are probably random noise.</p>
 <p>There are various statistical methods for formally testing whether a principal component conveys a real signal of population structure or is just random noise (for example see <a class="reference external" href="https://doi.org/10.1371/journal.pgen.0020190">Patterson <em>et al.</em> 2006</a> and <a class="reference external" href="https://doi.org/10.1007/s13253-019-00355-5">Forkman <em>et al.</em> 2019</a>). However, <strong>for exploratory analyses, looking at the differences in variance explained between the adjacent PCs, and ignoring the tail of PCs where the variance flattens off, is not a bad rule of thumb.</strong></p>
-</div>
-<div class="section" id="interpretation-pca-and-genetic-distance">
-<h2>Interpretation: PCA and genetic distance<a class="headerlink" href="#interpretation-pca-and-genetic-distance" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpretation-pca-and-genetic-distance">
+<h2>Interpretation: PCA and genetic distance<a class="headerlink" href="#interpretation-pca-and-genetic-distance" title="Permalink to this headline">#</a></h2>
 <p>In our scatter plot of PC1 and PC2, the <em>An. coluzzii</em> individuals all cluster close together. Similarly, most of the <em>An. gambiae</em> individuals cluster close together. It can be tempting to interpret this in the following way, <strong>which would be wrong</strong>:</p>
 <p><em>“The individuals within each cluster are genetically nearly identical to each other.”</em></p>
 <p>Similarly, it can be tempting to draw the following conclusion, <strong>which would also be wrong</strong>:</p>
@@ -1694,9 +1845,9 @@ if (outputEl) {{
                         })                };                });            </script>        </div></div></div>
 </div>
 <p>As we can see from these two plots, the distance between the points is relative. In the first plot, <em>An. gambiae</em> samples are spread across PC2 and and a single sample, AB0325-C, is driving clustering on PC1. However, in the second plot the same samples are much more tightly clustered with PC1 now being driven by taxon and the <em>gambiae</em> outlier sample, AB0325-C, is now driving PC2.</p>
-</div>
-<div class="section" id="analysis-east-african-an-arabiensis">
-<h2>Analysis: East African <em>An. arabiensis</em><a class="headerlink" href="#analysis-east-african-an-arabiensis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="analysis-east-african-an-arabiensis">
+<h2>Analysis: East African <em>An. arabiensis</em><a class="headerlink" href="#analysis-east-african-an-arabiensis" title="Permalink to this headline">#</a></h2>
 <p>We can also combine data from multiple countries to perform a broader analysis of population structure. Let’s run a PCA of some <em>An. arabiensis</em> mosquitoes from East Africa. This is a larger set of samples, so may take a little longer to run.</p>
 <p>We’ll use the <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter to just analyse <em>An. arabiensis</em> from Tanzania, Kenya and Malawi.</p>
 <div class="cell docutils container">
@@ -1815,32 +1966,32 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="well-done">
-<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="well-done">
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
 <p>In this module we have run principal component analyses across different mosquito cohorts, learned how to plot variance and principal components, and interpret results to discover taxonomic and geographic population structure.</p>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Open this notebook in Google Colab and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing, and try the practical exercises along the way.</p>
 <p>Have go at the practical exercises, but please don’t worry if you don’t have time to do them all during the practical session, and please ask the teaching assistants for help if you are stuck.</p>
 <p>Hint: To open the notebook in Google Colab, click the rocket icon at the top of the page, then select “Colab” from the drop-down menu.</p>
-</div>
-<div class="section" id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Pendant que vous exécutez le notebook, cellule par cellule, pensez à ce que chaque cellule fait et essayez de faire les exercices quand vous les rencontrez.</p>
 <p>Essayez de faire les exercices mais ne vous inquiétez pas si vous n’avez pas le temps de tout faire pendant la séance appliquée et n’hésitez pas à demander aux enseignants assistants si vous avez besoin d’aide parce que vous êtes bloqués.</p>
 <p>Indice: Pour ouvrir le notebook dans Google Colab, cliquer sur l’icône de fusée au sommet de cette page puis choisissez “Colab” dans le menu déroulant.</p>
-</div>
-</div>
-<div class="section" id="further-study">
-<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="further-study">
+<h2>Further study<a class="headerlink" href="#further-study" title="Permalink to this headline">#</a></h2>
 <p>If you’d like to continue with PCA and investigating population structure in the <em>Anopheles gambiae</em> complex, here are some suggestions for further analyses to run.</p>
 <p>Investigate geographical population structure within each of the three main taxa represented in the Ag3.0 data release: <em>An. arabiensis</em>, <em>An. coluzzii</em> and <em>An. gambiae</em>.</p>
-<div class="section" id="geographical-population-structure-in-an-arabiensis">
-<h3>Geographical population structure in <em>An. arabiensis</em><a class="headerlink" href="#geographical-population-structure-in-an-arabiensis" title="Permalink to this headline">¶</a></h3>
+<section id="geographical-population-structure-in-an-arabiensis">
+<h3>Geographical population structure in <em>An. arabiensis</em><a class="headerlink" href="#geographical-population-structure-in-an-arabiensis" title="Permalink to this headline">#</a></h3>
 <p>Below is a code example which runs a PCA on all <em>An. arabiensis</em> samples in the Ag3.0 data release. This will take a few minutes to run. Uncomment this code and try running it for yourself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1874,21 +2025,21 @@ if (outputEl) {{
 </div>
 </div>
 <p>How many distinct populations do you think there are?</p>
-</div>
-<div class="section" id="geographical-population-structure-in-an-coluzzii">
-<h3>Geographical population structure in <em>An. coluzzii</em><a class="headerlink" href="#geographical-population-structure-in-an-coluzzii" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="geographical-population-structure-in-an-coluzzii">
+<h3>Geographical population structure in <em>An. coluzzii</em><a class="headerlink" href="#geographical-population-structure-in-an-coluzzii" title="Permalink to this headline">#</a></h3>
 <p>Adapt the code examples given above to run a PCA on all <em>An. coluzzii</em> samples in the Ag3.0 data release and then plot the results.</p>
 <p>Try plotting more than just the first three principal components.</p>
 <p>How many distinct populations do you think there are?</p>
-</div>
-<div class="section" id="geographical-population-structure-in-an-gambiae">
-<h3>Geographical population structure in <em>An. gambiae</em><a class="headerlink" href="#geographical-population-structure-in-an-gambiae" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="geographical-population-structure-in-an-gambiae">
+<h3>Geographical population structure in <em>An. gambiae</em><a class="headerlink" href="#geographical-population-structure-in-an-gambiae" title="Permalink to this headline">#</a></h3>
 <p>Now adapt the code examples given above to run a PCA on all <em>An. gambiae</em> samples in the Ag3.0 data release and then plot the results.</p>
 <p>Again, try plotting more than just the first three principal components.</p>
 <p>How many distinct populations do you think there are?</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
@@ -1918,9 +2069,11 @@ if (outputEl) {{
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="module-3-snps.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1928,29 +2081,40 @@ if (outputEl) {{
             <p class="prev-next-title">Module 3 - Genome-wide SNP data</p>
         </div>
     </a>
+    <a class='right-next' id="next-link" href="../workshop-4/about.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workshop 4 - Cryptic species</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

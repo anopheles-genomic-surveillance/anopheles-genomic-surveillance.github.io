@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Module 4 - Analysing CNV frequencies at metabolic resistance genes &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Workshop 3 - Population structure" href="../workshop-3/about.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -90,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -209,108 +224,243 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshop-2/module-4-cnv-frequencies.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-4-cnv-frequencies.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-4-cnv-frequencies.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-4-cnv-frequencies.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-4-cnv-frequencies.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-2/module-4-cnv-frequencies.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
@@ -397,12 +547,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Module 4 - Analysing CNV frequencies at metabolic resistance genes</h1>
@@ -505,46 +654,47 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="https://anopheles-genomic-surveillance.github.io/_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 2</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="module-4-analysing-cnv-frequencies-at-metabolic-resistance-genes">
-<h1>Module 4 - Analysing CNV frequencies at metabolic resistance genes<a class="headerlink" href="#module-4-analysing-cnv-frequencies-at-metabolic-resistance-genes" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="module-4-analysing-cnv-frequencies-at-metabolic-resistance-genes">
+<h1>Module 4 - Analysing CNV frequencies at metabolic resistance genes<a class="headerlink" href="#module-4-analysing-cnv-frequencies-at-metabolic-resistance-genes" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Analysis</strong></p>
 <p>In this module we’re going to analyse copy number variation in genes that are known to be associated with metabolic insecticide resistance in the <em>Anopheles gambiae</em> complex, particularly cytochrome P450 (<em>Cyp</em>) genes. We will compute the frequency of copy number variation in these genes of interest, and compare these frequencies between mosquitoes from different time points, geographical locations and species.</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>At the end of this module you will be able to:</p>
 <ul class="simple">
 <li><p>Compute the frequency of gene copy number variation in different mosquito cohorts.</p></li>
 <li><p>Extract and analyse CNV frequencies for metabolic resistance genes.</p></li>
 <li><p>Visualise frequencies using heatmaps, time series plots and maps.</p></li>
 </ul>
-</div>
-<div class="section" id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/1bwESsRJPdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/OzwIukNbu4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>First, let’s install the python packages we will need for our analyses.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -624,9 +774,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>Above we can see some information about how access to <em>Anopheles gambiae</em> genomic data from MalariaGEN has been configured. This tells us where the data are stored (the “gs” stands for Google Cloud Storage), which data releases are available to analyse (Ag3.0) and what the default analyses are for cohorts, species and site filters. We can also see that we are using version 3.0.0 of the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package.</p>
-</div>
-<div class="section" id="summarising-copy-number-variation-by-gene">
-<h2>Summarising copy number variation by gene<a class="headerlink" href="#summarising-copy-number-variation-by-gene" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summarising-copy-number-variation-by-gene">
+<h2>Summarising copy number variation by gene<a class="headerlink" href="#summarising-copy-number-variation-by-gene" title="Permalink to this headline">#</a></h2>
 <p>For surveillance analyses, it can be convenient to summarise the copy number data for each individual by gene. This allows us to ask questions like, for some metabolic resistance gene of interest, does a given mosquito have any copy number variation at that gene?</p>
 <p>We’ve seen in the previous module how the copy number variation data is calculated in 300 base pair windows over the genome, but in general genes are larger than 300 base pairs and so will span multiple windows. So how do we summarise the windowed copy number data by gene?</p>
 <p>One way to do this is to compute some kind of average over all the windows overlapping a given gene of interest. Because copy number state is a discrete variable, we typically prefer to do this by computing the modal copy number for windows overlapping a gene.</p>
@@ -636,9 +786,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_html"><iframe frameborder="0" style="width:100%;height:583px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CNV_summary.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1m6E1S8zk1HWmTxRiKLu0xGoe-59KDVsQ%26export%3Ddownload"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="computing-gene-cnv-frequencies">
-<h2>Computing gene CNV frequencies<a class="headerlink" href="#computing-gene-cnv-frequencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="computing-gene-cnv-frequencies">
+<h2>Computing gene CNV frequencies<a class="headerlink" href="#computing-gene-cnv-frequencies" title="Permalink to this headline">#</a></h2>
 <p>Now that we know how to summarise the data by gene, the next step is to then summarise these data over multiple individual mosquitoes, so that we can estimate the fraction of mosquitoes from a given time, place and species that carry some form of copy number variation at a given gene of interest. This is ultimately what we are interested in, because we would like to know if metabolic resistance is at low or high frequency and whether this varies over time or between geographical locations or species.</p>
 <p>Because copy number variation is more complex than single nucleotide polymorphism, we compute the frequency of CNVs in a simplified way. We compute the fraction of individuals that carry some kind of copy number variation at a given gene, ignoring whether the individual was heterozygous or homozygous for that CNV, and also ignoring the number of additional copies that may be present. We also divide this into two types of CNV - amplification and deletion. So, for example, we compute the fraction of individuals which have an amplification at some gene; and similarly we compute the fraction with some deletion. Although generally we’re more interested in amplification, because amplification of metabolic resistance genes can cause increased insecticide resistance.</p>
 <p>The diagram below illustrates this simple calculation of amplification and deletion frequencies for some genes of interest.</p>
@@ -1593,9 +1743,9 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="reminder-cohorts">
-<h2>Reminder - cohorts<a class="headerlink" href="#reminder-cohorts" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reminder-cohorts">
+<h2>Reminder - cohorts<a class="headerlink" href="#reminder-cohorts" title="Permalink to this headline">#</a></h2>
 <p>When we want to analyse frequencies we first define cohorts, which are simply groups of mosquitoes that we have data for and which we take as representatives of a mosquito population from a given time, place and species.</p>
 <p>To define these cohorts we group mosquitoes according to these different variables, i.e., geographically, temporally and according to species (taxon). There are different options for doing this, depending on how fine-grained we want our analysis to be, and how many samples are available.</p>
 <p>When computing frequencies and choosing cohorts, we need to think about two factors:</p>
@@ -1924,9 +2074,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Remember frequency values range between 0 and 1. 0 means no individuals have the variant. 1 means all individuals have the variant. 0.5 means 50% of individuals have the variant.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">max_af</span></code> column simply shows the highest frequency found in the cohorts and is useful for filtering the output down to just CNVs at appreciable frequency in at least one cohort, and the <code class="docutils literal notranslate"><span class="pre">windows</span></code> columns shows how many 300 bp windows the frequency is calculated over.</p>
-</div>
-<div class="section" id="plotting-frequency-heatmaps">
-<h2>Plotting frequency heatmaps<a class="headerlink" href="#plotting-frequency-heatmaps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-frequency-heatmaps">
+<h2>Plotting frequency heatmaps<a class="headerlink" href="#plotting-frequency-heatmaps" title="Permalink to this headline">#</a></h2>
 <p>Just like we could with SNP allele frequencies, we can also make gene cnv frequency DataFrames easier to interpret by plotting them as a heat map.</p>
 <p>Let’s also filter our DataFrame by <code class="docutils literal notranslate"><span class="pre">max_af</span></code> to just CNVs present in at least one cohort over 5%, using a pandas query.</p>
 <div class="cell docutils container">
@@ -2114,9 +2264,9 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="using-sample-queries">
-<h2>Using sample queries<a class="headerlink" href="#using-sample-queries" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-sample-queries">
+<h2>Using sample queries<a class="headerlink" href="#using-sample-queries" title="Permalink to this headline">#</a></h2>
 <p>Sometimes you may want to analyse data across many sample sets, but select only samples from a single country or species. The useful <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter enables us to achieve this easily.</p>
 <p>For example, if we wanted to analyse the <em>Cyp6aa/p</em> gene cluster in all of the Ag3.0 sample sets, but only look at <em>Anopheles coluzzii</em> samples in those sample sets, then we would set the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter to “3.0”…</p>
 <div class="cell docutils container">
@@ -2584,9 +2734,9 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotting-frequency-time-series">
-<h2>Plotting frequency time series<a class="headerlink" href="#plotting-frequency-time-series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-frequency-time-series">
+<h2>Plotting frequency time series<a class="headerlink" href="#plotting-frequency-time-series" title="Permalink to this headline">#</a></h2>
 <p>For surveillance it can be very informative to observe changes in CNV frequencies over time for a given sampling location and species. CNVs under selection due to insecticide resistance will increase in frequency over time, and plotting the frequency data as a time series can help to see this. The <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package includes a function <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#plot-frequencies-time-series"><code class="docutils literal notranslate"><span class="pre">plot_frequencies_time_series()</span></code></a> for plotting frequency time series. These are a little more advanced to use, but we’ll illustrate them below.</p>
 <p><em>N.B.</em>, in the Ag3.0 data resource there is only one country where we have data from multiple time points, which is Burkina Faso. However, data in future releases will contain a number of time series, and so it’s useful to illustrate this functionality now.</p>
 <p>First we need to compute the gene CNV frequencies. To obtain the necessary data for time series plotting, we need to use a slightly different function for computing the frequencies - <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#gene-cnv-frequencies-advanced"><code class="docutils literal notranslate"><span class="pre">gene_cnv_frequencies_advanced()</span></code></a>.</p>
@@ -3133,9 +3283,9 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotting-frequencies-using-interactive-maps">
-<h2>Plotting frequencies using interactive maps<a class="headerlink" href="#plotting-frequencies-using-interactive-maps" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-frequencies-using-interactive-maps">
+<h2>Plotting frequencies using interactive maps<a class="headerlink" href="#plotting-frequencies-using-interactive-maps" title="Permalink to this headline">#</a></h2>
 <p>It is often useful, when making geographical comparisons, to plot gene CNV frequencies on a map. We can do this via the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#plot-frequencies-interactive-map"><code class="docutils literal notranslate"><span class="pre">plot_frequencies_interactive_map()</span></code></a> function in the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package. Let’s demonstrate, analysing the <em>Cyp6aa/p</em> gene cluster  using all data in the Ag3.0 resource.</p>
 <p>As with the time series plots, we first calculate our gene CNV frequencies using the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#gene-cnv-frequencies-advanced"><code class="docutils literal notranslate"><span class="pre">gene_cnv_frequencies_advanced()</span></code></a> function as this provides additional metadata that we need for plotting data on a map. We will keep all our parameters the same as the time series analysis above, except that this time we will not use a sample query, because we want to include all available samples in the analysis.</p>
 <div class="cell docutils container">
@@ -3928,28 +4078,28 @@ Attributes:
 <p><strong>Exercice 6 (Français)</strong></p>
 <p>En utilisant la carte interactive que nous venons de créer, quelle est la fréquence de l’amplification de <em>Cyp6aa1</em> chez les <em>An. gambiae</em> venant de la région de l’Ouganda UG-E en 2012?</p>
 <p>Quelle est la fréquence de l’amplification de <em>Cyp6p3</em> chez les <em>An. coluzzii</em> venant de la région CI-LG de la Côte D’Ivoire en 2012?</p>
-</div>
-<div class="section" id="well-done">
-<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="well-done">
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
 <p>In this module we have learnt how to analyse CNVs in genes that are associated with metabolic insecticide resistance in the <em>Anopheles gambiae</em> complex.</p>
 <p>We have computed the frequency of copy number variation in genes of interest, and learnt different ways to compare these frequencies between mosquitoes from different time points, geographical locations and species.</p>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Open this notebook in Google Colab and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing, and try the practical exercises along the way.</p>
 <p>Have go at the practical exercises, but please don’t worry if you don’t have time to do them all during the practical session, and please ask the teaching assistants for help if you are stuck.</p>
 <p>Hint: To open the notebook in Google Colab, click the rocket icon at the top of the page, then select “Colab” from the drop-down menu.</p>
-</div>
-<div class="section" id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Pendant que vous exécutez le notebook, cellule par cellule, pensez à ce que chaque cellule fait et essayez de faire les exercices quand vous les rencontrez.</p>
 <p>Essayez de faire les exercices mais ne vous inquiétez pas si vous n’avez pas le temps de tout faire pendant la séance appliquée et n’hésitez pas à demander aux enseignants assistants si vous avez besoin d’aide parce que vous êtes bloqués.</p>
 <p>Indice: Pour ouvrir le notebook dans Google Colab, cliquer sur l’icône de fusée au sommet de cette page puis choisissez “Colab” dans le menu déroulant.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
@@ -3979,9 +4129,11 @@ Attributes:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="module-3-cnv-calling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3997,28 +4149,32 @@ Attributes:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

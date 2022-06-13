@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Module 2 - Accessing and exploring Anopheles genomic data &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 3 - Navigating the Anopheles gambiae reference genome" href="module-3-genome.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -90,14 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../home.html">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -209,108 +224,243 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/workshop-1/module-2-sample-metadata.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-2-sample-metadata.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-2-sample-metadata.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-2-sample-metadata.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-2-sample-metadata.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-1/module-2-sample-metadata.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    Learning objectives
@@ -398,12 +548,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Module 2 - Accessing and exploring Anopheles genomic data</h1>
@@ -507,18 +656,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 1</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="module-2-accessing-and-exploring-anopheles-genomic-data">
-<h1>Module 2 - Accessing and exploring <em>Anopheles</em> genomic data<a class="headerlink" href="#module-2-accessing-and-exploring-anopheles-genomic-data" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="module-2-accessing-and-exploring-anopheles-genomic-data">
+<h1>Module 2 - Accessing and exploring <em>Anopheles</em> genomic data<a class="headerlink" href="#module-2-accessing-and-exploring-anopheles-genomic-data" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Data</strong></p>
 <p>This module provides an introduction to accessing and exploring data about <em>Anopheles</em> mosquito specimens collected in the field and submitted for whole-genome sequencing by MalariaGEN.</p>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>After completing this module, you will be able to:</p>
 <ul class="simple">
 <li><p>Explain how <em>Anopheles</em> genomic data are generated.</p></li>
@@ -527,28 +677,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package to access <code class="docutils literal notranslate"><span class="pre">Ag3.0</span></code> data in Google Cloud.</p></li>
 <li><p>Explore the <code class="docutils literal notranslate"><span class="pre">Ag3.0</span></code> data release and summarise the mosquito samples for which genomic data are available using pivot tables and maps.</p></li>
 </ul>
-</div>
-<div class="section" id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/c4vEBhZm3QI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/TocNfwILAr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="where-do-the-data-come-from">
-<h2>Where do the data come from?<a class="headerlink" href="#where-do-the-data-come-from" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="where-do-the-data-come-from">
+<h2>Where do the data come from?<a class="headerlink" href="#where-do-the-data-come-from" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The data we’ll be analysing in this training course where generated by multiple research groups collaborating as part of the Malaria Genomic Epidemiology Network (<a class="reference external" href="https://www.malariagen.net">MalariaGEN</a>).</p></li>
 <li><p>MalariaGEN is a collaborative programme providing access to genome sequencing and data processing services to support surveillance of malaria parasites and vectors.</p></li>
@@ -565,9 +715,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The results of variant-calling pipelines are then passed through a number of quality control, filtering and annotation steps to ensure data quality. We call this process <strong>data curation</strong>.</p></li>
 <li><p>The <strong>analysis-ready genome variation data</strong> is then made available to all partners in the collaboration. This data can then be analysed to answer questions about the surveillance of mosquito populations, such as whether new forms of insecticide resistance are emerging and spreading.</p></li>
 </ul>
-</div>
-<div class="section" id="what-types-of-analysis-ready-genomic-data-are-available">
-<h2>What types of analysis-ready genomic data are available?<a class="headerlink" href="#what-types-of-analysis-ready-genomic-data-are-available" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-types-of-analysis-ready-genomic-data-are-available">
+<h2>What types of analysis-ready genomic data are available?<a class="headerlink" href="#what-types-of-analysis-ready-genomic-data-are-available" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>When DNA is passed from one generation of mosquitoes to the next, it undergoes <strong>mutations</strong>, which are errors in the DNA copying process. There are different types of mutations that can occur. These include:</p>
 <ul>
@@ -585,9 +735,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_html"><iframe frameborder="0" style="width:100%;height:350px;" src="https://viewer.diagrams.net/?tags=%7B%7D&target=blank&highlight=0000ff&edit=_blank&layers=1&nav=1&title=vobs-data-breakdown#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D13q2N2RETSCS07sH9qQgTmaWR5JvFSZcZ%26export%3Ddownload"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="where-are-the-data-stored">
-<h2>Where are the data stored?<a class="headerlink" href="#where-are-the-data-stored" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="where-are-the-data-stored">
+<h2>Where are the data stored?<a class="headerlink" href="#where-are-the-data-stored" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>To make accessing these data as simple as possible, the resulting data are stored in Google Cloud using a service called Google Cloud Storage (GCS). These data can then be downloaded to any computer, or can be analysed within the cloud using cloud computing services like colab.</p></li>
 <li><p>If you are using colab to access and analyses these data, then you don’t need to download any data to your own computer or install any special software. You access colab through a web browser, and the code you run is executed on a different computer (a “virtual machine”) which sits alongside the data in Google Cloud.</p></li>
@@ -597,9 +747,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_html"><iframe frameborder="0" style="width:100%;height:700px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&nav=1&title=vobs-cloud-store.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1W5SVx6w6FhnxwPHRtEuuG8JV8es12NU-%26export%3Ddownload"></iframe>
 </div></div>
 </div>
-</div>
-<div class="section" id="accessing-the-ag3-0-data-resource">
-<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">Ag3.0</span></code> data resource<a class="headerlink" href="#accessing-the-ag3-0-data-resource" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-the-ag3-0-data-resource">
+<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">Ag3.0</span></code> data resource<a class="headerlink" href="#accessing-the-ag3-0-data-resource" title="Permalink to this headline">#</a></h2>
 <p>In this workshop we’ll be accessing and analysing data from the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/intro.html"><em>Anopheles gambiae</em> 1000 Genomes Project phase 3 data resource</a>, also known as “Ag3.0” for short. This includes data from whole-genome sequencing of 3,081 mosquitoes from 19 African countries.</p>
 <p>To set up your notebook to access these data, first install the <a class="reference external" href="https://github.com/malariagen/malariagen-data-python">malariagen_data</a> package.</p>
 <div class="cell tag_remove-output docutils container">
@@ -651,9 +801,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div></div>
 </div>
 <p>You can now access a number of different types of data through the <code class="docutils literal notranslate"><span class="pre">ag3</span></code> object. The full list of functions is available from the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>. For the rest of this module, we are just going to look at sample metadata.</p>
-</div>
-<div class="section" id="loading-sample-metadata">
-<h2>Loading sample metadata<a class="headerlink" href="#loading-sample-metadata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loading-sample-metadata">
+<h2>Loading sample metadata<a class="headerlink" href="#loading-sample-metadata" title="Permalink to this headline">#</a></h2>
 <p>We can use the <a class="reference external" href="https://malariagen.github.io/vector-data/ag3/api.html#sample-metadata"><code class="docutils literal notranslate"><span class="pre">sample_metadata()</span></code></a> function to retrieve a pandas DataFrame containing metadata about all 3,081 samples in the Ag3.0 resource. In this DataFrame, each row represents one mosquito sample, and the columns such as <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> provide information about where the mosquito was originally collected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -974,9 +1124,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>3081 rows × 26 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="exploring-sample-metadata">
-<h2>Exploring sample metadata<a class="headerlink" href="#exploring-sample-metadata" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exploring-sample-metadata">
+<h2>Exploring sample metadata<a class="headerlink" href="#exploring-sample-metadata" title="Permalink to this headline">#</a></h2>
 <p>Let’s use some pandas features such as <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/groupby.html"><code class="docutils literal notranslate"><span class="pre">groupby()</span></code></a> and <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/indexing.html#the-query-method"><code class="docutils literal notranslate"><span class="pre">query()</span></code></a> to explore the sample metadata.</p>
 <p>For example, let’s first find out a bit more information about the different countries represented.</p>
 <div class="cell docutils container">
@@ -1684,9 +1834,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="summarising-sample-metadata-with-pivot-tables">
-<h2>Summarising sample metadata with pivot tables<a class="headerlink" href="#summarising-sample-metadata-with-pivot-tables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summarising-sample-metadata-with-pivot-tables">
+<h2>Summarising sample metadata with pivot tables<a class="headerlink" href="#summarising-sample-metadata-with-pivot-tables" title="Permalink to this headline">#</a></h2>
 <p>In the examples above we explored a part of the sample metadata, but it can also be useful to get an overall summary of how many samples have been sequenced, broken down by time and place of collection and mosquito species. For that kind of summary the <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/reshaping.html#pivot-tables"><code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code></a> function is useful.</p>
 <p>Let’s start by summarising the number of mosquitoes by country and species (taxon).</p>
 <div class="cell docutils container">
@@ -2632,9 +2782,9 @@ if (outputEl) {{
 </div></div></div>
 </div>
 <p>We can see there are four collection sites in Burkina Faso.</p>
-</div>
-<div class="section" id="plotting-maps-of-sampling-locations">
-<h2>Plotting maps of sampling locations<a class="headerlink" href="#plotting-maps-of-sampling-locations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-maps-of-sampling-locations">
+<h2>Plotting maps of sampling locations<a class="headerlink" href="#plotting-maps-of-sampling-locations" title="Permalink to this headline">#</a></h2>
 <p>To explore the different mosquito collection locations it can also be useful to plot some maps. You can plot maps within a notebook using various packages such as <a class="reference external" href="https://ipyleaflet.readthedocs.io/en/latest/">ipyleaflet</a>. Let’s install the ipyleaflet package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2924,11 +3074,11 @@ if (outputEl) {{
 </script></div>
 </div>
 <p>Try hovering over the markers, you should see some text with a summary of how many samples are available by species.</p>
-</div>
-<div class="section" id="practical-exercises">
-<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="practical-exercises">
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-2-sample-metadata.ipynb">Open this notebook in Google Colab</a> and run it for yourself from top to bottom. Hint: click the rocket icon (<i class="fas fa-rocket"></i>) at the top of the page, then select “Colab” from the drop-down menu. When colab opens, click the “Edit” menu, then select “Clear all outputs”, then begin running the cells.</p></li>
 <li><p>Find out how many mosquito specimens are available for each of the different <em>Anopheles</em> species represented. Hint: try grouping the sample metadata dataframe by the “taxon” column, then calling the <code class="docutils literal notranslate"><span class="pre">size()</span></code> method.</p></li>
@@ -2940,9 +3090,9 @@ if (outputEl) {{
 <li><p>If you feel like a challenge, plot a map with markers for sampling locations, and add a popup to each marker showing a pivot table of how many samples were collected by year and species.</p></li>
 </ol>
 <p><strong>When you’ve had enough, create a link to your notebook, and share it with someone. If you’re attending a training workshop, paste the link into the workshop slack channel.</strong></p>
-</div>
-<div class="section" id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-2-sample-metadata.ipynb">Ouvrir ce notebook dans Google Colab</a> et exécuter le vous-même du début à la fin. Indice: cliquer sur l’icone fusée (<i class="fas fa-rocket"></i>) au sommet de la page et sélectionner “Colab” dans le menu déroulant. Quand Colab s’ouvre, cliquer sur le menu “Edit” et sélectionner “Clear all outputs”, commencer ensuite à exéuter les cellules.</p></li>
 <li><p>Trouver combien de moustiques sont disponibles pour chacune des différentes espèces d’Anophèles représentées. Indice: essayer de grouper le dataframe des métadonnées des échantillons selon la colonne “taxon”, ensuite utiliser la méthode <code class="docutils literal notranslate"><span class="pre">size()</span></code>.</p></li>
@@ -2954,9 +3104,9 @@ if (outputEl) {{
 <li><p>Si vous souhaitez un défi, créer une carte avec un marqueur pour chaque lieu de capture et ajouter un pop-up à chaque marqueur montrant une table à pivôt donnant le nombre de moustiques par année et taxon.</p></li>
 </ol>
 <p><strong>Quand vous en aurez assez, créer un lien vers votre notebook et partager le avec quelqu’un. Si vous participez au workshop d’entrainement, copier le lien dans le canal slack du workshop.</strong></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
@@ -2986,9 +3136,11 @@ if (outputEl) {{
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="module-1-colab.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3004,28 +3156,32 @@ if (outputEl) {{
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Home &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,14 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workshop 1 - Pyrethroid target-site resistance" href="workshop-1/about.html" />
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -89,14 +103,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   Home
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshop 1
  </span>
@@ -208,92 +223,214 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/home.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fhome.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fhome.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/home.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#workshop-programme">
    Workshop programme
@@ -348,12 +485,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Home</h1>
@@ -424,83 +560,86 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="banner" src="_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="home">
-<h1>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="home">
+<h1>Home<a class="headerlink" href="#home" title="Permalink to this headline">#</a></h1>
 <p>Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by <a class="reference external" href="https://www.malariagen.net">MalariaGEN</a> and <a class="reference external" href="https://www.pamca.org">PAMCA</a>.</p>
 <p><strong>This course is under active development, it will be updated frequently and parts of the material may be work in progress.</strong></p>
-<div class="section" id="workshop-programme">
-<h2>Workshop programme<a class="headerlink" href="#workshop-programme" title="Permalink to this headline">¶</a></h2>
+<section id="workshop-programme">
+<h2>Workshop programme<a class="headerlink" href="#workshop-programme" title="Permalink to this headline">#</a></h2>
 <p>The course will consist of a series of workshops. The workshop programme is as follows:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="workshop-1/about.html"><span class="doc">Workshop 1 - Pyrethroid target-site resistance</span></a></p></li>
 <li><p><a class="reference internal" href="workshop-2/about.html"><span class="doc">Workshop 2 - Metabolic insecticide resistance and copy number variation</span></a></p></li>
 <li><p><a class="reference internal" href="workshop-3/about.html"><span class="doc">Workshop 3 - Population structure</span></a></p></li>
-<li><p>Workshop 4 - Cryptic species (planned)</p></li>
+<li><p><a class="reference internal" href="workshop-4/about.html"><span class="doc">Workshop 4 - Cryptic species</span></a></p></li>
 <li><p>Workshop 5 - Genetic diversity (planned)</p></li>
 <li><p>Workshop 6 - Detecting genes under recent positive selection (planned)</p></li>
 <li><p>Workshop 7 - Gene flow and the spread of insecticide resistance (planned)</p></li>
-<li><p>Workshop 8 - Presenting a genomic surveillance report (planned)</p></li>
+<li><p>Workshop 8 - Creating a genomic surveillance report (planned)</p></li>
 </ul>
-</div>
-<div class="section" id="context-and-motivation">
-<h2>Context and motivation<a class="headerlink" href="#context-and-motivation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="context-and-motivation">
+<h2>Context and motivation<a class="headerlink" href="#context-and-motivation" title="Permalink to this headline">#</a></h2>
 <p>The main motivation for this course, and for the ongoing work by MalariaGEN and PAMCA to develop capacity for <em>Anopheles</em> genomics, comes from the current situation in malaria control in Africa. This situation is well described in the <a class="reference external" href="https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2021">WHO World Malaria Report 2021</a> and in the <a class="reference external" href="https://www.who.int/publications/i/item/9789240031357">WHO Global Technical Strategy for Malaria 2016-2030</a>, but here are some key highlights.</p>
-<div class="section" id="progress-towards-malaria-elimination-has-stalled">
-<h3>Progress towards malaria elimination has stalled<a class="headerlink" href="#progress-towards-malaria-elimination-has-stalled" title="Permalink to this headline">¶</a></h3>
+<section id="progress-towards-malaria-elimination-has-stalled">
+<h3>Progress towards malaria elimination has stalled<a class="headerlink" href="#progress-towards-malaria-elimination-has-stalled" title="Permalink to this headline">#</a></h3>
 <p>Between 2000 and 2015, the incidence and mortality rates for malaria in Africa reduced substantially, primarily due to the scaling up of vector control interventions using long-lasting insecticidal nets (LLINs) and indoor residual spraying (IRS). However, since 2015, neither incidence nor mortality have reduced substantially.</p>
-</div>
-<div class="section" id="biological-threats-to-the-efficacy-of-malaria-vector-control">
-<h3>Biological threats to the efficacy of malaria vector control<a class="headerlink" href="#biological-threats-to-the-efficacy-of-malaria-vector-control" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="biological-threats-to-the-efficacy-of-malaria-vector-control">
+<h3>Biological threats to the efficacy of malaria vector control<a class="headerlink" href="#biological-threats-to-the-efficacy-of-malaria-vector-control" title="Permalink to this headline">#</a></h3>
 <p>The reasons for this stalling in progress are complex and not fully understood, but there are some current biological threats which are playing a part. In particular, resistance to insecticides is now widespread among the <em>Anopheles</em> mosquitoes which primarily transmit malaria in Africa.</p>
-</div>
-<div class="section" id="malaria-vector-control-is-changing">
-<h3>Malaria vector control is changing<a class="headerlink" href="#malaria-vector-control-is-changing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="malaria-vector-control-is-changing">
+<h3>Malaria vector control is changing<a class="headerlink" href="#malaria-vector-control-is-changing" title="Permalink to this headline">#</a></h3>
 <p>Malaria vector control programmes are responding to the threat of insecticide resistance by deploying new LLIN products which combine a pyrethroid insecticide either with the synergist piperonyl butoxide (pyrethroid-PBO LLINs) or with a second insecticide with a different mode of action (dual active LLINs). New IRS products are also being used which introduce insecticides not previously used in public health. These new LLIN and IRS products are already being deployed at scale.</p>
 <p>These are the biggest changes in malaria control in at least a decade. These new vector control tools are known to be highly effective now, but we know from past experience that malaria vector populations will evolve new forms of resistance in response to these new selective pressures. Without a capability to detect these new biological threats, these new tools will not remain effective for long.</p>
-</div>
-<div class="section" id="surveillance-as-a-core-intervention">
-<h3>Surveillance as a core intervention<a class="headerlink" href="#surveillance-as-a-core-intervention" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="surveillance-as-a-core-intervention">
+<h3>Surveillance as a core intervention<a class="headerlink" href="#surveillance-as-a-core-intervention" title="Permalink to this headline">#</a></h3>
 <p>Different countries face different malaria control challenges and threats, and the consensus is that there is no “one size fits all” approach to malaria vector control. Rather, vector control strategy needs to be tailored based on the local situation. Gathering of data on malaria vector populations (vector surveillance) thus has a key role to play in guiding decisions about vector control. In order to make this a reality, there is a need for strengthened national capacity to generate, analyse and use high-quality surveillance data.</p>
-</div>
-<div class="section" id="genomic-surveillance">
-<h3>Genomic surveillance<a class="headerlink" href="#genomic-surveillance" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="genomic-surveillance">
+<h3>Genomic surveillance<a class="headerlink" href="#genomic-surveillance" title="Permalink to this headline">#</a></h3>
 <p>Malaria vector surveillance needs to gather and integrate data from a variety of different sources. Vector genomics has a potential role to play in generating a new source of data, complementing and adding new insights when brought together with existing surveillance data on intervention coverage, vector bionomics and insecticide resistance phenotypes.</p>
 <p>To understand the potential value of vector genomic surveillance, a useful parallel is consider the role that genomic surveillance has played in responding to the COVID-19 pandemic. Although COVID-19 and malaria are very different diseases, they share something in common, which is that evolution leads to the emergence of new biological threats, and early detection of those threats can be valuable. In the case of COVID-19, early detection of highly-transmissible variants <em>alpha</em>, <em>delta</em> and <em>omicron</em> helped alert public health authorities that action needed to be taken sooner rather than later.</p>
 <p>By analogy, vector genomic surveillance could enable early detection of new insecticide resistance variants emerging in malaria vector populations in response to deployment of new LLIN or IRS products, which in turn could be beneficial in designing and adapting insecticide resistance management plans.</p>
-</div>
-</div>
-<div class="section" id="intended-audience">
-<h2>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="intended-audience">
+<h2>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">#</a></h2>
 <p>The primary audience for this training course is scientists and data analysts in African research groups and disease control programmes who are collaborating with MalariaGEN and PAMCA to generate <em>Anopheles</em> genomic data, and who want to use the data to answer questions about malaria vector surveillance. E.g., if vector control strategy has recently changed in a given country or region, what impact has that had on the local vector populations?</p>
 <p>We hope this training course will also be useful to a broader audience including anyone who is interested in learning more about genomic data and how it could be used for vector surveillance.</p>
-</div>
-<div class="section" id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>At the end of this course, you will be able to:</p>
 <ol class="simple">
 <li><p>Perform a range of analyses of <em>Anopheles</em> genomic data that are relevant to malaria vector surveillance.</p></li>
 <li><p>Generate plots, tables and statistics that can be used in a surveillance report.</p></li>
 <li><p>Interpret your results and explain to others what they mean.</p></li>
 </ol>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>This is a hands-on training course involving the analysis of real genetic data. To follow this course you will need to have some prior experience of data analysis using a programming language such as Python, R, Julia, Matlab or Stata. The practical exercises in each workshop will use the Python programming language, and some prior experience of Python will be advantageous, but is not required.</p>
 <p>During the practical sessions in each workshop we will use <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> (a.k.a. Colab), which is an interactive cloud computing service provided for free by Google. In order to use Colab you will need to have a Google user account. If you do not already have a Google user account, please make sure to create one before you start the course.</p>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -524,8 +663,10 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="workshop-1/about.html" title="next page">
     <div class="prev-next-info">
@@ -535,28 +676,32 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By MalariaGEN and PAMCA<br/>
-    
-        &copy; Copyright 2022.<br/>
-      <div class="extra_footer">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
