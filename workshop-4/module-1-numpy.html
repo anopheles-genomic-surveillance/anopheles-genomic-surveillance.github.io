@@ -1173,9 +1173,21 @@ title="Print to PDF"
 </div>
 <p>Here are visual illustrations of the three arrays we just created.</p>
 <p><img src="https://numpy.org/doc/stable/_images/np_ones_zeros_random.png"></img></p>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Exercise 1 (English)</strong></p>
 <p>Uncomment and run the code cells below to answer the following questions.</p>
 <p>What is the number of dimensions of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array we created above?</p>
+<p>What is the number of items (size) of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
+<p>What is the shape of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
+<p>What is the data type of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
+<p>Create an array of ten zeros.</p>
+<p>Create an array of one million random numbers.</p>
+<p><strong>Exercice 1 (Français)</strong></p>
+<p>Décommenter et exécuter les cellules de code ci-dessous pour répondre aux questions suivantes.</p>
+<p>Combien de dimensions a l’array <code class="docutils literal notranslate"><span class="pre">foo</span></code> que nous avons créé plus haut?</p>
+<p>Combien d’objets (taille) l’array <code class="docutils literal notranslate"><span class="pre">foo</span></code> contient-il?</p>
+<p>Quel est le type des données de l’array <code class="docutils literal notranslate"><span class="pre">foo</span></code>?</p>
+<p>Créer un array contenant dix zéros.</p>
+<p>Créer un array contenant un million de nombres aléatoires.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># foo.ndim</span>
@@ -1183,7 +1195,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>What is the number of items (size) of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># foo.size</span>
@@ -1191,7 +1202,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>What is the shape of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># foo.shape</span>
@@ -1199,7 +1209,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>What is the data type of the <code class="docutils literal notranslate"><span class="pre">foo</span></code> array?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># foo.dtype</span>
@@ -1207,7 +1216,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Create an array of ten zeros.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bar = np.zeros(10)</span>
@@ -1216,7 +1224,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Create an array of one million random numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># baz = np.random.random(1_000_000)</span>
@@ -1278,8 +1285,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>Here’s an illustration of the 2-D arrays we created.</p>
-<img src="https://numpy.org/doc/stable/_images/np_ones_zeros_matrix.png"/><p><strong>Exercise 2</strong></p>
+<img src="https://numpy.org/doc/stable/_images/np_ones_zeros_matrix.png"/><p><strong>Exercise 2 (English)</strong></p>
 <p>Create a 2-D array of random numbers with 1,000 rows and 500 columns. Check the values of the <code class="docutils literal notranslate"><span class="pre">ndim</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code> and <code class="docutils literal notranslate"><span class="pre">dtype</span></code> attributes.</p>
+<p><strong>Exercice 2 (Français)</strong></p>
+<p>Créer un array de dimension 2 contenant 1000 lignes et 500 colonnes de nombres aléatoires. Vérifier les valeurs des attributs <code class="docutils literal notranslate"><span class="pre">ndim</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code> et <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
 </section>
 </section>
 <section id="accessing-elements-of-an-array-indexing-and-slicing">
@@ -1370,11 +1379,16 @@ title="Print to PDF"
 </div>
 </div>
 <p>Here is an illustration of the array we created, and the results of indexing the array in different ways.</p>
-<img src="https://numpy.org/doc/stable/_images/np_indexing.png"/><p><strong>Exercise 3</strong></p>
+<img src="https://numpy.org/doc/stable/_images/np_indexing.png"/><p><strong>Exercise 3 (English)</strong></p>
 <p>Create a new 1-D array initialised with the data values <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">5,</span> <span class="pre">23,</span> <span class="pre">37,</span> <span class="pre">42,</span> <span class="pre">54,</span> <span class="pre">61,</span> <span class="pre">79,</span> <span class="pre">88,</span> <span class="pre">90]</span></code>.</p>
 <p>Using indexing to access the data value in the fifth element of the array.</p>
 <p>Access the final element of the array.</p>
 <p>Using slicing to access the third, fourth and fifth elements of the array.</p>
+<p><strong>Exercice 3 (Français)</strong></p>
+<p>Créer un array de dimension 1 contenant les valeurs <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">5,</span> <span class="pre">23,</span> <span class="pre">37,</span> <span class="pre">42,</span> <span class="pre">54,</span> <span class="pre">61,</span> <span class="pre">79,</span> <span class="pre">88,</span> <span class="pre">90]</span></code>.</p>
+<p>Utiliser un index pour accéder à la valeur du cinquième élément de cet array.</p>
+<p>Accéder au dernier élément de cet array.</p>
+<p>Utiliser une tranche pour accéder au troisième, quatrième et cinquième éléments de cet array.</p>
 </section>
 <section id="id3">
 <h3>2-D arrays<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
@@ -1450,11 +1464,16 @@ title="Print to PDF"
 </div>
 </div>
 <p>Here’s an illustration of these indexing operations on a 2-D array:</p>
-<img src="https://numpy.org/doc/stable/_images/np_matrix_indexing.png"/><p><strong>Exercise 4</strong></p>
+<img src="https://numpy.org/doc/stable/_images/np_matrix_indexing.png"/><p><strong>Exercise 4 (English)</strong></p>
 <p>Create a new 2-D array initialised with the data values <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">5,</span> <span class="pre">23],</span> <span class="pre">[37,</span> <span class="pre">42,</span> <span class="pre">54],</span> <span class="pre">[61,</span> <span class="pre">79,</span> <span class="pre">88]]</span></code>.</p>
 <p>Use indexing to access the data value in second row, third column of the array.</p>
 <p>Use slicing to access the first and second rows of the array.</p>
 <p>Access the last two values in the second column of the array.</p>
+<p><strong>Exercice 4 (Français)</strong></p>
+<p>Créer un nouvel array de dimension 2 contenant les valeurs <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">5,</span> <span class="pre">23],</span> <span class="pre">[37,</span> <span class="pre">42,</span> <span class="pre">54],</span> <span class="pre">[61,</span> <span class="pre">79,</span> <span class="pre">88]]</span></code>.</p>
+<p>Utiliser les indexes pour accéder à la valeur se trouvant à la deuxième ligne, troisième colonne de cet array.</p>
+<p>Utiliser une tranche pour accéder à la première et à la seconde ligne de cet array.</p>
+<p>Accéder aux deux dernières valeurs de la seconde colonne de cet array.</p>
 </section>
 </section>
 <section id="basic-mathematical-operations-with-arrays">
@@ -1613,10 +1632,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Exercise 5</strong></p>
+<p><strong>Exercise 5 (English)</strong></p>
 <p>Create a new array initialised with the data values <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">5,</span> <span class="pre">23],</span> <span class="pre">[37,</span> <span class="pre">42,</span> <span class="pre">54],</span> <span class="pre">[61,</span> <span class="pre">79,</span> <span class="pre">88]]</span></code>.</p>
 <p>Multiply this array by itself.</p>
 <p>Add one to every element of this array.</p>
+<p><strong>Exercice 5 (Français)</strong></p>
+<p>Créer un nouvel array initialisé avec les valeurs <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">5,</span> <span class="pre">23],</span> <span class="pre">[37,</span> <span class="pre">42,</span> <span class="pre">54],</span> <span class="pre">[61,</span> <span class="pre">79,</span> <span class="pre">88]]</span></code>.</p>
+<p>Multiplier cet array par lui-même.</p>
+<p>Ajouter un à chaque élément de cet array.</p>
 </section>
 </section>
 <section id="aggregations">
@@ -1823,12 +1846,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Exercise 6</strong></p>
+<p><strong>Exercise 6 (English)</strong></p>
 <p>Create a 2-D array of random numbers with 4 rows and 3 columns.</p>
 <p>Multiply the array by 100.</p>
 <p>Find the maximum, minimum and sum of the array.</p>
 <p>Find the maximum value in each row.</p>
 <p>Find the minimum value in each column.</p>
+<p><strong>Exercice 6 (Français)</strong></p>
+<p>Créer un array de dimension 2 avec 4 lignes et 3 colonnes de nombres aléatoires.</p>
+<p>Multiplier cet array par 100.</p>
+<p>Trouver le maximum, le minimum et la somme de cet array.</p>
+<p>Trouver le maximum de chaque ligne.</p>
+<p>Trouver le minimum de chaque colonne.</p>
 </section>
 </section>
 <section id="working-with-mathematical-formulas">
