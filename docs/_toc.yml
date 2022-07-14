@@ -29,3 +29,6 @@ parts:
     - file: workshop-4/module-2-cryptic-species
     - file: workshop-4/module-3-aims
     - file: workshop-4/module-4-taxon-analysis
+  - caption: Workshop 5
+    chapters:
+    - file: workshop-5/about
