@@ -32,3 +32,5 @@ parts:
   - caption: Workshop 5
     chapters:
     - file: workshop-5/about
+    - file: workshop-5/module-1-xarray
+    - file: workshop-5/module-2-diversity
