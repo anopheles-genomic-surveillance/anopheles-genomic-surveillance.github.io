@@ -34,3 +34,4 @@ parts:
     - file: workshop-5/about
     - file: workshop-5/module-1-xarray
     - file: workshop-5/module-2-diversity
+    - file: workshop-5/module-3-stats
