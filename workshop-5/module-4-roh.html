@@ -154,6 +154,11 @@ const thebe_selector_output = ".output, .cell_output"
    gene
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/journal-club.html">
+   Journal club - Clarkson et al. (2021)
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -190,6 +195,11 @@ const thebe_selector_output = ".output, .cell_output"
    Module 4 - Analysing CNV frequencies at metabolic resistance genes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/journal-club.html">
+   Journal club - Lucas et al. (2019)
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -222,6 +232,11 @@ const thebe_selector_output = ".output, .cell_output"
    Module 4 - Detecting population structure using PCA
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/journal-club.html">
+   Journal club - Ag1000G Consortium (2017)
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -252,6 +267,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
    Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/journal-club.html">
+   Journal club - Tennessen et al. (2020)
   </a>
  </li>
 </ul>
@@ -565,13 +585,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercises">
    Exercises
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -665,13 +678,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercises">
    Exercises
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -2169,12 +2175,19 @@ function(Bokeh) {
 })(window);</script></div>
 </div>
 <p>We can see from this plot, that the demography of the Mayotte population is likely different from any we have looked at so far. Though the peak heterozygosity across the 3R contig is ~1.5%, there is much more spread, with most windows falling between 1.5% and 0.5% heterozygosity. Interpretations of this result could be that the island population was founded some time ago, and heterozygosity is returning to levels like we saw on the mainland <em>e.g.</em> Burkina Faso, and/or this is the stable level of heterozygosity for a small population size of <em>Anopheles</em> mosquitoes.</p>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Exercise 1 (English)</strong></p>
 <p>We have sampled another island population in Ag3.0, Bioko (part of Equatorial Guinea). Though, unlike Mayotte, Bioko is only ~30km away from mainland Africa.</p>
 <ul class="simple">
 <li><p>Uncomment the code below and run a heterozygosity analysis for a sample from Bioko.</p></li>
 <li><p>How does this individual compare to the sample from Mayotte we looked at?</p></li>
 <li><p>Can you suggest why they might look different?</p></li>
+</ul>
+<p><strong>Exercice 1 (Français)</strong></p>
+<p>Nous avons des échantillons provenant d’une autre population insulaire dans Ag3.0: Bioko (qui fait partie de la Guinée-Équatoriale). Toutefois, contrairement à Mayotte, Bioko ne se trouve qu’à ~30 km du continent africain.</p>
+<ul class="simple">
+<li><p>Décommenter le code ci-dessous et effectuer une analyse de l’hétérozygosité pour un échantillon venant de Bioko.</p></li>
+<li><p>En quoi est-ce que cet individu est différent de celui que nous avons regardé pour Mayotte?</p></li>
+<li><p>Pouvez-vous proposer une explication pour ces différences?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2417,10 +2430,15 @@ function(Bokeh) {
 <p>So what is going on here? This wild caught sample has long <strong>runs of homozygosity</strong> - regions where heterozygosity is close to zero - more so than even some of our lab colony samples. It looks like this individual has come from a wild population that has been through a severe bottleneck recently. But what might cause that in a natural population?</p>
 <p>One possibility is that a vector control campaign that ran in Kenya prior to the date of collection was so successful that it rapidly and drastically reduced the population size of these mosquitoes. Unfortunately, this is just conjecture as we don’t have longitudinal samples (before, during, after the control campaign) to test this hypothesis.</p>
 <p>Fortunately many of our sample sets going forward do contain longitudinally sampled mosquitoes, some in conjunction with vector control roll-out projects. Monitoring heterozygosity with these samples could potentially indicate if a control method <em>e.g.</em> next-generation bednets, affects mosquito <strong>population sizes</strong> and thus provide an indication of its effectiveness.</p>
-<p><strong>Exercise 2</strong></p>
+<p><strong>Exercise 2 (English)</strong></p>
 <p>Another location where we have collected samples with atypical diversity statistics is Tanzania. Uncomment the code below and analyse the hetereozygosity of a gcx3 sample from Tanzania.</p>
 <ul class="simple">
 <li><p>Does your Tanzanian sample’s heterozygosity differ from the sample from Kenya we looked at above? If so, how is it different?</p></li>
+</ul>
+<p><strong>Exercice 2 (Français)</strong></p>
+<p>Un autre lieu où nous avons des échantillons avec des statistiques de la diversité génétiques atypiques est la Tanzanie. Décommenter le code ci-dessous et analyser l’hétérozygotie d’un échantillon gcx3 tanzanien.</p>
+<ul class="simple">
+<li><p>Est-ce que l’hétérozygotie de votre échantillon tanzanien est différente de celle de l’échantillon kenyan que nous avons regardé en premier? Si oui, comment?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2774,10 +2792,15 @@ function(Bokeh) {
 <p>In the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6026373/">Ag1000G phase 1 paper</a> we computed ROH for all samples, allowing us to plot and compare them.</p>
 <p>In the plot, each marker represents an individual mosquito. The Y-axis is the count of runs of homozygosity and the X-axis is the fraction of the genome composed of runs of homozygosity. Because these kind of data are inherently noisy, we filtered the ROH to only include those longer than 100,000 bp (100 kbp).</p>
 <p>Lab colony parents are shown in black. We can see how most of them have lots of runs of homozygosity which make up much of their genomes, while most wild caught cohorts have much smaller fractions of their genomes made up of ROH.</p>
-<img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-5/roh_scatter.svg" width="500 px"/><p><strong>Exercise 3</strong></p>
+<img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-5/roh_scatter.svg" width="500 px"/><p><strong>Exercise 3 (English)</strong></p>
 <ul class="simple">
 <li><p>What country might the grey samples come from (Hint: we’ve looked at strange patterns there today).</p></li>
 <li><p>Why might two of the lab colony parents (labelled “G”) have both low ROH count and fraction ROH?</p></li>
+</ul>
+<p><strong>Exercice 3 (Français)</strong></p>
+<ul class="simple">
+<li><p>De quel pays peuvent venir les échantillons gris du diagramme ci-dessus? (Indice: nous avons observé des motifs étranges dans ce pays aujourd’hui)</p></li>
+<li><p>Pourquoi est-ce que deux des parents venant de colonies (ceux étiquetés “G”) ont un compte des ROHs et une fraction de ROH si faibles?</p></li>
 </ul>
 <p>Let’s run our Kenyan sample through the same process we used to create the plot above.</p>
 <p>First, filter the ROH DataFrame to just include runs of homozygosity longer than 100 kbp.</p>
@@ -3025,8 +3048,10 @@ function(Bokeh) {
 </div>
 <p>So, we can see that this individual is incredibly inbred for a wild caught mosquito, over 60% of the 3R chromosome arm is composed of long runs of homozygosity!</p>
 <p>N.B., our ROH count will be different from the result shown for this individual in the Ag1000G phase 1 paper, because the paper combines ROH across multiple chromosomes, whereas here we have just calculated it across a single chromosome arm.</p>
-<p><strong>Exercise 4</strong></p>
+<p><strong>Exercise 4 (English)</strong></p>
 <p>Choose another sample from any mosquito population, and compute the number of ROH (<code class="docutils literal notranslate"><span class="pre">roh_count</span></code>) and fraction of genome in a ROH (<code class="docutils literal notranslate"><span class="pre">froh</span></code>) using only ROH larger than 100 kbp.</p>
+<p><strong>Exercice 4 (Français)</strong></p>
+<p>Choisissez un autre échantillon de n’importe quelle population de moustiques et calculez le nombre de ROH (<code class="docutils literal notranslate"><span class="pre">roh_count</span></code>) et la fraction de génome dans un ROH (<code class="docutils literal notranslate"><span class="pre">froh</span></code>) en utilisant uniquement des ROH supérieur à 100 kbp.</p>
 </section>
 <section id="well-done">
 <h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
@@ -3038,12 +3063,9 @@ function(Bokeh) {
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
-<section id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>Open this notebook in Google Colab and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing.</p>
+<p>Open this notebook in Google Colab, copy to your drive, clear outputs and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing.</p>
 <p>Have go at the practical exercises, but please don’t worry if you don’t have time to do them all during the practical session, and please ask the teaching assistants for help if you are stuck.</p>
 <p>Hint: To open the notebook in Google Colab, click the rocket icon at the top of the page, then select “Colab” from the drop-down menu.</p>
-</section>
 </section>
 </section>
 
