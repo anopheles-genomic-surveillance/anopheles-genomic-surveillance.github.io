@@ -1231,7 +1231,7 @@ function(Bokeh) {
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="recap-multidimensional-arrays">
 <h3>Recap: multidimensional arrays<a class="headerlink" href="#recap-multidimensional-arrays" title="Permalink to this headline">#</a></h3>
-<p>Previously in <a class="reference internal" href="../workshop-4/module-1-numpy.html"><span class="doc std std-doc">workshop 4, module 1</span></a> we introduced the concept of multidimensional arrays, and how they can be used to store some different types of scientific data. Let’s recap two examples.</p>
+<p>Previously in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-4/module-1-numpy.html">workshop 4, module 1</a> we introduced the concept of multidimensional arrays, and how they can be used to store some different types of scientific data. Let’s recap two examples.</p>
 <p>The first example is a grayscale image, which can be stored as a 2-dimensional array of numbers. Each element in the array represents a pixel, and the value of the number encodes the colour. One dimension of the array corresponds to the vertical position of the pixels within the image, and the other dimension of the array corresponds to the horizontal position of the pixels.</p>
 <img src="https://jalammar.github.io/images/numpy/numpy-grayscale-image.png" width="700"/><p>The second example is a set of genotype calls obtained from sequencing some mosquitoes. These data can be stored as a 3-dimensional array, where one dimension of the array corresponds to positions (sites) within a reference genome, another dimension corresponds to the individual mosquitoes that were sequenced, and a third dimension corresponds to the number of genomes within each individual (mosquitoes are diploid, hence this dimension has length 2).</p>
 <img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-4/mosquito-genotype-array.png" width="650"/></section>
@@ -2197,7 +2197,7 @@ Attributes:
 </div>
 </div>
 </div>
-<p>Note that this syntax is the same as that used for accessing columns within a pandas DataFrame, as we saw in <a class="reference internal" href="../workshop-2/module-1-pandas.html"><span class="doc std std-doc">workshop 2, module 1</span></a>. There are several parallels between pandas and xarray. You can almost think of xarray as pandas but for multidimensional data.</p>
+<p>Note that this syntax is the same as that used for accessing columns within a pandas DataFrame, as we saw in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/module-1-pandas.html">workshop 2, module 1</a>. There are several parallels between pandas and xarray. You can almost think of xarray as pandas but for multidimensional data.</p>
 <p>Let’s inspect the type of object that’s returned when we access a data variable from an xarray Dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -12314,7 +12314,7 @@ Attributes:
 </div>
 </div>
 </div>
-<p>See <a class="reference internal" href="../workshop-3/module-3-snps.html"><span class="doc std std-doc">workshop 3, module 3</span></a> for more information about SNP calls.</p>
+<p>See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-3-snps.html">workshop 3, module 3</a> for more information about SNP calls.</p>
 </section>
 <section id="cnv-calls">
 <h3>CNV calls<a class="headerlink" href="#cnv-calls" title="Permalink to this headline">#</a></h3>
@@ -14276,12 +14276,12 @@ Attributes:
 </div>
 </div>
 </div>
-<p>For more information about CNV data, see <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html"><span class="doc std std-doc">workshop 2, module 3</span></a>.</p>
+<p>For more information about CNV data, see <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/module-3-cnv-calling.html">workshop 2, module 3</a>.</p>
 </section>
 <section id="allele-frequencies">
 <h3>Allele frequencies<a class="headerlink" href="#allele-frequencies" title="Permalink to this headline">#</a></h3>
 <p>We also use an xarray Dataset to hold data about SNP or CNV allele frequencies, when we need sufficient data to make time series plots or interactive maps.</p>
-<p>E.g., the code below generates an xarray Dataset with CNV frequencies for genes in the Cyp6aa/p gene cluster on chromosome arm 2R, grouping samples by region (admin1_iso) and year:</p>
+<p>E.g., the code below generates an xarray Dataset with CNV frequencies for genes in the Cyp6aa/p gene cluster on chromosome arm 2R, grouping samples by region (“admin1_iso”) and year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_cnv_ds</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv_frequencies_advanced</span><span class="p">(</span>
@@ -15085,6 +15085,7 @@ Attributes:
 {"model_id": "fc65ba7a81744aa78966cbb8ceeb858c", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
+<p>For more information about analysing gene CNV frequencies, see <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/module-4-cnv-frequencies.html">workshop 2, module 4</a>. For more invormation about analysing SNP allele frequencies, see <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>.</p>
 </section>
 </section>
 <section id="well-done">
@@ -15101,7 +15102,7 @@ Attributes:
 <li><p>The geographical coordinates for Muheza are approximately latitude -4.928, longitude 38.749.</p></li>
 <li><p>The <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.sel.html">xarray .sel() method</a> accepts an additional <code class="docutils literal notranslate"><span class="pre">method</span></code> parameter. If you provide <code class="docutils literal notranslate"><span class="pre">method=&quot;nearest&quot;</span></code> you can select the grid square nearest to your desired coordinates.</p></li>
 <li><p>Xarray Datasets have a <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_dataframe.html">.to_dataframe()</a> method which allows you to convert to a pandas DataFrame.</p></li>
-<li><p>You could use plotly express to make a line plot of year against ITN use, similar to what we did in <a class="reference internal" href="../workshop-3/module-1-plotly.html"><span class="doc std std-doc">workshop 3, module 1</span></a>.</p></li>
+<li><p>You could use plotly express to make a line plot of year against ITN use, similar to what we did in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-1-plotly.html">workshop 3, module 1</a>.</p></li>
 </ul>
 </section>
 <section id="defi-francais">
@@ -15111,7 +15112,7 @@ Attributes:
 <li><p>Les coordonnées géographiques de Muheza sont approximativement latitude -4.928 et  longitude 38.749.</p></li>
 <li><p>La méthode <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.sel.html">xarray .sel()</a> accepte un paramètre supplémentaire <code class="docutils literal notranslate"><span class="pre">method</span></code>. Si vous utilisez, <code class="docutils literal notranslate"><span class="pre">method=&quot;nearest&quot;</span></code>, vous pouvez sélectionner la zone la plus proche des coordonnées que vous voulez.</p></li>
 <li><p>Les datasets xarray ont une méthode <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.to_dataframe.html">.to_dataframe()</a> qui permet de les convertir en DataFrames.</p></li>
-<li><p>Vous pouvez utiliser plotly express pour créer un diagramme à lignes des années et de l’utilisation des ITN de la même manière que lors du <a class="reference internal" href="../workshop-3/module-1-plotly.html"><span class="doc std std-doc">Module 1 du Workshop 3</span></a>.</p></li>
+<li><p>Vous pouvez utiliser plotly express pour créer un diagramme à lignes des années et de l’utilisation des ITN de la même manière que lors du <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-1-plotly.html">Module 1 du Workshop 3</a>.</p></li>
 </ul>
 </section>
 </section>
