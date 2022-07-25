@@ -16,7 +16,7 @@ Clone your fork. E.g.:
 
 ```bash
 git clone git@github.com:alimanfoo/anopheles-genomic-surveillance.github.io.git
-cd anopheles-genomic-surveillance
+cd anopheles-genomic-surveillance.github.io
 ```
 
 Create a Python virtual environment to use as the development environment. There are various different ways to create a virtual environment. E.g., if you have virtualenvwrapper:
