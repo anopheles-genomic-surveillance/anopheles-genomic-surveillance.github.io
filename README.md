@@ -51,4 +51,14 @@ workon anopheles-genomic-surveillance-dev
 jb build docs
 ```
 
-This should render the book as HTML files. The command will show where the HTML files have been created, so you can preview them in a browser.
+This should render the book as HTML files. The command will show where
+the HTML files have been created, so you can preview them in a
+browser.
+
+In some cases you may need to preview the HTML files via an HTTP
+server. You can run an HTTP server locally with this command:
+
+```bash
+python -m http.server --directory docs/_build/html
+```
+
