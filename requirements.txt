@@ -1,6 +1,5 @@
-jupyter-book==0.13.0
-malariagen_data==6.0.0
+jupyter-book==0.13.1
+malariagen_data==6.1.0
 openpyxl
 rioxarray
 matplotlib
-
