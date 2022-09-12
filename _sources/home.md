@@ -19,7 +19,7 @@ The course will consist of a series of workshops. The workshop programme is as f
 * {doc}`workshop-3/about`
 * {doc}`workshop-4/about`
 * {doc}`workshop-5/about`
-* Workshop 6 - Detecting genes under recent positive selection (planned)
+* {doc}`workshop-6/about`
 * Workshop 7 - Gene flow and the spread of insecticide resistance (planned)
 * Workshop 8 - Creating a genomic surveillance report (planned)
 
