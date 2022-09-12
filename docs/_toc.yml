@@ -40,3 +40,10 @@ parts:
     - file: workshop-5/module-2-diversity
     - file: workshop-5/module-3-stats
     - file: workshop-5/module-4-roh
+  - caption: Workshop 6
+    chapters:
+    - file: workshop-6/about
+    - file: workshop-6/module-1-haplotypes
+    - file: workshop-6/module-2-selection
+    - file: workshop-6/module-3-gwss
+    - file: workshop-6/module-4-primers
