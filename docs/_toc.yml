@@ -47,3 +47,10 @@ parts:
     - file: workshop-6/module-2-selection
     - file: workshop-6/module-3-gwss
     - file: workshop-6/module-4-primers
+  - caption: Workshop 7
+    chapters:
+    - file: workshop-7/about
+    - file: workshop-7/module-1-op-ir
+    - file: workshop-7/module-2-gene-flow
+    - file: workshop-7/module-3-haplotype-clustering
+    - file: workshop-7/module-4-haplotype-networks
