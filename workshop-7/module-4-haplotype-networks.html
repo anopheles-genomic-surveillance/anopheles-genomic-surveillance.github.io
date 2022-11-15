@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Module 4 - Investigating gene flow at loci of interest using haplotype networks &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Module 3 - Investigating gene flow at loci of interest using haplotype clustering" href="module-3-haplotype-clustering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/about.html">
+   Workshop 1 - Pyrethroid target-site resistance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-1-colab.html">
+   Module 1 - Interactive cloud computing with Google Colaboratory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">
+   Module 2 - Accessing and exploring
+   <em>
+    Anopheles
+   </em>
+   genomic data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-3-genome.html">
+   Module 3 - Navigating the
+   <em>
+    Anopheles gambiae
+   </em>
+   reference genome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">
+   Module 4 - Analysing SNPs in the
+   <em>
+    Vgsc
+   </em>
+   gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/journal-club.html">
+   Journal club - Clarkson et al. (2021)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/about.html">
+   Workshop 2 - Metabolic insecticide resistance and copy number variation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-1-pandas.html">
+   Module 1 - Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">
+   Module 2 - The genetic basis of metabolic resistance to insecticides in
+   <em>
+    Anopheles
+   </em>
+   mosquitoes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">
+   Module 3 - Detecting CNVs from genome sequence data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">
+   Module 4 - Analysing CNV frequencies at metabolic resistance genes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/journal-club.html">
+   Journal club - Lucas et al. (2019)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/about.html">
+   Workshop 3 - Population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
+   Module 1 - Plotting with Plotly Express
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
+   Module 2 - The biology of population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-3-snps.html">
+   Module 3 - Genome-wide SNP data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-4-pca.html">
+   Module 4 - Detecting population structure using PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/journal-club.html">
+   Journal club - Ag1000G Consortium (2017)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/journal-club.html">
+   Journal club - Tennessen et al. (2020)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/about.html">
+   Workshop 5 - Genetic diversity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
+   Module 1 - Xarray datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
+   Module 2 - Introduction to genetic diversity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-3-stats.html">
+   Module 3 - Genetic diversity summary statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-4-roh.html">
+   Module 4 - Heterozygosity and runs of homozygosity
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/about.html">
+   Workshop 6 - Detecting genes under recent positive selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
+   Module 1 - Haplotypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-2-selection.html">
+   Module 2 - The biology of selective sweeps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
+   Module 3 - Detecting new forms of insecticide resistance using selection scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-4-primers.html">
+   Module 4 - AgamPrimer - Primer Design in
+   <em>
+    Anopheles gambiae
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Workshop 7 - Gene flow and the spread of insecticide resistance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-1-op-ir.html">
+   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-2-gene-flow.html">
+   Module 2 - Adaptive gene flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-3-haplotype-clustering.html">
+   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 4 - Investigating gene flow at loci of interest using haplotype networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-7/module-4-haplotype-networks.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-7/module-4-haplotype-networks.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-7/module-4-haplotype-networks.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#haplotype-networks">
+   Haplotype networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-interpretation">
+     Technical interpretation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutionary-interpretation">
+     Evolutionary interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-1">
+   Practical exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-ace1">
+   Example:
+   <em>
+    Ace1
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ace1-hierarchical-clustering-re-cap">
+     <em>
+      Ace1
+     </em>
+     hierarchical clustering re-cap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ace1-haplotype-networks">
+     <em>
+      Ace1
+     </em>
+     haplotype networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-2">
+   Practical exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-gste2">
+   Example:
+   <em>
+    Gste2
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-3">
+   Practical exercise 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#well-done">
+   Well done!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Module 4 - Investigating gene flow at loci of interest using haplotype networks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#haplotype-networks">
+   Haplotype networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-interpretation">
+     Technical interpretation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutionary-interpretation">
+     Evolutionary interpretation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-1">
+   Practical exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-ace1">
+   Example:
+   <em>
+    Ace1
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ace1-hierarchical-clustering-re-cap">
+     <em>
+      Ace1
+     </em>
+     hierarchical clustering re-cap
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ace1-haplotype-networks">
+     <em>
+      Ace1
+     </em>
+     haplotype networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-2">
+   Practical exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-gste2">
+   Example:
+   <em>
+    Gste2
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercise-3">
+   Practical exercise 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#well-done">
+   Well done!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><img alt="banner" src="https://anopheles-genomic-surveillance.github.io/_images/banner.jpg" /></p>
+<p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
+<p><strong><a class="reference internal" href="about.html"><span class="doc std std-doc">Workshop 7</span></a> - Gene flow and the spread of insecticide resistance</strong></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="module-4-investigating-gene-flow-at-loci-of-interest-using-haplotype-networks">
+<h1>Module 4 - Investigating gene flow at loci of interest using haplotype networks<a class="headerlink" href="#module-4-investigating-gene-flow-at-loci-of-interest-using-haplotype-networks" title="Permalink to this headline">#</a></h1>
+<p><strong>Theme: Analysis</strong></p>
+<p>In module 2 of workshop 7, we learnt about <strong>selective sweeps</strong> being shared between populations through <strong>adaptive gene flow</strong>, and in and module 3 we used hierarchical haplotype clustering to investigate and visualise haplotypes spreading between countries and species, allowing us to track gene flow at insecticide resistance loci. We also have another methodology in our armamentarium which lets us visualise the relationship between haplotypes in a different way, and that is <strong>haplotype networks</strong>. In this module we will learn how to create and interpret haplotype networks to analyse gene flow at loci associated with insecticide resistance.</p>
+<p><strong>Please note: This module contains interactive plots using Plotly Dash and Cytoscape.js. These plots will not be visible on the course website, but can be generated by running the notebook for yourself. To run this notebook, click the rocket icon at the top of the page then select “Colab”.</strong></p>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Understand the theory behind haplotype networks.</p></li>
+<li><p>Use the malariagen_data python package to build haplotype networks for genomic regions with evidence of adaptive gene flow.</p></li>
+<li><p>Learn how to interpret haplotype networks to find evidence for gene flow events between countries or species.</p></li>
+</ul>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/C8LRBAq9Hpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/PJe1wSSo19Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<p>First, let’s begin by installing and importing some Python packages, and configuring access to <em>Anopheles</em> genomic data from the MalariaGEN Ag3.0 data resource.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -q malariagen_data
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malariagen_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
+<span class="n">ag3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="haplotype-networks">
+<h2>Haplotype networks<a class="headerlink" href="#haplotype-networks" title="Permalink to this headline">#</a></h2>
+<p>We have an experimental function for building haplotype networks in the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> python package (we’re still ironing out some bugs!). Let’s have a look at the doc string for the <code class="docutils literal notranslate"><span class="pre">ag3.plot_haplotype_network()</span></code> function by using “?”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ag3.plot_haplotype_network<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The required parameters, <code class="docutils literal notranslate"><span class="pre">region</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis</span></code> are familiar to us by now, but there are a some new optional parameters here that might be useful to understand.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">max_dist=</span></code> This is the maximum distance in <em>n</em> SNPs where the algorithm will join haplotype nodes together as one network, after which it will split the nodes in to separate networks. The default here is 2 SNPs. We will see an example of how this works shortly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color=</span></code> Identifies a column in the sample metadata which determines the colour of pie chart segments within nodes. <em>e.g.</em> we could use “country” or “taxon” columns.</p></li>
+</ul>
+<p>It is also worth knowing that if you get <strong>403 errors</strong> instead of figures, try reloading your browser tab or restart your browser.</p>
+<p>Let’s build a haplotype network around <em>Kdr</em> locus in the <em>Vgsc</em> gene for all the <em>An. coluzzii</em> samples in Ag3.0, and look at the output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="technical-interpretation">
+<h3>Technical interpretation<a class="headerlink" href="#technical-interpretation" title="Permalink to this headline">#</a></h3>
+<p>The output figure represents identical haplotypes as <strong>nodes</strong> (circles), the larger the node, the greater the number of identical haplotypes. In this example, the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter has been set to the “country” column of the haplotype metadata, so the node colour proportions represent the countries where that haplotype was present in our data set. We often also set the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter to “taxon”, in which case, node colour proportion represents the species which carried that haplotype. If we click or tap a node, information about its composition is provided at the bottom of the figure. This information relates the the <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter, <em>i.e.</em> if <code class="docutils literal notranslate"><span class="pre">color=taxon</span></code>, the information will be about species composition. Nodes can also be moved to aid visualisation (<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">click</span></code> to select multiple), and the whole figure can be zoomed in and out using the mouse wheel.</p>
+<p>The <strong>edges</strong> (lines) that join nodes together represent the genetic distance between the nodes in SNPs. Each edge is a single SNP difference.</p>
+<p>In the <em>Vgsc</em> example, with the <code class="docutils literal notranslate"><span class="pre">max_dist</span></code> (maximum distance) parameter set to two, we se each node in these networks is separated by a maximum genetic distance of 2 SNPs, shown as two edges with a small grey node in the middle. If we click on a small grey node we see “No. haplotypes: 0”. The evolutionary relationship between these haplotype nodes either side of the small node has been inferred as we don’t actually have the intermediate haplotype (with only one SNP difference) in our data set. Let’s increase the <code class="docutils literal notranslate"><span class="pre">max_dist</span></code> parameter and see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we increase the <code class="docutils literal notranslate"><span class="pre">max_dist</span></code> parameter to four SNPs, we see haplotypes linked together by up to three “intermediate” node, the network has found connections between more distantly related haplotypes. We generally use <code class="docutils literal notranslate"><span class="pre">max_dist=2</span></code>, mainly because we’re interested here only in groups of very closely related haplotypes, which are therefore very likely to share a recent common origin.</p>
+<p>To aid interpretation, <strong>only networks containing more than one haplotype are represented in the output figure</strong>. This means that if a particular haplotype is found only once in our data set (<em>i.e.</em> a singleton haplotype), and that haplotype is more than the <code class="docutils literal notranslate"><span class="pre">max_dist</span></code> number of SNPs different from any other haplotype, it not be shown.</p>
+</section>
+<section id="evolutionary-interpretation">
+<h3>Evolutionary interpretation<a class="headerlink" href="#evolutionary-interpretation" title="Permalink to this headline">#</a></h3>
+<p>Let’s return to the <em>Vgsc</em> network example with <code class="docutils literal notranslate"><span class="pre">max_dist=2</span></code> and try to interpret the evolutionary inference with respect to insecticide resistance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>When a fitness increasing mutation occurs, haplotype it resides on comes under selection and it increases in frequency. So, here we’re interested especially in the large nodes, because these are very likely to be <strong>high frequency haplotypes experiencing positive selection</strong>.</p></li>
+<li><p>During a selective sweep, some additional mutations will occur on the original haplotype. These could be neutral or they could be secondary functional mutations (<em>i.e.</em> further increasing fitness), but key point is that these additional mutations occur, and give us a network of closely related haplotypes. We can infer that each network of connected haplotypes have a recent common origin.</p></li>
+<li><p>If a network of connected haplotypes contains haplotypes from two or more countries, this is evidence for adaptive gene flow. Particularly a large node containing haplotypes from multiple countries, this is very strong evidence for adaptive gene flow because exactly the same haplotype is found across countries.</p></li>
+<li><p>Likewise, if a network of connected haplotypes contains haplotypes from two or more species, this is also evidence for a type of adaptive gene flow called <strong>adaptive introgression</strong>. Again, a large node containing haplotypes from multiple species, is very strong evidence for adaptive gene flow.</p></li>
+</ul>
+<p>The most striking feature of this <em>Vgsc</em> network is the very large and complex network at the top the figure. The larger node colours show that there are several high frequency haplotypes, closely related to each other, shared across countries. This is a classic signal of adaptive gene flow and in this case, we know from previous research, the haplotypes all carry the L995F <em>kdr</em> mutations that confers resistance to pyrethroids and DDT. Furthermore, the multiple large nodes suggest that secondary mutations have recently occurred on an already selected haplotype, then these new haplotypes have increased in frequency, likely also under selection.</p>
+<p>We can also see some smaller complex networks, which suggest potential selective sweeps, two of which show evidence of adaptive gene flow between countries (sharing of identical haplotypes).</p>
+<p>The smallest networks are fairly uninformative, and could be considered noise.</p>
+<p>Now we have an idea how to run and interpret haplotype networks, let’s look at some insecticide resistance loci we looked at in module 3.</p>
+</section>
+</section>
+<section id="practical-exercise-1">
+<h2>Practical exercise 1<a class="headerlink" href="#practical-exercise-1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Repeat the <em>Vgsc</em> network analysis, but this time investigate adaptive gene flow (introgression) between <em>An. gambiae</em> and <em>coluzzii</em>. <em>HINT</em>: <code class="docutils literal notranslate"><span class="pre">color=?????</span></code>.</p></li>
+<li><p>Is there evidence of adaptive gene flow between species?</p></li>
+</ul>
+</section>
+<section id="example-ace1">
+<h2>Example: <em>Ace1</em><a class="headerlink" href="#example-ace1" title="Permalink to this headline">#</a></h2>
+<p>We’ve heard about the <em>Ace1</em> genes involvement in organophosphate insecticide resistance, and in the last module, we’ve also seen the results of visualising the relationships between haplotypes at this locus using <strong>hierarchical clustering</strong>. Let’s first remind ourselved what that looked like for <em>Ace1</em> with <em>An. gambiae</em> haplotypes from from Ghana and Burkina Faso..</p>
+<section id="ace1-hierarchical-clustering-re-cap">
+<h3><em>Ace1</em> hierarchical clustering re-cap<a class="headerlink" href="#ace1-hierarchical-clustering-re-cap" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:3,470,000-3,490,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;] &amp; taxon == &quot;gambiae&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Towards the right hand side of the dendrogram, we can see a region where there are haplotypes closely related to each other. By zooming in we can find that this distance is &lt;5 SNPs between haplotypes, rather than &gt;50 SNPs distance we see elsewhere in the figure. This pattern is suggestive of a selective sweep, and as it includes multiple countries, is also suggestive of <strong>adaptive gene flow</strong>.</p>
+<p>Adaptive gene flow is where a fitness improving mutation increases in frequency and spreads across space, between populations and/or between different species. Here we are detecting the increase and spread of the haplotype which carries this locus under positive selection. Given the importance of this gene to insecticide action and the high evolutionary pressure that these chemicals put on mosquitoes, this signal may well be driven by a resistance phenotype associated locus.</p>
+<p>Let’s investigate the same region but using haplotype networks.</p>
+</section>
+<section id="ace1-haplotype-networks">
+<h3><em>Ace1</em> haplotype networks<a class="headerlink" href="#ace1-haplotype-networks" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:3,470,000-3,490,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;] &amp; taxon == &quot;gambiae&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking back at the hierarchical clustering analysis of <em>Ace1</em>, the vast majority of the dendrogram leaves (haplotypes) have long branches (genetic distances) to their nearest neighbours. All of those singleton haplotypes, more that 2 SNPs distance from any other haplotypes, are filtered out in the network analysis as we are only interested in high frequency haplotypes, and networks of closely related haplotypes, because they are likely to be haplotypes under recent positive selection. What remains are the haplotypes which make us the networks we can see above, a much simplified picture of the genetic relationships.</p>
+<p>The largest network corresponds to the selective sweep signal we saw in the clustering analysis. Clicking on the largest node, we see it contains 15 identical haplotypes, 11 from Burkina Faso and four from Ghana. As expected, this corresponds perfectly with what we see if we zoom in to the far right side of the clustering figure and roll over the leaves with our mouse, further evidence this haplotype has spread, under selection between countries. Several larger nodes, closely related to each other gives us evidence that the selection is recent (as we might expect if driven by malaria control insecticidal pressures).</p>
+</section>
+</section>
+<section id="practical-exercise-2">
+<h2>Practical exercise 2<a class="headerlink" href="#practical-exercise-2" title="Permalink to this headline">#</a></h2>
+<p>For <em>Ace1</em> add <em>coluzzii</em> samples as well, colour the nodes by taxon and take another look at these networks. <em>HINT</em> <code class="docutils literal notranslate"><span class="pre">sample_query=</span> <span class="pre">'country</span> <span class="pre">in</span> <span class="pre">[&quot;Ghana&quot;,</span> <span class="pre">&quot;Burkina</span> <span class="pre">Faso&quot;]</span> <span class="pre">&amp;</span> <span class="pre">taxon</span> <span class="pre">in</span> <span class="pre">[&quot;gambiae&quot;,</span> <span class="pre">&quot;coluzzii&quot;]'</span></code></p>
+<ul class="simple">
+<li><p>is there evidence of adaptive introgression of haplotypes between species at the <em>Ace1</em> locus?</p></li>
+</ul>
+</section>
+<section id="example-gste2">
+<h2>Example: <em>Gste2</em><a class="headerlink" href="#example-gste2" title="Permalink to this headline">#</a></h2>
+<p>We have seen that Gste2 gene is associated with insecticide resistance, and we saw evidence for adaptive gene flow at this locus using hierarchical clustering. Lets now perform a haplotype networking analysis at this gene and compare the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;taxon&#39;</span><span class="p">,</span>
+    <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;country&#39;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The haplotype network figures make it easy to spot the selective sweeps and gene flow between Burkina Faso and Ghana (but not Cote d’Ivoire) and the adaptive introgression of haplotypes between <em>gambiae</em> and <em>coluzzii</em> at this locus.</p>
+</section>
+<section id="practical-exercise-3">
+<h2>Practical exercise 3<a class="headerlink" href="#practical-exercise-3" title="Permalink to this headline">#</a></h2>
+<p>The cytochrome P450 <em>CYP9K1</em> is associated with metabolic pyrethroid resistance. Run a haplotype clustering analysis on samples from Ghana and Cote d’Ivoire on this region. <em>HINT</em>:  region=’X:15,240,000-15,250,000’</p>
+<ul class="simple">
+<li><p>is there evidence of selection?</p></li>
+<li><p>is there evidence of adaptive gene flow?</p></li>
+<li><p>if so, between countries and/or species?</p></li>
+</ul>
+</section>
+<section id="well-done">
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
+<p>In this module we have:</p>
+<ul class="simple">
+<li><p>Learnt about the theory behind haplotype networks.</p></li>
+<li><p>Used the malariagen_data python package to build haplotype networks for genomic regions with evidence of adaptive gene flow.</p></li>
+<li><p>Learnt how to interpret haplotype networks to discern movement of insecticide resistance loci between countries and species.</p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Open this notebook in Google Colab and run it for yourself from top to bottom. As you run through the notebook, cell by cell, think about what each cell is doing, and try the practical exercises along the way.</p>
+<p>Have go at the practical exercises, but please don’t worry if you don’t have time to do them all during the practical session, and please ask the teaching assistants for help if you are stuck.</p>
+<p>Hint: To open the notebook in Google Colab, click the rocket icon at the top of the page, then select “Colab” from the drop-down menu.</p>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Pendant que vous exécutez le notebook, cellule par cellule, pensez à ce que chaque cellule fait et essayez de faire les exercices quand vous les rencontrez.</p>
+<p>Essayez de faire les exercices mais ne vous inquiétez pas si vous n’avez pas le temps de tout faire pendant la séance appliquée et n’hésitez pas à demander aux enseignants assistants si vous avez besoin d’aide parce que vous êtes bloqués.</p>
+<p>Indice: Pour ouvrir le notebook dans Google Colab, cliquer sur l’icône de fusée au sommet de cette page puis choisissez “Colab” dans le menu déroulant.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-workshop-7-dev-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-workshop-7-dev-py",
+            path: "./workshop-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-workshop-7-dev-py'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="module-3-haplotype-clustering.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
