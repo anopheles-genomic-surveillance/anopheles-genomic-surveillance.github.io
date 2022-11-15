@@ -1,5 +1,6 @@
 jupyter-book==0.13.1
-malariagen_data==6.1.0
+malariagen_data==7.0.3
 openpyxl
 rioxarray
 matplotlib
+jsonschema>=3
