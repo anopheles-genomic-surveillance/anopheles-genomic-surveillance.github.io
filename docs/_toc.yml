@@ -54,3 +54,10 @@ parts:
     - file: workshop-7/module-2-gene-flow
     - file: workshop-7/module-3-haplotype-clustering
     - file: workshop-7/module-4-haplotype-networks
+  - caption: Workshop 8
+    chapters:
+    - file: workshop-8/about
+    - file: workshop-8/module-1-planning-analysis
+    - file: workshop-8/module-2-presenting-results
+    - file: workshop-8/module-3-genomic-surveillance-tanzania
+    - file: workshop-8/module-4-genomic-surveillance-ghana
