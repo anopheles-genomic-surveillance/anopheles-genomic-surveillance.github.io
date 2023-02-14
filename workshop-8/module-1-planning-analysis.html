@@ -1,0 +1,1497 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Module 1 - Planning a genomic surveillance exploratory data analysis &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Workshop 8 - Analysis planning and reporting" href="about.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/about.html">
+   Workshop 1 - Pyrethroid target-site resistance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-1-colab.html">
+   Module 1 - Interactive cloud computing with Google Colaboratory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">
+   Module 2 - Accessing and exploring
+   <em>
+    Anopheles
+   </em>
+   genomic data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-3-genome.html">
+   Module 3 - Navigating the
+   <em>
+    Anopheles gambiae
+   </em>
+   reference genome
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">
+   Module 4 - Analysing SNPs in the
+   <em>
+    Vgsc
+   </em>
+   gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-1/journal-club.html">
+   Journal club - Clarkson et al. (2021)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/about.html">
+   Workshop 2 - Metabolic insecticide resistance and copy number variation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-1-pandas.html">
+   Module 1 - Introduction to pandas DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">
+   Module 2 - The genetic basis of metabolic resistance to insecticides in
+   <em>
+    Anopheles
+   </em>
+   mosquitoes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">
+   Module 3 - Detecting CNVs from genome sequence data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">
+   Module 4 - Analysing CNV frequencies at metabolic resistance genes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-2/journal-club.html">
+   Journal club - Lucas et al. (2019)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/about.html">
+   Workshop 3 - Population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
+   Module 1 - Plotting with Plotly Express
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
+   Module 2 - The biology of population structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-3-snps.html">
+   Module 3 - Genome-wide SNP data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/module-4-pca.html">
+   Module 4 - Detecting population structure using PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-3/journal-club.html">
+   Journal club - Ag1000G Consortium (2017)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/about.html">
+   Workshop 4 - Cryptic species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
+   Module 1 - NumPy arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
+   Module 2 - Species complexes and cryptic taxa in malaria vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-3-aims.html">
+   Module 3 - Ancestry-informative markers (AIMs)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
+   Module 4 - Discovering cryptic taxa
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-4/journal-club.html">
+   Journal club - Tennessen et al. (2020)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/about.html">
+   Workshop 5 - Genetic diversity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
+   Module 1 - Xarray datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
+   Module 2 - Introduction to genetic diversity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-3-stats.html">
+   Module 3 - Genetic diversity summary statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-5/module-4-roh.html">
+   Module 4 - Heterozygosity and runs of homozygosity
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/about.html">
+   Workshop 6 - Detecting genes under recent positive selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
+   Module 1 - Haplotypes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-2-selection.html">
+   Module 2 - The biology of selective sweeps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
+   Module 3 - Detecting new forms of insecticide resistance using selection scans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-6/module-4-primers.html">
+   Module 4 - AgamPrimer - Primer Design in
+   <em>
+    Anopheles gambiae
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 7
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-7/about.html">
+   Workshop 7 - Gene flow and the spread of insecticide resistance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-7/module-1-op-ir.html">
+   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-7/module-2-gene-flow.html">
+   Module 2 - Adaptive gene flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">
+   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">
+   Module 4 - Investigating gene flow at loci of interest using haplotype networks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshop 8
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Workshop 8 - Analysis planning and reporting
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 1 - Planning a genomic surveillance exploratory data analysis
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-8/module-1-planning-analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-8/module-1-planning-analysis.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/workshop-8/module-1-planning-analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-an-exploratory-data-analysis">
+   What is an exploratory data analysis?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-findings">
+   Key findings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-we-hoping-to-describe-in-our-key-findings">
+     What are we hoping to describe in our key findings?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-data-analysis-plan">
+   Exploratory data analysis plan
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-reading">
+     0. Background reading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-sampling">
+     1. Population sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taxonomic-population-structure">
+     2. Taxonomic population structure
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ancestry-informative-marker-aim-analysis">
+       Ancestry informative marker (AIM) analysis
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principal-components-analysis-pca">
+       Principal components analysis (PCA)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure">
+     3. Geographical population structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-cohorts">
+     4. Select cohorts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caveats">
+       Caveats
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genetic-diversity">
+     5. Genetic diversity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#diversity-summary-statistics">
+       Diversity summary statistics
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#runs-of-homozygosity-roh">
+       Runs of homozygosity (ROH)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#insecticide-resistance-variant-frequencies">
+     6. Insecticide resistance variant frequencies
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snps-in-the-vgsc-gene-pyrethroid-target-site-resistance">
+       SNPs in the
+       <em>
+        Vgsc
+       </em>
+       gene (pyrethroid target-site resistance)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cnvs-in-cyp-and-gste-genes-metabolic-resistance">
+       CNVs in
+       <em>
+        Cyp
+       </em>
+       and
+       <em>
+        GSTe
+       </em>
+       genes (metabolic resistance)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes">
+       SNPs and CNVs in
+       <em>
+        Ace1
+       </em>
+       (organophosphate resistance) / Gste genes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genome-wide-selection-scans-gwss">
+     7. Genome-wide selection scans (GWSS)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h12">
+       H12
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adaptive-gene-flow">
+     8. Adaptive gene flow
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h1x">
+       H1X
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haplotype-clustering">
+       Haplotype clustering
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haplotype-networks">
+       Haplotype networks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review-and-refine-key-findings">
+     9. Review and refine key findings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#well-done">
+   Well done!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercises">
+   Practical exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Module 1 - Planning a genomic surveillance exploratory data analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture">
+   Lecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#english">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#francais">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-an-exploratory-data-analysis">
+   What is an exploratory data analysis?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-findings">
+   Key findings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-we-hoping-to-describe-in-our-key-findings">
+     What are we hoping to describe in our key findings?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-data-analysis-plan">
+   Exploratory data analysis plan
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-reading">
+     0. Background reading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-sampling">
+     1. Population sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taxonomic-population-structure">
+     2. Taxonomic population structure
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ancestry-informative-marker-aim-analysis">
+       Ancestry informative marker (AIM) analysis
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principal-components-analysis-pca">
+       Principal components analysis (PCA)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geographical-population-structure">
+     3. Geographical population structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-cohorts">
+     4. Select cohorts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#caveats">
+       Caveats
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genetic-diversity">
+     5. Genetic diversity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#diversity-summary-statistics">
+       Diversity summary statistics
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#runs-of-homozygosity-roh">
+       Runs of homozygosity (ROH)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#insecticide-resistance-variant-frequencies">
+     6. Insecticide resistance variant frequencies
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snps-in-the-vgsc-gene-pyrethroid-target-site-resistance">
+       SNPs in the
+       <em>
+        Vgsc
+       </em>
+       gene (pyrethroid target-site resistance)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cnvs-in-cyp-and-gste-genes-metabolic-resistance">
+       CNVs in
+       <em>
+        Cyp
+       </em>
+       and
+       <em>
+        GSTe
+       </em>
+       genes (metabolic resistance)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes">
+       SNPs and CNVs in
+       <em>
+        Ace1
+       </em>
+       (organophosphate resistance) / Gste genes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genome-wide-selection-scans-gwss">
+     7. Genome-wide selection scans (GWSS)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h12">
+       H12
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adaptive-gene-flow">
+     8. Adaptive gene flow
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#h1x">
+       H1X
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haplotype-clustering">
+       Haplotype clustering
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#haplotype-networks">
+       Haplotype networks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review-and-refine-key-findings">
+     9. Review and refine key findings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#well-done">
+   Well done!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-exercises">
+   Practical exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     English
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Français
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><img alt="banner" src="../_images/banner.jpg" /></p>
+<p><em><strong><a class="reference internal" href="about.html"><span class="doc std std-doc">Workshop 8</span></a> - Planning analysis and presenting results</strong></em></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="module-1-planning-a-genomic-surveillance-exploratory-data-analysis">
+<h1>Module 1 - Planning a genomic surveillance exploratory data analysis<a class="headerlink" href="#module-1-planning-a-genomic-surveillance-exploratory-data-analysis" title="Permalink to this headline">#</a></h1>
+<p><strong>Theme: Analysis</strong></p>
+<p>This module will provide a walk-through guide to the necessary steps to plan and perform a genomic surveillance exploratory data analysis, and distil the outputs into key findings.</p>
+<p>To achieve this, we will revisit the analyses explored in previous workshops.</p>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Define what exploratory data analysis is</p></li>
+<li><p>Create an exploratory data analysis plan</p></li>
+<li><p>Review analysis methods covered previously in the training course</p></li>
+<li><p>Identify key findings</p></li>
+</ul>
+</section>
+<section id="lecture">
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/0oisjYc5wk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">#</a></h2>
+<p>Before starting on the analysis, we assume a couple of things:</p>
+<ul class="simple">
+<li><p>You have data from a surveillance study which has collected mosquitoes from multiple locations or time points within a given study area (e.g., a country, province or region)</p></li>
+<li><p>The mosquitoes were wild-caught and the sampling was relatively unbiased (i.e. mosquitoes collected were representative of natural populations)</p></li>
+<li><p>Mosquitoes have been individually whole-genome sequenced (WGS)</p></li>
+<li><p>Analysis-ready SNP, CNV and haplotype data are available, along with space-time metadata for each sample (where and when each sample was collected)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-is-an-exploratory-data-analysis">
+<h2>What is an exploratory data analysis?<a class="headerlink" href="#what-is-an-exploratory-data-analysis" title="Permalink to this headline">#</a></h2>
+<p>In general, most of the questions we will be interested in can be answered by comparing groups of mosquitoes, for example:</p>
+<ul class="simple">
+<li><p>Comparing different mosquito species</p></li>
+<li><p>Comparing mosquitoes from different geographical locations</p></li>
+<li><p>Comparing mosquitoes from different time points</p></li>
+</ul>
+<p>When comparing these groups, we:</p>
+<ul class="simple">
+<li><p>Look for interesting patterns (differences or similarities within/between them)</p></li>
+<li><p>Explore how those patterns relate to other variables (e.g., variations in climate, geography, ecosystem, land use, vector biology, vector control intervention coverage, malaria transmission, etc.)</p></li>
+</ul>
+<p>So, for an exploratory data analysis, we want to:</p>
+<ol class="simple">
+<li><p>Find interesting patterns in the genomic data</p></li>
+<li><p>Relate those findings to other variables such as space, time and intervention coverage</p></li>
+</ol>
+</section>
+<section id="key-findings">
+<h2>Key findings<a class="headerlink" href="#key-findings" title="Permalink to this headline">#</a></h2>
+<p>As our analyses progress, we will collect multiple results. We want to assess which ones describe the data accurately, clearly and are interesting. We call these, <strong>key findings</strong>.</p>
+<p>Key findings are observations which you think are scientifically or operationally interesting, and worth communicating to others. They can be:</p>
+<ul class="simple">
+<li><p><strong>Scientifically interesting</strong> = any new insight, i.e., something we didn’t know before</p></li>
+<li><p><strong>Operationally interesting</strong> = anything which might be relevant to our ability to control malaria</p></li>
+</ul>
+<section id="what-are-we-hoping-to-describe-in-our-key-findings">
+<h3>What are we hoping to describe in our key findings?<a class="headerlink" href="#what-are-we-hoping-to-describe-in-our-key-findings" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>New information related to mosquito population biology</p>
+<ul>
+<li><p>identify previously unknown cryptic species</p></li>
+<li><p>identify geographically isolated (or connected) populations</p></li>
+</ul>
+</li>
+<li><p>Identify new biological threats to malaria vector control</p>
+<ul>
+<li><p>new genes or mutations with a potential role in insecticide resistance</p></li>
+<li><p>insecticide resistance mutations spreading between species or countries</p></li>
+</ul>
+</li>
+</ul>
+<p>We have described the assumptions for the data we will be using, and the key findings we are interested in when conducting an exploratory data analysis. Now, let’s explore how we will conduct the analysis.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exploratory-data-analysis-plan">
+<h2>Exploratory data analysis plan<a class="headerlink" href="#exploratory-data-analysis-plan" title="Permalink to this headline">#</a></h2>
+<p>We have divided the analysis plan into 10 steps:</p>
+<ol class="simple">
+<li><p>Background reading</p></li>
+<li><p>Population sampling</p></li>
+<li><p>Taxonomic population structure</p></li>
+<li><p>Geographical population structure</p></li>
+<li><p>Select cohorts</p></li>
+<li><p>Genetic diversity</p></li>
+<li><p>Insecticide resistance variant frequencies</p></li>
+<li><p>Genome-wide selection scans</p></li>
+<li><p>Adaptive gene flow</p></li>
+<li><p>Review &amp; refine key findings</p></li>
+</ol>
+<p>We have covered all of these analyses previously, but not in the same order presented here, as we chose to teach some easier concepts first. The order here provides the steps in the natural order you would use to approach an analysis exercise.</p>
+<p>Depending on the question(s) you are trying to answer you might focus more or less on certain sections described here.</p>
+<p>In summary, you will:</p>
+<ul class="simple">
+<li><p>Prepare for the analysis by finding out relevant background information.</p></li>
+<li><p>Explore what mosquitoes have been sequences and how they are genetically related.</p></li>
+<li><p>Decide how to group mosquitoes into cohorts for comparisons.</p></li>
+<li><p>Analyse and compare the mosquito cohorts.</p></li>
+<li><p>Synthesise and interpret the results.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="background-reading">
+<h3>0. Background reading<a class="headerlink" href="#background-reading" title="Permalink to this headline">#</a></h3>
+<p>The first step is to prepare for the exploratory data analysis, we can do this by:</p>
+<ul class="simple">
+<li><p>Learning as much as possible about the study area:</p>
+<ul>
+<li><p>Geography</p></li>
+<li><p>Malaria epidemiology</p></li>
+<li><p>Vector ecology and population biology</p></li>
+</ul>
+</li>
+<li><p>Learning about the study itself:</p>
+<ul>
+<li><p>Sampling design</p></li>
+<li><p>Data collection</p></li>
+</ul>
+</li>
+</ul>
+<p>How long you spend on this step depends on your familiarity with the study area, the depth and breadth of literature available, and on how/why the mosquitoes where collected on this study.</p>
+</section>
+<hr class="docutils" />
+<section id="population-sampling">
+<h3>1. Population sampling<a class="headerlink" href="#population-sampling" title="Permalink to this headline">#</a></h3>
+<p>For this section, we want to answer:</p>
+<ul class="simple">
+<li><p>How many mosquitoes were sequenced in the study?</p></li>
+<li><p>Where and when were they collected?</p></li>
+</ul>
+<p>For which, we will:</p>
+<p><strong>Analyse the sample metadata and summarise</strong> using pivot tables, bar plots and interactive maps. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> for examples.</p>
+<p><img alt="m1-pop-sampling" src="../_images/m1-pop-sampling.png" /></p>
+<p>Here we can see examples of the plots we will use. We have: i) a pivot table where we have summarised taxa from different locations and timepoints and ii) an interactive map that allows us to see how the samples are disributed across the study area.</p>
+<p>Additionally, you might also want to check for:</p>
+<ul class="simple">
+<li><p>Any genomic data available from the same study area from other studies.</p></li>
+<li><p>Any genomic data available from neighbouring countries.
+Depending on your question, it might be relevant to compare with these data and include it as part of the analyses conducted.</p></li>
+</ul>
+<p>Then, you need to decide on your sample inclusion criteria (i.e., which samples are you going to include in your exploratory analysis?). In your analysis code, sample inclusion criteria can be specified via the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter or the <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter or a combination of both, you can use these to filter for the samples you want to keep on your analysis going forward.</p>
+</section>
+<hr class="docutils" />
+<section id="taxonomic-population-structure">
+<h3>2. Taxonomic population structure<a class="headerlink" href="#taxonomic-population-structure" title="Permalink to this headline">#</a></h3>
+<p>For this section, we want to answer:</p>
+<ul class="simple">
+<li><p>What mosquito taxa (species) are represented?</p></li>
+<li><p>Is there any evidence for previously unknown or putative cryptic taxa?</p></li>
+<li><p>Is there any evidence for unusual levels of hybridisation between taxa?</p></li>
+</ul>
+<p>Relevant analyses:</p>
+<section id="ancestry-informative-marker-aim-analysis">
+<h4>Ancestry informative marker (AIM) analysis<a class="headerlink" href="#ancestry-informative-marker-aim-analysis" title="Permalink to this headline">#</a></h4>
+<p>Perform AIM analysis on all samples in the study, to create and inspect AIM heatmaps and AIM fraction scatter plots. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-4/module-3-aims.html">workshop 4, module 3</a>.</p>
+<p><img alt="m1-2-aim" src="../_images/m1-2-aim.png" /></p>
+<p>Here, you want to see which taxa are represented in your sample set. On the example above, we can see a clear-cut case where all the samples fall clearly into one of three expected taxa. However, this may not always be the case.</p>
+</section>
+<section id="principal-components-analysis-pca">
+<h4>Principal components analysis (PCA)<a class="headerlink" href="#principal-components-analysis-pca" title="Permalink to this headline">#</a></h4>
+<p>Perform PCA on all samples in the study. Create PCA scatter plots. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-4/module-4-taxon-analysis.html">workshop 4, module 4</a>.</p>
+<p>Generally, we expect mosquitoes to cluster in the PCA according to established taxa (<em>An. gambiae</em>, <em>An. coluzzii</em>, <em>An. arabiensis</em>) but there are some difficult cases where this does not happen (e.g., Tanzania)</p>
+<p>For unclear scenarios, it can be particularly useful to include samples from other studies in this analysis for comparison.</p>
+<p><img alt="m1-2-pca" src="../_images/m1-2-pca.png" /></p>
+<p>Because taxon assignment is very important but sometimes difficult, the MalariaGEN team regularly performs these analyses for all available samples as part of building each data release. Our taxon assignments are stored in the <code class="docutils literal notranslate"><span class="pre">taxon</span></code> column of the sample metadata but we still recommend you perform these analyses for yourself, to fully understand the taxonomic population structure in your study.</p>
+<p><img alt="m1-2-taxon" src="../_images/m1-2-taxon.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="geographical-population-structure">
+<h3>3. Geographical population structure<a class="headerlink" href="#geographical-population-structure" title="Permalink to this headline">#</a></h3>
+<p>For this section, we want to answer:
+Within each taxon, is there any evidence for geographical isolation, i.e., clustering of mosquitoes according to sampling location?</p>
+<p>Perform a separate PCA for <strong>each taxon</strong>. Create PCA scatter plots and colour by geographical variables such as collection location, administrative division or latitude/longitude coordinates. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-4-pca.html">workshop 3, module 4</a>.</p>
+<p><img alt="m1-3-pca" src="../_images/m1-3-pca.png" /></p>
+<p>It is particularly useful to include samples from other studies in this analysis for comparison.</p>
+</section>
+<hr class="docutils" />
+<section id="select-cohorts">
+<h3>4. Select cohorts<a class="headerlink" href="#select-cohorts" title="Permalink to this headline">#</a></h3>
+<p>Now, we move into grouping the samples into biologically relevant cohorts.</p>
+<p>A “cohort” is a group of mosquitoes sampled from a given geographical area, time and taxon. When deciding cohorts, we need to take into account:</p>
+<ul class="simple">
+<li><p>How to group spatially</p></li>
+<li><p>How to group temporally</p></li>
+<li><p>Which taxa are present</p></li>
+<li><p>Cohort size (<em>i.e.</em>, number of samples in each cohort)</p></li>
+</ul>
+<p>In general, <strong>aim for the finest possible grouping, whilst maintaining cohorts with at least 10 samples each</strong>. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-5/module-3-stats.html#selecting-cohorts">workshop 5, module 3</a>.</p>
+<p>For convenience, MalariaGEN data releases include some useful columns in sample metadata for assigning mosquitoes to cohorts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin1_year</span></code> = grouped by taxon, admin level 1 and year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin1_month</span></code> = grouped by taxon, admin level 1 and month</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin2_year</span></code> = grouped by taxon, admin level 2 and year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin2_month</span></code> = grouped by taxon, admin level 2 and month</p></li>
+</ul>
+<p><img alt="m1-4-cohorts" src="../_images/m1-4-cohorts.png" /></p>
+<p>In this example, we have grouped our samples by <code class="docutils literal notranslate"><span class="pre">cohort_admin2_year</span></code>. You can see that 2 of the cohorts have a sample size smaller than 10, so these will not be used in further analyses.</p>
+<section id="caveats">
+<h4>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Administrative divisions are often convenient for exploratory analysis but can be large and cover multiple sampling locations and different ecosystems</p></li>
+<li><p>After selecting cohorts, we recommend going back and looking at results from the population structure analysis</p>
+<ul>
+<li><p>Do any of the cohorts contain mosquitoes from separate PCA clusters? If so, this could be a problem, may need to group mosquitoes into cohorts differently</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="genetic-diversity">
+<h3>5. Genetic diversity<a class="headerlink" href="#genetic-diversity" title="Permalink to this headline">#</a></h3>
+<p>For this section, we want to answer:</p>
+<ul class="simple">
+<li><p>How genetically diverse are mosquito populations represented by your selected cohorts?</p></li>
+<li><p>Are there any notable similarities and differences in genetic diversity between cohorts?</p></li>
+<li><p>Is there any evidence for recent inbreeding in any cohorts?</p></li>
+</ul>
+<p>Relevant analyses:</p>
+<section id="diversity-summary-statistics">
+<h4>Diversity summary statistics<a class="headerlink" href="#diversity-summary-statistics" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot genetic diversity summary statistics for all cohorts. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-5/module-3-stats.html">workshop 5, module 3</a>.</p>
+<p><img alt="m1-5-stats" src="../_images/m1-5-stats.png" /></p>
+<p>You can summarise these for each cohort using bar plots which will allow you to easily compare values.</p>
+</section>
+<section id="runs-of-homozygosity-roh">
+<h4>Runs of homozygosity (ROH)<a class="headerlink" href="#runs-of-homozygosity-roh" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot runs of homozygosity for individual samples. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-5/module-4-roh.html">workshop 5, module 4</a>.</p>
+<p><img alt="m1-5-roh" src="../_images/m1-5-roh.png" /></p>
+<p>Here, we are looking for long runs of homozygosity which suggest there might be inbreeding. Note this analysis is run on each sample, so if you have many samples, you could choose a random selection for this step.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="insecticide-resistance-variant-frequencies">
+<h3>6. Insecticide resistance variant frequencies<a class="headerlink" href="#insecticide-resistance-variant-frequencies" title="Permalink to this headline">#</a></h3>
+<p>For this section, we want to answer:</p>
+<ul class="simple">
+<li><p>What genetic variants (SNPs and CNVs) are present in known insecticide resistance genes?</p></li>
+<li><p>How do these variant frequencies differ between cohorts?</p></li>
+</ul>
+<p>Relevant analyses:</p>
+<section id="snps-in-the-vgsc-gene-pyrethroid-target-site-resistance">
+<h4>SNPs in the <em>Vgsc</em> gene (pyrethroid target-site resistance)<a class="headerlink" href="#snps-in-the-vgsc-gene-pyrethroid-target-site-resistance" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot frequencies of non-synonymous SNPs in the Vgsc gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>.
+<img alt="m1-6-vgsc" src="../_images/m1-6-vgsc.png" /></p>
+</section>
+<section id="cnvs-in-cyp-and-gste-genes-metabolic-resistance">
+<h4>CNVs in <em>Cyp</em> and <em>GSTe</em> genes (metabolic resistance)<a class="headerlink" href="#cnvs-in-cyp-and-gste-genes-metabolic-resistance" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot frequencies of CNVs in metabolic gene clusters. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/module-4-cnv-frequencies.html">workshop 2, module 4</a>.
+<img alt="m1-6-cnv-cyp" src="../_images/m1-6-cnv-cyp.png" /></p>
+</section>
+<section id="snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes">
+<h4>SNPs and CNVs in  <em>Ace1</em> (organophosphate resistance) / Gste genes<a class="headerlink" href="#snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot frequencies of non-synonymous SNPs and CNVs in the Ace1 gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-1-op-ir.html">workshop 7, module 1</a>.</p>
+<p>To inspect the genetic variants we look at: i) heatmaps that allows us to compare the variants frequencies between different cohorts; ii) interactive maps that show how these frequencies are distributed georgraphically and iii) time series plots to see how frequencies change in time.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="genome-wide-selection-scans-gwss">
+<h3>7. Genome-wide selection scans (GWSS)<a class="headerlink" href="#genome-wide-selection-scans-gwss" title="Permalink to this headline">#</a></h3>
+<p>We want to answer:</p>
+<ul class="simple">
+<li><p>What genome regions are under strong recent positive selection?</p></li>
+<li><p>Are any selection signals at known insecticide resistance genes?</p></li>
+<li><p>Do any selection signals suggest new candidate insecticide resistance genes?</p></li>
+<li><p>How do selection scans compare between cohorts?</p></li>
+</ul>
+<p>Relevant analyses:</p>
+<section id="h12">
+<h4>H12<a class="headerlink" href="#h12" title="Permalink to this headline">#</a></h4>
+<p>Calibrate, compute and plot H12 for each cohort and chromosome arm. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-6/module-3-gwss.html">workshop 6, module 3</a>.</p>
+<p><img alt="m1-7-gwss" src="../_images/m1-7-gwss.png" /></p>
+<p>Here we are looking for outliers that form peaks which suggest recent positive selection. Then, we investigate the genes underneath the peaks, to see if we see any known resisteance genes or new regions that could be involved in resistance.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="adaptive-gene-flow">
+<h3>8. Adaptive gene flow<a class="headerlink" href="#adaptive-gene-flow" title="Permalink to this headline">#</a></h3>
+<p>We want to answer:</p>
+<ul class="simple">
+<li><p>What genome regions are experiencing adaptive gene flow between taxa (introgression) or countries (spatial gene flow)?</p></li>
+<li><p>Which cohorts are connected via adaptive gene flow events?</p></li>
+<li><p>What can this tell us about how insecticide resistance may be spreading?</p></li>
+</ul>
+<p>Relevant analyses:</p>
+<section id="h1x">
+<h4>H1X<a class="headerlink" href="#h1x" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot H1X for pairs of cohorts. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-2-gene-flow.html">workshop 7, module 2</a>.
+Identify peaks, investigate further with haplotype clustering and networks.</p>
+<p><img alt="m1-8-h1x" src="../_images/m1-8-h1x.png" /></p>
+<p>As we are choosing pairs of cohorts to use here, we could compare those where we saw the same signal of selection for two different cohorts. We are looking for peaks, which suggest the same signal of recent selection is shared across the two cohorts. We can further investigate these regions using haplotype clustering and networks.</p>
+</section>
+<section id="haplotype-clustering">
+<h4>Haplotype clustering<a class="headerlink" href="#haplotype-clustering" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot haplotype clustering at selected genome regions where there is evidence of positive selection and adaptive gene flow. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-3-haplotype-clustering.html">workshop 7, module 3</a>.
+<img alt="m1-8-hap-cluster" src="../_images/m1-8-hap-cluster.png" /></p>
+<p>Here, we are looking at clusters of similar haplotypes shared between different countries or species, which would suggest an adaptive gene flow event.</p>
+</section>
+<section id="haplotype-networks">
+<h4>Haplotype networks<a class="headerlink" href="#haplotype-networks" title="Permalink to this headline">#</a></h4>
+<p>Compute and plot haplotype networks at selected genome regions where there is evidence of positive selection and adaptive gene flow. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-4-haplotype-networks.html">workshop 7, module 4</a>.</p>
+<p><img alt="m1-8-hap-network" src="../_images/m1-8-hap-network.png" /></p>
+<p>Similarly to the clustering analysis, we want to identify nodes that are shared between different countries or species, which would provide evidence for an adaptive gene flow event.</p>
+</section>
+</section>
+<section id="review-and-refine-key-findings">
+<h3>9. Review and refine key findings<a class="headerlink" href="#review-and-refine-key-findings" title="Permalink to this headline">#</a></h3>
+<p>After you have finished all of the analyses above, you will find yourself with a lot of information and plots. In this step, you want to distill them, note the most relevant ones and identify <strong>key findings</strong>.</p>
+<p>Key findings are observations which you think are scientifically or operationally interesting, and worth communicating.</p>
+<p>After reviewing all your exploratory analysis, try to write down your key findings as a short list of bullet points in plain language. For example:</p>
+<ul class="simple">
+<li><p><em>I found that within An. gambiae, mosquitoes in the west of the country were genetically distinct from mosquitoes in the east. This is interesting because the central part of the country is much more arid, and so could be preventing An. gambiae mosquitoes from moving freely across the country.</em></p></li>
+<li><p><em>I found a new mutation in the gene targeted by pyrethroid insecticides, which was increasing in frequency in An. coluzzii mosquitoes from the north of the country. This is interesting because it could represent a stronger form of resistance to pyrethroid insecticides.</em></p></li>
+</ul>
+<p>Now, with these clear key findings, you can reflect on:</p>
+<ul class="simple">
+<li><p>Any common themes or threads connect your key findings?</p></li>
+<li><p>Any interesting connections between your key findings and other data or previous surveillance or research in your study area?</p></li>
+<li><p>Starting to join your key findings up into a story</p></li>
+<li><p>Talking your key findings through with a friend or colleague</p></li>
+<li><p>Which plots or results from your exploratory analysis best help to communicate your key findings?</p></li>
+</ul>
+</section>
+</section>
+<section id="well-done">
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
+<p>In this module we have learnt how to:</p>
+<ul class="simple">
+<li><p>Plan and conduct a genomic surveillance exploratory data analysis</p></li>
+<li><p>Distill the outputs into key findings</p></li>
+</ul>
+</section>
+<section id="practical-exercises">
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Now, you can run your own exploratory data analysis. For this:</p>
+<ol class="simple">
+<li><p>Choose a country or set of neighbourhing countries to focus on.</p></li>
+<li><p>Run all the analyses we explored in the order they have been outlined in the exploratory data analysis plan.</p></li>
+<li><p>Identify a maximum of 10 key findings.</p></li>
+</ol>
+<p><strong>Remember:</strong></p>
+<ul class="simple">
+<li><p>You can  use your own data to perform the exercises on (check assumptions above if these data is not part of the MalariaGEN vector observatory).</p></li>
+<li><p>You can use data from other studies in the MalariaGEN vector observatory data to conduct your exploratory data analysis on. These data are open-access but subject to a publication embargo. This means that you will need to obtain permission before publicly communicating any findings.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Vous pouvez exécuter votre analyse de données exploratoire tout suite. Il faut:</p>
+<ol class="simple">
+<li><p>Choisissez-vous un pays, ou un ensemble de pays voisins, sur lequel vous concentrer.</p></li>
+<li><p>Exécutez-vous toutes les analyses que nous avons explorées, en l’ordre que elles ont été décrites dans le plan d’analyse exploratoire.</p></li>
+<li><p>Identifiez-vous un maximum de 10 résultats importants.</p></li>
+</ol>
+<p><strong>Se souvenir:</strong></p>
+<ul class="simple">
+<li><p>Vous pouvez utiliser vos propres données pour effectuer les exercices (vérifiez les hypothèses ci-dessus si ces données ne font pas partie de l’observatoire des vecteurs MalariaGEN).</p></li>
+<li><p>Vous pouvez utiliser les données d’autres études dans l’observatoire des vecteurs MalariaGEN pour effectuer votre analyse exploratoire. Ces données sont &lt;&lt; accès libre &gt;&gt; mais sont aussi restictif par l’embargo de publication. Par conséquence, vous devrez obtenir une autorisation avant de communiquer publiquement toute découverte.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./workshop-8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="about.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workshop 8 - Analysis planning and reporting</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MalariaGEN and PAMCA<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
