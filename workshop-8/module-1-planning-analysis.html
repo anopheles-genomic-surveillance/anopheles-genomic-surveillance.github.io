@@ -1070,13 +1070,13 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="module-1-planning-a-genomic-surveillance-exploratory-data-analysis">
 <h1>Module 1 - Planning a genomic surveillance exploratory data analysis<a class="headerlink" href="#module-1-planning-a-genomic-surveillance-exploratory-data-analysis" title="Permalink to this headline">#</a></h1>
 <p><strong>Theme: Analysis</strong></p>
-<p>This module will provide a walk-through guide to the necessary steps to plan and perform a genomic surveillance exploratory data analysis, and distil the outputs into key findings.</p>
+<p>This module will provide a walk-through guide to the necessary steps to plan and perform a genomic surveillance exploratory data analysis, and to distil the outputs into key findings.</p>
 <p>To achieve this, we will revisit the analyses explored in previous workshops.</p>
 <section id="learning-objectives">
 <h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>After completing this module, you will be able to:</p>
 <ul class="simple">
-<li><p>Define what exploratory data analysis is</p></li>
+<li><p>Define exploratory analysis</p></li>
 <li><p>Create an exploratory data analysis plan</p></li>
 <li><p>Review analysis methods covered previously in the training course</p></li>
 <li><p>Identify key findings</p></li>
@@ -1101,9 +1101,9 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="assumptions">
 <h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">#</a></h2>
-<p>Before starting on the analysis, we assume a couple of things:</p>
+<p>Before starting on the analysis, we make some assumptions:</p>
 <ul class="simple">
-<li><p>You have data from a surveillance study which has collected mosquitoes from multiple locations or time points within a given study area (e.g., a country, province or region)</p></li>
+<li><p>You have data from a surveillance study which has collected mosquitoes from multiple locations or time points within a given study area (<em>e.g.</em>, a country, province or region)</p></li>
 <li><p>The mosquitoes were wild-caught and the sampling was relatively unbiased (i.e. mosquitoes collected were representative of natural populations)</p></li>
 <li><p>Mosquitoes have been individually whole-genome sequenced (WGS)</p></li>
 <li><p>Analysis-ready SNP, CNV and haplotype data are available, along with space-time metadata for each sample (where and when each sample was collected)</p></li>
@@ -1121,7 +1121,7 @@ title="Print to PDF"
 <p>When comparing these groups, we:</p>
 <ul class="simple">
 <li><p>Look for interesting patterns (differences or similarities within/between them)</p></li>
-<li><p>Explore how those patterns relate to other variables (e.g., variations in climate, geography, ecosystem, land use, vector biology, vector control intervention coverage, malaria transmission, etc.)</p></li>
+<li><p>Explore how those patterns relate to other variables (e.g., variations in climate, geography, ecosystem, land use, vector biology, vector control intervention coverage, malaria transmission, <em>etc.</em>)</p></li>
 </ul>
 <p>So, for an exploratory data analysis, we want to:</p>
 <ol class="simple">
@@ -1134,7 +1134,7 @@ title="Print to PDF"
 <p>As our analyses progress, we will collect multiple results. We want to assess which ones describe the data accurately, clearly and are interesting. We call these, <strong>key findings</strong>.</p>
 <p>Key findings are observations which you think are scientifically or operationally interesting, and worth communicating to others. They can be:</p>
 <ul class="simple">
-<li><p><strong>Scientifically interesting</strong> = any new insight, i.e., something we didn’t know before</p></li>
+<li><p><strong>Scientifically interesting</strong> = any new insight, <em>i.e.</em>, something we didn’t know before</p></li>
 <li><p><strong>Operationally interesting</strong> = anything which might be relevant to our ability to control malaria</p></li>
 </ul>
 <section id="what-are-we-hoping-to-describe-in-our-key-findings">
@@ -1148,7 +1148,7 @@ title="Print to PDF"
 </li>
 <li><p>Identify new biological threats to malaria vector control</p>
 <ul>
-<li><p>new genes or mutations with a potential role in insecticide resistance</p></li>
+<li><p>new genes or mutations with a potential roles in insecticide resistance</p></li>
 <li><p>insecticide resistance mutations spreading between species or countries</p></li>
 </ul>
 </li>
@@ -1165,7 +1165,7 @@ title="Print to PDF"
 <li><p>Population sampling</p></li>
 <li><p>Taxonomic population structure</p></li>
 <li><p>Geographical population structure</p></li>
-<li><p>Select cohorts</p></li>
+<li><p>Cohort choice</p></li>
 <li><p>Genetic diversity</p></li>
 <li><p>Insecticide resistance variant frequencies</p></li>
 <li><p>Genome-wide selection scans</p></li>
@@ -1201,7 +1201,7 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<p>How long you spend on this step depends on your familiarity with the study area, the depth and breadth of literature available, and on how/why the mosquitoes where collected on this study.</p>
+<p>How long you spend on this step depends on your familiarity with the study area, the depth and breadth of literature available, and on how/why the mosquitoes were collected in this study.</p>
 </section>
 <hr class="docutils" />
 <section id="population-sampling">
@@ -1221,7 +1221,7 @@ title="Print to PDF"
 <li><p>Any genomic data available from neighbouring countries.
 Depending on your question, it might be relevant to compare with these data and include it as part of the analyses conducted.</p></li>
 </ul>
-<p>Then, you need to decide on your sample inclusion criteria (i.e., which samples are you going to include in your exploratory analysis?). In your analysis code, sample inclusion criteria can be specified via the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter or the <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter or a combination of both, you can use these to filter for the samples you want to keep on your analysis going forward.</p>
+<p>Then, you need to decide on your sample inclusion criteria (<em>i.e.</em>, which samples are you going to include in your exploratory analysis?). In your analysis code, sample inclusion criteria can be specified via the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter or the <code class="docutils literal notranslate"><span class="pre">sample_query</span></code> parameter or a combination of both, you can use these to filter for the samples you want to keep on your analysis going forward.</p>
 </section>
 <hr class="docutils" />
 <section id="taxonomic-population-structure">
@@ -1242,7 +1242,7 @@ Depending on your question, it might be relevant to compare with these data and 
 <section id="principal-components-analysis-pca">
 <h4>Principal components analysis (PCA)<a class="headerlink" href="#principal-components-analysis-pca" title="Permalink to this headline">#</a></h4>
 <p>Perform PCA on all samples in the study. Create PCA scatter plots. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-4/module-4-taxon-analysis.html">workshop 4, module 4</a>.</p>
-<p>Generally, we expect mosquitoes to cluster in the PCA according to established taxa (<em>An. gambiae</em>, <em>An. coluzzii</em>, <em>An. arabiensis</em>) but there are some difficult cases where this does not happen (e.g., Tanzania)</p>
+<p>Generally, we expect mosquitoes to cluster in the PCA according to established taxa (<em>An. gambiae</em>, <em>An. coluzzii</em>, <em>An. arabiensis</em>) but there are some difficult cases where this does not happen.</p>
 <p>For unclear scenarios, it can be particularly useful to include samples from other studies in this analysis for comparison.</p>
 <p><img alt="m1-2-pca" src="../_images/m1-2-pca.png" /></p>
 <p>Because taxon assignment is very important but sometimes difficult, the MalariaGEN team regularly performs these analyses for all available samples as part of building each data release. Our taxon assignments are stored in the <code class="docutils literal notranslate"><span class="pre">taxon</span></code> column of the sample metadata but we still recommend you perform these analyses for yourself, to fully understand the taxonomic population structure in your study.</p>
@@ -1253,7 +1253,7 @@ Depending on your question, it might be relevant to compare with these data and 
 <section id="geographical-population-structure">
 <h3>3. Geographical population structure<a class="headerlink" href="#geographical-population-structure" title="Permalink to this headline">#</a></h3>
 <p>For this section, we want to answer:
-Within each taxon, is there any evidence for geographical isolation, i.e., clustering of mosquitoes according to sampling location?</p>
+Within each taxon, is there any evidence for geographical isolation, <em>i.e.</em>, clustering of mosquitoes according to sampling location?</p>
 <p>Perform a separate PCA for <strong>each taxon</strong>. Create PCA scatter plots and colour by geographical variables such as collection location, administrative division or latitude/longitude coordinates. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-4-pca.html">workshop 3, module 4</a>.</p>
 <p><img alt="m1-3-pca" src="../_images/m1-3-pca.png" /></p>
 <p>It is particularly useful to include samples from other studies in this analysis for comparison.</p>
@@ -1273,8 +1273,10 @@ Within each taxon, is there any evidence for geographical isolation, i.e., clust
 <p>For convenience, MalariaGEN data releases include some useful columns in sample metadata for assigning mosquitoes to cohorts:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin1_year</span></code> = grouped by taxon, admin level 1 and year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin1_quarter</span></code> = grouped by taxon, admin level 1 and year quarter</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin1_month</span></code> = grouped by taxon, admin level 1 and month</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin2_year</span></code> = grouped by taxon, admin level 2 and year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin2_quarter</span></code> = grouped by taxon, admin level 2 and year quarter</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cohort_admin2_month</span></code> = grouped by taxon, admin level 2 and month</p></li>
 </ul>
 <p><img alt="m1-4-cohorts" src="../_images/m1-4-cohorts.png" /></p>
@@ -1296,7 +1298,7 @@ Within each taxon, is there any evidence for geographical isolation, i.e., clust
 <h3>5. Genetic diversity<a class="headerlink" href="#genetic-diversity" title="Permalink to this headline">#</a></h3>
 <p>For this section, we want to answer:</p>
 <ul class="simple">
-<li><p>How genetically diverse are mosquito populations represented by your selected cohorts?</p></li>
+<li><p>How genetically diverse are the mosquito populations represented by our selected cohorts?</p></li>
 <li><p>Are there any notable similarities and differences in genetic diversity between cohorts?</p></li>
 <li><p>Is there any evidence for recent inbreeding in any cohorts?</p></li>
 </ul>
@@ -1325,7 +1327,7 @@ Within each taxon, is there any evidence for geographical isolation, i.e., clust
 <p>Relevant analyses:</p>
 <section id="snps-in-the-vgsc-gene-pyrethroid-target-site-resistance">
 <h4>SNPs in the <em>Vgsc</em> gene (pyrethroid target-site resistance)<a class="headerlink" href="#snps-in-the-vgsc-gene-pyrethroid-target-site-resistance" title="Permalink to this headline">#</a></h4>
-<p>Compute and plot frequencies of non-synonymous SNPs in the Vgsc gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>.
+<p>Compute and plot frequencies of non-synonymous SNPs in the <em>Vgsc</em> gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-4-vgsc-snps.html">workshop 1, module 4</a>.
 <img alt="m1-6-vgsc" src="../_images/m1-6-vgsc.png" /></p>
 </section>
 <section id="cnvs-in-cyp-and-gste-genes-metabolic-resistance">
@@ -1335,7 +1337,7 @@ Within each taxon, is there any evidence for geographical isolation, i.e., clust
 </section>
 <section id="snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes">
 <h4>SNPs and CNVs in  <em>Ace1</em> (organophosphate resistance) / Gste genes<a class="headerlink" href="#snps-and-cnvs-in-ace1-organophosphate-resistance-gste-genes" title="Permalink to this headline">#</a></h4>
-<p>Compute and plot frequencies of non-synonymous SNPs and CNVs in the Ace1 gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-1-op-ir.html">workshop 7, module 1</a>.</p>
+<p>Compute and plot frequencies of non-synonymous SNPs and CNVs in the <em>Ace1</em> gene. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-1-op-ir.html">workshop 7, module 1</a>.</p>
 <p>To inspect the genetic variants we look at: i) heatmaps that allows us to compare the variants frequencies between different cohorts; ii) interactive maps that show how these frequencies are distributed georgraphically and iii) time series plots to see how frequencies change in time.</p>
 </section>
 </section>
@@ -1372,7 +1374,7 @@ Within each taxon, is there any evidence for geographical isolation, i.e., clust
 <p>Compute and plot H1X for pairs of cohorts. See <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/module-2-gene-flow.html">workshop 7, module 2</a>.
 Identify peaks, investigate further with haplotype clustering and networks.</p>
 <p><img alt="m1-8-h1x" src="../_images/m1-8-h1x.png" /></p>
-<p>As we are choosing pairs of cohorts to use here, we could compare those where we saw the same signal of selection for two different cohorts. We are looking for peaks, which suggest the same signal of recent selection is shared across the two cohorts. We can further investigate these regions using haplotype clustering and networks.</p>
+<p>As we are choosing pairs of cohorts to use here, we could compare those where we saw the similar signals of selection in our H12 analyses. We are looking for peaks, which suggest the same signal of recent selection is shared across the two cohorts. We can further investigate these regions using haplotype clustering and networks.</p>
 </section>
 <section id="haplotype-clustering">
 <h4>Haplotype clustering<a class="headerlink" href="#haplotype-clustering" title="Permalink to this headline">#</a></h4>
@@ -1411,7 +1413,7 @@ Identify peaks, investigate further with haplotype clustering and networks.</p>
 <p>In this module we have learnt how to:</p>
 <ul class="simple">
 <li><p>Plan and conduct a genomic surveillance exploratory data analysis</p></li>
-<li><p>Distill the outputs into key findings</p></li>
+<li><p>Distil the outputs into key findings</p></li>
 </ul>
 </section>
 <section id="practical-exercises">
