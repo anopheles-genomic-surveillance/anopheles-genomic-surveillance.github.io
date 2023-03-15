@@ -8,7 +8,6 @@
 
 Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by [MalariaGEN](https://www.malariagen.net) and [PAMCA](https://www.pamca.org). 
 
-**This course is under active development, it will be updated frequently and parts of the material may be work in progress.**
 
 ## Workshop programme
 
