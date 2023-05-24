@@ -1,51 +1,62 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Module 1 - NumPy arrays &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,58 +64,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshop-4/module-1-numpy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 2 - Species complexes and cryptic taxa in malaria vectors" href="module-2-cryptic-species.html" />
     <link rel="prev" title="Workshop 4 - Cryptic species" href="about.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,863 +153,361 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/about.html">
-   Workshop 1 - Pyrethroid target-site resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-1-colab.html">
-   Module 1 - Interactive cloud computing with Google Colaboratory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">
-   Module 2 - Accessing and exploring
-   <em>
-    Anopheles
-   </em>
-   genomic data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-3-genome.html">
-   Module 3 - Navigating the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">
-   Module 4 - Analysing SNPs in the
-   <em>
-    Vgsc
-   </em>
-   gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/journal-club.html">
-   Journal club - Clarkson et al. (2021)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-1-colab.html">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-3-genome.html">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/about.html">
-   Workshop 2 - Metabolic insecticide resistance and copy number variation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-1-pandas.html">
-   Module 1 - Introduction to pandas DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">
-   Module 2 - The genetic basis of metabolic resistance to insecticides in
-   <em>
-    Anopheles
-   </em>
-   mosquitoes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">
-   Module 3 - Detecting CNVs from genome sequence data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">
-   Module 4 - Analysing CNV frequencies at metabolic resistance genes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/journal-club.html">
-   Journal club - Lucas et al. (2019)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/journal-club.html">Journal club - Lucas et al. (2019)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/about.html">
-   Workshop 3 - Population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
-   Module 1 - Plotting with Plotly Express
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
-   Module 2 - The biology of population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-3-snps.html">
-   Module 3 - Genome-wide SNP data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-4-pca.html">
-   Module 4 - Detecting population structure using PCA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/journal-club.html">
-   Journal club - Ag1000G Consortium (2017)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-pca.html">Module 4 - Detecting population structure using PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   Workshop 4 - Cryptic species
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Module 1 - NumPy arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-2-cryptic-species.html">
-   Module 2 - Species complexes and cryptic taxa in malaria vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-3-aims.html">
-   Module 3 - Ancestry-informative markers (AIMs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-4-taxon-analysis.html">
-   Module 4 - Discovering cryptic taxa
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="journal-club.html">
-   Journal club - Tennessen et al. (2020)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/about.html">
-   Workshop 5 - Genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
-   Module 1 - Xarray datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
-   Module 2 - Introduction to genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-3-stats.html">
-   Module 3 - Genetic diversity summary statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-4-roh.html">
-   Module 4 - Heterozygosity and runs of homozygosity
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/about.html">
-   Workshop 6 - Detecting genes under recent positive selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
-   Module 1 - Haplotypes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-2-selection.html">
-   Module 2 - The biology of selective sweeps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
-   Module 3 - Detecting new forms of insecticide resistance using selection scans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-4-primers.html">
-   Module 4 - AgamPrimer - Primer Design in
-   <em>
-    Anopheles gambiae
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AgamPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/about.html">
-   Workshop 7 - Gene flow and the spread of insecticide resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-1-op-ir.html">
-   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-2-gene-flow.html">
-   Module 2 - Adaptive gene flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">
-   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">
-   Module 4 - Investigating gene flow at loci of interest using haplotype networks
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/about.html">
-   Workshop 8 - Analysis planning and reporting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">
-   Module 1 - Planning a genomic surveillance exploratory data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-2-presenting-results.html">
-   Module 2 - Presenting results of a genomic surveillance data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">
-   Module 3 - Genomic surveillance of malaria vectors in Tanzania
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">
-   Module 4 - Genomic surveillance of malaria vectors in Ghana
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-4/module-1-numpy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-4/module-1-numpy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-4/module-1-numpy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshop-4/module-1-numpy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-4/module-1-numpy.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/workshop-4/module-1-numpy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-use-numpy">
-   Why use NumPy?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-numpy-array">
-   What is a NumPy array?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-vector">
-     1-D array (vector)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-matrix">
-     2-D array (matrix)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-tensor">
-     3-D array (tensor)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-numpy">
-   Importing NumPy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-an-array-from-existing-data">
-   Creating an array from existing data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-1-d-array">
-     Creating a 1-D array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-2-d-array">
-     Creating a 2-D array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-3-d-array">
-     Creating a 3-D array
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-other-array-creation-functions">
-   Some other array creation functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-arrays">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-elements-of-an-array-indexing-and-slicing">
-   Accessing elements of an array (indexing and slicing)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-mathematical-operations-with-arrays">
-   Basic mathematical operations with arrays
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aggregations">
-   Aggregations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-mathematical-formulas">
-   Working with mathematical formulas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-types-dtypes">
-   Data types (dtypes)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#further-reading">
-   Further reading
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Module 1 - NumPy arrays</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-use-numpy">
-   Why use NumPy?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-numpy-array">
-   What is a NumPy array?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-vector">
-     1-D array (vector)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-matrix">
-     2-D array (matrix)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-array-tensor">
-     3-D array (tensor)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-numpy">
-   Importing NumPy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-an-array-from-existing-data">
-   Creating an array from existing data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-1-d-array">
-     Creating a 1-D array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-2-d-array">
-     Creating a 2-D array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-3-d-array">
-     Creating a 3-D array
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-other-array-creation-functions">
-   Some other array creation functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-arrays">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-elements-of-an-array-indexing-and-slicing">
-   Accessing elements of an array (indexing and slicing)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-mathematical-operations-with-arrays">
-   Basic mathematical operations with arrays
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aggregations">
-   Aggregations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     1-D arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     2-D arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-mathematical-formulas">
-   Working with mathematical formulas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-types-dtypes">
-   Data types (dtypes)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#further-reading">
-   Further reading
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 1 - NumPy arrays</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-numpy">Why use NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-numpy-array">What is a NumPy array?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-vector">1-D array (vector)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-matrix">2-D array (matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-tensor">3-D array (tensor)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">Importing NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-array-from-existing-data">Creating an array from existing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-1-d-array">Creating a 1-D array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-2-d-array">Creating a 2-D array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3-d-array">Creating a 3-D array</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-array-creation-functions">Some other array creation functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements-of-an-array-indexing-and-slicing">Accessing elements of an array (indexing and slicing)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-mathematical-operations-with-arrays">Basic mathematical operations with arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-mathematical-formulas">Working with mathematical formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-dtypes">Data types (dtypes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong><a class="reference internal" href="about.html"><span class="doc std std-doc">Workshop 4</span></a> - Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="module-1-numpy-arrays">
-<h1>Module 1 - NumPy arrays<a class="headerlink" href="#module-1-numpy-arrays" title="Permalink to this headline">#</a></h1>
+<section id="module-1-numpy-arrays">
+<h1>Module 1 - NumPy arrays<a class="headerlink" href="#module-1-numpy-arrays" title="Permalink to this heading">#</a></h1>
 <p><strong>Theme: Tools &amp; technology</strong></p>
 <p>NumPy (Numerical Python) is a Python package for working with numerical data. It is right at the heart of the scientific computing ecosystem in Python, and is a powerful tool for fast and memory-efficient analysis of large genomic datasets. This module introduces NumPy arrays, which are the fundamental data structure that NumPy provides for storing and computing with numerical data.</p>
 <p>This module borrows heavily from <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy: the absolute basics for beginners</a> by the NumPy team and <a class="reference external" href="https://jalammar.github.io/visual-numpy/">A visual Intro to NumPy and Data Representation</a> by Jay Alammar.</p>
 <section id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>At the end of this module you will be able to:</p>
 <ul class="simple">
 <li><p>Explain why we use NumPy for genomic data analysis.</p></li>
@@ -980,9 +518,9 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
 <section id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/N0TkJ2KITK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -990,7 +528,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/1IaraoWkySA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -999,7 +537,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="why-use-numpy">
-<h2>Why use NumPy?<a class="headerlink" href="#why-use-numpy" title="Permalink to this headline">#</a></h2>
+<h2>Why use NumPy?<a class="headerlink" href="#why-use-numpy" title="Permalink to this heading">#</a></h2>
 <p>In this course we want to perform analyses with large datasets using cloud computing services. Because the datasets are large, we need to be careful about how we use memory (RAM).</p>
 <p>We also want to perform those analyses interactively.</p>
 <p>Interactivity means computations need to run quickly, so we don’t have to wait and can continue straight on with the next step in our exploration of the data.</p>
@@ -1012,21 +550,21 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="what-is-a-numpy-array">
-<h2>What is a NumPy array?<a class="headerlink" href="#what-is-a-numpy-array" title="Permalink to this headline">#</a></h2>
+<h2>What is a NumPy array?<a class="headerlink" href="#what-is-a-numpy-array" title="Permalink to this heading">#</a></h2>
 <p>A NumPy array is a data structure where the data values are arranged in an N-dimensional grid. Let’s look at some examples of data that can be stored using NumPy arrays.</p>
 <section id="d-array-vector">
-<h3>1-D array (vector)<a class="headerlink" href="#d-array-vector" title="Permalink to this headline">#</a></h3>
+<h3>1-D array (vector)<a class="headerlink" href="#d-array-vector" title="Permalink to this heading">#</a></h3>
 <p>An audio recording is an example of data that can be represented as a 1-dimensional (1-D) array. A 1-D array is also sometimes called a “vector”.</p>
 <p>Here the data values in the array are the amplitude values sampled at regular time intervals, and the first (and only) dimension of the array corresponds to the time at which each audio sample should be played.</p>
 <img src="https://jalammar.github.io/images/numpy/numpy-audio.png"/></section>
 <section id="d-array-matrix">
-<h3>2-D array (matrix)<a class="headerlink" href="#d-array-matrix" title="Permalink to this headline">#</a></h3>
+<h3>2-D array (matrix)<a class="headerlink" href="#d-array-matrix" title="Permalink to this heading">#</a></h3>
 <p>A black-and-white image is an example of data that can be represented as a 2-dimensional (2-D) array. A 2-D array is also sometimes called a “matrix”.</p>
 <p>Here the data values in the array correspond to the colour of a pixel, where 0 represents black, 255 represents white, and numbers in between correspond to shades of grey.</p>
 <p>The first dimension of the array corresponds to the vertical position of pixels within the image, and the second dimension corresponds to the horizontal position of the pixels.</p>
 <img src="https://jalammar.github.io/images/numpy/numpy-grayscale-image.png"/></section>
 <section id="d-array-tensor">
-<h3>3-D array (tensor)<a class="headerlink" href="#d-array-tensor" title="Permalink to this headline">#</a></h3>
+<h3>3-D array (tensor)<a class="headerlink" href="#d-array-tensor" title="Permalink to this heading">#</a></h3>
 <p>A colour image is an example of data that can be represented as a 3-dimensional (3-D) array. A 3-D array is sometimes also called a “tensor”.</p>
 <p>Here the data values represent the intensity of each pixel in three separate colour channels - red, green and blue.</p>
 <p>As with the black-and-white image, the first dimension of the array corresponds to the vertical position of pixels within the image, and the second dimension corresponds to the horizontal position of the pixels. Here now there is also a third dimension of length three, which represents the three colour channels.</p>
@@ -1036,7 +574,7 @@ title="Print to PDF"
 <img src="https://storage.googleapis.com/vo_agam_release/reference/training-images/workshop-4/mosquito-genotype-array.png"/></section>
 </section>
 <section id="importing-numpy">
-<h2>Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">#</a></h2>
+<h2>Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this heading">#</a></h2>
 <p>On colab, NumPy is already installed, so we can go ahead and import it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1047,10 +585,10 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-an-array-from-existing-data">
-<h2>Creating an array from existing data<a class="headerlink" href="#creating-an-array-from-existing-data" title="Permalink to this headline">#</a></h2>
+<h2>Creating an array from existing data<a class="headerlink" href="#creating-an-array-from-existing-data" title="Permalink to this heading">#</a></h2>
 <p>There are various ways to create a NumPy array. One way is to create an array from some existing data, via the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array"><code class="docutils literal notranslate"><span class="pre">np.array()</span></code></a> function.</p>
 <section id="creating-a-1-d-array">
-<h3>Creating a 1-D array<a class="headerlink" href="#creating-a-1-d-array" title="Permalink to this headline">#</a></h3>
+<h3>Creating a 1-D array<a class="headerlink" href="#creating-a-1-d-array" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a 1-D array storing the data values <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>. We’ll assign this array to a variable named <code class="docutils literal notranslate"><span class="pre">data</span></code>, but this variable could be named whatever you like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,7 +673,7 @@ title="Print to PDF"
 <p>Here “int” means <a class="reference external" href="https://en.wikipedia.org/wiki/Integer">integer</a>, i.e., data values in this array should be interpreted as whole numbers.</p>
 </section>
 <section id="creating-a-2-d-array">
-<h3>Creating a 2-D array<a class="headerlink" href="#creating-a-2-d-array" title="Permalink to this headline">#</a></h3>
+<h3>Creating a 2-D array<a class="headerlink" href="#creating-a-2-d-array" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a 2-D array with three rows and two columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1205,7 +743,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-a-3-d-array">
-<h3>Creating a 3-D array<a class="headerlink" href="#creating-a-3-d-array" title="Permalink to this headline">#</a></h3>
+<h3>Creating a 3-D array<a class="headerlink" href="#creating-a-3-d-array" title="Permalink to this heading">#</a></h3>
 <p>Let’s now create a 3-D array, with shape (2, 2, 2) - i.e., all dimensions are length 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1228,10 +766,10 @@ title="Print to PDF"
 <img src="https://jalammar.github.io/images/numpy/numpy-3d-array.png"/></section>
 </section>
 <section id="some-other-array-creation-functions">
-<h2>Some other array creation functions<a class="headerlink" href="#some-other-array-creation-functions" title="Permalink to this headline">#</a></h2>
+<h2>Some other array creation functions<a class="headerlink" href="#some-other-array-creation-functions" title="Permalink to this heading">#</a></h2>
 <p>Often it is useful to create an array and initialise it such that all data values are set for us by NumPy. There are several functions for doing this, including <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html"><code class="docutils literal notranslate"><span class="pre">np.ones()</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html"><code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code></a> and <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.random.html#numpy.random.Generator.random"><code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code></a>.</p>
 <section id="d-arrays">
-<h3>1-D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this headline">#</a></h3>
+<h3>1-D arrays<a class="headerlink" href="#d-arrays" title="Permalink to this heading">#</a></h3>
 <p>Create an array with all data values initialised to one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1386,7 +924,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id1">
-<h3>2-D arrays<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>2-D arrays<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>We can also created 2-D arrays via the same functions, by passing the shape of the desired array as the first parameter.</p>
 <p>E.g., create an array with three rows and two columns with all data values initialised to one.</p>
 <div class="cell docutils container">
@@ -1444,10 +982,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="accessing-elements-of-an-array-indexing-and-slicing">
-<h2>Accessing elements of an array (indexing and slicing)<a class="headerlink" href="#accessing-elements-of-an-array-indexing-and-slicing" title="Permalink to this headline">#</a></h2>
+<h2>Accessing elements of an array (indexing and slicing)<a class="headerlink" href="#accessing-elements-of-an-array-indexing-and-slicing" title="Permalink to this heading">#</a></h2>
 <p>The data values of an array can be accessed by using the square bracket notation. Remember that indices start from zero in Python.</p>
 <section id="id2">
-<h3>1-D arrays<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>1-D arrays<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -1543,7 +1081,7 @@ title="Print to PDF"
 <p>Utiliser une tranche pour accéder au troisième, quatrième et cinquième éléments de cet array.</p>
 </section>
 <section id="id3">
-<h3>2-D arrays<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>2-D arrays<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>2-D arrays can also be indexed using the square bracket notation. Here, because there are two dimensions, we need to provide two indices, one for each dimension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1629,10 +1167,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="basic-mathematical-operations-with-arrays">
-<h2>Basic mathematical operations with arrays<a class="headerlink" href="#basic-mathematical-operations-with-arrays" title="Permalink to this headline">#</a></h2>
+<h2>Basic mathematical operations with arrays<a class="headerlink" href="#basic-mathematical-operations-with-arrays" title="Permalink to this heading">#</a></h2>
 <p>One of the most powerful features of NumPy arrays is that you can use them to perform mathematical operations. In particular, you can apply mathematical operations between entire arrays, without having to write any <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. Let’s see this in action.</p>
 <section id="id4">
-<h3>1-D arrays<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>1-D arrays<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>To demonstrate, let’s create two arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1738,7 +1276,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id5">
-<h3>2-D arrays<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>2-D arrays<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>All of the same mathematical operations can be performed with 2-D arrays as well.</p>
 <p>E.g., add two arrays:</p>
 <div class="cell docutils container">
@@ -1795,11 +1333,11 @@ title="Print to PDF"
 </section>
 </section>
 <section id="aggregations">
-<h2>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">#</a></h2>
+<h2>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this heading">#</a></h2>
 <p>NumPy also provides some aggregation functions, including <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, and <code class="docutils literal notranslate"><span class="pre">count_nonzero()</span></code>, which you can use with arrays.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code> can be called in two different ways: either as methods of an array, or as a function.</p>
 <section id="id6">
-<h3>1-D arrays<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>1-D arrays<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>Here are examples of aggregation functions used with a 1-D array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1882,7 +1420,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id7">
-<h3>2-D arrays<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>2-D arrays<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>Here are examples of aggregation functions used with a 2-D array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2013,7 +1551,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="working-with-mathematical-formulas">
-<h2>Working with mathematical formulas<a class="headerlink" href="#working-with-mathematical-formulas" title="Permalink to this headline">#</a></h2>
+<h2>Working with mathematical formulas<a class="headerlink" href="#working-with-mathematical-formulas" title="Permalink to this heading">#</a></h2>
 <p>NumPy can be used to implement mathematical formulas and perform some computation over data of any size.</p>
 <p>For example, here is a formula for computing mean square error.</p>
 <img src="https://numpy.org/doc/stable/_images/np_MSE_formula.png"/><p>To illustrate how we would implement this with NumPy, let’s create some data:</p>
@@ -2079,7 +1617,7 @@ title="Print to PDF"
 <p>Of course, the best part about this is, it doesn’t matter how much data we have - we could pass arrays of any size into this computation.</p>
 </section>
 <section id="data-types-dtypes">
-<h2>Data types (dtypes)<a class="headerlink" href="#data-types-dtypes" title="Permalink to this headline">#</a></h2>
+<h2>Data types (dtypes)<a class="headerlink" href="#data-types-dtypes" title="Permalink to this heading">#</a></h2>
 <p>Finally, let’s take a very brief look at some of the different data types that NumPy supports.</p>
 <p>At the beginning of this module, we created an array from some existing data values using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
 <div class="cell docutils container">
@@ -2165,7 +1703,7 @@ title="Print to PDF"
 <img src="https://miro.medium.com/max/1400/1*XDBcGPOkqTGd5C7DuRrAiw.png"/><p>Here are all of the floating-point data types that NumPy currently supports, along with the range of possible data values for each:</p>
 <img src="https://miro.medium.com/max/1400/1*aXnGirp9NLC5oljJ5wGcyA.png"/></section>
 <section id="further-reading">
-<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h2>
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
 <p>Please see the <a class="reference external" href="https://numpy.org/doc/stable/index.html">NumPy website</a> for a more complete introduction to NumPy and links to other tutorials and documentation.</p>
 <p>For more information about data types, see also <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">NumPy data types</a> and <a class="reference external" href="https://betterprogramming.pub/a-comprehensive-guide-to-numpy-data-types-8f62cb57ea83">A comprehensive guide to NumPy data types</a> by Lex Maximov.</p>
 </section>
@@ -2183,7 +1721,7 @@ title="Print to PDF"
             mode: "conda-env-ags-book-dev-w4-py"
         },
         kernelOptions: {
-            kernelName: "conda-env-ags-book-dev-w4-py",
+            name: "conda-env-ags-book-dev-w4-py",
             path: "./workshop-4"
         },
         predefinedOutput: true
@@ -2191,54 +1729,151 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'conda-env-ags-book-dev-w4-py'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="about.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop 4 - Cryptic species</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Workshop 4 - Cryptic species</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="module-2-cryptic-species.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="module-2-cryptic-species.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Module 2 - Species complexes and cryptic taxa in malaria vectors</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By MalariaGEN and PAMCA<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-numpy">Why use NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-numpy-array">What is a NumPy array?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-vector">1-D array (vector)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-matrix">2-D array (matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-array-tensor">3-D array (tensor)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">Importing NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-array-from-existing-data">Creating an array from existing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-1-d-array">Creating a 1-D array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-2-d-array">Creating a 2-D array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3-d-array">Creating a 3-D array</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-array-creation-functions">Some other array creation functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements-of-an-array-indexing-and-slicing">Accessing elements of an array (indexing and slicing)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-mathematical-operations-with-arrays">Basic mathematical operations with arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1-D arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2-D arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-mathematical-formulas">Working with mathematical formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-dtypes">Data types (dtypes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

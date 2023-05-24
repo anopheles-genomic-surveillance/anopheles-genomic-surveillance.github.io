@@ -1,51 +1,62 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Module 1 - Interactive cloud computing with Google Colaboratory &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,58 +64,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshop-1/module-1-colab';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 2 - Accessing and exploring Anopheles genomic data" href="module-2-sample-metadata.html" />
     <link rel="prev" title="Workshop 1 - Pyrethroid target-site resistance" href="about.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,878 +153,360 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   Workshop 1 - Pyrethroid target-site resistance
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Module 1 - Interactive cloud computing with Google Colaboratory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-2-sample-metadata.html">
-   Module 2 - Accessing and exploring
-   <em>
-    Anopheles
-   </em>
-   genomic data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-3-genome.html">
-   Module 3 - Navigating the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-4-vgsc-snps.html">
-   Module 4 - Analysing SNPs in the
-   <em>
-    Vgsc
-   </em>
-   gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="journal-club.html">
-   Journal club - Clarkson et al. (2021)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-3-genome.html">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/about.html">
-   Workshop 2 - Metabolic insecticide resistance and copy number variation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-1-pandas.html">
-   Module 1 - Introduction to pandas DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">
-   Module 2 - The genetic basis of metabolic resistance to insecticides in
-   <em>
-    Anopheles
-   </em>
-   mosquitoes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">
-   Module 3 - Detecting CNVs from genome sequence data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">
-   Module 4 - Analysing CNV frequencies at metabolic resistance genes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/journal-club.html">
-   Journal club - Lucas et al. (2019)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/journal-club.html">Journal club - Lucas et al. (2019)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/about.html">
-   Workshop 3 - Population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
-   Module 1 - Plotting with Plotly Express
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
-   Module 2 - The biology of population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-3-snps.html">
-   Module 3 - Genome-wide SNP data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-4-pca.html">
-   Module 4 - Detecting population structure using PCA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/journal-club.html">
-   Journal club - Ag1000G Consortium (2017)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-pca.html">Module 4 - Detecting population structure using PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/about.html">
-   Workshop 4 - Cryptic species
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
-   Module 1 - NumPy arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
-   Module 2 - Species complexes and cryptic taxa in malaria vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-3-aims.html">
-   Module 3 - Ancestry-informative markers (AIMs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
-   Module 4 - Discovering cryptic taxa
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/journal-club.html">
-   Journal club - Tennessen et al. (2020)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-1-numpy.html">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/about.html">
-   Workshop 5 - Genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
-   Module 1 - Xarray datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
-   Module 2 - Introduction to genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-3-stats.html">
-   Module 3 - Genetic diversity summary statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-4-roh.html">
-   Module 4 - Heterozygosity and runs of homozygosity
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/about.html">
-   Workshop 6 - Detecting genes under recent positive selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
-   Module 1 - Haplotypes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-2-selection.html">
-   Module 2 - The biology of selective sweeps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
-   Module 3 - Detecting new forms of insecticide resistance using selection scans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-4-primers.html">
-   Module 4 - AgamPrimer - Primer Design in
-   <em>
-    Anopheles gambiae
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AgamPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/about.html">
-   Workshop 7 - Gene flow and the spread of insecticide resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-1-op-ir.html">
-   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-2-gene-flow.html">
-   Module 2 - Adaptive gene flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">
-   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">
-   Module 4 - Investigating gene flow at loci of interest using haplotype networks
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/about.html">
-   Workshop 8 - Analysis planning and reporting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">
-   Module 1 - Planning a genomic surveillance exploratory data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-2-presenting-results.html">
-   Module 2 - Presenting results of a genomic surveillance data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">
-   Module 3 - Genomic surveillance of malaria vectors in Tanzania
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">
-   Module 4 - Genomic surveillance of malaria vectors in Ghana
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-1-colab.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-1-colab.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-1-colab.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshop-1/module-1-colab.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-1-colab.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/workshop-1/module-1-colab.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-colab">
-   What is Colab?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-notebook">
-   What is a notebook?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-cells">
-   Code cells
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-a-code-cell">
-     Executing a code cell
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-output">
-     Cell output
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspecting-a-variable">
-     Inspecting a variable
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-cells">
-   Text cells
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#formatting-text">
-     Formatting text
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-lists">
-     Creating lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-section-headings">
-     Creating section headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-images">
-     Adding images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-moving-and-deleting-cells">
-   Adding, moving and deleting cells
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-basics">
-   Coding basics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#math">
-     Math
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     For loops
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#defining-and-calling-functions">
-     Defining and calling functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-and-installing-python-packages">
-   Importing and installing Python packages
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-dataframes">
-   Viewing dataframes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-plots">
-   Creating plots
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     Matplotlib
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotly-express">
-     Plotly Express
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bokeh">
-     Bokeh
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-help-documentation-docstrings">
-   Accessing help documentation (docstrings)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sharing-notebooks-via-google-drive">
-   Sharing notebooks via Google Drive
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Module 1 - Interactive cloud computing with Google Colaboratory</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-colab">
-   What is Colab?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-notebook">
-   What is a notebook?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-cells">
-   Code cells
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-a-code-cell">
-     Executing a code cell
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cell-output">
-     Cell output
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspecting-a-variable">
-     Inspecting a variable
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-cells">
-   Text cells
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#formatting-text">
-     Formatting text
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-lists">
-     Creating lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-section-headings">
-     Creating section headings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-images">
-     Adding images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-moving-and-deleting-cells">
-   Adding, moving and deleting cells
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-basics">
-   Coding basics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#math">
-     Math
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     For loops
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#defining-and-calling-functions">
-     Defining and calling functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-and-installing-python-packages">
-   Importing and installing Python packages
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-dataframes">
-   Viewing dataframes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-plots">
-   Creating plots
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     Matplotlib
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotly-express">
-     Plotly Express
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bokeh">
-     Bokeh
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-help-documentation-docstrings">
-   Accessing help documentation (docstrings)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sharing-notebooks-via-google-drive">
-   Sharing notebooks via Google Drive
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 1 - Interactive cloud computing with Google Colaboratory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-colab">What is Colab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-notebook">What is a notebook?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-a-code-cell">Executing a code cell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-output">Cell output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-a-variable">Inspecting a variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-cells">Text cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text">Formatting text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-lists">Creating lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-section-headings">Creating section headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-images">Adding images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-moving-and-deleting-cells">Adding, moving and deleting cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-basics">Coding basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math">Math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and calling functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-installing-python-packages">Importing and installing Python packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-dataframes">Viewing dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-plots">Creating plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly-express">Plotly Express</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bokeh">Bokeh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-help-documentation-docstrings">Accessing help documentation (docstrings)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-notebooks-via-google-drive">Sharing notebooks via Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercises">Practical exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong><a class="reference internal" href="about.html"><span class="doc std std-doc">Workshop 1</span></a> - Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="module-1-interactive-cloud-computing-with-google-colaboratory">
-<h1>Module 1 - Interactive cloud computing with Google Colaboratory<a class="headerlink" href="#module-1-interactive-cloud-computing-with-google-colaboratory" title="Permalink to this headline">#</a></h1>
+<section id="module-1-interactive-cloud-computing-with-google-colaboratory">
+<h1>Module 1 - Interactive cloud computing with Google Colaboratory<a class="headerlink" href="#module-1-interactive-cloud-computing-with-google-colaboratory" title="Permalink to this heading">#</a></h1>
 <p><strong>Theme: Tools &amp; Technology</strong></p>
 <p>This first technology module introduces Google Colaboratory (a.k.a. Colab), an interactive cloud computing service for data analysis, which we will be using for practical exercises throughout the course.</p>
 <section id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>After completing this module, you will be able to:</p>
 <ul class="simple">
 <li><p>Explain what colab is</p></li>
@@ -997,9 +519,9 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
 <section id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/99PEyyJFzZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1007,7 +529,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/QlgcbjrVUHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1016,7 +538,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="what-is-colab">
-<h2>What is Colab?<a class="headerlink" href="#what-is-colab" title="Permalink to this headline">#</a></h2>
+<h2>What is Colab?<a class="headerlink" href="#what-is-colab" title="Permalink to this heading">#</a></h2>
 <p>Colab is an interactive cloud computing service provided for free by Google. To access Colab, visit the following address in your Web browser:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a></p></li>
@@ -1029,7 +551,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="what-is-a-notebook">
-<h2>What is a notebook?<a class="headerlink" href="#what-is-a-notebook" title="Permalink to this headline">#</a></h2>
+<h2>What is a notebook?<a class="headerlink" href="#what-is-a-notebook" title="Permalink to this heading">#</a></h2>
 <p>A notebook is an interactive, editable document that you can use to:</p>
 <ul class="simple">
 <li><p>Write and execute code</p></li>
@@ -1038,7 +560,7 @@ title="Print to PDF"
 <p>A notebook is built up from <strong>cells</strong>. There are two main types of cells in a notebook: <strong>code cells</strong> and <strong>text cells</strong>.</p>
 </section>
 <section id="code-cells">
-<h2>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">#</a></h2>
+<h2>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this heading">#</a></h2>
 <p>A code cell contains <a class="reference external" href="https://www.python.org/">Python code</a>. To add a code cell to your notebook, click the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Code</span></code></strong> button at the top of the notebook.</p>
 <p>Below is an example code cell.</p>
 <div class="cell docutils container">
@@ -1054,11 +576,11 @@ title="Print to PDF"
 </div>
 </div>
 <section id="executing-a-code-cell">
-<h3>Executing a code cell<a class="headerlink" href="#executing-a-code-cell" title="Permalink to this headline">#</a></h3>
+<h3>Executing a code cell<a class="headerlink" href="#executing-a-code-cell" title="Permalink to this heading">#</a></h3>
 <p>To execute a code cell, click on the <strong>play icon</strong> next to the cell. You can also type <strong>Shift+Enter</strong>, which will run the cell and move the focus to the next cell.</p>
 </section>
 <section id="cell-output">
-<h3>Cell output<a class="headerlink" href="#cell-output" title="Permalink to this headline">#</a></h3>
+<h3>Cell output<a class="headerlink" href="#cell-output" title="Permalink to this heading">#</a></h3>
 <p>The code cell above uses the built-in <code class="docutils literal notranslate"><span class="pre">print</span></code> function, which prints the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code> as output. If a code cell generates some output when it is run, the output is displayed below the cell.</p>
 <p>Cells do not always have output. For example, the code cell below declares a variable named <code class="docutils literal notranslate"><span class="pre">foo</span></code> and assigns the integer value <code class="docutils literal notranslate"><span class="pre">42</span></code>, but does not create an output.</p>
 <div class="cell docutils container">
@@ -1070,7 +592,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="inspecting-a-variable">
-<h3>Inspecting a variable<a class="headerlink" href="#inspecting-a-variable" title="Permalink to this headline">#</a></h3>
+<h3>Inspecting a variable<a class="headerlink" href="#inspecting-a-variable" title="Permalink to this heading">#</a></h3>
 <p>If you have declared a variable, such as <code class="docutils literal notranslate"><span class="pre">foo</span></code> in the code cell above, and you want to inspect its value, you can do this by writing a code cell where the variable is written on the last line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1114,15 +636,15 @@ title="Print to PDF"
 </section>
 </section>
 <section id="text-cells">
-<h2>Text cells<a class="headerlink" href="#text-cells" title="Permalink to this headline">#</a></h2>
+<h2>Text cells<a class="headerlink" href="#text-cells" title="Permalink to this heading">#</a></h2>
 <p>As well as code cells, you can also create text cells, which create text that you write, and can use different types of text formatting such as bold, italic, indented lists, hyperlinks and mathematical equations.</p>
 <p>To add a text cell to your notebook, click the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Text</span></code></strong> button at the top of the notebook.</p>
 <p>To edit an existing text cell in a notebook, <strong>double click</strong> on the cell.</p>
 <section id="formatting-text">
-<h3>Formatting text<a class="headerlink" href="#formatting-text" title="Permalink to this headline">#</a></h3>
+<h3>Formatting text<a class="headerlink" href="#formatting-text" title="Permalink to this heading">#</a></h3>
 <p>Text cells can be formatted using a special syntax called <strong>markdown</strong>.</p>
 <p>Here is a quick summary of some useful markdown syntax for formatting text:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Markdown syntax</p></th>
 <th class="head"><p>Preview</p></th>
@@ -1145,7 +667,7 @@ title="Print to PDF"
 </table>
 </section>
 <section id="creating-lists">
-<h3>Creating lists<a class="headerlink" href="#creating-lists" title="Permalink to this headline">#</a></h3>
+<h3>Creating lists<a class="headerlink" href="#creating-lists" title="Permalink to this heading">#</a></h3>
 <p>Unordered lists can be created by putting each list item on a new line, starting with the <code class="docutils literal notranslate"><span class="pre">*</span></code> character, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">A</span> <span class="nb">list</span> <span class="n">item</span>
 <span class="o">*</span> <span class="n">Another</span> <span class="nb">list</span> <span class="n">item</span>
@@ -1160,7 +682,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-section-headings">
-<h3>Creating section headings<a class="headerlink" href="#creating-section-headings" title="Permalink to this headline">#</a></h3>
+<h3>Creating section headings<a class="headerlink" href="#creating-section-headings" title="Permalink to this heading">#</a></h3>
 <p>To create a section heading within a notebook, begin a line of text with the <code class="docutils literal notranslate"><span class="pre">#</span></code> character. E.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a section heading</span>
 </pre></div>
@@ -1171,7 +693,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="adding-images">
-<h3>Adding images<a class="headerlink" href="#adding-images" title="Permalink to this headline">#</a></h3>
+<h3>Adding images<a class="headerlink" href="#adding-images" title="Permalink to this heading">#</a></h3>
 <p>You can include an image in a notebook, if the image is published on the Web and you know it’s address. E.g., the markdown syntax below includes an image of an <em>Anopheles gambiae</em> mosquito available from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:AnophelesGambiaemosquito.jpg">wikipedia</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![Anopheles gambiae](https://upload.wikimedia.org/wikipedia/commons/0/0a/AnophelesGambiaemosquito.jpg)
 </pre></div>
@@ -1181,16 +703,16 @@ title="Print to PDF"
 </section>
 </section>
 <section id="adding-moving-and-deleting-cells">
-<h2>Adding, moving and deleting cells<a class="headerlink" href="#adding-moving-and-deleting-cells" title="Permalink to this headline">#</a></h2>
+<h2>Adding, moving and deleting cells<a class="headerlink" href="#adding-moving-and-deleting-cells" title="Permalink to this heading">#</a></h2>
 <p>A new cell can be added by using the <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Code</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Text</span></code></strong> at the top of the notebook, or that show when you hover between cells.</p>
 <p>Cells can be moved within the notebook by clicking on the <strong>up and down arrows</strong> in the cell toolbar.</p>
 <p>A cell can be deleted by clicking the <strong>dustbin icon</strong> within the cell toolbar.</p>
 </section>
 <section id="coding-basics">
-<h2>Coding basics<a class="headerlink" href="#coding-basics" title="Permalink to this headline">#</a></h2>
+<h2>Coding basics<a class="headerlink" href="#coding-basics" title="Permalink to this heading">#</a></h2>
 <p>Here are a few examples of things you can do using Python code. For this course we don’t expect you to be an experienced coder, but some familiarity with features like arithmetic, for loops and functions will be useful.</p>
 <section id="math">
-<h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">#</a></h3>
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">#</a></h3>
 <p>You can do arithmetic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1208,7 +730,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="for-loops">
-<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
 <p>You can use a for loop to iterate over a sequence of values. E.g., you can iterative over a sequence of numbers using a for loop together with the built-in <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#typesseq-range"><code class="docutils literal notranslate"><span class="pre">range()</span></code> function</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +751,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="defining-and-calling-functions">
-<h3>Defining and calling functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this headline">#</a></h3>
+<h3>Defining and calling functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this heading">#</a></h3>
 <p>You can organise your code into functions with parameters. E.g., here we define a function <code class="docutils literal notranslate"><span class="pre">greet()</span></code> with a single parameter <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1267,7 +789,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="importing-and-installing-python-packages">
-<h2>Importing and installing Python packages<a class="headerlink" href="#importing-and-installing-python-packages" title="Permalink to this headline">#</a></h2>
+<h2>Importing and installing Python packages<a class="headerlink" href="#importing-and-installing-python-packages" title="Permalink to this heading">#</a></h2>
 <p>Python packages are collections of functions that other people have already created, and which you can import into your notebook and use.</p>
 <p>There are some functions which are “built-in” to Python, like the <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">range()</span></code> functions we’ve already seen, which are always available and you don’t need to import.</p>
 <p>There are a lot more functions available as part of the <a class="reference external" href="https://docs.python.org/3.7/library/">Python standard library</a>, which will already be installed, but you do need to import them before you can use them.</p>
@@ -1319,32 +841,32 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<table class="malariagen-ag3">
-    <thead>
-        <tr>
-            <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
-        </tr>
-        <tr><td colspan="2" style="text-align: left">
-            Please note that data are subject to terms of use,
-            for more information see <a href="https://www.malariagen.net/data">
-            the MalariaGEN website</a> or contact data@malariagen.net.
-            See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
-        </td></tr>
-    </thead>
-    <tbody>
-        <tr><th style="text-align: left">Storage URL</th><td>gs://vo_agam_release/</td></tr>
-        <tr><th style="text-align: left">Data releases available</th><td>3.0</td></tr>
-        <tr><th style="text-align: left">Cohorts analysis</th><td>20211101</td></tr>
-        <tr><th style="text-align: left">Species analysis</th><td>aim_20200422</td></tr>
-        <tr><th style="text-align: left">Site filters analysis</th><td>dt_20200416</td></tr>
-        <tr><th style="text-align: left">Software version</th><td>2.2.0</td></tr>
-    </tbody>
-</table>
-</div></div>
+            <table class="malariagen-ag3">
+                <thead>
+                    <tr>
+                        <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
+                    </tr>
+                    <tr><td colspan="2" style="text-align: left">
+                        Please note that data are subject to terms of use,
+                        for more information see <a href="https://www.malariagen.net/data">
+                        the MalariaGEN website</a> or contact data@malariagen.net.
+                        See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
+                    </td></tr>
+                </thead>
+                <tbody>
+                    <tr><th style="text-align: left">Storage URL</th><td>gs://vo_agam_release/</td></tr>
+                    <tr><th style="text-align: left">Data releases available</th><td>3.0</td></tr>
+                    <tr><th style="text-align: left">Cohorts analysis</th><td>20211101</td></tr>
+                    <tr><th style="text-align: left">Species analysis</th><td>aim_20200422</td></tr>
+                    <tr><th style="text-align: left">Site filters analysis</th><td>dt_20200416</td></tr>
+                    <tr><th style="text-align: left">Software version</th><td>2.2.0</td></tr>
+                </tbody>
+            </table>
+        </div></div>
 </div>
 </section>
 <section id="viewing-dataframes">
-<h2>Viewing dataframes<a class="headerlink" href="#viewing-dataframes" title="Permalink to this headline">#</a></h2>
+<h2>Viewing dataframes<a class="headerlink" href="#viewing-dataframes" title="Permalink to this heading">#</a></h2>
 <p>Often when analysing data you will work with <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe">pandas DataFrames</a>, which are tables of data organised into rows and columns. We will look at DataFrames in more detail later in the course, but for now it’s useful to know that you can get a preview of the data in a DataFrame.</p>
 <p>E.g., if we call the <code class="docutils literal notranslate"><span class="pre">sample_metadata()</span></code> function below, this returns a DataFrame.</p>
 <div class="cell docutils container">
@@ -1687,7 +1209,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-plots">
-<h2>Creating plots<a class="headerlink" href="#creating-plots" title="Permalink to this headline">#</a></h2>
+<h2>Creating plots<a class="headerlink" href="#creating-plots" title="Permalink to this heading">#</a></h2>
 <p>You can also create plots within notebooks. There are several plotting packages available for Python, but three popular and useful plotting packages are <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, <a class="reference external" href="https://matplotlib.org/">plotly express</a>, and <a class="reference external" href="https://docs.bokeh.org/en/latest/index.html">bokeh</a>. Let’s illustrate making some plots with these packages.</p>
 <p>First let’s generate some random data to plot.</p>
 <div class="cell docutils container">
@@ -1704,7 +1226,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="matplotlib">
-<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h3>
+<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h3>
 <p>Here’s how to import and activate matplotlib in a notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1726,12 +1248,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/module-1-colab_57_0.png" src="../_images/module-1-colab_57_0.png" />
+<img alt="../_images/bc3a6c6888a4dfd648b376d759f637133f559704b230ca2b0adb7f5bb2ae5cba.png" src="../_images/bc3a6c6888a4dfd648b376d759f637133f559704b230ca2b0adb7f5bb2ae5cba.png" />
 </div>
 </div>
 </section>
 <section id="plotly-express">
-<h3>Plotly Express<a class="headerlink" href="#plotly-express" title="Permalink to this headline">#</a></h3>
+<h3>Plotly Express<a class="headerlink" href="#plotly-express" title="Permalink to this heading">#</a></h3>
 <p>Here’s how to import plotly express.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1831,8 +1353,8 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-</div><div class="output text_html"><div>                            <div id="2590ebe6-24bd-43cd-b09e-179af04b780d" class="plotly-graph-div" style="height:400px; width:600px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("2590ebe6-24bd-43cd-b09e-179af04b780d")) {                    Plotly.newPlot(                        "2590ebe6-24bd-43cd-b09e-179af04b780d",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"x=%{x}<br>count=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"x":[19,13,17,17,19,18,14,19,16,15,14,17,19,18,16,14,15,16,13,14,18,16,17,21,18,16,10,15,14,13,12,17,13,14,14,20,11,13,19,13,15,18,14,10,18,15,19,13,16,8,13,14,18,15,19,15,11,15,11,12,11,19,11,14,15,16,21,14,15,17,15,15,14,14,11,16,13,11,13,16,16,13,13,13,16,12,11,14,17,21,16,14,15,12,18,16,15,12,14,18,12,17,14,9,15,14,16,16,17,12,13,12,15,14,13,15,15,15,16,14,19,18,13,17,13,15,20,20,14,17,16,23,16,14,10,15,11,21,13,13,17,18,15,12,13,18,17,11,14,11,11,8,13,12,12,13,16,14,12,14,15,11,17,17,16,18,15,16,16,13,14,19,14,17,17,21,16,11,16,15,15,15,17,9,20,17,16,14,18,11,13,17,12,14,13,18,11,14,12,16,9,16,17,15,15,17,19,10,15,20,11,21,15,11,16,13,19,15,14,12,11,17,14,15,11,15,11,18,17,17,9,15,15,19,15,17,12,11,12,11,14,14,15,15,14,19,11,16,15,17,15,11,17,17,16,12,17,12,14,14,14,12,19,15,16,13,15,14,13,13,18,18,18,14,19,16,13,13,17,14,18,17,15,15,17,19,15,16,17,14,14,14,16,15,19,14,15,19,11,20,8,12,11,15,17,12,22,23,16,17,12,14,15,20,14,16,19,17,17,16,13,13,13,12,13,20,10,14,11,11,19,12,12,15,14,18,17,18,15,17,16,10,17,14,15,12,14,14,15,16,15,11,12,14,18,15,17,10,13,18,13,11,15,12,15,19,19,15,14,20,12,16,18,14,13,15,10,14,19,15,16,10,15,18,20,17,17,13,13,16,15,13,13,17,19,19,18,17,18,17,12,17,17,14,14,19,23,11,14,16,10,16,16,20,18,18,18,15,16,11,12,14,15,17,9,21,16,15,13,20,17,14,15,15,13,18,13,12,11,11,16,15,13,13,16,14,11,17,17,14,15,12,15,14,16,12,12,14,17,20,16,12,10,12,15,15,15,15,17,16,20,17,20,15,16,19,15,12,19,16,15,19,15,18,12,18,18,14,14,16,14,17,16,10,12,12,16,15,16,15,15,17,15,15,18,11,16,13,20,18,16,14,12,13,13,16,10,11,9,20,15,14,11,19,20,11,15,18,14,13,13,15,17,16,16,14,19,17,14,15,16,15,14,14,11,11,17,12,13,17,12,12,10,23,13,6,11,14,17,10,14,12,13,17,13,17,16,13,16,11,11,16,19,15,14,11,13,18,19,14,19,14,15,15,14,20,18,16,13,15,14,15,16,11,15,12,15,18,14,12,16,15,10,17,20,18,12,13,12,13,12,16,13,17,14,12,17,10,13,16,15,20,14,13,17,13,17,12,14,14,15,14,14,11,14,14,16,14,16,18,16,13,21,13,18,12,16,16,10,15,18,11,11,12,13,17,17,13,13,15,16,17,13,11,13,15,16,14,14,15,12,20,20,17,16,14,8,13,12,17,15,21,13,13,16,14,17,17,13,15,15,13,13,12,14,16,17,16,14,13,14,12,19,17,17,14,18,19,12,13,19,16,11,11,18,17,14,19,12,14,19,11,16,13,11,14,14,15,14,11,19,17,13,12,15,15,14,14,15,17,18,17,13,19,18,12,15,14,18,15,12,18,17,18,18,20,16,9,14,12,13,17,17,14,7,16,13,14,18,20,16,18,19,16,16,18,12,17,13,12,16,15,14,14,14,17,13,12,20,14,17,14,13,14,13,16,17,12,13,11,11,11,11,15,15,14,13,13,16,10,17,15,14,15,11,17,14,12,15,15,9,17,17,17,15,18,16,15,12,14,13,17,15,14,12,18,14,15,17,16,15,15,12,19,18,18,18,15,16,14,16,14,12,15,14,14,13,17,16,15,12,15,14,13,17,11,10,15,14,16,16,10,14,17,15,17,14,11,16,17,16,15,15,14,19,11,20,15,14,15,15,18,15,12,14,15,14,16,11,14,17,12,13,14,15,14,14,10,16,20,15,15,15,13,22,18,17,12,11,12,16,15,15,15,21,10,15,12,17,16,21,13,11,15,12,21,16,12,13,9,16,15,15,19,20,11,15,19,18,14,15,12,14,15,13,16,11,14,20,12,11,14,14,18,16,16,16,12,17,13,16,15,19,20,13,15,16,16,14,15,13,13,16,15,17,15,11,12,14,11,15,16,13,16,13,17,18,11,17,18,18,13,17,14,17,11,14,12,18,22,16,16,13,16,15,20,17,15,17,16,14,16,14,16,18,15,13,17,14,20,12,11,16,11,16,22,14,11,15,18,20,14,17,22,16,15,15,14,15,13,14,10,17,18,16,15,10,11,15,17,12,15,18,17,21,14,15,13,14,12,19,16,12,11,17,16,21,11,18,10,15,14,13,14,15,15,17,14,16,18,17,15,16,11,20,16,11,15,16,15,10,16,17,13,16,14,15,16,18,12,19,14,12,15,19,14,12,16,21,21,14,15,16,14,18,14,9,16,14,11,18,16,11,16,13,15,19,11,14,18,18,14,18,13,17,16,19,15,16,11,14,18,12,15,13,13,17,14,14,11,18,16,15,17,16,17,16,19,17,18,15,15,12,16,14,15,16,13,14,16,14,12,14,16,20,16,13,20,15,16,15,21,13,11,21,21,16,14,14,10,13,13,12,15,13,22,15,15,19,21,17,16,19,13,15,15,15,14,18,13,14,19,17,16,16,19,16,15,14,17,16,15,15,14,16,12,14,13,14,16,13,17,19,13,13,13,14,16,11,14,17,17,16,22,14,13,17,14,17,14,13,15,11,11,11,18,19,14,16,13,15,19,14,18,13,13,18,14,11,17,15,12,16,15,13,15,12,23,16,16,14,8,14,15,16,14,13,19,16,16,20,12,13,12,16,21,16,20,14,12,20,15,16,16,16,15,11,16,17,16,19,20,16,12,18,11,18,11,15,14,15,16,13,15,20,15,13,15,14,16,17,16,14,16,14,15,17,18,14,22,13,19,16,15,16,17,18,14,16,14,16,12,16,15,17,13,18,14,18,11,13,12,14,14,16,13,14,12,12,19,13,10,15,18,12,10,13,15,12,17,16,15,12,17,16,17,20,12,14,14,11,18,12,16,15,16,21,14,16,18,17,10,12,9,13,15,16,11,16,14,19,14,16,12,18,12,17,14,11,18,15,9,13,17,19,14,17,14,18,15,18,13,16,15,10,16,17,16,14,15,17,16,12,14,14,16,14,16,20,19,17,19,12,15,15,10,13,8,11,15,17,20,14,14,15,12,17,17,13,19,15,13,16,15,14,14,13,11,16,14,16,15,16,16,12,13,19,10,15,16,14,10,17,14,13,20,17,14,14,8,13,11,14,18,18,12,17,14,15,19,17,13,13,19,17,12,8,14,14,18,14,15,17,17,13,14,17,15,17,15,20,12,16,11,19,14,16,16,12,14,17,18,19,16,18,14,16,13,13,14,13,14,15,14,13,21,17,15,18,14,12,16,9,11,11,10,19,18,16,15,18,12,13,13,18,19,16,14,14,24,18,16,19,16,20,17,22,17,12,15,14,18,14,16,18,13,13,15,10,15,15,17,17,13,16,15,16,15,15,12,12,24,17,13,12,15,18,11,17,15,14,11,11,19,12,13,14,14,12,15,11,14,14,18,13,13,17,15,16,18,12,13,17,16,14,11,14,11,12,12,16,15,21,19,16,18,22,15,19,12,14,18,13,13,15,19,15,14,11,12,10,19,17,12,15,13,18,21,15,11,17,17,17,14,12,11,11,21,16,11,18,10,14,14,18,21,13,21,15,14,14,11,10,14,10,12,21,14,12,13,15,15,11,13,17,18,17,17,16,15,13,13,14,16,14,17,16,15,18,17,17,13,20,12,15,16,10,16,20,17,18,15,19,20,13,16,18,19,18,18,17,16,13,12,14,14,15,10,14,12,16,13,15,13,17,22,17,10,20,17,14,15,13,19,14,18,13,16,18,14,14,16,18,16,17,13,16,16,11,18,19,15,18,10,16,16,14,15,11,18,14,20,15,14,13,17,8,19,13,19,16,11,10,16,18,14,13,16,15,16,17,14,16,17,13,13,17,18,13,14,14,17,19,18,16,17,11,11,15,12,16,10,17,16,16,23,18,13,16,15,17,9,18,9,15,14,16,15,20,14,14,15,17,14,13,10,12,15,12,16,14,12,24,19,15,16,14,21,17,13,16,16,16,18,17,18,14,16,17,15,14,14,13,18,16,16,17,13,13,10,17,17,14,12,15,16,15,13,13,13,16,14,15,14,13,14,14,18,13,21,17,16,12,18,11,12,16,18,15,17,14,18,17,16,8,18,11,11,18,17,13,16,17,14,18,12,20,15,18,17,19,13,20,11,15,17,13,17,18,16,15,20,15,10,14,13,13,19,14,18,16,14,13,12,13,14,15,11,16,16,11,17,11,18,20,16,14,20,18,16,16,14,17,13,17,19,10,10,16,13,15,19,18,15,18,12,19,17,18,19,16,12,13,15,17,18,14,13,18,17,10,14,17,17,16,17,13,9,8,12,16,14,18,14,13,18,16,15,15,12,14,14,16,11,19,21,15,14,16,12,17,14,16,16,16,13,12,11,13,16,17,14,14,15,13,19,17,20,18,11,14,20,21,16,12,16,14,14,17,16,15,13,10,13,10,13,18,15,21,15,17,11,17,18,16,13,20,13,15,15,14,14,12,15,13,17,15,18,19,20,14,11,17,18,17,16,16,13,10,16,16,20,15,18,13,16,12,18,14,17,15,14,15,14,13,10,18,18,17,14,15,13,15,11,18,12,13,13,18,18,13,12,18,17,14,17,8,15,13,14,16,17,17,13,18,17,15,22,17,11,16,16,14,21,14,15,18,14,18,18,17,19,15,17,17,16,18,11,10,15,10,15,14,15,12,15,14,19,11,10,17,17,18,16,12,19,11,16,17,12,10,17,15,15,19,15,15,15,21,16,17,13,12,17,15,15,17,14,18,13,18,15,15,15,22,18,15,16,19,13,12,17,12,13,11,13,9,15,19,18,14,15,15,13,17,18,13,13,10,18,14,11,13,17,15,14,14,15,18,17,17,16,19,12,12,12,12,14,17,15,19,14,23,11,8,15,15,12,17,9,19,15,14,15,12,16,21,16,13,20,16,17,12,18,15,17,18,14,14,11,17,14,14,17,18,14,15,16,13,18,14,17,18,15,13,14,17,14,18,12,16,14,15,17,12,12,11,13,10,12,16,17,18,18,21,17,17,21,14,17,16,18,18,16,17,11,14,13,15,12,17,13,21,11,14,17,23,15,8,13,18,11,14,11,16,14,16,16,15,12,15,12,15,13,17,12,12,12,16,19,20,10,14,14,15,17,17,21,16,15,15,15,9,18,14,14,14,12,12,13,17,15,14,21,19,19,16,18,14,22,11,20,16,14,8,18,13,15,18,18,16,7,13,16,15,15,21,15,15,17,17,8,10,12,10,20,13,17,16,10,15,16,12,20,15,14,21,18,13,17,14,16,14,16,16,14,18,20,16,8,14,16,15,12,14,14,20,15,16,13,14,17,13,18,17,15,14,17,12,16,10,9,12,15,10,16,14,20,11,15,18,14,14,13,10,17,20,18,14,14,15,13,19,15,15,7,14,13,14,10,14,14,15,21,14,9,13,8,18,17,9,15,13,14,16,18,19,11,9,8,17,19,16,15,16,18,17,11,20,11,14,14,17,10,13,20,13,16,19,11,17,16,16,17,13,15,21,14,13,13,20,14,16,14,9,15,13,19,16,14,15,13,16,13,15,14,13,17,15,17,14,18,15,12,19,19,18,18,20,16,12,13,12,16,11,9,14,17,9,15,16,16,22,15,9,17,16,13,17,16,16,16,18,16,16,15,15,18,14,13,18,17,22,14,17,14,18,20,17,13,15,19,16,17,21,15,10,16,17,17,10,12,13,17,19,13,14,15,15,16,11,17,14,12,12,14,10,13,17,18,18,16,15,16,12,16,14,12,17,13,16,10,15,12,15,14,13,20,16,9,10,13,15,11,12,16,13,15,14,8,14,16,14,11,11,13,16,13,19,14,16,11,14,18,14,15,12,13,13,13,13,16,17,17,15,16,18,20,14,20,15,18,15,18,16,16,11,18,19,15,15,15,16,13,16,12,19,15,17,11,18,18,16,17,19,19,15,16,13,19,16,15,15,12,12,16,17,15,12,15,17,14,12,18,14,11,11,13,12,16,10,13,16,16,15,16,16,12,20,19,15,16,13,11,14,9,16,17,14,18,13,15,19,15,19,11,17,14,19,16,15,14,15,13,10,13,16,11,13,10,17,18,14,15,17,22,15,16,13,16,14,15,14,15,14,19,14,18,13,18,21,17,16,18,20,16,15,10,14,16,15,16,19,13,16,16,17,14,14,18,16,19,15,13,19,15,14,20,9,21,18,14,18,14,18,15,16,19,18,12,18,19,14,19,20,18,17,13,15,15,21,14,15,15,13,11,12,18,12,19,17,17,21,18,17,16,18,18,17,18,18,15,19,22,13,16,17,11,18,17,15,15,13,15,15,14,20,17,14,17,16,15,13,16,15,12,15,12,20,8,14,20,12,13,18,21,16,13,16,15,12,17,12,14,16,16,9,15,10,15,16,18,15,9,16,16,16,10,16,13,14,18,22,17,14,12,16,14,17,19,16,17,14,16,14,14,17,19,12,15,15,14,17,22,18,11,15,17,13,11,11,16,16,14,15,17,13,12,10,14,20,16,14,18,13,15,14,16,17,14,14,15,12,11,12,16,14,20,12,14,13,18,13,16,15,11,12,17,12,17,16,16,15,18,14,15,16,16,18,17,13,16,15,17,15,21,16,14,14,17,15,15,16,16,14,11,17,10,9,15,14,12,19,18,16,12,19,17,15,14,11,15,15,14,16,12,8,13,15,12,15,19,12,13,14,14,13,16,17,14,14,15,18,11,14,13,14,18,15,12,13,15,19,12,12,19,9,16,14,13,13,13,14,15,17,7,13,19,20,18,15,13,15,12,9,16,15,16,14,14,15,12,17,16,15,11,21,15,13,13,15,14,16,14,16,14,17,14,15,17,20,10,16,17,13,16,15,13,15,18,15,16,16,17,15,16,14,15,19,19,10,18,18,14,18,13,16,13,19,13,17,15,16,14,13,14,19,15,14,15,20,16,14,17,17,18,15,18,16,13,15,19,12,19,14,15,13,17,15,11,12,17,15,18,19,13,14,8,16,16,15,17,15,14,18,16,17,16,21,16,18,19,16,15,13,15,16,18,14,17,16,14,15,15,16,17,18,13,11,13,15,9,15,12,15,14,17,15,14,11,13,19,13,16,15,21,14,17,12,20,17,18,13,15,15,18,13,16,19,17,17,14,11,12,19,12,15,12,15,16,14,14,14,15,11,16,16,18,16,16,17,11,13,16,17,15,15,12,15,20,15,14,17,19,16,13,10,19,17,12,16,12,21,14,12,13,12,17,14,21,17,15,13,17,15,13,17,13,14,12,7,14,12,9,15,20,19,16,18,16,13,15,16,14,18,18,16,18,12,8,16,12,19,17,14,14,18,14,15,13,17,16,18,16,14,18,15,19,17,18,16,15,14,19,16,18,13,14,14,13,18,18,14,18,13,18,10,10,16,15,16,14,12,15,15,15,15,13,13,14,12,14,16,17,18,14,14,14,13,15,11,16,14,13,16,14,18,8,14,13,10,12,14,22,18,13,16,14,12,15,17,12,16,12,19,14,15,17,17,20,11,18,14,13,15,17,9,17,16,15,12,15,15,16,19,13,14,15,17,16,10,20,13,16,15,16,21,18,15,18,16,15,13,15,16,19,13,12,11,14,20,16,17,16,14,15,19,15,16,11,14,13,15,13,17,15,15,12,17,16,17,14,16,10,17,18,14,12,20,19,18,15,16,18,16,10,13,14,14,13,15,19,19,15,17,14,14,17,16,12,16,15,14,17,10,14,15,12,16,11,14,13,9,19,11,16,14,17,14,9,15,13,19,13,19,14,17,18,14,13,14,18,14,11,14,12,18,18,13,16,15,17,15,20,14,13,14,16,13,18,15,13,15,14,14,13,14,16,20,16,18,14,12,17,15,13,13,12,20,17,13,13,10,10,11,14,16,18,17,15,13,16,14,17,21,15,13,18,11,11,15,12,17,14,16,14,20,17,15,10,16,15,15,13,22,14,17,14,18,15,15,13,15,11,19,14,9,12,19,13,14,17,23,14,15,14,15,17,19,14,12,20,16,16,17,9,17,14,16,12,13,11,17,17,15,11,10,10,19,18,11,15,10,12,15,12,13,15,15,15,9,21,18,17,19,15,14,16,16,16,14,17,16,17,15,14,15,12,16,18,15,12,18,15,19,18,17,21,12,14,18,18,9,20,15,15,12,13,12,13,20,14,16,14,18,17,8,13,17,10,13,17,16,11,15,17,14,15,15,14,16,15,15,12,19,17,16,18,12,15,17,15,16,16,19,12,12,14,15,15,15,10,13,16,19,12,13,14,14,8,16,13,20,14,14,15,14,14,11,14,12,12,14,13,12,11,18,15,17,18,11,18,13,15,16,20,18,17,12,17,16,15,17,15,16,13,13,17,16,15,14,16,17,12,17,16,19,18,14,15,13,13,16,16,13,12,15,11,14,11,16,14,19,7,17,22,15,15,17,13,15,16,16,14,14,13,17,13,18,14,16,19,21,19,13,17,13,15,16,14,16,14,15,11,19,17,19,19,10,17,17,17,17,15,14,13,14,17,14,14,12,11,23,11,16,14,15,16,16,19,18,17,14,15,17,14,12,13,15,13,16,13,21,14,9,13,12,12,18,13,14,18,19,16,17,16,16,19,16,14,13,17,15,13,14,11,17,12,15,10,13,13,17,12,11,18,16,14,15,14,17,14,18,16,18,12,13,19,14,14,14,14,16,16,14,13,15,17,13,17,18,16,13,16,18,14,14,20,14,16,16,17,19,16,10,17,17,13,13,17,13,13,13,15,16,16,17,17,15,10,15,16,15,17,16,20,15,14,15,10,13,16,13,17,15,14,17,12,19,21,7,11,16,12,14,18,16,19,16,18,15,16,14,17,12,13,9,15,15,17,11,15,15,12,15,18,17,13,17,13,13,20,20,16,18,15,12,16,13,17,10,15,16,12,18,11,11,18,16,15,16,14,14,15,18,21,12,19,16,14,14,11,16,9,14,15,12,14,17,12,14,20,13,19,18,15,14,13,15,14,12,12,12,18,17,13,18,13,16,16,19,13,12,15,16,12,19,14,12,14,11,14,12,12,16,11,22,12,20,20,12,17,15,16,11,18,18,14,15,16,13,13,15,15,13,11,14,19,20,13,15,21,13,12,13,18,21,13,11,17,17,14,18,15,13,14,13,18,15,16,11,12,11,18,18,14,19,15,12,19,14,14,11,19,14,11,19,15,18,15,12,14,16,14,17,11,14,15,14,8,16,13,14,16,12,11,13,15,15,13,12,16,13,13,13,13,11,18,14,15,17,14,14,20,16,13,18,14,16,16,14,13,19,19,14,13,12,16,17,12,19,17,20,15,13,17,10,18,18,18,20,17,21,13,14,16,17,19,12,11,11,15,14,9,19,16,16,13,17,14,14,16,17,19,14,10,16,16,17,9,17,20,15,15,16,15,12,15,12,12,15,15,16,15,12,15,14,13,15,16,17,16,13,17,16,15,14,12,12,13,14,16,13,13,17,9,11,20,14,14,16,17,16,12,16,16,17,18,13,13,13,14,16,17,11,14,12,16,14,19,16,14,15,7,19,17,20,10,10,15,16,17,17,13,13,16,18,17,19,14,19,17,13,11,13,14,17,15,18,10,15,16,19,13,15,11,13,12,17,19,14,19,14,15,17,16,13,15,15,14,12,22,16,19,19,13,17,13,12,12,11,13,15,17,14,18,11,16,12,12,13,15,20,13,17,12,19,16,17,19,20,15,10,13,12,11,16,15,18,17,17,14,15,15,19,11,12,20,17,11,14,17,12,14,18,16,13,15,16,14,16,22,13,15,16,17,16,13,7,16,16,15,13,13,16,20,15,16,14,15,14,13,15,14,12,17,19,17,17,14,16,22,19,16,11,11,17,15,14,16,12,8,17,14,10,17,12,15,13,16,16,15,11,10,12,14,11,18,13,14,15,9,17,16,16,18,11,14,13,17,15,11,14,17,18,12,16,9,12,16,14,9,15,13,21,16,14,16,20,15,17,19,13,14,16,13,14,17,16,19,13,11,16,14,18,14,15,11,17,12,15,16,13,8,15,15,16,16,20,13,16,15,17,15,14,18,15,17,16,15,13,14,14,16,15,16,16,7,15,15,13,15,13,12,14,16,18,17,11,15,18,18,17,15,12,16,17,16,14,14,11,12,17,13,16,16,15,14,13,14,18,14,13,14,15,17,15,14,14,16,18,14,20,14,17,17,14,13,18,17,16,14,14,15,15,17,9,10,17,14,13,16,13,16,18,17,17,16,14,16,14,15,20,19,15,18,14,15,12,16,15,15,17,16,16,15,19,19,12,16,20,13,12,10,17,16,16,10,13,14,17,15,15,16,16,12,12,20,12,15,19,16,13,10,16,19,16,7,16,14,13,12,15,18,14,19,20,16,13,14,18,17,14,14,13,15,18,13,12,12,11,16,18,18,10,13,15,15,14,17,15,15,12,12,11,17,13,18,10,17,18,14,14,20,14,17,8,18,18,15,17,15,15,19,15,14,16,17,18,14,18,16,15,12,16,11,14,16,15,14,16,14,15,10,16,15,15,16,17,14,12,14,17,11,15,16,15,15,13,13,18,15,19,13,13,13,11,12,20,19,16,17,12,16,21,16,17,18,17,17,12,16,17,14,16,18,18,13,19,15,16,18,17,18,19,16,18,14,14,12,12,13,13,18,17,14,18,14,13,15,15,11,12,17,16,13,17,13,16,14,17,15,11,17,12,9,14,16,16,17,13,12,16,16,11,11,15,15,15,13,10,16,15,16,18,16,20,13,17,16,13,14,14,14,15,12,17,14,15,18,14,10,10,18,14,13,18,15,13,16,16,13,16,18,15,17,15,14,21,15,16,15,14,17,14,11,16,10,15,15,15,15,14,19,11,15,17,15,15,19,17,11,19,16,15,14,9,15,12,17,13,15,16,13,14,17,17,20,13,12,14,22,13,11,18,14,12,11,12,18,15,14,12,12,10,12,13,15,14,17,17,14,19,16,14,16,17,12,21,15,12,11,15,16,16,15,18,14,17,7,17,11,16,13,17,17,16,16,24,16,16,13,14,16,16,16,16,10,16,15,13,8,18,20,16,15,13,15,12,16,17,19,13,15,16,17,17,13,14,16,13,14,11,15,12,21,12,18,23,12,20,15,16,19,16,15,17,15,15,16,16,10,13,17,18,15,17,14,20,13,14,14,15,18,19,16,18,15,10,16,13,16,17,19,19,10,16,14,14,11,17,18,12,16,15,17,14,19,19,15,15,15,12,12,13,13,14,16,15,12,17,13,16,11,21,15,12,12,19,12,17,18,19,21,12,15,13,11,11,14,13,12,19,15,14,10,15,13,13,14,19,13,16,17,13,8,15,14,14,16,14,18,17,20,13,19,11,16,16,17,18,13,16,9,12,14,16,12,16,18,12,18,10,17,19,7,12,12,13,14,14,15,16,17,12,18,19,14,15,12,16,17,10,13,19,13,17,14,18,15,17,14,14,16,15,13,16,17,14,10,10,19,14,12,18,12,10,16,12,15,14,15,12,18,13,12,18,17,17,15,16,13,16,17,20,17,15,15,15,21,12,13,13,16,17,14,16,14,14,15,19,11,21,16,13,16,19,18,15,14,18,22,17,14,14,17,14,17,13,20,14,16,13,15,18,13,17,15,14,13,12,15,19,18,14,8,17,16,17,15,13,14,14,13,16,19,17,16,16,16,14,11,17,16,16,17,17,15,18,21,20,16,17,13,17,13,14,17,19,15,18,24,14,10,13,15,15,14,16,15,17,16,8,14,17,19,15,11,11,17,17,16,15,15,17,16,13,16,13,13,17,17,15,15,18,14,15,16,14,12,18,17,15,9,14,14,15,11,14,15,16,15,19,14,15,14,18,10,15,13,17,18,19,16,17,13,13,15,17,17,10,16,16,10,14,17,16,17,12,16,16,11,12,15,13,15,21,15,16,11,15,17,11,12,17,11,14,13,15,18,14,13,15,14,17,13,8,15,17,12,13,18,19,13,18,14,17,9,16,14,15,13,15,14,14,15,19,14,18,19,16,15,16,16,14,12,16,16,17,14,12,18,18,12,10,20,11,16,14,14,16,19,20,14,15,17,13,8,16,19,17,18,11,22,9,16,13,15,19,17,12,14,13,15,15,10,21,15,16,16,10,10,12,20,18,15,14,17,12,12,14,16,13,15,20,15,15,15,17,15,15,17,14,17,15,15,14,19,18,10,17,13,12,19,16,10,11,15,9,18,19,16,16,15,16,11,17,12,15,15,14,17,17,13,18,19,12,20,17,13,14,15,16,15,14,16,16,16,16,16,15,15,12,14,20,18,14,17,10,11,16,18,15,14,21,16,13,19,16,14,15,10,12,13,16,15,16,15,14,15,17,14,17,20,16,14,12,17,19,10,17,14,14,12,17,18,14,14,14,21,13,15,16,17,16,14,19,16,16,13,15,15,12,20,10,17,13,14,15,21,12,16,15,17,14,20,10,15,10,10,13,11,15,13,16,15,15,18,18,15,15,21,16,13,12,12,12,17,17,12,10,10,19,16,14,11,19,18,14,19,20,12,15,18,13,18,17,14,19,16,12,8,13,10,14,16,16,12,13,15,13,13,10,12,15,17,15,14,14,19,14,16,14,18,12,21,19,16,14,17,11,15,13,13,12,10,16,14,11,14,15,17,14,18,16,15,16,16,14,11,20,14,16,18,15,15,12,13,10,14,16,18,17,17,18,12,16,14,19,15,13,13,18,12,15,12,14,10,16,17,18,14,14,16,21,15,16,15,16,16,13,16,18,15,17,16,15,19,16,18,11,19,19,17,18,16,14,14,15,14,11,11,17,13,20,17,15,12,15,18,18,20,17,17,18,17,15,16,15,15,11,15,18,13,12,18,16,16,15,15,15,12,20,17,11,12,17,13,13,13,14,16,15,17,16,15,12,17,18,14,11,17,15,17,19,18,10,14,18,12,11,16,16,13,12,17,12,20,16,14,12,17,18,18,15,12,10,10,12,14,17,12,20,20,11,17,21,18,15,14,16,21,15,16,14,17,11,20,18,12,17,11,15,15,16,14,18,16,23,20,17,13,19,17,13,11,14,12,17,17,13,10,11,19,19,16,17,12,17,16,9,16,13,18,15,13,15,20,15,19,19,13,15,12,13,17,11,18,17,10,13,17,15,13,12,17,14,18,20,18,14,17,19,16,16,10,16,19,15,18,13,13,15,16,15,15,17,14,21,13,12,13,15,9,16,17,11,19,15,13,13,18,17,14,16,12,15,15,17,13,15,18,17,12,21,17,15,10,15,20,14,17,12,11,18,17,14,15,16,12,17,9,14,12,18,14,16,14,13,13,15,15,16,12,10,20,14,12,16,18,17,17,15,13,12,16,15,18,15,12,15,9,16,12,17,11,17,18,16,19,15,16,19,17,12,18,12,16,16,19,18,18,11,10,15,13,15,17,14,16,13,16,15,15,18,17,22,14,14,21,13,9,15,21,15,14,14,10,19,13,17,21,15,16,15,15,18,17,14,16,16,14,16,11,16,13,20,16,15,12,14,17,11,15,14,17,13,13,14,11,17,14,19,13,18,11,13,14,18,11,10,15,18,18,19,16,14,15,17,19,11,18,13,15,17,17,15,18,18,10,12,17,11,18,14,15,15,17,12,16,20,17,20,13,12,16,19,13,21,15,19,13,14,16,11,15,16,18,18,15,17,13,11,18,10,12,16,14,11,16,12,15,17,14,24,13,12,16,14,18,15,16,12,16,9,18,16,15,17,12,10,15,16,14,14,19,15,17,14,14,16,19,19,12,17,20,16,20,15,16,16,14,10,16,14,18,14,14,14,13,15,19,17,12,14,16,17,15,15,13,13,18,17,13,19,18,16,16,13,13,21,17,17,16,17,12,15,15,15,15,17,14,13,14,9,14,14,16,17,18,14,14,15,13,12,15,12,12,11,17,17,17,17,16,22,15,11,13,19,15,19,12,14,15,17,18,13,15,16,17,16,10,12,12,16,14,14,11,15,16,13,13,12,16,13,14,17,17,22,16,13,17,17,15,20,17,14,21,10,14,17,12,15,17,14,15,14,15,13,21,15,11,16,14,12,16,15,14,18,14,13,17,18,19,19,21,17,17,18,16,15,14,16,14,15,22,12,9,19,18,16,13,20,15,12,13,9,15,13,16,17,17,11,17,11,15,16,15,14,17,16,15,16,14,15,15,12,11,15,15,16,17,11,17,17,12,15,15,10,17,13,15,14,11,11,11,17,15,10,16,11,21,12,13,16,13,16,15,19,15,16,14,18,18,10,19,17,20,17,18,15,13,13,14,18,12,17,15,16,12,16,12,12,20,12,17,21,16,16,14,20,14,15,13,13,17,20,16,15,19,19,14,19,14,16,17,14,14,14,16,15,19,13,15,13,19,12,11,15,14,11,15,18,20,12,18,17,12,18,15,11,17,13,18,9,14,16,14,15,15,11,14,19,13,13,17,15,16,17,21,13,17,20,18,18,11,14,17,13,17,17,15,18,16,15,19,19,17,13,17,21,13,15,19,15,15,13,17,15,12,12,18,14,16,11,15,12,12,15,17,15,14,14,16,17,12,13,10,12,15,18,11,17,17,13,17,13,17,14,14,16,17,13,16,17,16,16,15,12,19,14,14,17,19,14,13,19,17,18,17,16,17,15,15,12,14,21,13,19,15,16,12,12,14,17,18,12,11,11,18,12,15,14,14,17,14,19,15,15,20,18,16,14,10,11,11,15,12,13,17,14,15,19,18,22,14,16,16,16,21,15,14,11,14,15,17,13,13,24,16,16,10,16,12,15,16,12,24,18,17,16,14,15,15,13,15,11,16,12,9,10,19,15,10,13,21,17,14,16,18,12,15,17,14,12,17,13,18,16,12,13,14,14,18,20,12,16,12,15,12,16,16,18,16,15,20,13,14,16,12,16,15,14,18,17,16,16,14,12,16,17,18,17,15,19,15,11,15,15,13,15,15,13,14,14,15,16,16,19,14,16,16,17,11,19,16,12,16,15,14,11,16,17,15,14,18,13,16,16,13,16,14,11,11,13,15,15,12,15,15,16,17,19,15,17,20,16,11,18,16,15,10,14,11,17,14,14,13,16,15,12,19,14,15,14,14,16,15,14,17,15,15,16,18,15,14,11,13,21,18,15,15,15,12,16,18,19,16,14,11,15,20,19,15,20,20,16,14,11,18,14,15,19,15,15,14,18,13,17,15,14,16,11,23,17,11,16,11,15,21,13,17,17,20,17,15,14,16,17,17,15,20,10,14,18,18,13,14,15,15,16,11,13,14,13,18,16,15,17,14,12,13,16,14,13,11,13,17,16,13,16,22,17,12,15,17,15,17,16,15,23,13,13,12,16,16,14,15,13,15,18,8,20,10,14,15,18,18,12,15,16,10,15,16,9,12,18,15,18,16,16,17,16,15,14,19,14,15,11,18,13,13,21,19,11,21,13,12,16,22,17,13,20,15,20,13,17,13,14,14,13,17,18,13,16,15,15,13,14,15,13,12,19,16,17,17,19,17,11,14,12,16,14,13,13,18,14,13,16,17,12,13,14,14,14,18,17,17,10,18,17,13,13,15,17,14,14,12,14,15,16,13,11,11,17,17,17,17,11,17,11,17,16,15,13,11,19,18,16,15,16,13,16,11,11,12,18,12,12,14,17,10,19,14,9,15,10,12,16,14,14,11,20,12,17,13,14,12,14,18,9,19,15,13,13,13,11,19,12,17,15,12,14,12,17,17,13,12,16,16,14,14,16,16,16,19,17,15,14,16,12,21,19,11,16,15,17,16,14,14,17,16,10,18,14,15,14,13,18,12,11,16,20,19,16,16,19,15,17,10,16,15,11,16,17,19,18,19,14,12,19,11,16,18,16,14,15,12,20,19,16,13,16,12,13,12,18,12,15,12,16,14,21,12,16,19,13,16,13,14,16,21,18,12,12,14,16,14,15,13,18,14,17,15,11,15,17,16,13,17,20,15,12,16,22,9,16,12,15,16,13,14,20,16,17,15,15,15,16,18,10,14,17,13,19,16,13,14,19,12,15,18,14,15,18,19,13,14,17,15,10,13,14,13,12,10,15,21,12,16,9,17,16,15,19,11,11,10,18,17,17,13,16,19,17,14,15,15,12,17,18,17,15,14,19,15,19,12,14,15,11,16,14,17,16,13,14,20,17,17,16,17,14,15,13,16,19,15,17,14,16,12,13,20,18,17,13,15,12,16,15,13,16,18,16,13,15,21,11,11,18,12,12,15,14,16,14,14,14,15,13,15,12,14,19,13,17,18,14,13,19,17,15,14,13,14,17,12,15,15,11,17,15,17,13,16,15,18,16,15,13,14,18,21,17,16,16,15,13,13,12,14,14,15,18,20,17,14,12,20,14,14,15,10,18,14,18,15,16,11,20,13,17,14,16,16,16,12,16,16,15,15,11,11,7,16,17,17,14,16,16,13,20,17,14,17,16,12,12,15,18,18,17,17,13,15,16,19,14,18,16,17,15,22,20,16,15,20,18,17,17,20,18,19,14,16,18,13,16,13,15,16,14,12,17,13,14,9,11,13,13,13,12,16,19,13,14,9,15,19,16,19,15,16,16,18,18,19,13,15,14,16,20,14,15,12,9,15,12,11,15,16,14,19,20,16,14,14,15,13,18,16,14,14,18,16,10,11,19,17,12,17,12,19,14,15,12,14,15,13,15,13,11,12,14,11,15,12,15,16,16,13,17,14,15,17,11,14,16,18,15,13,13,15,16,15,16,15,13,16,12,14,14,16,18,20,17,13,16,16,19,12,15,15,17,16,18,11,14,15,17,10,15,18,16,17,14,18,16,18,12,17,18,18,11,12,16,15,14,12,14,12,8,15,15,9,16,14,16,16,12,13,14,15,16,13,15,13,17,13,14,16,11,14,8,16,13,17,16,17,16,16,15,16,12,13,16,17,18,18,18,19,15,14,13,12,18,14,16,14,18,12,16,14,17,14,18,16,14,13,14,19,16,13,16,12,15,16,14,7,15,15,14,12,18,16,12,15,18,11,20,18,13,14,13,15,14,18,16,16,17,12,12,15,17,12,18,16,15,10,17,13,13,14,13,11,17,14,14,19,18,13,14,9,16,15,18,20,16,15,15,12,17,18,11,14,18,17,12,14,13,16,11,12,19,11,12,11,16,11,15,14,8,14,17,20,13,11,17,13,14,9,20,16,14,12,15,17,13,18,18,17,19,15,13,13,23,15,18,8,17,17,14,10,15,11,9,16,11,13,12,15,17,13,10,13,12,16,17,17,18,14,18,15,16,12,18,16,15,13,18,16,16,10,12,14,18,13,16,13,12,16,14,17,15,21,13,17,17,14,15,17,14,13,17,18,13,12,15,15,10,14,18,19,17,11,17,13,11,9,18,14,21,14,9,15,20,16,16,16,14,16,16,13,11,13,13,14,16,13,15,12,13,15,20,14,19,16,14,10,16,18,17,19,14,13,18,15,10,14,18,13,20,19,15,19,18,16,17,17,11,15,15,17,20,15,13,14,12,13,17,17,16,14,14,17,18,18,14,15,14,12,12,14,12,18,17,7,17,17,14,16,12,12,12,18,15,13,16,21,17,17,17,11,12,18,10,15,17,13,15,14,17,12,19,16,15,15,16,19,15,16,13,17,16,17,12,9,17,17,10,14,12,18,11,14,16,16,15,17,14,14,17,13,17,17,13,16,11,14,15,13,11,13,15,18,15,16,12,15,14,13,16,19,14,17,13,13,22,16,13,12,13,15,8,10,12,11,12,15,15,21,12,17,18,15,15,18,16,15,15,14,14,12,17,15,15,17,16,15,12,14,13,12,16,15,15,12,13,17,10,15,11,12,14,13,14,15,17,17,15,14,15,18,16,9,17,16,14,12,13,14,12,15,12,15,18,17,16,15,13,18,19,16,9,15,14,15,14,15,11,11,15,13,11,15,15,15,12,10,17,12,11,14,16,19,15,19,17,15,11,16,13,16,17,13,9,11,10,17,13,15,11,15,13,12,14,9,11,17,18,13,19,15,17,20,9,17,15,18,14,17,13,14,16,14,17,16,17,19,15,17,19,18,18,14,16,13,18,16,17,11,16,15,14,14,18,14,18,15,15,11,12,19,20,15,13,11,14,12,14,19,17,13,12,12,13,15,14,11,20,16,14,13,17,15,13,15,16,12,15,9,9,13,18,14,15,13,15,12,17,13,13,21,13,16,21,16,19,18,16,15,15,9,19,9,17,15,12,15,12,11,16,17,16,12,14,14,14,15,19,13,16,11,12,17,16,21,11,21,13,12,17,17,14,21,18,13,17,16,23,13,15,15,18,13,12,18,13,19,21,16,17,15,15,15,12,18,17,19,12,16,15,14,15,14,15,11,12,14,19,17,11,10,10,15,16,13,12,11,13,10,18,12,16,17,14,17,17,11,14,14,8,16,18,12,15,11,17,17,20,12,14,18,16,16,17,16,13,15,17,19,16,15,16,20,14,9,18,14,15,16,19,16,14,14,18,21,18,16,16,13,19,17,18,15,12,19,11,14,17,15,15,16,12,19,15,18,16,18,15,16,15,16,17,19,23,20,12,12,14,19,17,15,18,13,15,19,11,16,14,9,11,13,15,19,13,14,16,17,18,16,13,17,16,13,11,15,9,17,14,14,12,12,18,11,17,15,13,13,15,19,13,18,21,16,17,12,18,16,11,16,14,15,13,15,10,13,14,14,18,14,13,14,16,14,20,13,15,17,14,15,21,14,12,16,17,15,11,13,19,19,14,18,15,14,16,14,15,15,16,10,15,19,19,14,13,19,13,15,14,18,16,14,12,11,14,13,18,15,11,18,16,13,16,16,17,13,15,13,17,12,16,13,14,16,10,16,17,18,12,14,17,12,15,14,15,18,13,15,15,20,13,15,13,14,15,17,12,13,14,14,18,13,16,18,15,17,16,11,15,17,16,16,15,10,19,15,17,11,16,12,12,14,13,16,17,13,18,19,11,14,16,15,16,16,16,17,16,19,18,19,15,14,13,12,15,14,14,11,18,16,12,15,14,16,15,14,13,17,11,9,20,21,18,13,12,17,13,17,10,15,18,14,17,9,19,13,15,15,15,13,15,13,12,16,15,17,8,16,13,15,20,15,18,17,14,16,16,20,15,15,11,15,12,14,16,15,16,13,16,14,17,12,14,11,21,16,18,19,15,15,14,12,12,15,15,21,12,15,14,14,13,13,15,12,15,18,18,10,11,15,8,12,20,14,15,12,14,17,14,12,16,17,13,16,14,18,13,16,14,16,12,16,19,18,12,20,13,16,20,15,11,11,21,14,13,19,13,10,17,16,12,21,18,16,14,16,11,19,17,13,18,12,17,13,12,20,17,16,19,14,18,22,10,14,11,19,14,14,15,15,15,17,16,19,19,18,14,12,13,14,14,15,14,16,16,20,15,18,14,16,15,12,14,13,17,15,15,12,16,12,13,15,18,16,12,9,11,17,14,15,17,11,10,15,16,13,18,15,12,12,17,13,11,19,11,13,18,16,18,14,13,15,17,16,15,9,18,14,12,18,13,16,16,17,10,15,16,10,16,13,17,15,19,9,18,13,16,16,13,10,12,15,15,11,14,15,18,13,18,13,15,11,14,11,10,15,16,14,11,19,19,12,18,12,16,15,11,9,15,14,17,17,17,17,12,16,19,11,14,22,16,15,14,17,14,13,17,17,11,10,20,13,14,10,14,15,19,16,13,14,14,16,15,14,10,15,16,19,13,12,20,17,16,16,11,13,16,17,15,16,16,18,15,21,14,12,15,15,15,17,15,13,17,13,10,14,21,14,12,10,19,13,16,13,15,15,17,20,17,20,21,13,14,17,19,9,17,20,17,16,7,11,17,19,15,18,19,17,16,13,17,11,14,17,17,18,17,13,14,20,20,10,17,14,16,18,12,16,18,12,16,19,18,16,16,21,15,16,20,17,12,16,19,15,18,16,18,14,15,11,9,8,12,10,14,14,19,19,18,11,15,21,15,15,18,14,16,17,16,14,16,9,15,11,13,18,17,19,20,18,13,12,17,19,16,15,13,19,21,15,20,17,11,14,16,14,23,18,18,12,15,15,12,22,18,10,17,14,14,12,12,17,21,14,17,16,17,17,10,16,19,13,15,13,17,13,14,16,10,15,15,12,14,14,17,15,13,18,16,17,17,10,16,14,19,14,9,15,15,9,19,17,22,16,11,14,14,18,13,13,18,19,19,9,14,17,14,16,16,13,13,16,14,19,18,13,14,14,17,17,17,19,17,15,19,16,16,15,16,14,17,18,14,12,9,11,13,11,14,17,12,11,15,18,14,11,13,14,11,13,18,13,21,14,12,13,13,18,12,15,19,12,16,15,12,15,15,16,8,13,13,15,14,16,14,16,15,21,16,17,11,14,13,16,13,18,15,17,14,16,16,15,13,20,17,12,17,21,13,13,12,11,16,16,13,18,10,13,11,12,14,16,19,15,19,14,13,9,16,14,15,16,20,12,14,17,17,12,16,12,17,12,14,14,15,12,14,14,18,18,13,18,11,16,13,19,12,15,14,20,17,14,21,16,19,13,14,20,15,17,12,14,19,13,12,15,17,16,18,17,16,20,17,19,16,21,18,13,19,12,13,16,13,10,17,9,16,14,19,18,14,15,17,14,21,11,11,18,11,14,9,19,15,15,19,18,15,18,13,19,18,17,12,15,15,10,12,15,13,17,19,17,16,15,10,14,18,18,17,13,16,13,14,14,17,11,12,16,15,18,22,22,17,17,13,17,14,14,18,13,19,15,14,17,14,11,17,14,14,16,16,20,17,14,9,14,16,13,14,16,20,11,15,12,21,19,18,18,14,11,14,15,16,11,11,15,16,15,10,15,16,16,18,18,16,14,12,11,19,18,14,17,17,16,20,13,12,17,8,15,15,21,15,17,15,19,12,17,19,18,9,11,14,20,16,15,15,18,21,14,17,14,13,14,15,16,17,19,13,17,13,14,11,17,15,13,15,16,16,14,12,15,17,21,15,15,20,17,20,14,7,16,18,14,15,14,18,18,17,16,14,17,16,10,12,13,15,19,14,12,20,10,16,19,7,16,13,12,17,15,13,19,15,11,18,16,13,13,16,18,14,14,13,14,19,21,15,13,13,19,16,15,20,19,18,13,20,18,16,11,15,15,12,14,18,16,20,20,18,20,9,14,15,17,16,12,19,12,11,19,11,20,18,13,14,10,13,12,13,13,18,13,11,14,15,19,16,6,15,14,18,20,13,10,12,19,14,12,16,13,15,14,20,12,14,14,18,12,19,13,16,15,21,12,18,18,14,19,15,15,13,13,19,13,21,16,15,14,14,14,14,5,13,15,12,15,13,21,13,15,16,15,14,21,15,11,18,11,15,14,13,17,19,17,16,14,12,18,12,12,15,8,11,15,16,16,16,13,15,12,16,11,16,20,14,10,14,14,16,15,21,20,19,15,13,17,15,13,12,14,14,15,12,15,16,14,14,13,18,19,18,17,14,13,10,12,12,17,17,14,17,16,11,13,14,10,12,18,15,16,10,18,13,17,18,14,13,14,12,15,11,17,15,12,16,15,11,14,17,12,19,19,17,15,10,18,15,10,17,21,19,10,15,16,12,16,20,18,20,24,19,15,17,15,12,18,16,16,13,13,14,12,11,13,15,19,14,18,17,9,20,13,15,14,13,14,18,17,18,14,15,14,15,11,16,18,11,16,19,20,17,17,17,17,15,18,13,16,14,12,14,11,11,15,15,14,17,17,13,14,21,15,17,14,18,16,13,12,10,17,13,13,18,15,15,19,20,15,15,10,19,15,17,12,14,18,10,16,15,10,15,12,16,17,14,11,18,14,12,21,14,17,15,14,16,16,13,12,10,14,18,22,14,14,17,10,17,12,21,12,9,13,18,10,17,13,15,19,16,15,16,15,10,18,14,17,10,18,14,14,12,16,15,17,20,18,16,8,16,19,13,12,15,17,15,18,13,16,16,18,19,16,14,13,10,11,13,15,13,13,15,10,9,18,19,21,12,10,17,17,17,17,17,14,15,16,18,13,18,15,19,18,10,14,19,17,16,12,12,15,17,17,17,19,18,21,12,16,15,19,17,12,14,18,17,14,18,11,15,14,16,16,17,16,15,18,15,11,10,13,17,11,15,18,18,21,14,19],"xaxis":"x","yaxis":"y","type":"histogram"}],                        {"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"tracegroupgap":0},"title":{"text":"The binomial distribution"},"barmode":"relative","height":400,"width":600},                        {"responsive": true}                    ).then(function(){
-
+        </div><div class="output text_html"><div>                            <div id="2590ebe6-24bd-43cd-b09e-179af04b780d" class="plotly-graph-div" style="height:400px; width:600px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("2590ebe6-24bd-43cd-b09e-179af04b780d")) {                    Plotly.newPlot(                        "2590ebe6-24bd-43cd-b09e-179af04b780d",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"x=%{x}<br>count=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"x":[19,13,17,17,19,18,14,19,16,15,14,17,19,18,16,14,15,16,13,14,18,16,17,21,18,16,10,15,14,13,12,17,13,14,14,20,11,13,19,13,15,18,14,10,18,15,19,13,16,8,13,14,18,15,19,15,11,15,11,12,11,19,11,14,15,16,21,14,15,17,15,15,14,14,11,16,13,11,13,16,16,13,13,13,16,12,11,14,17,21,16,14,15,12,18,16,15,12,14,18,12,17,14,9,15,14,16,16,17,12,13,12,15,14,13,15,15,15,16,14,19,18,13,17,13,15,20,20,14,17,16,23,16,14,10,15,11,21,13,13,17,18,15,12,13,18,17,11,14,11,11,8,13,12,12,13,16,14,12,14,15,11,17,17,16,18,15,16,16,13,14,19,14,17,17,21,16,11,16,15,15,15,17,9,20,17,16,14,18,11,13,17,12,14,13,18,11,14,12,16,9,16,17,15,15,17,19,10,15,20,11,21,15,11,16,13,19,15,14,12,11,17,14,15,11,15,11,18,17,17,9,15,15,19,15,17,12,11,12,11,14,14,15,15,14,19,11,16,15,17,15,11,17,17,16,12,17,12,14,14,14,12,19,15,16,13,15,14,13,13,18,18,18,14,19,16,13,13,17,14,18,17,15,15,17,19,15,16,17,14,14,14,16,15,19,14,15,19,11,20,8,12,11,15,17,12,22,23,16,17,12,14,15,20,14,16,19,17,17,16,13,13,13,12,13,20,10,14,11,11,19,12,12,15,14,18,17,18,15,17,16,10,17,14,15,12,14,14,15,16,15,11,12,14,18,15,17,10,13,18,13,11,15,12,15,19,19,15,14,20,12,16,18,14,13,15,10,14,19,15,16,10,15,18,20,17,17,13,13,16,15,13,13,17,19,19,18,17,18,17,12,17,17,14,14,19,23,11,14,16,10,16,16,20,18,18,18,15,16,11,12,14,15,17,9,21,16,15,13,20,17,14,15,15,13,18,13,12,11,11,16,15,13,13,16,14,11,17,17,14,15,12,15,14,16,12,12,14,17,20,16,12,10,12,15,15,15,15,17,16,20,17,20,15,16,19,15,12,19,16,15,19,15,18,12,18,18,14,14,16,14,17,16,10,12,12,16,15,16,15,15,17,15,15,18,11,16,13,20,18,16,14,12,13,13,16,10,11,9,20,15,14,11,19,20,11,15,18,14,13,13,15,17,16,16,14,19,17,14,15,16,15,14,14,11,11,17,12,13,17,12,12,10,23,13,6,11,14,17,10,14,12,13,17,13,17,16,13,16,11,11,16,19,15,14,11,13,18,19,14,19,14,15,15,14,20,18,16,13,15,14,15,16,11,15,12,15,18,14,12,16,15,10,17,20,18,12,13,12,13,12,16,13,17,14,12,17,10,13,16,15,20,14,13,17,13,17,12,14,14,15,14,14,11,14,14,16,14,16,18,16,13,21,13,18,12,16,16,10,15,18,11,11,12,13,17,17,13,13,15,16,17,13,11,13,15,16,14,14,15,12,20,20,17,16,14,8,13,12,17,15,21,13,13,16,14,17,17,13,15,15,13,13,12,14,16,17,16,14,13,14,12,19,17,17,14,18,19,12,13,19,16,11,11,18,17,14,19,12,14,19,11,16,13,11,14,14,15,14,11,19,17,13,12,15,15,14,14,15,17,18,17,13,19,18,12,15,14,18,15,12,18,17,18,18,20,16,9,14,12,13,17,17,14,7,16,13,14,18,20,16,18,19,16,16,18,12,17,13,12,16,15,14,14,14,17,13,12,20,14,17,14,13,14,13,16,17,12,13,11,11,11,11,15,15,14,13,13,16,10,17,15,14,15,11,17,14,12,15,15,9,17,17,17,15,18,16,15,12,14,13,17,15,14,12,18,14,15,17,16,15,15,12,19,18,18,18,15,16,14,16,14,12,15,14,14,13,17,16,15,12,15,14,13,17,11,10,15,14,16,16,10,14,17,15,17,14,11,16,17,16,15,15,14,19,11,20,15,14,15,15,18,15,12,14,15,14,16,11,14,17,12,13,14,15,14,14,10,16,20,15,15,15,13,22,18,17,12,11,12,16,15,15,15,21,10,15,12,17,16,21,13,11,15,12,21,16,12,13,9,16,15,15,19,20,11,15,19,18,14,15,12,14,15,13,16,11,14,20,12,11,14,14,18,16,16,16,12,17,13,16,15,19,20,13,15,16,16,14,15,13,13,16,15,17,15,11,12,14,11,15,16,13,16,13,17,18,11,17,18,18,13,17,14,17,11,14,12,18,22,16,16,13,16,15,20,17,15,17,16,14,16,14,16,18,15,13,17,14,20,12,11,16,11,16,22,14,11,15,18,20,14,17,22,16,15,15,14,15,13,14,10,17,18,16,15,10,11,15,17,12,15,18,17,21,14,15,13,14,12,19,16,12,11,17,16,21,11,18,10,15,14,13,14,15,15,17,14,16,18,17,15,16,11,20,16,11,15,16,15,10,16,17,13,16,14,15,16,18,12,19,14,12,15,19,14,12,16,21,21,14,15,16,14,18,14,9,16,14,11,18,16,11,16,13,15,19,11,14,18,18,14,18,13,17,16,19,15,16,11,14,18,12,15,13,13,17,14,14,11,18,16,15,17,16,17,16,19,17,18,15,15,12,16,14,15,16,13,14,16,14,12,14,16,20,16,13,20,15,16,15,21,13,11,21,21,16,14,14,10,13,13,12,15,13,22,15,15,19,21,17,16,19,13,15,15,15,14,18,13,14,19,17,16,16,19,16,15,14,17,16,15,15,14,16,12,14,13,14,16,13,17,19,13,13,13,14,16,11,14,17,17,16,22,14,13,17,14,17,14,13,15,11,11,11,18,19,14,16,13,15,19,14,18,13,13,18,14,11,17,15,12,16,15,13,15,12,23,16,16,14,8,14,15,16,14,13,19,16,16,20,12,13,12,16,21,16,20,14,12,20,15,16,16,16,15,11,16,17,16,19,20,16,12,18,11,18,11,15,14,15,16,13,15,20,15,13,15,14,16,17,16,14,16,14,15,17,18,14,22,13,19,16,15,16,17,18,14,16,14,16,12,16,15,17,13,18,14,18,11,13,12,14,14,16,13,14,12,12,19,13,10,15,18,12,10,13,15,12,17,16,15,12,17,16,17,20,12,14,14,11,18,12,16,15,16,21,14,16,18,17,10,12,9,13,15,16,11,16,14,19,14,16,12,18,12,17,14,11,18,15,9,13,17,19,14,17,14,18,15,18,13,16,15,10,16,17,16,14,15,17,16,12,14,14,16,14,16,20,19,17,19,12,15,15,10,13,8,11,15,17,20,14,14,15,12,17,17,13,19,15,13,16,15,14,14,13,11,16,14,16,15,16,16,12,13,19,10,15,16,14,10,17,14,13,20,17,14,14,8,13,11,14,18,18,12,17,14,15,19,17,13,13,19,17,12,8,14,14,18,14,15,17,17,13,14,17,15,17,15,20,12,16,11,19,14,16,16,12,14,17,18,19,16,18,14,16,13,13,14,13,14,15,14,13,21,17,15,18,14,12,16,9,11,11,10,19,18,16,15,18,12,13,13,18,19,16,14,14,24,18,16,19,16,20,17,22,17,12,15,14,18,14,16,18,13,13,15,10,15,15,17,17,13,16,15,16,15,15,12,12,24,17,13,12,15,18,11,17,15,14,11,11,19,12,13,14,14,12,15,11,14,14,18,13,13,17,15,16,18,12,13,17,16,14,11,14,11,12,12,16,15,21,19,16,18,22,15,19,12,14,18,13,13,15,19,15,14,11,12,10,19,17,12,15,13,18,21,15,11,17,17,17,14,12,11,11,21,16,11,18,10,14,14,18,21,13,21,15,14,14,11,10,14,10,12,21,14,12,13,15,15,11,13,17,18,17,17,16,15,13,13,14,16,14,17,16,15,18,17,17,13,20,12,15,16,10,16,20,17,18,15,19,20,13,16,18,19,18,18,17,16,13,12,14,14,15,10,14,12,16,13,15,13,17,22,17,10,20,17,14,15,13,19,14,18,13,16,18,14,14,16,18,16,17,13,16,16,11,18,19,15,18,10,16,16,14,15,11,18,14,20,15,14,13,17,8,19,13,19,16,11,10,16,18,14,13,16,15,16,17,14,16,17,13,13,17,18,13,14,14,17,19,18,16,17,11,11,15,12,16,10,17,16,16,23,18,13,16,15,17,9,18,9,15,14,16,15,20,14,14,15,17,14,13,10,12,15,12,16,14,12,24,19,15,16,14,21,17,13,16,16,16,18,17,18,14,16,17,15,14,14,13,18,16,16,17,13,13,10,17,17,14,12,15,16,15,13,13,13,16,14,15,14,13,14,14,18,13,21,17,16,12,18,11,12,16,18,15,17,14,18,17,16,8,18,11,11,18,17,13,16,17,14,18,12,20,15,18,17,19,13,20,11,15,17,13,17,18,16,15,20,15,10,14,13,13,19,14,18,16,14,13,12,13,14,15,11,16,16,11,17,11,18,20,16,14,20,18,16,16,14,17,13,17,19,10,10,16,13,15,19,18,15,18,12,19,17,18,19,16,12,13,15,17,18,14,13,18,17,10,14,17,17,16,17,13,9,8,12,16,14,18,14,13,18,16,15,15,12,14,14,16,11,19,21,15,14,16,12,17,14,16,16,16,13,12,11,13,16,17,14,14,15,13,19,17,20,18,11,14,20,21,16,12,16,14,14,17,16,15,13,10,13,10,13,18,15,21,15,17,11,17,18,16,13,20,13,15,15,14,14,12,15,13,17,15,18,19,20,14,11,17,18,17,16,16,13,10,16,16,20,15,18,13,16,12,18,14,17,15,14,15,14,13,10,18,18,17,14,15,13,15,11,18,12,13,13,18,18,13,12,18,17,14,17,8,15,13,14,16,17,17,13,18,17,15,22,17,11,16,16,14,21,14,15,18,14,18,18,17,19,15,17,17,16,18,11,10,15,10,15,14,15,12,15,14,19,11,10,17,17,18,16,12,19,11,16,17,12,10,17,15,15,19,15,15,15,21,16,17,13,12,17,15,15,17,14,18,13,18,15,15,15,22,18,15,16,19,13,12,17,12,13,11,13,9,15,19,18,14,15,15,13,17,18,13,13,10,18,14,11,13,17,15,14,14,15,18,17,17,16,19,12,12,12,12,14,17,15,19,14,23,11,8,15,15,12,17,9,19,15,14,15,12,16,21,16,13,20,16,17,12,18,15,17,18,14,14,11,17,14,14,17,18,14,15,16,13,18,14,17,18,15,13,14,17,14,18,12,16,14,15,17,12,12,11,13,10,12,16,17,18,18,21,17,17,21,14,17,16,18,18,16,17,11,14,13,15,12,17,13,21,11,14,17,23,15,8,13,18,11,14,11,16,14,16,16,15,12,15,12,15,13,17,12,12,12,16,19,20,10,14,14,15,17,17,21,16,15,15,15,9,18,14,14,14,12,12,13,17,15,14,21,19,19,16,18,14,22,11,20,16,14,8,18,13,15,18,18,16,7,13,16,15,15,21,15,15,17,17,8,10,12,10,20,13,17,16,10,15,16,12,20,15,14,21,18,13,17,14,16,14,16,16,14,18,20,16,8,14,16,15,12,14,14,20,15,16,13,14,17,13,18,17,15,14,17,12,16,10,9,12,15,10,16,14,20,11,15,18,14,14,13,10,17,20,18,14,14,15,13,19,15,15,7,14,13,14,10,14,14,15,21,14,9,13,8,18,17,9,15,13,14,16,18,19,11,9,8,17,19,16,15,16,18,17,11,20,11,14,14,17,10,13,20,13,16,19,11,17,16,16,17,13,15,21,14,13,13,20,14,16,14,9,15,13,19,16,14,15,13,16,13,15,14,13,17,15,17,14,18,15,12,19,19,18,18,20,16,12,13,12,16,11,9,14,17,9,15,16,16,22,15,9,17,16,13,17,16,16,16,18,16,16,15,15,18,14,13,18,17,22,14,17,14,18,20,17,13,15,19,16,17,21,15,10,16,17,17,10,12,13,17,19,13,14,15,15,16,11,17,14,12,12,14,10,13,17,18,18,16,15,16,12,16,14,12,17,13,16,10,15,12,15,14,13,20,16,9,10,13,15,11,12,16,13,15,14,8,14,16,14,11,11,13,16,13,19,14,16,11,14,18,14,15,12,13,13,13,13,16,17,17,15,16,18,20,14,20,15,18,15,18,16,16,11,18,19,15,15,15,16,13,16,12,19,15,17,11,18,18,16,17,19,19,15,16,13,19,16,15,15,12,12,16,17,15,12,15,17,14,12,18,14,11,11,13,12,16,10,13,16,16,15,16,16,12,20,19,15,16,13,11,14,9,16,17,14,18,13,15,19,15,19,11,17,14,19,16,15,14,15,13,10,13,16,11,13,10,17,18,14,15,17,22,15,16,13,16,14,15,14,15,14,19,14,18,13,18,21,17,16,18,20,16,15,10,14,16,15,16,19,13,16,16,17,14,14,18,16,19,15,13,19,15,14,20,9,21,18,14,18,14,18,15,16,19,18,12,18,19,14,19,20,18,17,13,15,15,21,14,15,15,13,11,12,18,12,19,17,17,21,18,17,16,18,18,17,18,18,15,19,22,13,16,17,11,18,17,15,15,13,15,15,14,20,17,14,17,16,15,13,16,15,12,15,12,20,8,14,20,12,13,18,21,16,13,16,15,12,17,12,14,16,16,9,15,10,15,16,18,15,9,16,16,16,10,16,13,14,18,22,17,14,12,16,14,17,19,16,17,14,16,14,14,17,19,12,15,15,14,17,22,18,11,15,17,13,11,11,16,16,14,15,17,13,12,10,14,20,16,14,18,13,15,14,16,17,14,14,15,12,11,12,16,14,20,12,14,13,18,13,16,15,11,12,17,12,17,16,16,15,18,14,15,16,16,18,17,13,16,15,17,15,21,16,14,14,17,15,15,16,16,14,11,17,10,9,15,14,12,19,18,16,12,19,17,15,14,11,15,15,14,16,12,8,13,15,12,15,19,12,13,14,14,13,16,17,14,14,15,18,11,14,13,14,18,15,12,13,15,19,12,12,19,9,16,14,13,13,13,14,15,17,7,13,19,20,18,15,13,15,12,9,16,15,16,14,14,15,12,17,16,15,11,21,15,13,13,15,14,16,14,16,14,17,14,15,17,20,10,16,17,13,16,15,13,15,18,15,16,16,17,15,16,14,15,19,19,10,18,18,14,18,13,16,13,19,13,17,15,16,14,13,14,19,15,14,15,20,16,14,17,17,18,15,18,16,13,15,19,12,19,14,15,13,17,15,11,12,17,15,18,19,13,14,8,16,16,15,17,15,14,18,16,17,16,21,16,18,19,16,15,13,15,16,18,14,17,16,14,15,15,16,17,18,13,11,13,15,9,15,12,15,14,17,15,14,11,13,19,13,16,15,21,14,17,12,20,17,18,13,15,15,18,13,16,19,17,17,14,11,12,19,12,15,12,15,16,14,14,14,15,11,16,16,18,16,16,17,11,13,16,17,15,15,12,15,20,15,14,17,19,16,13,10,19,17,12,16,12,21,14,12,13,12,17,14,21,17,15,13,17,15,13,17,13,14,12,7,14,12,9,15,20,19,16,18,16,13,15,16,14,18,18,16,18,12,8,16,12,19,17,14,14,18,14,15,13,17,16,18,16,14,18,15,19,17,18,16,15,14,19,16,18,13,14,14,13,18,18,14,18,13,18,10,10,16,15,16,14,12,15,15,15,15,13,13,14,12,14,16,17,18,14,14,14,13,15,11,16,14,13,16,14,18,8,14,13,10,12,14,22,18,13,16,14,12,15,17,12,16,12,19,14,15,17,17,20,11,18,14,13,15,17,9,17,16,15,12,15,15,16,19,13,14,15,17,16,10,20,13,16,15,16,21,18,15,18,16,15,13,15,16,19,13,12,11,14,20,16,17,16,14,15,19,15,16,11,14,13,15,13,17,15,15,12,17,16,17,14,16,10,17,18,14,12,20,19,18,15,16,18,16,10,13,14,14,13,15,19,19,15,17,14,14,17,16,12,16,15,14,17,10,14,15,12,16,11,14,13,9,19,11,16,14,17,14,9,15,13,19,13,19,14,17,18,14,13,14,18,14,11,14,12,18,18,13,16,15,17,15,20,14,13,14,16,13,18,15,13,15,14,14,13,14,16,20,16,18,14,12,17,15,13,13,12,20,17,13,13,10,10,11,14,16,18,17,15,13,16,14,17,21,15,13,18,11,11,15,12,17,14,16,14,20,17,15,10,16,15,15,13,22,14,17,14,18,15,15,13,15,11,19,14,9,12,19,13,14,17,23,14,15,14,15,17,19,14,12,20,16,16,17,9,17,14,16,12,13,11,17,17,15,11,10,10,19,18,11,15,10,12,15,12,13,15,15,15,9,21,18,17,19,15,14,16,16,16,14,17,16,17,15,14,15,12,16,18,15,12,18,15,19,18,17,21,12,14,18,18,9,20,15,15,12,13,12,13,20,14,16,14,18,17,8,13,17,10,13,17,16,11,15,17,14,15,15,14,16,15,15,12,19,17,16,18,12,15,17,15,16,16,19,12,12,14,15,15,15,10,13,16,19,12,13,14,14,8,16,13,20,14,14,15,14,14,11,14,12,12,14,13,12,11,18,15,17,18,11,18,13,15,16,20,18,17,12,17,16,15,17,15,16,13,13,17,16,15,14,16,17,12,17,16,19,18,14,15,13,13,16,16,13,12,15,11,14,11,16,14,19,7,17,22,15,15,17,13,15,16,16,14,14,13,17,13,18,14,16,19,21,19,13,17,13,15,16,14,16,14,15,11,19,17,19,19,10,17,17,17,17,15,14,13,14,17,14,14,12,11,23,11,16,14,15,16,16,19,18,17,14,15,17,14,12,13,15,13,16,13,21,14,9,13,12,12,18,13,14,18,19,16,17,16,16,19,16,14,13,17,15,13,14,11,17,12,15,10,13,13,17,12,11,18,16,14,15,14,17,14,18,16,18,12,13,19,14,14,14,14,16,16,14,13,15,17,13,17,18,16,13,16,18,14,14,20,14,16,16,17,19,16,10,17,17,13,13,17,13,13,13,15,16,16,17,17,15,10,15,16,15,17,16,20,15,14,15,10,13,16,13,17,15,14,17,12,19,21,7,11,16,12,14,18,16,19,16,18,15,16,14,17,12,13,9,15,15,17,11,15,15,12,15,18,17,13,17,13,13,20,20,16,18,15,12,16,13,17,10,15,16,12,18,11,11,18,16,15,16,14,14,15,18,21,12,19,16,14,14,11,16,9,14,15,12,14,17,12,14,20,13,19,18,15,14,13,15,14,12,12,12,18,17,13,18,13,16,16,19,13,12,15,16,12,19,14,12,14,11,14,12,12,16,11,22,12,20,20,12,17,15,16,11,18,18,14,15,16,13,13,15,15,13,11,14,19,20,13,15,21,13,12,13,18,21,13,11,17,17,14,18,15,13,14,13,18,15,16,11,12,11,18,18,14,19,15,12,19,14,14,11,19,14,11,19,15,18,15,12,14,16,14,17,11,14,15,14,8,16,13,14,16,12,11,13,15,15,13,12,16,13,13,13,13,11,18,14,15,17,14,14,20,16,13,18,14,16,16,14,13,19,19,14,13,12,16,17,12,19,17,20,15,13,17,10,18,18,18,20,17,21,13,14,16,17,19,12,11,11,15,14,9,19,16,16,13,17,14,14,16,17,19,14,10,16,16,17,9,17,20,15,15,16,15,12,15,12,12,15,15,16,15,12,15,14,13,15,16,17,16,13,17,16,15,14,12,12,13,14,16,13,13,17,9,11,20,14,14,16,17,16,12,16,16,17,18,13,13,13,14,16,17,11,14,12,16,14,19,16,14,15,7,19,17,20,10,10,15,16,17,17,13,13,16,18,17,19,14,19,17,13,11,13,14,17,15,18,10,15,16,19,13,15,11,13,12,17,19,14,19,14,15,17,16,13,15,15,14,12,22,16,19,19,13,17,13,12,12,11,13,15,17,14,18,11,16,12,12,13,15,20,13,17,12,19,16,17,19,20,15,10,13,12,11,16,15,18,17,17,14,15,15,19,11,12,20,17,11,14,17,12,14,18,16,13,15,16,14,16,22,13,15,16,17,16,13,7,16,16,15,13,13,16,20,15,16,14,15,14,13,15,14,12,17,19,17,17,14,16,22,19,16,11,11,17,15,14,16,12,8,17,14,10,17,12,15,13,16,16,15,11,10,12,14,11,18,13,14,15,9,17,16,16,18,11,14,13,17,15,11,14,17,18,12,16,9,12,16,14,9,15,13,21,16,14,16,20,15,17,19,13,14,16,13,14,17,16,19,13,11,16,14,18,14,15,11,17,12,15,16,13,8,15,15,16,16,20,13,16,15,17,15,14,18,15,17,16,15,13,14,14,16,15,16,16,7,15,15,13,15,13,12,14,16,18,17,11,15,18,18,17,15,12,16,17,16,14,14,11,12,17,13,16,16,15,14,13,14,18,14,13,14,15,17,15,14,14,16,18,14,20,14,17,17,14,13,18,17,16,14,14,15,15,17,9,10,17,14,13,16,13,16,18,17,17,16,14,16,14,15,20,19,15,18,14,15,12,16,15,15,17,16,16,15,19,19,12,16,20,13,12,10,17,16,16,10,13,14,17,15,15,16,16,12,12,20,12,15,19,16,13,10,16,19,16,7,16,14,13,12,15,18,14,19,20,16,13,14,18,17,14,14,13,15,18,13,12,12,11,16,18,18,10,13,15,15,14,17,15,15,12,12,11,17,13,18,10,17,18,14,14,20,14,17,8,18,18,15,17,15,15,19,15,14,16,17,18,14,18,16,15,12,16,11,14,16,15,14,16,14,15,10,16,15,15,16,17,14,12,14,17,11,15,16,15,15,13,13,18,15,19,13,13,13,11,12,20,19,16,17,12,16,21,16,17,18,17,17,12,16,17,14,16,18,18,13,19,15,16,18,17,18,19,16,18,14,14,12,12,13,13,18,17,14,18,14,13,15,15,11,12,17,16,13,17,13,16,14,17,15,11,17,12,9,14,16,16,17,13,12,16,16,11,11,15,15,15,13,10,16,15,16,18,16,20,13,17,16,13,14,14,14,15,12,17,14,15,18,14,10,10,18,14,13,18,15,13,16,16,13,16,18,15,17,15,14,21,15,16,15,14,17,14,11,16,10,15,15,15,15,14,19,11,15,17,15,15,19,17,11,19,16,15,14,9,15,12,17,13,15,16,13,14,17,17,20,13,12,14,22,13,11,18,14,12,11,12,18,15,14,12,12,10,12,13,15,14,17,17,14,19,16,14,16,17,12,21,15,12,11,15,16,16,15,18,14,17,7,17,11,16,13,17,17,16,16,24,16,16,13,14,16,16,16,16,10,16,15,13,8,18,20,16,15,13,15,12,16,17,19,13,15,16,17,17,13,14,16,13,14,11,15,12,21,12,18,23,12,20,15,16,19,16,15,17,15,15,16,16,10,13,17,18,15,17,14,20,13,14,14,15,18,19,16,18,15,10,16,13,16,17,19,19,10,16,14,14,11,17,18,12,16,15,17,14,19,19,15,15,15,12,12,13,13,14,16,15,12,17,13,16,11,21,15,12,12,19,12,17,18,19,21,12,15,13,11,11,14,13,12,19,15,14,10,15,13,13,14,19,13,16,17,13,8,15,14,14,16,14,18,17,20,13,19,11,16,16,17,18,13,16,9,12,14,16,12,16,18,12,18,10,17,19,7,12,12,13,14,14,15,16,17,12,18,19,14,15,12,16,17,10,13,19,13,17,14,18,15,17,14,14,16,15,13,16,17,14,10,10,19,14,12,18,12,10,16,12,15,14,15,12,18,13,12,18,17,17,15,16,13,16,17,20,17,15,15,15,21,12,13,13,16,17,14,16,14,14,15,19,11,21,16,13,16,19,18,15,14,18,22,17,14,14,17,14,17,13,20,14,16,13,15,18,13,17,15,14,13,12,15,19,18,14,8,17,16,17,15,13,14,14,13,16,19,17,16,16,16,14,11,17,16,16,17,17,15,18,21,20,16,17,13,17,13,14,17,19,15,18,24,14,10,13,15,15,14,16,15,17,16,8,14,17,19,15,11,11,17,17,16,15,15,17,16,13,16,13,13,17,17,15,15,18,14,15,16,14,12,18,17,15,9,14,14,15,11,14,15,16,15,19,14,15,14,18,10,15,13,17,18,19,16,17,13,13,15,17,17,10,16,16,10,14,17,16,17,12,16,16,11,12,15,13,15,21,15,16,11,15,17,11,12,17,11,14,13,15,18,14,13,15,14,17,13,8,15,17,12,13,18,19,13,18,14,17,9,16,14,15,13,15,14,14,15,19,14,18,19,16,15,16,16,14,12,16,16,17,14,12,18,18,12,10,20,11,16,14,14,16,19,20,14,15,17,13,8,16,19,17,18,11,22,9,16,13,15,19,17,12,14,13,15,15,10,21,15,16,16,10,10,12,20,18,15,14,17,12,12,14,16,13,15,20,15,15,15,17,15,15,17,14,17,15,15,14,19,18,10,17,13,12,19,16,10,11,15,9,18,19,16,16,15,16,11,17,12,15,15,14,17,17,13,18,19,12,20,17,13,14,15,16,15,14,16,16,16,16,16,15,15,12,14,20,18,14,17,10,11,16,18,15,14,21,16,13,19,16,14,15,10,12,13,16,15,16,15,14,15,17,14,17,20,16,14,12,17,19,10,17,14,14,12,17,18,14,14,14,21,13,15,16,17,16,14,19,16,16,13,15,15,12,20,10,17,13,14,15,21,12,16,15,17,14,20,10,15,10,10,13,11,15,13,16,15,15,18,18,15,15,21,16,13,12,12,12,17,17,12,10,10,19,16,14,11,19,18,14,19,20,12,15,18,13,18,17,14,19,16,12,8,13,10,14,16,16,12,13,15,13,13,10,12,15,17,15,14,14,19,14,16,14,18,12,21,19,16,14,17,11,15,13,13,12,10,16,14,11,14,15,17,14,18,16,15,16,16,14,11,20,14,16,18,15,15,12,13,10,14,16,18,17,17,18,12,16,14,19,15,13,13,18,12,15,12,14,10,16,17,18,14,14,16,21,15,16,15,16,16,13,16,18,15,17,16,15,19,16,18,11,19,19,17,18,16,14,14,15,14,11,11,17,13,20,17,15,12,15,18,18,20,17,17,18,17,15,16,15,15,11,15,18,13,12,18,16,16,15,15,15,12,20,17,11,12,17,13,13,13,14,16,15,17,16,15,12,17,18,14,11,17,15,17,19,18,10,14,18,12,11,16,16,13,12,17,12,20,16,14,12,17,18,18,15,12,10,10,12,14,17,12,20,20,11,17,21,18,15,14,16,21,15,16,14,17,11,20,18,12,17,11,15,15,16,14,18,16,23,20,17,13,19,17,13,11,14,12,17,17,13,10,11,19,19,16,17,12,17,16,9,16,13,18,15,13,15,20,15,19,19,13,15,12,13,17,11,18,17,10,13,17,15,13,12,17,14,18,20,18,14,17,19,16,16,10,16,19,15,18,13,13,15,16,15,15,17,14,21,13,12,13,15,9,16,17,11,19,15,13,13,18,17,14,16,12,15,15,17,13,15,18,17,12,21,17,15,10,15,20,14,17,12,11,18,17,14,15,16,12,17,9,14,12,18,14,16,14,13,13,15,15,16,12,10,20,14,12,16,18,17,17,15,13,12,16,15,18,15,12,15,9,16,12,17,11,17,18,16,19,15,16,19,17,12,18,12,16,16,19,18,18,11,10,15,13,15,17,14,16,13,16,15,15,18,17,22,14,14,21,13,9,15,21,15,14,14,10,19,13,17,21,15,16,15,15,18,17,14,16,16,14,16,11,16,13,20,16,15,12,14,17,11,15,14,17,13,13,14,11,17,14,19,13,18,11,13,14,18,11,10,15,18,18,19,16,14,15,17,19,11,18,13,15,17,17,15,18,18,10,12,17,11,18,14,15,15,17,12,16,20,17,20,13,12,16,19,13,21,15,19,13,14,16,11,15,16,18,18,15,17,13,11,18,10,12,16,14,11,16,12,15,17,14,24,13,12,16,14,18,15,16,12,16,9,18,16,15,17,12,10,15,16,14,14,19,15,17,14,14,16,19,19,12,17,20,16,20,15,16,16,14,10,16,14,18,14,14,14,13,15,19,17,12,14,16,17,15,15,13,13,18,17,13,19,18,16,16,13,13,21,17,17,16,17,12,15,15,15,15,17,14,13,14,9,14,14,16,17,18,14,14,15,13,12,15,12,12,11,17,17,17,17,16,22,15,11,13,19,15,19,12,14,15,17,18,13,15,16,17,16,10,12,12,16,14,14,11,15,16,13,13,12,16,13,14,17,17,22,16,13,17,17,15,20,17,14,21,10,14,17,12,15,17,14,15,14,15,13,21,15,11,16,14,12,16,15,14,18,14,13,17,18,19,19,21,17,17,18,16,15,14,16,14,15,22,12,9,19,18,16,13,20,15,12,13,9,15,13,16,17,17,11,17,11,15,16,15,14,17,16,15,16,14,15,15,12,11,15,15,16,17,11,17,17,12,15,15,10,17,13,15,14,11,11,11,17,15,10,16,11,21,12,13,16,13,16,15,19,15,16,14,18,18,10,19,17,20,17,18,15,13,13,14,18,12,17,15,16,12,16,12,12,20,12,17,21,16,16,14,20,14,15,13,13,17,20,16,15,19,19,14,19,14,16,17,14,14,14,16,15,19,13,15,13,19,12,11,15,14,11,15,18,20,12,18,17,12,18,15,11,17,13,18,9,14,16,14,15,15,11,14,19,13,13,17,15,16,17,21,13,17,20,18,18,11,14,17,13,17,17,15,18,16,15,19,19,17,13,17,21,13,15,19,15,15,13,17,15,12,12,18,14,16,11,15,12,12,15,17,15,14,14,16,17,12,13,10,12,15,18,11,17,17,13,17,13,17,14,14,16,17,13,16,17,16,16,15,12,19,14,14,17,19,14,13,19,17,18,17,16,17,15,15,12,14,21,13,19,15,16,12,12,14,17,18,12,11,11,18,12,15,14,14,17,14,19,15,15,20,18,16,14,10,11,11,15,12,13,17,14,15,19,18,22,14,16,16,16,21,15,14,11,14,15,17,13,13,24,16,16,10,16,12,15,16,12,24,18,17,16,14,15,15,13,15,11,16,12,9,10,19,15,10,13,21,17,14,16,18,12,15,17,14,12,17,13,18,16,12,13,14,14,18,20,12,16,12,15,12,16,16,18,16,15,20,13,14,16,12,16,15,14,18,17,16,16,14,12,16,17,18,17,15,19,15,11,15,15,13,15,15,13,14,14,15,16,16,19,14,16,16,17,11,19,16,12,16,15,14,11,16,17,15,14,18,13,16,16,13,16,14,11,11,13,15,15,12,15,15,16,17,19,15,17,20,16,11,18,16,15,10,14,11,17,14,14,13,16,15,12,19,14,15,14,14,16,15,14,17,15,15,16,18,15,14,11,13,21,18,15,15,15,12,16,18,19,16,14,11,15,20,19,15,20,20,16,14,11,18,14,15,19,15,15,14,18,13,17,15,14,16,11,23,17,11,16,11,15,21,13,17,17,20,17,15,14,16,17,17,15,20,10,14,18,18,13,14,15,15,16,11,13,14,13,18,16,15,17,14,12,13,16,14,13,11,13,17,16,13,16,22,17,12,15,17,15,17,16,15,23,13,13,12,16,16,14,15,13,15,18,8,20,10,14,15,18,18,12,15,16,10,15,16,9,12,18,15,18,16,16,17,16,15,14,19,14,15,11,18,13,13,21,19,11,21,13,12,16,22,17,13,20,15,20,13,17,13,14,14,13,17,18,13,16,15,15,13,14,15,13,12,19,16,17,17,19,17,11,14,12,16,14,13,13,18,14,13,16,17,12,13,14,14,14,18,17,17,10,18,17,13,13,15,17,14,14,12,14,15,16,13,11,11,17,17,17,17,11,17,11,17,16,15,13,11,19,18,16,15,16,13,16,11,11,12,18,12,12,14,17,10,19,14,9,15,10,12,16,14,14,11,20,12,17,13,14,12,14,18,9,19,15,13,13,13,11,19,12,17,15,12,14,12,17,17,13,12,16,16,14,14,16,16,16,19,17,15,14,16,12,21,19,11,16,15,17,16,14,14,17,16,10,18,14,15,14,13,18,12,11,16,20,19,16,16,19,15,17,10,16,15,11,16,17,19,18,19,14,12,19,11,16,18,16,14,15,12,20,19,16,13,16,12,13,12,18,12,15,12,16,14,21,12,16,19,13,16,13,14,16,21,18,12,12,14,16,14,15,13,18,14,17,15,11,15,17,16,13,17,20,15,12,16,22,9,16,12,15,16,13,14,20,16,17,15,15,15,16,18,10,14,17,13,19,16,13,14,19,12,15,18,14,15,18,19,13,14,17,15,10,13,14,13,12,10,15,21,12,16,9,17,16,15,19,11,11,10,18,17,17,13,16,19,17,14,15,15,12,17,18,17,15,14,19,15,19,12,14,15,11,16,14,17,16,13,14,20,17,17,16,17,14,15,13,16,19,15,17,14,16,12,13,20,18,17,13,15,12,16,15,13,16,18,16,13,15,21,11,11,18,12,12,15,14,16,14,14,14,15,13,15,12,14,19,13,17,18,14,13,19,17,15,14,13,14,17,12,15,15,11,17,15,17,13,16,15,18,16,15,13,14,18,21,17,16,16,15,13,13,12,14,14,15,18,20,17,14,12,20,14,14,15,10,18,14,18,15,16,11,20,13,17,14,16,16,16,12,16,16,15,15,11,11,7,16,17,17,14,16,16,13,20,17,14,17,16,12,12,15,18,18,17,17,13,15,16,19,14,18,16,17,15,22,20,16,15,20,18,17,17,20,18,19,14,16,18,13,16,13,15,16,14,12,17,13,14,9,11,13,13,13,12,16,19,13,14,9,15,19,16,19,15,16,16,18,18,19,13,15,14,16,20,14,15,12,9,15,12,11,15,16,14,19,20,16,14,14,15,13,18,16,14,14,18,16,10,11,19,17,12,17,12,19,14,15,12,14,15,13,15,13,11,12,14,11,15,12,15,16,16,13,17,14,15,17,11,14,16,18,15,13,13,15,16,15,16,15,13,16,12,14,14,16,18,20,17,13,16,16,19,12,15,15,17,16,18,11,14,15,17,10,15,18,16,17,14,18,16,18,12,17,18,18,11,12,16,15,14,12,14,12,8,15,15,9,16,14,16,16,12,13,14,15,16,13,15,13,17,13,14,16,11,14,8,16,13,17,16,17,16,16,15,16,12,13,16,17,18,18,18,19,15,14,13,12,18,14,16,14,18,12,16,14,17,14,18,16,14,13,14,19,16,13,16,12,15,16,14,7,15,15,14,12,18,16,12,15,18,11,20,18,13,14,13,15,14,18,16,16,17,12,12,15,17,12,18,16,15,10,17,13,13,14,13,11,17,14,14,19,18,13,14,9,16,15,18,20,16,15,15,12,17,18,11,14,18,17,12,14,13,16,11,12,19,11,12,11,16,11,15,14,8,14,17,20,13,11,17,13,14,9,20,16,14,12,15,17,13,18,18,17,19,15,13,13,23,15,18,8,17,17,14,10,15,11,9,16,11,13,12,15,17,13,10,13,12,16,17,17,18,14,18,15,16,12,18,16,15,13,18,16,16,10,12,14,18,13,16,13,12,16,14,17,15,21,13,17,17,14,15,17,14,13,17,18,13,12,15,15,10,14,18,19,17,11,17,13,11,9,18,14,21,14,9,15,20,16,16,16,14,16,16,13,11,13,13,14,16,13,15,12,13,15,20,14,19,16,14,10,16,18,17,19,14,13,18,15,10,14,18,13,20,19,15,19,18,16,17,17,11,15,15,17,20,15,13,14,12,13,17,17,16,14,14,17,18,18,14,15,14,12,12,14,12,18,17,7,17,17,14,16,12,12,12,18,15,13,16,21,17,17,17,11,12,18,10,15,17,13,15,14,17,12,19,16,15,15,16,19,15,16,13,17,16,17,12,9,17,17,10,14,12,18,11,14,16,16,15,17,14,14,17,13,17,17,13,16,11,14,15,13,11,13,15,18,15,16,12,15,14,13,16,19,14,17,13,13,22,16,13,12,13,15,8,10,12,11,12,15,15,21,12,17,18,15,15,18,16,15,15,14,14,12,17,15,15,17,16,15,12,14,13,12,16,15,15,12,13,17,10,15,11,12,14,13,14,15,17,17,15,14,15,18,16,9,17,16,14,12,13,14,12,15,12,15,18,17,16,15,13,18,19,16,9,15,14,15,14,15,11,11,15,13,11,15,15,15,12,10,17,12,11,14,16,19,15,19,17,15,11,16,13,16,17,13,9,11,10,17,13,15,11,15,13,12,14,9,11,17,18,13,19,15,17,20,9,17,15,18,14,17,13,14,16,14,17,16,17,19,15,17,19,18,18,14,16,13,18,16,17,11,16,15,14,14,18,14,18,15,15,11,12,19,20,15,13,11,14,12,14,19,17,13,12,12,13,15,14,11,20,16,14,13,17,15,13,15,16,12,15,9,9,13,18,14,15,13,15,12,17,13,13,21,13,16,21,16,19,18,16,15,15,9,19,9,17,15,12,15,12,11,16,17,16,12,14,14,14,15,19,13,16,11,12,17,16,21,11,21,13,12,17,17,14,21,18,13,17,16,23,13,15,15,18,13,12,18,13,19,21,16,17,15,15,15,12,18,17,19,12,16,15,14,15,14,15,11,12,14,19,17,11,10,10,15,16,13,12,11,13,10,18,12,16,17,14,17,17,11,14,14,8,16,18,12,15,11,17,17,20,12,14,18,16,16,17,16,13,15,17,19,16,15,16,20,14,9,18,14,15,16,19,16,14,14,18,21,18,16,16,13,19,17,18,15,12,19,11,14,17,15,15,16,12,19,15,18,16,18,15,16,15,16,17,19,23,20,12,12,14,19,17,15,18,13,15,19,11,16,14,9,11,13,15,19,13,14,16,17,18,16,13,17,16,13,11,15,9,17,14,14,12,12,18,11,17,15,13,13,15,19,13,18,21,16,17,12,18,16,11,16,14,15,13,15,10,13,14,14,18,14,13,14,16,14,20,13,15,17,14,15,21,14,12,16,17,15,11,13,19,19,14,18,15,14,16,14,15,15,16,10,15,19,19,14,13,19,13,15,14,18,16,14,12,11,14,13,18,15,11,18,16,13,16,16,17,13,15,13,17,12,16,13,14,16,10,16,17,18,12,14,17,12,15,14,15,18,13,15,15,20,13,15,13,14,15,17,12,13,14,14,18,13,16,18,15,17,16,11,15,17,16,16,15,10,19,15,17,11,16,12,12,14,13,16,17,13,18,19,11,14,16,15,16,16,16,17,16,19,18,19,15,14,13,12,15,14,14,11,18,16,12,15,14,16,15,14,13,17,11,9,20,21,18,13,12,17,13,17,10,15,18,14,17,9,19,13,15,15,15,13,15,13,12,16,15,17,8,16,13,15,20,15,18,17,14,16,16,20,15,15,11,15,12,14,16,15,16,13,16,14,17,12,14,11,21,16,18,19,15,15,14,12,12,15,15,21,12,15,14,14,13,13,15,12,15,18,18,10,11,15,8,12,20,14,15,12,14,17,14,12,16,17,13,16,14,18,13,16,14,16,12,16,19,18,12,20,13,16,20,15,11,11,21,14,13,19,13,10,17,16,12,21,18,16,14,16,11,19,17,13,18,12,17,13,12,20,17,16,19,14,18,22,10,14,11,19,14,14,15,15,15,17,16,19,19,18,14,12,13,14,14,15,14,16,16,20,15,18,14,16,15,12,14,13,17,15,15,12,16,12,13,15,18,16,12,9,11,17,14,15,17,11,10,15,16,13,18,15,12,12,17,13,11,19,11,13,18,16,18,14,13,15,17,16,15,9,18,14,12,18,13,16,16,17,10,15,16,10,16,13,17,15,19,9,18,13,16,16,13,10,12,15,15,11,14,15,18,13,18,13,15,11,14,11,10,15,16,14,11,19,19,12,18,12,16,15,11,9,15,14,17,17,17,17,12,16,19,11,14,22,16,15,14,17,14,13,17,17,11,10,20,13,14,10,14,15,19,16,13,14,14,16,15,14,10,15,16,19,13,12,20,17,16,16,11,13,16,17,15,16,16,18,15,21,14,12,15,15,15,17,15,13,17,13,10,14,21,14,12,10,19,13,16,13,15,15,17,20,17,20,21,13,14,17,19,9,17,20,17,16,7,11,17,19,15,18,19,17,16,13,17,11,14,17,17,18,17,13,14,20,20,10,17,14,16,18,12,16,18,12,16,19,18,16,16,21,15,16,20,17,12,16,19,15,18,16,18,14,15,11,9,8,12,10,14,14,19,19,18,11,15,21,15,15,18,14,16,17,16,14,16,9,15,11,13,18,17,19,20,18,13,12,17,19,16,15,13,19,21,15,20,17,11,14,16,14,23,18,18,12,15,15,12,22,18,10,17,14,14,12,12,17,21,14,17,16,17,17,10,16,19,13,15,13,17,13,14,16,10,15,15,12,14,14,17,15,13,18,16,17,17,10,16,14,19,14,9,15,15,9,19,17,22,16,11,14,14,18,13,13,18,19,19,9,14,17,14,16,16,13,13,16,14,19,18,13,14,14,17,17,17,19,17,15,19,16,16,15,16,14,17,18,14,12,9,11,13,11,14,17,12,11,15,18,14,11,13,14,11,13,18,13,21,14,12,13,13,18,12,15,19,12,16,15,12,15,15,16,8,13,13,15,14,16,14,16,15,21,16,17,11,14,13,16,13,18,15,17,14,16,16,15,13,20,17,12,17,21,13,13,12,11,16,16,13,18,10,13,11,12,14,16,19,15,19,14,13,9,16,14,15,16,20,12,14,17,17,12,16,12,17,12,14,14,15,12,14,14,18,18,13,18,11,16,13,19,12,15,14,20,17,14,21,16,19,13,14,20,15,17,12,14,19,13,12,15,17,16,18,17,16,20,17,19,16,21,18,13,19,12,13,16,13,10,17,9,16,14,19,18,14,15,17,14,21,11,11,18,11,14,9,19,15,15,19,18,15,18,13,19,18,17,12,15,15,10,12,15,13,17,19,17,16,15,10,14,18,18,17,13,16,13,14,14,17,11,12,16,15,18,22,22,17,17,13,17,14,14,18,13,19,15,14,17,14,11,17,14,14,16,16,20,17,14,9,14,16,13,14,16,20,11,15,12,21,19,18,18,14,11,14,15,16,11,11,15,16,15,10,15,16,16,18,18,16,14,12,11,19,18,14,17,17,16,20,13,12,17,8,15,15,21,15,17,15,19,12,17,19,18,9,11,14,20,16,15,15,18,21,14,17,14,13,14,15,16,17,19,13,17,13,14,11,17,15,13,15,16,16,14,12,15,17,21,15,15,20,17,20,14,7,16,18,14,15,14,18,18,17,16,14,17,16,10,12,13,15,19,14,12,20,10,16,19,7,16,13,12,17,15,13,19,15,11,18,16,13,13,16,18,14,14,13,14,19,21,15,13,13,19,16,15,20,19,18,13,20,18,16,11,15,15,12,14,18,16,20,20,18,20,9,14,15,17,16,12,19,12,11,19,11,20,18,13,14,10,13,12,13,13,18,13,11,14,15,19,16,6,15,14,18,20,13,10,12,19,14,12,16,13,15,14,20,12,14,14,18,12,19,13,16,15,21,12,18,18,14,19,15,15,13,13,19,13,21,16,15,14,14,14,14,5,13,15,12,15,13,21,13,15,16,15,14,21,15,11,18,11,15,14,13,17,19,17,16,14,12,18,12,12,15,8,11,15,16,16,16,13,15,12,16,11,16,20,14,10,14,14,16,15,21,20,19,15,13,17,15,13,12,14,14,15,12,15,16,14,14,13,18,19,18,17,14,13,10,12,12,17,17,14,17,16,11,13,14,10,12,18,15,16,10,18,13,17,18,14,13,14,12,15,11,17,15,12,16,15,11,14,17,12,19,19,17,15,10,18,15,10,17,21,19,10,15,16,12,16,20,18,20,24,19,15,17,15,12,18,16,16,13,13,14,12,11,13,15,19,14,18,17,9,20,13,15,14,13,14,18,17,18,14,15,14,15,11,16,18,11,16,19,20,17,17,17,17,15,18,13,16,14,12,14,11,11,15,15,14,17,17,13,14,21,15,17,14,18,16,13,12,10,17,13,13,18,15,15,19,20,15,15,10,19,15,17,12,14,18,10,16,15,10,15,12,16,17,14,11,18,14,12,21,14,17,15,14,16,16,13,12,10,14,18,22,14,14,17,10,17,12,21,12,9,13,18,10,17,13,15,19,16,15,16,15,10,18,14,17,10,18,14,14,12,16,15,17,20,18,16,8,16,19,13,12,15,17,15,18,13,16,16,18,19,16,14,13,10,11,13,15,13,13,15,10,9,18,19,21,12,10,17,17,17,17,17,14,15,16,18,13,18,15,19,18,10,14,19,17,16,12,12,15,17,17,17,19,18,21,12,16,15,19,17,12,14,18,17,14,18,11,15,14,16,16,17,16,15,18,15,11,10,13,17,11,15,18,18,21,14,19],"xaxis":"x","yaxis":"y","type":"histogram"}],                        {"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"tracegroupgap":0},"title":{"text":"The binomial distribution"},"barmode":"relative","height":400,"width":600},                        {"responsive": true}                    ).then(function(){
+                            
 var gd = document.getElementById('2590ebe6-24bd-43cd-b09e-179af04b780d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
@@ -1859,7 +1381,7 @@ if (outputEl) {{
 </div>
 </section>
 <section id="bokeh">
-<h3>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this headline">#</a></h3>
+<h3>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this heading">#</a></h3>
 <p>Here’s how to import bokeh and activate it for use in a notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1871,10 +1393,10 @@ if (outputEl) {{
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div class="bk-root">
-    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-    <span id="1002">Loading BokehJS ...</span>
-</div></div><script type="application/javascript">
+    <div class="bk-root">
+        <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+        <span id="1002">Loading BokehJS ...</span>
+    </div></div><script type="application/javascript">
 (function(root) {
   function now() {
     return new Date();
@@ -2182,7 +1704,7 @@ if (outputEl) {{
 
 
 
-<div class="bk-root" id="efeb1726-eabb-4ee5-9404-5456e619f758" data-root-id="1042"></div>
+  <div class="bk-root" id="efeb1726-eabb-4ee5-9404-5456e619f758" data-root-id="1042"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2213,7 +1735,7 @@ if (outputEl) {{
 </section>
 </section>
 <section id="accessing-help-documentation-docstrings">
-<h2>Accessing help documentation (docstrings)<a class="headerlink" href="#accessing-help-documentation-docstrings" title="Permalink to this headline">#</a></h2>
+<h2>Accessing help documentation (docstrings)<a class="headerlink" href="#accessing-help-documentation-docstrings" title="Permalink to this heading">#</a></h2>
 <p>Often you’ll want to get access to documentation about the packages and functions you’re using. An easy way to access documentation (the docstring) for a function is to type the function name then add a question mark (?). This will cause the docstring to appear next to the notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2225,15 +1747,15 @@ if (outputEl) {{
 <p>You can also search the web. Most packages will have good documentation on their website. E.g., here’s the online documentation for <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html">np.random.binomial()</a>.</p>
 </section>
 <section id="sharing-notebooks-via-google-drive">
-<h2>Sharing notebooks via Google Drive<a class="headerlink" href="#sharing-notebooks-via-google-drive" title="Permalink to this headline">#</a></h2>
+<h2>Sharing notebooks via Google Drive<a class="headerlink" href="#sharing-notebooks-via-google-drive" title="Permalink to this heading">#</a></h2>
 <p>Finally, you can share your notebooks with colleagues to show them the results of your data analysis. Colab notebooks are stored in your Google Drive and you can share them just like any other Google doc. Click the “share” button at the top right to begin sharing. An easy way to share is to create a link, which you can then copy and paste into an email or slack channel to share with colleagues.</p>
 </section>
 <section id="practical-exercises">
-<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">#</a></h2>
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>That’s it for this module, well done for beginning your data analysis journey! When you’re ready, please now try the practical exercises below.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a> and create a new notebook.</p></li>
 <li><p>Add a code cell, type some Python code, and run (execute) the cell.</p></li>
 <li><p>Add a text cell and type some text, using markdown to format the text, e.g., bold, italic, hyperlinks, etc.</p></li>
@@ -2247,9 +1769,9 @@ if (outputEl) {{
 <p><strong>When you’ve had enough, create a link to your notebook, and share it with someone. If you’re attending a training workshop, paste the link into the workshop slack channel.</strong></p>
 </section>
 <section id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>C’est tout pour ce module, félicitations pour le début de votre voyage dans le monde de l’analyse des données! Quand vous êtes prêts, essayez les exercices appliqués ci-dessous.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Se rendre sur <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a> et créer un nouveau notebook.</p></li>
 <li><p>Créer une nouvelle cellule de code, entrer du code Python et exécuter la cellule.</p></li>
 <li><p>Ajouter une cellule de texte et entrer du texte, utiliser le markdown pour modifier son format, par exemple en mettant en gras ou en italique certains mots ou en ajoutant un hyperlien.</p></li>
@@ -2277,7 +1799,7 @@ if (outputEl) {{
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshop-1"
         },
         predefinedOutput: true
@@ -2285,54 +1807,151 @@ if (outputEl) {{
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="about.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop 1 - Pyrethroid target-site resistance</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Workshop 1 - Pyrethroid target-site resistance</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="module-2-sample-metadata.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="module-2-sample-metadata.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By MalariaGEN and PAMCA<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-colab">What is Colab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-notebook">What is a notebook?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-a-code-cell">Executing a code cell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-output">Cell output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-a-variable">Inspecting a variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-cells">Text cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text">Formatting text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-lists">Creating lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-section-headings">Creating section headings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-images">Adding images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-moving-and-deleting-cells">Adding, moving and deleting cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-basics">Coding basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math">Math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and calling functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-installing-python-packages">Importing and installing Python packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-dataframes">Viewing dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-plots">Creating plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotly-express">Plotly Express</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bokeh">Bokeh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-help-documentation-docstrings">Accessing help documentation (docstrings)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-notebooks-via-google-drive">Sharing notebooks via Google Drive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercises">Practical exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

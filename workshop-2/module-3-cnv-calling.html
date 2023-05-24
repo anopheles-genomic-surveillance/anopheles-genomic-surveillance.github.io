@@ -1,51 +1,62 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Module 3 - Detecting CNVs from genome sequence data &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,58 +64,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshop-2/module-3-cnv-calling';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 4 - Analysing CNV frequencies at metabolic resistance genes" href="module-4-cnv-frequencies.html" />
     <link rel="prev" title="Module 2 - The genetic basis of metabolic resistance to insecticides in Anopheles mosquitoes" href="module-2-metabolic-ir.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,672 +153,333 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/about.html">
-   Workshop 1 - Pyrethroid target-site resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-1-colab.html">
-   Module 1 - Interactive cloud computing with Google Colaboratory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">
-   Module 2 - Accessing and exploring
-   <em>
-    Anopheles
-   </em>
-   genomic data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-3-genome.html">
-   Module 3 - Navigating the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">
-   Module 4 - Analysing SNPs in the
-   <em>
-    Vgsc
-   </em>
-   gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-1/journal-club.html">
-   Journal club - Clarkson et al. (2021)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-1-colab.html">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-3-genome.html">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   Workshop 2 - Metabolic insecticide resistance and copy number variation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-1-pandas.html">
-   Module 1 - Introduction to pandas DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-2-metabolic-ir.html">
-   Module 2 - The genetic basis of metabolic resistance to insecticides in
-   <em>
-    Anopheles
-   </em>
-   mosquitoes
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Module 3 - Detecting CNVs from genome sequence data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-4-cnv-frequencies.html">
-   Module 4 - Analysing CNV frequencies at metabolic resistance genes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="journal-club.html">
-   Journal club - Lucas et al. (2019)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal-club.html">Journal club - Lucas et al. (2019)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/about.html">
-   Workshop 3 - Population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
-   Module 1 - Plotting with Plotly Express
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
-   Module 2 - The biology of population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-3-snps.html">
-   Module 3 - Genome-wide SNP data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-4-pca.html">
-   Module 4 - Detecting population structure using PCA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/journal-club.html">
-   Journal club - Ag1000G Consortium (2017)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-pca.html">Module 4 - Detecting population structure using PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/about.html">
-   Workshop 4 - Cryptic species
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
-   Module 1 - NumPy arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
-   Module 2 - Species complexes and cryptic taxa in malaria vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-3-aims.html">
-   Module 3 - Ancestry-informative markers (AIMs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
-   Module 4 - Discovering cryptic taxa
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/journal-club.html">
-   Journal club - Tennessen et al. (2020)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-1-numpy.html">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/about.html">
-   Workshop 5 - Genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
-   Module 1 - Xarray datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
-   Module 2 - Introduction to genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-3-stats.html">
-   Module 3 - Genetic diversity summary statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-4-roh.html">
-   Module 4 - Heterozygosity and runs of homozygosity
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/about.html">
-   Workshop 6 - Detecting genes under recent positive selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
-   Module 1 - Haplotypes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-2-selection.html">
-   Module 2 - The biology of selective sweeps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
-   Module 3 - Detecting new forms of insecticide resistance using selection scans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-4-primers.html">
-   Module 4 - AgamPrimer - Primer Design in
-   <em>
-    Anopheles gambiae
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AgamPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/about.html">
-   Workshop 7 - Gene flow and the spread of insecticide resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-1-op-ir.html">
-   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-2-gene-flow.html">
-   Module 2 - Adaptive gene flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">
-   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">
-   Module 4 - Investigating gene flow at loci of interest using haplotype networks
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/about.html">
-   Workshop 8 - Analysis planning and reporting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">
-   Module 1 - Planning a genomic surveillance exploratory data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-2-presenting-results.html">
-   Module 2 - Presenting results of a genomic surveillance data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">
-   Module 3 - Genomic surveillance of malaria vectors in Tanzania
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">
-   Module 4 - Genomic surveillance of malaria vectors in Ghana
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-3-cnv-calling.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-2/module-3-cnv-calling.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-3-cnv-calling.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshop-2/module-3-cnv-calling.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-2/module-3-cnv-calling.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/workshop-2/module-3-cnv-calling.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-what-are-cnvs">
-   Introduction: what are CNVs?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-cnv-hmm-data">
-   Load the CNV HMM data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-cnv-discordant-read-calls">
-   Load the CNV discordant read calls
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-per-gene-modal-copy-number-data">
-   Load the per-gene modal copy number data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Module 3 - Detecting CNVs from genome sequence data</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-what-are-cnvs">
-   Introduction: what are CNVs?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-cnv-hmm-data">
-   Load the CNV HMM data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-cnv-discordant-read-calls">
-   Load the CNV discordant read calls
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-per-gene-modal-copy-number-data">
-   Load the per-gene modal copy number data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 3 - Detecting CNVs from genome sequence data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-what-are-cnvs">Introduction: what are CNVs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-cnv-hmm-data">Load the CNV HMM data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-cnv-discordant-read-calls">Load the CNV discordant read calls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-per-gene-modal-copy-number-data">Load the per-gene modal copy number data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong><a class="reference internal" href="about.html"><span class="doc std std-doc">Workshop 2</span></a> - Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="module-3-detecting-cnvs-from-genome-sequence-data">
-<h1>Module 3 - Detecting CNVs from genome sequence data<a class="headerlink" href="#module-3-detecting-cnvs-from-genome-sequence-data" title="Permalink to this headline">#</a></h1>
+<section id="module-3-detecting-cnvs-from-genome-sequence-data">
+<h1>Module 3 - Detecting CNVs from genome sequence data<a class="headerlink" href="#module-3-detecting-cnvs-from-genome-sequence-data" title="Permalink to this heading">#</a></h1>
 <p><strong>Theme: Data</strong></p>
 <p>In this module we will learn about how we detect copy number variants (CNVs) from whole-genome sequencing data, and how to access and visualise the individual-level CNV data using the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> package in Python.</p>
 <section id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>At the end of this module you will be able to:</p>
 <ul class="simple">
 <li><p>Explain what copy number variation is, and what is meant by CNV alleles</p></li>
@@ -787,16 +488,16 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
 <section id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/-Pq8e-OZeNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
 </div>
 </section>
 <section id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/Xh6A9vBtJuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
@@ -804,7 +505,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="introduction-what-are-cnvs">
-<h2>Introduction: what are CNVs?<a class="headerlink" href="#introduction-what-are-cnvs" title="Permalink to this headline">#</a></h2>
+<h2>Introduction: what are CNVs?<a class="headerlink" href="#introduction-what-are-cnvs" title="Permalink to this heading">#</a></h2>
 <p>Copy number variants (CNVs) are a type of mutation that changes the <em>number of copies</em> of a genetic region on the chromosome. That region might be deleted (reduction in copy number, called a <em>deletion</em>), or might be copied (increase in copy number, called a <em>duplication</em> or <em>amplification</em>). When considering the evolution of insecticide resistance, we tend to focus on increases in copy number, because they could lead to increased expression of genes that metabolise insecticides. But this doesn’t mean that it is impossible for deletions to also play an important role.</p>
 <p>In the figure below, an example “normal” sequence (top line) is shown with the sequence in blue either deleted (middle line) or duplicated (bottom line). This simple example involves a CNV of just 11 base pairs, but they can be as long as hundreds of thousands of bp, and the analysis performed by MalariaGEN looks for CNVs on the scale of several hundreds of bp at least.</p>
 <img src="data:image/png;base64,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" /><p>A normal genetic region that is not repeated through the genome should typically be found in two copies in each cell of a mosquito. This is because mosquitoes are diploid, and therefore carry two copies of each chromosome (except for sex chromosomes in males). Therefore, the “normal” copy number for a given genetic region is 2. We consider that there is a CNV in a region if we find samples with copy number greater or less than two. For example, the following copy numbers might be found in samples with or without duplications in a genetic region.</p>
@@ -813,7 +514,7 @@ title="Print to PDF"
 <p>Let’s now look at how we access CNV data from MalariaGEN.</p>
 </section>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p>First we need to install and import some Python packages.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -847,58 +548,58 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<table class="malariagen-ag3">
-    <thead>
-        <tr>
-            <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
-        </tr>
-        <tr><td colspan="2" style="text-align: left">
-            Please note that data are subject to terms of use,
-            for more information see <a href="https://www.malariagen.net/data">
-            the MalariaGEN website</a> or contact data@malariagen.net.
-            See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
-        </td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th style="text-align: left">
-                Storage URL
-            </th>
-            <td>gs://vo_agam_release/</td>
-        </tr>
-        <tr>
-            <th style="text-align: left">
-                Data releases available
-            </th>
-            <td>3.0</td>
-        </tr>
-        <tr>
-            <th style="text-align: left">
-                Cohorts analysis
-            </th>
-            <td>20211101</td>
-        </tr>
-        <tr>
-            <th style="text-align: left">
-                Species analysis
-            </th>
-            <td>aim_20200422</td>
-        </tr>
-        <tr>
-            <th style="text-align: left">
-                Site filters analysis
-            </th>
-            <td>dt_20200416</td>
-        </tr>
-        <tr>
-            <th style="text-align: left">
-                Software version
-            </th>
-            <td>3.0.0</td>
-        </tr>
-    </tbody>
-</table>
-</div></div>
+            <table class="malariagen-ag3">
+                <thead>
+                    <tr>
+                        <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
+                    </tr>
+                    <tr><td colspan="2" style="text-align: left">
+                        Please note that data are subject to terms of use,
+                        for more information see <a href="https://www.malariagen.net/data">
+                        the MalariaGEN website</a> or contact data@malariagen.net.
+                        See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
+                    </td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="text-align: left">
+                            Storage URL
+                        </th>
+                        <td>gs://vo_agam_release/</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Data releases available
+                        </th>
+                        <td>3.0</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Cohorts analysis
+                        </th>
+                        <td>20211101</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Species analysis
+                        </th>
+                        <td>aim_20200422</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Site filters analysis
+                        </th>
+                        <td>dt_20200416</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Software version
+                        </th>
+                        <td>3.0.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div></div>
 </div>
 <p>Inspect which sample sets are available within the MalariaGEN Ag3.0 data release.</p>
 <div class="cell docutils container">
@@ -1110,14 +811,14 @@ title="Print to PDF"
       <button class="colab-df-convert" onclick="convertToInteractive('df-8e029557-9dd9-4e4c-b1b7-1a7edab48fcd')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
-
+        
   <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
        width="24px">
     <path d="M0 0h24v24H0V0z" fill="none"/>
     <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
   </svg>
       </button>
-
+      
   <style>
     .colab-df-container {
       display:flex;
@@ -1182,12 +883,12 @@ title="Print to PDF"
       </script>
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
 <p>In this module we will use the Côte d’Ivoire sample set (“AG1000G-CI”) from the Ag3.0 release to demonstrate accessing CNV data.</p>
 </section>
 <section id="load-the-cnv-hmm-data">
-<h2>Load the CNV HMM data<a class="headerlink" href="#load-the-cnv-hmm-data" title="Permalink to this headline">#</a></h2>
+<h2>Load the CNV HMM data<a class="headerlink" href="#load-the-cnv-hmm-data" title="Permalink to this heading">#</a></h2>
 <p>The HMM data include:</p>
 <ul class="simple">
 <li><p>The raw coverage calls (“call_RawCov” - the number of reads aligning in each 300bp window along the chromosome).</p></li>
@@ -2199,7 +1900,7 @@ Attributes:
 
 
 
-<div class="bk-root" id="be0a9586-ec96-4d05-9000-7adf6fb6aa66" data-root-id="1144"></div>
+  <div class="bk-root" id="be0a9586-ec96-4d05-9000-7adf6fb6aa66" data-root-id="1144"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2231,7 +1932,7 @@ Attributes:
 
 
 
-<div class="bk-root" id="1524dd65-baf3-4b5c-bece-74c6f6db4a20" data-root-id="1383"></div>
+  <div class="bk-root" id="1524dd65-baf3-4b5c-bece-74c6f6db4a20" data-root-id="1383"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2263,7 +1964,7 @@ Attributes:
 
 
 
-<div class="bk-root" id="9ba24ac2-34b8-42f7-a715-20092b97a8a8" data-root-id="1638"></div>
+  <div class="bk-root" id="9ba24ac2-34b8-42f7-a715-20092b97a8a8" data-root-id="1638"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2295,7 +1996,7 @@ Attributes:
 
 
 
-<div class="bk-root" id="dd01c79d-20e8-4e04-a901-8cc2fc2d8deb" data-root-id="1909"></div>
+  <div class="bk-root" id="dd01c79d-20e8-4e04-a901-8cc2fc2d8deb" data-root-id="1909"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2635,7 +2336,7 @@ Attributes:
 
 
 
-<div class="bk-root" id="9ea67679-8fc7-455b-945c-0653b25bc669" data-root-id="2169"></div>
+  <div class="bk-root" id="9ea67679-8fc7-455b-945c-0653b25bc669" data-root-id="2169"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2666,7 +2367,7 @@ Attributes:
 <p>We can now look more precisely at which CNV alleles those two samples carry by looking at the discordant read data.</p>
 </section>
 <section id="load-the-cnv-discordant-read-calls">
-<h2>Load the CNV discordant read calls<a class="headerlink" href="#load-the-cnv-discordant-read-calls" title="Permalink to this headline">#</a></h2>
+<h2>Load the CNV discordant read calls<a class="headerlink" href="#load-the-cnv-discordant-read-calls" title="Permalink to this heading">#</a></h2>
 <p>The CNV discordant read calls provide allele-specific CNV genotypes at a selection of genomic loci known to be involved in insecticide resistance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3479,14 +3180,14 @@ Attributes:
       <button class="colab-df-convert" onclick="convertToInteractive('df-6cd25834-c5d7-41b2-8a98-f82ea7b660ce')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
-
+        
   <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
        width="24px">
     <path d="M0 0h24v24H0V0z" fill="none"/>
     <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
   </svg>
       </button>
-
+      
   <style>
     .colab-df-container {
       display:flex;
@@ -3551,7 +3252,7 @@ Attributes:
       </script>
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
 <p>Each of the CNV alleles in this region are labelled “Cyp6aap_Dupxx”, where xx is an identifier associated with each allele. “Dup0” is a special name which is not associated with a given allele, but instead indicates whether any gene in the region carried a CNV based on modal copy number (i.e., whether the HMM output indicated a CNV in this gene).</p>
 <p>From the table above, we can see that sample AY0046-C has no CNV, AY0034-C has one CNV, and samples 2 and 3 have two CNVs each. AY0062-C has Dup7 and Dup15, while AY0055-C has Dup7 and Dup11.</p>
@@ -3622,14 +3323,14 @@ Attributes:
       <button class="colab-df-convert" onclick="convertToInteractive('df-49a2fc25-b554-4c54-b5b9-9f5c93c9549b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
-
+        
   <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
        width="24px">
     <path d="M0 0h24v24H0V0z" fill="none"/>
     <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
   </svg>
       </button>
-
+      
   <style>
     .colab-df-container {
       display:flex;
@@ -3694,11 +3395,11 @@ Attributes:
       </script>
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
 </section>
 <section id="load-the-per-gene-modal-copy-number-data">
-<h2>Load the per-gene modal copy number data<a class="headerlink" href="#load-the-per-gene-modal-copy-number-data" title="Permalink to this headline">#</a></h2>
+<h2>Load the per-gene modal copy number data<a class="headerlink" href="#load-the-per-gene-modal-copy-number-data" title="Permalink to this heading">#</a></h2>
 <p>We can also look at individual genes and ask whether copy number was increased in each of those genes. This table shows the copy number observed for each gene in the <em>Cyp6aa</em> and <em>Cyp6p</em> cluster, with 2 being the normal diploid copy number (no CNV).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3890,14 +3591,14 @@ Attributes:
       <button class="colab-df-convert" onclick="convertToInteractive('df-2c13f761-8daa-47c7-8c10-b8e49b458094')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
-
+        
   <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
        width="24px">
     <path d="M0 0h24v24H0V0z" fill="none"/>
     <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
   </svg>
       </button>
-
+      
   <style>
     .colab-df-container {
       display:flex;
@@ -3962,7 +3663,7 @@ Attributes:
       </script>
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
 <p>We can show this as a heatmap for easier viewing. We’ll just show the top 25 samples to keep the table small.</p>
 <div class="cell docutils container">
@@ -4007,16 +3708,16 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/module-3-cnv-calling_41_0.png" src="../_images/module-3-cnv-calling_41_0.png" />
+<img alt="../_images/e9ad9944efee416bee9daaaf8c5d2a974356a9c5c123aac07a207da06609c3cf.png" src="../_images/e9ad9944efee416bee9daaaf8c5d2a974356a9c5c123aac07a207da06609c3cf.png" />
 </div>
 </div>
 <p>Notice how the copy number for each gene in each sample corresponds to the HMM in that gene’s region in your coverage plots above.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Open this notebook in Google Colab and run it for yourself from top to bottom. Hint: click the rocket icon (<i class="fas fa-rocket"></i>) at the top of the page, then select “Colab” from the drop-down menu. When colab opens, click the “Edit” menu, then select “Clear all outputs”, then begin running the cells. Make sure it runs without any errors, and take some time to try and understand what is being shown in the output.</p></li>
 <li><p>Now go back to the “Load the CNV HMM data” section. Change the code so that it looks at chromosome 3R from position 28,570,000 to 28,630,000 and sample_set AG1000G-BF-A, and plots the coverage data for samples AB0086-Cx, AB0095-Cx and AB0123-C. Once you have changed the code, run those cells again. How many CNVs are found in each of those samples? How many extra copies are associated with the CNV in each sample?</p></li>
 <li><p>Now go to the “Load the per-gene modal copy number data” section. Change the code again to focus on chromosome 3R and sample set AG1000G-BF-A. Create a heatmap of copy number for the genes in the <em>Gste</em> cluster. Which genes are found to have increased copy number in this sample set? Does what you see fit with the copy number plots that you made above for samples AB0086-Cx, AB0095-Cx and AB0123-C? Hint: here are the AGAP numbers for those genes:</p></li>
@@ -4030,13 +3731,13 @@ Attributes:
                      <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">&#39;Gste7&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Try again with samples AA0100-C and AA0135-C from sample set AG1000G-GH, looking again at <em>Gste</em> genes. How does that CNV compare with the one you found above? Which genes are now found to have increased copy number?</p></li>
 </ol>
 </section>
 <section id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Ouvrir ce notebook dans Google Colab et l’exécuter vous-même du début à la fin. Indice: cliquer sur l’icône fusée (<i class="fas fa-rocket"></i>) et sélectionner “Colab” dans le menu déroulant. Ensuite, cliquer sur le menu “Edit” et choisir “Clear all outputs” avant de faire démarrer le code dans les cellules. Confirmez que le notebook ne produit pas d’erreure, et assurez-vous d’avoir bien compris les résultats.</p></li>
 <li><p>Retourner à la section “Load the CNV HMM data”. Changer le code pour qu’il analyse le chromosome 3R de la position 28,570,000 à 28,630,000 et le jeu de données AG1000G-BF-A, et qu’il trace le “coverage” pour les échantillons AB0086-Cx, AB0095-Cx et AB0123-C. Une fois le code changé, relancer l’analyse de ces cellules. Combien de CNVs se retrouvent dans chacun de ces échantillons? Combien de copies supplémentaires trouve-t-on du CNV dans chaque échantillon?</p></li>
 <li><p>Maintenant, se diriger vers la section “Load the per-gene modal copy number data”. Changer une fois de plus le code pour qu’il so focalise sur le chromosome 3R et le jeu de données AG1000G-BF-A. Créer une “heatmap” du nombre de copes pour les gènes dans le groupe “Gste”. Quels gènes ont un nombre de copies élevé dans ce jeu de données? Est-ce que cela correspond aux traces de “coverage” que vous avez créées ci-dessus pour les échantillons AB0086-Cx, AB0095-Cx et AB0123-C Indice: voici les codes AGAP pour ces gènes:</p></li>
@@ -4050,7 +3751,7 @@ Attributes:
                      <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">&#39;Gste7&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Relancer l’analyse des gènes <em>Gste</em>, cette fois avec les échantillons AA0100-C and AA0135-C du jeu de données AG1000G-GH. Comparer le CNV que vous découvrez avec celui trouvé dans le AG1000G-BF-A. Quels gènes voient maintenant leur nombre de copies augmenté?</p></li>
 </ol>
 </section>
@@ -4069,7 +3770,7 @@ Attributes:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshop-2"
         },
         predefinedOutput: true
@@ -4077,54 +3778,124 @@ Attributes:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="module-2-metabolic-ir.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="module-2-metabolic-ir.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="module-4-cnv-frequencies.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="module-4-cnv-frequencies.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Module 4 - Analysing CNV frequencies at metabolic resistance genes</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By MalariaGEN and PAMCA<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-what-are-cnvs">Introduction: what are CNVs?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-cnv-hmm-data">Load the CNV HMM data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-cnv-discordant-read-calls">Load the CNV discordant read calls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-per-gene-modal-copy-number-data">Load the per-gene modal copy number data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

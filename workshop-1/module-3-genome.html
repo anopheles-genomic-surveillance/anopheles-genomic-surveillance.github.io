@@ -1,51 +1,62 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Module 3 - Navigating the Anopheles gambiae reference genome &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,58 +64,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshop-1/module-3-genome';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 4 - Analysing SNPs in the Vgsc gene" href="module-4-vgsc-snps.html" />
     <link rel="prev" title="Module 2 - Accessing and exploring Anopheles genomic data" href="module-2-sample-metadata.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Training course in data analysis for genomic surveillance of African malaria vectors</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,710 +153,336 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="about.html">
-   Workshop 1 - Pyrethroid target-site resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-1-colab.html">
-   Module 1 - Interactive cloud computing with Google Colaboratory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-2-sample-metadata.html">
-   Module 2 - Accessing and exploring
-   <em>
-    Anopheles
-   </em>
-   genomic data
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Module 3 - Navigating the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="module-4-vgsc-snps.html">
-   Module 4 - Analysing SNPs in the
-   <em>
-    Vgsc
-   </em>
-   gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="journal-club.html">
-   Journal club - Clarkson et al. (2021)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-1-colab.html">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/about.html">
-   Workshop 2 - Metabolic insecticide resistance and copy number variation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-1-pandas.html">
-   Module 1 - Introduction to pandas DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">
-   Module 2 - The genetic basis of metabolic resistance to insecticides in
-   <em>
-    Anopheles
-   </em>
-   mosquitoes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">
-   Module 3 - Detecting CNVs from genome sequence data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">
-   Module 4 - Analysing CNV frequencies at metabolic resistance genes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-2/journal-club.html">
-   Journal club - Lucas et al. (2019)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/journal-club.html">Journal club - Lucas et al. (2019)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/about.html">
-   Workshop 3 - Population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-1-plotly.html">
-   Module 1 - Plotting with Plotly Express
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-2-population-structure.html">
-   Module 2 - The biology of population structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-3-snps.html">
-   Module 3 - Genome-wide SNP data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/module-4-pca.html">
-   Module 4 - Detecting population structure using PCA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-3/journal-club.html">
-   Journal club - Ag1000G Consortium (2017)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-pca.html">Module 4 - Detecting population structure using PCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/about.html">
-   Workshop 4 - Cryptic species
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-1-numpy.html">
-   Module 1 - NumPy arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">
-   Module 2 - Species complexes and cryptic taxa in malaria vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-3-aims.html">
-   Module 3 - Ancestry-informative markers (AIMs)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">
-   Module 4 - Discovering cryptic taxa
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-4/journal-club.html">
-   Journal club - Tennessen et al. (2020)
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-1-numpy.html">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/about.html">
-   Workshop 5 - Genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-1-xarray.html">
-   Module 1 - Xarray datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-2-diversity.html">
-   Module 2 - Introduction to genetic diversity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-3-stats.html">
-   Module 3 - Genetic diversity summary statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-5/module-4-roh.html">
-   Module 4 - Heterozygosity and runs of homozygosity
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/about.html">
-   Workshop 6 - Detecting genes under recent positive selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-1-haplotypes.html">
-   Module 1 - Haplotypes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-2-selection.html">
-   Module 2 - The biology of selective sweeps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-3-gwss.html">
-   Module 3 - Detecting new forms of insecticide resistance using selection scans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-6/module-4-primers.html">
-   Module 4 - AgamPrimer - Primer Design in
-   <em>
-    Anopheles gambiae
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AgamPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/about.html">
-   Workshop 7 - Gene flow and the spread of insecticide resistance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-1-op-ir.html">
-   Module 1 - Organophosphate resistance markers (combining SNP and CNV data)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-2-gene-flow.html">
-   Module 2 - Adaptive gene flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">
-   Module 3 - Investigating gene flow at loci of interest using haplotype clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">
-   Module 4 - Investigating gene flow at loci of interest using haplotype networks
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshop 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/about.html">
-   Workshop 8 - Analysis planning and reporting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">
-   Module 1 - Planning a genomic surveillance exploratory data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-2-presenting-results.html">
-   Module 2 - Presenting results of a genomic surveillance data analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">
-   Module 3 - Genomic surveillance of malaria vectors in Tanzania
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">
-   Module 4 - Genomic surveillance of malaria vectors in Ghana
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-3-genome.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-3-genome.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-3-genome.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workshop-1/module-3-genome.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fworkshop-1/module-3-genome.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/workshop-1/module-3-genome.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structure-of-the-genome">
-   Structure of the genome
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploration-of-the-anopheles-gambiae-reference-genome">
-   Exploration of the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-the-reference-genome-annotations">
-   Accessing the reference genome annotations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-the-voltage-gated-sodium-channel-gene">
-   Introducing the voltage-gated sodium channel gene
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transcription">
-   Transcription
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-the-transcripts-of-a-gene">
-   Accessing the transcripts of a gene
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#well-done">
-   Well done!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Module 3 - Navigating the Anopheles gambiae reference genome</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture">
-   Lecture
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#english">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#francais">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup">
-   Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structure-of-the-genome">
-   Structure of the genome
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploration-of-the-anopheles-gambiae-reference-genome">
-   Exploration of the
-   <em>
-    Anopheles gambiae
-   </em>
-   reference genome
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-the-reference-genome-annotations">
-   Accessing the reference genome annotations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-the-voltage-gated-sodium-channel-gene">
-   Introducing the voltage-gated sodium channel gene
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transcription">
-   Transcription
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing-the-transcripts-of-a-gene">
-   Accessing the transcripts of a gene
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#well-done">
-   Well done!
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-exercises">
-   Practical exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Français
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 3 - Navigating the Anopheles gambiae reference genome</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-genome">Structure of the genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploration-of-the-anopheles-gambiae-reference-genome">Exploration of the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-reference-genome-annotations">Accessing the reference genome annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-the-voltage-gated-sodium-channel-gene">Introducing the voltage-gated sodium channel gene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">Transcription</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-transcripts-of-a-gene">Accessing the transcripts of a gene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#well-done">Well done!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercises">Practical exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="banner" src="../_images/banner.jpg" /></p>
 <p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors - Workshop 1</strong></em></p>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="module-3-navigating-the-anopheles-gambiae-reference-genome">
-<h1>Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome<a class="headerlink" href="#module-3-navigating-the-anopheles-gambiae-reference-genome" title="Permalink to this headline">#</a></h1>
+<section id="module-3-navigating-the-anopheles-gambiae-reference-genome">
+<h1>Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome<a class="headerlink" href="#module-3-navigating-the-anopheles-gambiae-reference-genome" title="Permalink to this heading">#</a></h1>
 <p><strong>Theme: Biology</strong></p>
 <p>The following module aims to introduce the reference genome and genome annotations that we use for <em>Anopheles gambiae</em>.</p>
 <section id="learning-objectives">
-<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>By the end of this module you should:</p>
 <ul class="simple">
 <li><p>Understand the structure of the <em>Anopheles gambiae</em> reference genome.</p></li>
@@ -828,9 +494,9 @@ title="Print to PDF"
 <p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QC0RXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAExAAIAAAAcAAAAZodpAAQAAAABAAAAggAAAAAAAABIAAAAAQAAAEgAAAABQWRvYmUgUGhvdG9zaG9wIENTNiBXaW5kb3dzAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAEsoAMABAAAAAEAAABJAAAAAP/hCupodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDYuMC4wIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkUyNUJBODcwN0NBQzExRTQ5OTdBQjc0QjIxNDIwMzY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkUyNUJBODcxN0NBQzExRTQ5OTdBQjc0QjIxNDIwMzY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IjVGODdDNkExMkJFQkZENDhCMkUyRjkxMjZGMTE2QTc0IiBzdFJlZjpkb2N1bWVudElEPSI1Rjg3QzZBMTJCRUJGRDQ4QjJFMkY5MTI2RjExNkE3NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8P3hwYWNrZXQgZW5kPSJ3Ij8+AP/tADhQaG90b3Nob3AgMy4wADhCSU0EBAAAAAAAADhCSU0EJQAAAAAAENQdjNmPALIE6YAJmOz4Qn7/wAARCABJASwDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwAEAwMEAwMEBAQEBQUEBQcLBwcGBgcOCgoICxAOEREQDhAPEhQaFhITGBMPEBYfFxgbGx0dHREWICIfHCIaHB0c/9sAQwEFBQUHBgcNBwcNHBIQEhwcHBwc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"></img></p>
 </section>
 <section id="lecture">
-<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this headline">#</a></h2>
+<h2>Lecture<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
 <section id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this headline">#</a></h3>
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/K3NDJvbbjMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -838,7 +504,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="francais">
-<h3>Français<a class="headerlink" href="#francais" title="Permalink to this headline">#</a></h3>
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/Fn8617mPnq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -847,7 +513,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p>First we need to install and import the python packages required for our data analysis.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -872,10 +538,10 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div class="bk-root">
-    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-    <span id="1001">Loading BokehJS ...</span>
-</div></div><script type="application/javascript">
+    <div class="bk-root">
+        <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+        <span id="1001">Loading BokehJS ...</span>
+    </div></div><script type="application/javascript">
 (function(root) {
   function now() {
     return new Date();
@@ -1176,32 +842,32 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<table class="malariagen-ag3">
-    <thead>
-        <tr>
-            <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
-        </tr>
-        <tr><td colspan="2" style="text-align: left">
-            Please note that data are subject to terms of use,
-            for more information see <a href="https://www.malariagen.net/data">
-            the MalariaGEN website</a> or contact data@malariagen.net.
-            See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
-        </td></tr>
-    </thead>
-    <tbody>
-        <tr><th style="text-align: left">Storage URL</th><td>gs://vo_agam_release/</td></tr>
-        <tr><th style="text-align: left">Data releases available</th><td>3.0</td></tr>
-        <tr><th style="text-align: left">Cohorts analysis</th><td>20211101</td></tr>
-        <tr><th style="text-align: left">Species analysis</th><td>aim_20200422</td></tr>
-        <tr><th style="text-align: left">Site filters analysis</th><td>dt_20200416</td></tr>
-        <tr><th style="text-align: left">Software version</th><td>2.2.0</td></tr>
-    </tbody>
-</table>
-</div></div>
+            <table class="malariagen-ag3">
+                <thead>
+                    <tr>
+                        <th style="text-align: left" colspan="2">MalariaGEN Ag3 data resource API</th>
+                    </tr>
+                    <tr><td colspan="2" style="text-align: left">
+                        Please note that data are subject to terms of use,
+                        for more information see <a href="https://www.malariagen.net/data">
+                        the MalariaGEN website</a> or contact data@malariagen.net.
+                        See also the <a href="https://malariagen.github.io/vector-data/ag3/api.html">Ag3 API docs</a>.
+                    </td></tr>
+                </thead>
+                <tbody>
+                    <tr><th style="text-align: left">Storage URL</th><td>gs://vo_agam_release/</td></tr>
+                    <tr><th style="text-align: left">Data releases available</th><td>3.0</td></tr>
+                    <tr><th style="text-align: left">Cohorts analysis</th><td>20211101</td></tr>
+                    <tr><th style="text-align: left">Species analysis</th><td>aim_20200422</td></tr>
+                    <tr><th style="text-align: left">Site filters analysis</th><td>dt_20200416</td></tr>
+                    <tr><th style="text-align: left">Software version</th><td>2.2.0</td></tr>
+                </tbody>
+            </table>
+        </div></div>
 </div>
 </section>
 <section id="structure-of-the-genome">
-<h2>Structure of the genome<a class="headerlink" href="#structure-of-the-genome" title="Permalink to this headline">#</a></h2>
+<h2>Structure of the genome<a class="headerlink" href="#structure-of-the-genome" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The genome of an organism is represented by chromosomes, which are sequences of DNA.</p></li>
 <li><p>Diploid organisms have two copies of each chromosome, one inherited from each parent.</p></li>
@@ -1217,7 +883,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="exploration-of-the-anopheles-gambiae-reference-genome">
-<h2>Exploration of the <em>Anopheles gambiae</em> reference genome<a class="headerlink" href="#exploration-of-the-anopheles-gambiae-reference-genome" title="Permalink to this headline">#</a></h2>
+<h2>Exploration of the <em>Anopheles gambiae</em> reference genome<a class="headerlink" href="#exploration-of-the-anopheles-gambiae-reference-genome" title="Permalink to this heading">#</a></h2>
 <p>For <em>Anopheles gambiae</em> we currently use the AgamP4 reference genome, also known as PEST. The DNA sequence data for this reference genome are organised and accessed by chromosome arm. Below we can access the ‘contigs’ to see the chromosome arms avalaible to us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1406,7 +1072,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/module-3-genome_34_0.png" src="../_images/module-3-genome_34_0.png" />
+<img alt="../_images/320af493f66de94a48fe785efc0a5140812420399284335252b3a6f54d5cbe12.png" src="../_images/320af493f66de94a48fe785efc0a5140812420399284335252b3a6f54d5cbe12.png" />
 </div>
 </div>
 <p>A few points to note :</p>
@@ -1419,7 +1085,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="accessing-the-reference-genome-annotations">
-<h2>Accessing the reference genome annotations<a class="headerlink" href="#accessing-the-reference-genome-annotations" title="Permalink to this headline">#</a></h2>
+<h2>Accessing the reference genome annotations<a class="headerlink" href="#accessing-the-reference-genome-annotations" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The genome sequence of each chromosome can be split into regions that do and do not represent genes that are transcribed and translated into functional proteins, i.e., coding and non-coding DNA respectively.</p></li>
 <li><p>Gene annotations provide information on which regions of the genome encode genes.</p></li>
@@ -1644,7 +1310,7 @@ title="Print to PDF"
 <p>For example, the second row is a “gene” feature, which occurs on chromosome arm 2L, starting at position 157,348 and ending at position 186,936. The identifier for this gene is “AGAP004677”. This gene hasn’t been given a name, but does have a description, which may tell us something about the function of the protein that this gene encodes (in this case, a methylenetetrahydrofolate dehydrogenase).</p>
 </section>
 <section id="introducing-the-voltage-gated-sodium-channel-gene">
-<h2>Introducing the voltage-gated sodium channel gene<a class="headerlink" href="#introducing-the-voltage-gated-sodium-channel-gene" title="Permalink to this headline">#</a></h2>
+<h2>Introducing the voltage-gated sodium channel gene<a class="headerlink" href="#introducing-the-voltage-gated-sodium-channel-gene" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>One particular gene of interest is the voltage-gated sodium channel (<em>Vgsc</em>), also known as <em>para</em>, which encodes for a protein called VGSC which is the binding target of pyrethroid insecticides.</p></li>
 <li><p>Pyrethroids function by binding to the associated protein and disrupting normal nervous system functions.</p></li>
@@ -1694,7 +1360,7 @@ Name: AGAP004707, dtype: object
 
 
 
-<div class="bk-root" id="aceabf73-3fa3-4dc2-99c7-c34d989f483e" data-root-id="1004"></div>
+  <div class="bk-root" id="aceabf73-3fa3-4dc2-99c7-c34d989f483e" data-root-id="1004"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -1725,7 +1391,7 @@ Name: AGAP004707, dtype: object
 <p>When zoomed out to an entire chromosome arm like in the plot above, it is hard to see the individual genes. However, you can zoom in to any region by using the mouse wheel or the tool icons at the top right of the plot. If you hover over a gene, you’ll hopefully see its ID, as well as its name and description if it has them. If you click on a gene, you’ll be taken to the corresponding gene page on VectorBase, the web-based resource that maintains the reference genome.</p>
 </section>
 <section id="transcription">
-<h2>Transcription<a class="headerlink" href="#transcription" title="Permalink to this headline">#</a></h2>
+<h2>Transcription<a class="headerlink" href="#transcription" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Genes are transcribed into mRNA, which means that the DNA sequence from the gene region is “read” and used as a template to build an mRNA molecule with an equivalent nucleotide sequence. mRNA forms the template from which a protein’s amino acids are formed.</p></li>
 <li><p>For many genes, the process of transcription is followed by splicing, which means that parts of the sequence are cut out before the mRNA is translated into protein. The parts of the gene sequence that are cut out are called “introns”. The parts of the gene sequence that are kept and included in the final mRNA molecule are called “exons”.</p></li>
@@ -1738,7 +1404,7 @@ Name: AGAP004707, dtype: object
 <p><strong>Figure 4.</strong> The process of transcription, translation and the alternative splicing of genes.</p>
 </section>
 <section id="accessing-the-transcripts-of-a-gene">
-<h2>Accessing the transcripts of a gene<a class="headerlink" href="#accessing-the-transcripts-of-a-gene" title="Permalink to this headline">#</a></h2>
+<h2>Accessing the transcripts of a gene<a class="headerlink" href="#accessing-the-transcripts-of-a-gene" title="Permalink to this heading">#</a></h2>
 <p>The different known transcripts of any given gene are annotated in the reference genome and can be accessed using the name of the gene you are interested in. We can view the transcripts available for the voltage-gated sodium channel using it’s gene identifier.</p>
 <p>The table of gene annotations is a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe">pandas DataFrame</a>, which means we can find the transcripts by using the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method"><code class="docutils literal notranslate"><span class="pre">query()</span></code> method</a>.</p>
 <div class="cell docutils container">
@@ -1995,7 +1661,7 @@ Name: AGAP004707, dtype: object
 
 
 
-<div class="bk-root" id="6471b083-0310-4073-a983-533190122967" data-root-id="1100"></div>
+  <div class="bk-root" id="6471b083-0310-4073-a983-533190122967" data-root-id="1100"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2036,7 +1702,7 @@ Name: AGAP004707, dtype: object
 
 
 
-<div class="bk-root" id="57b1df7b-ec1d-4bb7-b1a8-702c81223c67" data-root-id="1802"></div>
+  <div class="bk-root" id="57b1df7b-ec1d-4bb7-b1a8-702c81223c67" data-root-id="1802"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2077,7 +1743,7 @@ Name: AGAP004707, dtype: object
 
 
 
-<div class="bk-root" id="e48a4b63-4b5c-4c0d-85bf-8d7e76f1226a" data-root-id="2594"></div>
+  <div class="bk-root" id="e48a4b63-4b5c-4c0d-85bf-8d7e76f1226a" data-root-id="2594"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
@@ -2109,14 +1775,14 @@ Name: AGAP004707, dtype: object
 <p>You may observe that transcript AGAP004707-RD has an additional exon compared to AGAP004707-RA, whereas AGAP004707-RG has an exon missing. If a nucleotide change was to occur in the gene sequence impacting this exon, the alternative transcripts would be differentially impacted. You will learn more about how changes to the genomic sequence encoding genes impact on transcription in the following module, Analysing SNPs in the <em>Vgsc</em> gene.</p>
 </section>
 <section id="well-done">
-<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this headline">#</a></h2>
+<h2>Well done!<a class="headerlink" href="#well-done" title="Permalink to this heading">#</a></h2>
 <p>In this module you have learnt how to access the reference genome and the annotations which support it and we have introduced the idea that genomic variation can impact on protein function. In the upcoming module ‘Analysing SNPs in the VGSC gene’, you will learn how to use the reference genome together with the genomic data avaliable from wild populations to explore the impact of these genome changes.</p>
 </section>
 <section id="practical-exercises">
-<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this headline">#</a></h2>
+<h2>Practical exercises<a class="headerlink" href="#practical-exercises" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>English<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>English<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-3-genome.ipynb">Open this notebook in Google Colab</a> and run it for yourself from top to bottom. Hint: click the rocket icon (<i class="fas fa-rocket"></i>) at the top of the page, then select “Colab” from the drop-down menu. When colab opens, click the “Edit” menu, then select “Clear all outputs”, then begin running the cells.</p></li>
 <li><p>Modify the notebook to print the first 200 nucleotides of chromosome arm 3R.</p></li>
 <li><p>Count how many adenine (“A” or “a”) bases are present on chromosome arm 3R.</p></li>
@@ -2133,8 +1799,8 @@ Name: AGAP004707, dtype: object
 <p><strong>When you’ve had enough, create a link to your notebook, and share it with someone. If you’re attending a training workshop, paste the link into the workshop slack channel.</strong></p>
 </section>
 <section id="id2">
-<h3>Français<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Français<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/workshop-1/module-3-genome.ipynb">Ouvrir ce notebook dans Google Colab</a> et exécuter le vous-même du début à la fin. Indice: cliquer sur l’icone fusée (<i class="fas fa-rocket"></i>) au sommet de la page et sélectionner “Colab” dans le menu déroulant.</p></li>
 <li><p>Modifier le notebook afin d’afficher les 200 premier nucléotides du bras de chromosome 3R.</p></li>
 <li><p>Compter le nombre de bases adenine (“A” ou “a”) se trouvent sur le bras de chromosome 3R.</p></li>
@@ -2165,7 +1831,7 @@ Name: AGAP004707, dtype: object
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshop-1"
         },
         predefinedOutput: true
@@ -2173,54 +1839,127 @@ Name: AGAP004707, dtype: object
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="module-2-sample-metadata.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="module-2-sample-metadata.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="module-4-vgsc-snps.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="module-4-vgsc-snps.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By MalariaGEN and PAMCA<br/>
-  
-      &copy; Copyright 2022.<br/>
-    <div class="extra_footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-genome">Structure of the genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploration-of-the-anopheles-gambiae-reference-genome">Exploration of the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-reference-genome-annotations">Accessing the reference genome annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-the-voltage-gated-sodium-channel-gene">Introducing the voltage-gated sodium channel gene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">Transcription</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-transcripts-of-a-gene">Accessing the transcripts of a gene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#well-done">Well done!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercises">Practical exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Français</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
