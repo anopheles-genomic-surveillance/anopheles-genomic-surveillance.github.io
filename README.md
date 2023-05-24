@@ -4,7 +4,13 @@ This repository holds lecture notes for a training course on genomic surveillanc
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-## Developer notes
+## Maintainer notes
+
+### Checking the notebooks
+
+Please see the video below for a guide to how to check the lecture notebooks for any problems and report any issues you find:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DrVCqSrfAV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Development environment setup
 
