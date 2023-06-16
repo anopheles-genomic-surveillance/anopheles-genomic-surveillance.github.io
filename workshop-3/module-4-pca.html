@@ -521,6 +521,7 @@ document.write(`
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/1wVtQmcjFa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>
 </div>
+<p>Please note that the code in the cells below might differ from that shown in the video. This can happen because Python packages and their dependencies change due to updates, necessitating tweaks to the code.</p>
 </section>
 </section>
 <section id="recap-what-is-population-structure">
@@ -560,7 +561,7 @@ document.write(`
 <p>Now that we have covered some of the theoretical background for population structure analyses using PCA, let’s install and import the python packages we will need for our analyses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>malariagen_data
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>--no-warn-conflicts<span class="w"> </span>malariagen_data
 </pre></div>
 </div>
 </div>
@@ -1177,7 +1178,7 @@ document.write(`
 <p>5 rows × 46 columns</p>
 </div></div></div>
 </div>
-<p>There are 46 columns, so we can’t fit them all our screen. If we access the column headers we can see that the first 26 columns are all metadata relating to the mosquito sample, <em>e.g.</em> its sample ID, collection site, taxon, <em>etc.</em></p>
+<p>There are 50 columns, so we can’t fit them all our screen. If we access the column headers we can see that the first 26 columns are all metadata relating to the mosquito sample, <em>e.g.</em> its sample ID, collection site, taxon, <em>etc.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="o">.</span><span class="n">columns</span>
