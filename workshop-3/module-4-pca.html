@@ -568,6 +568,29 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code is used as a temporary fix to avoid plotly rendering shows (i.e. avoid showing blank plots)</span>
+<span class="kn">import</span> <span class="nn">plotly</span>
+<span class="kn">import</span> <span class="nn">plotly.io</span>
+<span class="kn">import</span> <span class="nn">plotly.io._utils</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">get_plotlyjs_version</span>
+
+
+<span class="k">def</span> <span class="nf">plotly_cdn_url_hacked</span><span class="p">(</span><span class="n">cdn_ver</span><span class="o">=</span><span class="n">get_plotlyjs_version</span><span class="p">()):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a valid plotly CDN url.&quot;&quot;&quot;</span>
+    <span class="c1"># Hack to use a CDN that works.</span>
+    <span class="c1"># See also https://github.com/plotly/plotly.js/issues/6648</span>
+    <span class="k">return</span> <span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/plotly.js/</span><span class="si">{cdn_ver}</span><span class="s2">/plotly.min.js&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">cdn_ver</span><span class="o">=</span><span class="n">cdn_ver</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nb">setattr</span><span class="p">(</span><span class="n">plotly</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">_utils</span><span class="p">,</span> <span class="s2">&quot;plotly_cdn_url&quot;</span><span class="p">,</span> <span class="n">plotly_cdn_url_hacked</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">malariagen_data</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
@@ -1759,16 +1782,16 @@ if (outputEl) {{
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-workshop-3-dev-py"
+            mode: "conda-env-developer-developer-training-nb-maintenance-mgen-7.10.0-py"
         },
         kernelOptions: {
-            name: "conda-env-workshop-3-dev-py",
+            name: "conda-env-developer-developer-training-nb-maintenance-mgen-7.10.0-py",
             path: "./workshop-3"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-workshop-3-dev-py'</script>
+    <script>kernelName = 'conda-env-developer-developer-training-nb-maintenance-mgen-7.10.0-py'</script>
 
                 </article>
               
