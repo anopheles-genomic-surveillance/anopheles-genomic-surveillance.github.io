@@ -9,6 +9,47 @@
 Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by [MalariaGEN](https://www.malariagen.net) and [PAMCA](https://www.pamca.org). 
 
 
+## Data access
+
+Vector Observatory data are stored in Google Cloud Storage (GCS) in the US region. The current set-up requires users to request access and authenticate prior to accessing data. 
+
+### Fair Usage
+
+Vector Observatory data are currently stored in Google Cloud Storage (GCS) in the US region. Access to Vector Observatory data in Google Cloud is free for all users. However, large transfers of data outside of Google Cloud in the US region substantially increase our running costs, and so we ask users to adhere to the following fair usage policy. This will allow us to continue making the data freely available.
+
+- **Data access from Google Colab -** If you are using Google Colab to access data, please check if your allocated virtual machine (VM) is within the US region. If not, please request a new VM by selecting “Runtime > Disconnect and delete runtime” from the Colab menu. 
+
+Please note that we monitor data access logs to detect any unexpected large data transfers outside of Google Cloud in the US region, and may temporarily suspend access to users performing large data transfers. If we do suspend access, we will reach out to you to see if we can help optimise your data access.
+
+### Data Access using Google Colab
+To access data from the Vector Observatory, you will need to follow these steps:
+
+#### Step 1. Make sure you have a Google Account
+
+To allow us to configure data access permissions, you will need to provide us with an email address that is associated with a Google account. This could be a standard Google (i.e., Gmail) account, or alternatively it could be your work email address if your employer uses Google Workspace.
+
+#### Step 2. Fill out the data access request form
+
+Please fill out and submit the following form:
+
+> [MalariaGEN cloud data access form](https://forms.gle/kCqistorZyxaU4LP7)
+
+All requests for data access will be granted subject to verification checks and agreement to reasonable use. This is to ensure that the data resources remain accessible to everyone. Submitting this form will allow us to configure storage permissions and monitor storage for excessive network usage in future.
+
+#### Step 3. Ensure you are using the latest version of the `malariagen_data` Python package
+
+If you access data via the `malariagen_data` Python package, please upgrade to version 9.0 or higher. These versions will automatically use your authentication credentials when accessing data in Google Cloud.
+
+#### Step 4. Ensure you are using the same Google Account you registered with
+
+When you start running some code in Google Colab using the `malariagen_data` Python package, you will be asked to authenticate with your Google Account. Make sure that you use the same account you used during Steps 1 and 2 as you will not be able to use the `malariagen_data` Python package otherwise.
+
+If you have any questions during the course of the workshop, feel free to ask your Teaching Assistant. 
+
+If you have any questions outside of the course of the workshop, please contact us at: <support@malariagen.net>. 
+
+More general details about Data Access can also be found on the [Vector Observatory website](https://malariagen.github.io/vector-data/vobs/vobs-data-access.html).
+
 ## Workshop programme
 
 The course will consist of a series of workshops. The workshop programme is as follows:
