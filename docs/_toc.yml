@@ -23,7 +23,7 @@ parts:
     - file: workshop-3/module-1-plotly
     - file: workshop-3/module-2-population-structure
     - file: workshop-3/module-3-snps
-    - file: workshop-3/module-4-pca
+    - file: workshop-3/module-4-NJT
     - file: workshop-3/journal-club
   - caption: Workshop 4
     chapters:
