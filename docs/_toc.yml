@@ -61,3 +61,6 @@ parts:
     - file: workshop-8/module-2-presenting-results
     - file: workshop-8/module-3-genomic-surveillance-tanzania
     - file: workshop-8/module-4-genomic-surveillance-ghana
+  - caption: Malaria Vector Genome Observatory
+    chapters:
+    - file: general/data-access
