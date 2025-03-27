@@ -478,6 +478,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-fill-out-the-data-access-request-form">Step 2. Fill out the data access request form</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ensure-you-are-using-the-latest-version-of-the-malariagen-data-python-package">Step 3. Ensure you are using the latest version of the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-ensure-you-are-using-the-same-google-account-you-registered-with">Step 4. Ensure you are using the same Google Account you registered with</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-dealing-with-a-vm-outside-of-the-us">Step 5. Dealing with a VM outside of the US</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-accept-to-grant-colaboratory-runtimes-additional-access-to-your-google-account">Step 6. Accept to grant Colaboratory Runtimes additional access to your Google account</a></li>
 </ul>
 </li>
 </ul>
@@ -524,6 +526,14 @@ document.write(`
 <section id="step-4-ensure-you-are-using-the-same-google-account-you-registered-with">
 <h3>Step 4. Ensure you are using the same Google Account you registered with<a class="headerlink" href="#step-4-ensure-you-are-using-the-same-google-account-you-registered-with" title="Permalink to this heading">#</a></h3>
 <p>When you start running some code in Google Colab using the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package, you will be asked to authenticate with your Google Account. Make sure that you use the same account you used during Steps 1 and 2 as you will not be able to use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package otherwise.</p>
+</section>
+<section id="step-5-dealing-with-a-vm-outside-of-the-us">
+<h3>Step 5. Dealing with a VM outside of the US<a class="headerlink" href="#step-5-dealing-with-a-vm-outside-of-the-us" title="Permalink to this heading">#</a></h3>
+<p>In order to speed up data access and minimise cost, the API requires that the virtual machine that is used be in the United States. If that is not the case, it will raise an error. If this happens, the only solution is to go to “Runtime” in the list of tabs at the top of the window, select “Disconnect and delete runtime”, and restart the execution of the notebook from the top. Hopefully, this will solve the problem but you might need to repeat this process if the error persist.</p>
+</section>
+<section id="step-6-accept-to-grant-colaboratory-runtimes-additional-access-to-your-google-account">
+<h3>Step 6. Accept to grant Colaboratory Runtimes additional access to your Google account<a class="headerlink" href="#step-6-accept-to-grant-colaboratory-runtimes-additional-access-to-your-google-account" title="Permalink to this heading">#</a></h3>
+<p>The first time you connect your Google Account to a Colab notebook, you will be asked to grant Colaboratory Runtimes additional access to your Google account. You need to “Select all” in order to get access to the data through the API on Colab. You can find a video <a class="reference external" href="https://drive.google.com/file/d/1dOPimdsPabvOoWkKdomWl8v24LRvjiaj/view">here</a> showing you the whole process.</p>
 <p>If you have any questions during the course of the workshop, feel free to ask your Teaching Assistant.</p>
 <p>If you have any questions outside of the course of the workshop, please contact us at: <a class="reference external" href="mailto:support&#37;&#52;&#48;malariagen&#46;net">support<span>&#64;</span>malariagen<span>&#46;</span>net</a>.</p>
 <p>More general details about Data Access can also be found on the <a class="reference external" href="https://malariagen.github.io/vector-data/vobs/vobs-data-access.html">Vector Observatory website</a>.</p>
@@ -592,6 +602,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-fill-out-the-data-access-request-form">Step 2. Fill out the data access request form</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ensure-you-are-using-the-latest-version-of-the-malariagen-data-python-package">Step 3. Ensure you are using the latest version of the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-ensure-you-are-using-the-same-google-account-you-registered-with">Step 4. Ensure you are using the same Google Account you registered with</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-dealing-with-a-vm-outside-of-the-us">Step 5. Dealing with a VM outside of the US</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-accept-to-grant-colaboratory-runtimes-additional-access-to-your-google-account">Step 6. Accept to grant Colaboratory Runtimes additional access to your Google account</a></li>
 </ul>
 </li>
 </ul>
