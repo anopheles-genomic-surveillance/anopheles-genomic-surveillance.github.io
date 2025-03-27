@@ -586,6 +586,14 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import os</span>
+<span class="c1">#os.environ[&quot;MGEN_SHOW_PROGRESS&quot;] = &quot;0&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Set up access to the MalariaGEN Ag3.0 data resource.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,7 +603,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/javascript">(function(root) {
+<script type="application/javascript">'use strict';
+(function(root) {
   function now() {
     return new Date();
   }
@@ -756,17 +765,42 @@ const JS_MIME_TYPE = 'application/javascript';
      "</code>\n"+
      "</div>"}};
 
-  function display_loaded() {
+  function display_loaded(error = null) {
     const el = document.getElementById(null);
     if (el != null) {
-      el.textContent = "BokehJS is loading...";
-    }
-    if (root.Bokeh !== undefined) {
-      if (el != null) {
-        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
       }
     } else if (Date.now() < root._bokeh_timeout) {
-      setTimeout(display_loaded, 100)
+      setTimeout(() => display_loaded(error), 100);
     }
   }
 
@@ -840,7 +874,7 @@ const JS_MIME_TYPE = 'application/javascript';
     document.body.appendChild(element);
   }
 
-  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.3.4.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.4.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.3.4.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.3.4.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.3.4.min.js"];
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.7.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.7.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.7.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.7.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.7.0.min.js"];
   const css_urls = [];
 
   const inline_js = [    function(Bokeh) {
@@ -852,10 +886,13 @@ function(Bokeh) {
 
   function run_inline_js() {
     if (root.Bokeh !== undefined || force === true) {
-          for (let i = 0; i < inline_js.length; i++) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
       inline_js[i].call(root, root.Bokeh);
     }
-} else if (Date.now() < root._bokeh_timeout) {
+
+      } catch (error) {throw error;
+      }} else if (Date.now() < root._bokeh_timeout) {
       setTimeout(run_inline_js, 100);
     } else if (!root._bokeh_failed_load) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
@@ -885,7 +922,7 @@ function(Bokeh) {
                         Please note that data are subject to terms of use,
                         for more information see <a href="https://www.malariagen.net/data">
                         the MalariaGEN website</a> or contact support@malariagen.net.
-                        See also the <a href="https://malariagen.github.io/malariagen-data-python/v9.0.0/Ag3.html">Ag3 API docs</a>.
+                        See also the <a href="https://malariagen.github.io/malariagen-data-python/v15.0.1/Ag3.html">Ag3 API docs</a>.
                     </td></tr>
                 </thead>
                 <tbody>
@@ -893,13 +930,13 @@ function(Bokeh) {
                         <th style="text-align: left">
                             Storage URL
                         </th>
-                        <td>gs://vo_agam_release/</td>
+                        <td>gs://vo_agam_release_master_us_central1</td>
                     </tr>
                     <tr>
                         <th style="text-align: left">
                             Data releases available
                         </th>
-                        <td>3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9</td>
+                        <td>3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14</td>
                     </tr>
                     <tr>
                         <th style="text-align: left">
@@ -911,7 +948,7 @@ function(Bokeh) {
                         <th style="text-align: left">
                             Cohorts analysis
                         </th>
-                        <td>20240418</td>
+                        <td>20250131</td>
                     </tr>
                     <tr>
                         <th style="text-align: left">
@@ -929,13 +966,13 @@ function(Bokeh) {
                         <th style="text-align: left">
                             Software version
                         </th>
-                        <td>malariagen_data 9.0.0</td>
+                        <td>malariagen_data 15.0.1</td>
                     </tr>
                     <tr>
                         <th style="text-align: left">
                             Client location
                         </th>
-                        <td>unknown</td>
+                        <td>Iowa, United States (Google Cloud us-central1)</td>
                     </tr>
                 </tbody>
             </table>
@@ -951,11 +988,6 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
 </pre></div>
 </div>
 </div>
@@ -1289,7 +1321,7 @@ function(Bokeh) {
     </tr>
   </tbody>
 </table>
-<p>3081 rows × 32 columns</p>
+<p>3081 rows × 57 columns</p>
 </div></div></div>
 </div>
 <p>There are 3,081 rows and 32 columns in this DataFrame. Each row provides data about a single mosquito DNA sample that has been sequenced by MalariaGEN. The columns provide data about those mosquitoes, such as the country and year in which the mosquito was originally collected.</p>
@@ -1306,9 +1338,6 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1529,18 +1558,6 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                      
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3167,16 +3184,16 @@ Name: Tricia McMillan, dtype: object
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-developer-developer-training-nb-maintenance-mgen-8.7.0-py"
+            mode: "conda-env-developer-developer-training-nb-maintenance-mgen-15.0.1-py"
         },
         kernelOptions: {
-            name: "conda-env-developer-developer-training-nb-maintenance-mgen-8.7.0-py",
+            name: "conda-env-developer-developer-training-nb-maintenance-mgen-15.0.1-py",
             path: "./workshop-2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-developer-developer-training-nb-maintenance-mgen-8.7.0-py'</script>
+    <script>kernelName = 'conda-env-developer-developer-training-nb-maintenance-mgen-15.0.1-py'</script>
 
                 </article>
               
