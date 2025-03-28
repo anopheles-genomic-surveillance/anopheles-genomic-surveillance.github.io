@@ -1,0 +1,18 @@
+channels:
+- conda-forge
+dependencies:
+- matplotlib=3.7.1
+- matplotlib-base=3.7.1
+- matplotlib-inline=0.1.6
+- python=3.11.11
+- jupyter=1.0.0
+- jupyter-book=0.15.1
+- seaborn=0.12.2
+- seaborn-base=0.12.2
+- openpyxl=3.1.2
+- rioxarray=0.14.1
+- pip
+- pip:
+  - malariagen-data>=7.11.0
+  - ipyleaflet==0.17.0
+- ipykernel
