@@ -963,23 +963,13 @@ function(Bokeh) {
 <p>We’ve seen in the previous module how the copy number variation data is calculated in 300 base pair windows over the genome, but in general genes are larger than 300 base pairs and so will span multiple windows. So how do we summarise the windowed copy number data by gene?</p>
 <p>One way to do this is to compute some kind of average over all the windows overlapping a given gene of interest. Because copy number state is a discrete variable, we typically prefer to do this by computing the modal copy number for windows overlapping a gene.</p>
 <p>The diagram below shows the windowed copy number for a single mosquito for the region of the genome spanning several metabolic resistance genes. We illustrate how the summarisation is done to compute modal copy number by gene.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><img width="80%" height="80%"src="../../src/img/workshop-2/w2m4-1.png"/>
-</div></div>
-</div>
-</section>
+<img width="80%" height="80%" src="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/workshop-2/w2m4-1.png?raw=1" /></section>
 <section id="computing-gene-cnv-frequencies">
 <h2>Computing gene CNV frequencies<a class="headerlink" href="#computing-gene-cnv-frequencies" title="Permalink to this heading">#</a></h2>
 <p>Now that we know how to summarise the data by gene, the next step is to then summarise these data over multiple individual mosquitoes, so that we can estimate the fraction of mosquitoes from a given time, place and species that carry some form of copy number variation at a given gene of interest. This is ultimately what we are interested in, because we would like to know if metabolic resistance is at low or high frequency and whether this varies over time or between geographical locations or species.</p>
 <p>Because copy number variation is more complex than single nucleotide polymorphism, we compute the frequency of CNVs in a simplified way. We compute the fraction of individuals that carry some kind of copy number variation at a given gene, ignoring whether the individual was heterozygous or homozygous for that CNV, and also ignoring the number of additional copies that may be present. We also divide this into two types of CNV - amplification and deletion. So, for example, we compute the fraction of individuals which have an amplification at some gene; and similarly we compute the fraction with some deletion. Although generally we’re more interested in amplification, because amplification of metabolic resistance genes can cause increased insecticide resistance.</p>
 <p>The diagram below illustrates this simple calculation of amplification and deletion frequencies for some genes of interest.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><img width="81%" height="81%"src="../../src/img/workshop-2/w2m4-2.png"/>
-</div></div>
-</div>
-<p>Let’s now compute gene CNV frequencies. To do this we can use the <a class="reference external" href="https://malariagen.github.io/malariagen-data-python/latest/generated/malariagen_data.ag3.Ag3.gene_cnv_frequencies.html#malariagen_data.ag3.Ag3.gene_cnv_frequencies"><code class="docutils literal notranslate"><span class="pre">gene_cnv_frequencies()</span></code></a> function.</p>
+<img width="81%" height="81%" src="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/workshop-2/w2m4-2.png?raw=1" /><p>Let’s now compute gene CNV frequencies. To do this we can use the <a class="reference external" href="https://malariagen.github.io/malariagen-data-python/latest/generated/malariagen_data.ag3.Ag3.gene_cnv_frequencies.html#malariagen_data.ag3.Ag3.gene_cnv_frequencies"><code class="docutils literal notranslate"><span class="pre">gene_cnv_frequencies()</span></code></a> function.</p>
 <p>We can look at the documentation for this function by using “?”.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
