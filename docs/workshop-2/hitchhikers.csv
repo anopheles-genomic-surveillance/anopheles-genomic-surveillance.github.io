@@ -1,0 +1,6 @@
+,name,taxon,gender,number_of_heads,intelligence
+0,Arthur Dent,human,male,1,100
+1,Tricia McMillan,human,female,1,180
+2,Ford Prefect,betelgeusian,male,1,120
+3,Zaphod Beeblebrox,betelgeusian,male,2,30
+4,Marvin the Paranoid Android,robot,,1,5000000
