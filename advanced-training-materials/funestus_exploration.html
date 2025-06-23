@@ -1,0 +1,2623 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exploration of the Anopheles funestus resource &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced-training-materials/funestus_exploration';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vector Observatory Data Access" href="../general/data-access.html" />
+    <link rel="prev" title="Module 4 - Genomic surveillance of malaria vectors in Ghana" href="../workshop-8/module-4-genomic-surveillance-ghana.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-1-colab.html">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-3-genome.html">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/journal-club.html">Journal club - Lucas et al. (2019)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-NJT.html">Module 4 - Detecting taxonomic and geographical population structure using neighbour-joining trees (NJT)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-1-numpy.html">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AnoPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced courses</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploration of the <em>Anopheles funestus</em> resource</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Malaria Vector Genome Observatory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../general/data-access.html">Vector Observatory Data Access</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/advanced-training-materials/funestus_exploration.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced-training-materials/funestus_exploration.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced-training-materials/funestus_exploration.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploration of the Anopheles funestus resource</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-interested-in-an-funestus">Why are we interested in <em>An. funestus</em> ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-a-different-course-from-the-one-on-an-gambiae-s-l">Why is this a different course from the one on <em>An. gambiae s.l.</em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-af1-0-data-resource">Accessing the <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> data resource</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-exploring-anopheles-funestus-genomic-data">Accessing and exploring <em>Anopheles funestus</em> genomic data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-reference-and-finding-genes-of-interest">Exploring the reference and finding genes of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-sample-metadata">Loading sample metadata</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="banner" src="../_images/banner.jpg" /></p>
+<p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
+<hr class="docutils" />
+<section id="exploration-of-the-anopheles-funestus-resource">
+<h1>Exploration of the <em>Anopheles funestus</em> resource<a class="headerlink" href="#exploration-of-the-anopheles-funestus-resource" title="Permalink to this heading">#</a></h1>
+<p><strong>Theme: Data</strong></p>
+<p><strong>DISCLAIMER: This is work in progress and subject to change and updates.</strong></p>
+<p>This module provides an introduction to accessing and exploring data about <em>Anopheles funestus</em> mosquito specimens collected in the field and submitted for whole-genome sequencing by MalariaGEN. It also explains why the study of <em>An. funestus</em> is crucial to understand the malaria landscape in Sub-Saharan Africa. Through examples, it also shows differences between the <code class="docutils literal notranslate"><span class="pre">Af1</span></code> and <code class="docutils literal notranslate"><span class="pre">Ag3</span></code> resources underlining why they can’t be aggregated as a single resource.</p>
+<p>A certain degree of familiarity with the content of the training course on <em>Anopheles gambiae s.l.</em> is expected. Many of the concepts presented in this module were introduced in the training course and we will refer to the relevant workshop and module instead of giving detailed explanations. More specifically, more details on the theory underpinning reference genome access and exploration can be found in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">Workshop 1 Module 3</a> of the <em>An. gambiae</em> introductory training course, and explanations around the structure, storage and metadata contained in the data resources can be found in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">Workshop 1 Module 2</a>.</p>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Explain why the study of <em>An. funestus</em> is important and why it requires a different resource</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package to access <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> data in Google Cloud.</p></li>
+<li><p>Explore the <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> data release and summarise the mosquito samples for which genomic data are available using pivot tables and maps.</p></li>
+<li><p>Use genomic coordinates to identify sites and regions within the reference genome.</p></li>
+<li><p>Find specific genes of interest in the reference genome.</p></li>
+</ul>
+</section>
+<section id="lecture">
+<h2>Lecture?<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
+<p>Please note that the code in the cells below might differ from that shown in the video. This can happen because Python packages and their dependencies change due to updates, necessitating tweaks to the code.</p>
+</section>
+</section>
+<section id="why-are-we-interested-in-an-funestus">
+<h2>Why are we interested in <em>An. funestus</em> ?<a class="headerlink" href="#why-are-we-interested-in-an-funestus" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/advanced/MAP_Africa_vector_range.png?raw=1&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img width="50%" height="50%" src="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/advanced/MAP_Africa_vector_range.png?raw=1"/>
+</div></div>
+</div>
+<p><em>An. funestus</em> is a major vector of malaria in sub-Saharan Africa, particularly in East Africa. Its range covers most of the continent, as shown on the map above courtesy of the Malaria Atlas Project [1]. If vector control interventions are successful in reducing the populations of <em>An. gambiae s.l.</em> withour affecting as much the <em>An. funestus</em> populations, they could lead to <em>An. funestus</em> replacing <em>An. gambiae s.l.</em> as a malaria vector. This has, for instance, already been observed in East Africa. Msugupakulya et al. [2] have shown that, while <em>An. gambiae s.l.</em> was the main vector of malaria in East Africa during the first decade of the XXI<sup>st</sup> century, <em>An. funestus</em> has taken that role more recently.</p>
+<p><em>An. funestus</em> is known to be highly anthropophilic [3]. It also been shown to have a significantly longer lifespan than other African malaria vectors [4]. In some areas, it is also reported to have very high Plasmodium infection rates [5, 6, 7]. <em>An funestus</em> has adapted recently to the use of indoor-based interventions, including bed nets, by modifying its behaviour. It is now known to be probe to outdoor, early evening and late morning biting [8, 9, 10]. There is also evidence for a preference for larval habitats that persist in the dry months [11] which may extend the transmission season.</p>
+</section>
+<section id="why-is-this-a-different-course-from-the-one-on-an-gambiae-s-l">
+<h2>Why is this a different course from the one on <em>An. gambiae s.l.</em>?<a class="headerlink" href="#why-is-this-a-different-course-from-the-one-on-an-gambiae-s-l" title="Permalink to this heading">#</a></h2>
+<p>All the methods that were introduced in the <em>An. gambiae s.l.</em> course to analyse population structure (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/about.html">Workshop 3</a>), genetic diversity (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-5/about.html">Workshop 5</a>), positive selection (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-6/about.html">Workshop 6</a>), gene flow (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/about.html">Workshop 7</a>) or insecticide resistance (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/about.html">Workshop 1</a> and <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/about.html">Workshop 2</a>) can be applied to <em>An. funestus</em> (and will be in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/advanced-training-materials/funestus_IR.html">Advanced funestus - Insecticide resistance</a> and <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/advanced-training-materials/funestus_pop_struct.html">Advanced funestus - Population structure</a>) but, particularly for insecticide resistance analyses, the fact that <em>An. gambiae s.l.</em> and <em>An. funestus</em> are two very different species cannot be ignored.</p>
+<p>To begin with, there is no gene flow between <em>An. gambiae s.l.</em> and <em>An. funestus</em>. The two species have common ancestors, they do belong to the same genus <em>Anopheles</em>, but they diverged around 9.5 million years ago [12]. This, obviously, predates any human intervention as it predates humanity [13]. As a result, any insecticide resistance mutation that is observed will either be different or a co-evolution.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> resource is built using the <code class="docutils literal notranslate"><span class="pre">idAnoFuneDA-416_04</span></code> [14] genome assembly. As we will see, while the <em>An. funestus</em> genome has the same number of chromosomes (2 autosomes and X) as the <em>An. gambiae s.l.</em>, they are of different lengths, the inversions are different and the genes of interest may be located in completely different places in the genome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/advanced/funestus_synteny.png?raw=1&quot;</span><span class="p">/&gt;</span>
+#I need to find a good picture to put here
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img width="50%" height="50%" src="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/advanced/funestus_synteny.png?raw=1"/>
+#I need to find a good picture to put here
+</div></div>
+</div>
+</section>
+<section id="accessing-the-af1-0-data-resource">
+<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> data resource<a class="headerlink" href="#accessing-the-af1-0-data-resource" title="Permalink to this heading">#</a></h2>
+<p>We are now going to be accessing and analysing data from the <a class="reference external" href="https://malariagen.github.io/vector-data/af1/af1.0.html"><em>Anopheles funestus</em> 1000 Genomes Project phase 1 data resource</a>, also known as “Af1.0” for short. This includes data from whole-genome sequencing of 656 mosquitoes from 13 African countries.</p>
+<p>To set up your notebook to access these data, first install the <a class="reference external" href="https://github.com/malariagen/malariagen-data-python">malariagen_data</a> package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install -q --no-warn-conflicts malariagen_data
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also need to use ipyleaflet to make some maps</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install -qq ipyleaflet
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipyleaflet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that authentication is required to access data through the package, please follow the instructions <a class="reference external" href="https://malariagen.github.io/vector-data/vobs/vobs-data-access.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Af1</span><span class="p">()</span>
+<span class="n">af1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById(null);
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.6.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.6.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.6.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.6.3.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.6.3.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {throw error;
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById(null)).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><div class="output text_html">
+            <table class="malariagen-af1">
+                <thead>
+                    <tr>
+                        <th style="text-align: left" colspan="2">MalariaGEN Af1 API client</th>
+                    </tr>
+                    <tr><td colspan="2" style="text-align: left">
+                        Please note that data are subject to terms of use,
+                        for more information see <a href="https://www.malariagen.net/data">
+                        the MalariaGEN website</a> or contact support@malariagen.net.
+                        See also the <a href="https://malariagen.github.io/malariagen-data-python/v15.2.0/Af1.html">Af1 API docs</a>.
+                    </td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="text-align: left">
+                            Storage URL
+                        </th>
+                        <td>gs://vo_afun_release_master_us_central1</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Data releases available
+                        </th>
+                        <td>1.0, 1.1, 1.2, 1.3, 1.4</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Results cache
+                        </th>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Cohorts analysis
+                        </th>
+                        <td>20240515</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Site filters analysis
+                        </th>
+                        <td>dt_20200416</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Software version
+                        </th>
+                        <td>malariagen_data 15.2.0</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left">
+                            Client location
+                        </th>
+                        <td>Iowa, United States (Google Cloud us-central1)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div></div>
+</div>
+</section>
+<section id="accessing-and-exploring-anopheles-funestus-genomic-data">
+<h2>Accessing and exploring <em>Anopheles funestus</em> genomic data<a class="headerlink" href="#accessing-and-exploring-anopheles-funestus-genomic-data" title="Permalink to this heading">#</a></h2>
+<section id="exploring-the-reference-and-finding-genes-of-interest">
+<h3>Exploring the reference and finding genes of interest<a class="headerlink" href="#exploring-the-reference-and-finding-genes-of-interest" title="Permalink to this heading">#</a></h3>
+<p>We saw during the third module of the first workshop of the course on <em>An. gambiae</em> (<a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-3-genome.html">Workshop 1 Module 3</a>) how to access the genome annotations for that species. The same function exists for <em>An. funestus</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>ncRNA_gene</td>
+      <td>66492</td>
+      <td>69180</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125765358</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125765358, transcript varia...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>lnc_RNA</td>
+      <td>66492</td>
+      <td>69180</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125765358_t2</td>
+      <td>LOC125765358</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125765358, transcript varia...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>lnc_RNA</td>
+      <td>66492</td>
+      <td>69180</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125765358_t1</td>
+      <td>LOC125765358</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125765358, transcript varia...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>66492</td>
+      <td>66764</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>exon_LOC125765358_t2-E1</td>
+      <td>LOC125765358_t2,LOC125765358_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>lnc_RNA</td>
+      <td>66923</td>
+      <td>69180</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125765358_t3</td>
+      <td>LOC125765358</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125765358, transcript varia...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>347419</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>22261674</td>
+      <td>22261945</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>exon_LOC125771994_t1-E5</td>
+      <td>LOC125771994_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>347420</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>22262762</td>
+      <td>22262829</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>exon_LOC125771994_t1-E4</td>
+      <td>LOC125771994_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>347421</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>22263509</td>
+      <td>22263916</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>exon_LOC125771994_t1-E3</td>
+      <td>LOC125771994_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>347422</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>22263985</td>
+      <td>22264052</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>exon_LOC125771994_t1-E2</td>
+      <td>LOC125771994_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>347423</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>exon</td>
+      <td>22264121</td>
+      <td>22264183</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>exon_LOC125771994_t1-E1</td>
+      <td>LOC125771994_t1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>347424 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>The first big difference between the reference for <em>An. funestus</em> and <em>An. gambiae</em> is that contigs are whole chromosomes (e.g., “2RL”) instead of chromosome arms (e.g., “2R”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;contig&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>contig
+2RL    170850
+3RL    141790
+X       34784
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can group the annotations by “type” to see what the annotations contain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type
+CDS                       161215
+exon                       78083
+five_prime_UTR             42054
+lnc_RNA                      942
+mRNA                       25010
+ncRNA                        609
+ncRNA_gene                  1041
+protein_coding_gene        11962
+pseudogene                    42
+pseudogenic_transcript        42
+rRNA                         101
+snRNA                         27
+snoRNA                         9
+tRNA                         316
+three_prime_UTR            25971
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many different types of annotations are provided but we will only be interested in “protein_coding_gene”s for this module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>16</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>81055</td>
+      <td>82221</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125766088</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>60S ribosomal protein L18 [Source:UniProtKB/Tr...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>82584</td>
+      <td>84996</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>LOC125766087</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Folliculin [Source:UniProtKB/TrEMBL;Acc:A0A182...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>141143</td>
+      <td>146973</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125766196</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125766196</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>159192</td>
+      <td>185030</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>LOC125765747</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>lachesin-like, transcript variant X5</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>227643</td>
+      <td>228822</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125760444</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>actin-related protein 2/3 complex subunit 4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>347372</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>22057024</td>
+      <td>22057530</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>LOC125768238</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>transcriptional regulatory protein AlgP-like</td>
+    </tr>
+    <tr>
+      <th>347378</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>22078120</td>
+      <td>22083556</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125769511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125769511</td>
+    </tr>
+    <tr>
+      <th>347386</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>22089764</td>
+      <td>22093137</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>LOC125768244</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125768244</td>
+    </tr>
+    <tr>
+      <th>347394</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>22192285</td>
+      <td>22193524</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125768250</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>protein lag-3-like</td>
+    </tr>
+    <tr>
+      <th>347402</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>22206931</td>
+      <td>22212078</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125769281</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uncharacterized LOC125769281</td>
+    </tr>
+  </tbody>
+</table>
+<p>11962 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>We can see that the naming convention (“LOC?????????”) is different from the one used for <em>An. gambiae</em> (“AGAP??????”).</p>
+<p>In order to locate genes of interest, several methods can be used. The easiest is when the ID is already known. For instance, in supplementary Table 3 of [15], the ID for GSTE2 is given as “LOC125763977”. We can thus look at this gene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ID == &#39;LOC125763977&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>133312</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>76406705</td>
+      <td>76407655</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125763977</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>glutathione S-transferase 1-like, transcript v...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It is also possible to query other fields of the DataFrame to access a gene. For instance, if we are interested in ACE1, its description is “Acetylcholinesterase [Source:UniProtKB/TrEMBL;Acc:A0A182RZ85]”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;description == &#39;Acetylcholinesterase [Source:UniProtKB/TrEMBL;Acc:A0A182RZ85]&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>38520</th>
+      <td>2RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>19417355</td>
+      <td>19490903</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125763056</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Acetylcholinesterase [Source:UniProtKB/TrEMBL;...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The “[Source:UniProtKB/TrEMBL;Acc:A0A182RZ85]” part makes it hard to remember and is thus problematic. It is possible, though not really simple, to dispense with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correct_id</span>  <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Acetylcholinesterase&#39;</span><span class="p">]</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">correct_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>contig                                                       2RL
+source                                                 VEuPathDB
+type                                         protein_coding_gene
+start                                                   19417355
+end                                                     19490903
+score                                                        NaN
+strand                                                         +
+phase                                                        NaN
+ID                                                  LOC125763056
+Parent                                                       NaN
+Note                                                         NaN
+description    Acetylcholinesterase [Source:UniProtKB/TrEMBL;...
+Name: 38520, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>In practice, it is going to be extremely unusual that we know the correct ID and/or description for a gene we are interested in as they are neither obvious nor easy to remember and these methods will seldom be useful.</p>
+<p>Another, more practical and rea way to find genes of interest is by looking at specific regions of the genome, for instance ones that are around signals of selection. For instance, if we look at the region “X:8445000-8455000”, we find Cyp9k1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8445000-8455000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>X</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>8448477</td>
+      <td>8450887</td>
+      <td>NaN</td>
+      <td>+</td>
+      <td>NaN</td>
+      <td>LOC125764232</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Cytochrome P450 [Source:UniProtKB/TrEMBL;Acc:A...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The most common way to find a gene, however, is to use <a class="reference external" href="https://vectorbase.org/vectorbase/app">Vectorbase</a> and look for orthologs for known genes in other species. For instance, if one looks at the orthologs of AGAP004707 (VGSC in <em>An. gambiae</em>), one can find several proteins of the gene AFUN2_008728 of AfunGA1 which can be found in the region “3RL:44105643-44156624”. If we look at this region, we find the gene VGSC for <em>An. funestus</em>.</p>
+<p>It is worth noting that VectorBase doesn’t use the IDs from the genome annotations to identify the genes. The IDs can still be used in searches, however. VectorBase used to use the IDs but they do not contain the organism name (AFUN) so they were replaced with new identifiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL:44105643-44156624&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>contig</th>
+      <th>source</th>
+      <th>type</th>
+      <th>start</th>
+      <th>end</th>
+      <th>score</th>
+      <th>strand</th>
+      <th>phase</th>
+      <th>ID</th>
+      <th>Parent</th>
+      <th>Note</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3RL</td>
+      <td>VEuPathDB</td>
+      <td>protein_coding_gene</td>
+      <td>44105643</td>
+      <td>44156624</td>
+      <td>NaN</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>LOC125769886</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>sodium channel protein para, transcript varian...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>On VectorBase, by going to the <strong>Links out/External Links</strong> section of a gene page, one can also get a lits of other identifiers. The <em>RefSeq</em> is the ID that you will find in the genome annotations.</p>
+</section>
+<section id="loading-sample-metadata">
+<h3>Loading sample metadata<a class="headerlink" href="#loading-sample-metadata" title="Permalink to this heading">#</a></h3>
+<p>We can use the <a class="reference external" href="https://malariagen.github.io/malariagen-data-python/latest/Af1.html#sample-metadata-access"><code class="docutils literal notranslate"><span class="pre">sample_metadata()</span></code></a> function to retrieve a pandas DataFrame containing metadata about all 656 samples in the Af1.0 resource. In this DataFrame, each row represents one mosquito sample, and the columns such as <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> provide information about where the mosquito was originally collected. This is similar work to what was done in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">Workshop 1 Module 2</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+<span class="n">df_samples</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>partner_sample_id</th>
+      <th>contributor</th>
+      <th>country</th>
+      <th>location</th>
+      <th>year</th>
+      <th>month</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>sex_call</th>
+      <th>...</th>
+      <th>admin1_name</th>
+      <th>admin1_iso</th>
+      <th>admin2_name</th>
+      <th>taxon</th>
+      <th>cohort_admin1_year</th>
+      <th>cohort_admin1_month</th>
+      <th>cohort_admin1_quarter</th>
+      <th>cohort_admin2_year</th>
+      <th>cohort_admin2_month</th>
+      <th>cohort_admin2_quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>VBS24195</td>
+      <td>1229-GH-A-GH01</td>
+      <td>Samuel Dadzie</td>
+      <td>Ghana</td>
+      <td>Dimabi</td>
+      <td>2017</td>
+      <td>8</td>
+      <td>9.420</td>
+      <td>-1.083</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Northern Region</td>
+      <td>GH-NP</td>
+      <td>Tolon</td>
+      <td>funestus</td>
+      <td>GH-NP_fune_2017</td>
+      <td>GH-NP_fune_2017_08</td>
+      <td>GH-NP_fune_2017_Q3</td>
+      <td>GH-NP_Tolon_fune_2017</td>
+      <td>GH-NP_Tolon_fune_2017_08</td>
+      <td>GH-NP_Tolon_fune_2017_Q3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>VBS24196</td>
+      <td>1229-GH-A-GH02</td>
+      <td>Samuel Dadzie</td>
+      <td>Ghana</td>
+      <td>Gbullung</td>
+      <td>2017</td>
+      <td>7</td>
+      <td>9.488</td>
+      <td>-1.009</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Northern Region</td>
+      <td>GH-NP</td>
+      <td>Kumbungu</td>
+      <td>funestus</td>
+      <td>GH-NP_fune_2017</td>
+      <td>GH-NP_fune_2017_07</td>
+      <td>GH-NP_fune_2017_Q3</td>
+      <td>GH-NP_Kumbungu_fune_2017</td>
+      <td>GH-NP_Kumbungu_fune_2017_07</td>
+      <td>GH-NP_Kumbungu_fune_2017_Q3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>VBS24197</td>
+      <td>1229-GH-A-GH03</td>
+      <td>Samuel Dadzie</td>
+      <td>Ghana</td>
+      <td>Dimabi</td>
+      <td>2017</td>
+      <td>7</td>
+      <td>9.420</td>
+      <td>-1.083</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Northern Region</td>
+      <td>GH-NP</td>
+      <td>Tolon</td>
+      <td>funestus</td>
+      <td>GH-NP_fune_2017</td>
+      <td>GH-NP_fune_2017_07</td>
+      <td>GH-NP_fune_2017_Q3</td>
+      <td>GH-NP_Tolon_fune_2017</td>
+      <td>GH-NP_Tolon_fune_2017_07</td>
+      <td>GH-NP_Tolon_fune_2017_Q3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>VBS24198</td>
+      <td>1229-GH-A-GH04</td>
+      <td>Samuel Dadzie</td>
+      <td>Ghana</td>
+      <td>Dimabi</td>
+      <td>2017</td>
+      <td>8</td>
+      <td>9.420</td>
+      <td>-1.083</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Northern Region</td>
+      <td>GH-NP</td>
+      <td>Tolon</td>
+      <td>funestus</td>
+      <td>GH-NP_fune_2017</td>
+      <td>GH-NP_fune_2017_08</td>
+      <td>GH-NP_fune_2017_Q3</td>
+      <td>GH-NP_Tolon_fune_2017</td>
+      <td>GH-NP_Tolon_fune_2017_08</td>
+      <td>GH-NP_Tolon_fune_2017_Q3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VBS24199</td>
+      <td>1229-GH-A-GH05</td>
+      <td>Samuel Dadzie</td>
+      <td>Ghana</td>
+      <td>Gupanarigu</td>
+      <td>2017</td>
+      <td>8</td>
+      <td>9.497</td>
+      <td>-0.952</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Northern Region</td>
+      <td>GH-NP</td>
+      <td>Kumbungu</td>
+      <td>funestus</td>
+      <td>GH-NP_fune_2017</td>
+      <td>GH-NP_fune_2017_08</td>
+      <td>GH-NP_fune_2017_Q3</td>
+      <td>GH-NP_Kumbungu_fune_2017</td>
+      <td>GH-NP_Kumbungu_fune_2017_08</td>
+      <td>GH-NP_Kumbungu_fune_2017_Q3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>651</th>
+      <td>VBS24534</td>
+      <td>1240-MZ-A-MozF_1314</td>
+      <td>Lizette Koekemoer</td>
+      <td>Mozambique</td>
+      <td>Motinho</td>
+      <td>2015</td>
+      <td>8</td>
+      <td>-10.851</td>
+      <td>40.594</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Cabo Delgado</td>
+      <td>MZ-P</td>
+      <td>Palma</td>
+      <td>funestus</td>
+      <td>MZ-P_fune_2015</td>
+      <td>MZ-P_fune_2015_08</td>
+      <td>MZ-P_fune_2015_Q3</td>
+      <td>MZ-P_Palma_fune_2015</td>
+      <td>MZ-P_Palma_fune_2015_08</td>
+      <td>MZ-P_Palma_fune_2015_Q3</td>
+    </tr>
+    <tr>
+      <th>652</th>
+      <td>VBS24535</td>
+      <td>1240-MZ-A-MozF_1315</td>
+      <td>Lizette Koekemoer</td>
+      <td>Mozambique</td>
+      <td>Motinho</td>
+      <td>2015</td>
+      <td>8</td>
+      <td>-10.851</td>
+      <td>40.594</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Cabo Delgado</td>
+      <td>MZ-P</td>
+      <td>Palma</td>
+      <td>funestus</td>
+      <td>MZ-P_fune_2015</td>
+      <td>MZ-P_fune_2015_08</td>
+      <td>MZ-P_fune_2015_Q3</td>
+      <td>MZ-P_Palma_fune_2015</td>
+      <td>MZ-P_Palma_fune_2015_08</td>
+      <td>MZ-P_Palma_fune_2015_Q3</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>VBS24536</td>
+      <td>1240-MZ-A-MozF_1317</td>
+      <td>Lizette Koekemoer</td>
+      <td>Mozambique</td>
+      <td>Motinho</td>
+      <td>2015</td>
+      <td>8</td>
+      <td>-10.851</td>
+      <td>40.594</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Cabo Delgado</td>
+      <td>MZ-P</td>
+      <td>Palma</td>
+      <td>funestus</td>
+      <td>MZ-P_fune_2015</td>
+      <td>MZ-P_fune_2015_08</td>
+      <td>MZ-P_fune_2015_Q3</td>
+      <td>MZ-P_Palma_fune_2015</td>
+      <td>MZ-P_Palma_fune_2015_08</td>
+      <td>MZ-P_Palma_fune_2015_Q3</td>
+    </tr>
+    <tr>
+      <th>654</th>
+      <td>VBS24537</td>
+      <td>1240-MZ-A-MozF_1319</td>
+      <td>Lizette Koekemoer</td>
+      <td>Mozambique</td>
+      <td>Motinho</td>
+      <td>2015</td>
+      <td>8</td>
+      <td>-10.851</td>
+      <td>40.594</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Cabo Delgado</td>
+      <td>MZ-P</td>
+      <td>Palma</td>
+      <td>funestus</td>
+      <td>MZ-P_fune_2015</td>
+      <td>MZ-P_fune_2015_08</td>
+      <td>MZ-P_fune_2015_Q3</td>
+      <td>MZ-P_Palma_fune_2015</td>
+      <td>MZ-P_Palma_fune_2015_08</td>
+      <td>MZ-P_Palma_fune_2015_Q3</td>
+    </tr>
+    <tr>
+      <th>655</th>
+      <td>VBS24539</td>
+      <td>1240-MZ-A-MozF_1323</td>
+      <td>Lizette Koekemoer</td>
+      <td>Mozambique</td>
+      <td>Motinho</td>
+      <td>2015</td>
+      <td>8</td>
+      <td>-10.851</td>
+      <td>40.594</td>
+      <td>F</td>
+      <td>...</td>
+      <td>Cabo Delgado</td>
+      <td>MZ-P</td>
+      <td>Palma</td>
+      <td>funestus</td>
+      <td>MZ-P_fune_2015</td>
+      <td>MZ-P_fune_2015_08</td>
+      <td>MZ-P_fune_2015_Q3</td>
+      <td>MZ-P_Palma_fune_2015</td>
+      <td>MZ-P_Palma_fune_2015_08</td>
+      <td>MZ-P_Palma_fune_2015_Q3</td>
+    </tr>
+  </tbody>
+</table>
+<p>656 rows × 45 columns</p>
+</div></div></div>
+</div>
+<p>We can then group these samples according to country and year of collection, sample set, and taxon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_set&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country                           year  sample_set                     taxon   
+Benin                             2014  1231-VO-MULTI-WONDJI-VMF00043  funestus    37
+Cameroon                          2014  1231-VO-MULTI-WONDJI-VMF00043  funestus    45
+Central African Republic          2016  1230-VO-GA-CF-AYALA-VMF00045   funestus    10
+Democratic Republic of the Congo  2015  1231-VO-MULTI-WONDJI-VMF00043  funestus    34
+                                  2017  1240-VO-CD-KOEKEMOER-VMF00099  funestus    43
+Gabon                             2017  1230-VO-GA-CF-AYALA-VMF00045   funestus    40
+Ghana                             2014  1231-VO-MULTI-WONDJI-VMF00043  funestus    31
+                                  2017  1229-VO-GH-DADZIE-VMF00095     funestus    36
+Kenya                             2014  1232-VO-KE-OCHOMO-VMF00044     funestus    37
+                                  2016  1232-VO-KE-OCHOMO-VMF00044     funestus    44
+Malawi                            2014  1231-VO-MULTI-WONDJI-VMF00043  funestus    18
+Mozambique                        2015  1240-VO-MZ-KOEKEMOER-VMF00101  funestus    40
+                                  2016  1231-VO-MULTI-WONDJI-VMF00043  funestus    22
+                                  2018  1235-VO-MZ-PAAIJMANS-VMF00094  funestus    76
+Nigeria                           2015  1231-VO-MULTI-WONDJI-VMF00043  funestus    41
+Tanzania                          2017  1236-VO-TZ-OKUMU-VMF00090      funestus    10
+Uganda                            2014  1231-VO-MULTI-WONDJI-VMF00043  funestus    49
+Zambia                            2016  1231-VO-MULTI-WONDJI-VMF00043  funestus    43
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, all samples were collected between 2014 and 2018 and all samples were identified as <em>An. funestus</em>. We will thus not be able to look at other members of the complex (e.g., <em>An. vaneedeni</em>). We can also see that most countries are only represented by one sample set.</p>
+<p>We can represent the provenance of the samples in a pivot table to better see the temporal distribution of samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_location_year</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_samples</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">],</span>
+        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">pivot_location_year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>year</th>
+      <th>2014</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2017</th>
+      <th>2018</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>location</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Benin</th>
+      <th>Kpome</th>
+      <th>6.383</th>
+      <th>2.200</th>
+      <td>37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Cameroon</th>
+      <th>Mibellon</th>
+      <th>6.083</th>
+      <th>11.500</th>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Central African Republic</th>
+      <th>Bangui</th>
+      <th>4.377</th>
+      <th>18.608</th>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Democratic Republic of the Congo</th>
+      <th>Kinshasa</th>
+      <th>-4.327</th>
+      <th>15.313</th>
+      <td>0</td>
+      <td>34</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Watsa Moke</th>
+      <th>3.094</th>
+      <th>29.548</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>43</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Gabon</th>
+      <th>Benguia</th>
+      <th>-1.633</th>
+      <th>13.492</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">Ghana</th>
+      <th>Dimabi</th>
+      <th>9.420</th>
+      <th>-1.083</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Gbullung</th>
+      <th>9.488</th>
+      <th>-1.009</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>19</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Gupanarigu</th>
+      <th>9.497</th>
+      <th>-0.952</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Obuasi</th>
+      <th>5.933</th>
+      <th>-1.617</th>
+      <td>31</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Woribogu</th>
+      <th>8.869</th>
+      <th>0.321</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Kenya</th>
+      <th>Ahero</th>
+      <th>-0.174</th>
+      <th>34.920</th>
+      <td>37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Awendo</th>
+      <th>-0.901</th>
+      <th>34.533</th>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Nyamilu</th>
+      <th>-1.074</th>
+      <th>34.391</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Sumba</th>
+      <th>-0.686</th>
+      <th>34.596</th>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Uradi</th>
+      <th>0.980</th>
+      <th>34.543</th>
+      <td>0</td>
+      <td>0</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Uriri</th>
+      <th>-0.952</th>
+      <th>34.513</th>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <th>Chikwawa</th>
+      <th>-16.017</th>
+      <th>34.789</th>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Mozambique</th>
+      <th>Motinho</th>
+      <th>-10.851</th>
+      <th>40.594</th>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Palmeira</th>
+      <th>-25.255</th>
+      <th>32.873</th>
+      <td>0</td>
+      <td>0</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Palmeiras</th>
+      <th>-25.265</th>
+      <th>32.877</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <th>Akaka Remo</th>
+      <th>6.950</th>
+      <th>3.717</th>
+      <td>0</td>
+      <td>41</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Tanzania</th>
+      <th>Minepa Village</th>
+      <th>-8.273</th>
+      <th>36.681</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Uganda</th>
+      <th>Tororo</th>
+      <th>0.750</th>
+      <th>34.083</th>
+      <td>49</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <th>Katete</th>
+      <th>-14.183</th>
+      <th>31.867</th>
+      <td>0</td>
+      <td>0</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Again, we can observe that most countries are only represented by a single location.</p>
+<p>Finally, we can represent the origin of these samples on a map for a more visual interpretation of their distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a map</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
+    <span class="n">basemap</span><span class="o">=</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">basemaps</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># add markers for sampling locations</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pivot_location_year</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">location</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pivot_location_year</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+      <span class="n">r</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pivot_location_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="p">)])</span>
+      <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; samples in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="p">),</span>
+        <span class="n">draggable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
+
+<span class="c1"># add a scale bar</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ScaleControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">))</span>
+
+<span class="c1"># display the map</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f634f4b81b8e4a7481f241f4c8b7727a", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p><strong>Congratulations on reaching the end of this notebook. You should now be able to start analysing Anopheles funestus data using Af1.0.</strong></p>
+<ol class="arabic simple">
+<li><p>Sinka, M.E., Bangs, M.J., Manguin, S. et al. A global map of dominant malaria vectors. Parasites Vectors 5, 69 (2012). <a class="reference external" href="https://doi.org/10.1186/1756-3305-5-69">https://doi.org/10.1186/1756-3305-5-69</a></p></li>
+<li><p>Msugupakulya, B.J., Urio, N.H., Jumanne, M. et al. Changes in contributions of different Anopheles vector species to malaria transmission in east and southern Africa from 2000 to 2022. Parasites Vectors 16, 408 (2023). <a class="reference external" href="https://doi.org/10.1186/s13071-023-06019-1">https://doi.org/10.1186/s13071-023-06019-1</a></p></li>
+<li><p>McCann RS, Ochomo E, Bayoh MN, Vulule JM, Hamel MJ, Gimnig JE, Hawley WA, Walker ED. Reemergence of Anopheles funestus as a vector of Plasmodium falciparum in western Kenya after long-term implementation of insecticide-treated bed nets. Am J Trop Med Hyg. 2014 Apr;90(4):597-604. doi: 10.4269/ajtmh.13-0614. Epub 2014 Jan 27. PMID: 24470562; PMCID: PMC3973499.</p></li>
+<li><p>Ntabaliba W, Vavassori L, Stica C, Makungwa N, Odufuwa OG, Swai JK, Lekundayo R, Moore S. Life expectancy of Anopheles funestus is double that of Anopheles arabiensis in southeast Tanzania based on mark-release-recapture method. Sci Rep. 2023 Sep 22;13(1):15775. doi: 10.1038/s41598-023-42761-3. PMID: 37737323; PMCID: PMC10516982.</p></li>
+<li><p>Ogola EO, Fillinger U, Ondiba IM, Villinger J, Masiga DK, Torto B, Tchouassi DP. Insights into malaria transmission among Anopheles funestus mosquitoes, Kenya. Parasit Vectors. 2018 Nov 6;11(1):577. doi: 10.1186/s13071-018-3171-3. PMID: 30400976; PMCID: PMC6219006.</p></li>
+<li><p>Djouaka R, Akoton R, Tchigossou GM, Atoyebi SM, Irving H, Kusimo MO, Djegbe I, Riveron JM, Tossou E, Yessoufou A, Wondji CS. Mapping the distribution of Anopheles funestus across Benin highlights a sharp contrast of susceptibility to insecticides and infection rate to Plasmodium between southern and northern populations. Wellcome Open Res. 2016 Dec 14;1:28. doi: 10.12688/wellcomeopenres.10213.2. PMID: 28191507; PMCID: PMC5300096.</p></li>
+<li><p>Dia I., Wamdaogo M., Ayala D., “Advances and Perspectives in the Study of the Malaria Mosquito Anopheles funestus” in Anopheles Mosquitoes - New Insights into Malaria Vectors, Manguin S., Ed. (InTech, 2013).</p></li>
+<li><p>Moiroux N, Gomez MB, Pennetier C, Elanga E, Djènontin A, Chandre F, Djègbé I, Guis H, Corbel V. Changes in Anopheles funestus biting behavior following universal coverage of long-lasting insecticidal nets in Benin. J Infect Dis. 2012 Nov 15;206(10):1622-9. doi: 10.1093/infdis/jis565. Epub 2012 Sep 10. PMID: 22966127.</p></li>
+<li><p>Sougoufara S, Diédhiou SM, Doucouré S, Diagne N, Sembène PM, Harry M, Trape JF, Sokhna C, Ndiath MO. Biting by Anopheles funestus in broad daylight after use of long-lasting insecticidal nets: a new challenge to malaria elimination. Malar J. 2014 Mar 28;13:125. doi: 10.1186/1475-2875-13-125. PMID: 24678587; PMCID: PMC3973838.</p></li>
+<li><p>Omondi S, Kosgei J, Musula G, Muchoki M, Abong’o B, Agumba S, Ogwang C, McDermott DP, Donnelly MJ, Staedke SG, Schultz J, Gutman JR, Gimnig JE, Ochomo E. Late morning biting behaviour of Anopheles funestus is a risk factor for transmission in schools in Siaya, western Kenya. Malar J. 2023 Nov 30;22(1):366. doi: 10.1186/s12936-023-04806-w. PMID: 38037026; PMCID: PMC10691009.</p></li>
+<li><p>Nambunga IH, Ngowo HS, Mapua SA, Hape EE, Msugupakulya BJ, Msaky DS, Mhumbira NT, Mchwembo KR, Tamayamali GZ, Mlembe SV, Njalambaha RM, Lwetoijera DW, Finda MF, Govella NJ, Matoke-Muhia D, Kaindoa EW, Okumu FO. Aquatic habitats of the malaria vector Anopheles funestus in rural south-eastern Tanzania. Malar J. 2020 Jun 23;19(1):219. doi: 10.1186/s12936-020-03295-5. PMID: 32576200; PMCID: PMC7310514.</p></li>
+<li><p>Jones, C.M., Lee, Y., Kitchen, A. et al. Complete Anopheles funestus mitogenomes reveal an ancient history of mitochondrial lineages and their distribution in southern and central Africa. Sci Rep 8, 9054 (2018). <a class="reference external" href="https://doi.org/10.1038/s41598-018-27092-y">https://doi.org/10.1038/s41598-018-27092-y</a></p></li>
+<li><p>The origin of our species. National History Museum, London, UK. <a class="reference external" href="https://www.nhm.ac.uk/discover/the-origin-of-our-species.html">https://www.nhm.ac.uk/discover/the-origin-of-our-species.html</a></p></li>
+<li><p>Ayala D, Akone-Ella O, Kengne P, Johnson H, Heaton H, Collins J, Krasheninnikova K, Pelan S, Pointon DL, Sims Y, Torrance J, Tracey A, Uliano-Silva M, von Wyschetzki K, Wood J; DNA Pipelines collective; McCarthy S, Neafsey D, Makunin A, Lawniczak M. The genome sequence of the malaria mosquito, Anopheles funestus, Giles, 1900. Wellcome Open Res. 2023 Mar 27;7:287. doi: 10.12688/wellcomeopenres.18445.2. PMID: 36874567; PMCID: PMC9975407.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py"
+        },
+        kernelOptions: {
+            name: "conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py",
+            path: "./advanced-training-materials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../workshop-8/module-4-genomic-surveillance-ghana.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4 - Genomic surveillance of malaria vectors in Ghana</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../general/data-access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vector Observatory Data Access</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-we-interested-in-an-funestus">Why are we interested in <em>An. funestus</em> ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-a-different-course-from-the-one-on-an-gambiae-s-l">Why is this a different course from the one on <em>An. gambiae s.l.</em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-af1-0-data-resource">Accessing the <code class="docutils literal notranslate"><span class="pre">Af1.0</span></code> data resource</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-exploring-anopheles-funestus-genomic-data">Accessing and exploring <em>Anopheles funestus</em> genomic data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-reference-and-finding-genes-of-interest">Exploring the reference and finding genes of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-sample-metadata">Loading sample metadata</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
