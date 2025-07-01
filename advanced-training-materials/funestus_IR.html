@@ -1,0 +1,1079 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Signals of insecticide resistance in Anopheles funestus &#8212; Training course in data analysis for genomic surveillance of African malaria vectors</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced-training-materials/funestus_IR';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vector Observatory Data Access" href="../general/data-access.html" />
+    <link rel="prev" title="Population structure in Anopheles funestus" href="funestus_pop_struct.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Training course in data analysis for genomic surveillance of African malaria vectors</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../home.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/about.html">Workshop 1 - Pyrethroid target-site resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-1-colab.html">Module 1 - Interactive cloud computing with Google Colaboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-2-sample-metadata.html">Module 2 - Accessing and exploring <em>Anopheles</em> genomic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-3-genome.html">Module 3 - Navigating the <em>Anopheles gambiae</em> reference genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/module-4-vgsc-snps.html">Module 4 - Analysing SNPs in the <em>Vgsc</em> gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-1/journal-club.html">Journal club - Clarkson et al. (2021)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/about.html">Workshop 2 - Metabolic insecticide resistance and copy number variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-1-pandas.html">Module 1 - Introduction to pandas DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-2-metabolic-ir.html">Module 2 - The genetic basis of metabolic resistance to insecticides in <em>Anopheles</em> mosquitoes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-3-cnv-calling.html">Module 3 - Detecting CNVs from genome sequence data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/module-4-cnv-frequencies.html">Module 4 - Analysing CNV frequencies at metabolic resistance genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-2/journal-club.html">Journal club - Lucas et al. (2019)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/about.html">Workshop 3 - Population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-1-plotly.html">Module 1 - Plotting with Plotly Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-2-population-structure.html">Module 2 - The biology of population structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-3-snps.html">Module 3 - Genome-wide SNP data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/module-4-NJT.html">Module 4 - Detecting taxonomic and geographical population structure using neighbour-joining trees (NJT)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../workshop-3/journal-club.html">Journal club - Ag1000G Consortium (2017)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/about.html">Workshop 4 - Cryptic species</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-1-numpy.html">Module 1 - NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-2-cryptic-species.html">Module 2 - Species complexes and cryptic taxa in malaria vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-3-aims.html">Module 3 - Ancestry-informative markers (AIMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/module-4-taxon-analysis.html">Module 4 - Discovering cryptic taxa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-4/journal-club.html">Journal club - Tennessen et al. (2020)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/about.html">Workshop 5 - Genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-1-xarray.html">Module 1 - Xarray datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-2-diversity.html">Module 2 - Introduction to genetic diversity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-3-stats.html">Module 3 - Genetic diversity summary statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-5/module-4-roh.html">Module 4 - Heterozygosity and runs of homozygosity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/about.html">Workshop 6 - Detecting genes under recent positive selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-1-haplotypes.html">Module 1 - Haplotypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-2-selection.html">Module 2 - The biology of selective sweeps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-3-gwss.html">Module 3 - Detecting new forms of insecticide resistance using selection scans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-6/module-4-primers.html">Module 4 - AnoPrimer - Primer Design in <em>Anopheles gambiae</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/about.html">Workshop 7 - Gene flow and the spread of insecticide resistance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-1-op-ir.html">Module 1 - Organophosphate resistance markers (combining SNP and CNV data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-2-gene-flow.html">Module 2 - Adaptive gene flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-3-haplotype-clustering.html">Module 3 - Investigating gene flow at loci of interest using haplotype clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-7/module-4-haplotype-networks.html">Module 4 - Investigating gene flow at loci of interest using haplotype networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshop 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/about.html">Workshop 8 - Analysis planning and reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-1-planning-analysis.html">Module 1 - Planning a genomic surveillance exploratory data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-2-presenting-results.html">Module 2 - Presenting results of a genomic surveillance data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-3-genomic-surveillance-tanzania.html">Module 3 - Genomic surveillance of malaria vectors in Tanzania</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workshop-8/module-4-genomic-surveillance-ghana.html">Module 4 - Genomic surveillance of malaria vectors in Ghana</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced courses</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="funestus_exploration.html">Exploration of the <em>Anopheles funestus</em> resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funestus_pop_struct.html">Population structure in <em>Anopheles funestus</em></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Signals of insecticide resistance in <em>Anopheles funestus</em></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Malaria Vector Genome Observatory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../general/data-access.html">Vector Observatory Data Access</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/docs/advanced-training-materials/funestus_IR.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/issues/new?title=Issue%20on%20page%20%2Fadvanced-training-materials/funestus_IR.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced-training-materials/funestus_IR.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Signals of insecticide resistance in Anopheles funestus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-gated-sodium-channel">Voltage-gated sodium channel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-scans">Selection scans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snps">SNPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnvs">CNVs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-flow">Gene flow</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="banner" src="../_images/banner.jpg" /></p>
+<p><em><strong>Training course in data analysis for genomic surveillance of African malaria vectors</strong></em></p>
+<hr class="docutils" />
+<section id="signals-of-insecticide-resistance-in-anopheles-funestus">
+<h1>Signals of insecticide resistance in <em>Anopheles funestus</em><a class="headerlink" href="#signals-of-insecticide-resistance-in-anopheles-funestus" title="Permalink to this heading">#</a></h1>
+<p><strong>Theme: Analysis</strong></p>
+<p><strong>DISCLAIMER: This is work in progress and subject to change and updates.</strong></p>
+<p>This module provides a quick overview of various methods that can be used to detect and analyse signals of insecticide resistance in whole-genome sequenced <em>Anopheles funestus</em> mosquitoes using the <em>Af1</em> resource.</p>
+<p>A certain degree of familiarity with the content of the training course on <em>Anopheles gambiae s.l.</em> is expected. Many of the concepts presented in this module were introduced in the training course and we will refer to the relevant workshop and module instead of giving detailed explanations.</p>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>After completing this module, you will be able to use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package to:</p>
+<ul class="simple">
+<li><p>Discover signals of selection in <em>An. funestus</em>.</p></li>
+<li><p>Identify key SNPs.</p></li>
+<li><p>Analyse CNVs at important loci.</p></li>
+<li><p>Use haplotypes to detect gene flow between populations.</p></li>
+</ul>
+</section>
+<section id="lecture">
+<h2>Lecture?<a class="headerlink" href="#lecture" title="Permalink to this heading">#</a></h2>
+<section id="english">
+<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="francais">
+<h3>Français<a class="headerlink" href="#francais" title="Permalink to this heading">#</a></h3>
+<p>Please note that the code in the cells below might differ from that shown in the video. This can happen because Python packages and their dependencies change due to updates, necessitating tweaks to the code.</p>
+</section>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>First, let’s install the python packages we will need for our analyses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install -q --no-warn-conflicts malariagen_data
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ve installed <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code>, we can import it into our environment and set it up to access data in the cloud.</p>
+<p>Note that authentication is required to access data through the package, please follow the instructions <a class="reference external" href="https://malariagen.github.io/vector-data/vobs/vobs-data-access.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Af1</span><span class="p">()</span>
+<span class="n">af1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="voltage-gated-sodium-channel">
+<h2>Voltage-gated sodium channel<a class="headerlink" href="#voltage-gated-sodium-channel" title="Permalink to this heading">#</a></h2>
+<p>We know that pyrethroids, the class of insecticides used as the main active ingredient in all long-lasting bednets, target the voltage-gated sodium channel (VGSC). The mutations of the VGSC gene have been well-document in <em>An. gambiae s.l.</em> [1]. We looked at them in <em>An. gambiae</em> in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/about.html">Workshop 1</a>. Recent studies have shown high levels of pyrethroid resistance in <em>An. funestus</em> from Tanzania [2] and Ghana [3]. It seems thus sensible to start by looking at SNPs of the VGSC gene in <em>An. funestus</em>.</p>
+<p>We looked for this gene during our exploration of the <em>An. funestus</em> genome <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/advanced-training-materials/funestus_exploration.html">Advanced Funestus - Exploration</a>. When looking at SNPS, we need to provide a transcript and not a gene. In the genome annotations, transcripts are obtained by appending <code class="docutils literal notranslate"><span class="pre">_t?</span></code> where <code class="docutils literal notranslate"><span class="pre">?</span></code> is a number. We will thus use ‘LOC125769886_t1’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_vgsc</span> <span class="o">=</span> <span class="s1">&#39;LOC125769886_t1&#39;</span> <span class="c1">#VGSC</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vgsc_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+      <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_vgsc</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">vgsc_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>None of the mutations that we observe is kdr-east or west (<strong>Do we need to say what it would be?</strong>) and no mutation is frequent enough to be a plausible cause of insecticide resistance. Indeed, if we look more closely at [2] and [3], no mutation of VGSC was connected to pyrethroid resistance. We are thus going to ignore what we know about insecticide resistance in <em>An. gambiae</em> (while still remembering the methods that we applied to it) and investigate <em>An. funestus</em> with a fresh mind.</p>
+</section>
+<section id="selection-scans">
+<h2>Selection scans<a class="headerlink" href="#selection-scans" title="Permalink to this heading">#</a></h2>
+<p>To detect signals of selection, we will compute H12 (see <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-6/module-3-gwss.html">Workshop 6 - Module 3</a> for a refresher).</p>
+<p>We are not going to look at all available cohorts in this analysis as it would be too much work. Instead we are going to focus on three countries: Mozambique, the Democratic Republic of the Congo and Nigeria. Let’s start by looking at the metadata for these three countries. More specifically, we are going to look at the first administrative level of origin of the samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country in [&#39;Mozambique&#39;, &#39;Democratic Republic of the Congo&#39;, &#39;Nigeria&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;admin1_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the Democratic Republic of the Congo, we will look at the samples coming from the Kinshasa and Upper Uele regions. For Mozambique, we will use the samples from the Cabo Delgado and Maputo regions. Finally, we will use the samples from the Ogun region for Nigeria.</p>
+<p>Let’s start by calibrating the size of our windows. We will use the samples from Cabo Delgado and chromosome 2 for this calibration. In a real analysis, we would check that the chosen window size is correct for every chromosome and every sample set but we will assume that it is the case for this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2RL&quot;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like 2000 base pairs is an good size for our windows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The only obvious signal is around 8.7 Mbp on 2RL. If we look at the genes in the region, it includes the Cyp6aa/p cluster. We will mark this region for further CNV analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Maputo&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The situation is very similar in Maputo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Upper Uele&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We observe two new signals on X, as well as the one around the Cyp6aa/p cluster. The first one, around 8.5 Mbp corresponds to Cyp9k1, another gene that we will remember for our CNV analyses. The second one, around 13.6 Mbp, is around the gene diacylglycerol kinase (dgk). We will mark this gene for further SNP analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The clearest signals in Kinshasa are the signal around the Cyp6aa/p cluster and a signal on 2RL around 76.5 Mbp. This signal is connected to Gste2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Ogun&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see a new signal on 3RL around 13.5Mbp. This is the region of Rdl. The signals for Gste2, cyp6aa/p and Cyp9k1 are also present.</p>
+</section>
+<section id="snps">
+<h2>SNPs<a class="headerlink" href="#snps" title="Permalink to this heading">#</a></h2>
+<p>We are now going to study the SNPs for a few of the genes where signals were detected in at least one population. We will look at every available cohort composed of more than 20 samples. Let’s start with Rdl.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_rdl</span> <span class="o">=</span> <span class="s1">&#39;LOC125769835_t1&#39;</span> <span class="c1">#Rdl</span>
+<span class="n">rdl_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+      <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_rdl</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">rdl_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mutation A296S is the one associated with insecticide resistance. It is present at very high frequencies in a few populations (“GH-AH” is Ghana - Ashanti and “NG-OG” is Nigeria - Ogun, the cohort we used during the selection scans). It is also present at lower frequencies elsewhere in Central Africa. We can also see that every cohort has the mutation V493A as fixed or almost fixed, this is a strong indication that the reference allele at that site is not representative of the wild population.</p>
+<p>We will now look at Gste2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_gste</span> <span class="o">=</span> <span class="s1">&#39;LOC125763977_t1&#39;</span>
+<span class="n">gste_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+      <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_gste</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">gste_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The SNP of interest this time is L143F (<strong>I think</strong>) which is fixed in Benin and at high frequency in Kinshasa (DRC), Ashanti (Ghana) and Ogun (Nigeria) and present at lower frequencies in many other places.</p>
+<p>Finally, let’s look at dgk.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_dgk</span> <span class="o">=</span><span class="s1">&#39;LOC125760558_t1&#39;</span>
+<span class="n">dgk_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
+      <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_dgk</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">dgk_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The situation is not as clear this time and dgk has not been studied as much as other genes so no particular SNP has been closely connected to insecticide resistance. There are several possible candidates but the data is not sufficient to come to any conclusion.</p>
+</section>
+<section id="cnvs">
+<h2>CNVs<a class="headerlink" href="#cnvs" title="Permalink to this heading">#</a></h2>
+<p>We are now going to study the CNVs for a few of the regions where signals were detected in at least one population. We will, again, look at every available cohort composed of more than 20 samples. Let’s start with Cyp6aa/p. We will look at the annotations to confirm that these are cytochrome P450 genes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:8600000-8700000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This confirms what we expected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:8600000-8700000&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">cyp6aap_cnv_freq_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many genes seem to be amplified at very high frequencies accross the continent which is a strong indication that metabolic resistance to pyrethroids is wide-spread.</p>
+<p>Let’s now look at Cyp9k1. Again, we will check that it is indeed in the region where we observed the signal of selection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8448000-8451000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp9k1_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8448000-8451000&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">cyp9k1_cnv_freq_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once more, this gene seems to be amplified at very high frequencies in several different countries, though mostly in Central and North-East Africa.</p>
+<p>We will look next at Gste2. We already known that it is ‘LOC125763977’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gste_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:76405000-76408000&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">gste_cnv_freq_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gste2 is amplified in a few populations in Benin and the DRC but at fairly low frequencies.</p>
+<p>Finally, let’s look at dgk. We know it is ‘LOC125760558’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gste_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:13598000-13676000&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+      <span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">gste_cnv_freq_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is not amplified at all in any population.</p>
+<p>We will look at the CNV HMM for Cyp9k1 in Kinshasa to see what the amplification looks like. We extend the window a little bit to see the actual read calls a little better.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_cnv_hmm_heatmap</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8445000-8457000&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+    <span class="n">row_height</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see several samples with an additional copy as well as multiple ones with more than 1 extra copy of the gene. Let’s look at the HMM coverage for a few samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;VBS17491&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17512&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17502&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17522&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_cnv_hmm_coverage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sample_set</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8445000-8457000&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first sample shows an amplification that starts well before Cyp9k1 and ends after the end of the window. The second has a different discordant read that ends much sooner. The third one has the same discordant read as the second one but an extra copy. Finally, the last one doesn’t have any amplification: the only one that is found is in a single window and is probably wrong. In general, we do not have as many windows as in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-2/about.html">Workshop 2</a> so we need to be more careful with our conclusions.</p>
+</section>
+<section id="gene-flow">
+<h2>Gene flow<a class="headerlink" href="#gene-flow" title="Permalink to this heading">#</a></h2>
+<p>Let us now look at potential gene flow between populations in Mozambique and the Democratic Republic of the Congo. For that, we are going to use the methods described in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-7/about.html">Workshop 7</a>, starting with H1X.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
+        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Maputo&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is, indeed, the only clear signal of a shared haplotype. Let’s repeat the experiment with the data from the DRC.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
+        <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Upper Uele&#39;&quot;</span><span class="p">,</span>
+        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This time, and despite the clear signals for both populations around the Cyp6aa/p cluster, there is no signal of a shared haplotype. Let’s use haplotype clusterings to check this conclusion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country == &quot;Mozambique&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;admin1_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Despite the very high number of SNPs, there are two clear shared haplotypes between Maputo and Cabo Delgado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country == &quot;Democratic Republic of the Congo&quot;&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;admin1_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the DRC, however, we observe that some haplotypes are widely shared within each region, which is consistent with it being under selection, but the haplotypes are not shared accross the country at all.
+Let’s show the same results using haplotype networks. (<strong>Except they don’t show on bespin</strong>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Mozambique&quot;, &quot;Democratic Republic of the Congo&quot;]&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
+    <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Congratulations on reaching the end of this notebook. You should now be able to run your own insecticide resistance analyses of Anopheles funestus data using Af1.0.</strong></p>
+<ol class="arabic simple">
+<li><p>Clarkson CS, Miles A, Harding NJ, O’Reilly AO, Weetman D, Kwiatkowski D, Donnelly MJ; Anopheles gambiae 1000 Genomes Consortium. The genetic architecture of target-site resistance to pyrethroid insecticides in the African malaria vectors Anopheles gambiae and Anopheles coluzzii. Mol Ecol. 2021 Nov;30(21):5303-5317. doi: 10.1111/mec.15845. Epub 2021 Mar 8. PMID: 33590926; PMCID: PMC9019111.</p></li>
+<li><p>Matowo, N.S., Martin, J., Kulkarni, M.A. et al. An increasing role of pyrethroid-resistant Anopheles funestus in malaria transmission in the Lake Zone, Tanzania. Sci Rep 11, 13457 (2021). <a class="reference external" href="https://doi.org/10.1038/s41598-021-92741-8">https://doi.org/10.1038/s41598-021-92741-8</a></p></li>
+<li><p>Mugenzi LMJ, Akosah-Brempong G, Tchouakui M, Menze BD, Tekoh TA, Tchoupo M, Nkemngo FN, Wondji MJ, Nwaefuna EK, Osae M, Wondji CS. Escalating pyrethroid resistance in two major malaria vectors Anopheles funestus and Anopheles gambiae (s.l.) in Atatam, Southern Ghana. BMC Infect Dis. 2022 Oct 25;22(1):799. doi: 10.1186/s12879-022-07795-4. PMID: 36284278; PMCID: PMC9597992.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py"
+        },
+        kernelOptions: {
+            name: "conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py",
+            path: "./advanced-training-materials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-developer-developer-training-nb-maintenance-mgen-15.2.0-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="funestus_pop_struct.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Population structure in <em>Anopheles funestus</em></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../general/data-access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vector Observatory Data Access</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#francais">Français</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-gated-sodium-channel">Voltage-gated sodium channel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-scans">Selection scans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snps">SNPs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnvs">CNVs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-flow">Gene flow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MalariaGEN and PAMCA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
