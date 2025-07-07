@@ -506,8 +506,8 @@ document.write(`
 <h1>Population structure in <em>Anopheles funestus</em><a class="headerlink" href="#population-structure-in-anopheles-funestus" title="Permalink to this heading">#</a></h1>
 <p><strong>Theme: Analysis</strong></p>
 <p><strong>DISCLAIMER: This is work in progress and subject to change and updates.</strong></p>
-<p>This module provides a quick overview of various methods that can be used to analyse population structure in whole-genome sequenced <em>Anopheles funestus</em> mosquitoes using the <em>Af1</em> resource.</p>
 <p>A certain degree of familiarity with the content of the training course on <em>Anopheles gambiae s.l.</em> is expected. Many of the concepts presented in this module were introduced in the training course and we will refer to the relevant workshop and module instead of giving detailed explanations.</p>
+<p>More specifically, this module will use neighbour-joining trees and principal component analyses, which were introduced in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/module-4-NJT.html">Workshop 3 - Module 4</a> and will be covered in more details in a future advanced module, to observe population structure. In order to observe diversity within cohorts, we will also use the statistics and measures of the homozigosity of a sample introduced in <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-5/about.html">Workshop 5</a>. Users are encouraged to go back to these workshops to refamiliarize themselves with their content.</p>
 <section id="learning-objectives">
 <h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>After completing this module, you will be able to use the <code class="docutils literal notranslate"><span class="pre">malariagen_data</span></code> Python package to:</p>
@@ -5455,7 +5455,7 @@ if (outputEl) {{
         <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">category_orders</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;arabiensis&quot;</span><span class="p">,</span> <span class="s2">&quot;gambiae&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx3&quot;</span><span class="p">,</span> <span class="s2">&quot;coluzzii&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx1&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx2&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;gambiae&quot;</span><span class="p">,</span> <span class="s2">&quot;coluzzii&quot;</span><span class="p">,</span> <span class="s2">&quot;funestus&quot;</span><span class="p">],</span>
     <span class="p">}</span>
     <span class="n">width</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
 
@@ -5473,7 +5473,6 @@ if (outputEl) {{
         <span class="n">hover_data</span><span class="o">=</span><span class="n">hover_data</span><span class="p">,</span>
         <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
         <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">,</span>
-        <span class="n">category_orders</span><span class="o">=</span><span class="n">category_orders</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
