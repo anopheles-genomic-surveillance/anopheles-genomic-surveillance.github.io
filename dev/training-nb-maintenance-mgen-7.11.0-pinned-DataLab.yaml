@@ -1,0 +1,21 @@
+channels:
+- conda-forge
+dependencies:
+- matplotlib=3.7.1=py310hff52083_0
+- matplotlib-base=3.7.1=py310he60537e_0
+- matplotlib-inline=0.1.6=pyhd8ed1ab_0
+- python=3.10.11=he550d4f_0_cpython
+- jupyter=1.0.0=py310hff52083_8
+- jupyter-book=0.15.1=pyhd8ed1ab_0
+- seaborn=0.12.2=hd8ed1ab_0
+- seaborn-base=0.12.2=pyhd8ed1ab_0
+- openpyxl=3.1.2=py310h2372a71_0
+- rioxarray=0.14.1=pyhd8ed1ab_0
+- pip
+- pip:
+  - malariagen-data>=7.11.0
+  - ipyleaflet==0.17.0
+- ipykernel
+description: ''
+name: training-nb-maintenance-mgen-7.11.0
+prefix: null

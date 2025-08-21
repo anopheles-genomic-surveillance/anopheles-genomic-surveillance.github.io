@@ -64,6 +64,9 @@ parts:
   - caption: Advanced Training Materials
     chapters:
     - file: advanced-training-materials/diplotype-clustering
+    - file: advanced-training-materials/funestus_exploration
+    - file: advanced-training-materials/funestus_pop_struct
+    - file: advanced-training-materials/funestus_IR
   - caption: Malaria Vector Genome Observatory
     chapters:
     - file: general/data-access
