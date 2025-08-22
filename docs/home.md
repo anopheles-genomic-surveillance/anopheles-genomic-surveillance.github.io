@@ -8,7 +8,6 @@
 
 Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by [MalariaGEN](https://www.malariagen.net) and [PAMCA](https://www.pamca.org). 
 
-
 ## Workshop programme
 
 The course will consist of a series of workshops. The workshop programme is as follows:
@@ -21,6 +20,14 @@ The course will consist of a series of workshops. The workshop programme is as f
 * {doc}`workshop-6/about`
 * {doc}`workshop-7/about`
 * {doc}`workshop-8/about`
+
+## Data access
+
+Vector Observatory data are stored in Google Cloud Storage (GCS) in the US region. The current set-up requires users to request access and authenticate prior to accessing data. 
+
+A summary of the process to access the data and authenticate can be found here:
+
+* {doc}`general/data-access`
 
 ## Context and motivation
 
