@@ -63,10 +63,10 @@ parts:
     - file: workshop-8/module-4-genomic-surveillance-ghana
   - caption: Advanced Training Materials
     chapters:
-    - file: advanced-training-materials/detecting-population-structure-using-pca
     - file: advanced-training-materials/funestus_exploration
     - file: advanced-training-materials/funestus_pop_struct
     - file: advanced-training-materials/funestus_IR
+    - file: advanced-training-materials/detecting-population-structure-using-pca
   - caption: Malaria Vector Genome Observatory
     chapters:
     - file: general/data-access
