@@ -67,7 +67,7 @@ parts:
     - file: advanced-training-materials/funestus_pop_struct
     - file: advanced-training-materials/funestus_IR
     - file: advanced-training-materials/detecting-population-structure-using-pca
-    - file: advanced-training-materials/unretsricted_surveillance.ipynb
+    - file: advanced-training-materials/unrestricted_surveillance.ipynb
   - caption: Malaria Vector Genome Observatory
     chapters:
     - file: general/data-access
