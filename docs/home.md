@@ -86,4 +86,4 @@ During the practical sessions in each workshop we will use [Google Colaboratory]
 
 This training resource was developed by [MalariaGEN](https://www.malariagen.net), and initial iterations were run in association with the Pan African Mosquito Control Association. The resource is maintained by the [MalariaGEN Vector Observatory](https://www.malariagen.net/vobs) team: Anastasia Hernandez Koutoucheva, Jon Brenas, Kelly Bennett, and Chris Clarkson. The MalariaGEN Vector Observatory is supported by funding from the Gates Foundation. 
 
-Contact suport@malariagen.net
+Contact support@malariagen.net
