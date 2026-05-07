@@ -6,7 +6,7 @@
 
 # Home
 
-Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed jointly by [MalariaGEN](https://www.malariagen.net) and [PAMCA](https://www.pamca.org). 
+Welcome to this training course on data analysis for genomic surveillance of African malaria vectors, developed by [MalariaGEN](https://www.malariagen.net).
 
 ## Workshop programme
 
@@ -81,3 +81,9 @@ At the end of this course, you will be able to:
 This is a hands-on training course involving the analysis of real genetic data. To follow this course you will need to have some prior experience of data analysis using a programming language such as Python, R, Julia, Matlab or Stata. The practical exercises in each workshop will use the Python programming language, and some prior experience of Python will be advantageous, but is not required.
 
 During the practical sessions in each workshop we will use [Google Colaboratory](https://colab.research.google.com/) (a.k.a. Colab), which is an interactive cloud computing service provided for free by Google. In order to use Colab you will need to have a Google user account. If you do not already have a Google user account, please make sure to create one before you start the course.
+
+## Acknowledgements
+
+This training resource was developed by [MalariaGEN](https://www.malariagen.net), and initial iterations were run in association with the Pan African Mosquito Control Association. The resource is maintained by the [MalariaGEN Vector Observatory](https://www.malariagen.net/vobs) team: Anastasia Hernandez Koutoucheva, Jon Brenas, Kelly Bennett, and Chris Clarkson. The MalariaGEN Vector Observatory is supported by funding from the Gates Foundation. 
+
+Contact support@malariagen.net
