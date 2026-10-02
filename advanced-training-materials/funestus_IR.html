@@ -559,7 +559,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -579,7 +579,7 @@ document.write(`
 <p>We looked for this gene during our exploration of the <em>An. funestus</em> genome <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/advanced-training-materials/funestus_exploration.html">Advanced Funestus - Exploration</a>. When looking at SNPS, we need to provide a transcript and not a gene. In the genome annotations, transcripts are obtained by appending <code class="docutils literal notranslate"><span class="pre">_t?</span></code> where <code class="docutils literal notranslate"><span class="pre">?</span></code> is a number. We will thus use ‘LOC125769886_t1’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_vgsc</span> <span class="o">=</span> <span class="s1">&#39;LOC125769886_t1&#39;</span> <span class="c1">#VGSC</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_vgsc</span> <span class="o">=</span> <span class="s1">'LOC125769886_t1'</span> <span class="c1">#VGSC</span>
 </pre></div>
 </div>
 </div>
@@ -588,8 +588,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vgsc_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
       <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_vgsc</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
@@ -599,7 +599,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">vgsc_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">vgsc_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05 and effect == 'NON_SYNONYMOUS_CODING'"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +612,7 @@ document.write(`
 <p>We are not going to look at all available cohorts in this analysis as it would be too much work. Instead we are going to focus on three countries: Mozambique, the Democratic Republic of the Congo and Nigeria. Let’s start by looking at the metadata for these three countries. More specifically, we are going to look at the first administrative level of origin of the samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country in [&#39;Mozambique&#39;, &#39;Democratic Republic of the Congo&#39;, &#39;Nigeria&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;admin1_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">"country in ['Mozambique', 'Democratic Republic of the Congo', 'Nigeria']"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'admin1_name'</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -622,10 +622,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2RL&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2RL"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Cabo Delgado'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -637,9 +637,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Cabo Delgado'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -652,9 +652,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Maputo&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Maputo'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -667,9 +667,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Upper Uele&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Upper Uele'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -682,9 +682,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Kinshasa'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -697,9 +697,9 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Ogun&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Ogun'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -713,15 +713,15 @@ document.write(`
 <p>We are now going to study the SNPs for a few of the genes where signals were detected in at least one population. We will look at every available cohort composed of more than 20 samples. Let’s start with Rdl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_rdl</span> <span class="o">=</span> <span class="s1">&#39;LOC125769835_t1&#39;</span> <span class="c1">#Rdl</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_rdl</span> <span class="o">=</span> <span class="s1">'LOC125769835_t1'</span> <span class="c1">#Rdl</span>
 <span class="n">rdl_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
       <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_rdl</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
-<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">rdl_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">rdl_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05 and effect == 'NON_SYNONYMOUS_CODING'"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -730,15 +730,15 @@ document.write(`
 <p>We will now look at Gste2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_gste</span> <span class="o">=</span> <span class="s1">&#39;LOC125763977_t1&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_gste</span> <span class="o">=</span> <span class="s1">'LOC125763977_t1'</span>
 <span class="n">gste_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
       <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_gste</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
-<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">gste_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">gste_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05 and effect == 'NON_SYNONYMOUS_CODING'"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -747,15 +747,15 @@ document.write(`
 <p>Finally, let’s look at dgk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_dgk</span> <span class="o">=</span><span class="s1">&#39;LOC125760558_t1&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript_dgk</span> <span class="o">=</span><span class="s1">'LOC125760558_t1'</span>
 <span class="n">dgk_snp_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
       <span class="n">transcript</span><span class="o">=</span><span class="n">transcript_dgk</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
-<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">dgk_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05 and effect == &#39;NON_SYNONYMOUS_CODING&#39;&quot;</span><span class="p">))</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">dgk_snp_freq_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05 and effect == 'NON_SYNONYMOUS_CODING'"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -767,7 +767,7 @@ document.write(`
 <p>We are now going to study the CNVs for a few of the regions where signals were detected in at least one population. We will, again, look at every available cohort composed of more than 20 samples. Let’s start with Cyp6aa/p. We will look at the annotations to confirm that these are cytochrome P450 genes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:8600000-8700000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2RL:8600000-8700000"</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"type == 'protein_coding_gene'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -776,9 +776,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
-      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:8600000-8700000&quot;</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">"2RL:8600000-8700000"</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
@@ -791,7 +791,7 @@ document.write(`
 <p>Let’s now look at Cyp9k1. Again, we will check that it is indeed in the region where we observed the signal of selection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8448000-8451000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;type == &#39;protein_coding_gene&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"X:8448000-8451000"</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"type == 'protein_coding_gene'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -799,9 +799,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp9k1_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
-      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8448000-8451000&quot;</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">"X:8448000-8451000"</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
@@ -815,9 +815,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gste_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
-      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2RL:76405000-76408000&quot;</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">"2RL:76405000-76408000"</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
@@ -831,9 +831,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gste_cnv_freq_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">gene_cnv_frequencies</span><span class="p">(</span>
-      <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:13598000-13676000&quot;</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-      <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+      <span class="n">region</span><span class="o">=</span><span class="s2">"X:13598000-13676000"</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
       <span class="n">drop_invariant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
       <span class="n">min_cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
       <span class="p">)</span>
@@ -847,9 +847,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_cnv_hmm_heatmap</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8445000-8457000&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"X:8445000-8457000"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Kinshasa'"</span><span class="p">,</span>
     <span class="n">row_height</span><span class="o">=</span><span class="mi">5</span>
 <span class="p">);</span>
 </pre></div>
@@ -859,9 +859,9 @@ document.write(`
 <p>We see several samples with an additional copy as well as multiple ones with more than 1 extra copy of the gene. Let’s look at the HMM coverage for a few samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;VBS17491&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17512&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17502&quot;</span><span class="p">,</span> <span class="s2">&quot;VBS17522&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"VBS17491"</span><span class="p">,</span> <span class="s2">"VBS17512"</span><span class="p">,</span> <span class="s2">"VBS17502"</span><span class="p">,</span> <span class="s2">"VBS17522"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
-    <span class="n">af1</span><span class="o">.</span><span class="n">plot_cnv_hmm_coverage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sample_set</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;X:8445000-8457000&quot;</span><span class="p">)</span>
+    <span class="n">af1</span><span class="o">.</span><span class="n">plot_cnv_hmm_coverage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sample_set</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">"X:8445000-8457000"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -876,10 +876,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Cabo Delgado&#39;&quot;</span><span class="p">,</span>
-        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Maputo&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Cabo Delgado'"</span><span class="p">,</span>
+        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Maputo'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -892,10 +892,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">af1</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
     <span class="n">af1</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
-        <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Upper Uele&#39;&quot;</span><span class="p">,</span>
-        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;admin1_name == &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
+        <span class="n">analysis</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+        <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">,</span>
+        <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Upper Uele'"</span><span class="p">,</span>
+        <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">"admin1_name == 'Kinshasa'"</span><span class="p">,</span>
         <span class="n">window_size</span><span class="o">=</span><span class="mi">2000</span>
     <span class="p">)</span>
 </pre></div>
@@ -906,11 +906,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country == &quot;Mozambique&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;admin1_name&#39;</span><span class="p">)</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2RL:8600000-8700000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'funestus'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country == "Mozambique"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'admin1_name'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -919,11 +919,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country == &quot;Democratic Republic of the Congo&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;admin1_name&#39;</span><span class="p">)</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2RL:8600000-8700000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'funestus'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country == "Democratic Republic of the Congo"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'admin1_name'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -933,11 +933,11 @@ Let’s show the same results using haplotype networks. (<strong>Except they don
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2RL:8600000-8700000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;funestus&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Mozambique&quot;, &quot;Democratic Republic of the Congo&quot;]&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2RL:8600000-8700000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'funestus'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Mozambique", "Democratic Republic of the Congo"]'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"admin1_name"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>

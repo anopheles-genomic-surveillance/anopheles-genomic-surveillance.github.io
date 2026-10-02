@@ -566,7 +566,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -576,7 +576,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># if running on colab, mount Google Drive</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;drive&#39;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'drive'</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -585,7 +585,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">&quot;drive/MyDrive/Colab Data/ag3-structure-results&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">"drive/MyDrive/Colab Data/ag3-structure-results"</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -912,7 +912,7 @@ function(Bokeh) {
 <p>We will start by looking at how many sample sets are “unrestricted”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">&#39;unrestricted_use&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">'unrestricted_use'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -928,14 +928,14 @@ Name: count, dtype: Int64
 <p>We see that more than half the sample sets are “unrestricted”. We can look at the first few “restricted” sample sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;unrestricted_use == False&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'unrestricted_use == False'</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/tmp/ipykernel_42655/3652335835.py:1: RuntimeWarning:
 
-Engine has switched to &#39;python&#39; because numexpr does not support extension array dtypes. Please set your engine to python manually.
+Engine has switched to 'python' because numexpr does not support extension array dtypes. Please set your engine to python manually.
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1030,8 +1030,8 @@ Engine has switched to &#39;python&#39; because numexpr does not support extensi
 <p>Each sample set may contain a mix of “surveillance” and “non-surveillance” samples, it is, for example, the case when some of the samples in a study were bioassayed but not all of them. Let us look at an example sample set: 1274-VO-KE-KAMAU-VMF00246.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_sample_set</span> <span class="o">=</span> <span class="s1">&#39;1274-VO-KE-KAMAU-VMF00246&#39;</span>
-<span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;1274-VO-KE-KAMAU-VMF00246&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_sample_set</span> <span class="o">=</span> <span class="s1">'1274-VO-KE-KAMAU-VMF00246'</span>
+<span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == '1274-VO-KE-KAMAU-VMF00246'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1083,7 +1083,7 @@ Engine has switched to &#39;python&#39; because numexpr does not support extensi
 <p>We can see that this sample set is unrestricted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)[</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)[</span><span class="s1">'is_surveillance'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1103,7 +1103,7 @@ Name: count, dtype: Int64
 Let us look at a few principal components analyses to see if we can see the difference between the “surveillance” and “non-surveillance” samples. We will use the same region and number of SNPs as in <span class="xref myst">Detecting population structure using PCA</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">"3L:15,000,000-41,000,000"</span>
 <span class="n">n_snps</span> <span class="o">=</span> <span class="mi">100_000</span>
 </pre></div>
 </div>
@@ -1126,7 +1126,7 @@ Let us look at a few principal components analyses to see if we can see the diff
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;is_surveillance&quot;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"is_surveillance"</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -5049,7 +5049,7 @@ if (outputEl) {{
 <p>The principal components seem to be driven by taxons more than “is_surveillance” so we will only select the <em>An. gambiae s.s.</em> samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_gam_df</span><span class="p">,</span> <span class="n">evr_gam</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;taxon == &#39;gambiae&#39;&quot;</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_gam_df</span><span class="p">,</span> <span class="n">evr_gam</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"taxon == 'gambiae'"</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5064,7 +5064,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_gam_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;is_surveillance&quot;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_gam_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"is_surveillance"</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -5104,7 +5104,7 @@ if (outputEl) {{
 <p>The principal components now seem to be driven by outliers more than “is_surveillance”. Let us add more data from ‘AG1000G-KE’, some wild samples also from Kenya, and ‘AG1000G-X’, some crosses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_gam_ext_df</span><span class="p">,</span> <span class="n">evr_gam_ext</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="s1">&#39;AG1000G-KE&#39;</span><span class="p">,</span> <span class="s1">&#39;AG1000G-X&#39;</span><span class="p">],</span> <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;taxon in [&#39;gambiae&#39;, &#39;unassigned&#39;]&quot;</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_gam_ext_df</span><span class="p">,</span> <span class="n">evr_gam_ext</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="s1">'AG1000G-KE'</span><span class="p">,</span> <span class="s1">'AG1000G-X'</span><span class="p">],</span> <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"taxon in ['gambiae', 'unassigned']"</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5119,7 +5119,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_gam_ext_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;sample_set&quot;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_gam_ext_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'is_surveillance'</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">"sample_set"</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -5483,7 +5483,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See the value counts for `unrestricted_use` for all of the sample sets relevant to this object.</span>
-<span class="n">ag3_unrestricted</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">&#39;unrestricted_use&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">ag3_unrestricted</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">'unrestricted_use'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5499,7 +5499,7 @@ Name: count, dtype: Int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See the value counts for `is_surveillance` for all of the samples relevant to this object.</span>
-<span class="n">ag3_unrestricted</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">ag3_unrestricted</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">'is_surveillance'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5519,7 +5519,7 @@ Name: count, dtype: Int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that an error will be raised if you try to access data for a restricted sample set while using the `unrestricted_use_only` setting. For example:</span>
-<span class="n">restricted_sample_set</span> <span class="o">=</span> <span class="s1">&#39;1188-VO-NIANG-NIEL-SN-2304-VMF00259&#39;</span>
+<span class="n">restricted_sample_set</span> <span class="o">=</span> <span class="s1">'1188-VO-NIANG-NIEL-SN-2304-VMF00259'</span>
 <span class="k">try</span><span class="p">:</span>
   <span class="n">ag3_unrestricted</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">restricted_sample_set</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error_message</span><span class="p">:</span>
@@ -5528,7 +5528,7 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample set &#39;1188-VO-NIANG-NIEL-SN-2304-VMF00259&#39; not found. This sample set might be unavailable or irrelevant with respect to settings.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample set '1188-VO-NIANG-NIEL-SN-2304-VMF00259' not found. This sample set might be unavailable or irrelevant with respect to settings.
 </pre></div>
 </div>
 </div>
@@ -5873,7 +5873,7 @@ function(Bokeh) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">'is_surveillance'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5891,7 +5891,7 @@ Name: count, dtype: Int64
 <p>Let us look at the samples in the mixed sample set we identified before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)[</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)[</span><span class="s1">'is_surveillance'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5911,7 +5911,7 @@ Name: count, dtype: Int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See the sample metadata for all the samples in a sample set that has no surveillance samples.</span>
 <span class="c1"># Note that an error will be raised if you try to access data for a non-surveillance sample set while using the `surveillance_use_only` setting. For example:</span>
-<span class="n">non_surveillance_sample_set</span> <span class="o">=</span> <span class="s1">&#39;AG1000G-X&#39;</span>
+<span class="n">non_surveillance_sample_set</span> <span class="o">=</span> <span class="s1">'AG1000G-X'</span>
 <span class="k">try</span><span class="p">:</span>
   <span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">non_surveillance_sample_set</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error_message</span><span class="p">:</span>
@@ -5920,7 +5920,7 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample set &#39;AG1000G-X&#39; not found. This sample set might be unavailable or irrelevant with respect to settings.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample set 'AG1000G-X' not found. This sample set might be unavailable or irrelevant with respect to settings.
 </pre></div>
 </div>
 </div>
@@ -6253,7 +6253,7 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See the value counts for `unrestricted_use` for all of the sample sets relevant to this object.</span>
 <span class="c1"># Note that only sample sets with `unrestricted_use` set to `True` are returned for this object.</span>
-<span class="n">ag3_unrestricted_surveillance</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">&#39;unrestricted_use&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">ag3_unrestricted_surveillance</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">()[</span><span class="s1">'unrestricted_use'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6267,7 +6267,7 @@ Name: count, dtype: Int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_unrestricted_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">&#39;is_surveillance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_unrestricted_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()[</span><span class="s1">'is_surveillance'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6383,22 +6383,22 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;3.0&#39;,
- &#39;3.1&#39;,
- &#39;3.2&#39;,
- &#39;3.3&#39;,
- &#39;3.4&#39;,
- &#39;3.5&#39;,
- &#39;3.6&#39;,
- &#39;3.7&#39;,
- &#39;3.8&#39;,
- &#39;3.9&#39;,
- &#39;3.10&#39;,
- &#39;3.11&#39;,
- &#39;3.12&#39;,
- &#39;3.13&#39;,
- &#39;3.14&#39;,
- &#39;3.15&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('3.0',
+ '3.1',
+ '3.2',
+ '3.3',
+ '3.4',
+ '3.5',
+ '3.6',
+ '3.7',
+ '3.8',
+ '3.9',
+ '3.10',
+ '3.11',
+ '3.12',
+ '3.13',
+ '3.14',
+ '3.15')
 </pre></div>
 </div>
 </div>
@@ -6410,20 +6410,20 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;3.0&#39;,
- &#39;3.1&#39;,
- &#39;3.3&#39;,
- &#39;3.4&#39;,
- &#39;3.5&#39;,
- &#39;3.6&#39;,
- &#39;3.7&#39;,
- &#39;3.8&#39;,
- &#39;3.9&#39;,
- &#39;3.10&#39;,
- &#39;3.11&#39;,
- &#39;3.13&#39;,
- &#39;3.14&#39;,
- &#39;3.15&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('3.0',
+ '3.1',
+ '3.3',
+ '3.4',
+ '3.5',
+ '3.6',
+ '3.7',
+ '3.8',
+ '3.9',
+ '3.10',
+ '3.11',
+ '3.13',
+ '3.14',
+ '3.15')
 </pre></div>
 </div>
 </div>
@@ -6435,7 +6435,7 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;3.0&#39;, &#39;3.1&#39;, &#39;3.2&#39;, &#39;3.3&#39;, &#39;3.4&#39;, &#39;3.5&#39;, &#39;3.6&#39;, &#39;3.7&#39;, &#39;3.8&#39;, &#39;3.9&#39;, &#39;3.10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10')
 </pre></div>
 </div>
 </div>
@@ -6447,7 +6447,7 @@ Name: count, dtype: Int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;3.0&#39;, &#39;3.1&#39;, &#39;3.3&#39;, &#39;3.4&#39;, &#39;3.5&#39;, &#39;3.6&#39;, &#39;3.7&#39;, &#39;3.8&#39;, &#39;3.9&#39;, &#39;3.10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('3.0', '3.1', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10')
 </pre></div>
 </div>
 </div>
@@ -6456,12 +6456,12 @@ Name: count, dtype: Int64
 <p>Depending on which flags are set, the number of samples returned during an analysis may vary greatly. Let us look at an example showing the CNV HMMs for ‘1274-VO-KE-KAMAU-VMF00246’ with default configuration and the surveillance one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The `aim_calls` function will return samples depending on the object&#39;s `surveillance_use_only` setting. For example:</span>
-<span class="n">cnv_region</span> <span class="o">=</span> <span class="s1">&#39;2R:28,480,000-28,490,000&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The `aim_calls` function will return samples depending on the object's `surveillance_use_only` setting. For example:</span>
+<span class="n">cnv_region</span> <span class="o">=</span> <span class="s1">'2R:28,480,000-28,490,000'</span>
 <span class="n">ag3_cnv_hmm_df</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">cnv_hmm</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">cnv_region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 <span class="n">ag3_surveillance_cnv_hmm_df</span> <span class="o">=</span> <span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">cnv_hmm</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">cnv_region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Samples returned by the default object:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3_cnv_hmm_df</span><span class="p">[</span><span class="s1">&#39;sample_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Samples returned by the surveillance object:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3_surveillance_cnv_hmm_df</span><span class="p">[</span><span class="s1">&#39;sample_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Samples returned by the default object:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3_cnv_hmm_df</span><span class="p">[</span><span class="s1">'sample_id'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Samples returned by the surveillance object:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3_surveillance_cnv_hmm_df</span><span class="p">[</span><span class="s1">'sample_id'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -6566,13 +6566,13 @@ Samples returned by the surveillance object: 49
 
 <span class="n">collections_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;sample_id&quot;</span><span class="p">:</span> <span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s2">&quot;sample_id&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;collection method&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
-            <span class="p">[</span><span class="s2">&quot;HLC&quot;</span><span class="p">,</span> <span class="s2">&quot;pyrethroid spray&quot;</span><span class="p">,</span> <span class="s2">&quot;Shannon trap&quot;</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">mixed_sample_metadata_df</span><span class="p">)</span>
+        <span class="s2">"sample_id"</span><span class="p">:</span> <span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s2">"sample_id"</span><span class="p">],</span>
+        <span class="s2">"collection method"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">"HLC"</span><span class="p">,</span> <span class="s2">"pyrethroid spray"</span><span class="p">,</span> <span class="s2">"Shannon trap"</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">mixed_sample_metadata_df</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="p">}</span>
 <span class="p">)</span>
-<span class="n">collections_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">collections_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6602,8 +6602,8 @@ Name: count, dtype: int64
 <p>We can check that none of the samples that are not surveillance has a collection method and that we have now access to the collection methods for the surveillance samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">not_surveillance_mixed_sample_metadata_df</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="s1">&#39;not is_surveillance&#39;</span><span class="p">)</span>
-<span class="n">not_surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">not_surveillance_mixed_sample_metadata_df</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="s1">'not is_surveillance'</span><span class="p">)</span>
+<span class="n">not_surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6616,14 +6616,14 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+    <span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">error_message</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;collection method&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'collection method'
 </pre></div>
 </div>
 </div>
@@ -6631,7 +6631,7 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_sample_metadata_df</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)</span>
-<span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6657,7 +6657,7 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surveillance_mixed_sample_metadata_df</span> <span class="o">=</span> <span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">)</span>
-<span class="n">surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6674,7 +6674,7 @@ Name: count, dtype: int64
 <p>But no sample is missing a value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">&#39;collection method&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surveillance_mixed_sample_metadata_df</span><span class="p">[</span><span class="s1">'collection method'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6688,7 +6688,7 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_cm_df</span><span class="p">,</span> <span class="n">evr</span> <span class="o">=</span> <span class="n">ag3_default</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
-<span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_cm_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;collection method&#39;</span><span class="p">)</span> 
+<span class="n">ag3_default</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_cm_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'collection method'</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -6728,7 +6728,7 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3_pca_cm_surv_df</span><span class="p">,</span> <span class="n">evr</span> <span class="o">=</span> <span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="n">mixed_sample_set</span><span class="p">,</span> <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">)</span>
-<span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_cm_surv_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;collection method&#39;</span><span class="p">)</span> 
+<span class="n">ag3_surveillance</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">ag3_pca_cm_surv_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'collection method'</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>

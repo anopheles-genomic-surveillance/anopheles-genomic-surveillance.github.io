@@ -556,7 +556,7 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -569,7 +569,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># if running on colab, mount Google Drive</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;drive&#39;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'drive'</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -578,7 +578,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">&quot;drive/MyDrive/Colab Data/af1-structure-results&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">"drive/MyDrive/Colab Data/af1-structure-results"</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -967,7 +967,7 @@ function(Bokeh) {
 <p>The <em>An. gambiae</em> data resource <code class="docutils literal notranslate"><span class="pre">Ag3</span></code> contains several different taxa and it is an obvious source of structure within the resource. We can start by checking if the same is true of <code class="docutils literal notranslate"><span class="pre">Af1</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;taxon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"1.0"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'taxon'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -986,7 +986,7 @@ dtype: int64
 <p>We will now generate a neighbour-joining tree (as we did during <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-3/about.html">Workshop 3</a>) to study the population structure using all the data available. We will use a region of chromosome 2 which is free from inversions and known signals of selection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;2RL:60,000,000-100,000,000&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">"2RL:60,000,000-100,000,000"</span>
 <span class="n">n_snps</span> <span class="o">=</span> <span class="mi">100_000</span>
 </pre></div>
 </div>
@@ -997,8 +997,8 @@ dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_njt</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -4929,9 +4929,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_njt</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;country == &#39;Mozambique&#39;&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"country == 'Mozambique'"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"admin1_name"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -4975,9 +4975,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_njt</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;country == &#39;Ghana&#39;&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"country == 'Ghana'"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"admin1_name"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5022,9 +5022,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_njt</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;country == &#39;Democratic Republic of the Congo&#39;&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"country == 'Democratic Republic of the Congo'"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"admin1_name"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5068,9 +5068,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_njt</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;country in [&#39;Kenya&#39;, &#39;Uganda&#39;, &#39;Central African Republic&#39;, &#39;Cameroon&#39;, &#39;Democratic Republic of the Congo&#39;] and admin1_name != &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"country in ['Kenya', 'Uganda', 'Central African Republic', 'Cameroon', 'Democratic Republic of the Congo'] and admin1_name != 'Kinshasa'"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5115,10 +5115,10 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span> 
-    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;country in [&#39;Kenya&#39;, &#39;Uganda&#39;, &#39;Central African Republic&#39;, &#39;Cameroon&#39;, &#39;Democratic Republic of the Congo&#39;] and admin1_name != &#39;Kinshasa&#39;&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"country in ['Kenya', 'Uganda', 'Central African Republic', 'Cameroon', 'Democratic Republic of the Congo'] and admin1_name != 'Kinshasa'"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">af1</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<span class="n">af1</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5204,12 +5204,12 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stats_admin1_year</span><span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">diversity_stats</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;1.0&#39; and country in [&#39;Democratic Republic of the Congo&#39;, &#39;Ghana&#39;, &#39;Mozambique&#39;]&quot;</span><span class="p">,</span>
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '1.0' and country in ['Democratic Republic of the Congo', 'Ghana', 'Mozambique']"</span><span class="p">,</span>
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">df_stats_admin1_year</span>
 </pre></div>
@@ -5441,40 +5441,40 @@ if (outputEl) {{
     <span class="n">df_stats</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_white"</span>
 <span class="p">):</span>
 
     <span class="c1"># set up common plotting parameters</span>
-    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&quot;cohort&quot;</span>
+    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">"cohort"</span>
     <span class="n">hover_data</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;country&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin2_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;month&quot;</span><span class="p">,</span>
+        <span class="s2">"taxon"</span><span class="p">,</span>
+        <span class="s2">"country"</span><span class="p">,</span>
+        <span class="s2">"admin1_iso"</span><span class="p">,</span>
+        <span class="s2">"admin1_name"</span><span class="p">,</span>
+        <span class="s2">"admin2_name"</span><span class="p">,</span>
+        <span class="s2">"year"</span><span class="p">,</span>
+        <span class="s2">"month"</span><span class="p">,</span>
     <span class="p">]</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;theta_pi_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$\widehat{\theta}_{\pi}$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;theta_w_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$\widehat{\theta}_</span><span class="si">{w}</span><span class="s1">$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;tajima_d_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$D$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;cohort&#39;</span><span class="p">:</span> <span class="s2">&quot;Cohort&quot;</span><span class="p">,</span>
-        <span class="s1">&#39;taxon&#39;</span><span class="p">:</span> <span class="s1">&#39;Taxon&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+        <span class="s1">'theta_pi_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$\widehat{\theta}_{\pi}$'</span><span class="p">,</span>
+        <span class="s1">'theta_w_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$\widehat{\theta}_</span><span class="si">{w}</span><span class="s1">$'</span><span class="p">,</span>
+        <span class="s1">'tajima_d_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$D$'</span><span class="p">,</span>
+        <span class="s1">'cohort'</span><span class="p">:</span> <span class="s2">"Cohort"</span><span class="p">,</span>
+        <span class="s1">'taxon'</span><span class="p">:</span> <span class="s1">'Taxon'</span><span class="p">,</span>
+        <span class="s1">'country'</span><span class="p">:</span> <span class="s2">"Country"</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">category_orders</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;gambiae&quot;</span><span class="p">,</span> <span class="s2">&quot;coluzzii&quot;</span><span class="p">,</span> <span class="s2">&quot;funestus&quot;</span><span class="p">],</span>
+        <span class="s2">"taxon"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"gambiae"</span><span class="p">,</span> <span class="s2">"coluzzii"</span><span class="p">,</span> <span class="s2">"funestus"</span><span class="p">],</span>
     <span class="p">}</span>
     <span class="n">width</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
 
     <span class="c1"># nucleotide diversity bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_pi_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_pi_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Nucleotide diversity&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_pi_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_pi_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Nucleotide diversity"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5488,10 +5488,10 @@ if (outputEl) {{
     <span class="c1"># watterson estimator bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_w_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_w_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Watterson estimator&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_w_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_w_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Watterson estimator"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5503,13 +5503,13 @@ if (outputEl) {{
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="c1"># tajima&#39;s d bar plot</span>
+    <span class="c1"># tajima's d bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tajima_d_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;tajima_d_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tajima&#39;s D&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"tajima_d_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"tajima_d_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Tajima's D"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5524,11 +5524,11 @@ if (outputEl) {{
     <span class="c1"># scatter plot comparing diversity estimators</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;theta_pi_estimate&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_w_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_x</span><span class="o">=</span><span class="s2">&quot;theta_pi_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_w_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Diversity estimators&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"theta_pi_estimate"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_w_estimate"</span><span class="p">,</span>
+        <span class="n">error_x</span><span class="o">=</span><span class="s2">"theta_pi_ci_err"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_w_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Diversity estimators"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
@@ -5545,7 +5545,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_admin1_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_admin1_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5678,15 +5678,15 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
 <span class="n">df_stats_admin1_year_gam</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">diversity_stats</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country in [&#39;Democratic Republic of the Congo&#39;, &#39;Ghana&#39;]&quot;</span><span class="p">,</span>
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country in ['Democratic Republic of the Congo', 'Ghana']"</span><span class="p">,</span>
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">df_stats_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_stats_admin1_year</span><span class="p">,</span> <span class="n">df_stats_admin1_year_gam</span><span class="p">])</span>
-<span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_all</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">)</span>
+<span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_all</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6134,9 +6134,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;VBS24539&quot;</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"VBS24539"</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -6151,7 +6151,7 @@ if (outputEl) {{
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/developer/35674e27b19f7c625ba32a1b88449ff45c90b40edb90a065b66c5a9a5388f41c-20250421-195247-360829-93-training-nb-maintenance-mgen-15.2.0/lib/python3.11/site-packages/malariagen_data/anopheles.py:327: BokehDeprecationWarning:
 
-&#39;circle() method with size value&#39; was deprecated in Bokeh 3.4.0 and will be removed, use &#39;scatter(size=...) instead&#39; instead.
+'circle() method with size value' was deprecated in Bokeh 3.4.0 and will be removed, use 'scatter(size=...) instead' instead.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
@@ -6187,9 +6187,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;VBS24195&quot;</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"VBS24195"</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -6204,7 +6204,7 @@ if (outputEl) {{
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/developer/35674e27b19f7c625ba32a1b88449ff45c90b40edb90a065b66c5a9a5388f41c-20250421-195247-360829-93-training-nb-maintenance-mgen-15.2.0/lib/python3.11/site-packages/malariagen_data/anopheles.py:327: BokehDeprecationWarning:
 
-&#39;circle() method with size value&#39; was deprecated in Bokeh 3.4.0 and will be removed, use &#39;scatter(size=...) instead&#39; instead.
+'circle() method with size value' was deprecated in Bokeh 3.4.0 and will be removed, use 'scatter(size=...) instead' instead.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
@@ -6241,9 +6241,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_roh</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;VBS24539&quot;</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"VBS24539"</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -6252,7 +6252,7 @@ if (outputEl) {{
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/developer/35674e27b19f7c625ba32a1b88449ff45c90b40edb90a065b66c5a9a5388f41c-20250421-195247-360829-93-training-nb-maintenance-mgen-15.2.0/lib/python3.11/site-packages/malariagen_data/anopheles.py:327: BokehDeprecationWarning:
 
-&#39;circle() method with size value&#39; was deprecated in Bokeh 3.4.0 and will be removed, use &#39;scatter(size=...) instead&#39; instead.
+'circle() method with size value' was deprecated in Bokeh 3.4.0 and will be removed, use 'scatter(size=...) instead' instead.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
@@ -6288,9 +6288,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">af1</span><span class="o">.</span><span class="n">plot_roh</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;VBS24195&quot;</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"VBS24195"</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -6302,7 +6302,7 @@ if (outputEl) {{
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/developer/35674e27b19f7c625ba32a1b88449ff45c90b40edb90a065b66c5a9a5388f41c-20250421-195247-360829-93-training-nb-maintenance-mgen-15.2.0/lib/python3.11/site-packages/malariagen_data/anopheles.py:327: BokehDeprecationWarning:
 
-&#39;circle() method with size value&#39; was deprecated in Bokeh 3.4.0 and will be removed, use &#39;scatter(size=...) instead&#39; instead.
+'circle() method with size value' was deprecated in Bokeh 3.4.0 and will be removed, use 'scatter(size=...) instead' instead.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     
@@ -6339,10 +6339,10 @@ if (outputEl) {{
 <p>Using only a few samples is unlikely to give us a very representative picture of the situation so let’s use a more systematic approach. Beware, the following code may be very slow. We will only use 10 samples per cohort to make it slightly faster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Mozambique_north&#39;</span><span class="p">:</span> <span class="s2">&quot;release == &#39;1.0&#39; and location == &#39;Motinho&#39;&quot;</span><span class="p">,</span>
-           <span class="s1">&#39;Mozambique_south&#39;</span><span class="p">:</span> <span class="s2">&quot;release == &#39;1.0&#39; and location in [&#39;Palmeira&#39;, &#39;Palmeiras&#39;]&quot;</span><span class="p">,</span>
-           <span class="s1">&#39;Ghana_north&#39;</span><span class="p">:</span> <span class="s2">&quot;release == &#39;1.0&#39; and admin1_name == &#39;Northern Region&#39;&quot;</span><span class="p">,</span>
-           <span class="s1">&#39;Ghana_south&#39;</span><span class="p">:</span> <span class="s2">&quot;release == &#39;1.0&#39; and location == &#39;Obuasi&#39;&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Mozambique_north'</span><span class="p">:</span> <span class="s2">"release == '1.0' and location == 'Motinho'"</span><span class="p">,</span>
+           <span class="s1">'Mozambique_south'</span><span class="p">:</span> <span class="s2">"release == '1.0' and location in ['Palmeira', 'Palmeiras']"</span><span class="p">,</span>
+           <span class="s1">'Ghana_north'</span><span class="p">:</span> <span class="s2">"release == '1.0' and admin1_name == 'Northern Region'"</span><span class="p">,</span>
+           <span class="s1">'Ghana_south'</span><span class="p">:</span> <span class="s2">"release == '1.0' and location == 'Obuasi'"</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -6363,19 +6363,19 @@ if (outputEl) {{
     <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">af1</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">coh_query</span><span class="p">)</span><span class="o">.</span><span class="n">sample_id</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]:</span>
         <span class="n">roh_df</span> <span class="o">=</span> <span class="n">af1</span><span class="o">.</span><span class="n">roh_hmm</span><span class="p">(</span>
             <span class="n">sample</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span>
-            <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">,</span>
-            <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;funestus&quot;</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">,</span>
+            <span class="n">site_mask</span><span class="o">=</span><span class="s2">"funestus"</span><span class="p">,</span>
             <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">roh_df_100kb</span> <span class="o">=</span> <span class="n">roh_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;roh_length &gt; 100_000&quot;</span><span class="p">)</span>
+        <span class="n">roh_df_100kb</span> <span class="o">=</span> <span class="n">roh_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"roh_length &gt; 100_000"</span><span class="p">)</span>
         <span class="n">roh_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">roh_df_100kb</span><span class="p">)</span>
-        <span class="n">roh_total_length</span> <span class="o">=</span> <span class="n">roh_df_100kb</span><span class="p">[</span><span class="s2">&quot;roh_length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-        <span class="n">froh</span> <span class="o">=</span> <span class="n">roh_total_length</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">af1</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;3RL&quot;</span><span class="p">))</span>
+        <span class="n">roh_total_length</span> <span class="o">=</span> <span class="n">roh_df_100kb</span><span class="p">[</span><span class="s2">"roh_length"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">froh</span> <span class="o">=</span> <span class="n">roh_total_length</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">af1</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"3RL"</span><span class="p">))</span>
         <span class="n">coh_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coh_name</span><span class="p">)</span>
         <span class="n">sample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
         <span class="n">roh_count_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roh_count</span><span class="p">)</span>
         <span class="n">froh_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">froh</span><span class="p">)</span>
-<span class="n">df_roh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">&#39;sample_id&#39;</span><span class="p">:</span> <span class="n">sample_list</span><span class="p">,</span> <span class="s1">&#39;cohort&#39;</span><span class="p">:</span> <span class="n">coh_list</span><span class="p">,</span> <span class="s1">&#39;roh_count&#39;</span><span class="p">:</span> <span class="n">roh_count_list</span><span class="p">,</span> <span class="s1">&#39;froh&#39;</span><span class="p">:</span> <span class="n">froh_list</span><span class="p">})</span>
+<span class="n">df_roh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">'sample_id'</span><span class="p">:</span> <span class="n">sample_list</span><span class="p">,</span> <span class="s1">'cohort'</span><span class="p">:</span> <span class="n">coh_list</span><span class="p">,</span> <span class="s1">'roh_count'</span><span class="p">:</span> <span class="n">roh_count_list</span><span class="p">,</span> <span class="s1">'froh'</span><span class="p">:</span> <span class="n">froh_list</span><span class="p">})</span>
 <span class="n">df_roh</span>
 </pre></div>
 </div>
@@ -6698,12 +6698,12 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_roh</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;froh&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;roh_count&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_roh</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"froh"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"roh_count"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;froh&#39;, ylabel=&#39;roh_count&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel='froh', ylabel='roh_count'&gt;
 </pre></div>
 </div>
 <img alt="../_images/a3a4017a9d1a9e7eee533ab46f347a0727d12179cece945ca97147a0aba29ee8.png" src="../_images/a3a4017a9d1a9e7eee533ab46f347a0727d12179cece945ca97147a0aba29ee8.png" />

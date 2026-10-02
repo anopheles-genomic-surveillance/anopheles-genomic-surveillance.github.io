@@ -592,10 +592,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -604,7 +604,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">(</span>
-    <span class="n">results_cache</span><span class="o">=</span><span class="s2">&quot;drive/MyDrive/malariagen_data_cache&quot;</span>
+    <span class="n">results_cache</span><span class="o">=</span><span class="s2">"drive/MyDrive/malariagen_data_cache"</span>
 <span class="p">)</span>
 <span class="n">ag3</span>
 </pre></div>
@@ -990,7 +990,7 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;drive&quot;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"drive"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -1051,9 +1051,9 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span>
-    <span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country == &#39;Burkina Faso&#39; and aim_species != &#39;arabiensis&#39;&quot;</span><span class="p">,</span>
+    <span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"country == 'Burkina Faso' and aim_species != 'arabiensis'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5005,14 +5005,14 @@ if (outputEl) {{
 <p>First check which cohorts have been defined for Burkina Faso, and how many samples are available for each cohort.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)[</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">)[</span><span class="s2">"cohort_admin2_year"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5033,10 +5033,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;3L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_colu_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"3L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_colu_2014'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5078,10 +5078,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;3L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"3L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5125,10 +5125,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_colu_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_colu_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -5171,10 +5171,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -5238,21 +5238,21 @@ ag3.plot_h1x_gwss(
     cohort1_query: str,
     cohort2_query: str,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    analysis: str = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    analysis: str = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     min_cohort_size: Optional[int] = <span class=" -Color -Color-Green">15</span>,
     max_cohort_size: Optional[int] = <span class=" -Color -Color-Green">50</span>,
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     title: Union[str, bool, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    sizing_mode: Literal[<span class=" -Color -Color-Yellow">&#39;fixed&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_both&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_both&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>,
+    sizing_mode: Literal[<span class=" -Color -Color-Yellow">'fixed'</span>, <span class=" -Color -Color-Yellow">'stretch_width'</span>, <span class=" -Color -Color-Yellow">'stretch_height'</span>, <span class=" -Color -Color-Yellow">'stretch_both'</span>, <span class=" -Color -Color-Yellow">'scale_width'</span>, <span class=" -Color -Color-Yellow">'scale_height'</span>, <span class=" -Color -Color-Yellow">'scale_both'</span>] = <span class=" -Color -Color-Yellow">'stretch_width'</span>,
     width: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     track_height: int = <span class=" -Color -Color-Green">190</span>,
-    contig_colors: list[str] = [<span class=" -Color -Color-Yellow">&#39;#393b79&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#5254a3&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#6b6ecf&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#9c9ede&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#637939&#39;</span>],
+    contig_colors: list[str] = [<span class=" -Color -Color-Yellow">'#393b79'</span>, <span class=" -Color -Color-Yellow">'#5254a3'</span>, <span class=" -Color -Color-Yellow">'#6b6ecf'</span>, <span class=" -Color -Color-Yellow">'#9c9ede'</span>, <span class=" -Color -Color-Yellow">'#637939'</span>],
     genes_height: int = <span class=" -Color -Color-Green">90</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    output_backend: Literal[<span class=" -Color -Color-Yellow">&#39;canvas&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    output_backend: Literal[<span class=" -Color -Color-Yellow">'canvas'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>, <span class=" -Color -Color-Yellow">'svg'</span>] = <span class=" -Color -Color-Yellow">'webgl'</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     gene_labels: Optional[Mapping[str, str]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     gene_labelset: Optional[bokeh.models.annotations.labels.LabelSet] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -5279,7 +5279,7 @@ sample_query_options : dict or None, optional
     A dictionary of arguments that will be passed through to pandas
     query() or eval(), e.g. parser, engine, local_dict, global_dict,
     resolvers.
-analysis : str, optional, default: &#39;default&#39;
+analysis : str, optional, default: 'default'
     Which haplotype phasing analysis to use. See the
     `phasing_analysis_ids` property for available values.
 sample_sets : sequence of str or str or None, optional
@@ -5299,33 +5299,33 @@ random_seed : int, optional, default: 42
     Random seed used for reproducible down-sampling.
 title : str or bool or None, optional
     Plot title. If True, a title may be automatically generated.
-sizing_mode : {&#39;fixed&#39;, &#39;stretch_width&#39;, &#39;stretch_height&#39;, &#39;stretch_both&#39;, &#39;scale_width&#39;, &#39;scale_height&#39;, &#39;scale_both&#39;}, optional, default: &#39;stretch_width&#39;
+sizing_mode : {'fixed', 'stretch_width', 'stretch_height', 'stretch_both', 'scale_width', 'scale_height', 'scale_both'}, optional, default: 'stretch_width'
     Bokeh plot sizing mode, see also https://docs.bokeh.org/en/latest/docs
     /user_guide/basic/layouts.html#sizing-modes.
 width : int or None, optional
     Plot width in pixels (px).
 track_height : int, optional, default: 190
     Main track height in pixels (px).
-contig_colors : list of str, optional, default: [&#39;#393b79&#39;, &#39;#5254a3&#39;, &#39;#6b6ecf&#39;, &#39;#9c9ede&#39;, &#39;#637939&#39;]
+contig_colors : list of str, optional, default: ['#393b79', '#5254a3', '#6b6ecf', '#9c9ede', '#637939']
     A sequence of colors.
 genes_height : int, optional, default: 90
     Genes track height in pixels (px).
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
-output_backend : {&#39;canvas&#39;, &#39;webgl&#39;, &#39;svg&#39;}, optional, default: &#39;webgl&#39;
+output_backend : {'canvas', 'webgl', 'svg'}, optional, default: 'webgl'
     Specify an output backend to render a plot area onto. See also
     https://docs.bokeh.org/en/latest/docs/user_guide/output/webgl.html.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -5354,11 +5354,11 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_colu_2014&#39;&quot;</span><span class="p">,</span>
-    <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_colu_2014'"</span><span class="p">,</span>
+    <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -5421,7 +5421,7 @@ Model or None
 <p>Here are the cohorts defined in Mali:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Mali&#39;&quot;</span><span class="p">)[</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Mali'"</span><span class="p">)[</span><span class="s2">"cohort_admin2_year"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5448,10 +5448,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;3L&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;ML-2_Kati_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"3L"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'ML-2_Kati_gamb_2014'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -5494,10 +5494,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;ML-2_Kati_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'ML-2_Kati_gamb_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -5541,10 +5541,10 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -5588,11 +5588,11 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h1x_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;ML-2_Kati_gamb_2014&#39;&quot;</span><span class="p">,</span>
-    <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">cohort1_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'ML-2_Kati_gamb_2014'"</span><span class="p">,</span>
+    <span class="n">cohort2_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>

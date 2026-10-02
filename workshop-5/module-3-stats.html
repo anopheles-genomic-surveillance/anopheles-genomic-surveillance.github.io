@@ -576,7 +576,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -587,7 +587,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;drive&quot;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"drive"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -598,7 +598,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">(</span>
-    <span class="n">results_cache</span><span class="o">=</span><span class="s2">&quot;drive/MyDrive/malariagen_data_cache&quot;</span>
+    <span class="n">results_cache</span><span class="o">=</span><span class="s2">"drive/MyDrive/malariagen_data_cache"</span>
 <span class="p">)</span>
 <span class="n">ag3</span>
 </pre></div>
@@ -987,7 +987,7 @@ function(Bokeh) {
 <p>Let’s first browse the different sample locations for which we have data. In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> we looked at how to create an interactive map with sampling locations using ipyleaflet. Because this is something we want to do often, we’ve added a convenience function <code class="docutils literal notranslate"><span class="pre">plot_samples_interactive_map()</span></code> to do this for you. This will plot a map showing sampling locations for all available samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_samples_interactive_map</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39;&quot;</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;worldimagery&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_samples_interactive_map</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0'"</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">'worldimagery'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1002,7 +1002,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">count_samples</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Tanzania&#39;&quot;</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country == 'Tanzania'"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1094,7 +1094,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples_tz</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Tanzania&#39;&quot;</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country == 'Tanzania'"</span>
 <span class="p">)</span>
 <span class="n">df_samples_tz</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1272,7 +1272,7 @@ function(Bokeh) {
 <p>For this analysis, let’s use the “cohort_admin2_year” column to group samples by administrative level 2 divisions (usually called districts) and year. Here are the cohort labels for the Tanzania samples and the sample sizes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples_tz</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples_tz</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"cohort_admin2_year"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1319,13 +1319,13 @@ ag3.cohort_diversity_stats(
     region: Union[str, malariagen_data.util.Region, Mapping, List[Union[str, malariagen_data.util.Region, Mapping]], Tuple[Union[str, malariagen_data.util.Region, Mapping], ...]],
     min_cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     max_cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     site_class: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     n_jack: int = <span class=" -Color -Color-Green">200</span>,
     confidence_level: float = <span class=" -Color -Color-Green">0.95</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 ) -&gt; pandas.core.series.Series
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1343,7 +1343,7 @@ cohort_size : int
     than this value.
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
 min_cohort_size : int or None, optional
@@ -1352,7 +1352,7 @@ min_cohort_size : int or None, optional
 max_cohort_size : int or None, optional
     Randomly down-sample to this value if the number of samples in the
     cohort is greater.
-site_mask : str or None, optional, default: &#39;default&#39;
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 site_class : str or None, optional
@@ -1360,9 +1360,9 @@ site_class : str or None, optional
     (4-fold degenerate coding sites), CDS_DEG_2_SIMPLE (2-fold simple
     degenerate coding sites), CDS_DEG_0 (non-degenerate coding sites),
     INTRON_SHORT (introns shorter than 100 bp), INTRON_LONG (introns
-    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5&#39;
-    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3&#39; splice
-    site), UTR_5PRIME (5&#39; untranslated region), UTR_3PRIME (3&#39;
+    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5'
+    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3' splice
+    site), UTR_5PRIME (5' untranslated region), UTR_3PRIME (3'
     untranslated region), INTERGENIC (intergenic, more than 10 kbp from a
     gene).
 sample_sets : sequence of str or str or None, optional
@@ -1377,16 +1377,16 @@ n_jack : int, optional, default: 200
 confidence_level : float, optional, default: 0.95
     Confidence level to use for confidence interval calculation. E.g.,
     0.95 means 95% confidence interval.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1396,8 +1396,8 @@ inline_array : bool, optional, default: True
 Returns
 -------
 Series
-    A pandas series with summary statistics (theta pi, Watterson&#39;s theta
-    and Tajima&#39;s D) and their estimate, bias, standard error, confidence
+    A pandas series with summary statistics (theta pi, Watterson's theta
+    and Tajima's D) and their estimate, bias, standard error, confidence
     interval error, confidence interval lower value, and confidence
     interval upper value. The series also contains the cohort under
     study, its taxon, its year of collection, its month of collection,
@@ -1416,11 +1416,11 @@ Series
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cohort_diversity_stats</span><span class="p">(</span>
-    <span class="n">cohort</span><span class="o">=</span><span class="s2">&quot;TZ-05_Muleba_gamb_2015&quot;</span><span class="p">,</span>
+    <span class="n">cohort</span><span class="o">=</span><span class="s2">"TZ-05_Muleba_gamb_2015"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">stats</span>
 </pre></div>
@@ -1470,11 +1470,11 @@ dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cohort_diversity_stats</span><span class="p">(</span>
-    <span class="n">cohort</span><span class="o">=</span><span class="s2">&quot;TZ-05_Muleba_gamb_2015&quot;</span><span class="p">,</span>
+    <span class="n">cohort</span><span class="o">=</span><span class="s2">"TZ-05_Muleba_gamb_2015"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">stats</span>
 </pre></div>
@@ -1523,11 +1523,11 @@ dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cohort_diversity_stats</span><span class="p">(</span>
-    <span class="n">cohort</span><span class="o">=</span><span class="s2">&quot;TZ-05_Muleba_gamb_2015&quot;</span><span class="p">,</span>
+    <span class="n">cohort</span><span class="o">=</span><span class="s2">"TZ-05_Muleba_gamb_2015"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_0&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_0"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">stats</span>
 </pre></div>
@@ -1582,7 +1582,7 @@ dtype: object
 <p>Sticking with our focus on Tanzania, let’s remind ourselves what cohorts and sample sizes are available if we group samples by the “cohort_admin2_year” field, which will group by taxon, district and year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples_tz</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples_tz</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"cohort_admin2_year"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1615,7 +1615,7 @@ ag3.diversity_stats(
     cohorts: Union[str, Mapping[str, str]],
     cohort_size: int,
     region: Union[str, malariagen_data.util.Region, Mapping, List[Union[str, malariagen_data.util.Region, Mapping]], Tuple[Union[str, malariagen_data.util.Region, Mapping], ...]],
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     site_class: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1623,7 +1623,7 @@ ag3.diversity_stats(
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     n_jack: int = <span class=" -Color -Color-Green">200</span>,
     confidence_level: float = <span class=" -Color -Color-Green">0.95</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 ) -&gt; pandas.core.frame.DataFrame
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1633,7 +1633,7 @@ Parameters
 ----------
 cohorts : str or Mapping[str, str]
     Either a string giving the name of a predefined cohort set (e.g.,
-    &quot;admin1_month&quot;) or a dict mapping custom cohort labels to sample
+    "admin1_month") or a dict mapping custom cohort labels to sample
     queries.
 cohort_size : int
     Randomly down-sample to this value if the number of samples in the
@@ -1641,10 +1641,10 @@ cohort_size : int
     than this value.
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
-site_mask : str or None, optional, default: &#39;default&#39;
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 site_class : str or None, optional
@@ -1652,9 +1652,9 @@ site_class : str or None, optional
     (4-fold degenerate coding sites), CDS_DEG_2_SIMPLE (2-fold simple
     degenerate coding sites), CDS_DEG_0 (non-degenerate coding sites),
     INTRON_SHORT (introns shorter than 100 bp), INTRON_LONG (introns
-    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5&#39;
-    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3&#39; splice
-    site), UTR_5PRIME (5&#39; untranslated region), UTR_3PRIME (3&#39;
+    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5'
+    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3' splice
+    site), UTR_5PRIME (5' untranslated region), UTR_3PRIME (3'
     untranslated region), INTERGENIC (intergenic, more than 10 kbp from a
     gene).
 sample_query : str or None, optional
@@ -1676,16 +1676,16 @@ n_jack : int, optional, default: 200
 confidence_level : float, optional, default: 0.95
     Confidence level to use for confidence interval calculation. E.g.,
     0.95 means 95% confidence interval.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1699,8 +1699,8 @@ DataFrame
     confidence intervals for a single cohort. The columns are the value,
     the estimate, the bias, the standard error, the confidence interval
     error, the confidence interval lower value, the confidence interval
-    upper value for each summary statistics (theta pi, Watterson&#39;s theta
-    and Tajima&#39;s D), the taxon of the cohort, its year of collection,
+    upper value for each summary statistics (theta pi, Watterson's theta
+    and Tajima's D), the taxon of the cohort, its year of collection,
     its month of collection, its country of collection, the ISO code of
     its first administrative level of collection, the name of its first
     administrative level of collection, the name of its second
@@ -1716,12 +1716,12 @@ DataFrame
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stats_tz_admin2_year</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">diversity_stats</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Tanzania&#39;&quot;</span><span class="p">,</span>
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin2_year&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country == 'Tanzania'"</span><span class="p">,</span>
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin2_year"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">df_stats_tz_admin2_year</span>
 </pre></div>
@@ -1931,15 +1931,15 @@ Cohort (TZ-25_Muheza_arab_2013) has insufficient samples (1) for requested cohor
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;cohort&#39;, &#39;theta_pi&#39;, &#39;theta_pi_estimate&#39;, &#39;theta_pi_bias&#39;,
-       &#39;theta_pi_std_err&#39;, &#39;theta_pi_ci_err&#39;, &#39;theta_pi_ci_low&#39;,
-       &#39;theta_pi_ci_upp&#39;, &#39;theta_w&#39;, &#39;theta_w_estimate&#39;, &#39;theta_w_bias&#39;,
-       &#39;theta_w_std_err&#39;, &#39;theta_w_ci_err&#39;, &#39;theta_w_ci_low&#39;, &#39;theta_w_ci_upp&#39;,
-       &#39;tajima_d&#39;, &#39;tajima_d_estimate&#39;, &#39;tajima_d_bias&#39;, &#39;tajima_d_std_err&#39;,
-       &#39;tajima_d_ci_err&#39;, &#39;tajima_d_ci_low&#39;, &#39;tajima_d_ci_upp&#39;, &#39;taxon&#39;,
-       &#39;year&#39;, &#39;month&#39;, &#39;country&#39;, &#39;admin1_iso&#39;, &#39;admin1_name&#39;, &#39;admin2_name&#39;,
-       &#39;longitude&#39;, &#39;latitude&#39;],
-      dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['cohort', 'theta_pi', 'theta_pi_estimate', 'theta_pi_bias',
+       'theta_pi_std_err', 'theta_pi_ci_err', 'theta_pi_ci_low',
+       'theta_pi_ci_upp', 'theta_w', 'theta_w_estimate', 'theta_w_bias',
+       'theta_w_std_err', 'theta_w_ci_err', 'theta_w_ci_low', 'theta_w_ci_upp',
+       'tajima_d', 'tajima_d_estimate', 'tajima_d_bias', 'tajima_d_std_err',
+       'tajima_d_ci_err', 'tajima_d_ci_low', 'tajima_d_ci_upp', 'taxon',
+       'year', 'month', 'country', 'admin1_iso', 'admin1_name', 'admin2_name',
+       'longitude', 'latitude'],
+      dtype='object')
 </pre></div>
 </div>
 </div>
@@ -1949,10 +1949,10 @@ Cohort (TZ-25_Muheza_arab_2013) has insufficient samples (1) for requested cohor
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats_tz_admin2_year</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_pi_estimate&quot;</span><span class="p">,</span>
-    <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_pi_ci_err&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"theta_pi_estimate"</span><span class="p">,</span>
+    <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_pi_ci_err"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
 <span class="p">)</span>
@@ -5883,40 +5883,40 @@ if (outputEl) {{
     <span class="n">df_stats</span><span class="p">,</span> 
     <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
     <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> 
-    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_white"</span>
 <span class="p">):</span>
 
     <span class="c1"># set up common plotting parameters</span>
-    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&quot;cohort&quot;</span>
+    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">"cohort"</span>
     <span class="n">hover_data</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;country&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;admin2_name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;month&quot;</span><span class="p">,</span>
+        <span class="s2">"taxon"</span><span class="p">,</span>
+        <span class="s2">"country"</span><span class="p">,</span>
+        <span class="s2">"admin1_iso"</span><span class="p">,</span>
+        <span class="s2">"admin1_name"</span><span class="p">,</span>
+        <span class="s2">"admin2_name"</span><span class="p">,</span>
+        <span class="s2">"year"</span><span class="p">,</span>
+        <span class="s2">"month"</span><span class="p">,</span>
     <span class="p">]</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;theta_pi_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$\widehat{\theta}_{\pi}$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;theta_w_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$\widehat{\theta}_</span><span class="si">{w}</span><span class="s1">$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;tajima_d_estimate&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;$D$&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;cohort&#39;</span><span class="p">:</span> <span class="s2">&quot;Cohort&quot;</span><span class="p">,</span>
-        <span class="s1">&#39;taxon&#39;</span><span class="p">:</span> <span class="s1">&#39;Taxon&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+        <span class="s1">'theta_pi_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$\widehat{\theta}_{\pi}$'</span><span class="p">,</span>
+        <span class="s1">'theta_w_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$\widehat{\theta}_</span><span class="si">{w}</span><span class="s1">$'</span><span class="p">,</span>
+        <span class="s1">'tajima_d_estimate'</span><span class="p">:</span> <span class="sa">r</span><span class="s1">'$D$'</span><span class="p">,</span>
+        <span class="s1">'cohort'</span><span class="p">:</span> <span class="s2">"Cohort"</span><span class="p">,</span>
+        <span class="s1">'taxon'</span><span class="p">:</span> <span class="s1">'Taxon'</span><span class="p">,</span>
+        <span class="s1">'country'</span><span class="p">:</span> <span class="s2">"Country"</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">category_orders</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;arabiensis&quot;</span><span class="p">,</span> <span class="s2">&quot;gambiae&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx3&quot;</span><span class="p">,</span> <span class="s2">&quot;coluzzii&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx1&quot;</span><span class="p">,</span> <span class="s2">&quot;gcx2&quot;</span><span class="p">],</span>
+        <span class="s2">"taxon"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"arabiensis"</span><span class="p">,</span> <span class="s2">"gambiae"</span><span class="p">,</span> <span class="s2">"gcx3"</span><span class="p">,</span> <span class="s2">"coluzzii"</span><span class="p">,</span> <span class="s2">"gcx1"</span><span class="p">,</span> <span class="s2">"gcx2"</span><span class="p">],</span>
     <span class="p">}</span>
     <span class="n">width</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
 
     <span class="c1"># nucleotide diversity bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_pi_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_pi_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Nucleotide diversity&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_pi_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_pi_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Nucleotide diversity"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5931,10 +5931,10 @@ if (outputEl) {{
     <span class="c1"># watterson estimator bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_w_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_w_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Watterson estimator&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_w_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_w_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Watterson estimator"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5946,13 +5946,13 @@ if (outputEl) {{
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="c1"># tajima&#39;s d bar plot</span>
+    <span class="c1"># tajima's d bar plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cohort&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tajima_d_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;tajima_d_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tajima&#39;s D&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"cohort"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"tajima_d_estimate"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"tajima_d_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Tajima's D"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
@@ -5967,11 +5967,11 @@ if (outputEl) {{
     <span class="c1"># scatter plot comparing diversity estimators</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="n">data_frame</span><span class="o">=</span><span class="n">df_stats</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;theta_pi_estimate&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta_w_estimate&quot;</span><span class="p">,</span>
-        <span class="n">error_x</span><span class="o">=</span><span class="s2">&quot;theta_pi_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">error_y</span><span class="o">=</span><span class="s2">&quot;theta_w_ci_err&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Diversity estimators&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">"theta_pi_estimate"</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">"theta_w_estimate"</span><span class="p">,</span>
+        <span class="n">error_x</span><span class="o">=</span><span class="s2">"theta_pi_ci_err"</span><span class="p">,</span>
+        <span class="n">error_y</span><span class="o">=</span><span class="s2">"theta_w_ci_err"</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"Diversity estimators"</span><span class="p">,</span>
         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
@@ -5989,7 +5989,7 @@ if (outputEl) {{
 <p>Let’s now make these plots for our Tanzanian cohorts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_tz_admin2_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_tz_admin2_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6132,7 +6132,7 @@ if (outputEl) {{
 <p>Existe-t-il des preuves de différences de diversité entre les différents mois d’échantillonnage?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_samples_tz.groupby(&quot;cohort_admin2_month&quot;).size()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_samples_tz.groupby("cohort_admin2_month").size()</span>
 </pre></div>
 </div>
 </div>
@@ -6140,14 +6140,14 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_stats_tz_admin2_month = ag3.diversity_stats(</span>
-<span class="c1">#     sample_query=&quot;release == &#39;3.0&#39; and country == &#39;Tanzania&#39;&quot;,</span>
-<span class="c1">#     cohorts=&quot;admin2_month&quot;,</span>
+<span class="c1">#     sample_query="release == '3.0' and country == 'Tanzania'",</span>
+<span class="c1">#     cohorts="admin2_month",</span>
 <span class="c1">#     cohort_size=10,</span>
-<span class="c1">#     region=&quot;3L:15,000,000-41,000,000&quot;,</span>
-<span class="c1">#     site_mask=&quot;gamb_colu_arab&quot;,</span>
-<span class="c1">#     site_class=&quot;CDS_DEG_4&quot;,</span>
+<span class="c1">#     region="3L:15,000,000-41,000,000",</span>
+<span class="c1">#     site_mask="gamb_colu_arab",</span>
+<span class="c1">#     site_class="CDS_DEG_4",</span>
 <span class="c1"># )</span>
-<span class="c1"># plot_diversity_stats(df_stats_tz_admin2_month, color=&quot;taxon&quot;)</span>
+<span class="c1"># plot_diversity_stats(df_stats_tz_admin2_month, color="taxon")</span>
 </pre></div>
 </div>
 </div>
@@ -6159,7 +6159,7 @@ if (outputEl) {{
 <p>Firstly, let’s plot a map to remind ourselves of the available sampling locations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_samples_interactive_map</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39;&quot;</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;worldimagery&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_samples_interactive_map</span><span class="p">(</span><span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0'"</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">'worldimagery'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6171,7 +6171,7 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">count_samples</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country in [&#39;Tanzania&#39;, &#39;Kenya&#39;, &#39;Uganda&#39;]&quot;</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country in ['Tanzania', 'Kenya', 'Uganda']"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -6312,8 +6312,8 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country in [&#39;Tanzania&#39;, &#39;Kenya&#39;, &#39;Uganda&#39;]&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country in ['Tanzania', 'Kenya', 'Uganda']"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"cohort_admin2_year"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6345,12 +6345,12 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stats_tz_ke_ug_admin2_year</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">diversity_stats</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country in [&#39;Tanzania&#39;, &#39;Kenya&#39;, &#39;Uganda&#39;]&quot;</span><span class="p">,</span>
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin2_year&quot;</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country in ['Tanzania', 'Kenya', 'Uganda']"</span><span class="p">,</span>
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin2_year"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">site_class</span><span class="o">=</span><span class="s2">&quot;CDS_DEG_4&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L:15,000,000-41,000,000"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">site_class</span><span class="o">=</span><span class="s2">"CDS_DEG_4"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">df_stats_tz_ke_ug_admin2_year</span>
 </pre></div>
@@ -6700,7 +6700,7 @@ Cohort (UG-W_Kanungu_arab_2012) has insufficient samples (1) for requested cohor
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_tz_ke_ug_admin2_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_diversity_stats</span><span class="p">(</span><span class="n">df_stats_tz_ke_ug_admin2_year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6845,7 +6845,7 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">count_samples</span><span class="p">(</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Burkina Faso&#39;&quot;</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"release == '3.0' and country == 'Burkina Faso'"</span>
 <span class="p">)</span>
 </pre></div>
 </div>

@@ -1325,7 +1325,7 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;2R&#39;, &#39;2L&#39;, &#39;3R&#39;, &#39;3L&#39;, &#39;X&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('2R', '2L', '3R', '3L', 'X')
 </pre></div>
 </div>
 </div>
@@ -1335,22 +1335,22 @@ function(Bokeh) {
 <p>Because the data are reasonably large, the DNA sequence is returned as a <a class="reference external" href="https://docs.dask.org/en/stable/array.html">Dask array</a>, which allows you to be selective about which data are loaded into memory, and so avoid running out of memory. The <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> call causes data to be loaded into memory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="s2">"2L"</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 <span class="n">seq</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b&#39;a&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;g&#39;, b&#39;g&#39;, b&#39;t&#39;, b&#39;c&#39;, b&#39;c&#39;,
-       b&#39;a&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;g&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;t&#39;,
-       b&#39;t&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;g&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;g&#39;,
-       b&#39;g&#39;, b&#39;c&#39;, b&#39;c&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;g&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;c&#39;,
-       b&#39;g&#39;, b&#39;a&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;t&#39;, b&#39;c&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;t&#39;, b&#39;t&#39;,
-       b&#39;c&#39;, b&#39;c&#39;, b&#39;t&#39;, b&#39;t&#39;, b&#39;g&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;c&#39;, b&#39;g&#39;,
-       b&#39;t&#39;, b&#39;g&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;c&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;a&#39;, b&#39;c&#39;,
-       b&#39;t&#39;, b&#39;c&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;a&#39;, b&#39;a&#39;, b&#39;t&#39;, b&#39;g&#39;, b&#39;g&#39;, b&#39;c&#39;, b&#39;c&#39;,
-       b&#39;g&#39;, b&#39;g&#39;, b&#39;a&#39;, b&#39;a&#39;, b&#39;g&#39;, b&#39;t&#39;, b&#39;t&#39;, b&#39;t&#39;, b&#39;a&#39;, b&#39;c&#39;, b&#39;g&#39;,
-       b&#39;c&#39;], dtype=&#39;|S1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b'a', b'a', b'c', b'c', b'a', b't', b'g', b'g', b't', b'c', b'c',
+       b'a', b'g', b'a', b'g', b't', b'a', b'c', b'a', b'c', b'a', b't',
+       b't', b'g', b'a', b'c', b't', b'a', b't', b'g', b'c', b'a', b'g',
+       b'g', b'c', b'c', b't', b'a', b'g', b't', b'a', b'g', b'a', b'c',
+       b'g', b'a', b'a', b't', b't', b'c', b't', b'a', b'c', b't', b't',
+       b'c', b'c', b't', b't', b'g', b't', b'a', b'a', b't', b'c', b'g',
+       b't', b'g', b'g', b'a', b't', b'c', b'c', b'a', b'c', b'a', b'c',
+       b't', b'c', b'g', b'a', b'a', b'a', b't', b'g', b'g', b'c', b'c',
+       b'g', b'g', b'a', b'a', b'g', b't', b't', b't', b'a', b'c', b'g',
+       b'c'], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -1363,7 +1363,7 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;c&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b'c'
 </pre></div>
 </div>
 </div>
@@ -1381,21 +1381,21 @@ function(Bokeh) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_nucleotides</span><span class="p">(</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_nucleotides</span><span class="p">(</span><span class="s2">"2L"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(b&#39;T&#39;, 11398889),
- (b&#39;A&#39;, 11394851),
- (b&#39;C&#39;, 9348150),
- (b&#39;G&#39;, 9341894),
- (b&#39;t&#39;, 2086607),
- (b&#39;a&#39;, 2078364),
- (b&#39;g&#39;, 1444984),
- (b&#39;c&#39;, 1432008),
- (b&#39;n&#39;, 838575),
- (b&#39;N&#39;, 3)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(b'T', 11398889),
+ (b'A', 11394851),
+ (b'C', 9348150),
+ (b'G', 9341894),
+ (b't', 2086607),
+ (b'a', 2078364),
+ (b'g', 1444984),
+ (b'c', 1432008),
+ (b'n', 838575),
+ (b'N', 3)]
 </pre></div>
 </div>
 </div>
@@ -1412,19 +1412,19 @@ function(Bokeh) {
 
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># make the figure size relative to largest contig</span>
-        <span class="n">figw</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="s2">&quot;2R&quot;</span><span class="p">))</span>
+        <span class="n">figw</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="s2">"2R"</span><span class="p">))</span>
         <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">figw</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
     <span class="c1"># convert to upper-case</span>
     <span class="n">seq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
 
     <span class="c1"># locate nucleotides</span>
-    <span class="n">is_a</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;A&quot;</span>
-    <span class="n">is_c</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;C&quot;</span>
-    <span class="n">is_g</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;G&quot;</span>
-    <span class="n">is_t</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;T&quot;</span>
-    <span class="n">is_n</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;N&quot;</span>
-    <span class="c1"># check there&#39;s nothing unexpected</span>
+    <span class="n">is_a</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"A"</span>
+    <span class="n">is_c</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"C"</span>
+    <span class="n">is_g</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"G"</span>
+    <span class="n">is_t</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"T"</span>
+    <span class="n">is_n</span> <span class="o">=</span> <span class="n">seq</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"N"</span>
+    <span class="c1"># check there's nothing unexpected</span>
     <span class="n">is_other</span> <span class="o">=</span> <span class="o">~</span><span class="n">is_a</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_c</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_g</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_t</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">is_n</span>
     <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">is_other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 
@@ -1442,45 +1442,45 @@ function(Bokeh) {
     <span class="n">left</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">bottom</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
-    <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;colorblind&quot;</span><span class="p">)</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;k&quot;</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">h_a</span><span class="p">,</span> <span class="n">h_t</span><span class="p">,</span> <span class="n">h_g</span><span class="p">,</span> <span class="n">h_c</span><span class="p">,</span> <span class="n">h_n</span><span class="p">],</span> <span class="n">colors</span><span class="p">,</span> <span class="s2">&quot;ATGCN&quot;</span><span class="p">):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;edge&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">"colorblind"</span><span class="p">)</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">"k"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">h_a</span><span class="p">,</span> <span class="n">h_t</span><span class="p">,</span> <span class="n">h_g</span><span class="p">,</span> <span class="n">h_c</span><span class="p">,</span> <span class="n">h_n</span><span class="p">],</span> <span class="n">colors</span><span class="p">,</span> <span class="s2">"ATGCN"</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">"edge"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
         <span class="n">bottom</span> <span class="o">+=</span> <span class="n">h</span>
 
     <span class="c1"># tidy up plot</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">())</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">&quot;0%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">"0%"</span><span class="p">,</span> <span class="s2">"100%"</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">contig</span><span class="p">)</span>
     <span class="c1"># convert X axis to Mbp</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">x</span> <span class="o">//</span> <span class="mf">1e6</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Position (Mbp)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Position (Mbp)"</span><span class="p">)</span>
 
     <span class="c1"># add centromere/telomere annotation</span>
-    <span class="k">if</span> <span class="n">contig</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> <span class="s2">&quot;3L&quot;</span><span class="p">}:</span>
-        <span class="n">ltxt</span> <span class="o">=</span> <span class="s2">&quot;centromere&quot;</span>
-        <span class="n">rtxt</span> <span class="o">=</span> <span class="s2">&quot;telomere&quot;</span>
+    <span class="k">if</span> <span class="n">contig</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"2L"</span><span class="p">,</span> <span class="s2">"3L"</span><span class="p">}:</span>
+        <span class="n">ltxt</span> <span class="o">=</span> <span class="s2">"centromere"</span>
+        <span class="n">rtxt</span> <span class="o">=</span> <span class="s2">"telomere"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">ltxt</span> <span class="o">=</span> <span class="s2">&quot;telomeric&quot;</span>
-        <span class="n">rtxt</span> <span class="o">=</span> <span class="s2">&quot;centromeric&quot;</span>
+        <span class="n">ltxt</span> <span class="o">=</span> <span class="s2">"telomeric"</span>
+        <span class="n">rtxt</span> <span class="o">=</span> <span class="s2">"centromeric"</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
         <span class="n">ltxt</span><span class="p">,</span>
         <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-        <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+        <span class="n">xycoords</span><span class="o">=</span><span class="s2">"axes fraction"</span><span class="p">,</span>
         <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
-        <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
-        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="n">textcoords</span><span class="o">=</span><span class="s2">"offset points"</span><span class="p">,</span>
+        <span class="n">va</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
         <span class="n">rtxt</span><span class="p">,</span>
         <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-        <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+        <span class="n">xycoords</span><span class="o">=</span><span class="s2">"axes fraction"</span><span class="p">,</span>
         <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
-        <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
-        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="n">textcoords</span><span class="o">=</span><span class="s2">"offset points"</span><span class="p">,</span>
+        <span class="n">va</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">"right"</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># add legend - reverse order so matches the plot</span>
@@ -1488,9 +1488,9 @@ function(Bokeh) {
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
         <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">handles</span><span class="p">)),</span>
         <span class="nb">reversed</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
-        <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center left&quot;</span><span class="p">,</span>
+        <span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span>
         <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-        <span class="n">prop</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;monospace&quot;</span><span class="p">),</span>
+        <span class="n">prop</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">"monospace"</span><span class="p">),</span>
         <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
@@ -1500,7 +1500,7 @@ function(Bokeh) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sequence_composition</span><span class="p">(</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sequence_composition</span><span class="p">(</span><span class="s2">"2L"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1528,7 +1528,7 @@ function(Bokeh) {
 <p>We can access the annotation of the reference genome as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">pandas DataFrame</a> using the following code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_features</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"ID"</span><span class="p">)</span>
 <span class="n">df_genome_features</span>
 </pre></div>
 </div>
@@ -1760,7 +1760,7 @@ function(Bokeh) {
 <p>We can take a look at the annotation for the voltage-gated sodium channel gene using its identifer “AGAP004707”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;AGAP004707&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"AGAP004707"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1785,7 +1785,7 @@ Name: AGAP004707, dtype: object
 <p>We can visualise how genes are organised across the chromosome arm on which the voltage-gated sodium channel is found using the following plotting function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_genes</span><span class="p">(</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_genes</span><span class="p">(</span><span class="s2">"2L"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1841,7 +1841,7 @@ Name: AGAP004707, dtype: object
 <p>The table of gene annotations is a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe">pandas DataFrame</a>, which means we can find the transcripts by using the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method"><code class="docutils literal notranslate"><span class="pre">query()</span></code> method</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Parent == &#39;AGAP004707&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_genome_features</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Parent == 'AGAP004707'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2082,7 +2082,7 @@ Name: AGAP004707, dtype: object
 <p>We can visualise the structure of a given transcript using the <code class="docutils literal notranslate"><span class="pre">plot_transcript()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">&quot;AGAP004707-RA&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">"AGAP004707-RA"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -2119,7 +2119,7 @@ Name: AGAP004707, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">&quot;AGAP004707-RD&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">"AGAP004707-RD"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -2156,7 +2156,7 @@ Name: AGAP004707, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">&quot;AGAP004707-RG&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_transcript</span><span class="p">(</span><span class="s2">"AGAP004707-RG"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

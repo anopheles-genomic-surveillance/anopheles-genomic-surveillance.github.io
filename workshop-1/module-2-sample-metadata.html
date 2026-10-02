@@ -570,7 +570,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/workshop-1/w1m2-1.png?raw=1&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">"50%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"50%"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/workshop-1/w1m2-1.png?raw=1"</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -639,7 +639,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 </pre></div>
 </div>
@@ -1035,7 +1035,7 @@ function(Bokeh) {
 <p>We can use the <a class="reference external" href="https://malariagen.github.io/malariagen-data-python/latest/Ag3.html#sample-metadata-access"><code class="docutils literal notranslate"><span class="pre">sample_metadata()</span></code></a> function to retrieve a pandas DataFrame containing metadata about all 3,081 samples in the Ag3.0 resource. In this DataFrame, each row represents one mosquito sample, and the columns such as <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> provide information about where the mosquito was originally collected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)</span>
 <span class="n">df_samples</span>
 </pre></div>
 </div>
@@ -1362,7 +1362,7 @@ function(Bokeh) {
 <p>For example, let’s first find out a bit more information about the different countries represented.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"country"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1372,7 @@ Angola                               81
 Burkina Faso                        296
 Cameroon                            444
 Central African Republic             73
-Cote d&#39;Ivoire                        80
+Cote d'Ivoire                        80
 Democratic Republic of the Congo     76
 Equatorial Guinea                    10
 Gabon                                69
@@ -1396,7 +1396,7 @@ dtype: int64
 <p>We can then use the pandas query() function to select all samples from a given country. E.g., find all samples from Burkina Faso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1715,7 +1715,7 @@ dtype: int64
 <p>From a quick glance at the preview above, we can see there are samples collected in different years. Let’s summarise that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"year"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1732,7 +1732,7 @@ dtype: int64
 <p>If we wanted to now inspect the samples collected from Burkina Faso in 2014, we could combine these conditions in a query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39; and year == 2014&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso' and year == 2014"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2051,7 +2051,7 @@ dtype: int64
 <p>Finally, let’s break this down by mosquito species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39; and year == 2014&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;taxon&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso' and year == 2014"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"taxon"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2075,10 +2075,10 @@ dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_country_taxon</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df_samples</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
-        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span>
         <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -2312,8 +2312,8 @@ dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">pivot_country_taxon</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Ag3.0 genomes sequenced&quot;</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;no. genomes&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Ag3.0 genomes sequenced"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"no. genomes"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -6241,10 +6241,10 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_country_year_taxon</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df_samples</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">],</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">],</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
-        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"taxon"</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span>
         <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -6626,12 +6626,12 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_location_year_taxon_bf</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df_samples</span>
-    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;admin1_name&quot;</span><span class="p">,</span> <span class="s2">&quot;admin2_name&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">],</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">],</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
-        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"admin1_name"</span><span class="p">,</span> <span class="s2">"admin2_name"</span><span class="p">,</span> <span class="s2">"location"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"taxon"</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span>
         <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -6775,10 +6775,10 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot_location_taxon</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df_samples</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
-        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">],</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">],</span> 
-        <span class="n">values</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
-        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"location"</span><span class="p">,</span> <span class="s2">"latitude"</span><span class="p">,</span> <span class="s2">"longitude"</span><span class="p">],</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"taxon"</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span>
         <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -6974,8 +6974,8 @@ if (outputEl) {{
 <span class="c1"># add markers for sampling locations</span>
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pivot_location_taxon</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
     <span class="n">title</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">location</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">gambiae</span><span class="si">}</span><span class="s2"> gambiae, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">coluzzii</span><span class="si">}</span><span class="s2"> coluzzii, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">arabiensis</span><span class="si">}</span><span class="s2"> arabiensis&quot;</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">location</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">gambiae</span><span class="si">}</span><span class="s2"> gambiae, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">coluzzii</span><span class="si">}</span><span class="s2"> coluzzii, </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">arabiensis</span><span class="si">}</span><span class="s2"> arabiensis"</span>
     <span class="p">)</span>
     <span class="n">marker</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
         <span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">longitude</span><span class="p">),</span> 
@@ -6985,7 +6985,7 @@ if (outputEl) {{
     <span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
 
 <span class="c1"># add a scale bar</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ScaleControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ScaleControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">"bottomleft"</span><span class="p">))</span>
 
 <span class="c1"># display the map</span>
 <span class="n">m</span>

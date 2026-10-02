@@ -595,7 +595,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -609,10 +609,10 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;drive&quot;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"drive"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="c1"># For course maintainers, turn off progress logging.</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MGEN_SHOW_PROGRESS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"MGEN_SHOW_PROGRESS"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0"</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -621,7 +621,7 @@ document.write(`
 <p>With our Google Drive now mounted, we can define and make a directory where we want to save our PCA results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">&quot;drive/MyDrive/Colab Data/ag3-pca-results&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">"drive/MyDrive/Colab Data/ag3-pca-results"</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1036,7 +1036,7 @@ ag3.pca(
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_indices: Optional[List[int]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     site_class: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     min_minor_ac: Union[int, float, NoneType] = <span class=" -Color -Color-Green">2</span>,
     max_missing_an: Union[int, float, NoneType] = <span class=" -Color -Color-Green">0</span>,
@@ -1047,7 +1047,7 @@ ag3.pca(
     fit_exclude_samples: Union[str, int, List[Union[str, int]], Tuple[Union[str, int], ...], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
 ) -&gt; Tuple[pandas.core.frame.DataFrame, numpy.ndarray]
 <span class=" -Color -Color-Red">Docstring:</span>
 Run a principal components analysis (PCA) using biallelic SNPs from the
@@ -1067,7 +1067,7 @@ Parameters
 ----------
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
 n_snps : int
@@ -1093,7 +1093,7 @@ sample_indices : list of int or None, optional
     corresponding to the order in which the samples are found within the
     sample metadata. Either provide this parameter or sample_query, not
     both.
-site_mask : str or None, optional, default: &#39;default&#39;
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 site_class : str or None, optional
@@ -1101,9 +1101,9 @@ site_class : str or None, optional
     (4-fold degenerate coding sites), CDS_DEG_2_SIMPLE (2-fold simple
     degenerate coding sites), CDS_DEG_0 (non-degenerate coding sites),
     INTRON_SHORT (introns shorter than 100 bp), INTRON_LONG (introns
-    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5&#39;
-    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3&#39; splice
-    site), UTR_5PRIME (5&#39; untranslated region), UTR_3PRIME (3&#39;
+    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5'
+    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3' splice
+    site), UTR_5PRIME (5' untranslated region), UTR_3PRIME (3'
     untranslated region), INTERGENIC (intergenic, more than 10 kbp from a
     gene).
 min_minor_ac : int or float or None, optional, default: 2
@@ -1134,16 +1134,16 @@ random_seed : int, optional, default: 42
     Random seed used for reproducible down-sampling.
 inline_array : bool, optional, default: True
     Passed through to dask `from_array()`.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1252,9 +1252,9 @@ the API client.
 <p>We’ll thin the SNPs on 3L down to around 100,000 as that should be plenty to see signals of structure, and rather than looking at all the Ag3.0 data, let’s use the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter to just look at the Central African Republic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">"3L:15,000,000-41,000,000"</span>
 <span class="n">n_snps</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;AG1000G-CF&quot;</span>
+<span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"AG1000G-CF"</span>
 </pre></div>
 </div>
 </div>
@@ -1453,25 +1453,25 @@ the API client.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;sample_id&#39;, &#39;partner_sample_id&#39;, &#39;contributor&#39;, &#39;country&#39;, &#39;location&#39;,
-       &#39;year&#39;, &#39;month&#39;, &#39;latitude&#39;, &#39;longitude&#39;, &#39;sex_call&#39;, &#39;sample_set&#39;,
-       &#39;release&#39;, &#39;quarter&#39;, &#39;study_id&#39;, &#39;study_url&#39;,
-       &#39;terms_of_use_expiry_date&#39;, &#39;terms_of_use_url&#39;, &#39;unrestricted_use&#39;,
-       &#39;mean_cov&#39;, &#39;median_cov&#39;, &#39;modal_cov&#39;, &#39;mean_cov_2L&#39;, &#39;median_cov_2L&#39;,
-       &#39;mode_cov_2L&#39;, &#39;mean_cov_2R&#39;, &#39;median_cov_2R&#39;, &#39;mode_cov_2R&#39;,
-       &#39;mean_cov_3L&#39;, &#39;median_cov_3L&#39;, &#39;mode_cov_3L&#39;, &#39;mean_cov_3R&#39;,
-       &#39;median_cov_3R&#39;, &#39;mode_cov_3R&#39;, &#39;mean_cov_X&#39;, &#39;median_cov_X&#39;,
-       &#39;mode_cov_X&#39;, &#39;frac_gen_cov&#39;, &#39;divergence&#39;, &#39;contam_pct&#39;, &#39;contam_LLR&#39;,
-       &#39;aim_species_fraction_arab&#39;, &#39;aim_species_fraction_colu&#39;,
-       &#39;aim_species_fraction_colu_no2l&#39;, &#39;aim_species_gambcolu_arabiensis&#39;,
-       &#39;aim_species_gambiae_coluzzii&#39;, &#39;aim_species&#39;, &#39;country_iso&#39;,
-       &#39;admin1_name&#39;, &#39;admin1_iso&#39;, &#39;admin2_name&#39;, &#39;taxon&#39;,
-       &#39;cohort_admin1_year&#39;, &#39;cohort_admin1_month&#39;, &#39;cohort_admin1_quarter&#39;,
-       &#39;cohort_admin2_year&#39;, &#39;cohort_admin2_month&#39;, &#39;cohort_admin2_quarter&#39;,
-       &#39;PC1&#39;, &#39;PC2&#39;, &#39;PC3&#39;, &#39;PC4&#39;, &#39;PC5&#39;, &#39;PC6&#39;, &#39;PC7&#39;, &#39;PC8&#39;, &#39;PC9&#39;, &#39;PC10&#39;,
-       &#39;PC11&#39;, &#39;PC12&#39;, &#39;PC13&#39;, &#39;PC14&#39;, &#39;PC15&#39;, &#39;PC16&#39;, &#39;PC17&#39;, &#39;PC18&#39;, &#39;PC19&#39;,
-       &#39;PC20&#39;, &#39;pca_fit&#39;],
-      dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['sample_id', 'partner_sample_id', 'contributor', 'country', 'location',
+       'year', 'month', 'latitude', 'longitude', 'sex_call', 'sample_set',
+       'release', 'quarter', 'study_id', 'study_url',
+       'terms_of_use_expiry_date', 'terms_of_use_url', 'unrestricted_use',
+       'mean_cov', 'median_cov', 'modal_cov', 'mean_cov_2L', 'median_cov_2L',
+       'mode_cov_2L', 'mean_cov_2R', 'median_cov_2R', 'mode_cov_2R',
+       'mean_cov_3L', 'median_cov_3L', 'mode_cov_3L', 'mean_cov_3R',
+       'median_cov_3R', 'mode_cov_3R', 'mean_cov_X', 'median_cov_X',
+       'mode_cov_X', 'frac_gen_cov', 'divergence', 'contam_pct', 'contam_LLR',
+       'aim_species_fraction_arab', 'aim_species_fraction_colu',
+       'aim_species_fraction_colu_no2l', 'aim_species_gambcolu_arabiensis',
+       'aim_species_gambiae_coluzzii', 'aim_species', 'country_iso',
+       'admin1_name', 'admin1_iso', 'admin2_name', 'taxon',
+       'cohort_admin1_year', 'cohort_admin1_month', 'cohort_admin1_quarter',
+       'cohort_admin2_year', 'cohort_admin2_month', 'cohort_admin2_quarter',
+       'PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10',
+       'PC11', 'PC12', 'PC13', 'PC14', 'PC15', 'PC16', 'PC17', 'PC18', 'PC19',
+       'PC20', 'pca_fit'],
+      dtype='object')
 </pre></div>
 </div>
 </div>
@@ -1479,7 +1479,7 @@ the API client.
 <p>If we use the <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> function we can see that all samples were collected from a single location over two consecutive years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"location"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1497,7 +1497,7 @@ dtype: int64
 <p>We can use plotly express to make a simple scatter plot of these principal components.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"PC1"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"PC2"</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1547,8 +1547,8 @@ if (outputEl) {{
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.plot_pca_coords(
     data: pandas.core.frame.DataFrame,
-    x: str = <span class=" -Color -Color-Yellow">&#39;PC1&#39;</span>,
-    y: str = <span class=" -Color -Color-Yellow">&#39;PC2&#39;</span>,
+    x: str = <span class=" -Color -Color-Yellow">'PC1'</span>,
+    y: str = <span class=" -Color -Color-Yellow">'PC2'</span>,
     color: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     symbol: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     opacity: float = <span class=" -Color -Color-Green">0.9</span>,
@@ -1560,10 +1560,10 @@ ag3.plot_pca_coords(
     color_discrete_sequence: Optional[List] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     color_discrete_map: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     category_orders: Union[List, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    legend_sizing: Literal[<span class=" -Color -Color-Yellow">&#39;constant&#39;</span>, <span class=" -Color -Color-Yellow">&#39;trace&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;constant&#39;</span>,
+    legend_sizing: Literal[<span class=" -Color -Color-Yellow">'constant'</span>, <span class=" -Color -Color-Yellow">'trace'</span>] = <span class=" -Color -Color-Yellow">'constant'</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     renderer: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    render_mode: Literal[<span class=" -Color -Color-Yellow">&#39;auto&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>,
+    render_mode: Literal[<span class=" -Color -Color-Yellow">'auto'</span>, <span class=" -Color -Color-Yellow">'svg'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>] = <span class=" -Color -Color-Yellow">'svg'</span>,
     **kwargs,
 ) -&gt; Optional[plotly.graph_objs._figure.Figure]
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1648,9 +1648,9 @@ data : DataFrame
     integer between 1 and the number of components). There are as many
     such columns as components,     `pca_fit` is whether this sample was
     used for fitting.
-x : str, optional, default: &#39;PC1&#39;
+x : str, optional, default: 'PC1'
     Name of variable to plot on the X axis.
-y : str, optional, default: &#39;PC2&#39;
+y : str, optional, default: 'PC2'
     Name of variable to plot on the Y axis.
 color : str or Mapping or None, optional
     Name of variable to use to color the markers.
@@ -1674,16 +1674,16 @@ color_discrete_map : Mapping or None, optional
     Provide an explicit mapping from values to colours.
 category_orders : List or Mapping or None, optional
     Control the order in which values appear in the legend.
-legend_sizing : {&#39;constant&#39;, &#39;trace&#39;}, optional, default: &#39;constant&#39;
+legend_sizing : {'constant', 'trace'}, optional, default: 'constant'
     Determines if the legend items symbols scale with their corresponding
-    &quot;trace&quot; attributes or remain &quot;constant&quot; independent of the symbol size
+    "trace" attributes or remain "constant" independent of the symbol size
     on the graph.
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
 renderer : str or None, optional
     The name of the renderer to use.
-render_mode : {&#39;auto&#39;, &#39;svg&#39;, &#39;webgl&#39;}, optional, default: &#39;svg&#39;
+render_mode : {'auto', 'svg', 'webgl'}, optional, default: 'svg'
     The type of rendering backend to use. See also
     https://plotly.com/python/webgl-vs-svg/.
 **kwargs
@@ -1704,7 +1704,7 @@ Figure or None
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1823,14 +1823,14 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_bfg_df</span><span class="p">,</span> <span class="n">evr_bfg</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">],</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;gambiae&#39; and country == &#39;Burkina Faso&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-B"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-C"</span><span class="p">],</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'gambiae' and country == 'Burkina Faso'"</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_bfg_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Burkina Faso just An. gambiae&quot;</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Burkina Faso just An. gambiae"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1873,14 +1873,14 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_bf_df</span><span class="p">,</span> <span class="n">evr_bfg</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">],</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon in [&#39;gambiae&#39;, &#39;coluzzii&#39;] and country == &#39;Burkina Faso&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-B"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-C"</span><span class="p">],</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon in ['gambiae', 'coluzzii'] and country == 'Burkina Faso'"</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_bf_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Burkina Faso, An. gambiae and coluzzii&quot;</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Burkina Faso, An. gambiae and coluzzii"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1927,10 +1927,10 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_ea_df</span><span class="p">,</span> <span class="n">evr_ea</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3L&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3L"</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;arabiensis&#39; and country in [&#39;Tanzania&#39;, &#39;Kenya&#39;, &#39;Malawi&#39;]&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'arabiensis' and country in ['Tanzania', 'Kenya', 'Malawi']"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1940,7 +1940,7 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_ea_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2029,9 +2029,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1178-VO-UG-LAWNICZAK-VMF00025&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;1246-VO-TZ-KABULA-VMF00197&#39;</span><span class="p">],</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;gambiae&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">'1178-VO-UG-LAWNICZAK-VMF00025'</span><span class="p">,</span>
+                <span class="s1">'1246-VO-TZ-KABULA-VMF00197'</span><span class="p">],</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'gambiae'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2041,7 +2041,7 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2084,9 +2084,9 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC3&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"PC2"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PC3"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2133,18 +2133,18 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;VBS59002-6781STDY12201475&#39;,
- &#39;VBS59006-6781STDY12201479&#39;,
- &#39;VBS59008-6781STDY12201481&#39;,
- &#39;VBS59057-6781STDY12201530&#39;,
- &#39;VBS59058-6781STDY12201531&#39;,
- &#39;VBS59070-6781STDY12201545&#39;,
- &#39;VBS59096-6781STDY12201571&#39;,
- &#39;VBS59097-6781STDY12201572&#39;,
- &#39;VBS59100-6781STDY12201575&#39;,
- &#39;VBS59102-6781STDY12201577&#39;,
- &#39;VBS59151-6781STDY12201626&#39;,
- &#39;VBS59152-6781STDY12201627&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['VBS59002-6781STDY12201475',
+ 'VBS59006-6781STDY12201479',
+ 'VBS59008-6781STDY12201481',
+ 'VBS59057-6781STDY12201530',
+ 'VBS59058-6781STDY12201531',
+ 'VBS59070-6781STDY12201545',
+ 'VBS59096-6781STDY12201571',
+ 'VBS59097-6781STDY12201572',
+ 'VBS59100-6781STDY12201575',
+ 'VBS59102-6781STDY12201577',
+ 'VBS59151-6781STDY12201626',
+ 'VBS59152-6781STDY12201627']
 </pre></div>
 </div>
 </div>
@@ -2155,9 +2155,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1178-VO-UG-LAWNICZAK-VMF00025&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;1246-VO-TZ-KABULA-VMF00197&#39;</span><span class="p">],</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;gambiae&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">'1178-VO-UG-LAWNICZAK-VMF00025'</span><span class="p">,</span>
+                <span class="s1">'1246-VO-TZ-KABULA-VMF00197'</span><span class="p">],</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'gambiae'"</span><span class="p">,</span>
     <span class="n">exclude_samples</span><span class="o">=</span><span class="n">outliers_list</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -2168,7 +2168,7 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2213,9 +2213,9 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1178-VO-UG-LAWNICZAK-VMF00025&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;1246-VO-TZ-KABULA-VMF00197&#39;</span><span class="p">],</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;gambiae&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s1">'1178-VO-UG-LAWNICZAK-VMF00025'</span><span class="p">,</span>
+                <span class="s1">'1246-VO-TZ-KABULA-VMF00197'</span><span class="p">],</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'gambiae'"</span><span class="p">,</span>
     <span class="n">fit_exclude_samples</span><span class="o">=</span><span class="n">outliers_list</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -2225,7 +2225,7 @@ if (outputEl) {{
 <p>To observe where the outliers have been projected let’s create a new column in our PCA dataframe with a boolean description of whether the sample IDs were in our list of outliers. Then, we can colour the PCA plot using our new column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">[</span><span class="s1">&#39;outliers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pca_df</span><span class="p">[</span><span class="s1">&#39;sample_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">[</span><span class="s1">'outliers'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pca_df</span><span class="p">[</span><span class="s1">'sample_id'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2234,7 +2234,7 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;outliers&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"outliers"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>

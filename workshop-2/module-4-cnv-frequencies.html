@@ -580,9 +580,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import os</span>
-<span class="c1">#os.environ[&quot;MGEN_SHOW_PROGRESS&quot;] = &quot;0&quot;</span>
+<span class="c1">#os.environ["MGEN_SHOW_PROGRESS"] = "0"</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -997,7 +997,7 @@ function(Bokeh) {
 <p>Let’s initially analyse all genes in the <em>Cyp6aa/p</em> cluster on chromosome arm 2R, which starts around position 28,450,000 and ends at around position 28,510,000.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_region</span> <span class="o">=</span> <span class="s2">&quot;2R:28,480,000-28,510,000&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_region</span> <span class="o">=</span> <span class="s2">"2R:28,480,000-28,510,000"</span>
 </pre></div>
 </div>
 </div>
@@ -1005,7 +1005,7 @@ function(Bokeh) {
 <p>There are different ways to group our mosquitoes in to cohorts (more on this later) but for this analysis we’ll group spatially by level 1 administrative divisions within countries, and temporally by year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="s2">&quot;admin1_year&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="s2">"admin1_year"</span>
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1014,7 @@ function(Bokeh) {
 <p>Let’s have a look at what sample sets are available in the Ag3.0 data resource.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">)[[</span><span class="s1">&#39;sample_set&#39;</span><span class="p">,</span><span class="s1">&#39;sample_count&#39;</span><span class="p">,</span><span class="s1">&#39;study_id&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">)[[</span><span class="s1">'sample_set'</span><span class="p">,</span><span class="s1">'sample_count'</span><span class="p">,</span><span class="s1">'study_id'</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1218,7 +1218,7 @@ function(Bokeh) {
 <p>To keep things simple, for this module we’ll focus on mosquitoes from Burkina Faso. There are three sample sets in the Ag3.0 resource providing data on mosquitoes from Burkina Faso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-B"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-C"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1685,7 +1685,7 @@ function(Bokeh) {
 <p>Let’s look at the columns that provide information about the genes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="p">[[</span><span class="s2">&quot;gene_strand&quot;</span><span class="p">,</span> <span class="s2">&quot;gene_description&quot;</span><span class="p">,</span> <span class="s2">&quot;contig&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="p">[[</span><span class="s2">"gene_strand"</span><span class="p">,</span> <span class="s2">"gene_description"</span><span class="p">,</span> <span class="s2">"contig"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1946,18 +1946,18 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency_columns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">columns</span> 
-    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;frq_&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"frq_"</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">frequency_columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;frq_BF-07_gamb_2004&#39;,
- &#39;frq_BF-09_colu_2012&#39;,
- &#39;frq_BF-09_colu_2014&#39;,
- &#39;frq_BF-09_gamb_2012&#39;,
- &#39;frq_BF-09_gamb_2014&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['frq_BF-07_gamb_2004',
+ 'frq_BF-09_colu_2012',
+ 'frq_BF-09_colu_2014',
+ 'frq_BF-09_gamb_2012',
+ 'frq_BF-09_gamb_2014']
 </pre></div>
 </div>
 </div>
@@ -1966,7 +1966,7 @@ function(Bokeh) {
 <p>Let’s look at the values of these frequency columns in our DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="p">[</span><span class="n">frequency_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;max_af&quot;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="p">[</span><span class="n">frequency_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s2">"max_af"</span><span class="p">,</span> <span class="s2">"windows"</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -2269,8 +2269,8 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span>
-    <span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">),</span> 
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gene CNV frequencies, Burkina Faso, Cyp6aa/p locus&quot;</span><span class="p">)</span>
+    <span class="n">burkina_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">),</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Gene CNV frequencies, Burkina Faso, Cyp6aa/p locus"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2290,12 +2290,12 @@ function(Bokeh) {
 
 <span class="c1"># burkina_cyp9k1_cnv_freqs_df = ag3.gene_cnv_frequencies(</span>
 <span class="c1">#     region=cyp9k1_region,</span>
-<span class="c1">#     cohorts=&quot;admin1_year&quot;,</span>
-<span class="c1">#     sample_sets=[&quot;AG1000G-BF-A&quot;, &quot;AG1000G-BF-B&quot;, &quot;AG1000G-BF-C&quot;],</span>
+<span class="c1">#     cohorts="admin1_year",</span>
+<span class="c1">#     sample_sets=["AG1000G-BF-A", "AG1000G-BF-B", "AG1000G-BF-C"],</span>
 <span class="c1"># )</span>
 
 <span class="c1"># ag3.plot_frequencies_heatmap(</span>
-<span class="c1">#     burkina_cyp9k1_cnv_freqs_df.query(&quot;max_af &gt; 0.05&quot;),</span>
+<span class="c1">#     burkina_cyp9k1_cnv_freqs_df.query("max_af &gt; 0.05"),</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -2313,12 +2313,12 @@ function(Bokeh) {
 
 <span class="c1"># burkina_cyp6mz_cnv_freqs_df = ag3.gene_cnv_frequencies(</span>
 <span class="c1">#     region=cyp6mz_region,</span>
-<span class="c1">#     cohorts=&quot;admin1_year&quot;,</span>
-<span class="c1">#     sample_sets=[&quot;AG1000G-BF-A&quot;, &quot;AG1000G-BF-B&quot;, &quot;AG1000G-BF-C&quot;],</span>
+<span class="c1">#     cohorts="admin1_year",</span>
+<span class="c1">#     sample_sets=["AG1000G-BF-A", "AG1000G-BF-B", "AG1000G-BF-C"],</span>
 <span class="c1"># )</span>
 
 <span class="c1"># ag3.plot_frequencies_heatmap(</span>
-<span class="c1">#     burkina_cyp6mz_cnv_freqs_df.query(&quot;max_af &gt; 0.05&quot;),</span>
+<span class="c1">#     burkina_cyp6mz_cnv_freqs_df.query("max_af &gt; 0.05"),</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -2336,12 +2336,12 @@ function(Bokeh) {
 
 <span class="c1"># burkina_gste_cnv_freqs_df = ag3.gene_cnv_frequencies(</span>
 <span class="c1">#     region=???,</span>
-<span class="c1">#     cohorts=&quot;admin1_year&quot;,</span>
-<span class="c1">#     sample_sets=[&quot;AG1000G-BF-A&quot;, &quot;AG1000G-BF-B&quot;, &quot;AG1000G-BF-C&quot;],</span>
+<span class="c1">#     cohorts="admin1_year",</span>
+<span class="c1">#     sample_sets=["AG1000G-BF-A", "AG1000G-BF-B", "AG1000G-BF-C"],</span>
 <span class="c1"># )</span>
 
 <span class="c1"># ag3.plot_frequencies_heatmap(</span>
-<span class="c1">#     burkina_gste_cnv_freqs_df.query(&quot;max_af &gt; 0.05&quot;),</span>
+<span class="c1">#     burkina_gste_cnv_freqs_df.query("max_af &gt; 0.05"),</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -2354,7 +2354,7 @@ function(Bokeh) {
 <p>For example, if we wanted to analyse the <em>Cyp6aa/p</em> gene cluster in all of the Ag3.0 sample sets, but only look at <em>Anopheles coluzzii</em> samples in those sample sets, then we would set the <code class="docutils literal notranslate"><span class="pre">sample_sets</span></code> parameter to “3.0”…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;3.0&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"3.0"</span>
 </pre></div>
 </div>
 </div>
@@ -2362,7 +2362,7 @@ function(Bokeh) {
 <p>… and pass a pandas query string to <code class="docutils literal notranslate"><span class="pre">sample_query</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_query</span> <span class="o">=</span> <span class="s2">&quot;taxon == &#39;coluzzii&#39;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_query</span> <span class="o">=</span> <span class="s2">"taxon == 'coluzzii'"</span>
 </pre></div>
 </div>
 </div>
@@ -2744,7 +2744,7 @@ function(Bokeh) {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colu_frequency_columns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">coluzzii_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">columns</span> 
-    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;frq_&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"frq_"</span><span class="p">)</span>
 <span class="p">]</span>
 
 <span class="n">colu_frequency_columns</span>
@@ -2752,20 +2752,20 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;frq_AO-LUA_colu_2009&#39;,
- &#39;frq_BF-09_colu_2012&#39;,
- &#39;frq_BF-09_colu_2014&#39;,
- &#39;frq_CF-BGF_colu_1994&#39;,
- &#39;frq_CI-LG_colu_2012&#39;,
- &#39;frq_GH-AA_colu_2012&#39;,
- &#39;frq_GH-CP_colu_2012&#39;,
- &#39;frq_GH-WP_colu_2012&#39;,
- &#39;frq_GM-M_colu_2012&#39;,
- &#39;frq_GN-N_colu_2012&#39;,
- &#39;frq_ML-2_colu_2004&#39;,
- &#39;frq_ML-2_colu_2014&#39;,
- &#39;frq_ML-3_colu_2012&#39;,
- &#39;frq_ML-4_colu_2004&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['frq_AO-LUA_colu_2009',
+ 'frq_BF-09_colu_2012',
+ 'frq_BF-09_colu_2014',
+ 'frq_CF-BGF_colu_1994',
+ 'frq_CI-LG_colu_2012',
+ 'frq_GH-AA_colu_2012',
+ 'frq_GH-CP_colu_2012',
+ 'frq_GH-WP_colu_2012',
+ 'frq_GM-M_colu_2012',
+ 'frq_GN-N_colu_2012',
+ 'frq_ML-2_colu_2004',
+ 'frq_ML-2_colu_2014',
+ 'frq_ML-3_colu_2012',
+ 'frq_ML-4_colu_2004']
 </pre></div>
 </div>
 </div>
@@ -2774,8 +2774,8 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span>
-    <span class="n">coluzzii_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">),</span> 
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gene CNV frequencies, An. coluzzii, Cyp6aa/p locus&quot;</span>
+    <span class="n">coluzzii_cyp6aap_cnv_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">),</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Gene CNV frequencies, An. coluzzii, Cyp6aa/p locus"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2832,8 +2832,8 @@ if (outputEl) {{
 <span class="c1"># )</span>
 
 <span class="c1"># ag3.plot_frequencies_heatmap(</span>
-<span class="c1">#     gambiae_cyp6aap_cnv_freqs_df.query(&quot;max_af &gt; 0.05&quot;), </span>
-<span class="c1">#     title=&quot;Gene CNV frequencies, An. gambiae, Cyp6aa/p locus&quot;</span>
+<span class="c1">#     gambiae_cyp6aap_cnv_freqs_df.query("max_af &gt; 0.05"), </span>
+<span class="c1">#     title="Gene CNV frequencies, An. gambiae, Cyp6aa/p locus"</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -2860,11 +2860,11 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_cyp6aap_cnv_ds</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv_frequencies_advanced</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">cyp6aap_region</span><span class="p">,</span>
-    <span class="n">area_by</span><span class="o">=</span><span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>
-    <span class="n">period_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">,</span>
-    <span class="n">variant_query</span><span class="o">=</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span>
+    <span class="n">area_by</span><span class="o">=</span><span class="s2">"admin1_iso"</span><span class="p">,</span>
+    <span class="n">period_by</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">,</span>
+    <span class="n">variant_query</span><span class="o">=</span><span class="s2">"max_af &gt; 0.05"</span>
 <span class="p">)</span>
 <span class="n">burkina_cyp6aap_cnv_ds</span>
 </pre></div>
@@ -3341,7 +3341,7 @@ Attributes:
     <span class="n">burkina_cyp6aap_cnv_ds</span><span class="p">,</span> 
     <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> 
     <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> 
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gene CNV frequencies, Burkina Faso, Cyp6aa/p locus&quot;</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Gene CNV frequencies, Burkina Faso, Cyp6aa/p locus"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -3395,18 +3395,18 @@ if (outputEl) {{
 
 <span class="c1">#  burkina_gste_cnv_ds = ag3.gene_cnv_frequencies_advanced(</span>
 <span class="c1">#     region=???,</span>
-<span class="c1">#     area_by=&quot;admin1_iso&quot;,</span>
-<span class="c1">#     period_by=&quot;year&quot;,</span>
-<span class="c1">#     sample_sets=&quot;3.0&quot;,</span>
-<span class="c1">#     sample_query=&quot;country == &#39;Burkina Faso&#39;&quot;,</span>
-<span class="c1">#     variant_query=&quot;max_af &gt; 0.05&quot;</span>
+<span class="c1">#     area_by="admin1_iso",</span>
+<span class="c1">#     period_by="year",</span>
+<span class="c1">#     sample_sets="3.0",</span>
+<span class="c1">#     sample_query="country == 'Burkina Faso'",</span>
+<span class="c1">#     variant_query="max_af &gt; 0.05"</span>
 <span class="c1"># )</span>
 
 <span class="c1"># ag3.plot_frequencies_time_series(</span>
 <span class="c1">#     burkina_gste_cnv_ds, </span>
 <span class="c1">#     height=500, </span>
 <span class="c1">#     width=800, </span>
-<span class="c1">#     title=&quot;Gene CNV frequencies, Burkina Faso, gste locus&quot;</span>
+<span class="c1">#     title="Gene CNV frequencies, Burkina Faso, gste locus"</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -3421,10 +3421,10 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_cnv_ds</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv_frequencies_advanced</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">cyp6aap_region</span><span class="p">,</span>
-    <span class="n">area_by</span><span class="o">=</span><span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
-    <span class="n">period_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">variant_query</span><span class="o">=</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span>
+    <span class="n">area_by</span><span class="o">=</span><span class="s2">"admin1_iso"</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
+    <span class="n">period_by</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">variant_query</span><span class="o">=</span><span class="s2">"max_af &gt; 0.05"</span>
 <span class="p">)</span>
 <span class="n">cyp6aap_cnv_ds</span>
 </pre></div>
@@ -4196,7 +4196,7 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_frequencies_interactive_map</span><span class="p">(</span>
     <span class="n">cyp6aap_cnv_ds</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gene CNV frequencies, Cyp6aa/p locus&quot;</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Gene CNV frequencies, Cyp6aa/p locus"</span>
 <span class="p">)</span>
 </pre></div>
 </div>

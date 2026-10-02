@@ -599,7 +599,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 </pre></div>
 </div>
@@ -766,60 +766,60 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_gapminder_data</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a pandas DataFrame with some of the key indicators from the </span>
-<span class="sd">    Open Numbers Systema Globalis dataset.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Create a pandas DataFrame with some of the key indicators from the </span>
+<span class="sd">    Open Numbers Systema Globalis dataset."""</span>
 
     <span class="c1"># pin to a specific github tag</span>
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/v1.20.1/&quot;</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/v1.20.1/"</span>
     
     <span class="c1"># load income per person</span>
-    <span class="n">df_income</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;ddf--datapoints--income_per_person_gdppercapita_ppp_inflation_adjusted--by--geo--time.csv&quot;</span><span class="p">)</span>
+    <span class="n">df_income</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">"ddf--datapoints--income_per_person_gdppercapita_ppp_inflation_adjusted--by--geo--time.csv"</span><span class="p">)</span>
 
     <span class="c1"># load life expectancy</span>
-    <span class="n">df_life_expectancy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;ddf--datapoints--life_expectancy_at_birth_with_projections--by--geo--time.csv&quot;</span><span class="p">)</span>
+    <span class="n">df_life_expectancy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">"ddf--datapoints--life_expectancy_at_birth_with_projections--by--geo--time.csv"</span><span class="p">)</span>
 
     <span class="c1"># load population size</span>
-    <span class="n">df_population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;ddf--datapoints--population_total--by--geo--time.csv&quot;</span><span class="p">)</span>
+    <span class="n">df_population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">"ddf--datapoints--population_total--by--geo--time.csv"</span><span class="p">)</span>
 
     <span class="c1"># load child mortality</span>
-    <span class="n">df_child_mortality</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;ddf--datapoints--child_mortality_0_5_year_olds_dying_per_1000_born--by--geo--time.csv&quot;</span><span class="p">)</span>
+    <span class="n">df_child_mortality</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">"ddf--datapoints--child_mortality_0_5_year_olds_dying_per_1000_born--by--geo--time.csv"</span><span class="p">)</span>
 
     <span class="c1"># load country attributes</span>
-    <span class="n">df_countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;ddf--entities--geo--country.csv&quot;</span><span class="p">)</span>
+    <span class="n">df_countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">"ddf--entities--geo--country.csv"</span><span class="p">)</span>
 
     <span class="c1"># rename some columns in the countries dataframe to help with merging</span>
     <span class="n">df_countries</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">df_countries</span>
-        <span class="p">[[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;world_4region&quot;</span><span class="p">,</span> <span class="s2">&quot;world_6region&quot;</span><span class="p">]]</span>
-        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;country&quot;</span><span class="p">})</span>
+        <span class="p">[[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="s2">"world_4region"</span><span class="p">,</span> <span class="s2">"world_6region"</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"country"</span><span class="p">:</span> <span class="s2">"geo"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"country"</span><span class="p">})</span>
     <span class="p">)</span>
 
     <span class="c1"># capitalise regions</span>
-    <span class="n">df_countries</span><span class="p">[</span><span class="s2">&quot;world_4region&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_countries</span><span class="p">[</span><span class="s2">&quot;world_4region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="n">df_countries</span><span class="p">[</span><span class="s2">"world_4region"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_countries</span><span class="p">[</span><span class="s2">"world_4region"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 
     <span class="c1"># join all indicators into a single dataframe</span>
-    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_population</span><span class="p">,</span> <span class="n">df_income</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">])</span>
-    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_life_expectancy</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">])</span>
-    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_child_mortality</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">])</span>
-    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_countries</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">)</span>
+    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_population</span><span class="p">,</span> <span class="n">df_income</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"geo"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">])</span>
+    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_life_expectancy</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"geo"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">])</span>
+    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_child_mortality</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"geo"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">])</span>
+    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">,</span> <span class="n">df_countries</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"geo"</span><span class="p">)</span>
 
     <span class="c1"># rename some columns to be more concise</span>
     <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">df_gapminder</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
         <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;population_total&quot;</span><span class="p">:</span> <span class="s2">&quot;population&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;income_per_person_gdppercapita_ppp_inflation_adjusted&quot;</span><span class="p">:</span> <span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;life_expectancy_at_birth_with_projections&quot;</span><span class="p">:</span> <span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;child_mortality_0_5_year_olds_dying_per_1000_born&quot;</span><span class="p">:</span> <span class="s2">&quot;child_mortality&quot;</span><span class="p">,</span>
+            <span class="s2">"time"</span><span class="p">:</span> <span class="s2">"year"</span><span class="p">,</span>
+            <span class="s2">"population_total"</span><span class="p">:</span> <span class="s2">"population"</span><span class="p">,</span>
+            <span class="s2">"income_per_person_gdppercapita_ppp_inflation_adjusted"</span><span class="p">:</span> <span class="s2">"income_per_person"</span><span class="p">,</span>
+            <span class="s2">"life_expectancy_at_birth_with_projections"</span><span class="p">:</span> <span class="s2">"life_expectancy"</span><span class="p">,</span>
+            <span class="s2">"child_mortality_0_5_year_olds_dying_per_1000_born"</span><span class="p">:</span> <span class="s2">"child_mortality"</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">)</span>
 
-    <span class="c1"># keep only data between 1950 and 2021 - it&#39;s less jumpy</span>
-    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;1950 &lt;= year &lt;= 2021&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># keep only data between 1950 and 2021 - it's less jumpy</span>
+    <span class="n">df_gapminder</span> <span class="o">=</span> <span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"1950 &lt;= year &lt;= 2021"</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># tidy up columns</span>
-    <span class="n">df_gapminder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">df_gapminder</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">df_gapminder</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">))</span>  <span class="c1"># move country column to the front</span>
+    <span class="n">df_gapminder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"geo"</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_gapminder</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"country"</span><span class="p">,</span> <span class="n">df_gapminder</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"country"</span><span class="p">))</span>  <span class="c1"># move country column to the front</span>
 
     <span class="k">return</span> <span class="n">df_gapminder</span>
 </pre></div>
@@ -1040,12 +1040,12 @@ px.scatter(
     trendline=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     trendline_options=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     trendline_color_override=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    trendline_scope=<span class=" -Color -Color-Yellow">&#39;trace&#39;</span>,
+    trendline_scope=<span class=" -Color -Color-Yellow">'trace'</span>,
     log_x=<span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
     log_y=<span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
     range_x=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     range_y=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    render_mode=<span class=" -Color -Color-Yellow">&#39;auto&#39;</span>,
+    render_mode=<span class=" -Color -Color-Yellow">'auto'</span>,
     title=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     subtitle=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     template=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1068,15 +1068,15 @@ x: str or int or Series or array-like
     array_like object. Values from this column or array_like are used to
     position marks along the x axis in cartesian coordinates. Either `x` or
     `y` can optionally be a list of column references or array_likes,  in
-    which case the data will be treated as if it were &#39;wide&#39; rather than
-    &#39;long&#39;.
+    which case the data will be treated as if it were 'wide' rather than
+    'long'.
 y: str or int or Series or array-like
     Either a name of a column in `data_frame`, or a pandas Series or
     array_like object. Values from this column or array_like are used to
     position marks along the y axis in cartesian coordinates. Either `x` or
     `y` can optionally be a list of column references or array_likes,  in
-    which case the data will be treated as if it were &#39;wide&#39; rather than
-    &#39;long&#39;.
+    which case the data will be treated as if it were 'wide' rather than
+    'long'.
 color: str or int or Series or array-like
     Either a name of a column in `data_frame`, or a pandas Series or
     array_like object. Values from this column or array_like are used to
@@ -1098,7 +1098,7 @@ hover_data: str, or list of str or int, or Series or array-like, or dict
     Series, or array_like objects or a dict with column names as keys, with
     values True (for default formatting) False (in order to remove this
     column from hover information), or a formatting string, for example
-    &#39;:.3f&#39; or &#39;|%a&#39; or list-like data to appear in the hover tooltip or
+    ':.3f' or '|%a' or list-like data to appear in the hover tooltip or
     tuples with a bool or formatting string as first element, and list-like
     data to appear in hover as second element Values from these columns
     appear as extra data in the hover tooltip.
@@ -1174,10 +1174,10 @@ labels: dict with str keys and str values (default `{}`)
     entries and hovers. This parameter allows this to be overridden. The
     keys of this dict should correspond to column names, and the values
     should correspond to the desired label to be displayed.
-orientation: str, one of `&#39;h&#39;` for horizontal or `&#39;v&#39;` for vertical. 
-    (default `&#39;v&#39;` if `x` and `y` are provided and both continuous or both
-    categorical,  otherwise `&#39;v&#39;`(`&#39;h&#39;`) if `x`(`y`) is categorical and
-    `y`(`x`) is continuous,  otherwise `&#39;v&#39;`(`&#39;h&#39;`) if only `x`(`y`) is
+orientation: str, one of `'h'` for horizontal or `'v'` for vertical. 
+    (default `'v'` if `x` and `y` are provided and both continuous or both
+    categorical,  otherwise `'v'`(`'h'`) if `x`(`y`) is categorical and
+    `y`(`x`) is continuous,  otherwise `'v'`(`'h'`) if only `x`(`y`) is
     provided)
 color_discrete_sequence: list of str
     Strings should define valid CSS-colors. When `color` is set and the
@@ -1192,7 +1192,7 @@ color_discrete_map: dict with str keys and str values (default `{}`)
     `color_discrete_sequence` to assign a specific colors to marks
     corresponding with specific values. Keys in `color_discrete_map` should
     be values in the column denoted by `color`. Alternatively, if the
-    values of `color` are valid colors, the string `&#39;identity&#39;` may be
+    values of `color` are valid colors, the string `'identity'` may be
     passed to cause them to be used directly.
 color_continuous_scale: list of str
     Strings should define valid CSS-colors This list is used to build a
@@ -1218,29 +1218,29 @@ symbol_map: dict with str keys and str values (default `{}`)
     `symbol_sequence` to assign a specific symbols to marks corresponding
     with specific values. Keys in `symbol_map` should be values in the
     column denoted by `symbol`. Alternatively, if the values of `symbol`
-    are valid symbol names, the string `&#39;identity&#39;` may be passed to cause
+    are valid symbol names, the string `'identity'` may be passed to cause
     them to be used directly.
 opacity: float
     Value between 0 and 1. Sets the opacity for markers.
 size_max: int (default `20`)
     Set the maximum mark size when using `size`.
 marginal_x: str
-    One of `&#39;rug&#39;`, `&#39;box&#39;`, `&#39;violin&#39;`, or `&#39;histogram&#39;`. If set, a
+    One of `'rug'`, `'box'`, `'violin'`, or `'histogram'`. If set, a
     horizontal subplot is drawn above the main plot, visualizing the
     x-distribution.
 marginal_y: str
-    One of `&#39;rug&#39;`, `&#39;box&#39;`, `&#39;violin&#39;`, or `&#39;histogram&#39;`. If set, a
+    One of `'rug'`, `'box'`, `'violin'`, or `'histogram'`. If set, a
     vertical subplot is drawn to the right of the main plot, visualizing
     the y-distribution.
 trendline: str
-    One of `&#39;ols&#39;`, `&#39;lowess&#39;`, `&#39;rolling&#39;`, `&#39;expanding&#39;` or `&#39;ewm&#39;`. If
-    `&#39;ols&#39;`, an Ordinary Least Squares regression line will be drawn for
-    each discrete-color/symbol group. If `&#39;lowess`&#39;, a Locally Weighted
+    One of `'ols'`, `'lowess'`, `'rolling'`, `'expanding'` or `'ewm'`. If
+    `'ols'`, an Ordinary Least Squares regression line will be drawn for
+    each discrete-color/symbol group. If `'lowess`', a Locally Weighted
     Scatterplot Smoothing line will be drawn for each discrete-color/symbol
-    group. If `&#39;rolling`&#39;, a Rolling (e.g. rolling average, rolling median)
+    group. If `'rolling`', a Rolling (e.g. rolling average, rolling median)
     line will be drawn for each discrete-color/symbol group. If
-    `&#39;expanding`&#39;, an Expanding (e.g. expanding average, expanding sum)
-    line will be drawn for each discrete-color/symbol group. If `&#39;ewm`&#39;, an
+    `'expanding`', an Expanding (e.g. expanding average, expanding sum)
+    line will be drawn for each discrete-color/symbol group. If `'ewm`', an
     Exponentially Weighted Moment (e.g. exponentially-weighted moving
     average) line will be drawn for each discrete-color/symbol group. See
     the docstrings for the functions in
@@ -1255,9 +1255,9 @@ trendline_color_override: str
     Valid CSS color. If provided, and if `trendline` is set, all trendlines
     will be drawn in this color rather than in the same color as the traces
     from which they draw their inputs.
-trendline_scope: str (one of `&#39;trace&#39;` or `&#39;overall&#39;`, default `&#39;trace&#39;`)
-    If `&#39;trace&#39;`, then one trendline is drawn per trace (i.e. per color,
-    symbol, facet, animation frame etc) and if `&#39;overall&#39;` then one
+trendline_scope: str (one of `'trace'` or `'overall'`, default `'trace'`)
+    If `'trace'`, then one trendline is drawn per trace (i.e. per color,
+    symbol, facet, animation frame etc) and if `'overall'` then one
     trendline is computed for the entire dataset, and replicated across all
     facets.
 log_x: boolean (default `False`)
@@ -1271,11 +1271,11 @@ range_y: list of two numbers
     If provided, overrides auto-scaling on the y-axis in cartesian
     coordinates.
 render_mode: str
-    One of `&#39;auto&#39;`, `&#39;svg&#39;` or `&#39;webgl&#39;`, default `&#39;auto&#39;` Controls the
-    browser API used to draw marks. `&#39;svg&#39;` is appropriate for figures of
+    One of `'auto'`, `'svg'` or `'webgl'`, default `'auto'` Controls the
+    browser API used to draw marks. `'svg'` is appropriate for figures of
     less than 1000 data points, and will allow for fully-vectorized output.
-    `&#39;webgl&#39;` is likely necessary for acceptable performance above 1000
-    points but rasterizes part of the output.  `&#39;auto&#39;` uses heuristics to
+    `'webgl'` is likely necessary for acceptable performance above 1000
+    points but rasterizes part of the output.  `'auto'` uses heuristics to
     choose the mode.
 title: str
     The figure title.
@@ -1305,9 +1305,9 @@ Returns
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -5236,9 +5236,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig = px.scatter(</span>
-<span class="c1">#     data_frame=df_gapminder.query(&quot;year == 2021&quot;),</span>
-<span class="c1">#     x=&quot;income_per_person&quot;,</span>
-<span class="c1">#     y=&quot;child_mortality&quot;,</span>
+<span class="c1">#     data_frame=df_gapminder.query("year == 2021"),</span>
+<span class="c1">#     x="income_per_person",</span>
+<span class="c1">#     y="child_mortality",</span>
 <span class="c1"># )</span>
 <span class="c1"># fig</span>
 </pre></div>
@@ -5252,11 +5252,11 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -5308,12 +5308,12 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -5360,13 +5360,13 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
@@ -5418,22 +5418,22 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;income_per_person&quot;</span><span class="p">:</span> <span class="s2">&quot;Income&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;life_expectancy&quot;</span><span class="p">:</span> <span class="s2">&quot;Life expectancy&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;child_mortality&quot;</span><span class="p">:</span> <span class="s2">&quot;Child mortality&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;world_4region&quot;</span><span class="p">:</span> <span class="s2">&quot;World region&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span>
+        <span class="s2">"income_per_person"</span><span class="p">:</span> <span class="s2">"Income"</span><span class="p">,</span>
+        <span class="s2">"life_expectancy"</span><span class="p">:</span> <span class="s2">"Life expectancy"</span><span class="p">,</span>
+        <span class="s2">"child_mortality"</span><span class="p">:</span> <span class="s2">"Child mortality"</span><span class="p">,</span>
+        <span class="s2">"world_4region"</span><span class="p">:</span> <span class="s2">"World region"</span><span class="p">,</span>
+        <span class="s2">"population"</span><span class="p">:</span> <span class="s2">"Population"</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Life expectancy and income by country in 2021&quot;</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Life expectancy and income by country in 2021"</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -5479,21 +5479,21 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year == 2021&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year == 2021"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;income_per_person&quot;</span><span class="p">:</span> <span class="s2">&quot;Income&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;life_expectancy&quot;</span><span class="p">:</span> <span class="s2">&quot;Life expectancy&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;world_4region&quot;</span><span class="p">:</span> <span class="s2">&quot;World region&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span>
+        <span class="s2">"income_per_person"</span><span class="p">:</span> <span class="s2">"Income"</span><span class="p">,</span>
+        <span class="s2">"life_expectancy"</span><span class="p">:</span> <span class="s2">"Life expectancy"</span><span class="p">,</span>
+        <span class="s2">"world_4region"</span><span class="p">:</span> <span class="s2">"World region"</span><span class="p">,</span>
+        <span class="s2">"population"</span><span class="p">:</span> <span class="s2">"Population"</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Life expectancy and income by country in 2021&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Life expectancy and income by country in 2021"</span><span class="p">,</span>
     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
@@ -5541,23 +5541,23 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;income_per_person&quot;</span><span class="p">:</span> <span class="s2">&quot;Income&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;life_expectancy&quot;</span><span class="p">:</span> <span class="s2">&quot;Life expectancy&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;world_4region&quot;</span><span class="p">:</span> <span class="s2">&quot;World region&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+        <span class="s2">"income_per_person"</span><span class="p">:</span> <span class="s2">"Income"</span><span class="p">,</span>
+        <span class="s2">"life_expectancy"</span><span class="p">:</span> <span class="s2">"Life expectancy"</span><span class="p">,</span>
+        <span class="s2">"world_4region"</span><span class="p">:</span> <span class="s2">"World region"</span><span class="p">,</span>
+        <span class="s2">"population"</span><span class="p">:</span> <span class="s2">"Population"</span><span class="p">,</span>
+        <span class="s2">"year"</span><span class="p">:</span> <span class="s2">"Year"</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Life expectancy and income by country, 1950-2021&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Life expectancy and income by country, 1950-2021"</span><span class="p">,</span>
     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
     <span class="n">range_x</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200_000</span><span class="p">],</span>
     <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">],</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
@@ -5609,46 +5609,46 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s2">"child_mortality"</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;income_per_person&quot;</span><span class="p">:</span> <span class="s2">&quot;Income per person (GDP/capita, PPP$ inflation-adjusted)&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;life_expectancy&quot;</span><span class="p">:</span> <span class="s2">&quot;Life expectancy (years)&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;world_4region&quot;</span><span class="p">:</span> <span class="s2">&quot;World region&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+        <span class="s2">"income_per_person"</span><span class="p">:</span> <span class="s2">"Income per person (GDP/capita, PPP$ inflation-adjusted)"</span><span class="p">,</span>
+        <span class="s2">"life_expectancy"</span><span class="p">:</span> <span class="s2">"Life expectancy (years)"</span><span class="p">,</span>
+        <span class="s2">"world_4region"</span><span class="p">:</span> <span class="s2">"World region"</span><span class="p">,</span>
+        <span class="s2">"population"</span><span class="p">:</span> <span class="s2">"Population"</span><span class="p">,</span>
+        <span class="s2">"year"</span><span class="p">:</span> <span class="s2">"Year"</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Life expectancy and income by country, 1950-2021&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Life expectancy and income by country, 1950-2021"</span><span class="p">,</span>
     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
     <span class="n">range_x</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200_000</span><span class="p">],</span>
     <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">],</span>
 <span class="c1">#     color_discrete_sequence=px.colors.qualitative.Set1,</span>
-    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Asia&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff5872&quot;</span><span class="p">,</span> <span class="s2">&quot;Africa&quot;</span><span class="p">:</span> <span class="s2">&quot;#00d5e9&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffe700&quot;</span><span class="p">,</span> <span class="s2">&quot;Americas&quot;</span><span class="p">:</span> <span class="s2">&quot;#7feb00&quot;</span><span class="p">},</span>
+    <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s2">"Asia"</span><span class="p">:</span> <span class="s2">"#ff5872"</span><span class="p">,</span> <span class="s2">"Africa"</span><span class="p">:</span> <span class="s2">"#00d5e9"</span><span class="p">,</span> <span class="s2">"Europe"</span><span class="p">:</span> <span class="s2">"#ffe700"</span><span class="p">,</span> <span class="s2">"Americas"</span><span class="p">:</span> <span class="s2">"#7feb00"</span><span class="p">},</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_white"</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">xaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">tickmode</span> <span class="o">=</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+        <span class="n">tickmode</span> <span class="o">=</span> <span class="s2">"array"</span><span class="p">,</span>
         <span class="n">tickvals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1_000</span><span class="p">,</span> <span class="mi">2_000</span><span class="p">,</span> <span class="mi">4_000</span><span class="p">,</span> <span class="mi">8_000</span><span class="p">,</span> <span class="mi">16_000</span><span class="p">,</span> <span class="mi">32_000</span><span class="p">,</span> <span class="mi">64_000</span><span class="p">,</span> <span class="mi">128_000</span><span class="p">],</span>
-        <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;500&quot;</span><span class="p">,</span> <span class="s2">&quot;1000&quot;</span><span class="p">,</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;4000&quot;</span><span class="p">,</span> <span class="s2">&quot;8000&quot;</span><span class="p">,</span> <span class="s2">&quot;16k&quot;</span><span class="p">,</span> <span class="s2">&quot;32k&quot;</span><span class="p">,</span> <span class="s2">&quot;64k&quot;</span><span class="p">,</span> <span class="s2">&quot;128k&quot;</span><span class="p">]</span>
+        <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"500"</span><span class="p">,</span> <span class="s2">"1000"</span><span class="p">,</span> <span class="s2">"2000"</span><span class="p">,</span> <span class="s2">"4000"</span><span class="p">,</span> <span class="s2">"8000"</span><span class="p">,</span> <span class="s2">"16k"</span><span class="p">,</span> <span class="s2">"32k"</span><span class="p">,</span> <span class="s2">"64k"</span><span class="p">,</span> <span class="s2">"128k"</span><span class="p">]</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">showline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">showline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">showline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">showline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)),</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)),</span>
 <span class="p">)</span>
 
 <span class="n">fig</span>
@@ -5705,14 +5705,14 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_gapminder</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;income_per_person&quot;</span><span class="p">,</span> 
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span> 
-    <span class="n">z</span><span class="o">=</span><span class="s2">&quot;child_mortality&quot;</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;world_4region&quot;</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"income_per_person"</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s2">"life_expectancy"</span><span class="p">,</span> 
+    <span class="n">z</span><span class="o">=</span><span class="s2">"child_mortality"</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"world_4region"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"population"</span><span class="p">,</span>
     <span class="n">size_max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
     <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">range_x</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200_000</span><span class="p">],</span>
     <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">95</span><span class="p">],</span>
@@ -5722,8 +5722,8 @@ if (outputEl) {{
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">scene</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">aspectmode</span><span class="o">=</span><span class="s2">&quot;cube&quot;</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">itemsizing</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">),</span>
+    <span class="n">scene</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">aspectmode</span><span class="o">=</span><span class="s2">"cube"</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">itemsizing</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">),</span>
 <span class="p">)</span>
 
 <span class="n">fig</span>
@@ -5773,115 +5773,115 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_llin_data</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load data on LLIN shipments from the Alliance for Malaria Prevention&#39;s</span>
-<span class="sd">    Net Mapping Project.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Load data on LLIN shipments from the Alliance for Malaria Prevention's</span>
+<span class="sd">    Net Mapping Project."""</span>
 
     <span class="c1"># N.B., data are split over several spreadsheets, so some munging is required.</span>
 
     <span class="c1"># N.B., files have been obtained from the AMP website and uploaded to </span>
     <span class="c1"># Google Cloud Storage for efficient download.</span>
 
-    <span class="c1"># load the &quot;Final-2020.xlsx&quot; dataset, &quot;SSA&quot; sheet - this has LLINs for 2004-2020</span>
+    <span class="c1"># load the "Final-2020.xlsx" dataset, "SSA" sheet - this has LLINs for 2004-2020</span>
     <span class="n">df_nmp_2020_ssa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
-        <span class="s2">&quot;http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-Final-2020.xlsx&quot;</span><span class="p">,</span> 
-        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;SSA&quot;</span><span class="p">,</span>
+        <span class="s2">"http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-Final-2020.xlsx"</span><span class="p">,</span> 
+        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">"SSA"</span><span class="p">,</span>
         <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
         <span class="n">skipfooter</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)),</span>
+        <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">"country"</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)),</span>
         <span class="n">usecols</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
     <span class="p">)</span>
 
-    <span class="c1"># load the &quot;Final-2020.xlsx&quot; dataset, &quot;SSA by net type&quot; sheet - this has LLINs by type for 2018, 2019, 2020</span>
+    <span class="c1"># load the "Final-2020.xlsx" dataset, "SSA by net type" sheet - this has LLINs by type for 2018, 2019, 2020</span>
     <span class="n">df_nmp_2020_ssa_by_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
-        <span class="s2">&quot;http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-Final-2020.xlsx&quot;</span><span class="p">,</span> 
-        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;SSA by net type&quot;</span><span class="p">,</span>
+        <span class="s2">"http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-Final-2020.xlsx"</span><span class="p">,</span> 
+        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">"SSA by net type"</span><span class="p">,</span>
         <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">skipfooter</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-        <span class="n">usecols</span><span class="o">=</span><span class="s2">&quot;A,B,C,F,G,H,K,L,M&quot;</span><span class="p">,</span>
+        <span class="n">usecols</span><span class="o">=</span><span class="s2">"A,B,C,F,G,H,K,L,M"</span><span class="p">,</span>
         <span class="n">names</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;country&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2018_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2018_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_dual&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_dual&quot;</span><span class="p">,</span>
+            <span class="s2">"country"</span><span class="p">,</span>
+            <span class="s2">"2018_standard"</span><span class="p">,</span>
+            <span class="s2">"2018_pbo"</span><span class="p">,</span>
+            <span class="s2">"2019_standard"</span><span class="p">,</span>
+            <span class="s2">"2019_pbo"</span><span class="p">,</span>
+            <span class="s2">"2019_dual"</span><span class="p">,</span>
+            <span class="s2">"2020_standard"</span><span class="p">,</span>
+            <span class="s2">"2020_pbo"</span><span class="p">,</span>
+            <span class="s2">"2020_dual"</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">)</span>
 
-    <span class="c1"># load the &quot;NMP-1st-Q-2022.xlsx&quot; dataset, &quot;SSA by Type&quot; sheet - this has LLINs by type for 2019, 2020, 2021</span>
+    <span class="c1"># load the "NMP-1st-Q-2022.xlsx" dataset, "SSA by Type" sheet - this has LLINs by type for 2019, 2020, 2021</span>
     <span class="n">df_nmp_2022q1_ssa_by_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
-        <span class="s2">&quot;http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-NMP-1st-Q-2022.xlsx&quot;</span><span class="p">,</span>
-        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;SSA by Type&quot;</span><span class="p">,</span>
+        <span class="s2">"http://vobs-resources.cog.sanger.ac.uk/training/img/workshop-3/reference-amp_net_mapping_project-NMP-1st-Q-2022.xlsx"</span><span class="p">,</span>
+        <span class="n">sheet_name</span><span class="o">=</span><span class="s2">"SSA by Type"</span><span class="p">,</span>
         <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">skipfooter</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">usecols</span><span class="o">=</span><span class="s2">&quot;A,C,D,E,H,I,J,M,N,O&quot;</span><span class="p">,</span>
+        <span class="n">usecols</span><span class="o">=</span><span class="s2">"A,C,D,E,H,I,J,M,N,O"</span><span class="p">,</span>
         <span class="n">names</span><span class="o">=</span><span class="p">[</span>
-            <span class="s2">&quot;country&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2019_dual&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2020_dual&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2021_standard&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2021_pbo&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;2021_dual&quot;</span><span class="p">,</span>
+            <span class="s2">"country"</span><span class="p">,</span>
+            <span class="s2">"2019_standard"</span><span class="p">,</span>
+            <span class="s2">"2019_pbo"</span><span class="p">,</span>
+            <span class="s2">"2019_dual"</span><span class="p">,</span>
+            <span class="s2">"2020_standard"</span><span class="p">,</span>
+            <span class="s2">"2020_pbo"</span><span class="p">,</span>
+            <span class="s2">"2020_dual"</span><span class="p">,</span>
+            <span class="s2">"2021_standard"</span><span class="p">,</span>
+            <span class="s2">"2021_pbo"</span><span class="p">,</span>
+            <span class="s2">"2021_dual"</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">)</span>
 
     <span class="c1"># N.B., we would like LLINs by type for the full range 2004-2021.</span>
-    <span class="c1"># We also would like the data in &quot;long form&quot; for easier plotting.</span>
-    <span class="c1"># Let&#39;s munge!</span>
+    <span class="c1"># We also would like the data in "long form" for easier plotting.</span>
+    <span class="c1"># Let's munge!</span>
 
     <span class="c1"># start with data prior to 2018</span>
     <span class="n">df_llins_pre_2018</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">df_nmp_2020_ssa</span>
-        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;year &lt; 2018&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">"llins_shipped"</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"year &lt; 2018"</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="n">df_llins_pre_2018</span><span class="p">[</span><span class="s2">&quot;llin_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;standard&quot;</span>  <span class="c1"># assume all standard llins prior to 2018</span>
+    <span class="n">df_llins_pre_2018</span><span class="p">[</span><span class="s2">"llin_type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"standard"</span>  <span class="c1"># assume all standard llins prior to 2018</span>
 
     <span class="c1"># now grab the data by type for 2018</span>
     <span class="n">df_llins_2018</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">df_nmp_2020_ssa_by_type</span>
-        <span class="p">[[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;2018_standard&quot;</span><span class="p">,</span> <span class="s2">&quot;2018_pbo&quot;</span><span class="p">]]</span>
-        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;year_type&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span><span class="p">)</span>
+        <span class="p">[[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"2018_standard"</span><span class="p">,</span> <span class="s2">"2018_pbo"</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">"year_type"</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">"llins_shipped"</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="n">df_year_type</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">&quot;year_type&quot;</span><span class="p">]</span>
-        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;llin_type&quot;</span><span class="p">})</span>
+        <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">"year_type"</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">"year"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">"llin_type"</span><span class="p">})</span>
     <span class="p">)</span>
-    <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span>
-    <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">&quot;llin_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">&quot;llin_type&quot;</span><span class="p">]</span>
-    <span class="n">df_llins_2018</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;year_type&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span>
+    <span class="n">df_llins_2018</span><span class="p">[</span><span class="s2">"llin_type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">"llin_type"</span><span class="p">]</span>
+    <span class="n">df_llins_2018</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"year_type"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># now grab the data by type for 2019, 2020, 2021</span>
     <span class="n">df_llins_post_2018</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">df_nmp_2022q1_ssa_by_type</span>
-        <span class="p">[[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;2019_standard&quot;</span><span class="p">,</span> <span class="s2">&quot;2019_pbo&quot;</span><span class="p">,</span> <span class="s2">&quot;2019_dual&quot;</span><span class="p">,</span> <span class="s2">&quot;2020_standard&quot;</span><span class="p">,</span> <span class="s2">&quot;2020_pbo&quot;</span><span class="p">,</span> <span class="s2">&quot;2020_dual&quot;</span><span class="p">,</span> <span class="s2">&quot;2021_standard&quot;</span><span class="p">,</span> <span class="s2">&quot;2021_pbo&quot;</span><span class="p">,</span> <span class="s2">&quot;2021_dual&quot;</span><span class="p">]]</span>
-        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;year_type&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span><span class="p">)</span>
+        <span class="p">[[</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"2019_standard"</span><span class="p">,</span> <span class="s2">"2019_pbo"</span><span class="p">,</span> <span class="s2">"2019_dual"</span><span class="p">,</span> <span class="s2">"2020_standard"</span><span class="p">,</span> <span class="s2">"2020_pbo"</span><span class="p">,</span> <span class="s2">"2020_dual"</span><span class="p">,</span> <span class="s2">"2021_standard"</span><span class="p">,</span> <span class="s2">"2021_pbo"</span><span class="p">,</span> <span class="s2">"2021_dual"</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">"year_type"</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">"llins_shipped"</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="n">df_year_type</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">&quot;year_type&quot;</span><span class="p">]</span>
-        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;llin_type&quot;</span><span class="p">})</span>
+        <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">"year_type"</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">"year"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">"llin_type"</span><span class="p">})</span>
     <span class="p">)</span>
-    <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span>
-    <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">&quot;llin_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">&quot;llin_type&quot;</span><span class="p">]</span>
-    <span class="n">df_llins_post_2018</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;year_type&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span>
+    <span class="n">df_llins_post_2018</span><span class="p">[</span><span class="s2">"llin_type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year_type</span><span class="p">[</span><span class="s2">"llin_type"</span><span class="p">]</span>
+    <span class="n">df_llins_post_2018</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"year_type"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># finally, concatenate everything</span>
     <span class="n">df_llins</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_llins_pre_2018</span><span class="p">,</span> <span class="n">df_llins_2018</span><span class="p">,</span> <span class="n">df_llins_post_2018</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># ensure years have the right dtype</span>
-    <span class="n">df_llins</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_llins</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df_llins</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_llins</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
     <span class="c1"># normalise country names</span>
-    <span class="n">df_llins</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_llins</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Congo (Democratic Republic of the)&quot;</span><span class="p">,</span> <span class="s2">&quot;DR Congo&quot;</span><span class="p">)</span>
+    <span class="n">df_llins</span><span class="p">[</span><span class="s2">"country"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_llins</span><span class="p">[</span><span class="s2">"country"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"Congo (Democratic Republic of the)"</span><span class="p">,</span> <span class="s2">"DR Congo"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">df_llins</span>
 </pre></div>
@@ -6005,7 +6005,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_llins</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Nigeria&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_llins</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Nigeria'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6258,7 +6258,7 @@ px.bar(
     color_continuous_midpoint=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     opacity=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     orientation=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    barmode=<span class=" -Color -Color-Yellow">&#39;relative&#39;</span>,
+    barmode=<span class=" -Color -Color-Yellow">'relative'</span>,
     log_x=<span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
     log_y=<span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
     range_x=<span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -6286,15 +6286,15 @@ x: str or int or Series or array-like
     array_like object. Values from this column or array_like are used to
     position marks along the x axis in cartesian coordinates. Either `x` or
     `y` can optionally be a list of column references or array_likes,  in
-    which case the data will be treated as if it were &#39;wide&#39; rather than
-    &#39;long&#39;.
+    which case the data will be treated as if it were 'wide' rather than
+    'long'.
 y: str or int or Series or array-like
     Either a name of a column in `data_frame`, or a pandas Series or
     array_like object. Values from this column or array_like are used to
     position marks along the y axis in cartesian coordinates. Either `x` or
     `y` can optionally be a list of column references or array_likes,  in
-    which case the data will be treated as if it were &#39;wide&#39; rather than
-    &#39;long&#39;.
+    which case the data will be treated as if it were 'wide' rather than
+    'long'.
 color: str or int or Series or array-like
     Either a name of a column in `data_frame`, or a pandas Series or
     array_like object. Values from this column or array_like are used to
@@ -6329,7 +6329,7 @@ hover_data: str, or list of str or int, or Series or array-like, or dict
     Series, or array_like objects or a dict with column names as keys, with
     values True (for default formatting) False (in order to remove this
     column from hover information), or a formatting string, for example
-    &#39;:.3f&#39; or &#39;|%a&#39; or list-like data to appear in the hover tooltip or
+    ':.3f' or '|%a' or list-like data to appear in the hover tooltip or
     tuples with a bool or formatting string as first element, and list-like
     data to appear in hover as second element Values from these columns
     appear as extra data in the hover tooltip.
@@ -6405,7 +6405,7 @@ color_discrete_map: dict with str keys and str values (default `{}`)
     `color_discrete_sequence` to assign a specific colors to marks
     corresponding with specific values. Keys in `color_discrete_map` should
     be values in the column denoted by `color`. Alternatively, if the
-    values of `color` are valid colors, the string `&#39;identity&#39;` may be
+    values of `color` are valid colors, the string `'identity'` may be
     passed to cause them to be used directly.
 color_continuous_scale: list of str
     Strings should define valid CSS-colors This list is used to build a
@@ -6426,7 +6426,7 @@ pattern_shape_map: dict with str keys and str values (default `{}`)
     corresponding with specific values. Keys in `pattern_shape_map` should
     be values in the column denoted by `pattern_shape`. Alternatively, if
     the values of `pattern_shape` are valid patterns-shapes names, the
-    string `&#39;identity&#39;` may be passed to cause them to be used directly.
+    string `'identity'` may be passed to cause them to be used directly.
 range_color: list of two numbers
     If provided, overrides auto-scaling on the continuous color scale.
 color_continuous_midpoint: number (default `None`)
@@ -6436,16 +6436,16 @@ color_continuous_midpoint: number (default `None`)
     `color_continuous_scale`.
 opacity: float
     Value between 0 and 1. Sets the opacity for markers.
-orientation: str, one of `&#39;h&#39;` for horizontal or `&#39;v&#39;` for vertical. 
-    (default `&#39;v&#39;` if `x` and `y` are provided and both continuous or both
-    categorical,  otherwise `&#39;v&#39;`(`&#39;h&#39;`) if `x`(`y`) is categorical and
-    `y`(`x`) is continuous,  otherwise `&#39;v&#39;`(`&#39;h&#39;`) if only `x`(`y`) is
+orientation: str, one of `'h'` for horizontal or `'v'` for vertical. 
+    (default `'v'` if `x` and `y` are provided and both continuous or both
+    categorical,  otherwise `'v'`(`'h'`) if `x`(`y`) is categorical and
+    `y`(`x`) is continuous,  otherwise `'v'`(`'h'`) if only `x`(`y`) is
     provided)
-barmode: str (default `&#39;relative&#39;`)
-    One of `&#39;group&#39;`, `&#39;overlay&#39;` or `&#39;relative&#39;` In `&#39;relative&#39;` mode,
+barmode: str (default `'relative'`)
+    One of `'group'`, `'overlay'` or `'relative'` In `'relative'` mode,
     bars are stacked above zero for positive values and below zero for
-    negative values. In `&#39;overlay&#39;` mode, bars are drawn on top of one
-    another. In `&#39;group&#39;` mode, bars are placed beside each other.
+    negative values. In `'overlay'` mode, bars are drawn on top of one
+    another. In `'group'` mode, bars are placed beside each other.
 log_x: boolean (default `False`)
     If `True`, the x-axis is log-scaled in cartesian coordinates.
 log_y: boolean (default `False`)
@@ -6458,7 +6458,7 @@ range_y: list of two numbers
     coordinates.
 text_auto: bool or string (default `False`)
     If `True` or a string, the x or y or z values will be displayed as
-    text, depending on the orientation A string like `&#39;.2f&#39;` will be
+    text, depending on the orientation A string like `'.2f'` will be
     interpreted as a `texttemplate` numeric formatting directive.
 title: str
     The figure title.
@@ -6487,8 +6487,8 @@ Returns
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_llins</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> 
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s2">"llins_shipped"</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -6535,18 +6535,18 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">data_frame</span><span class="o">=</span><span class="n">df_llins</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> 
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;llin_type&quot;</span><span class="p">,</span> 
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s2">"llins_shipped"</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s2">"llin_type"</span><span class="p">,</span> 
+    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;llins_shipped&quot;</span><span class="p">:</span> <span class="s2">&quot;No. LLINs&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;llin_type&quot;</span><span class="p">:</span> <span class="s2">&quot;LLIN type&quot;</span>
+        <span class="s2">"year"</span><span class="p">:</span> <span class="s2">"Year"</span><span class="p">,</span>
+        <span class="s2">"llins_shipped"</span><span class="p">:</span> <span class="s2">"No. LLINs"</span><span class="p">,</span>
+        <span class="s2">"llin_type"</span><span class="p">:</span> <span class="s2">"LLIN type"</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;LLIN shipments to countries in Sub-Saharan Africa&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"LLIN shipments to countries in Sub-Saharan Africa"</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_white"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
@@ -6598,19 +6598,19 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
-    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_llins</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;country == &#39;Nigeria&#39;&quot;</span><span class="p">),</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;llins_shipped&quot;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;llin_type&quot;</span><span class="p">,</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_llins</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"country == 'Nigeria'"</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"llins_shipped"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"llin_type"</span><span class="p">,</span>
     <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;LLIN shipments to Nigeria&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"LLIN shipments to Nigeria"</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;llins_shipped&quot;</span><span class="p">:</span> <span class="s2">&quot;No. LLINs&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;llin_type&quot;</span><span class="p">:</span> <span class="s2">&quot;LLIN type&quot;</span>
+        <span class="s2">"year"</span><span class="p">:</span> <span class="s2">"Year"</span><span class="p">,</span>
+        <span class="s2">"llins_shipped"</span><span class="p">:</span> <span class="s2">"No. LLINs"</span><span class="p">,</span>
+        <span class="s2">"llin_type"</span><span class="p">:</span> <span class="s2">"LLIN type"</span>
     <span class="p">},</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"plotly_white"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>

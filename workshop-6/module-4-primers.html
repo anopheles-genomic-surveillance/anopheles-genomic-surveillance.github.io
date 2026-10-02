@@ -920,7 +920,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
 
 <span class="c1"># Import libraries </span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
@@ -930,7 +930,7 @@ Note: you may need to restart the kernel to use updated packages.
 
 <span class="c1">#configure plotting with matplotlib</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = "retina"
 </pre></div>
 </div>
 </div>
@@ -944,28 +944,28 @@ Note: you may need to restart the kernel to use updated packages.
 <p>In the below cells, replace the values with those desired for your primers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title **Primer parameters** { run: &quot;auto&quot; }</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title **Primer parameters** { run: "auto" }</span>
 
 <span class="c1"># N.B., this cell will be rendered as a form when running on colab</span>
 
-<span class="n">assay_type</span> <span class="o">=</span> <span class="s2">&quot;gDNA primers + probe&quot;</span>  <span class="c1">#@param [&quot;gDNA primers&quot;, &quot;gDNA primers + probe&quot;, &quot;probe&quot;, &quot;cDNA primers&quot;]</span>
-<span class="n">assay_name</span> <span class="o">=</span> <span class="s1">&#39;ace1-280s&#39;</span>  <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">min_amplicon_size</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1">#@param {type:&quot;integer&quot;}</span>
-<span class="n">max_amplicon_size</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1">#@param {type:&quot;integer&quot;}</span>
+<span class="n">assay_type</span> <span class="o">=</span> <span class="s2">"gDNA primers + probe"</span>  <span class="c1">#@param ["gDNA primers", "gDNA primers + probe", "probe", "cDNA primers"]</span>
+<span class="n">assay_name</span> <span class="o">=</span> <span class="s1">'ace1-280s'</span>  <span class="c1">#@param {type:"string"}</span>
+<span class="n">min_amplicon_size</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1">#@param {type:"integer"}</span>
+<span class="n">max_amplicon_size</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1">#@param {type:"integer"}</span>
 <span class="n">amplicon_size_range</span> <span class="o">=</span> <span class="p">[[</span><span class="n">min_amplicon_size</span><span class="p">,</span> <span class="n">max_amplicon_size</span><span class="p">]]</span>
-<span class="n">n_primer_pairs</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1">#@param {type:&quot;slider&quot;, min:1, max:20, step:1}</span>
+<span class="n">n_primer_pairs</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1">#@param {type:"slider", min:1, max:20, step:1}</span>
 <span class="n">cDNA_exon_junction</span><span class="o">=</span><span class="kc">True</span> <span class="c1">#ignore</span>
 
 <span class="c1">#@markdown    </span>
 <span class="c1">#@markdown target_loc is required for gDNA primers and probes, and transcript required for qPCR primers.</span>
 
-<span class="n">target_loc</span> <span class="o">=</span>  <span class="s1">&#39;2R:3492074&#39;</span>  <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">transcript</span> <span class="o">=</span>  <span class="s1">&#39;&#39;</span>  <span class="c1">#@param {type:&quot;string&quot;} </span>
+<span class="n">target_loc</span> <span class="o">=</span>  <span class="s1">'2R:3492074'</span>  <span class="c1">#@param {type:"string"}</span>
+<span class="n">transcript</span> <span class="o">=</span>  <span class="s1">''</span>  <span class="c1">#@param {type:"string"} </span>
 
-<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">item</span> <span class="ow">in</span> <span class="n">assay_type</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gDNA&#39;</span><span class="p">,</span> <span class="s1">&#39;probe&#39;</span><span class="p">]):</span>
-  <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_loc</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Target location must be above 0 and less than the contig length&quot;</span>
-<span class="k">elif</span> <span class="n">assay_type</span> <span class="o">==</span> <span class="s1">&#39;cDNA primers&#39;</span><span class="p">:</span>
-  <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transcript</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Transcript ID is not valid, should be vectorbase ID such as &#39;AGAP004707-RD&#39;&quot;</span>
+<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">item</span> <span class="ow">in</span> <span class="n">assay_type</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'gDNA'</span><span class="p">,</span> <span class="s1">'probe'</span><span class="p">]):</span>
+  <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_loc</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Target location must be above 0 and less than the contig length"</span>
+<span class="k">elif</span> <span class="n">assay_type</span> <span class="o">==</span> <span class="s1">'cDNA primers'</span><span class="p">:</span>
+  <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transcript</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Transcript ID is not valid, should be vectorbase ID such as 'AGAP004707-RD'"</span>
 </pre></div>
 </div>
 </div>
@@ -976,9 +976,9 @@ Note that authentication is required to access data through the package, please 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span> <span class="o">=</span> <span class="n">malariagen_data</span><span class="o">.</span><span class="n">Ag3</span><span class="p">()</span>
 <span class="c1"># Connect to the malariagen_data ag3 API</span>
-<span class="n">contig</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">AnoPrimer</span><span class="o">.</span><span class="n">check_and_split_target</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="s2">&quot;gambiae_sl&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target_loc</span><span class="p">,</span> <span class="n">assay_type</span><span class="o">=</span><span class="n">assay_type</span><span class="p">)</span>
+<span class="n">contig</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">AnoPrimer</span><span class="o">.</span><span class="n">check_and_split_target</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="s2">"gambiae_sl"</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target_loc</span><span class="p">,</span> <span class="n">assay_type</span><span class="o">=</span><span class="n">assay_type</span><span class="p">)</span>
 <span class="n">genome_seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">contig</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Our genome sequence for </span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">genome_seq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> bp long&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Our genome sequence for </span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">genome_seq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> bp long"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1610,7 +1610,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">genome_seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">contig</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Our genome sequence for </span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">genome_seq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> bp long&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Our genome sequence for </span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">genome_seq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> bp long"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1625,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq_parameters</span> <span class="o">=</span> <span class="n">AnoPrimer</span><span class="o">.</span><span class="n">prepare_sequence</span><span class="p">(</span>
-                                <span class="n">species</span><span class="o">=</span><span class="s2">&quot;gambiae_sl&quot;</span><span class="p">,</span>
+                                <span class="n">species</span><span class="o">=</span><span class="s2">"gambiae_sl"</span><span class="p">,</span>
                                 <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span>
                                 <span class="n">assay_type</span><span class="o">=</span><span class="n">assay_type</span><span class="p">,</span>
                                 <span class="n">assay_name</span><span class="o">=</span><span class="n">assay_name</span><span class="p">,</span>
@@ -1646,12 +1646,12 @@ the target snp is 119 bp into our target sequence
 <p>Now we have our target sequence. Lets take a look…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq_parameters</span><span class="p">[</span><span class="s1">&#39;SEQUENCE_TEMPLATE&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq_parameters</span><span class="p">[</span><span class="s1">'SEQUENCE_TEMPLATE'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CGGGCGCGACCATGTGGAACCCGAACACGCCCCTGTCCGAGGACTGTCTGTACATTAACGTGGTGGCACCGCGACCCCGGCCCAAGAATGCGGCCGTCATGCTGTGGATCTTCGGCGGCGGCTTCTACTCCGGCACCGCCACCCTGGACGTGTACGACCACCGGGCGCTTGCGTCGGAGGAGAACGTGATCGTGGTGTCGCTGCAGTACCGCGTGGCCAGTCTGGGCTTCCTGTTTCTC&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'CGGGCGCGACCATGTGGAACCCGAACACGCCCCTGTCCGAGGACTGTCTGTACATTAACGTGGTGGCACCGCGACCCCGGCCCAAGAATGCGGCCGTCATGCTGTGGATCTTCGGCGGCGGCTTCTACTCCGGCACCGCCACCCTGGACGTGTACGACCACCGGGCGCTTGCGTCGGAGGAGAACGTGATCGTGGTGTCGCTGCAGTACCGCGTGGCCAGTCTGGGCTTCCTGTTTCTC'
 </pre></div>
 </div>
 </div>
@@ -1660,21 +1660,21 @@ the target snp is 119 bp into our target sequence
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_parameters</span>  <span class="o">=</span>  <span class="p">{</span>
-    <span class="s1">&#39;PRIMER_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_TASK&#39;</span><span class="p">:</span><span class="s1">&#39;generic&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_OPT_TM&#39;</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_TM&#39;</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_TM&#39;</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_GC&#39;</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_GC&#39;</span><span class="p">:</span> <span class="mf">75.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_THREE_PRIME_DISTANCE&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_TM&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_TM&#39;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
+    <span class="s1">'PRIMER_OPT_SIZE'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">'PRIMER_TASK'</span><span class="p">:</span><span class="s1">'generic'</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_SIZE'</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_SIZE'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s1">'PRIMER_OPT_TM'</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_TM'</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_TM'</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_GC'</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_GC'</span><span class="p">:</span> <span class="mf">75.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_THREE_PRIME_DISTANCE'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
+    <span class="s1">'PRIMER_INTERNAL_OPT_SIZE'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_SIZE'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_SIZE'</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_TM'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_TM'</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
     <span class="c1"># Extra primer3 parameters can go here</span>
     <span class="c1"># In the same format as above                       </span>
 <span class="p">}</span>
@@ -1727,13 +1727,13 @@ primer_probe_num_returned  :  5
 
 primer_pair_num_returned  :  5 
 
-primer_pair  :  [{&#39;PENALTY&#39;: 0.7107151008710275, &#39;COMPL_ANY_TH&#39;: 0.0, &#39;COMPL_END_TH&#39;: 0.0, &#39;PRODUCT_SIZE&#39;: 95, &#39;PRODUCT_TM&#39;: 88.90156407263927}, {&#39;PENALTY&#39;: 1.8268188261876048, &#39;COMPL_ANY_TH&#39;: 0.0, &#39;COMPL_END_TH&#39;: 0.0, &#39;PRODUCT_SIZE&#39;: 66, &#39;PRODUCT_TM&#39;: 86.70188305190561}, {&#39;PENALTY&#39;: 3.1582579651147853, &#39;COMPL_ANY_TH&#39;: 0.0, &#39;COMPL_END_TH&#39;: 1.562469314775342, &#39;PRODUCT_SIZE&#39;: 103, &#39;PRODUCT_TM&#39;: 89.70217725608332}, {&#39;PENALTY&#39;: 3.3586929277500417, &#39;COMPL_ANY_TH&#39;: 12.973825966488278, &#39;COMPL_END_TH&#39;: 17.231667178159967, &#39;PRODUCT_SIZE&#39;: 112, &#39;PRODUCT_TM&#39;: 90.19160166662422}, {&#39;PENALTY&#39;: 5.1324389543266875, &#39;COMPL_ANY_TH&#39;: 0.0, &#39;COMPL_END_TH&#39;: 0.0, &#39;PRODUCT_SIZE&#39;: 120, &#39;PRODUCT_TM&#39;: 90.45112547614804}] 
+primer_pair  :  [{'PENALTY': 0.7107151008710275, 'COMPL_ANY_TH': 0.0, 'COMPL_END_TH': 0.0, 'PRODUCT_SIZE': 95, 'PRODUCT_TM': 88.90156407263927}, {'PENALTY': 1.8268188261876048, 'COMPL_ANY_TH': 0.0, 'COMPL_END_TH': 0.0, 'PRODUCT_SIZE': 66, 'PRODUCT_TM': 86.70188305190561}, {'PENALTY': 3.1582579651147853, 'COMPL_ANY_TH': 0.0, 'COMPL_END_TH': 1.562469314775342, 'PRODUCT_SIZE': 103, 'PRODUCT_TM': 89.70217725608332}, {'PENALTY': 3.3586929277500417, 'COMPL_ANY_TH': 12.973825966488278, 'COMPL_END_TH': 17.231667178159967, 'PRODUCT_SIZE': 112, 'PRODUCT_TM': 90.19160166662422}, {'PENALTY': 5.1324389543266875, 'COMPL_ANY_TH': 0.0, 'COMPL_END_TH': 0.0, 'PRODUCT_SIZE': 120, 'PRODUCT_TM': 90.45112547614804}] 
 
-primer_forward  :  [{&#39;PENALTY&#39;: 0.46258069149581615, &#39;SEQUENCE&#39;: &#39;TCATGCTGTGGATCTTCGGC&#39;, &#39;COORDS&#39;: [96, 20], &#39;TM&#39;: 60.462580691495816, &#39;GC_PERCENT&#39;: 55.0, &#39;SELF_ANY_TH&#39;: 12.259940761643293, &#39;SELF_END_TH&#39;: 12.259940761643293, &#39;HAIRPIN_TH&#39;: 36.59415215911514, &#39;END_STABILITY&#39;: 5.54}, {&#39;PENALTY&#39;: 0.7458448421797357, &#39;SEQUENCE&#39;: &#39;GCCGTCATGCTGTGGATCTT&#39;, &#39;COORDS&#39;: [92, 20], &#39;TM&#39;: 60.745844842179736, &#39;GC_PERCENT&#39;: 55.0, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 0.0, &#39;END_STABILITY&#39;: 2.4}, {&#39;PENALTY&#39;: 1.0630056029440311, &#39;SEQUENCE&#39;: &#39;CAAGAATGCGGCCGTCATG&#39;, &#39;COORDS&#39;: [82, 19], &#39;TM&#39;: 59.93699439705597, &#39;GC_PERCENT&#39;: 57.89473684210526, &#39;SELF_ANY_TH&#39;: 27.740677587638743, &#39;SELF_END_TH&#39;: 17.565181116897747, &#39;HAIRPIN_TH&#39;: 0.0, &#39;END_STABILITY&#39;: 3.07}, {&#39;PENALTY&#39;: 1.2319584737745117, &#39;SEQUENCE&#39;: &#39;ACATTAACGTGGTGGCACCG&#39;, &#39;COORDS&#39;: [51, 20], &#39;TM&#39;: 61.23195847377451, &#39;GC_PERCENT&#39;: 55.0, &#39;SELF_ANY_TH&#39;: 30.138122022371874, &#39;SELF_END_TH&#39;: 21.521828989913672, &#39;HAIRPIN_TH&#39;: 42.57679566489054, &#39;END_STABILITY&#39;: 4.94}, {&#39;PENALTY&#39;: 2.0373810945843616, &#39;SEQUENCE&#39;: &#39;TCTGTACATTAACGTGGTGGCA&#39;, &#39;COORDS&#39;: [46, 22], &#39;TM&#39;: 59.96261890541564, &#39;GC_PERCENT&#39;: 45.45454545454545, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 0.0, &#39;END_STABILITY&#39;: 4.92}] 
+primer_forward  :  [{'PENALTY': 0.46258069149581615, 'SEQUENCE': 'TCATGCTGTGGATCTTCGGC', 'COORDS': [96, 20], 'TM': 60.462580691495816, 'GC_PERCENT': 55.0, 'SELF_ANY_TH': 12.259940761643293, 'SELF_END_TH': 12.259940761643293, 'HAIRPIN_TH': 36.59415215911514, 'END_STABILITY': 5.54}, {'PENALTY': 0.7458448421797357, 'SEQUENCE': 'GCCGTCATGCTGTGGATCTT', 'COORDS': [92, 20], 'TM': 60.745844842179736, 'GC_PERCENT': 55.0, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 0.0, 'END_STABILITY': 2.4}, {'PENALTY': 1.0630056029440311, 'SEQUENCE': 'CAAGAATGCGGCCGTCATG', 'COORDS': [82, 19], 'TM': 59.93699439705597, 'GC_PERCENT': 57.89473684210526, 'SELF_ANY_TH': 27.740677587638743, 'SELF_END_TH': 17.565181116897747, 'HAIRPIN_TH': 0.0, 'END_STABILITY': 3.07}, {'PENALTY': 1.2319584737745117, 'SEQUENCE': 'ACATTAACGTGGTGGCACCG', 'COORDS': [51, 20], 'TM': 61.23195847377451, 'GC_PERCENT': 55.0, 'SELF_ANY_TH': 30.138122022371874, 'SELF_END_TH': 21.521828989913672, 'HAIRPIN_TH': 42.57679566489054, 'END_STABILITY': 4.94}, {'PENALTY': 2.0373810945843616, 'SEQUENCE': 'TCTGTACATTAACGTGGTGGCA', 'COORDS': [46, 22], 'TM': 59.96261890541564, 'GC_PERCENT': 45.45454545454545, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 0.0, 'END_STABILITY': 4.92}] 
 
-primer_reverse  :  [{&#39;PENALTY&#39;: 0.24813440937521136, &#39;SEQUENCE&#39;: &#39;GATCACGTTCTCCTCCGACG&#39;, &#39;COORDS&#39;: [190, 20], &#39;TM&#39;: 60.24813440937521, &#39;GC_PERCENT&#39;: 60.0, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 42.12619709637721, &#39;END_STABILITY&#39;: 5.12}, {&#39;PENALTY&#39;: 1.0809739840078691, &#39;SEQUENCE&#39;: &#39;GTCGTACACGTCCAGGGTG&#39;, &#39;COORDS&#39;: [157, 19], &#39;TM&#39;: 60.08097398400787, &#39;GC_PERCENT&#39;: 63.1578947368421, &#39;SELF_ANY_TH&#39;: 1.1902412874118795, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 36.90501393969038, &#39;END_STABILITY&#39;: 4.61}, {&#39;PENALTY&#39;: 2.095252362170754, &#39;SEQUENCE&#39;: &#39;GTTCTCCTCCGACGCAAGC&#39;, &#39;COORDS&#39;: [184, 19], &#39;TM&#39;: 61.095252362170754, &#39;GC_PERCENT&#39;: 63.1578947368421, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 45.62213695404927, &#39;END_STABILITY&#39;: 4.01}, {&#39;PENALTY&#39;: 2.12673445397553, &#39;SEQUENCE&#39;: &#39;CGGTGGTCGTACACGTCC&#39;, &#39;COORDS&#39;: [162, 18], &#39;TM&#39;: 60.12673445397553, &#39;GC_PERCENT&#39;: 66.66666666666667, &#39;SELF_ANY_TH&#39;: 10.508612029603285, &#39;SELF_END_TH&#39;: 10.508612029603285, &#39;HAIRPIN_TH&#39;: 45.42514212470502, &#39;END_STABILITY&#39;: 4.79}, {&#39;PENALTY&#39;: 3.095057859742326, &#39;SEQUENCE&#39;: &#39;GCCCGGTGGTCGTACAC&#39;, &#39;COORDS&#39;: [165, 17], &#39;TM&#39;: 60.095057859742326, &#39;GC_PERCENT&#39;: 70.58823529411765, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 4.099068456778866, &#39;HAIRPIN_TH&#39;: 40.60200555214965, &#39;END_STABILITY&#39;: 2.9}] 
+primer_reverse  :  [{'PENALTY': 0.24813440937521136, 'SEQUENCE': 'GATCACGTTCTCCTCCGACG', 'COORDS': [190, 20], 'TM': 60.24813440937521, 'GC_PERCENT': 60.0, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 42.12619709637721, 'END_STABILITY': 5.12}, {'PENALTY': 1.0809739840078691, 'SEQUENCE': 'GTCGTACACGTCCAGGGTG', 'COORDS': [157, 19], 'TM': 60.08097398400787, 'GC_PERCENT': 63.1578947368421, 'SELF_ANY_TH': 1.1902412874118795, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 36.90501393969038, 'END_STABILITY': 4.61}, {'PENALTY': 2.095252362170754, 'SEQUENCE': 'GTTCTCCTCCGACGCAAGC', 'COORDS': [184, 19], 'TM': 61.095252362170754, 'GC_PERCENT': 63.1578947368421, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 45.62213695404927, 'END_STABILITY': 4.01}, {'PENALTY': 2.12673445397553, 'SEQUENCE': 'CGGTGGTCGTACACGTCC', 'COORDS': [162, 18], 'TM': 60.12673445397553, 'GC_PERCENT': 66.66666666666667, 'SELF_ANY_TH': 10.508612029603285, 'SELF_END_TH': 10.508612029603285, 'HAIRPIN_TH': 45.42514212470502, 'END_STABILITY': 4.79}, {'PENALTY': 3.095057859742326, 'SEQUENCE': 'GCCCGGTGGTCGTACAC', 'COORDS': [165, 17], 'TM': 60.095057859742326, 'GC_PERCENT': 70.58823529411765, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 4.099068456778866, 'HAIRPIN_TH': 40.60200555214965, 'END_STABILITY': 2.9}] 
 
-primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#39;GCGGCTTCTACTCCGGCACC&#39;, &#39;COORDS&#39;: [117, 20], &#39;TM&#39;: 59.83883088562874, &#39;GC_PERCENT&#39;: 70.0, &#39;SELF_ANY_TH&#39;: 0.0, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 42.29746586682808}, {&#39;PENALTY&#39;: 3.1023652706057874, &#39;SEQUENCE&#39;: &#39;GCGGCGGCTTCTACTCCGG&#39;, &#39;COORDS&#39;: [114, 19], &#39;TM&#39;: 59.89763472939421, &#39;GC_PERCENT&#39;: 73.6842105263158, &#39;SELF_ANY_TH&#39;: 7.734280912202962, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 42.29746586682808}, {&#39;PENALTY&#39;: 2.4995809801899327, &#39;SEQUENCE&#39;: &#39;GGATCTTCGGCGGCGGCT&#39;, &#39;COORDS&#39;: [105, 18], &#39;TM&#39;: 59.50041901981007, &#39;GC_PERCENT&#39;: 72.22222222222223, &#39;SELF_ANY_TH&#39;: 28.91330394666676, &#39;SELF_END_TH&#39;: 8.89162996824166, &#39;HAIRPIN_TH&#39;: 37.703259299207616}, {&#39;PENALTY&#39;: 3.348382651400243, &#39;SEQUENCE&#39;: &#39;TCTTCGGCGGCGGCTTCT&#39;, &#39;COORDS&#39;: [108, 18], &#39;TM&#39;: 58.65161734859976, &#39;GC_PERCENT&#39;: 66.66666666666667, &#39;SELF_ANY_TH&#39;: 28.91330394666676, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 37.703259299207616}, {&#39;PENALTY&#39;: 3.9645828504137626, &#39;SEQUENCE&#39;: &#39;TCGGCGGCGGCTTCTACT&#39;, &#39;COORDS&#39;: [111, 18], &#39;TM&#39;: 58.03541714958624, &#39;GC_PERCENT&#39;: 66.66666666666667, &#39;SELF_ANY_TH&#39;: 28.91330394666676, &#39;SELF_END_TH&#39;: 0.0, &#39;HAIRPIN_TH&#39;: 37.703259299207616}] 
+primer_probe  :  [{'PENALTY': 4.161169114371262, 'SEQUENCE': 'GCGGCTTCTACTCCGGCACC', 'COORDS': [117, 20], 'TM': 59.83883088562874, 'GC_PERCENT': 70.0, 'SELF_ANY_TH': 0.0, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 42.29746586682808}, {'PENALTY': 3.1023652706057874, 'SEQUENCE': 'GCGGCGGCTTCTACTCCGG', 'COORDS': [114, 19], 'TM': 59.89763472939421, 'GC_PERCENT': 73.6842105263158, 'SELF_ANY_TH': 7.734280912202962, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 42.29746586682808}, {'PENALTY': 2.4995809801899327, 'SEQUENCE': 'GGATCTTCGGCGGCGGCT', 'COORDS': [105, 18], 'TM': 59.50041901981007, 'GC_PERCENT': 72.22222222222223, 'SELF_ANY_TH': 28.91330394666676, 'SELF_END_TH': 8.89162996824166, 'HAIRPIN_TH': 37.703259299207616}, {'PENALTY': 3.348382651400243, 'SEQUENCE': 'TCTTCGGCGGCGGCTTCT', 'COORDS': [108, 18], 'TM': 58.65161734859976, 'GC_PERCENT': 66.66666666666667, 'SELF_ANY_TH': 28.91330394666676, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 37.703259299207616}, {'PENALTY': 3.9645828504137626, 'SEQUENCE': 'TCGGCGGCGGCTTCTACT', 'COORDS': [111, 18], 'TM': 58.03541714958624, 'GC_PERCENT': 66.66666666666667, 'SELF_ANY_TH': 28.91330394666676, 'SELF_END_TH': 0.0, 'HAIRPIN_TH': 37.703259299207616}] 
 </pre></div>
 </div>
 </div>
@@ -1892,8 +1892,8 @@ primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#3
 <p>We can write this to .tsv and excel files, which can be explored in other editors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">assay_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">assay_type</span><span class="si">}</span><span class="s2">.primers.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">primer_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">assay_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">assay_type</span><span class="si">}</span><span class="s2">.primers.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">assay_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">assay_type</span><span class="si">}</span><span class="s2">.primers.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">primer_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">assay_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">assay_type</span><span class="si">}</span><span class="s2">.primers.xlsx"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1902,7 +1902,7 @@ primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#3
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primers</span> <span class="o">=</span> <span class="n">AnoPrimer</span><span class="o">.</span><span class="n">AnoPrimerResults</span><span class="p">(</span>
-        <span class="n">species</span><span class="o">=</span><span class="s2">&quot;gambiae_sl&quot;</span><span class="p">,</span>
+        <span class="n">species</span><span class="o">=</span><span class="s2">"gambiae_sl"</span><span class="p">,</span>
         <span class="n">data_resource</span><span class="o">=</span><span class="n">ag3</span><span class="p">,</span>
         <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span>
         <span class="n">assay_type</span><span class="o">=</span><span class="n">assay_type</span><span class="p">,</span>
@@ -1929,7 +1929,7 @@ primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#3
 <p>As we’ve seen in earlier workshops, Ag1000G samples are organised into sample sets. Lets look at what each sample set contains, breaking it down by species, year and country.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primers</span><span class="o">.</span><span class="n">summarise_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primers</span><span class="o">.</span><span class="n">summarise_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2361,8 +2361,8 @@ primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#3
 <p>Here, we can see the breakdown by sample set for country, species and year. For the purposes of this notebook, let’s use the Ghana, Burkina Faso and Guinea sample sets. If we wanted to use all sample sets, we could supply ‘3.0’ instead of a sample set, which will load all samples from the Ag3.0 release.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AG1000G-BF-A&#39;</span><span class="p">,</span> <span class="s1">&#39;AG1000G-GH&#39;</span><span class="p">,</span> <span class="s1">&#39;AG1000G-GN-A&#39;</span><span class="p">]</span>
-<span class="c1"># here we could subset to specific values in the metadata e.g.: &quot;taxon == &#39;gambiae&#39;&quot; , or &quot;taxon == &#39;arabiensis&#39;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'AG1000G-BF-A'</span><span class="p">,</span> <span class="s1">'AG1000G-GH'</span><span class="p">,</span> <span class="s1">'AG1000G-GN-A'</span><span class="p">]</span>
+<span class="c1"># here we could subset to specific values in the metadata e.g.: "taxon == 'gambiae'" , or "taxon == 'arabiensis'"</span>
 <span class="n">sample_query</span> <span class="o">=</span> <span class="kc">None</span> 
 </pre></div>
 </div>
@@ -2378,7 +2378,7 @@ primer_probe  :  [{&#39;PENALTY&#39;: 4.161169114371262, &#39;SEQUENCE&#39;: &#3
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dict</span> <span class="o">=</span> <span class="n">primers</span><span class="o">.</span><span class="n">plot_primer_snp_frequencies</span><span class="p">(</span>
     <span class="n">sample_sets</span><span class="o">=</span><span class="n">sample_sets</span><span class="p">,</span> 
     <span class="n">sample_query</span><span class="o">=</span><span class="n">sample_query</span><span class="p">,</span>
-    <span class="n">out_dir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="s2">"."</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -11736,8 +11736,8 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primers</span><span class="o">.</span><span class="n">plot_primer_locs</span><span class="p">(</span>
-    <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">,</span>
-    <span class="n">out_dir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+    <span class="n">legend_loc</span><span class="o">=</span><span class="s1">'lower left'</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -12065,7 +12065,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blat_result_df</span> <span class="o">=</span> <span class="n">primers</span><span class="o">.</span><span class="n">gget_blat_genome</span><span class="p">(</span>
-    <span class="n">assembly</span><span class="o">=</span><span class="s1">&#39;anoGam3&#39;</span>
+    <span class="n">assembly</span><span class="o">=</span><span class="s1">'anoGam3'</span>
 <span class="p">)</span>
 
 <span class="n">blat_result_df</span>
@@ -12086,7 +12086,7 @@ function(Bokeh) {
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06:44:42 - ERROR - 
-            BLAT of seqtype &#39;DNA&#39; using assembly &#39;anoGam3&#39; was unsuccesful. 
+            BLAT of seqtype 'DNA' using assembly 'anoGam3' was unsuccesful. 
             Possible causes: 
             - Sequence possibly too short (required minimum: 20 characters). 
             - Assembly possibly invalid. All available species with their respective assemblies are listed at https://genome.ucsc.edu/cgi-bin/hgBlat.
@@ -12353,30 +12353,30 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_parameters</span>  <span class="o">=</span>  <span class="p">{</span>
-    <span class="s1">&#39;PRIMER_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_TASK&#39;</span><span class="p">:</span><span class="s1">&#39;generic&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_OPT_TM&#39;</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_TM&#39;</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_TM&#39;</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_GC&#39;</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_GC&#39;</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_THREE_PRIME_DISTANCE&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_TM&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_TM&#39;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
+    <span class="s1">'PRIMER_OPT_SIZE'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">'PRIMER_TASK'</span><span class="p">:</span><span class="s1">'generic'</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_SIZE'</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_SIZE'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s1">'PRIMER_OPT_TM'</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_TM'</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_TM'</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_GC'</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_GC'</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_THREE_PRIME_DISTANCE'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
+    <span class="s1">'PRIMER_INTERNAL_OPT_SIZE'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_SIZE'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_SIZE'</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_TM'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_TM'</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
     <span class="c1"># Extra primer3 parameters can go here</span>
     <span class="c1"># In the same format as above</span>
     <span class="p">}</span>
 
 <span class="n">bad_primers</span> <span class="o">=</span> <span class="n">AnoPrimer</span><span class="o">.</span><span class="n">design_primers</span><span class="p">(</span>
-    <span class="n">species</span><span class="o">=</span><span class="s1">&#39;gambiae_sl&#39;</span><span class="p">,</span>
-    <span class="n">assay_type</span><span class="o">=</span><span class="s1">&#39;cDNA primers&#39;</span><span class="p">,</span>  <span class="c1"># assay_type options are: &#39;cDNA primers&#39;, &#39;gDNA primers&#39;, &#39;gDNA primers + probe&#39;, &#39;probe&#39;</span>
-    <span class="n">target</span><span class="o">=</span><span class="s1">&#39;AGAP006222-RA&#39;</span><span class="p">,</span>  <span class="c1"># target should be an AGAP transcript identifier in for cDNA, otherwise should be an integer in genome</span>
-    <span class="n">assay_name</span><span class="o">=</span><span class="s1">&#39;UGT_222&#39;</span><span class="p">,</span>
+    <span class="n">species</span><span class="o">=</span><span class="s1">'gambiae_sl'</span><span class="p">,</span>
+    <span class="n">assay_type</span><span class="o">=</span><span class="s1">'cDNA primers'</span><span class="p">,</span>  <span class="c1"># assay_type options are: 'cDNA primers', 'gDNA primers', 'gDNA primers + probe', 'probe'</span>
+    <span class="n">target</span><span class="o">=</span><span class="s1">'AGAP006222-RA'</span><span class="p">,</span>  <span class="c1"># target should be an AGAP transcript identifier in for cDNA, otherwise should be an integer in genome</span>
+    <span class="n">assay_name</span><span class="o">=</span><span class="s1">'UGT_222'</span><span class="p">,</span>
     <span class="n">n_primer_pairs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">min_amplicon_size</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
     <span class="n">max_amplicon_size</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
@@ -12384,9 +12384,9 @@ function(Bokeh) {
 <span class="p">)</span>
 
 <span class="n">bad_primers</span><span class="o">.</span><span class="n">evaluate_primers</span><span class="p">(</span>    
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;AG1000G-GH&#39;</span><span class="p">,</span>          <span class="c1"># sample_set = &#39;3.0&#39; .you can also supply lists with multiple sample sets e.g [&#39;AG1000G-GH&#39;, &#39;AG1000G-CI&#39;, &#39;AG1000G-BF-A&#39;]</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;coluzzii&#39;&quot;</span><span class="p">,</span>
-    <span class="n">out_dir</span><span class="o">=</span><span class="s2">&quot;.&quot;</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'AG1000G-GH'</span><span class="p">,</span>          <span class="c1"># sample_set = '3.0' .you can also supply lists with multiple sample sets e.g ['AG1000G-GH', 'AG1000G-CI', 'AG1000G-BF-A']</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'coluzzii'"</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="s2">"."</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -13324,7 +13324,7 @@ function(Bokeh) {
   }
 }(window));</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exon junctions for AGAP006222-RA: [ 238  325  911 1353] [28524463, 28524621, 28525282, 28525790] 
 
-Subsetting allele frequencies to taxon == &#39;coluzzii&#39;
+Subsetting allele frequencies to taxon == 'coluzzii'
 </pre></div>
 </div>
 <script type="application/javascript">'use strict';
@@ -19151,31 +19151,31 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primer_parameters</span>  <span class="o">=</span>  <span class="p">{</span>
-    <span class="s1">&#39;PRIMER_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_TASK&#39;</span><span class="p">:</span><span class="s1">&#39;generic&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_OPT_TM&#39;</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_TM&#39;</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_TM&#39;</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_GC&#39;</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MAX_GC&#39;</span><span class="p">:</span> <span class="mf">75.0</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_MIN_THREE_PRIME_DISTANCE&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_OPT_SIZE&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_SIZE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_SIZE&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MIN_TM&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-    <span class="s1">&#39;PRIMER_INTERNAL_MAX_TM&#39;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
+    <span class="s1">'PRIMER_OPT_SIZE'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">'PRIMER_TASK'</span><span class="p">:</span><span class="s1">'generic'</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_SIZE'</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_SIZE'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+    <span class="s1">'PRIMER_OPT_TM'</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_TM'</span><span class="p">:</span> <span class="mf">55.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_TM'</span><span class="p">:</span> <span class="mf">64.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_GC'</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MAX_GC'</span><span class="p">:</span> <span class="mf">75.0</span><span class="p">,</span>
+    <span class="s1">'PRIMER_MIN_THREE_PRIME_DISTANCE'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># this parameter is the minimum distance between successive pairs. If 1, it means successive primer pairs could be identical bar one base shift</span>
+    <span class="s1">'PRIMER_INTERNAL_OPT_SIZE'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>  <span class="c1"># Probe size preferences if selected, otherwise ignored</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_SIZE'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_SIZE'</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MIN_TM'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+    <span class="s1">'PRIMER_INTERNAL_MAX_TM'</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>  <span class="c1"># Probe considerations are quite relaxed, assumed that LNAs / Taqman will be used later to affect TM</span>
     <span class="c1"># Extra primer3 parameters can go here</span>
     <span class="c1"># In the same format as above                       </span>
     <span class="p">}</span>
 
 
 <span class="c1"># coe_primers= AnoPrimer.design_primers(</span>
-<span class="c1">#      species=&#39;gambiae_sl&#39;,</span>
-<span class="c1">#      assay_type=&#39;cDNA primers&#39;,  # assay_type options are: &#39;cDNA primers&#39;, &#39;gDNA primers&#39;, &#39;gDNA primers + probe&#39;, &#39;probe&#39;</span>
-<span class="c1">#      target=&#39;AGAP000818-RA&#39;,            # target should be an AGAP transcript identifier in for cDNA primers, otherwise should be an integer in genome</span>
-<span class="c1">#      assay_name=&#39;COEAE2F&#39;,</span>
+<span class="c1">#      species='gambiae_sl',</span>
+<span class="c1">#      assay_type='cDNA primers',  # assay_type options are: 'cDNA primers', 'gDNA primers', 'gDNA primers + probe', 'probe'</span>
+<span class="c1">#      target='AGAP000818-RA',            # target should be an AGAP transcript identifier in for cDNA primers, otherwise should be an integer in genome</span>
+<span class="c1">#      assay_name='COEAE2F',</span>
 <span class="c1">#      n_primer_pairs=8,</span>
 <span class="c1">#      min_amplicon_size=60,</span>
 <span class="c1">#      max_amplicon_size=120,</span>
@@ -19183,8 +19183,8 @@ function(Bokeh) {
 <span class="c1"># )</span>
 <span class="c1">#</span>
 <span class="c1"># coe_primers.evaluate_primers(</span>
-<span class="c1">#      sample_sets=[&#39;AG1000G-BF-A&#39;, &#39;AG1000G-GH&#39;, &#39;AG1000G-GN-A&#39;], </span>
-<span class="c1">#      out_dir=&quot;.&quot;</span>
+<span class="c1">#      sample_sets=['AG1000G-BF-A', 'AG1000G-GH', 'AG1000G-GN-A'], </span>
+<span class="c1">#      out_dir="."</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>

@@ -602,7 +602,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -614,7 +614,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># if running on colab, mount Google drive</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;drive&#39;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'drive'</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -624,7 +624,7 @@ document.write(`
 <p>With our Google Drive now mounted, we can define and make a directory where we want to save our results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s1">&#39;drive/MyDrive/Colab Data/module_4_results&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s1">'drive/MyDrive/Colab Data/module_4_results'</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1204,25 +1204,25 @@ function(Bokeh) {
 <p>There are several columns in the metadata which provide data on AIMs. Let’s take a look.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sample_meta_df</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;aim_&quot;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sample_meta_df</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"aim_"</span><span class="p">)]</span>
 <span class="n">aim_columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aim_species_fraction_arab&#39;,
- &#39;aim_species_fraction_colu&#39;,
- &#39;aim_species_fraction_colu_no2l&#39;,
- &#39;aim_species_gambcolu_arabiensis&#39;,
- &#39;aim_species_gambiae_coluzzii&#39;,
- &#39;aim_species&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['aim_species_fraction_arab',
+ 'aim_species_fraction_colu',
+ 'aim_species_fraction_colu_no2l',
+ 'aim_species_gambcolu_arabiensis',
+ 'aim_species_gambiae_coluzzii',
+ 'aim_species']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="p">[[</span><span class="s2">&quot;sample_id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">aim_columns</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="p">[[</span><span class="s2">"sample_id"</span><span class="p">]</span> <span class="o">+</span> <span class="n">aim_columns</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1312,7 +1312,7 @@ function(Bokeh) {
 <p>Note the “aim_species” column - this has the value of our provisional species call made from looking at AIM genotype calls. Let’s see all the values this can take:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"aim_species"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1401,8 +1401,8 @@ Figure or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span>
-    <span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span>
+    <span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1445,7 +1445,7 @@ if (outputEl) {{
 <p>Despite the fact that many samples are affected by the known introgression event on chromosome arm 2L, in most cases we still make fairly clear provisional species assignments using the AIMs. In fact, because this introgression is so common, we actually ignore chromosome arm 2L when making provisional species calls between <em>gambiae</em> and <em>coluzzii</em>. Here are the provisional assignments for this sample set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;AG1000G-BF-A&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == 'AG1000G-BF-A'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"aim_species"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1463,8 +1463,8 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span>
-    <span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gambcolu_vs_arab&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-UG&quot;</span>
+    <span class="n">aims</span><span class="o">=</span><span class="s2">"gambcolu_vs_arab"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-UG"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1507,7 +1507,7 @@ if (outputEl) {{
 <p>Sometimes, however, we see samples where the species is not clear. We can see a sample like this (ACO198-C) in the Uganda plot above. This sample has heterozygous genotypes at almost all AIMs, and so gets assigned as “intermediate_gambcolu_arabiensis” in the samples metadata “aim_species” column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_id == &#39;AC0198-C&#39;&quot;</span><span class="p">)[[</span><span class="s2">&quot;sample_id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">aim_columns</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_id == 'AC0198-C'"</span><span class="p">)[[</span><span class="s2">"sample_id"</span><span class="p">]</span> <span class="o">+</span> <span class="n">aim_columns</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1557,7 +1557,7 @@ if (outputEl) {{
 <p>Here are counts of the different AIM species assignments in Uganda:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;AG1000G-UG&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == 'AG1000G-UG'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"aim_species"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1575,8 +1575,8 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span>
-    <span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-GW&quot;</span>
+    <span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-GW"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1617,7 +1617,7 @@ if (outputEl) {{
 <p>In sample sets like this, there may be many “intermediate” AIM species assignments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;AG1000G-GW&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == 'AG1000G-GW'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"aim_species"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1661,7 +1661,7 @@ ag3.pca(
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_indices: Optional[List[int]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     site_class: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     min_minor_ac: Union[int, float, NoneType] = <span class=" -Color -Color-Green">2</span>,
     max_missing_an: Union[int, float, NoneType] = <span class=" -Color -Color-Green">0</span>,
@@ -1672,7 +1672,7 @@ ag3.pca(
     fit_exclude_samples: Union[str, int, List[Union[str, int]], Tuple[Union[str, int], ...], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
 ) -&gt; Tuple[pandas.core.frame.DataFrame, numpy.ndarray]
 <span class=" -Color -Color-Red">Docstring:</span>
 Run a principal components analysis (PCA) using biallelic SNPs from the
@@ -1692,7 +1692,7 @@ Parameters
 ----------
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
 n_snps : int
@@ -1718,7 +1718,7 @@ sample_indices : list of int or None, optional
     corresponding to the order in which the samples are found within the
     sample metadata. Either provide this parameter or sample_query, not
     both.
-site_mask : str or None, optional, default: &#39;default&#39;
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 site_class : str or None, optional
@@ -1726,9 +1726,9 @@ site_class : str or None, optional
     (4-fold degenerate coding sites), CDS_DEG_2_SIMPLE (2-fold simple
     degenerate coding sites), CDS_DEG_0 (non-degenerate coding sites),
     INTRON_SHORT (introns shorter than 100 bp), INTRON_LONG (introns
-    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5&#39;
-    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3&#39; splice
-    site), UTR_5PRIME (5&#39; untranslated region), UTR_3PRIME (3&#39;
+    longer than 200 bp), INTRON_SPLICE_5PRIME (intron within 2 bp of 5'
+    splice site), INTRON_SPLICE_3PRIME (intron within 2 bp of 3' splice
+    site), UTR_5PRIME (5' untranslated region), UTR_3PRIME (3'
     untranslated region), INTERGENIC (intergenic, more than 10 kbp from a
     gene).
 min_minor_ac : int or float or None, optional, default: 2
@@ -1759,16 +1759,16 @@ random_seed : int, optional, default: 42
     Random seed used for reproducible down-sampling.
 inline_array : bool, optional, default: True
     Passed through to dask `from_array()`.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1871,7 +1871,7 @@ the API client.
 <p>Let’s define some parameters to use in all the PCA computations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;3L:15,000,000-41,000,000&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="s2">"3L:15,000,000-41,000,000"</span>
 <span class="n">n_snps</span> <span class="o">=</span> <span class="mi">100_000</span>
 </pre></div>
 </div>
@@ -1883,7 +1883,7 @@ the API client.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-UG&quot;</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-UG"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1992,8 +1992,8 @@ if (outputEl) {{
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.plot_pca_coords(
     data: pandas.core.frame.DataFrame,
-    x: str = <span class=" -Color -Color-Yellow">&#39;PC1&#39;</span>,
-    y: str = <span class=" -Color -Color-Yellow">&#39;PC2&#39;</span>,
+    x: str = <span class=" -Color -Color-Yellow">'PC1'</span>,
+    y: str = <span class=" -Color -Color-Yellow">'PC2'</span>,
     color: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     symbol: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     opacity: float = <span class=" -Color -Color-Green">0.9</span>,
@@ -2005,10 +2005,10 @@ ag3.plot_pca_coords(
     color_discrete_sequence: Optional[List] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     color_discrete_map: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     category_orders: Union[List, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    legend_sizing: Literal[<span class=" -Color -Color-Yellow">&#39;constant&#39;</span>, <span class=" -Color -Color-Yellow">&#39;trace&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;constant&#39;</span>,
+    legend_sizing: Literal[<span class=" -Color -Color-Yellow">'constant'</span>, <span class=" -Color -Color-Yellow">'trace'</span>] = <span class=" -Color -Color-Yellow">'constant'</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     renderer: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    render_mode: Literal[<span class=" -Color -Color-Yellow">&#39;auto&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>,
+    render_mode: Literal[<span class=" -Color -Color-Yellow">'auto'</span>, <span class=" -Color -Color-Yellow">'svg'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>] = <span class=" -Color -Color-Yellow">'svg'</span>,
     **kwargs,
 ) -&gt; Optional[plotly.graph_objs._figure.Figure]
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -2093,9 +2093,9 @@ data : DataFrame
     integer between 1 and the number of components). There are as many
     such columns as components,     `pca_fit` is whether this sample was
     used for fitting.
-x : str, optional, default: &#39;PC1&#39;
+x : str, optional, default: 'PC1'
     Name of variable to plot on the X axis.
-y : str, optional, default: &#39;PC2&#39;
+y : str, optional, default: 'PC2'
     Name of variable to plot on the Y axis.
 color : str or Mapping or None, optional
     Name of variable to use to color the markers.
@@ -2119,16 +2119,16 @@ color_discrete_map : Mapping or None, optional
     Provide an explicit mapping from values to colours.
 category_orders : List or Mapping or None, optional
     Control the order in which values appear in the legend.
-legend_sizing : {&#39;constant&#39;, &#39;trace&#39;}, optional, default: &#39;constant&#39;
+legend_sizing : {'constant', 'trace'}, optional, default: 'constant'
     Determines if the legend items symbols scale with their corresponding
-    &quot;trace&quot; attributes or remain &quot;constant&quot; independent of the symbol size
+    "trace" attributes or remain "constant" independent of the symbol size
     on the graph.
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
 renderer : str or None, optional
     The name of the renderer to use.
-render_mode : {&#39;auto&#39;, &#39;svg&#39;, &#39;webgl&#39;}, optional, default: &#39;svg&#39;
+render_mode : {'auto', 'svg', 'webgl'}, optional, default: 'svg'
     The type of rendering backend to use. See also
     https://plotly.com/python/webgl-vs-svg/.
 **kwargs
@@ -2147,7 +2147,7 @@ Figure or None
 <p>So we just need to plug in our <code class="docutils literal notranslate"><span class="pre">pca_df</span></code> Pandas DataFrame, however, we can also colour our points using the “gambcolu_vs_arab” AIM derived provisional taxon data to help us interpret the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"aim_species"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2190,7 +2190,7 @@ if (outputEl) {{
 <p>In this case (AG1000G-UG), we don’t need to alter our provisional AIM species assignments, and so the “taxon” column will be identical to “aim_species”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;AG1000G-UG&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;aim_species&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == 'AG1000G-UG'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"aim_species"</span><span class="p">,</span> <span class="s2">"taxon"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2212,9 +2212,9 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span>
-    <span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-TZ&quot;</span><span class="p">,</span> 
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;aim_species != &#39;arabiensis&#39;&quot;</span>
+    <span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-TZ"</span><span class="p">,</span> 
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"aim_species != 'arabiensis'"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2263,7 +2263,7 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca_df</span><span class="p">,</span> <span class="n">evr</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> 
     <span class="n">n_snps</span><span class="o">=</span><span class="n">n_snps</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-TZ&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-TZ"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2328,9 +2328,9 @@ if (outputEl) {{
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.plot_pca_coords_3d(
     data: pandas.core.frame.DataFrame,
-    x: str = <span class=" -Color -Color-Yellow">&#39;PC1&#39;</span>,
-    y: str = <span class=" -Color -Color-Yellow">&#39;PC2&#39;</span>,
-    z: str = <span class=" -Color -Color-Yellow">&#39;PC3&#39;</span>,
+    x: str = <span class=" -Color -Color-Yellow">'PC1'</span>,
+    y: str = <span class=" -Color -Color-Yellow">'PC2'</span>,
+    z: str = <span class=" -Color -Color-Yellow">'PC3'</span>,
     color: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     symbol: Union[str, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     jitter_frac: Optional[float] = <span class=" -Color -Color-Green">0.02</span>,
@@ -2341,7 +2341,7 @@ ag3.plot_pca_coords_3d(
     color_discrete_sequence: Optional[List] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     color_discrete_map: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     category_orders: Union[List, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    legend_sizing: Literal[<span class=" -Color -Color-Yellow">&#39;constant&#39;</span>, <span class=" -Color -Color-Yellow">&#39;trace&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;constant&#39;</span>,
+    legend_sizing: Literal[<span class=" -Color -Color-Yellow">'constant'</span>, <span class=" -Color -Color-Yellow">'trace'</span>] = <span class=" -Color -Color-Yellow">'constant'</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     renderer: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     **kwargs,
@@ -2428,11 +2428,11 @@ data : DataFrame
     integer between 1 and the number of components). There are as many
     such columns as components,     `pca_fit` is whether this sample was
     used for fitting.
-x : str, optional, default: &#39;PC1&#39;
+x : str, optional, default: 'PC1'
     Name of variable to plot on the X axis.
-y : str, optional, default: &#39;PC2&#39;
+y : str, optional, default: 'PC2'
     Name of variable to plot on the Y axis.
-z : str, optional, default: &#39;PC3&#39;
+z : str, optional, default: 'PC3'
     Name of variable to plot on the Z axis.
 color : str or Mapping or None, optional
     Name of variable to use to color the markers.
@@ -2454,9 +2454,9 @@ color_discrete_map : Mapping or None, optional
     Provide an explicit mapping from values to colours.
 category_orders : List or Mapping or None, optional
     Control the order in which values appear in the legend.
-legend_sizing : {&#39;constant&#39;, &#39;trace&#39;}, optional, default: &#39;constant&#39;
+legend_sizing : {'constant', 'trace'}, optional, default: 'constant'
     Determines if the legend items symbols scale with their corresponding
-    &quot;trace&quot; attributes or remain &quot;constant&quot; independent of the symbol size
+    "trace" attributes or remain "constant" independent of the symbol size
     on the graph.
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
@@ -2479,7 +2479,7 @@ Figure or None
 <p>The parameters are very similar to the 2D PCA plotting function, except here we have another axis parameter “z” that we can assign another principal component to. Let’s colour the points by <code class="docutils literal notranslate"><span class="pre">aim_species</span></code> as we did before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords_3d</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;PC3&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords_3d</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"PC1"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"PC2"</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">"PC3"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"aim_species"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2552,10 +2552,10 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords_3d</span><span class="p">(</span>
     <span class="n">pca_df</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> 
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span> 
-    <span class="n">z</span><span class="o">=</span><span class="s2">&quot;PC3&quot;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;aim_species_fraction_colu&quot;</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"PC1"</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PC2"</span><span class="p">,</span> 
+    <span class="n">z</span><span class="o">=</span><span class="s2">"PC3"</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s2">"aim_species_fraction_colu"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2603,7 +2603,7 @@ if (outputEl) {{
 <p>We can see this re-labelling if we run the same PCA but colour our samples by “taxon”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords_3d</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;PC3&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_pca_coords_3d</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"PC1"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"PC2"</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">"PC3"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2643,7 +2643,7 @@ if (outputEl) {{
 <p>We can also see how some of the AIM species assignments are converted into a cryptic taxon assignment. I.e., there are some samples labelled as either “gambiae” or “intermediate_gambiae_coluzzii” in the aim_species column, which get assigned as “gcx3” in the taxon column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;sample_set == &#39;AG1000G-TZ&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;aim_species&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_meta_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"sample_set == 'AG1000G-TZ'"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"aim_species"</span><span class="p">,</span> <span class="s2">"taxon"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2682,7 +2682,7 @@ ag3.aa_allele_frequencies(
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     drop_invariant: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     include_counts: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 ) -&gt; pandas.core.frame.DataFrame
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -2694,7 +2694,7 @@ transcript : str
     Gene transcript identifier.
 cohorts : str or Mapping[str, str]
     Either a string giving the name of a predefined cohort set (e.g.,
-    &quot;admin1_month&quot;) or a dict mapping custom cohort labels to sample
+    "admin1_month") or a dict mapping custom cohort labels to sample
     queries.
 sample_query : str or None, optional
     A pandas query string to be evaluated against the sample metadata, to
@@ -2717,16 +2717,16 @@ drop_invariant : bool, optional, default: True
 include_counts : bool, optional, default: False
     Include columns with allele counts and number of non-missing allele
     calls (nobs).
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -2764,10 +2764,10 @@ from output data frame.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_allele_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aa_allele_frequencies</span><span class="p">(</span>
-    <span class="n">transcript</span><span class="o">=</span><span class="s2">&quot;AGAP004707-RD&quot;</span><span class="p">,</span> 
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-TZ&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon != &#39;arabiensis&#39;&quot;</span><span class="p">,</span>
+    <span class="n">transcript</span><span class="o">=</span><span class="s2">"AGAP004707-RD"</span><span class="p">,</span> 
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-TZ"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon != 'arabiensis'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -2789,7 +2789,7 @@ from output data frame.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_filt_df</span> <span class="o">=</span> <span class="n">aa_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_filt_df</span> <span class="o">=</span> <span class="n">aa_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

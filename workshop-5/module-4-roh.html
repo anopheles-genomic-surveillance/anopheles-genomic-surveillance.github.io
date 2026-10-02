@@ -571,7 +571,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -971,7 +971,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">()</span>
-<span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"release == '3.0' and country == 'Burkina Faso'"</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1162,15 +1162,15 @@ ag3.plot_heterozygosity(
     window_size: int = <span class=" -Color -Color-Green">20000</span>,
     y_max: float = <span class=" -Color -Color-Green">0.03</span>,
     circle_kwargs: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_set: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    sizing_mode: Literal[<span class=" -Color -Color-Yellow">&#39;fixed&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_both&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_both&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>,
+    sizing_mode: Literal[<span class=" -Color -Color-Yellow">'fixed'</span>, <span class=" -Color -Color-Yellow">'stretch_width'</span>, <span class=" -Color -Color-Yellow">'stretch_height'</span>, <span class=" -Color -Color-Yellow">'stretch_both'</span>, <span class=" -Color -Color-Yellow">'scale_width'</span>, <span class=" -Color -Color-Yellow">'scale_height'</span>, <span class=" -Color -Color-Yellow">'scale_both'</span>] = <span class=" -Color -Color-Yellow">'stretch_width'</span>,
     width: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     track_height: int = <span class=" -Color -Color-Green">170</span>,
     genes_height: int = <span class=" -Color -Color-Green">90</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    output_backend: Literal[<span class=" -Color -Color-Yellow">&#39;canvas&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    output_backend: Literal[<span class=" -Color -Color-Yellow">'canvas'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>, <span class=" -Color -Color-Yellow">'svg'</span>] = <span class=" -Color -Color-Yellow">'webgl'</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     gene_labels: Optional[Mapping[str, str]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     gene_labelset: Optional[bokeh.models.annotations.labels.LabelSet] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1185,20 +1185,20 @@ sample : str or int or list of str or int or tuple of str or int
     be provided as a list or tuple.
 region : str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript.
 window_size : int, optional, default: 20000
     Number of sites per window.
 y_max : float, optional, default: 0.03
     Y axis limit.
 circle_kwargs : Mapping or None, optional
-    Passed through to bokeh scatter() function with marker = &#39;circle&#39;.
-site_mask : str or None, optional, default: &#39;default&#39;
+    Passed through to bokeh scatter() function with marker = 'circle'.
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 sample_set : str or None, optional
     Sample set identifier.
-sizing_mode : {&#39;fixed&#39;, &#39;stretch_width&#39;, &#39;stretch_height&#39;, &#39;stretch_both&#39;, &#39;scale_width&#39;, &#39;scale_height&#39;, &#39;scale_both&#39;}, optional, default: &#39;stretch_width&#39;
+sizing_mode : {'fixed', 'stretch_width', 'stretch_height', 'stretch_both', 'scale_width', 'scale_height', 'scale_both'}, optional, default: 'stretch_width'
     Bokeh plot sizing mode, see also https://docs.bokeh.org/en/latest/docs
     /user_guide/basic/layouts.html#sizing-modes.
 width : int or None, optional
@@ -1210,19 +1210,19 @@ genes_height : int, optional, default: 90
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
-output_backend : {&#39;canvas&#39;, &#39;webgl&#39;, &#39;svg&#39;}, optional, default: &#39;webgl&#39;
+output_backend : {'canvas', 'webgl', 'svg'}, optional, default: 'webgl'
     Specify an output backend to render a plot area onto. See also
     https://docs.bokeh.org/en/latest/docs/user_guide/output/webgl.html.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1249,9 +1249,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AB0085-Cx&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AB0085-Cx"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -1310,7 +1310,7 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crosses_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cross_metadata</span><span class="p">()</span>
-<span class="n">crosses_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;role == &#39;parent&#39;&quot;</span><span class="p">)</span>
+<span class="n">crosses_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"role == 'parent'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1620,9 +1620,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AD0305-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AD0305-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -1667,9 +1667,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AD0306-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AD0306-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -1710,7 +1710,7 @@ Model or None
 <p>Let’s now compare the heterozygosity of these two parents with the heterozygosity in their progeny.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crosses_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;cross == &#39;42-4&#39; and role == &#39;progeny&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crosses_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"cross == '42-4' and role == 'progeny'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1876,9 +1876,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AD0309-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AD0309-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -1927,7 +1927,7 @@ Model or None
 <p>In Ag3.0 we have samples from the oceanic island Mayotte, ~1000km from mainland Africa and a similar distance from Madagascar. Due to these distances, it is likely that the <em>Anopheles gambiae</em> mosquito population was founded by just a few individuals. Let’s look at heterozygosity in a Mayotte sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;release == &#39;3.0&#39; and country == &#39;Mayotte&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"release == '3.0' and country == 'Mayotte'"</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2102,9 +2102,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AP0007-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AP0007-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -2161,7 +2161,7 @@ Model or None
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_df.query(&quot;release == &#39;3.0&#39; and location == &#39;Bioko&#39;&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_df.query("release == '3.0' and location == 'Bioko'")</span>
 </pre></div>
 </div>
 </div>
@@ -2169,9 +2169,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_heterozygosity(</span>
-<span class="c1">#     sample=&quot;???&quot;, </span>
-<span class="c1">#     region=&quot;3R&quot;, </span>
-<span class="c1">#     site_mask=&quot;gamb_colu&quot;, </span>
+<span class="c1">#     sample="???", </span>
+<span class="c1">#     region="3R", </span>
+<span class="c1">#     site_mask="gamb_colu", </span>
 <span class="c1">#     window_size=10_000,</span>
 <span class="c1"># );</span>
 </pre></div>
@@ -2184,7 +2184,7 @@ Model or None
 <p>One of the reasons for running population genetic analyses like heterozygosity, is to detect populations that don’t act as we expect them to, as this means we might be missing something about their demography which could be relevant to vector control. Samples of the putative cryptic species gcx3, collected in Kenya, have strange patterns of heterozygosity for wild samples, let’s take a look and think about what the causes could be.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;release == &#39;3.0&#39; and taxon == &#39;gcx3&#39; and country == &#39;Kenya&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"release == '3.0' and taxon == 'gcx3' and country == 'Kenya'"</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2359,9 +2359,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_heterozygosity</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AK0050-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AK0050-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -2416,7 +2416,7 @@ Model or None
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_df.query(&quot;release == &#39;3.0&#39; and taxon == &#39;gcx3&#39; and country == &#39;Tanzania&#39;&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample_df.query("release == '3.0' and taxon == 'gcx3' and country == 'Tanzania'")</span>
 </pre></div>
 </div>
 </div>
@@ -2424,9 +2424,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_heterozygosity(</span>
-<span class="c1">#     sample=&quot;???&quot;, </span>
-<span class="c1">#     region=&quot;3R&quot;, </span>
-<span class="c1">#     site_mask=&quot;gamb_colu&quot;, </span>
+<span class="c1">#     sample="???", </span>
+<span class="c1">#     region="3R", </span>
+<span class="c1">#     site_mask="gamb_colu", </span>
 <span class="c1">#     window_size=10_000,</span>
 <span class="c1"># );</span>
 </pre></div>
@@ -2452,21 +2452,21 @@ ag3.plot_roh(
     sample: Union[str, int],
     region: Union[str, malariagen_data.util.Region, Mapping],
     window_size: int = <span class=" -Color -Color-Green">20000</span>,
-    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    site_mask: Optional[str] = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_set: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     phet_roh: float = <span class=" -Color -Color-Green">0.001</span>,
     phet_nonroh: Tuple[float, ...] = (<span class=" -Color -Color-Green">0.003</span>, <span class=" -Color -Color-Green">0.01</span>),
     transition: float = <span class=" -Color -Color-Green">0.001</span>,
     y_max: float = <span class=" -Color -Color-Green">0.03</span>,
-    sizing_mode: Literal[<span class=" -Color -Color-Yellow">&#39;fixed&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_both&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_both&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>,
+    sizing_mode: Literal[<span class=" -Color -Color-Yellow">'fixed'</span>, <span class=" -Color -Color-Yellow">'stretch_width'</span>, <span class=" -Color -Color-Yellow">'stretch_height'</span>, <span class=" -Color -Color-Yellow">'stretch_both'</span>, <span class=" -Color -Color-Yellow">'scale_width'</span>, <span class=" -Color -Color-Yellow">'scale_height'</span>, <span class=" -Color -Color-Yellow">'scale_both'</span>] = <span class=" -Color -Color-Yellow">'stretch_width'</span>,
     width: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     heterozygosity_height: int = <span class=" -Color -Color-Green">170</span>,
     roh_height: int = <span class=" -Color -Color-Green">40</span>,
     genes_height: int = <span class=" -Color -Color-Green">90</span>,
     circle_kwargs: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    output_backend: Literal[<span class=" -Color -Color-Yellow">&#39;canvas&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    output_backend: Literal[<span class=" -Color -Color-Yellow">'canvas'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>, <span class=" -Color -Color-Yellow">'svg'</span>] = <span class=" -Color -Color-Yellow">'webgl'</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     gene_labels: Optional[Mapping[str, str]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     gene_labelset: Optional[bokeh.models.annotations.labels.LabelSet] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -2481,11 +2481,11 @@ sample : str or int
     Sample identifier or index within sample set.
 region : str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript.
 window_size : int, optional, default: 20000
     Number of sites per window.
-site_mask : str or None, optional, default: &#39;default&#39;
+site_mask : str or None, optional, default: 'default'
     Which site filters mask to apply. See the `site_mask_ids` property for
     available values.
 sample_set : str or None, optional
@@ -2499,7 +2499,7 @@ transition : float, optional, default: 0.001
     for a larger transitional probability.
 y_max : float, optional, default: 0.03
     Y axis limit.
-sizing_mode : {&#39;fixed&#39;, &#39;stretch_width&#39;, &#39;stretch_height&#39;, &#39;stretch_both&#39;, &#39;scale_width&#39;, &#39;scale_height&#39;, &#39;scale_both&#39;}, optional, default: &#39;stretch_width&#39;
+sizing_mode : {'fixed', 'stretch_width', 'stretch_height', 'stretch_both', 'scale_width', 'scale_height', 'scale_both'}, optional, default: 'stretch_width'
     Bokeh plot sizing mode, see also https://docs.bokeh.org/en/latest/docs
     /user_guide/basic/layouts.html#sizing-modes.
 width : int or None, optional
@@ -2511,23 +2511,23 @@ roh_height : int, optional, default: 40
 genes_height : int, optional, default: 90
     Genes track height in pixels (px).
 circle_kwargs : Mapping or None, optional
-    Passed through to bokeh scatter() function with marker = &#39;circle&#39;.
+    Passed through to bokeh scatter() function with marker = 'circle'.
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
-output_backend : {&#39;canvas&#39;, &#39;webgl&#39;, &#39;svg&#39;}, optional, default: &#39;webgl&#39;
+output_backend : {'canvas', 'webgl', 'svg'}, optional, default: 'webgl'
     Specify an output backend to render a plot area onto. See also
     https://docs.bokeh.org/en/latest/docs/user_guide/output/webgl.html.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -2553,9 +2553,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_roh</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AK0050-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AK0050-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
@@ -2597,9 +2597,9 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roh_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">roh_hmm</span><span class="p">(</span>
-    <span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AK0050-C&quot;</span><span class="p">,</span> 
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">sample</span><span class="o">=</span><span class="s2">"AK0050-C"</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">roh_df</span>
@@ -2862,7 +2862,7 @@ Model or None
 <p>First, filter the ROH DataFrame to just include runs of homozygosity longer than 100 kbp.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roh_df_100kb</span> <span class="o">=</span> <span class="n">roh_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;roh_length &gt; 100_000&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roh_df_100kb</span> <span class="o">=</span> <span class="n">roh_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"roh_length &gt; 100_000"</span><span class="p">)</span>
 <span class="n">roh_df_100kb</span>
 </pre></div>
 </div>
@@ -3078,7 +3078,7 @@ Model or None
 <p>…and, calculate the fraction ROH (fraction of the genome composed of ROH longer than 100_000 bp), by summing the “roh_length” column, then dividing this by the total length of the region.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roh_total_length</span> <span class="o">=</span> <span class="n">roh_df_100kb</span><span class="p">[</span><span class="s2">&quot;roh_length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roh_total_length</span> <span class="o">=</span> <span class="n">roh_df_100kb</span><span class="p">[</span><span class="s2">"roh_length"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">roh_total_length</span>
 </pre></div>
 </div>
@@ -3091,7 +3091,7 @@ Model or None
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">froh</span> <span class="o">=</span> <span class="n">roh_total_length</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">froh</span> <span class="o">=</span> <span class="n">roh_total_length</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">))</span>
 <span class="n">froh</span>
 </pre></div>
 </div>

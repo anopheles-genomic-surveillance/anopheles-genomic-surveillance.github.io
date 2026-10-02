@@ -597,7 +597,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">Warning</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 </pre></div>
@@ -613,7 +613,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;drive&quot;</span><span class="p">)</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"drive"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
@@ -623,7 +623,7 @@ document.write(`
 <p>With our Google Drive now mounted, we can define and make a directory where we want to save our H12 results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">&quot;drive/MyDrive/malariagen_data_cache&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_dir</span> <span class="o">=</span> <span class="s2">"drive/MyDrive/malariagen_data_cache"</span>
 </pre></div>
 </div>
 </div>
@@ -1054,11 +1054,11 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> 
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> 
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1122,7 +1122,7 @@ function(Bokeh) {
 <p>For this example, let’s focus on Burkina Faso, and first examine what cohorts are available.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_samples_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">&quot;3.0&quot;</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_samples_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span> <span class="o">=</span> <span class="s2">"3.0"</span><span class="p">,</span> <span class="n">sample_query</span><span class="o">=</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">)</span>
 <span class="n">burkina_samples_df</span>
 </pre></div>
 </div>
@@ -1441,7 +1441,7 @@ function(Bokeh) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_samples_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cohort_admin2_year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">burkina_samples_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"cohort_admin2_year"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1475,12 +1475,12 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> 
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> 
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span> 
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;BF-09_Houet_gamb_2014; window_size=1000&quot;</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span> 
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"BF-09_Houet_gamb_2014; window_size=1000"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1524,12 +1524,12 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> 
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> 
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span> 
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;BF-09_Houet_gamb_2014; window_size=100 (too small!)&quot;</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span> 
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"BF-09_Houet_gamb_2014; window_size=100 (too small!)"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1573,12 +1573,12 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> 
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span> 
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> 
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span> 
     <span class="n">window_size</span><span class="o">=</span><span class="mi">20_000</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span> 
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;BF-09_Houet_gamb_2014; window_size=20,000 (too big!)&quot;</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span> 
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"BF-09_Houet_gamb_2014; window_size=20,000 (too big!)"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1632,7 +1632,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.plot_h12_calibration(
     contig: str,
-    analysis: str = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    analysis: str = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1643,7 +1643,7 @@ ag3.plot_h12_calibration(
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     title: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 ) -&gt; Optional[bokeh.model.model.Model]
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1654,7 +1654,7 @@ Parameters
 contig : str
     Reference genome contig name. See the `contigs` property for valid
     contig names.
-analysis : str, optional, default: &#39;default&#39;
+analysis : str, optional, default: 'default'
     Which haplotype phasing analysis to use. See the
     `phasing_analysis_ids` property for available values.
 sample_query : str or None, optional
@@ -1686,16 +1686,16 @@ title : str or None, optional
     Plot title.
 show : bool, optional, default: True
     If True, show the plot.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1723,10 +1723,10 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_calibration</span><span class="p">(</span>
-    <span class="n">contig</span><span class="o">=</span><span class="s2">&quot;3L&quot;</span><span class="p">,</span> 
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+    <span class="n">contig</span><span class="o">=</span><span class="s2">"3L"</span><span class="p">,</span> 
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1786,7 +1786,7 @@ Model or None
 ag3.plot_h12_gwss(
     contig: str,
     window_size: int,
-    analysis: str = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    analysis: str = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1795,14 +1795,14 @@ ag3.plot_h12_gwss(
     max_cohort_size: Optional[int] = <span class=" -Color -Color-Green">50</span>,
     random_seed: int = <span class=" -Color -Color-Green">42</span>,
     title: Union[str, bool, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    sizing_mode: Literal[<span class=" -Color -Color-Yellow">&#39;fixed&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;stretch_both&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_width&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_height&#39;</span>, <span class=" -Color -Color-Yellow">&#39;scale_both&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;stretch_width&#39;</span>,
+    sizing_mode: Literal[<span class=" -Color -Color-Yellow">'fixed'</span>, <span class=" -Color -Color-Yellow">'stretch_width'</span>, <span class=" -Color -Color-Yellow">'stretch_height'</span>, <span class=" -Color -Color-Yellow">'stretch_both'</span>, <span class=" -Color -Color-Yellow">'scale_width'</span>, <span class=" -Color -Color-Yellow">'scale_height'</span>, <span class=" -Color -Color-Yellow">'scale_both'</span>] = <span class=" -Color -Color-Yellow">'stretch_width'</span>,
     width: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     track_height: int = <span class=" -Color -Color-Green">170</span>,
-    contig_colors: list[str] = [<span class=" -Color -Color-Yellow">&#39;#393b79&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#5254a3&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#6b6ecf&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#9c9ede&#39;</span>, <span class=" -Color -Color-Yellow">&#39;#637939&#39;</span>],
+    contig_colors: list[str] = [<span class=" -Color -Color-Yellow">'#393b79'</span>, <span class=" -Color -Color-Yellow">'#5254a3'</span>, <span class=" -Color -Color-Yellow">'#6b6ecf'</span>, <span class=" -Color -Color-Yellow">'#9c9ede'</span>, <span class=" -Color -Color-Yellow">'#637939'</span>],
     genes_height: int = <span class=" -Color -Color-Green">90</span>,
     show: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    output_backend: Literal[<span class=" -Color -Color-Yellow">&#39;canvas&#39;</span>, <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>, <span class=" -Color -Color-Yellow">&#39;svg&#39;</span>] = <span class=" -Color -Color-Yellow">&#39;webgl&#39;</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    output_backend: Literal[<span class=" -Color -Color-Yellow">'canvas'</span>, <span class=" -Color -Color-Yellow">'webgl'</span>, <span class=" -Color -Color-Yellow">'svg'</span>] = <span class=" -Color -Color-Yellow">'webgl'</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     gene_labels: Optional[Mapping[str, str]] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     gene_labelset: Optional[bokeh.models.annotations.labels.LabelSet] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1818,7 +1818,7 @@ contig : str
 window_size : int
     The size of windows (number of SNPs) used to calculate statistics
     within.
-analysis : str, optional, default: &#39;default&#39;
+analysis : str, optional, default: 'default'
     Which haplotype phasing analysis to use. See the
     `phasing_analysis_ids` property for available values.
 sample_sets : sequence of str or str or None, optional
@@ -1845,33 +1845,33 @@ random_seed : int, optional, default: 42
     Random seed used for reproducible down-sampling.
 title : str or bool or None, optional
     Plot title. If True, a title may be automatically generated.
-sizing_mode : {&#39;fixed&#39;, &#39;stretch_width&#39;, &#39;stretch_height&#39;, &#39;stretch_both&#39;, &#39;scale_width&#39;, &#39;scale_height&#39;, &#39;scale_both&#39;}, optional, default: &#39;stretch_width&#39;
+sizing_mode : {'fixed', 'stretch_width', 'stretch_height', 'stretch_both', 'scale_width', 'scale_height', 'scale_both'}, optional, default: 'stretch_width'
     Bokeh plot sizing mode, see also https://docs.bokeh.org/en/latest/docs
     /user_guide/basic/layouts.html#sizing-modes.
 width : int or None, optional
     Plot width in pixels (px).
 track_height : int, optional, default: 170
     Main track height in pixels (px).
-contig_colors : list of str, optional, default: [&#39;#393b79&#39;, &#39;#5254a3&#39;, &#39;#6b6ecf&#39;, &#39;#9c9ede&#39;, &#39;#637939&#39;]
+contig_colors : list of str, optional, default: ['#393b79', '#5254a3', '#6b6ecf', '#9c9ede', '#637939']
     A sequence of colors.
 genes_height : int, optional, default: 90
     Genes track height in pixels (px).
 show : bool, optional, default: True
     If true, show the plot. If False, do not show the plot, but return the
     figure.
-output_backend : {&#39;canvas&#39;, &#39;webgl&#39;, &#39;svg&#39;}, optional, default: &#39;webgl&#39;
+output_backend : {'canvas', 'webgl', 'svg'}, optional, default: 'webgl'
     Specify an output backend to render a plot area onto. See also
     https://docs.bokeh.org/en/latest/docs/user_guide/output/webgl.html.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1900,9 +1900,9 @@ Model or None
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">contig</span> <span class="ow">in</span> <span class="n">ag3</span><span class="o">.</span><span class="n">contigs</span><span class="p">:</span>
   <span class="n">ag3</span><span class="o">.</span><span class="n">plot_h12_gwss</span><span class="p">(</span>
       <span class="n">contig</span><span class="o">=</span><span class="n">contig</span><span class="p">,</span> 
-      <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu&quot;</span><span class="p">,</span>
-      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-      <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;cohort_admin2_year == &#39;BF-09_Houet_gamb_2014&#39;&quot;</span><span class="p">,</span>
+      <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu"</span><span class="p">,</span>
+      <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+      <span class="n">sample_query</span><span class="o">=</span><span class="s2">"cohort_admin2_year == 'BF-09_Houet_gamb_2014'"</span><span class="p">,</span>
       <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span>
   <span class="p">)</span>
 </pre></div>
@@ -2094,10 +2094,10 @@ Model or None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">peak_genes_df</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">ag3</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L:28,525,000-28,575,000&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;type == &quot;gene&quot;&#39;</span><span class="p">)</span>
-    <span class="p">[[</span><span class="s2">&quot;contig&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+    <span class="n">ag3</span><span class="o">.</span><span class="n">genome_features</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2L:28,525,000-28,575,000"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'type == "gene"'</span><span class="p">)</span>
+    <span class="p">[[</span><span class="s2">"contig"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">,</span> <span class="s2">"ID"</span><span class="p">,</span> <span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"ID"</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">peak_genes_df</span>
 </pre></div>

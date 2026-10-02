@@ -612,7 +612,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">allel</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -1009,7 +1009,7 @@ function(Bokeh) {
 <p>Let’s access the genotypes for the gambcolu_vs_arab AIMs for sample set AG1000G-UG (Uganda).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aim_calls</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gambcolu_vs_arab&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-UG&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aim_calls</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gambcolu_vs_arab"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-UG"</span><span class="p">)</span>
 <span class="n">ds_aim</span>
 </pre></div>
 </div>
@@ -1704,10 +1704,10 @@ Attributes:
 <p>Note that there are 2,612 variants. This is the number of AIM SNPs. These include SNPs from all five chromosome arms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_contig</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;variant_contig&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">contigs</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;contigs&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_contig</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">"variant_contig"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">contigs</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"contigs"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">contig</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">contigs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">aim_contig</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">aim_contig</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1724,19 +1724,19 @@ X: 488
 <p>Here are the AIM alleles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_alleles</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;variant_allele&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_alleles</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">"variant_allele"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">aim_alleles</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;A&#39;, b&#39;T&#39;],
-       [b&#39;C&#39;, b&#39;T&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b'C', b'A'],
+       [b'A', b'T'],
+       [b'C', b'T'],
        ...,
-       [b&#39;A&#39;, b&#39;T&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;C&#39;]], dtype=&#39;|S1&#39;)
+       [b'A', b'T'],
+       [b'T', b'A'],
+       [b'T', b'C']], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1745,7 @@ X: 488
 <p>Let’s access the AIM genotypes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_gt</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_gt</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">aim_gt</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -1803,7 +1803,7 @@ X: 488
 <p>Let’s access the genotypes for the gamb_vs_colu AIMs for sample set AG1000G-CF (Central African Republic).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aim_calls</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CF&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aim_calls</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CF"</span><span class="p">)</span>
 <span class="n">ds_aim</span>
 </pre></div>
 </div>
@@ -2495,10 +2495,10 @@ Attributes:
 <p>How many AIMs are there on each of the chromosome arms?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_contig</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;variant_contig&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">contigs</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;contigs&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_contig</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">"variant_contig"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">contigs</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"contigs"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">contig</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">contigs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">aim_contig</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">contig</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">aim_contig</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2516,18 +2516,18 @@ X: 482
 <p>Let’s peek at the alleles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;variant_allele&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_aim</span><span class="p">[</span><span class="s2">"variant_allele"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;G&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b'C', b'A'],
+       [b'G', b'A'],
+       [b'T', b'A'],
        ...,
-       [b&#39;G&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;]], dtype=&#39;|S1&#39;)
+       [b'G', b'A'],
+       [b'T', b'G'],
+       [b'T', b'A']], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -2536,7 +2536,7 @@ X: 482
 <p>Finally, let’s peek at the genotype calls.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_gt</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aim_gt</span> <span class="o">=</span> <span class="n">ds_aim</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
@@ -2591,7 +2591,7 @@ X: 482
 <h3>Central African Republic<a class="headerlink" href="#central-african-republic" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CF&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CF"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3983,7 +3983,7 @@ if (outputEl) {{
 <h3>Malawi<a class="headerlink" href="#malawi" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gambcolu_vs_arab&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-MW&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gambcolu_vs_arab"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-MW"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4024,7 +4024,7 @@ if (outputEl) {{
 <p>For illustration, what would happen if we tried to use the gamb_vs_colu AIMs with some <em>An. arabiensis</em> samples?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-MW&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-MW"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4067,7 +4067,7 @@ if (outputEl) {{
 <h3>Uganda<a class="headerlink" href="#uganda" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gambcolu_vs_arab&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-UG&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gambcolu_vs_arab"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-UG"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4110,7 +4110,7 @@ if (outputEl) {{
 <h3>Burkina Faso<a class="headerlink" href="#burkina-faso" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4154,7 +4154,7 @@ if (outputEl) {{
 <p>Firstly, confirm there are no <em>An. arabiensis</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gambcolu_vs_arab&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-GW&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gambcolu_vs_arab"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-GW"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4194,7 +4194,7 @@ if (outputEl) {{
 <p>Now examine gamb_vs_colu AIMs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">&quot;gamb_vs_colu&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-GW&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_aim_heatmap</span><span class="p">(</span><span class="n">aims</span><span class="o">=</span><span class="s2">"gamb_vs_colu"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-GW"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4253,7 +4253,7 @@ if (outputEl) {{
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_aim_heatmap(aims=&quot;gamb_vs_colu&quot;, sample_sets=&quot;AG1000G-GN-B&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_aim_heatmap(aims="gamb_vs_colu", sample_sets="AG1000G-GN-B")</span>
 </pre></div>
 </div>
 </div>
@@ -4266,8 +4266,8 @@ if (outputEl) {{
 <p>Let’s take a look at the AIM columns in the sample metadata for the AG1000G-CF sample set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CF&quot;</span><span class="p">)</span>
-<span class="n">df_samples</span><span class="p">[[</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span> <span class="s2">&quot;aim_species_fraction_arab&quot;</span><span class="p">,</span> <span class="s2">&quot;aim_species_fraction_colu&quot;</span><span class="p">,</span> <span class="s2">&quot;aim_species_fraction_colu_no2l&quot;</span><span class="p">,</span> <span class="s2">&quot;aim_species&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CF"</span><span class="p">)</span>
+<span class="n">df_samples</span><span class="p">[[</span><span class="s2">"sample_id"</span><span class="p">,</span> <span class="s2">"aim_species_fraction_arab"</span><span class="p">,</span> <span class="s2">"aim_species_fraction_colu"</span><span class="p">,</span> <span class="s2">"aim_species_fraction_colu_no2l"</span><span class="p">,</span> <span class="s2">"aim_species"</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -4400,7 +4400,7 @@ if (outputEl) {{
 <p>From these fractions, we make a provisional species assignment, and store the result in the <code class="docutils literal notranslate"><span class="pre">aim_species</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;aim_species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"aim_species"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -4419,8 +4419,8 @@ dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_aim_fractions</span><span class="p">(</span>
     <span class="n">sample_sets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">sample_query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aim_species_fraction_arab&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;aim_species_fraction_colu_no2l&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"aim_species_fraction_arab"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"aim_species_fraction_colu_no2l"</span><span class="p">,</span>
 <span class="p">):</span>
 
     <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
@@ -4431,11 +4431,11 @@ dtype: int64
     <span class="c1"># set up colours</span>
     <span class="n">palette</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">T10</span>
     <span class="n">color_map</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;arabiensis&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
-        <span class="s2">&quot;gambiae&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-        <span class="s2">&quot;coluzzii&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-        <span class="s2">&quot;intermediate_gambcolu_arabiensis&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
-        <span class="s2">&quot;intermediate_gambiae_coluzzii&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+        <span class="s2">"arabiensis"</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+        <span class="s2">"gambiae"</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">"coluzzii"</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="s2">"intermediate_gambcolu_arabiensis"</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+        <span class="s2">"intermediate_gambiae_coluzzii"</span><span class="p">:</span> <span class="n">palette</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span>
     <span class="p">}</span>
 
     <span class="c1"># make a scatter plot</span>
@@ -4448,16 +4448,16 @@ dtype: int64
         <span class="n">range_x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">],</span>
         <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">],</span>
         <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;aim_species_fraction_arab&quot;</span><span class="p">:</span> <span class="s2">&quot;:.2f&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aim_species_fraction_colu&quot;</span><span class="p">:</span> <span class="s2">&quot;:.2f&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;aim_species_fraction_colu_no2l&quot;</span><span class="p">:</span> <span class="s2">&quot;:.2f&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;sample_id&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="s2">&quot;aim_species&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">"aim_species_fraction_arab"</span><span class="p">:</span> <span class="s2">":.2f"</span><span class="p">,</span>
+            <span class="s2">"aim_species_fraction_colu"</span><span class="p">:</span> <span class="s2">":.2f"</span><span class="p">,</span>
+            <span class="s2">"aim_species_fraction_colu_no2l"</span><span class="p">:</span> <span class="s2">":.2f"</span><span class="p">,</span>
+            <span class="s2">"sample_id"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">"aim_species"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="n">title</span><span class="o">=</span><span class="n">sample_sets</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;aim_species&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">"aim_species"</span><span class="p">,</span>
         <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span>
-        <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;aim_species&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">color_map</span><span class="p">)},</span>
+        <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"aim_species"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">color_map</span><span class="p">)},</span>
     <span class="p">)</span>
     
     <span class="c1"># add thresholds used for AIM species calling</span>
@@ -4465,17 +4465,17 @@ dtype: int64
     <span class="n">gambcolu_cutoff</span> <span class="o">=</span> <span class="mf">0.1</span>
     <span class="n">colu_cutoff</span> <span class="o">=</span> <span class="mf">0.9</span>
     <span class="n">gamb_cutoff</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">add_vline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">arab_cutoff</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">add_vline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">gambcolu_cutoff</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_vline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">arab_cutoff</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">"dash"</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_vline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">gambcolu_cutoff</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">"dash"</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s2">"line"</span><span class="p">,</span>
         <span class="n">x0</span><span class="o">=-</span><span class="mf">.05</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">gambcolu_cutoff</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="n">gamb_cutoff</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">gamb_cutoff</span><span class="p">,</span>
-        <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span>
+        <span class="n">line_dash</span><span class="o">=</span><span class="s2">"dash"</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s2">"line"</span><span class="p">,</span>
         <span class="n">x0</span><span class="o">=-</span><span class="mf">.05</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">gambcolu_cutoff</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="n">colu_cutoff</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">colu_cutoff</span><span class="p">,</span>
-        <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span>
+        <span class="n">line_dash</span><span class="o">=</span><span class="s2">"dash"</span><span class="p">,</span>
     <span class="p">)</span>
     
     <span class="c1"># visual styling</span>
@@ -4485,10 +4485,10 @@ dtype: int64
             <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
             <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
                 <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span>
             <span class="p">)</span>
         <span class="p">),</span>
-        <span class="n">selector</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">)</span>
+        <span class="n">selector</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'markers'</span><span class="p">)</span>
     <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fig</span>
@@ -4498,7 +4498,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CF&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CF"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4544,7 +4544,7 @@ if (outputEl) {{
 <p>Let’s look at another example - Uganda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-UG&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-UG"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4593,7 +4593,7 @@ if (outputEl) {{
 <p>One last example Guinea-Bissau.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-GW&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_aim_fractions</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-GW"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4652,7 +4652,7 @@ if (outputEl) {{
 <p>Comptez maintenant le nombre d’échantillons pour différentes valeurs possibles de la colonne de métadonnées “aim_species”. Indice: chargez les métadonnées du jeu d’échantillons AG1000G-KE, accédez à la colonne “aim_species”, puis comptez les valeurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_aim_heatmap(aims=&quot;gambcolu_vs_arab&quot;, sample_sets=&quot;AG1000G-KE&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_aim_heatmap(aims="gambcolu_vs_arab", sample_sets="AG1000G-KE")</span>
 </pre></div>
 </div>
 </div>
@@ -4660,9 +4660,9 @@ if (outputEl) {{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.plot_aim_heatmap(</span>
-<span class="c1">#     aims=&quot;gamb_vs_colu&quot;, </span>
-<span class="c1">#     sample_sets=&quot;AG1000G-KE&quot;, </span>
-<span class="c1">#     sample_query=&quot;aim_species != &#39;arabiensis&#39;&quot;</span>
+<span class="c1">#     aims="gamb_vs_colu", </span>
+<span class="c1">#     sample_sets="AG1000G-KE", </span>
+<span class="c1">#     sample_query="aim_species != 'arabiensis'"</span>
 <span class="c1"># )</span>
 </pre></div>
 </div>
@@ -4670,7 +4670,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot_aim_fractions(sample_sets=&quot;AG1000G-KE&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot_aim_fractions(sample_sets="AG1000G-KE")</span>
 </pre></div>
 </div>
 </div>

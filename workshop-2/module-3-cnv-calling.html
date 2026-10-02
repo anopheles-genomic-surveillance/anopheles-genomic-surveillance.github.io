@@ -576,7 +576,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -584,7 +584,7 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bkio</span>
@@ -921,7 +921,7 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import os</span>
-<span class="c1">#os.environ[&quot;MGEN_SHOW_PROGRESS&quot;] = &quot;0&quot;</span>
+<span class="c1">#os.environ["MGEN_SHOW_PROGRESS"] = "0"</span>
 </pre></div>
 </div>
 </div>
@@ -1313,8 +1313,8 @@ function(Bokeh) {
 <p>Inspect which sample sets are available within the MalariaGEN Ag3.0 data release.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sample_sets</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
-<span class="n">df_sample_sets</span><span class="p">[[</span><span class="s1">&#39;sample_set&#39;</span><span class="p">,</span><span class="s1">&#39;sample_count&#39;</span><span class="p">,</span><span class="s1">&#39;study_id&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sample_sets</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)</span>
+<span class="n">df_sample_sets</span><span class="p">[[</span><span class="s1">'sample_set'</span><span class="p">,</span><span class="s1">'sample_count'</span><span class="p">,</span><span class="s1">'study_id'</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1527,7 +1527,7 @@ function(Bokeh) {
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hmm</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cnv_hmm</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CI&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hmm</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cnv_hmm</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CI"</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">)</span>
 <span class="n">hmm</span>
 </pre></div>
 </div>
@@ -2407,7 +2407,7 @@ Attributes:
 <p>As an example in this workbook, we will look at the coverage data in four samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AY0046-C&#39;</span><span class="p">,</span> <span class="s1">&#39;AY0062-C&#39;</span><span class="p">,</span> <span class="s1">&#39;AY0055-C&#39;</span><span class="p">,</span> <span class="s1">&#39;AY0034-C&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'AY0046-C'</span><span class="p">,</span> <span class="s1">'AY0062-C'</span><span class="p">,</span> <span class="s1">'AY0055-C'</span><span class="p">,</span> <span class="s1">'AY0034-C'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2417,7 +2417,7 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample_names</span><span class="p">:</span>
-    <span class="n">ag3</span><span class="o">.</span><span class="n">plot_cnv_hmm_coverage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sample_set</span><span class="o">=</span><span class="s1">&#39;AG1000G-CI&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:28,460,000-28,580,000&#39;</span><span class="p">)</span>
+    <span class="n">ag3</span><span class="o">.</span><span class="n">plot_cnv_hmm_coverage</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sample_set</span><span class="o">=</span><span class="s1">'AG1000G-CI'</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">'2R:28,460,000-28,580,000'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2529,8 +2529,8 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_cnv_hmm_heatmap</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:28,460,000-28,580,000&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;AG1000G-CI&#39;</span><span class="p">,</span> 
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2R:28,460,000-28,580,000'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'AG1000G-CI'</span><span class="p">,</span> 
     <span class="n">row_height</span><span class="o">=</span><span class="mi">5</span>
 <span class="p">);</span>
 </pre></div>
@@ -2573,8 +2573,8 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">discordant_read_calls</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ag3</span>
-    <span class="o">.</span><span class="n">cnv_discordant_read_calls</span><span class="p">(</span><span class="n">contig</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CI&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">,</span> <span class="n">variants</span><span class="o">=</span><span class="s2">&quot;variant_id&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">cnv_discordant_read_calls</span><span class="p">(</span><span class="n">contig</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CI"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">,</span> <span class="n">variants</span><span class="o">=</span><span class="s2">"variant_id"</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">discordant_read_calls</span>
 </pre></div>
@@ -3518,7 +3518,7 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Locate the CNV alleles from the Cyp6aa / Cyp6p region</span>
-<span class="n">loc_cyp6aap</span> <span class="o">=</span> <span class="n">discordant_read_calls</span><span class="p">[</span><span class="s2">&quot;variant_Region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="s1">&#39;Cyp6aa/Cyp6p&#39;</span>
+<span class="n">loc_cyp6aap</span> <span class="o">=</span> <span class="n">discordant_read_calls</span><span class="p">[</span><span class="s2">"variant_Region"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="s1">'Cyp6aa/Cyp6p'</span>
 
 <span class="c1"># Select data for our genes and samples of interest</span>
 <span class="n">discordant_read_calls_cyp6aap</span> <span class="o">=</span> <span class="p">(</span>
@@ -3528,7 +3528,7 @@ Attributes:
 <span class="p">)</span>
 
 <span class="c1"># Convert genotypes to a pandas DataFrame</span>
-<span class="n">df_cyp6aap</span> <span class="o">=</span> <span class="n">discordant_read_calls_cyp6aap</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">df_cyp6aap</span> <span class="o">=</span> <span class="n">discordant_read_calls_cyp6aap</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 
 <span class="c1"># Remove CNVs that are absent in all samples</span>
 <span class="n">df_cyp6aap</span> <span class="o">=</span> <span class="n">df_cyp6aap</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_cyp6aap</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
@@ -3609,8 +3609,8 @@ Attributes:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dup_positions</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">discordant_read_calls</span>
     <span class="o">.</span><span class="n">reset_coords</span><span class="p">()</span>
-    <span class="p">[[</span><span class="s2">&quot;variant_position&quot;</span><span class="p">,</span> <span class="s2">&quot;variant_end&quot;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Cyp6aap_Dup7&quot;</span><span class="p">,</span> <span class="s2">&quot;Cyp6aap_Dup11&quot;</span><span class="p">,</span> <span class="s2">&quot;Cyp6aap_Dup15&quot;</span><span class="p">])</span>
+    <span class="p">[[</span><span class="s2">"variant_position"</span><span class="p">,</span> <span class="s2">"variant_end"</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="p">[</span><span class="s2">"Cyp6aap_Dup7"</span><span class="p">,</span> <span class="s2">"Cyp6aap_Dup11"</span><span class="p">,</span> <span class="s2">"Cyp6aap_Dup15"</span><span class="p">])</span>
     <span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 <span class="p">)</span>
 <span class="n">dup_positions</span>
@@ -3673,27 +3673,27 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access per-gene modal copy number data for all genes in chromosome arm 2R </span>
 <span class="n">gene_copy_number</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2R&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-CI&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">genes</span><span class="o">=</span><span class="s2">&quot;gene_id&quot;</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">)</span>
+    <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2R"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-CI"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">genes</span><span class="o">=</span><span class="s2">"gene_id"</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1"># Define genes of interest</span>
-<span class="n">cyp6aap_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP002862</span><span class="o">=</span><span class="s1">&#39;Cyp6aa1&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP013128</span><span class="o">=</span><span class="s1">&#39;Cyp6aa2&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP002868</span><span class="o">=</span><span class="s1">&#39;Cyp6p1&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP002869</span><span class="o">=</span><span class="s1">&#39;Cyp6p2&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP002865</span><span class="o">=</span><span class="s1">&#39;Cyp6p3&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP002867</span><span class="o">=</span><span class="s1">&#39;Cyp6p4&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP002866</span><span class="o">=</span><span class="s1">&#39;Cyp6p5&#39;</span><span class="p">)</span>
+<span class="n">cyp6aap_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP002862</span><span class="o">=</span><span class="s1">'Cyp6aa1'</span><span class="p">,</span>
+                     <span class="n">AGAP013128</span><span class="o">=</span><span class="s1">'Cyp6aa2'</span><span class="p">,</span>
+                     <span class="n">AGAP002868</span><span class="o">=</span><span class="s1">'Cyp6p1'</span><span class="p">,</span>
+                     <span class="n">AGAP002869</span><span class="o">=</span><span class="s1">'Cyp6p2'</span><span class="p">,</span>
+                     <span class="n">AGAP002865</span><span class="o">=</span><span class="s1">'Cyp6p3'</span><span class="p">,</span>
+                     <span class="n">AGAP002867</span><span class="o">=</span><span class="s1">'Cyp6p4'</span><span class="p">,</span>
+                     <span class="n">AGAP002866</span><span class="o">=</span><span class="s1">'Cyp6p5'</span><span class="p">)</span>
 
 <span class="c1"># Select data for genes of interest, excluding samples with poor quality HMM data</span>
 <span class="n">cyp6aap_gene_copy_number</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">gene_copy_number</span><span class="p">[</span><span class="s2">&quot;CN_mode&quot;</span><span class="p">]</span>
+    <span class="n">gene_copy_number</span><span class="p">[</span><span class="s2">"CN_mode"</span><span class="p">]</span>
     <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">genes</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">cyp6aap_genes</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
     <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">gene_copy_number</span><span class="o">.</span><span class="n">sample_is_high_variance</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
     <span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">cyp6aap_genes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">cyp6aap_genes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">cyp6aap_gene_copy_number</span>
@@ -3868,7 +3868,7 @@ Attributes:
         <span class="n">data</span><span class="p">,</span> 
         <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
         <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> 
+        <span class="n">cmap</span><span class="o">=</span><span class="s1">'bwr'</span><span class="p">,</span> 
         <span class="n">center</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
         <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
@@ -3876,8 +3876,8 @@ Attributes:
 
     <span class="c1"># tidy plot</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
-        <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> 
-        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> 
+        <span class="n">axis</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> 
+        <span class="n">which</span><span class="o">=</span><span class="s1">'major'</span><span class="p">,</span> 
         <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
         <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
         <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
@@ -3885,7 +3885,7 @@ Attributes:
         <span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
         <span class="n">left</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">'top'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3911,13 +3911,13 @@ Attributes:
 <li><p>Now go back to the “Load the CNV HMM data” section. Change the code so that it looks at chromosome 3R from position 28,570,000 to 28,630,000 and sample_set AG1000G-BF-A, and plots the coverage data for samples AB0086-Cx, AB0095-Cx and AB0123-C. Once you have changed the code, run those cells again. How many CNVs are found in each of those samples? How many extra copies are associated with the CNV in each sample?</p></li>
 <li><p>Now go to the “Load the per-gene modal copy number data” section. Change the code again to focus on chromosome 3R and sample set AG1000G-BF-A. Create a heatmap of copy number for the genes in the <em>Gste</em> cluster. Which genes are found to have increased copy number in this sample set? Does what you see fit with the copy number plots that you made above for samples AB0086-Cx, AB0095-Cx and AB0123-C? Hint: here are the AGAP numbers for those genes:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">gste_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP009195</span><span class="o">=</span><span class="s1">&#39;Gste1&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009194</span><span class="o">=</span><span class="s1">&#39;Gste2&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009197</span><span class="o">=</span><span class="s1">&#39;Gste3&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009193</span><span class="o">=</span><span class="s1">&#39;Gste4&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009192</span><span class="o">=</span><span class="s1">&#39;Gste5&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009191</span><span class="o">=</span><span class="s1">&#39;Gste6&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">&#39;Gste7&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">gste_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP009195</span><span class="o">=</span><span class="s1">'Gste1'</span><span class="p">,</span>
+                     <span class="n">AGAP009194</span><span class="o">=</span><span class="s1">'Gste2'</span><span class="p">,</span>
+                     <span class="n">AGAP009197</span><span class="o">=</span><span class="s1">'Gste3'</span><span class="p">,</span>
+                     <span class="n">AGAP009193</span><span class="o">=</span><span class="s1">'Gste4'</span><span class="p">,</span>
+                     <span class="n">AGAP009192</span><span class="o">=</span><span class="s1">'Gste5'</span><span class="p">,</span>
+                     <span class="n">AGAP009191</span><span class="o">=</span><span class="s1">'Gste6'</span><span class="p">,</span>
+                     <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">'Gste7'</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
@@ -3931,13 +3931,13 @@ Attributes:
 <li><p>Retourner à la section “Load the CNV HMM data”. Changer le code pour qu’il analyse le chromosome 3R de la position 28,570,000 à 28,630,000 et le jeu de données AG1000G-BF-A, et qu’il trace le “coverage” pour les échantillons AB0086-Cx, AB0095-Cx et AB0123-C. Une fois le code changé, relancer l’analyse de ces cellules. Combien de CNVs se retrouvent dans chacun de ces échantillons? Combien de copies supplémentaires trouve-t-on du CNV dans chaque échantillon?</p></li>
 <li><p>Maintenant, se diriger vers la section “Load the per-gene modal copy number data”. Changer une fois de plus le code pour qu’il se focalise sur le chromosome 3R et le jeu de données AG1000G-BF-A. Créer une “heatmap” du nombre de copies pour les gènes dans le groupe “Gste”. Quels gènes ont un nombre de copies élevé dans ce jeu de données? Est-ce que cela correspond aux traces de “coverage” que vous avez créées ci-dessus pour les échantillons AB0086-Cx, AB0095-Cx et AB0123-C Indice: voici les codes AGAP pour ces gènes:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">gste_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP009195</span><span class="o">=</span><span class="s1">&#39;Gste1&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009194</span><span class="o">=</span><span class="s1">&#39;Gste2&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009197</span><span class="o">=</span><span class="s1">&#39;Gste3&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009193</span><span class="o">=</span><span class="s1">&#39;Gste4&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009192</span><span class="o">=</span><span class="s1">&#39;Gste5&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009191</span><span class="o">=</span><span class="s1">&#39;Gste6&#39;</span><span class="p">,</span>
-                     <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">&#39;Gste7&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">gste_genes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">AGAP009195</span><span class="o">=</span><span class="s1">'Gste1'</span><span class="p">,</span>
+                     <span class="n">AGAP009194</span><span class="o">=</span><span class="s1">'Gste2'</span><span class="p">,</span>
+                     <span class="n">AGAP009197</span><span class="o">=</span><span class="s1">'Gste3'</span><span class="p">,</span>
+                     <span class="n">AGAP009193</span><span class="o">=</span><span class="s1">'Gste4'</span><span class="p">,</span>
+                     <span class="n">AGAP009192</span><span class="o">=</span><span class="s1">'Gste5'</span><span class="p">,</span>
+                     <span class="n">AGAP009191</span><span class="o">=</span><span class="s1">'Gste6'</span><span class="p">,</span>
+                     <span class="n">AGAP009196</span><span class="o">=</span><span class="s1">'Gste7'</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple">

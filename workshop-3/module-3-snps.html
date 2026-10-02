@@ -584,7 +584,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
@@ -1009,7 +1009,7 @@ function(Bokeh) {
 <p>We can view the sequence read alignments for any sample using a specialised genomics viewer called <a class="reference external" href="https://igv.org/">IGV</a>, via the <code class="docutils literal notranslate"><span class="pre">view_alignments()</span></code> function. Let’s view alignments for a randomly chosen sample from Burkina Faso, starting our view with the whole of chromosome arm 2L…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">view_alignments</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AB0087-C&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">view_alignments</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="s2">"AB0087-C"</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1703,7 +1703,7 @@ function(e){var t,i,n,r,s,o,a,c,l,h,d,u,f,p,g,m,w,b,F,v="sizzle"+1*new Date,y=e.
 <p>Dans la cellule ci-dessous, supprimer le “#” et lancer la cellule pour créer un nouvelle fenêtre IGV, affichant les données pour l’échantillon AB0096-C, centré sur la position 2L:2,422,652. Quel génotype possède cet échantillon à ce SNP?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.view_alignments(sample=&quot;AB0096-C&quot;, region=&quot;2L:2,422,601-2,422,701&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ag3.view_alignments(sample="AB0096-C", region="2L:2,422,601-2,422,701")</span>
 </pre></div>
 </div>
 </div>
@@ -1718,7 +1718,7 @@ function(e){var t,i,n,r,s,o,a,c,l,h,d,u,f,p,g,m,w,b,F,v="sizzle"+1*new Date,y=e.
 <p>As we’ve mentioned, for this workshop we are not interested in any particular genes or SNPs, rather we want to use SNPs from across the genome to study population structure. Let’s take a look at how the SNP calls are stored and accessed from Python code. For example, access SNP calls for chromosome arm 2L, for sample set AG1000G-BF_A …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_calls</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_calls</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span><span class="p">)</span>
 <span class="n">ds_snps</span>
 </pre></div>
 </div>
@@ -3128,8 +3128,8 @@ Attributes:
 <p>If you’re sharp you’ll remember that chromomsome arm 2L is 49,364,325 base pairs long, so why the discrepancy? This is because there are some gaps in the reference genome, which are positions where the reference nucleotide is unknown (“N”). We do not call SNPs at these sites. We can check this is true…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-<span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">seq</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">&#39;N&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">seq</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">&#39;n&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">genome_sequence</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">seq</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">'N'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">seq</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">'n'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -3142,7 +3142,7 @@ Attributes:
 <p>Let’s access the genomic positions of the SNPs we’ve called…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">&quot;variant_position&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">"variant_position"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">pos</span>
 </pre></div>
 </div>
@@ -3158,19 +3158,19 @@ Attributes:
 <p>Let’s look at the alleles…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alleles</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">&quot;variant_allele&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alleles</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">"variant_allele"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">alleles</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;, b&#39;T&#39;, b&#39;G&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b'A', b'C', b'T', b'G'],
+       [b'A', b'C', b'T', b'G'],
+       [b'C', b'A', b'T', b'G'],
        ...,
-       [b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;]], dtype=&#39;|S1&#39;)
+       [b'A', b'C', b'T', b'G'],
+       [b'A', b'C', b'T', b'G'],
+       [b'A', b'C', b'T', b'G']], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -3181,16 +3181,16 @@ Attributes:
 <p>We can’t look at the genotypes for the whole genome, because the data are too big - we would run out of memory on our colab VM, and it would crash.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t do this - it will crash your VM!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don't do this - it will crash your VM!</span>
 
-<span class="c1"># gt = ds_snps[&quot;call_genotype&quot;].values</span>
+<span class="c1"># gt = ds_snps["call_genotype"].values</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -3322,8 +3322,8 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_call</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ds_snps</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="s2">&quot;variant_position&quot;</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="mi">2_422_652</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">&quot;AB0087-C&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="s2">"variant_position"</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">variants</span><span class="o">=</span><span class="mi">2_422_652</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="s2">"AB0087-C"</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -3332,12 +3332,12 @@ Attributes:
 <p>Here are the alleles at this site:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_call</span><span class="p">[</span><span class="s2">&quot;variant_allele&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_call</span><span class="p">[</span><span class="s2">"variant_allele"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;G&#39;], dtype=&#39;|S1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b'A', b'C', b'T', b'G'], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -3345,7 +3345,7 @@ Attributes:
 <p>Here is the genotype call in the selected sample:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_call</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_call</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
@@ -3365,10 +3365,10 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># snp_call = (</span>
 <span class="c1">#     ds_snps</span>
-<span class="c1">#     .set_index(variants=&quot;variant_position&quot;, samples=&quot;sample_id&quot;)</span>
-<span class="c1">#     .sel(variants=2_422_652, samples=&quot;AB0096-C&quot;)</span>
+<span class="c1">#     .set_index(variants="variant_position", samples="sample_id")</span>
+<span class="c1">#     .sel(variants=2_422_652, samples="AB0096-C")</span>
 <span class="c1"># )</span>
-<span class="c1"># snp_call[&quot;call_genotype&quot;].values</span>
+<span class="c1"># snp_call["call_genotype"].values</span>
 </pre></div>
 </div>
 </div>
@@ -3386,7 +3386,7 @@ Attributes:
 <p>Note that this will take a minute or two, because we have to scan data for millions of SNPs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_counts</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_counts</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span> <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3460,7 +3460,7 @@ Attributes:
 <p>Supprimer le # dans la cellule ci-dessous et lancer la cellule pour calculer le nombre de SNPs présents dans le jeu d’échantillons AG1000G-BF-A sur le bras de chromosome 3L.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ac = ag3.snp_allele_counts(region=&quot;3L&quot;, sample_sets=&quot;AG1000G-BF-A&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ac = ag3.snp_allele_counts(region="3L", sample_sets="AG1000G-BF-A")</span>
 <span class="c1"># ac = allel.AlleleCountsArray(ac)</span>
 <span class="c1"># ac.count_segregating()</span>
 </pre></div>
@@ -3480,7 +3480,7 @@ Attributes:
 <p>To get a sense of what this looks like in the data, let’s use IGV again, and let’s jump straight into the genome region we were looking at earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">view_alignments</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="s2">&quot;AB0087-C&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L:2,419,000-2,425,000&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">view_alignments</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="s2">"AB0087-C"</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">"2L:2,419,000-2,425,000"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4162,7 +4162,7 @@ function(e){var t,i,n,r,s,o,a,c,l,h,d,u,f,p,g,m,w,b,F,v="sizzle"+1*new Date,y=e.
 <p>For each of these filters, there is one Boolean mask per chromosome arm. The Boolean masks are True where a site passes the filter and False otherwise. E.g., here’s the gamb_colu_arab site filter for chromosome arm 2L:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loc_site_pass</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">&quot;variant_filter_pass_gamb_colu_arab&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loc_site_pass</span> <span class="o">=</span> <span class="n">ds_snps</span><span class="p">[</span><span class="s2">"variant_filter_pass_gamb_colu_arab"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">loc_site_pass</span>
 </pre></div>
 </div>
@@ -4204,9 +4204,9 @@ function(e){var t,i,n,r,s,o,a,c,l,h,d,u,f,p,g,m,w,b,F,v="sizzle"+1*new Date,y=e.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps_pass</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_calls</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> 
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"2L"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> 
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span>
 <span class="p">)</span>
 <span class="n">ds_snps_pass</span>
 </pre></div>
@@ -5616,9 +5616,9 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_snps</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L:2,350,000-2,450,000&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span>
-    <span class="n">site_mask</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"2L:2,350,000-2,450,000"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span>
+    <span class="n">site_mask</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
 <span class="p">);</span>
 </pre></div>
 </div>

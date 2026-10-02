@@ -588,7 +588,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -596,7 +596,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import os</span>
-<span class="c1">#os.environ[&quot;MGEN_SHOW_PROGRESS&quot;] = &quot;0&quot;</span>
+<span class="c1">#os.environ["MGEN_SHOW_PROGRESS"] = "0"</span>
 </pre></div>
 </div>
 </div>
@@ -1004,7 +1004,7 @@ ag3.snp_allele_frequencies(
     drop_invariant: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     effects: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
     include_counts: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">False</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 ) -&gt; pandas.core.frame.DataFrame
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1016,7 +1016,7 @@ transcript : str
     Gene transcript identifier.
 cohorts : str or Mapping[str, str]
     Either a string giving the name of a predefined cohort set (e.g.,
-    &quot;admin1_month&quot;) or a dict mapping custom cohort labels to sample
+    "admin1_month") or a dict mapping custom cohort labels to sample
     queries.
 sample_query : str or None, optional
     A pandas query string to be evaluated against the sample metadata, to
@@ -1041,16 +1041,16 @@ effects : bool, optional, default: True
 include_counts : bool, optional, default: False
     Include columns with allele counts and number of non-missing allele
     calls (nobs).
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1093,7 +1093,7 @@ from output data frame.
 <p>First, we need to decide which gene transcript to use when determining what SNP effects will be. Here we’ll use the transcript with identifier “AGAP004707-RD”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript</span> <span class="o">=</span> <span class="s2">&quot;AGAP004707-RD&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transcript</span> <span class="o">=</span> <span class="s2">"AGAP004707-RD"</span>
 </pre></div>
 </div>
 </div>
@@ -1101,7 +1101,7 @@ from output data frame.
 <p>Next, to compute allele frequencies, we need to decide how our mosquitoes will be grouped into cohorts. There are different ways you can do this, for this analysis we’ll group spatially by level 1 administrative divisions within countries, and temporally by year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="s2">&quot;admin1_year&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohorts</span> <span class="o">=</span> <span class="s2">"admin1_year"</span>
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1109,7 @@ from output data frame.
 <p>Next, we need to choose which samples to analyse. There are a number of different sample sets in the Ag3.0 data resource that we could use for this analysis. Let’s check what’s available.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)[[</span><span class="s1">&#39;sample_set&#39;</span><span class="p">,</span> <span class="s1">&#39;study_id&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_count&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">sample_sets</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)[[</span><span class="s1">'sample_set'</span><span class="p">,</span> <span class="s1">'study_id'</span><span class="p">,</span> <span class="s1">'sample_count'</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1313,7 +1313,7 @@ from output data frame.
 <p>To keep things simple, for this module we’ll focus on mosquitoes from Burkina Faso. There are three sample sets in the Ag3.0 resource providing data on mosquitoes from Burkina Faso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_sets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-B"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-C"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1699,7 +1699,7 @@ from output data frame.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;admin1_year&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'admin1_year'
 </pre></div>
 </div>
 </div>
@@ -1709,18 +1709,18 @@ from output data frame.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequency_columns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">columns</span> 
-    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;frq_&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"frq_"</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="n">frequency_columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;frq_BF-07_gamb_2004&#39;,
- &#39;frq_BF-09_colu_2012&#39;,
- &#39;frq_BF-09_colu_2014&#39;,
- &#39;frq_BF-09_gamb_2012&#39;,
- &#39;frq_BF-09_gamb_2014&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['frq_BF-07_gamb_2004',
+ 'frq_BF-09_colu_2012',
+ 'frq_BF-09_colu_2014',
+ 'frq_BF-09_gamb_2012',
+ 'frq_BF-09_gamb_2014']
 </pre></div>
 </div>
 </div>
@@ -1846,7 +1846,7 @@ from output data frame.
 <p>Manually predicting SNP effects is quite involved, but <code class="docutils literal notranslate"><span class="pre">snp_allele_frequencies()</span></code> can predict them for us, let’s look at how this is represented in our output DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_effects_df</span> <span class="o">=</span> <span class="n">snp_allele_freqs_df</span><span class="p">[[</span><span class="s2">&quot;effect&quot;</span><span class="p">,</span> <span class="s2">&quot;impact&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_effects_df</span> <span class="o">=</span> <span class="n">snp_allele_freqs_df</span><span class="p">[[</span><span class="s2">"effect"</span><span class="p">,</span> <span class="s2">"impact"</span><span class="p">]]</span>
 <span class="n">snp_effects_df</span>
 </pre></div>
 </div>
@@ -1973,7 +1973,7 @@ from output data frame.
 <p>Let’s look specifically at the genomic position where a SNP occurs which causes an insecticide-resistance mutation, also known as “kdr”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_effects_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> <span class="mi">2_422_652</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_effects_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">"2L"</span><span class="p">,</span> <span class="mi">2_422_652</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2036,7 +2036,7 @@ from output data frame.
 <p>For interest, let’s count the number of SNPs we have by their effect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;effect&quot;</span><span class="p">,</span> <span class="s2">&quot;impact&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0"</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"effect"</span><span class="p">,</span> <span class="s2">"impact"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2061,7 +2061,7 @@ dtype: int64
 <img width="60%" height="60%" src="https://github.com/anopheles-genomic-surveillance/anopheles-genomic-surveillance.github.io/blob/master/src/img/workshop-1/w1m4-2.png?raw=1"/><p>Let’s take another look at the allele frequencies we computed above, focusing just on the frequency columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="p">[</span><span class="n">frequency_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;max_af&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="p">[</span><span class="n">frequency_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'max_af'</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -2239,7 +2239,7 @@ dtype: int64
 <p>And let’s inspect the frequencies for SNPs at a specific genomic position of interest.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;2L&quot;</span><span class="p">,</span> <span class="mi">2_422_652</span><span class="p">),</span> <span class="n">frequency_columns</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">"2L"</span><span class="p">,</span> <span class="mi">2_422_652</span><span class="p">),</span> <span class="n">frequency_columns</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2320,7 +2320,7 @@ dtype: int64
 <p>To make our SNP allele frequencies DataFrame easier to interpret, we can filter it down to just non-synonymous SNPs that are at frequency above 5% in at least one of our cohorts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ns_snps_df</span> <span class="o">=</span> <span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;effect == &#39;NON_SYNONYMOUS_CODING&#39; and max_af &gt;= 0.05&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ns_snps_df</span> <span class="o">=</span> <span class="n">snp_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"effect == 'NON_SYNONYMOUS_CODING' and max_af &gt;= 0.05"</span><span class="p">)</span>
 <span class="n">ns_snps_df</span>
 </pre></div>
 </div>
@@ -6944,7 +6944,7 @@ if (outputEl) {{
 <p>Let’s filter it again to just amino acid changes greater than 5% in at least one cohort. We don’t need to filter for non-synonymous mutations this time as this function has already done that for us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_filt_df</span> <span class="o">=</span> <span class="n">aa_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt;= 0.05&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_filt_df</span> <span class="o">=</span> <span class="n">aa_allele_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt;= 0.05"</span><span class="p">)</span>
 <span class="n">aa_filt_df</span>
 </pre></div>
 </div>
@@ -7303,8 +7303,8 @@ if (outputEl) {{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_arab_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aa_allele_frequencies</span><span class="p">(</span>
     <span class="n">transcript</span><span class="o">=</span><span class="n">transcript</span><span class="p">,</span> 
     <span class="n">cohorts</span><span class="o">=</span><span class="n">cohorts</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;taxon == &#39;arabiensis&#39;&quot;</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"taxon == 'arabiensis'"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -7323,7 +7323,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_arab_freqs_df</span> <span class="o">=</span> <span class="n">aa_arab_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa_arab_freqs_df</span> <span class="o">=</span> <span class="n">aa_arab_freqs_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">)</span>
 <span class="n">ag3</span><span class="o">.</span><span class="n">plot_frequencies_heatmap</span><span class="p">(</span><span class="n">aa_arab_freqs_df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7371,11 +7371,11 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps_bf</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aa_allele_frequencies_advanced</span><span class="p">(</span>
     <span class="n">transcript</span><span class="o">=</span><span class="n">transcript</span><span class="p">,</span>
-    <span class="n">area_by</span><span class="o">=</span><span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
-    <span class="n">period_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country == &#39;Burkina Faso&#39;&quot;</span><span class="p">,</span>
-    <span class="n">variant_query</span><span class="o">=</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">,</span>  <span class="c1"># only keep variants above 5% frequency in at least one cohort</span>
+    <span class="n">area_by</span><span class="o">=</span><span class="s2">"admin1_iso"</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
+    <span class="n">period_by</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"country == 'Burkina Faso'"</span><span class="p">,</span>
+    <span class="n">variant_query</span><span class="o">=</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">,</span>  <span class="c1"># only keep variants above 5% frequency in at least one cohort</span>
 <span class="p">)</span>
 <span class="n">ds_snps_bf</span>
 </pre></div>
@@ -7918,10 +7918,10 @@ if (outputEl) {{
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">aa_allele_frequencies_advanced</span><span class="p">(</span>
     <span class="n">transcript</span><span class="o">=</span><span class="n">transcript</span><span class="p">,</span>
-    <span class="n">area_by</span><span class="o">=</span><span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
-    <span class="n">period_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">variant_query</span><span class="o">=</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span><span class="p">,</span>  <span class="c1"># only keep variants above 5% frequency in at least one cohort</span>
+    <span class="n">area_by</span><span class="o">=</span><span class="s2">"admin1_iso"</span><span class="p">,</span>  <span class="c1"># group samples in space by admin level 1</span>
+    <span class="n">period_by</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>  <span class="c1"># group samples in time by year</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">variant_query</span><span class="o">=</span><span class="s2">"max_af &gt; 0.05"</span><span class="p">,</span>  <span class="c1"># only keep variants above 5% frequency in at least one cohort</span>
 <span class="p">)</span>
 <span class="n">ds_snps</span>
 </pre></div>
@@ -8613,26 +8613,26 @@ Attributes:
 <p>Take a look at the variants we’ve found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span><span class="p">[</span><span class="s2">&quot;variant_label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snps</span><span class="p">[</span><span class="s2">"variant_label"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;R254K (2L:2,390,177 G&gt;A)&#39;, &#39;V402L (2L:2,391,228 G&gt;{C,T})&#39;,
-       &#39;D466H (2L:2,399,997 G&gt;C)&#39;, &#39;M490I (2L:2,400,071 G&gt;{A,T})&#39;,
-       &#39;A656V (2L:2,407,769 C&gt;T)&#39;, &#39;I693V (2L:2,407,954 A&gt;G)&#39;,
-       &#39;E752V (2L:2,416,863 A&gt;T)&#39;, &#39;M757L (2L:2,416,877 A&gt;T)&#39;,
-       &#39;T791M (2L:2,416,980 C&gt;T)&#39;, &#39;E862* (2L:2,417,305 G&gt;T)&#39;,
-       &#39;L995S (2L:2,422,651 T&gt;C)&#39;, &#39;L995F (2L:2,422,652 A&gt;T)&#39;,
-       &#39;A1125V (2L:2,424,384 C&gt;T)&#39;, &#39;V1507I (2L:2,429,556 G&gt;A)&#39;,
-       &#39;I1527T (2L:2,429,617 T&gt;C)&#39;, &#39;N1570Y (2L:2,429,745 A&gt;T)&#39;,
-       &#39;E1597Q (2L:2,429,896 G&gt;C)&#39;, &#39;E1597G (2L:2,429,897 A&gt;G)&#39;,
-       &#39;K1603T (2L:2,429,915 A&gt;C)&#39;, &#39;L1667M (2L:2,430,106 T&gt;A)&#39;,
-       &#39;A1746S (2L:2,430,424 G&gt;T)&#39;, &#39;Y1846* (2L:2,430,798 C&gt;{A,G})&#39;,
-       &#39;V1853I (2L:2,430,817 G&gt;A)&#39;, &#39;I1868T (2L:2,430,863 T&gt;C)&#39;,
-       &#39;P1874S (2L:2,430,880 C&gt;T)&#39;, &#39;P1874L (2L:2,430,881 C&gt;T)&#39;,
-       &#39;A1934V (2L:2,431,061 C&gt;T)&#39;, &#39;I1940T (2L:2,431,079 T&gt;C)&#39;,
-       &#39;T2044A (2L:2,431,390 A&gt;G)&#39;, &#39;I2053V (2L:2,431,417 A&gt;G)&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array(['R254K (2L:2,390,177 G&gt;A)', 'V402L (2L:2,391,228 G&gt;{C,T})',
+       'D466H (2L:2,399,997 G&gt;C)', 'M490I (2L:2,400,071 G&gt;{A,T})',
+       'A656V (2L:2,407,769 C&gt;T)', 'I693V (2L:2,407,954 A&gt;G)',
+       'E752V (2L:2,416,863 A&gt;T)', 'M757L (2L:2,416,877 A&gt;T)',
+       'T791M (2L:2,416,980 C&gt;T)', 'E862* (2L:2,417,305 G&gt;T)',
+       'L995S (2L:2,422,651 T&gt;C)', 'L995F (2L:2,422,652 A&gt;T)',
+       'A1125V (2L:2,424,384 C&gt;T)', 'V1507I (2L:2,429,556 G&gt;A)',
+       'I1527T (2L:2,429,617 T&gt;C)', 'N1570Y (2L:2,429,745 A&gt;T)',
+       'E1597Q (2L:2,429,896 G&gt;C)', 'E1597G (2L:2,429,897 A&gt;G)',
+       'K1603T (2L:2,429,915 A&gt;C)', 'L1667M (2L:2,430,106 T&gt;A)',
+       'A1746S (2L:2,430,424 G&gt;T)', 'Y1846* (2L:2,430,798 C&gt;{A,G})',
+       'V1853I (2L:2,430,817 G&gt;A)', 'I1868T (2L:2,430,863 T&gt;C)',
+       'P1874S (2L:2,430,880 C&gt;T)', 'P1874L (2L:2,430,881 C&gt;T)',
+       'A1934V (2L:2,431,061 C&gt;T)', 'I1940T (2L:2,431,079 T&gt;C)',
+       'T2044A (2L:2,431,390 A&gt;G)', 'I2053V (2L:2,431,417 A&gt;G)'],
       dtype=object)
 </pre></div>
 </div>

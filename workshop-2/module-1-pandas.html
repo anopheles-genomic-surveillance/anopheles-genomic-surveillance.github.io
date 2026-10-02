@@ -604,7 +604,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import os</span>
-<span class="c1">#os.environ[&quot;MGEN_SHOW_PROGRESS&quot;] = &quot;0&quot;</span>
+<span class="c1">#os.environ["MGEN_SHOW_PROGRESS"] = "0"</span>
 </pre></div>
 </div>
 </div>
@@ -1002,7 +1002,7 @@ function(Bokeh) {
 <p>In <a class="reference external" href="https://anopheles-genomic-surveillance.github.io/workshop-1/module-2-sample-metadata.html">workshop 1, module 2</a> we encountered the <a class="reference external" href="https://malariagen.github.io/malariagen-data-python/latest/generated/malariagen_data.ag3.Ag3.sample_metadata.html#malariagen_data.ag3.Ag3.sample_metadata">sample_metadata()</a> function. This function returns a DataFrame of sample metadata. Let’s call this function and assign the result to the variable <code class="docutils literal notranslate"><span class="pre">df_samples</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_samples</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">sample_metadata</span><span class="p">(</span><span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1564,9 +1564,9 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snp_freqs_df</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_allele_frequencies</span><span class="p">(</span>
-    <span class="n">transcript</span><span class="o">=</span><span class="s2">&quot;AGAP004707-RD&quot;</span><span class="p">,</span> 
-    <span class="n">cohorts</span><span class="o">=</span><span class="s2">&quot;admin1_year&quot;</span><span class="p">,</span> 
-    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AG1000G-BF-A&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-B&quot;</span><span class="p">,</span> <span class="s2">&quot;AG1000G-BF-C&quot;</span><span class="p">],</span> 
+    <span class="n">transcript</span><span class="o">=</span><span class="s2">"AGAP004707-RD"</span><span class="p">,</span> 
+    <span class="n">cohorts</span><span class="o">=</span><span class="s2">"admin1_year"</span><span class="p">,</span> 
+    <span class="n">sample_sets</span><span class="o">=</span><span class="p">[</span><span class="s2">"AG1000G-BF-A"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-B"</span><span class="p">,</span> <span class="s2">"AG1000G-BF-C"</span><span class="p">],</span> 
 <span class="p">)</span>
 <span class="n">snp_freqs_df</span>
 </pre></div>
@@ -1922,7 +1922,7 @@ function(Bokeh) {
 <p>You can also create a pandas DataFrame by reading data from a file, such as a comma-separated value (CSV) file, or an Excel workbook file. Let’s use the pandas <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read_csv()</a> function to read data from a CSV file containing data from a US census that colab provides as example data for you to play with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;sample_data/california_housing_train.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_housing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"sample_data/california_housing_train.csv"</span><span class="p">)</span>
 <span class="n">df_housing</span>
 </pre></div>
 </div>
@@ -2104,11 +2104,11 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Arthur Dent&quot;</span><span class="p">,</span> <span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">,</span> <span class="s2">&quot;Ford Prefect&quot;</span><span class="p">,</span> <span class="s2">&quot;Zaphod Beeblebrox&quot;</span><span class="p">,</span> <span class="s2">&quot;Marvin the Paranoid Android&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;taxon&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;betelgeusian&quot;</span><span class="p">,</span> <span class="s2">&quot;robot&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-    <span class="s2">&quot;number_of_heads&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="s2">&quot;intelligence&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5_000_000</span><span class="p">]</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Arthur Dent"</span><span class="p">,</span> <span class="s2">"Tricia McMillan"</span><span class="p">,</span> <span class="s2">"Ford Prefect"</span><span class="p">,</span> <span class="s2">"Zaphod Beeblebrox"</span><span class="p">,</span> <span class="s2">"Marvin the Paranoid Android"</span><span class="p">],</span>
+    <span class="s2">"taxon"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"human"</span><span class="p">,</span> <span class="s2">"human"</span><span class="p">,</span> <span class="s2">"betelgeusian"</span><span class="p">,</span> <span class="s2">"betelgeusian"</span><span class="p">,</span> <span class="s2">"robot"</span><span class="p">],</span>
+    <span class="s2">"gender"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"male"</span><span class="p">,</span> <span class="s2">"female"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s2">"number_of_heads"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">"intelligence"</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5_000_000</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="n">df_hitchhikers</span>
 </pre></div>
@@ -2244,7 +2244,7 @@ function(Bokeh) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;name&#39;, &#39;taxon&#39;, &#39;gender&#39;, &#39;number_of_heads&#39;, &#39;intelligence&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['name', 'taxon', 'gender', 'number_of_heads', 'intelligence']
 </pre></div>
 </div>
 </div>
@@ -2264,7 +2264,7 @@ function(Bokeh) {
 <p>To access a single column, give the column name as a string inside square brackets. Let’s access the “name” column from the DataFrame of book characters, and assign the result to a new variable <code class="docutils literal notranslate"><span class="pre">character_name</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_name</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2307,7 +2307,7 @@ Name: name, dtype: object
 <p>E.g., let’s access the “taxon” column and use the <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> functions to get a summary of the categorical data in the column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_taxon</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;taxon&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_taxon</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">"taxon"</span><span class="p">]</span>
 <span class="n">character_taxon</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2325,7 +2325,7 @@ Name: count, dtype: int64
 <p>The pandas Series class also has a <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function which can be useful for investigating numerical data. Let’s use it with the <code class="docutils literal notranslate"><span class="pre">number_of_heads</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_heads</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_heads</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="s2">"number_of_heads"</span><span class="p">]</span>
 <span class="n">character_heads</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2363,7 +2363,7 @@ Name: number_of_heads, dtype: float64
 <p>To access multiple columns, provide the column names as a list of strings. Let’s access the “name”, “taxon” and “number_of_heads” columns from the DataFrame of book characters, and assign the resulting DataFrame to a new variable <code class="docutils literal notranslate"><span class="pre">df_hh</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"taxon"</span><span class="p">,</span> <span class="s2">"number_of_heads"</span><span class="p">]</span>
 <span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[</span><span class="n">selected_cols</span><span class="p">]</span>
 <span class="n">df_hh</span>
 </pre></div>
@@ -2431,7 +2431,7 @@ Name: number_of_heads, dtype: float64
 <p>You can also put the list of columns directly inside the square brackets, which would give the same result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;taxon&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_heads&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hh</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="p">[[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"taxon"</span><span class="p">,</span> <span class="s2">"number_of_heads"</span><span class="p">]]</span>
 <span class="n">df_hh</span>
 </pre></div>
 </div>
@@ -2556,19 +2556,19 @@ Name: 0, dtype: object
 <p>Access specific data values within the row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Arthur Dent&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Arthur Dent'
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;number_of_heads&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span><span class="p">[</span><span class="s2">"number_of_heads"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2663,7 +2663,7 @@ Name: 0, dtype: object
 <p>For example, when working with our DataFrame of book characters, we might want to access rows using the name of the character. To do this, we can set the “name” column as the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_indexed</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers_indexed</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span>
 <span class="n">df_hitchhikers_indexed</span>
 </pre></div>
 </div>
@@ -2744,7 +2744,7 @@ Name: 0, dtype: object
 <p>Now that we’ve set a useful index, we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property to locate rows with a particular name. E.g., locate the row where the character’s name is “Tricia McMillan”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Tricia McMillan&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trillian</span> <span class="o">=</span> <span class="n">df_hitchhikers_indexed</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"Tricia McMillan"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2875,7 +2875,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s query the book characters DataFrame to select only rows where the value of the “taxon” column is “human”. To match a value we use the “==” operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon == &#39;human&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"taxon == 'human'"</span><span class="p">)</span>
 <span class="n">df_human_hitchhikers</span>
 </pre></div>
 </div>
@@ -2930,7 +2930,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s do the opposite, selecting only rows where the value of the “taxon” column is not “human”, using the “!=” operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;taxon != &#39;human&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"taxon != 'human'"</span><span class="p">)</span>
 <span class="n">df_non_human_hitchhikers</span>
 </pre></div>
 </div>
@@ -2993,7 +2993,7 @@ Name: Tricia McMillan, dtype: object
 <p>Let’s query a numerical field using the “&gt;” greater than operator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_multi_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;number_of_heads &gt; 1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_multi_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"number_of_heads &gt; 1"</span><span class="p">)</span>
 <span class="n">df_multi_headed_hitchhikers</span>
 </pre></div>
 </div>
@@ -3041,7 +3041,7 @@ Name: Tricia McMillan, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_non_human_one_headed_hitchhikers</span> <span class="o">=</span> <span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="s2">&quot;taxon != &#39;human&#39; and number_of_heads == 1&quot;</span>
+    <span class="s2">"taxon != 'human' and number_of_heads == 1"</span>
 <span class="p">)</span>
 <span class="n">df_non_human_one_headed_hitchhikers</span>
 </pre></div>
@@ -3117,7 +3117,7 @@ Name: Tricia McMillan, dtype: object
 <p>To write a DataFrame out to a CSV file, use the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html">to_csv()</a> function. E.g., let’s write out the book characters DataFrame to a CSV file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;hitchhikers.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"hitchhikers.csv"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3126,7 +3126,7 @@ Name: Tricia McMillan, dtype: object
 <p>There are several other file formats you can write to. E.g., you could write to an Excel file. Here, we use the</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hitchhikers.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"hitchhikers.xlsx"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3134,7 +3134,7 @@ Name: Tricia McMillan, dtype: object
 <p>Any of the DataFrames we created in this module could be written out in the same way. E.g., we could write a DataFrame that we obtained by querying the book characters for only humans.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;hh_human.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human_hitchhikers</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">"hh_human.xlsx"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

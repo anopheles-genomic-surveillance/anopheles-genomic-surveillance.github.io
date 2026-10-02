@@ -568,7 +568,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">malariagen_data</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook+colab&quot;</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"notebook+colab"</span>
 </pre></div>
 </div>
 </div>
@@ -968,12 +968,12 @@ function(Bokeh) {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.haplotypes(
     region: Union[str, malariagen_data.util.Region, Mapping, List[Union[str, malariagen_data.util.Region, Mapping]], Tuple[Union[str, malariagen_data.util.Region, Mapping], ...]],
-    analysis: str = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    analysis: str = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     min_cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     max_cohort_size: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -986,10 +986,10 @@ Parameters
 ----------
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
-analysis : str, optional, default: &#39;default&#39;
+analysis : str, optional, default: 'default'
     Which haplotype phasing analysis to use. See the
     `phasing_analysis_ids` property for available values.
 sample_sets : sequence of str or str or None, optional
@@ -1004,16 +1004,16 @@ sample_query_options : dict or None, optional
     resolvers.
 inline_array : bool, optional, default: True
     Passed through to dask `from_array()`.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1055,10 +1055,10 @@ Dataset
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_haps</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">haplotypes</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2L:2,422,600-2,422,700&quot;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s2">&quot;gamb_colu_arab&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span><span class="s2">&quot;country == &#39;Cameroon&#39;&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"2L:2,422,600-2,422,700"</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s2">"gamb_colu_arab"</span><span class="p">,</span>
+    <span class="n">sample_sets</span> <span class="o">=</span> <span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span><span class="s2">"country == 'Cameroon'"</span><span class="p">,</span>
     <span class="n">cohort_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">ds_haps</span>
@@ -1754,7 +1754,7 @@ Attributes:
 <p>There are 20 samples and thus 40 haplotypes in this dataset. We also have data for 26 variants (SNPs).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_samples</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="o">.</span><span class="n">sizes</span><span class="p">[</span><span class="s2">&quot;samples&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_samples</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="o">.</span><span class="n">sizes</span><span class="p">[</span><span class="s2">"samples"</span><span class="p">]</span>
 <span class="n">n_samples</span>
 </pre></div>
 </div>
@@ -1780,7 +1780,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_variants</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="o">.</span><span class="n">sizes</span><span class="p">[</span><span class="s2">&quot;variants&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_variants</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="o">.</span><span class="n">sizes</span><span class="p">[</span><span class="s2">"variants"</span><span class="p">]</span>
 <span class="n">n_variants</span>
 </pre></div>
 </div>
@@ -1794,7 +1794,7 @@ Attributes:
 <p>The “variant_position” array has data on the genomic coordinates of the SNPs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">&quot;variant_position&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">"variant_position"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">pos</span>
 </pre></div>
 </div>
@@ -1811,38 +1811,38 @@ Attributes:
 <p>The “variant_allele” array has the reference and alternate alleles for the SNPs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alleles</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">&quot;variant_allele&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alleles</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">"variant_allele"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">alleles</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b&#39;T&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;C&#39;, b&#39;T&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;],
-       [b&#39;C&#39;, b&#39;T&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;G&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;G&#39;, b&#39;A&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;C&#39;],
-       [b&#39;A&#39;, b&#39;G&#39;],
-       [b&#39;G&#39;, b&#39;A&#39;],
-       [b&#39;T&#39;, b&#39;C&#39;],
-       [b&#39;A&#39;, b&#39;T&#39;],
-       [b&#39;C&#39;, b&#39;T&#39;],
-       [b&#39;G&#39;, b&#39;T&#39;],
-       [b&#39;C&#39;, b&#39;G&#39;],
-       [b&#39;A&#39;, b&#39;C&#39;],
-       [b&#39;A&#39;, b&#39;G&#39;],
-       [b&#39;C&#39;, b&#39;A&#39;],
-       [b&#39;G&#39;, b&#39;T&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;],
-       [b&#39;C&#39;, b&#39;T&#39;],
-       [b&#39;T&#39;, b&#39;A&#39;]], dtype=&#39;|S1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[b'T', b'A'],
+       [b'T', b'G'],
+       [b'C', b'T'],
+       [b'C', b'A'],
+       [b'T', b'A'],
+       [b'C', b'T'],
+       [b'C', b'A'],
+       [b'T', b'G'],
+       [b'C', b'A'],
+       [b'G', b'A'],
+       [b'C', b'A'],
+       [b'T', b'C'],
+       [b'A', b'G'],
+       [b'G', b'A'],
+       [b'T', b'C'],
+       [b'A', b'T'],
+       [b'C', b'T'],
+       [b'G', b'T'],
+       [b'C', b'G'],
+       [b'A', b'C'],
+       [b'A', b'G'],
+       [b'C', b'A'],
+       [b'G', b'T'],
+       [b'T', b'A'],
+       [b'C', b'T'],
+       [b'T', b'A']], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -1855,9 +1855,9 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b&#39;T&#39;, b&#39;T&#39;, b&#39;C&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;C&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;C&#39;, b&#39;G&#39;, b&#39;C&#39;,
-       b&#39;T&#39;, b&#39;A&#39;, b&#39;G&#39;, b&#39;T&#39;, b&#39;A&#39;, b&#39;C&#39;, b&#39;G&#39;, b&#39;C&#39;, b&#39;A&#39;, b&#39;A&#39;, b&#39;C&#39;,
-       b&#39;G&#39;, b&#39;T&#39;, b&#39;C&#39;, b&#39;T&#39;], dtype=&#39;|S1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b'T', b'T', b'C', b'C', b'T', b'C', b'C', b'T', b'C', b'G', b'C',
+       b'T', b'A', b'G', b'T', b'A', b'C', b'G', b'C', b'A', b'A', b'C',
+       b'G', b'T', b'C', b'T'], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -1870,9 +1870,9 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b&#39;A&#39;, b&#39;G&#39;, b&#39;T&#39;, b&#39;A&#39;, b&#39;A&#39;, b&#39;T&#39;, b&#39;A&#39;, b&#39;G&#39;, b&#39;A&#39;, b&#39;A&#39;, b&#39;A&#39;,
-       b&#39;C&#39;, b&#39;G&#39;, b&#39;A&#39;, b&#39;C&#39;, b&#39;T&#39;, b&#39;T&#39;, b&#39;T&#39;, b&#39;G&#39;, b&#39;C&#39;, b&#39;G&#39;, b&#39;A&#39;,
-       b&#39;T&#39;, b&#39;A&#39;, b&#39;T&#39;, b&#39;A&#39;], dtype=&#39;|S1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([b'A', b'G', b'T', b'A', b'A', b'T', b'A', b'G', b'A', b'A', b'A',
+       b'C', b'G', b'A', b'C', b'T', b'T', b'T', b'G', b'C', b'G', b'A',
+       b'T', b'A', b'T', b'A'], dtype='|S1')
 </pre></div>
 </div>
 </div>
@@ -1880,7 +1880,7 @@ Attributes:
 <p>The haplotypes themselves are stored in the “call_genotype” array. The shape of this array is (number of variants, number of samples, number of haplotypes per sample).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_haps</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">gt</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -1899,7 +1899,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;int8&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype('int8')
 </pre></div>
 </div>
 </div>
@@ -1976,8 +1976,8 @@ Attributes:
     <span class="kn">import</span><span class="w"> </span><span class="nn">allel</span>
 
     <span class="c1"># convert to 2D array of haplotypes</span>
-    <span class="n">pos</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;variant_position&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">gt</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">"variant_position"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">gt</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     <span class="n">ht</span> <span class="o">=</span> <span class="n">gt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">gt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># size rows and columns</span>
@@ -2001,22 +2001,22 @@ Attributes:
         <span class="n">ht</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
         <span class="n">text_auto</span><span class="o">=</span><span class="ow">not</span> <span class="n">hide_text</span><span class="p">,</span>
         <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Variants&quot;</span><span class="p">,</span>
-            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Haplotypes&quot;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"Variants"</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">"Haplotypes"</span><span class="p">,</span>
         <span class="p">),</span>
         <span class="n">width</span><span class="o">=</span><span class="n">ht</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">col_width</span> <span class="o">+</span> <span class="mi">200</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="n">ht</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">row_height</span> <span class="o">+</span> <span class="mi">200</span><span class="p">,</span>
         <span class="n">zmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
         <span class="n">zmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&quot;greys&quot;</span><span class="p">,</span>
-        <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
-        <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span>
+        <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"greys"</span><span class="p">,</span>
+        <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+        <span class="n">aspect</span><span class="o">=</span><span class="s2">"auto"</span>
     <span class="p">)</span>
 
     <span class="c1"># visual styling</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
         <span class="n">coloraxis_showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;#cccccc&quot;</span><span class="p">,</span>
+        <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">"#cccccc"</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">xgap</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ygap</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">tickvals</span><span class="o">=</span><span class="p">[])</span>

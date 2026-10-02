@@ -997,7 +997,7 @@ function(Bokeh) {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
 ag3.plot_haplotype_network(
     region: Union[str, malariagen_data.util.Region, Mapping, List[Union[str, malariagen_data.util.Region, Mapping]], Tuple[Union[str, malariagen_data.util.Region, Mapping], ...]],
-    analysis: str = <span class=" -Color -Color-Yellow">&#39;default&#39;</span>,
+    analysis: str = <span class=" -Color -Color-Yellow">'default'</span>,
     sample_sets: Union[str, Sequence[str], NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query: Optional[str] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     sample_query_options: Optional[dict] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
@@ -1007,14 +1007,14 @@ ag3.plot_haplotype_network(
     color_discrete_map: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     category_orders: Union[List, Mapping, NoneType] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     node_size_factor: int = <span class=" -Color -Color-Green">50</span>,
-    layout: str = <span class=" -Color -Color-Yellow">&#39;cose&#39;</span>,
+    layout: str = <span class=" -Color -Color-Yellow">'cose'</span>,
     layout_params: Optional[Mapping] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
     server_port: Optional[int] = <span class=" -Color -Color-Bold -Color-Bold-C28">None</span>,
-    server_mode: Optional[Literal[<span class=" -Color -Color-Yellow">&#39;inline&#39;</span>, <span class=" -Color -Color-Yellow">&#39;external&#39;</span>, <span class=" -Color -Color-Yellow">&#39;jupyterlab&#39;</span>, <span class=" -Color -Color-Yellow">&#39;tab&#39;</span>]] = <span class=" -Color -Color-Yellow">&#39;inline&#39;</span>,
+    server_mode: Optional[Literal[<span class=" -Color -Color-Yellow">'inline'</span>, <span class=" -Color -Color-Yellow">'external'</span>, <span class=" -Color -Color-Yellow">'jupyterlab'</span>, <span class=" -Color -Color-Yellow">'tab'</span>]] = <span class=" -Color -Color-Yellow">'inline'</span>,
     height: int = <span class=" -Color -Color-Green">600</span>,
-    width: Union[int, str, NoneType] = <span class=" -Color -Color-Yellow">&#39;100%&#39;</span>,
+    width: Union[int, str, NoneType] = <span class=" -Color -Color-Yellow">'100%'</span>,
     serve_scripts_locally: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
-    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">&#39;native&#39;</span>,
+    chunks: Union[int, str, Tuple[Union[int, str], ...], Callable[[Tuple[int, ...]], Union[int, str, Tuple[Union[int, str], ...]]]] = <span class=" -Color -Color-Yellow">'native'</span>,
     inline_array: bool = <span class=" -Color -Color-Bold -Color-Bold-C28">True</span>,
 )
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -1032,10 +1032,10 @@ Parameters
 ----------
 region : str or Region or Mapping or list of str or Region or Mapping or tuple of str or Region or Mapping
     Region of the reference genome. Can be a contig name, region string
-    (formatted like &quot;{contig}:{start}-{end}&quot;), or identifier of a genome
+    (formatted like "{contig}:{start}-{end}"), or identifier of a genome
     feature such as a gene or transcript. Can also be a sequence (e.g.,
     list) of regions.
-analysis : str, optional, default: &#39;default&#39;
+analysis : str, optional, default: 'default'
     Which haplotype phasing analysis to use. See the
     `phasing_analysis_ids` property for available values.
 sample_sets : sequence of str or str or None, optional
@@ -1060,32 +1060,32 @@ category_orders : List or Mapping or None, optional
     Control the order in which values appear in the legend.
 node_size_factor : int, optional, default: 50
     Control the sizing of nodes.
-layout : str, optional, default: &#39;cose&#39;
+layout : str, optional, default: 'cose'
     Name of the network layout to use to position nodes.
 layout_params : Mapping or None, optional
     Additional parameters to the layout algorithm.
 server_port : int or None, optional
     Manually override the port on which the Dash app will run.
-server_mode : {&#39;inline&#39;, &#39;external&#39;, &#39;jupyterlab&#39;, &#39;tab&#39;} or None, optional, default: &#39;inline&#39;
+server_mode : {'inline', 'external', 'jupyterlab', 'tab'} or None, optional, default: 'inline'
     Controls how the Jupyter Dash app will be launched. See
     https://dash.plotly.com/dash-in-jupyter#display-modes for more
     information.
 height : int, optional, default: 600
     Height of the Dash app in pixels (px).
-width : int or str or None, optional, default: &#39;100%&#39;
+width : int or str or None, optional, default: '100%'
     Width of the Dash app.
 serve_scripts_locally : bool, optional, default: True
     If True, serve scripts locally, otherwise use CDN.
-chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: &#39;native&#39;
+chunks : int or str or tuple of int or str or Callable[[typing.Tuple[int, ...]], int or str or tuple of int or str], optional, default: 'native'
     Define how input data being read from zarr should be divided into
-    chunks for a dask computation. If &#39;native&#39;, use underlying zarr
-    chunks. If a string specifying a target memory size, e.g., &#39;300 MiB&#39;,
+    chunks for a dask computation. If 'native', use underlying zarr
+    chunks. If a string specifying a target memory size, e.g., '300 MiB',
     resize chunks in arrays with more than one dimension to match this
-    size. If &#39;auto&#39;, let dask decide chunk size.  If &#39;ndauto&#39;, let dask
+    size. If 'auto', let dask decide chunk size.  If 'ndauto', let dask
     decide chunk size but only for arrays with more than one dimension. If
-    &#39;ndauto0&#39;, as &#39;ndauto&#39; but only vary the first chunk dimension. If
-    &#39;ndauto1&#39;, as &#39;ndauto&#39; but only vary the second chunk dimension. If
-    &#39;ndauto01&#39;, as &#39;ndauto&#39; but only vary the first and second chunk
+    'ndauto0', as 'ndauto' but only vary the first chunk dimension. If
+    'ndauto1', as 'ndauto' but only vary the second chunk dimension. If
+    'ndauto01', as 'ndauto' but only vary the first and second chunk
     dimensions. Also, can be a tuple of integers, or a callable which
     accepts the native chunks as a single argument and returns a valid
     dask chunks value.
@@ -1107,11 +1107,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2L:2,400,000-2,440,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'taxon == "coluzzii"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -1127,11 +1127,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2L:2,400,000-2,440,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'taxon == "coluzzii"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -1148,11 +1148,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2L:2,400,000-2,440,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;taxon == &quot;coluzzii&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2L:2,400,000-2,440,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'taxon == "coluzzii"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -1197,11 +1197,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:3,470,000-3,490,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;] &amp; taxon == &quot;gambiae&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2R:3,470,000-3,490,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Ghana", "Burkina Faso"] &amp; taxon == "gambiae"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'country'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1216,11 +1216,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;2R:3,470,000-3,490,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;] &amp; taxon == &quot;gambiae&quot;&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'2R:3,470,000-3,490,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Ghana", "Burkina Faso"] &amp; taxon == "gambiae"'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -1255,12 +1255,12 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_clustering</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;taxon&#39;</span><span class="p">,</span>
-    <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;country&#39;</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'3R:28,590,000-28,600,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Ghana", "Burkina Faso", "Cote d</span><span class="se">\'</span><span class="s1">Ivoire"]'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'taxon'</span><span class="p">,</span>
+    <span class="n">symbol</span><span class="o">=</span><span class="s1">'country'</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -1269,11 +1269,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'3R:28,590,000-28,600,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Ghana", "Burkina Faso", "Cote d</span><span class="se">\'</span><span class="s1">Ivoire"]'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"country"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="p">)</span>
 </pre></div>
@@ -1283,11 +1283,11 @@ inline_array : bool, optional, default: True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_haplotype_network</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s1">&#39;3R:28,590,000-28,600,000&#39;</span><span class="p">,</span>
-    <span class="n">analysis</span><span class="o">=</span><span class="s1">&#39;gamb_colu&#39;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">&#39;3.0&#39;</span><span class="p">,</span>
-    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">&#39;country in [&quot;Ghana&quot;, &quot;Burkina Faso&quot;, &quot;Cote d</span><span class="se">\&#39;</span><span class="s1">Ivoire&quot;]&#39;</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;taxon&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s1">'3R:28,590,000-28,600,000'</span><span class="p">,</span>
+    <span class="n">analysis</span><span class="o">=</span><span class="s1">'gamb_colu'</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s1">'3.0'</span><span class="p">,</span>
+    <span class="n">sample_query</span><span class="o">=</span> <span class="s1">'country in ["Ghana", "Burkina Faso", "Cote d</span><span class="se">\'</span><span class="s1">Ivoire"]'</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"taxon"</span><span class="p">,</span>
     <span class="n">max_dist</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="p">)</span>
 </pre></div>

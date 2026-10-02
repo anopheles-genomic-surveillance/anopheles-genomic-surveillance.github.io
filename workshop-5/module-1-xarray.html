@@ -591,8 +591,8 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="c1"># configure plotting with matplotlib</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = "retina"
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1016,41 +1016,41 @@ function(Bokeh) {
     <span class="n">datasets</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
     <span class="n">file_paths</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;itn_access_mean&quot;</span><span class="p">:</span> <span class="s2">&quot;https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Access_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_access_mean.tif&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;itn_per_capita_mean&quot;</span><span class="p">:</span> <span class="s2">&quot;https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Percapita_Nets_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_percapita_nets_mean.tif&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;itn_use_mean&quot;</span><span class="p">:</span> <span class="s2">&quot;https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Use_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_use_mean.tif&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;itn_use_rate_mean&quot;</span><span class="p">:</span> <span class="s2">&quot;https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Use_Rate_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_use_rate_mean.tif&quot;</span><span class="p">,</span>
+        <span class="s2">"itn_access_mean"</span><span class="p">:</span> <span class="s2">"https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Access_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_access_mean.tif"</span><span class="p">,</span>
+        <span class="s2">"itn_per_capita_mean"</span><span class="p">:</span> <span class="s2">"https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Percapita_Nets_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_percapita_nets_mean.tif"</span><span class="p">,</span>
+        <span class="s2">"itn_use_mean"</span><span class="p">:</span> <span class="s2">"https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Use_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_use_mean.tif"</span><span class="p">,</span>
+        <span class="s2">"itn_use_rate_mean"</span><span class="p">:</span> <span class="s2">"https://storage.googleapis.com/malariagen-reference-data-us/malariaatlas/2020_Africa_ITN_Use_Rate_mean.zip/ITN_</span><span class="si">{year}</span><span class="s2">_use_rate_mean.tif"</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">for</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">file_path_template</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>    
         <span class="n">ds</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
                 <span class="n">paths</span><span class="o">=</span><span class="p">[</span><span class="n">file_path_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)],</span>
-                <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;rasterio&quot;</span><span class="p">,</span>
-                <span class="n">combine</span><span class="o">=</span><span class="s2">&quot;nested&quot;</span><span class="p">,</span>
-                <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
+                <span class="n">engine</span><span class="o">=</span><span class="s2">"rasterio"</span><span class="p">,</span>
+                <span class="n">combine</span><span class="o">=</span><span class="s2">"nested"</span><span class="p">,</span>
+                <span class="n">concat_dim</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="o">.</span><span class="n">rename_dims</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;lat&quot;</span><span class="p">})</span>
-            <span class="o">.</span><span class="n">rename_vars</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;band_data&quot;</span><span class="p">:</span> <span class="n">variable_name</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">rename_dims</span><span class="p">({</span><span class="s2">"x"</span><span class="p">:</span> <span class="s2">"lon"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="s2">"lat"</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">rename_vars</span><span class="p">({</span><span class="s2">"x"</span><span class="p">:</span> <span class="s2">"lon"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="s2">"lat"</span><span class="p">,</span> <span class="s2">"band_data"</span><span class="p">:</span> <span class="n">variable_name</span><span class="p">})</span>
             <span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">drop_vars</span><span class="p">([</span><span class="s2">&quot;band&quot;</span><span class="p">,</span> <span class="s2">&quot;spatial_ref&quot;</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">drop_vars</span><span class="p">([</span><span class="s2">"band"</span><span class="p">,</span> <span class="s2">"spatial_ref"</span><span class="p">])</span>
         <span class="p">)</span>
-        <span class="c1"># delete attributes, the statistics don&#39;t seem to be correct</span>
+        <span class="c1"># delete attributes, the statistics don't seem to be correct</span>
         <span class="n">ds</span><span class="p">[</span><span class="n">variable_name</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="c1"># add a year coordinate variable</span>
-        <span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">years</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"year"</span><span class="p">,</span> <span class="n">years</span>
         <span class="n">datasets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 
     <span class="c1"># merge all datasets, assume already aligned</span>
     <span class="n">ds_itn</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
         <span class="n">datasets</span><span class="p">,</span>
-        <span class="n">compat</span><span class="o">=</span><span class="s2">&quot;override&quot;</span><span class="p">,</span>
-        <span class="n">join</span><span class="o">=</span><span class="s2">&quot;override&quot;</span><span class="p">,</span>
+        <span class="n">compat</span><span class="o">=</span><span class="s2">"override"</span><span class="p">,</span>
+        <span class="n">join</span><span class="o">=</span><span class="s2">"override"</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># add metadata</span>
-    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Maps and metrics of insecticide-treated net access, use, and nets-per-capita in Africa from 2000-2020&quot;</span>
-    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;creator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;The Malaria Atlas Project&quot;</span>
-    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;references&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://malariaatlas.org/research-project/metrics-of-insecticide-treated-nets-distribution/&quot;</span>
+    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Maps and metrics of insecticide-treated net access, use, and nets-per-capita in Africa from 2000-2020"</span>
+    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"creator"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"The Malaria Atlas Project"</span>
+    <span class="n">ds_itn</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">"references"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"https://malariaatlas.org/research-project/metrics-of-insecticide-treated-nets-distribution/"</span>
 
     <span class="k">return</span> <span class="n">ds_itn</span>
 </pre></div>
@@ -1960,7 +1960,7 @@ Attributes:
 <p>To give a bit more intuition about what this dataset contains, let’s plot the <code class="docutils literal notranslate"><span class="pre">itn_use_mean</span></code> variable for the year 2019, which should replicate what we saw in the screenshot above from the Malaria Atlas Project website.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">)[</span><span class="s2">&quot;itn_use_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlGn&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2019</span><span class="p">)[</span><span class="s2">"itn_use_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1978,7 +1978,7 @@ Attributes:
 <p>To access a data variable, use the square bracket notation, and provide the name of the variable as a string. For example, access the <code class="docutils literal notranslate"><span class="pre">itn_use_mean</span></code> variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">itn_use_mean</span> <span class="o">=</span> <span class="n">ds_itn</span><span class="p">[</span><span class="s2">&quot;itn_use_mean&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">itn_use_mean</span> <span class="o">=</span> <span class="n">ds_itn</span><span class="p">[</span><span class="s2">"itn_use_mean"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2031,7 +2031,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float32&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype('float32')
 </pre></div>
 </div>
 </div>
@@ -2044,7 +2044,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;year&#39;, &#39;lat&#39;, &#39;lon&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('year', 'lat', 'lon')
 </pre></div>
 </div>
 </div>
@@ -2661,7 +2661,7 @@ Coordinates:
 <p>Coordinate variables can be accessed in exactly the same way as data variables. E.g., let’s access the <code class="docutils literal notranslate"><span class="pre">lon</span></code> coordinate variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">longitude</span> <span class="o">=</span> <span class="n">ds_itn</span><span class="p">[</span><span class="s2">&quot;lon&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">longitude</span> <span class="o">=</span> <span class="n">ds_itn</span><span class="p">[</span><span class="s2">"lon"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -6003,7 +6003,7 @@ Attributes:
 <p>As we have selected data from 2020, let’s now make a rough-and-ready reproduction of <a class="reference external" href="https://www.nature.com/articles/s41467-021-23707-7/figures/3">Figure 3</a> from <a class="reference external" href="https://doi.org/10.1038/s41467-021-23707-7">Bertozzi-Villa et al. (2021)</a>. Xarray includes some built-in plotting functionality, which we are making use of here by calling the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method. The <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter provides a colour map to convert the data values into colours. I’ve chosen <a class="reference external" href="https://matplotlib.org/stable/gallery/color/colormap_reference.html">colour maps</a> to try and match the original figure from the paper.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">&quot;itn_access_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">"itn_access_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"YlGnBu"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -6013,7 +6013,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">&quot;itn_use_rate_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Spectral&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">"itn_use_rate_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Spectral"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -6023,7 +6023,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">&quot;itn_per_capita_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrBr&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_itn_2020</span><span class="p">[</span><span class="s2">"itn_per_capita_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"YlOrBr"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -6792,8 +6792,8 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snp</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">snp_calls</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span>
 <span class="p">)</span>
 <span class="n">ds_snp</span>
 </pre></div>
@@ -9582,7 +9582,7 @@ Attributes:
 <p>We could also access the genotype calls for the first sample, and convert the data into a NumPy array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_snp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_snp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">gt</span>
 </pre></div>
 </div>
@@ -9602,7 +9602,7 @@ Attributes:
 <p>We can also perform label-based indexing, but to do so we first need to manually set an index. E.g., we can use the “sample_id” coordinate variable to label the “samples” dimension:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snp_ix</span> <span class="o">=</span> <span class="n">ds_snp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snp_ix</span> <span class="o">=</span> <span class="n">ds_snp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">)</span>
 <span class="n">ds_snp_ix</span>
 </pre></div>
 </div>
@@ -11077,7 +11077,7 @@ Attributes:
 <p>Now we can select data for a given sample by using it’s ID, e.g., access the data for sample AR0047-C:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snp_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;AR0047-C&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_snp_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"AR0047-C"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -12277,7 +12277,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_snp_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;AR0047-C&quot;</span><span class="p">)[</span><span class="s2">&quot;call_genotype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gt</span> <span class="o">=</span> <span class="n">ds_snp_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"AR0047-C"</span><span class="p">)[</span><span class="s2">"call_genotype"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">gt</span>
 </pre></div>
 </div>
@@ -12302,8 +12302,8 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_cnv</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">cnv_hmm</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;3R&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"3R"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span>
 <span class="p">)</span>
 <span class="n">ds_cnv</span>
 </pre></div>
@@ -13316,7 +13316,7 @@ Attributes:
 <p>As with SNPs, we can use either positional indexing or label-based indexing to select data. E.g., let’s access the inferred copy number state data for sample AR0047-C and load the data into a NumPy array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_cnv_ix</span> <span class="o">=</span> <span class="n">ds_cnv</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;sample_id&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_cnv_ix</span> <span class="o">=</span> <span class="n">ds_cnv</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"sample_id"</span><span class="p">)</span>
 <span class="n">ds_cnv_ix</span>
 </pre></div>
 </div>
@@ -14256,7 +14256,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span> <span class="o">=</span> <span class="n">ds_cnv_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">&quot;AR0047-C&quot;</span><span class="p">)[</span><span class="s2">&quot;call_CN&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span> <span class="o">=</span> <span class="n">ds_cnv_ix</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="s2">"AR0047-C"</span><span class="p">)[</span><span class="s2">"call_CN"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">cn</span>
 </pre></div>
 </div>
@@ -14276,11 +14276,11 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cyp6aap_cnv_ds</span> <span class="o">=</span> <span class="n">ag3</span><span class="o">.</span><span class="n">gene_cnv_frequencies_advanced</span><span class="p">(</span>
-    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;2R:28,480,000-28,510,000&quot;</span><span class="p">,</span>
-    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span><span class="p">,</span>
-    <span class="n">area_by</span><span class="o">=</span><span class="s2">&quot;admin1_iso&quot;</span><span class="p">,</span>
-    <span class="n">period_by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
-    <span class="n">variant_query</span><span class="o">=</span><span class="s2">&quot;max_af &gt; 0.05&quot;</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">"2R:28,480,000-28,510,000"</span><span class="p">,</span>
+    <span class="n">sample_sets</span><span class="o">=</span><span class="s2">"3.0"</span><span class="p">,</span>
+    <span class="n">area_by</span><span class="o">=</span><span class="s2">"admin1_iso"</span><span class="p">,</span>
+    <span class="n">period_by</span><span class="o">=</span><span class="s2">"year"</span><span class="p">,</span>
+    <span class="n">variant_query</span><span class="o">=</span><span class="s2">"max_af &gt; 0.05"</span>
 <span class="p">)</span>
 <span class="n">cyp6aap_cnv_ds</span>
 </pre></div>
@@ -15060,7 +15060,7 @@ Attributes:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ag3</span><span class="o">.</span><span class="n">plot_frequencies_interactive_map</span><span class="p">(</span>
     <span class="n">cyp6aap_cnv_ds</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gene CNV frequencies, Cyp6aa/p locus&quot;</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Gene CNV frequencies, Cyp6aa/p locus"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
