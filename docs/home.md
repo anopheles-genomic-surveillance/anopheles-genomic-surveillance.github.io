@@ -28,6 +28,7 @@ Vector Observatory data are stored in Google Cloud Storage (GCS) in the US regio
 A summary of the process to access the data and authenticate can be found here:
 
 * {doc}`general/data-access`
+* {doc}`general/unrestricted`
 
 ## Context and motivation
 
